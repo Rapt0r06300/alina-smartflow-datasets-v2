@@ -1,0 +1,43 @@
+{
+  "schema": "alina.shard_manifest.v1",
+  "required": [
+    "dataset_id",
+    "family",
+    "venue",
+    "symbol",
+    "start_ts",
+    "end_ts",
+    "sha256",
+    "bytes",
+    "event_count",
+    "collector_version",
+    "source",
+    "quality_status"
+  ],
+  "properties": {
+    "dataset_id": "string",
+    "family": "string",
+    "venue": "string",
+    "symbol": "string",
+    "start_ts": "RFC3339/epoch metadata",
+    "end_ts": "RFC3339/epoch metadata",
+    "sha256": "64-char hex",
+    "bytes": "integer",
+    "event_count": "integer",
+    "collector_version": "string",
+    "source": "string",
+    "quality_status": [
+      "SAFE",
+      "PARTIAL",
+      "STALE",
+      "REJECT",
+      "NO_DATA"
+    ],
+    "gap_count": "integer|null",
+    "duplicate_count": "integer|null",
+    "nonmonotonic_count": "integer|null",
+    "synchronization_metrics": "object|null",
+    "cost_model_ready": "boolean|null",
+    "release_asset": "string|null"
+  }
+}

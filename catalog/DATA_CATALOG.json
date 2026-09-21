@@ -1,0 +1,22 @@
+{
+  "schema": "alina.data_catalog.v2",
+  "generation": "V2_FRESH",
+  "active_roots": {
+    "incoming": "datasets/incoming",
+    "quarantine": "datasets/quarantine",
+    "safe": "datasets/safe",
+    "rejected": "datasets/rejected"
+  },
+  "storage": {
+    "control_plane": "git_main",
+    "heavy_data": "github_releases",
+    "replay_selection": "SAFE_MANIFEST_ONLY",
+    "shard_strategy": "immutable_partitioned_assets",
+    "max_asset_bytes": 1900000000
+  },
+  "legacy_sources": {
+    "enabled": false,
+    "automatic_import": false
+  },
+  "active_data_status": "NO_DATA"
+}

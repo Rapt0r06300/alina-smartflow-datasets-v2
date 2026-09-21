@@ -1,0 +1,41 @@
+{
+  "schema": "alina.dataset_quality_registry.v2",
+  "generation": "V2_FRESH",
+  "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+  "visibility": "public",
+  "status_vocabulary": [
+    "SAFE",
+    "PARTIAL",
+    "STALE",
+    "REJECT",
+    "NO_DATA"
+  ],
+  "validation_allowed_statuses": [
+    "SAFE"
+  ],
+  "active_dataset": {
+    "status": "NO_DATA",
+    "validation_allowed": false,
+    "proof_of_pnl_allowed": false
+  },
+  "policy": {
+    "legacy_import_allowed": false,
+    "unknown_status": "REJECT",
+    "replay_from_incoming": false,
+    "replay_from_quarantine": false,
+    "replay_from_rejected": false,
+    "validation_root": "datasets/safe",
+    "require_sha256": true,
+    "require_provenance": true,
+    "require_timestamp": true,
+    "require_continuity_audit": true,
+    "require_duplicate_audit": true,
+    "require_sync_audit": true,
+    "require_cost_model_when_applicable": true,
+    "missing_values_never_zero_imputed": true,
+    "public_data_only": true,
+    "secrets_forbidden": true,
+    "self_hosted_forbidden": true,
+    "user_pc_forbidden": true
+  }
+}
