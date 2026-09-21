@@ -12,14 +12,19 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install test dependency
         run: python -m pip install --disable-pip-version-check pytest
+      - name: Compile dataset tools
+        run: python -m py_compile tools/*.py
       - name: Validate dataset policy
         run: python tools/check_dataset_quality.py
-      - name: Run policy tests
-        run: python -m pytest -q tests/test_dataset_policy.py
+      - name: Run all dataset tests
+        run: python -m pytest -q tests
