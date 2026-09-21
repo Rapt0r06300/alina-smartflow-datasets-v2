@@ -61,6 +61,8 @@ def promote(manifest_path: str | Path, *, asset_path: str | Path | None = None) 
         "end_ts_ms": manifest.get("end_ts_ms"),
         "quality_status": status,
         "manifest_path": str(destination.relative_to(ROOT)).replace("\\", "/"),
+        "release_repository": manifest.get("release_repository"),
+        "release_tag": manifest.get("release_tag"),
         "release_asset": manifest.get("release_asset"),
         "sha256": manifest.get("sha256"),
         "event_count": manifest.get("event_count"),
