@@ -33,6 +33,11 @@ def _atomic_json(path: Path, payload: dict) -> None:
 
 def promote(manifest_path: str | Path, *, asset_path: str | Path | None = None) -> dict:
     manifest = load_json(manifest_path)
+    release = manifest.get("release")
+    if isinstance(release, dict):
+        manifest.setdefault("release_repository", release.get("repository"))
+        manifest.setdefault("release_tag", release.get("tag"))
+        manifest.setdefault("release_asset", release.get("asset_name"))
     if asset_path is not None:
         verified, verification = verify_asset(manifest, asset_path)
         manifest["asset_verified"] = verified
@@ -65,6 +70,7 @@ def promote(manifest_path: str | Path, *, asset_path: str | Path | None = None) 
         "release_tag": manifest.get("release_tag"),
         "release_asset": manifest.get("release_asset"),
         "sha256": manifest.get("sha256"),
+        "bytes": manifest.get("bytes"),
         "event_count": manifest.get("event_count"),
     })
     shards.sort(key=lambda row: (int(row.get("start_ts_ms") or 0), str(row.get("dataset_id") or "")))
