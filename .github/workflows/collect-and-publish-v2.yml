@@ -1,8 +1,8 @@
 name: collect-and-publish-v2
 
 on:
-  schedule:
-    - cron: '17 */4 * * *'
+  # Manual fallback/diagnostic campaign only.
+  # The canonical scheduled collector is collect-market-data-v2.yml.
   workflow_dispatch:
     inputs:
       duration_minutes:
