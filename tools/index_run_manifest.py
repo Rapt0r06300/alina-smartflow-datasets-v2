@@ -56,6 +56,7 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
         "start_ts_ms": manifest.get("start_ts_ms"),
         "end_ts_ms": manifest.get("end_ts_ms"),
         "quality_status": manifest.get("quality_status"),
+        "collection_run_id": manifest.get("collection_run_id"),
         "manifest_path": str(manifest_path.relative_to(root)).replace("\\", "/"),
         "release_repository": manifest.get("release_repository"),
         "release_tag": manifest.get("release_tag"),
