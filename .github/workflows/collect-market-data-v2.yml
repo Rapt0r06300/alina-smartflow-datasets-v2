@@ -1,0 +1,279 @@
+name: collect-market-data-v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      duration_minutes:
+        description: "Collection window per shard (minutes, max recommended 300)"
+        required: false
+        default: "255"
+      max_coins:
+        description: "Maximum exact multi-venue coins before sharding"
+        required: false
+        default: "48"
+  schedule:
+    - cron: "17 */4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    name: collect-shard-${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+      HL_ENABLE_MAINNET_EXECUTION: "0"
+      HL_ENABLE_TESTNET_EXECUTION: "0"
+      REAL_MAINNET_TRADING: "false"
+      TESTNET_EXECUTION_ENABLED: "false"
+      HYPERSMART_ENABLE_REAL_ORDERS: "0"
+      ENABLE_REAL_ORDERS: "0"
+      GH_TOKEN: ${{ github.token }}
+      DATASET_REPOSITORY: ${{ github.repository }}
+      SHARD_COUNT: "8"
+
+    steps:
+      - name: Checkout Alina collector source
+        uses: actions/checkout@v4
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: main
+          path: alina
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install collector
+        run: python -m pip install --disable-pip-version-check -e ./alina
+
+      - name: Resolve collection parameters
+        id: params
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA="$(git -C alina rev-parse HEAD)"
+          DURATION_MINUTES="${{ inputs.duration_minutes || '255' }}"
+          MAX_COINS="${{ inputs.max_coins || '48' }}"
+          python - <<'PY' "$DURATION_MINUTES" "$MAX_COINS"
+          import sys
+          duration = int(sys.argv[1])
+          max_coins = int(sys.argv[2])
+          if not 30 <= duration <= 300:
+              raise SystemExit("duration_minutes must be in [30, 300]")
+          if not 8 <= max_coins <= 96:
+              raise SystemExit("max_coins must be in [8, 96]")
+          PY
+          echo "source_sha=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
+          echo "duration_seconds=$((DURATION_MINUTES * 60))" >> "$GITHUB_OUTPUT"
+          echo "max_coins=$MAX_COINS" >> "$GITHUB_OUTPUT"
+
+      - name: Discover exact multi-venue universe
+        env:
+          PYTHONPATH: alina/src:alina
+        run: |
+          set -euo pipefail
+          python alina/tools/discover_cloud_collection_plan.py             --output "$RUNNER_TEMP/collection-plan-all.json"             --min-venues 2             --max-coins "${{ steps.params.outputs.max_coins }}"             --batch-size 8
+
+      - name: Select deterministic shard
+        id: plan
+        env:
+          SHARD_INDEX: ${{ matrix.shard }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          source = Path(os.environ["RUNNER_TEMP"]) / "collection-plan-all.json"
+          target = Path(os.environ["RUNNER_TEMP"]) / "collection-plan-shard.json"
+          payload = json.loads(source.read_text(encoding="utf-8"))
+          rows = payload.get("selected") or []
+          shard = int(os.environ["SHARD_INDEX"])
+          count = int(os.environ["SHARD_COUNT"])
+          selected = rows[shard::count]
+          target.write_text(
+              json.dumps(
+                  {
+                      "schema": "alina.cloud_collection_plan.shard.v1",
+                      "source_schema": payload.get("schema"),
+                      "shard_index": shard,
+                      "shard_count": count,
+                      "selected": selected,
+                      "errors": payload.get("errors") or {},
+                      "read_only": True,
+                      "real_execution": False,
+                  },
+                  indent=2,
+                  sort_keys=True,
+              ) + "\n",
+              encoding="utf-8",
+          )
+          output = os.environ["GITHUB_OUTPUT"]
+          with open(output, "a", encoding="utf-8") as handle:
+              handle.write(f"count={len(selected)}\n")
+          print(f"shard={shard}/{count} selected={len(selected)}")
+          for row in selected:
+              print(row.get("coin"), row.get("symbols"))
+          PY
+
+      - name: Collect bounded cloud window
+        if: steps.plan.outputs.count != '0'
+        env:
+          PYTHONPATH: alina/src:alina
+        run: |
+          set -euo pipefail
+          python alina/tools/collect_cloud_window.py             --output "$RUNNER_TEMP/dataset-v2-bundle"             --plan-file "$RUNNER_TEMP/collection-plan-shard.json"             --duration-s "${{ steps.params.outputs.duration_seconds }}"             --collector-version "${{ steps.params.outputs.source_sha }}"             --rotate-mb 256
+
+      - name: Publish immutable verified release
+        if: steps.plan.outputs.count != '0'
+        env:
+          PYTHONPATH: alina/src:alina
+        run: |
+          set -euo pipefail
+          TAG="data-v2-${GITHUB_RUN_ID}-s${{ matrix.shard }}"
+          python alina/tools/publish_dataset_v2_release.py             "$RUNNER_TEMP/dataset-v2-bundle"             --repository "$DATASET_REPOSITORY"             --tag "$TAG"             --target main             --title "Alina Dataset V2 run ${GITHUB_RUN_ID} shard ${{ matrix.shard }}"
+
+  catalog:
+    name: update-dataset-catalog
+    needs: collect
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout dataset control plane
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Download run manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/run-manifests"
+          for shard in 0 1 2 3 4 5 6 7; do
+            tag="data-v2-${GITHUB_RUN_ID}-s${shard}"
+            dir="$RUNNER_TEMP/run-manifests/s${shard}"
+            mkdir -p "$dir"
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              gh release download "$tag"                 --repo "$GITHUB_REPOSITORY"                 --pattern "RUN_MANIFEST.json"                 --dir "$dir"
+            fi
+          done
+
+      - name: Refresh catalog from verified run manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path(os.environ["RUNNER_TEMP"]) / "run-manifests"
+          manifests = []
+          for path in sorted(root.glob("s*/RUN_MANIFEST.json")):
+              try:
+                  payload = json.loads(path.read_text(encoding="utf-8"))
+              except (OSError, json.JSONDecodeError):
+                  continue
+              if isinstance(payload, dict):
+                  manifests.append(payload)
+
+          catalog_path = Path("catalog/DATA_CATALOG.json")
+          registry_path = Path("catalog/DATA_QUALITY_REGISTRY.json")
+          catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+          registry = json.loads(registry_path.read_text(encoding="utf-8"))
+
+          total = sum(int(row.get("shard_count") or 0) for row in manifests)
+          safe = sum(int(row.get("safe_count") or 0) for row in manifests)
+          partial = sum(int(row.get("partial_count") or 0) for row in manifests)
+          reject = sum(int(row.get("reject_count") or 0) for row in manifests)
+          if total <= 0:
+              status = "NO_DATA"
+          elif reject or partial or safe < total:
+              status = "PARTIAL"
+          else:
+              status = "SAFE"
+
+          releases = [
+              {
+                  "tag": row.get("release_tag"),
+                  "release_id": row.get("release_id"),
+                  "collector_version": row.get("collector_version"),
+                  "shard_count": row.get("shard_count"),
+                  "safe_count": row.get("safe_count"),
+                  "partial_count": row.get("partial_count"),
+                  "reject_count": row.get("reject_count"),
+              }
+              for row in manifests
+          ]
+          summary = {
+              "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "updated_at": datetime.now(timezone.utc).isoformat(),
+              "status": status,
+              "release_count": len(releases),
+              "shard_count": total,
+              "safe_count": safe,
+              "partial_count": partial,
+              "reject_count": reject,
+              "releases": releases,
+          }
+
+          catalog["active_data_status"] = status
+          catalog["latest_collection"] = summary
+          active = registry.setdefault("active_dataset", {})
+          active["status"] = status
+          active["validation_allowed"] = safe > 0
+          # Data availability alone is never proof of profitable PnL.
+          active["proof_of_pnl_allowed"] = False
+          active["shard_count"] = total
+          active["safe_count"] = safe
+          active["partial_count"] = partial
+          active["reject_count"] = reject
+          active["latest_workflow_run_id"] = os.environ.get("GITHUB_RUN_ID")
+
+          catalog_path.write_text(
+              json.dumps(catalog, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          registry_path.write_text(
+              json.dumps(registry, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(summary, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit catalog update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog/DATA_CATALOG.json catalog/DATA_QUALITY_REGISTRY.json
+          if git diff --cached --quiet; then
+            echo "No catalog change."
+            exit 0
+          fi
+          git commit -m "data: index collection run ${GITHUB_RUN_ID}"
+          git pull --rebase origin main
+          git push origin HEAD:main
