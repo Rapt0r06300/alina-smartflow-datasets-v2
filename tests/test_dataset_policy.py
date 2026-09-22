@@ -21,7 +21,9 @@ def test_active_status_matches_index():
     assert INDEX["active_data_status"] == expected
     assert REG["active_dataset"]["status"] == expected
     assert REG["active_dataset"]["validation_allowed"] is (expected == "SAFE")
-    assert REG["active_dataset"]["proof_of_pnl_allowed"] is (expected == "SAFE")
+    # SAFE means replay/validation data quality only. It must never be promoted
+    # into profitability proof without a separate costed OOS/forward result.
+    assert REG["active_dataset"]["proof_of_pnl_allowed"] is False
 
 
 def test_empty_repository_is_no_data():
