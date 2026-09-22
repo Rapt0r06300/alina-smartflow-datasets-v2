@@ -12,6 +12,7 @@ from manifest_policy import classify_manifest
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
 REGISTRY_PATH = ROOT / "catalog" / "DATA_QUALITY_REGISTRY.json"
+CATALOG_PATH = ROOT / "catalog" / "DATA_CATALOG.json"
 
 _STAGE_BY_STATUS = {
     "SAFE": "safe",
@@ -73,9 +74,11 @@ def index_run_manifests(
     base = Path(root)
     index_path = base / "catalog" / "DATA_INDEX.json"
     registry_path = base / "catalog" / "DATA_QUALITY_REGISTRY.json"
+    catalog_path = base / "catalog" / "DATA_CATALOG.json"
 
     index = json.loads(index_path.read_text(encoding="utf-8"))
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     rows_by_id = {
         str(row.get("dataset_id")): dict(row)
         for row in (index.get("shards") or [])
@@ -109,7 +112,9 @@ def index_run_manifests(
             manifest["quality_status"] = status
             manifest["quality_reasons"] = reasons
             manifest["validation_allowed"] = status == "SAFE"
-            manifest["proof_of_pnl_allowed"] = status == "SAFE"
+            # A SAFE shard may be used by validation, but dataset quality alone
+            # never proves that any strategy has positive PnL.
+            manifest["proof_of_pnl_allowed"] = False
 
             for stage in set(_STAGE_BY_STATUS.values()):
                 stale = base / "datasets" / stage / f"{dataset_id}.manifest.json"
@@ -145,13 +150,31 @@ def index_run_manifests(
     index["active_data_status"] = active
     _atomic_json(index_path, index)
 
+    safe_count = sum(1 for row in shards if row.get("quality_status") == "SAFE")
+    partial_count = sum(1 for row in shards if row.get("quality_status") == "PARTIAL")
+    stale_count = sum(1 for row in shards if row.get("quality_status") == "STALE")
+    reject_count = sum(1 for row in shards if row.get("quality_status") == "REJECT")
+
     registry["active_dataset"] = {
         "status": active,
         "validation_allowed": active == "SAFE",
         # Dataset quality can authorize validation, never prove strategy PnL.
         "proof_of_pnl_allowed": False,
+        "indexed_shards": len(shards),
+        "safe_count": safe_count,
+        "partial_count": partial_count,
+        "stale_count": stale_count,
+        "reject_count": reject_count,
     }
     _atomic_json(registry_path, registry)
+
+    catalog["active_data_status"] = active
+    catalog["indexed_shard_count"] = len(shards)
+    catalog["safe_shard_count"] = safe_count
+    catalog["partial_shard_count"] = partial_count
+    catalog["stale_shard_count"] = stale_count
+    catalog["reject_shard_count"] = reject_count
+    _atomic_json(catalog_path, catalog)
     return {
         "imported_manifests": imported,
         "indexed_shards": len(shards),
