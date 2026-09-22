@@ -2,13 +2,13 @@ name: collect-and-publish-v2
 
 on:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 */4 * * *'
   workflow_dispatch:
     inputs:
       duration_minutes:
         description: 'Collection duration per lane'
         required: false
-        default: '150'
+        default: '230'
       max_native_symbols:
         description: 'Max symbols per native venue'
         required: false
@@ -16,6 +16,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: dataset-v2-collection
+  cancel-in-progress: false
 
 jobs:
   collect:
@@ -25,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        collector: [bbo, native-bybit, native-okx]
+        collector: [bbo, native-bybit-0, native-bybit-1, native-okx-0, native-okx-1]
     env:
       PYTHONUTF8: '1'
       PYTHONIOENCODING: 'utf-8'
@@ -74,7 +78,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          MINUTES="${{ github.event.inputs.duration_minutes || '150' }}"
+          MINUTES="${{ github.event.inputs.duration_minutes || '230' }}"
           case "$MINUTES" in
             ''|*[!0-9]*) echo "invalid duration_minutes"; exit 2 ;;
           esac
@@ -95,20 +99,29 @@ jobs:
         run: |
           set +e
           if [ "${{ matrix.collector }}" = "bbo" ]; then
-            python alina/tools/collecter_bbo.py               --root "$COLLECT_ROOT"               --coins AUTO               --duration-s "$COLLECT_SECONDS"
+            python alina/tools/collecter_bbo.py \
+              --root "$COLLECT_ROOT" \
+              --coins AUTO \
+              --duration-s "$COLLECT_SECONDS"
             STATUS=$?
             BUNDLE="$COLLECT_ROOT/runtime/data/dataset_v2_bundle/bbo"
           else
             MAX_SYMBOLS="${{ github.event.inputs.max_native_symbols || '100' }}"
-            if [ "${{ matrix.collector }}" = "native-bybit" ]; then
-              VENUE="bybit"
-            elif [ "${{ matrix.collector }}" = "native-okx" ]; then
-              VENUE="okx"
-            else
-              echo "unknown collector lane: ${{ matrix.collector }}"
-              exit 2
-            fi
-            python alina/tools/collecter_native_venues.py               --root "$COLLECT_ROOT"               --max-symbols "$MAX_SYMBOLS"               --venues "$VENUE"               --universe-refresh-s 900               --duration-s "$COLLECT_SECONDS"
+            case "${{ matrix.collector }}" in
+              native-bybit-0) VENUE="bybit"; SHARD_INDEX=0 ;;
+              native-bybit-1) VENUE="bybit"; SHARD_INDEX=1 ;;
+              native-okx-0) VENUE="okx"; SHARD_INDEX=0 ;;
+              native-okx-1) VENUE="okx"; SHARD_INDEX=1 ;;
+              *) echo "unknown collector lane: ${{ matrix.collector }}"; exit 2 ;;
+            esac
+            python alina/tools/collecter_native_venues.py \
+              --root "$COLLECT_ROOT" \
+              --max-symbols "$MAX_SYMBOLS" \
+              --venues "$VENUE" \
+              --symbol-shard-count 2 \
+              --symbol-shard-index "$SHARD_INDEX" \
+              --universe-refresh-s 900 \
+              --duration-s "$COLLECT_SECONDS"
             STATUS=$?
             BUNDLE="$COLLECT_ROOT/runtime/data/dataset_v2_bundle/native_venues"
           fi
@@ -199,7 +212,7 @@ jobs:
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/v2-run-manifests"
           FOUND=0
-          for COLLECTOR in bbo native-bybit native-okx; do
+          for COLLECTOR in bbo native-bybit-0 native-bybit-1 native-okx-0 native-okx-1; do
             TAG="data-v2-run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${COLLECTOR}"
             DEST="$RUNNER_TEMP/v2-run-manifests/${COLLECTOR}"
             mkdir -p "$DEST"
