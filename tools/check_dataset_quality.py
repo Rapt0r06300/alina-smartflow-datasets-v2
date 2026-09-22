@@ -51,5 +51,11 @@ expected_active = (
 assert index["active_data_status"] == expected_active
 assert reg["active_dataset"]["status"] == expected_active
 assert reg["active_dataset"]["validation_allowed"] is (expected_active == "SAFE")
-assert reg["active_dataset"]["proof_of_pnl_allowed"] is (expected_active == "SAFE")
+# Dataset integrity may authorize validation, but must never claim profitable PnL.
+assert reg["active_dataset"]["proof_of_pnl_allowed"] is False
+assert cat["active_data_status"] == expected_active
+assert int(cat.get("indexed_shard_count") or 0) == len(shards)
+assert int(cat.get("safe_shard_count") or 0) == sum(
+    1 for row in shards if row["quality_status"] == "SAFE"
+)
 print("Alina dataset V2 policy: OK")
