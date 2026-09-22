@@ -50,7 +50,7 @@ jobs:
           while IFS= read -r TAG; do
             [ -n "$TAG" ] || continue
             case "$TAG" in
-              data-v2-*|copy-vault-v2-*) ;;
+              data-v2-*|copy-vault-v2-*|archive-v2-*) ;;
               *) continue ;;
             esac
 

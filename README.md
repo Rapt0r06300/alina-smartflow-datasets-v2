@@ -21,3 +21,10 @@ Only exact windows qualified as `SAFE` may feed validation replays/backtests.
 - GitHub-hosted only. No self-hosted runner and no user-PC workflow.
 
 Initial state: `NO_DATA`.
+
+## Official archive fallback
+
+- Binance USD-M and Bybit public historical trade archives are ingested through bounded GitHub-hosted jobs when live endpoints are unavailable from the hosted region.
+- Archive records are tagged as historical exchange-time-only evidence. They do **not** fabricate collector receive timestamps or monotonic clocks.
+- Archive shards remain `PARTIAL` unless a separate qualification path proves the missing timing/reconciliation requirements; they are never automatically promoted to live-quality `SAFE`.
+- Heavy archive data is stored only in immutable GitHub Releases and indexed through the same V2 control plane.
