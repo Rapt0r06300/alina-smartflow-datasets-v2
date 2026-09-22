@@ -1,6 +1,12 @@
 name: collect-market-data-v2
 
 on:
+  # A workflow-definition change intentionally starts one canonical production
+  # campaign, which also lets us validate collector upgrades immediately.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-market-data-v2.yml'
   workflow_dispatch:
     inputs:
       duration_minutes:
