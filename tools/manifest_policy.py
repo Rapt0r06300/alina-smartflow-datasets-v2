@@ -33,7 +33,6 @@ _FATAL_COUNTERS = (
 
 _MATCHED_RECONCILIATION_FAMILIES = {
     "trades",
-    "funding",
     "fills",
     "userfills",
     "user_fills",
