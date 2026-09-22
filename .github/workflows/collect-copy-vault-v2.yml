@@ -1,6 +1,10 @@
 name: collect-copy-vault-v2
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-copy-vault-v2.yml'
   schedule:
     - cron: '47 1-22/3 * * *'
   workflow_dispatch:
@@ -48,7 +52,7 @@ jobs:
       - id: selection
         name: Freeze one public vault universe
         env:
-          MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
+          MAX_VAULTS: ${{ github.event_name == 'push' && '8' || inputs.max_vaults || '100' }}
         run: |
           cd alina
           python - <<'PY' >> "$GITHUB_OUTPUT"
@@ -73,8 +77,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       COLLECTOR_SHA: ${{ needs.prepare.outputs.collector_sha }}
       COLLECTION_RUN_ID: copy-vault-${{ github.run_id }}
-      DURATION_S: ${{ inputs.duration_s || '11400' }}
-      MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
+      DURATION_S: ${{ github.event_name == 'push' && '75' || inputs.duration_s || '11400' }}
+      MAX_VAULTS: ${{ github.event_name == 'push' && '8' || inputs.max_vaults || '100' }}
       SELECTION_JSON: ${{ needs.prepare.outputs.selection }}
     steps:
       - name: Checkout pinned Alina code
