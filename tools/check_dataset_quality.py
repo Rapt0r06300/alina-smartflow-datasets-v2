@@ -23,6 +23,19 @@ shards = index.get("shards") or []
 assert isinstance(shards, list)
 for row in shards:
     assert row["quality_status"] in statuses
+    if row["quality_status"] == "SAFE":
+        for key in (
+            "bytes",
+            "sha256",
+            "release_repository",
+            "release_tag",
+            "release_asset",
+            "event_count",
+        ):
+            assert row.get(key) not in (None, ""), f"SAFE index row missing {key}"
+        assert int(row["bytes"]) > 0
+        assert int(row["event_count"]) > 0
+        assert row["release_repository"] == "Rapt0r06300/alina-smartflow-datasets-v2"
     manifest_path = root / row["manifest_path"]
     assert manifest_path.is_file()
     manifest = json.loads(manifest_path.read_text())
