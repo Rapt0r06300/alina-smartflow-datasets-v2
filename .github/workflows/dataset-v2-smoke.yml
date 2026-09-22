@@ -1,5 +1,7 @@
 name: dataset-v2-smoke
 
+# Current collector integrity smoke: Hyperliquid/OKX reconciliation + receive-only snapshots.
+
 on:
   push:
     branches: [main]
