@@ -68,9 +68,9 @@ jobs:
     needs: prepare
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 10
       matrix:
-        shard: [0, 1, 2, 3]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     runs-on: ubuntu-latest
     timeout-minutes: 230
     env:
@@ -110,7 +110,7 @@ jobs:
         env:
           ALINA_COLLECTION_RUN_ID: ${{ env.COLLECTION_RUN_ID }}
         run: |
-          python alina/tools/collect_cloud_copy_vault.py             --output /tmp/alina-copy-vault             --selection-file /tmp/vault-selection.json             --duration-s "$DURATION_S"             --collector-version "$COLLECTOR_SHA"             --collection-run-id "$COLLECTION_RUN_ID"             --max-vaults "$MAX_VAULTS"             --vault-shard-count 4             --vault-shard-index "${{ matrix.shard }}"             --rotate-mb 256
+          python alina/tools/collect_cloud_copy_vault.py             --output /tmp/alina-copy-vault             --selection-file /tmp/vault-selection.json             --duration-s "$DURATION_S"             --collector-version "$COLLECTOR_SHA"             --collection-run-id "$COLLECTION_RUN_ID"             --max-vaults "$MAX_VAULTS"             --vault-shard-count 10             --vault-shard-index "${{ matrix.shard }}"             --rotate-mb 256
 
       - name: Publish immutable Copy-Vault V2 shards
         run: |
@@ -152,7 +152,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/copy-vault-run-manifests"
-          for shard in 0 1 2 3; do
+          for shard in 0 1 2 3 4 5 6 7 8 9; do
             tag="copy-vault-v2-${GITHUB_RUN_ID}-s${shard}"
             dir="$RUNNER_TEMP/copy-vault-run-manifests/s${shard}"
             mkdir -p "$dir"
