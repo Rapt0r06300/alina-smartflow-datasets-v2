@@ -1,16 +1,13 @@
 {
   "active_dataset": {
-    "indexed_shards": 98,
-    "latest_collection_run_id": "market-35696301919",
-    "latest_workflow_run_id": "35696301919",
-    "partial_count": 94,
+    "status": "SAFE",
+    "validation_allowed": true,
     "proof_of_pnl_allowed": false,
-    "reject_count": 48,
-    "safe_count": 530,
-    "shard_count": 672,
+    "indexed_shards": 98,
+    "safe_count": 82,
+    "partial_count": 16,
     "stale_count": 0,
-    "status": "PARTIAL",
-    "validation_allowed": true
+    "reject_count": 0
   },
   "generation": "V2_FRESH",
   "policy": {
