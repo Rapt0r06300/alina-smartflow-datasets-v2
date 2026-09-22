@@ -1,5 +1,5 @@
 {
-  "active_data_status": "PARTIAL",
+  "active_data_status": "SAFE",
   "active_roots": {
     "incoming": "datasets/incoming",
     "quarantine": "datasets/quarantine",
