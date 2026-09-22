@@ -6,7 +6,7 @@ on:
       duration_minutes:
         description: "Collection window per shard (minutes, max recommended 300)"
         required: false
-        default: "220"
+        default: "210"
       max_coins:
         description: "Maximum exact multi-venue coins before sharding"
         required: false
@@ -53,7 +53,7 @@ jobs:
         run: |
           set -euo pipefail
           SOURCE_SHA="$(git -C alina rev-parse HEAD)"
-          DURATION_MINUTES="${{ inputs.duration_minutes || '255' }}"
+          DURATION_MINUTES="${{ inputs.duration_minutes || '210' }}"
           MAX_COINS="${{ inputs.max_coins || '48' }}"
           python - <<'PY' "$DURATION_MINUTES" "$MAX_COINS"
           import sys
