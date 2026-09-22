@@ -224,8 +224,15 @@ jobs:
             tag="data-v2-${GITHUB_RUN_ID}-s${shard}"
             dir="$RUNNER_TEMP/run-manifests/s${shard}"
             mkdir -p "$dir"
-            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-              gh release download "$tag"                 --repo "$GITHUB_REPOSITORY"                 --pattern "RUN_MANIFEST.json"                 --dir "$dir"
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" \
+              --json assets --jq '.assets[].name' 2>/dev/null \
+              | grep -Fxq 'RUN_MANIFEST.json'; then
+              gh release download "$tag" \
+                --repo "$GITHUB_REPOSITORY" \
+                --pattern "RUN_MANIFEST.json" \
+                --dir "$dir"
+            else
+              echo "skip incomplete market release: $tag"
             fi
           done
 
