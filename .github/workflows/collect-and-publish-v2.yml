@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        collector: [bbo, native]
+        collector: [bbo, native-bybit, native-okx]
     env:
       PYTHONUTF8: '1'
       PYTHONIOENCODING: 'utf-8'
@@ -100,7 +100,15 @@ jobs:
             BUNDLE="$COLLECT_ROOT/runtime/data/dataset_v2_bundle/bbo"
           else
             MAX_SYMBOLS="${{ github.event.inputs.max_native_symbols || '100' }}"
-            python alina/tools/collecter_native_venues.py               --root "$COLLECT_ROOT"               --max-symbols "$MAX_SYMBOLS"               --universe-refresh-s 900               --duration-s "$COLLECT_SECONDS"
+            if [ "${{ matrix.collector }}" = "native-bybit" ]; then
+              VENUE="bybit"
+            elif [ "${{ matrix.collector }}" = "native-okx" ]; then
+              VENUE="okx"
+            else
+              echo "unknown collector lane: ${{ matrix.collector }}"
+              exit 2
+            fi
+            python alina/tools/collecter_native_venues.py               --root "$COLLECT_ROOT"               --max-symbols "$MAX_SYMBOLS"               --venues "$VENUE"               --universe-refresh-s 900               --duration-s "$COLLECT_SECONDS"
             STATUS=$?
             BUNDLE="$COLLECT_ROOT/runtime/data/dataset_v2_bundle/native_venues"
           fi
@@ -191,7 +199,7 @@ jobs:
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/v2-run-manifests"
           FOUND=0
-          for COLLECTOR in bbo native; do
+          for COLLECTOR in bbo native-bybit native-okx; do
             TAG="data-v2-run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${COLLECTOR}"
             DEST="$RUNNER_TEMP/v2-run-manifests/${COLLECTOR}"
             mkdir -p "$DEST"
