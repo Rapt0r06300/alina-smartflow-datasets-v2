@@ -1,12 +1,6 @@
 name: collect-market-data-v2
 
 on:
-  # A workflow-definition change intentionally starts one canonical production
-  # campaign, which also lets us validate collector upgrades immediately.
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/collect-market-data-v2.yml'
   workflow_dispatch:
     inputs:
       duration_minutes:
@@ -59,8 +53,8 @@ jobs:
         run: |
           set -euo pipefail
           SOURCE_SHA="$(git -C alina rev-parse HEAD)"
-          DURATION_MINUTES="${{ github.event_name == 'push' && '2' || inputs.duration_minutes || '255' }}"
-          MAX_COINS="${{ github.event_name == 'push' && '8' || inputs.max_coins || '48' }}"
+          DURATION_MINUTES="${{ inputs.duration_minutes || '255' }}"
+          MAX_COINS="${{ inputs.max_coins || '48' }}"
           python - <<'PY' "$DURATION_MINUTES" "$MAX_COINS"
           import sys
           duration = int(sys.argv[1])
