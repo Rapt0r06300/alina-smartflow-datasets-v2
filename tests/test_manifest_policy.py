@@ -96,3 +96,34 @@ def test_cost_model_blocks_safe_only_when_applicable() -> None:
     assert classify_manifest(value)[0] == "PARTIAL"
     value["cost_model"]["ready"] = True
     assert classify_manifest(value)[0] == "SAFE"
+
+
+def test_l2_websocket_continuity_can_be_safe() -> None:
+    value = manifest()
+    value["family"] = "l2Book"
+    value["provenance"]["transports"] = ["websocket"]
+    value["reconciliation"] = {"status": "SOURCE_CONTINUITY_VERIFIED"}
+    status, reasons = classify_manifest(value)
+    assert status == "SAFE"
+    assert reasons == []
+
+
+def test_trade_requires_matched_reconciliation() -> None:
+    value = manifest()
+    value["family"] = "trades"
+    value["provenance"]["transports"] = ["websocket"]
+    value["reconciliation"] = {"status": "SOURCE_CONTINUITY_VERIFIED"}
+    status, reasons = classify_manifest(value)
+    assert status == "PARTIAL"
+    assert "RECONCILIATION_MATCH_REQUIRED" in reasons
+
+    value["reconciliation"] = {"status": "MATCHED"}
+    assert classify_manifest(value)[0] == "SAFE"
+
+
+def test_http_snapshot_can_use_snapshot_verified() -> None:
+    value = manifest()
+    value["family"] = "open_interest"
+    value["provenance"]["transports"] = ["https"]
+    value["reconciliation"] = {"status": "SNAPSHOT_VERIFIED"}
+    assert classify_manifest(value)[0] == "SAFE"
