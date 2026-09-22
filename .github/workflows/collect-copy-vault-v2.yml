@@ -12,7 +12,7 @@ on:
       duration_s:
         description: Collection seconds per lane
         required: false
-        default: '11400'
+        default: '9600'
       max_vaults:
         description: Frozen public vault universe size
         required: false
@@ -20,6 +20,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: dataset-v2-copy-vault-collection
+  cancel-in-progress: false
 
 jobs:
   prepare:
@@ -77,7 +81,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       COLLECTOR_SHA: ${{ needs.prepare.outputs.collector_sha }}
       COLLECTION_RUN_ID: copy-vault-${{ github.run_id }}
-      DURATION_S: ${{ github.event_name == 'push' && '75' || inputs.duration_s || '11400' }}
+      DURATION_S: ${{ github.event_name == 'push' && '75' || inputs.duration_s || '9600' }}
       MAX_VAULTS: ${{ github.event_name == 'push' && '8' || inputs.max_vaults || '100' }}
       SELECTION_JSON: ${{ needs.prepare.outputs.selection }}
     steps:
@@ -186,6 +190,86 @@ jobs:
             exit 0
           fi
           git commit -m "data: index Copy-Vault run ${GITHUB_RUN_ID}"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+
+  index:
+    name: index-copy-vault-v2
+    needs: collect
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout dataset control plane
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download verified Copy-Vault run manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/copy-vault-run-manifests"
+          for shard in 0 1 2 3; do
+            tag="copy-vault-v2-${GITHUB_RUN_ID}-s${shard}"
+            dir="$RUNNER_TEMP/copy-vault-run-manifests/s${shard}"
+            mkdir -p "$dir"
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              gh release download "$tag" \
+                --repo "$GITHUB_REPOSITORY" \
+                --pattern "RUN_MANIFEST.json" \
+                --dir "$dir"
+            fi
+          done
+
+      - name: Index verified manifests into SAFE / quarantine / rejected
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t MANIFESTS < <(find "$RUNNER_TEMP/copy-vault-run-manifests" -name RUN_MANIFEST.json -type f | sort)
+          if [ "${#MANIFESTS[@]}" -eq 0 ]; then
+            echo "NO_VERIFIED_COPY_VAULT_RUN_MANIFESTS"
+            exit 2
+          fi
+          python tools/index_run_manifest.py "${MANIFESTS[@]}"
+
+      - name: Validate V2 control plane
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/check_dataset_quality.py
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests
+
+      - name: Commit indexed Copy-Vault manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog datasets
+          if git diff --cached --quiet; then
+            echo "No Copy-Vault index changes."
+            exit 0
+          fi
+          git commit -m "data: index verified Copy-Vault run ${GITHUB_RUN_ID}"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase origin main && git push origin HEAD:main; then
               exit 0
