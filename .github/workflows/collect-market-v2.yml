@@ -1,6 +1,10 @@
 name: collect-market-v2
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-market-v2.yml'
   schedule:
     - cron: '17 */3 * * *'
   workflow_dispatch:
@@ -48,7 +52,7 @@ jobs:
       - id: plan
         name: Discover exact multi-venue universe
         env:
-          MAX_COINS: ${{ inputs.max_coins || '60' }}
+          MAX_COINS: ${{ github.event_name == 'push' && '4' || inputs.max_coins || '60' }}
         run: |
           python alina/tools/discover_cloud_collection_plan.py             --output /tmp/collection-plan.json             --min-venues 2             --max-coins "$MAX_COINS"             --batch-size 4
           python - <<'PY' >> "$GITHUB_OUTPUT"
@@ -74,7 +78,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       COLLECTOR_SHA: ${{ needs.discover.outputs.collector_sha }}
       COLLECTION_RUN_ID: market-${{ github.run_id }}
-      DURATION_S: ${{ inputs.duration_s || '11400' }}
+      DURATION_S: ${{ github.event_name == 'push' && '60' || inputs.duration_s || '11400' }}
       BATCH_JSON: ${{ toJSON(matrix.batch) }}
     steps:
       - name: Checkout Alina code
