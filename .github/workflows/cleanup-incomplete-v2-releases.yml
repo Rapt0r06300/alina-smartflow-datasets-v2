@@ -72,7 +72,7 @@ jobs:
           retained = []
           for release in releases:
               tag = str(release.get("tag_name") or "")
-              if not tag.startswith("data-v2-"):
+              if not tag.startswith(("data-v2-", "copy-vault-v2-")):
                   continue
               assets = release.get("assets") or []
               names = {
@@ -127,7 +127,7 @@ jobs:
               {
                   "deleted": deleted,
                   "retained": retained,
-                  "policy": "delete only data-v2-* without RUN_MANIFEST after 3h",
+                  "policy": "delete only data-v2-* or copy-vault-v2-* without RUN_MANIFEST after 3h",
               },
               indent=2,
               sort_keys=True,
