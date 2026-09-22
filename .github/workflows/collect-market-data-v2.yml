@@ -1,6 +1,10 @@
 name: collect-market-data-v2
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/collect-market-data-v2.yml'
   workflow_dispatch:
     inputs:
       duration_minutes:
@@ -19,10 +23,11 @@ permissions:
 
 concurrency:
   group: dataset-v2-market-collection
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   prepare:
+    if: github.event_name != 'push'
     name: freeze-market-universe
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -189,7 +194,7 @@ jobs:
   catalog:
     name: update-dataset-catalog
     needs: [prepare, collect]
-    if: always()
+    if: github.event_name != 'push' && always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
