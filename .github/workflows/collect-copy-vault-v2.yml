@@ -49,6 +49,21 @@ jobs:
         name: Pin collector SHA
         run: echo "sha=$(git -C alina rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
+      - name: Validate bounded Copy-Vault inputs
+        env:
+          DURATION_S: ${{ inputs.duration_s || '11400' }}
+          MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
+        run: |
+          python - <<'PY'
+          import os
+          duration = int(os.environ["DURATION_S"])
+          max_vaults = int(os.environ["MAX_VAULTS"])
+          if not 60 <= duration <= 12000:
+              raise SystemExit("duration_s must be in [60, 12000]")
+          if not 1 <= max_vaults <= 100:
+              raise SystemExit("max_vaults must be in [1, 100]")
+          PY
+
       - id: selection
         name: Freeze one public vault universe
         env:
@@ -78,7 +93,7 @@ jobs:
       COLLECTOR_SHA: ${{ needs.prepare.outputs.collector_sha }}
       COLLECTION_RUN_ID: copy-vault-${{ github.run_id }}
       DURATION_S: ${{ inputs.duration_s || '11400' }}
-      MAX_VAULTS: ${{ github.event_name == 'push' && '8' || inputs.max_vaults || '100' }}
+      MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
       SELECTION_JSON: ${{ needs.prepare.outputs.selection }}
     steps:
       - name: Checkout pinned Alina code
