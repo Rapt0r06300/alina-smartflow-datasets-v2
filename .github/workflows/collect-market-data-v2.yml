@@ -221,91 +221,24 @@ jobs:
             fi
           done
 
-      - name: Refresh catalog from verified run manifests
+      - name: Index verified manifests into SAFE / quarantine / rejected
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import json
-          import os
-          from datetime import datetime, timezone
-          from pathlib import Path
+          mapfile -t MANIFESTS < <(find "$RUNNER_TEMP/run-manifests" -name RUN_MANIFEST.json -type f | sort)
+          if [ "${#MANIFESTS[@]}" -eq 0 ]; then
+            echo "No RUN_MANIFEST found for this run."
+            exit 0
+          fi
+          python tools/index_run_manifest.py "${MANIFESTS[@]}"
 
-          root = Path(os.environ["RUNNER_TEMP"]) / "run-manifests"
-          manifests = []
-          for path in sorted(root.glob("s*/RUN_MANIFEST.json")):
-              try:
-                  payload = json.loads(path.read_text(encoding="utf-8"))
-              except (OSError, json.JSONDecodeError):
-                  continue
-              if isinstance(payload, dict):
-                  manifests.append(payload)
-
-          catalog_path = Path("catalog/DATA_CATALOG.json")
-          registry_path = Path("catalog/DATA_QUALITY_REGISTRY.json")
-          catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
-          registry = json.loads(registry_path.read_text(encoding="utf-8"))
-
-          total = sum(int(row.get("shard_count") or 0) for row in manifests)
-          safe = sum(int(row.get("safe_count") or 0) for row in manifests)
-          partial = sum(int(row.get("partial_count") or 0) for row in manifests)
-          reject = sum(int(row.get("reject_count") or 0) for row in manifests)
-          if total <= 0:
-              status = "NO_DATA"
-          elif reject or partial or safe < total:
-              status = "PARTIAL"
-          else:
-              status = "SAFE"
-
-          releases = [
-              {
-                  "tag": row.get("release_tag"),
-                  "release_id": row.get("release_id"),
-                  "collector_version": row.get("collector_version"),
-                  "collection_run_id": row.get("collection_run_id"),
-                  "shard_count": row.get("shard_count"),
-                  "safe_count": row.get("safe_count"),
-                  "partial_count": row.get("partial_count"),
-                  "reject_count": row.get("reject_count"),
-              }
-              for row in manifests
-          ]
-          summary = {
-              "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
-              "collection_run_id": os.environ.get("COLLECTION_RUN_ID"),
-              "updated_at": datetime.now(timezone.utc).isoformat(),
-              "status": status,
-              "release_count": len(releases),
-              "shard_count": total,
-              "safe_count": safe,
-              "partial_count": partial,
-              "reject_count": reject,
-              "releases": releases,
-          }
-
-          catalog["active_data_status"] = status
-          catalog["latest_collection"] = summary
-          active = registry.setdefault("active_dataset", {})
-          active["status"] = status
-          active["validation_allowed"] = safe > 0
-          active["proof_of_pnl_allowed"] = False
-          active["shard_count"] = total
-          active["safe_count"] = safe
-          active["partial_count"] = partial
-          active["reject_count"] = reject
-          active["latest_workflow_run_id"] = os.environ.get("GITHUB_RUN_ID")
-          active["latest_collection_run_id"] = os.environ.get("COLLECTION_RUN_ID")
-
-          catalog_path.write_text(
-              json.dumps(catalog, indent=2, sort_keys=True) + "\n",
-              encoding="utf-8",
-          )
-          registry_path.write_text(
-              json.dumps(registry, indent=2, sort_keys=True) + "\n",
-              encoding="utf-8",
-          )
-          print(json.dumps(summary, indent=2, sort_keys=True))
-          PY
+      - name: Validate indexed control plane
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/check_dataset_quality.py
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests
 
       - name: Commit catalog update
         shell: bash
@@ -313,7 +246,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog/DATA_CATALOG.json catalog/DATA_QUALITY_REGISTRY.json
+          git add catalog datasets
           if git diff --cached --quiet; then
             echo "No catalog change."
             exit 0
