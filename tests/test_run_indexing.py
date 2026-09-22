@@ -31,6 +31,15 @@ def _bootstrap_root(tmp_path: Path) -> Path:
         ),
         encoding="utf-8",
     )
+    (root / "catalog/DATA_CATALOG.json").write_text(
+        json.dumps(
+            {
+                "schema": "alina.data_catalog.v2",
+                "active_data_status": "NO_DATA",
+            }
+        ),
+        encoding="utf-8",
+    )
     (root / "catalog/DATA_QUALITY_REGISTRY.json").write_text(
         json.dumps(
             {
@@ -134,6 +143,13 @@ def test_index_run_manifest_writes_complete_safe_row(tmp_path) -> None:
     assert row["release_tag"] == "data-v2-run-1-1-native"
     assert row["release_asset"] == "l2-safe.jsonl.gz"
     assert (root / row["manifest_path"]).is_file()
+    manifest = json.loads((root / row["manifest_path"]).read_text())
+    assert manifest["validation_allowed"] is True
+    assert manifest["proof_of_pnl_allowed"] is False
+    catalog = json.loads((root / "catalog/DATA_CATALOG.json").read_text())
+    assert catalog["active_data_status"] == "SAFE"
+    assert catalog["indexed_shard_count"] == 1
+    assert catalog["safe_shard_count"] == 1
 
 
 def test_trade_without_match_is_quarantined(tmp_path) -> None:
