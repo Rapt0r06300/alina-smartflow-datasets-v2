@@ -148,7 +148,8 @@ def index_run_manifests(
     registry["active_dataset"] = {
         "status": active,
         "validation_allowed": active == "SAFE",
-        "proof_of_pnl_allowed": active == "SAFE",
+        # Dataset quality can authorize validation, never prove strategy PnL.
+        "proof_of_pnl_allowed": False,
     }
     _atomic_json(registry_path, registry)
     return {
