@@ -1,22 +1,27 @@
 {
-  "schema": "alina.data_catalog.v2",
-  "generation": "V2_FRESH",
+  "active_data_status": "SAFE",
   "active_roots": {
     "incoming": "datasets/incoming",
     "quarantine": "datasets/quarantine",
-    "safe": "datasets/safe",
-    "rejected": "datasets/rejected"
+    "rejected": "datasets/rejected",
+    "safe": "datasets/safe"
   },
+  "generation": "V2_FRESH",
+  "indexed_shard_count": 98,
+  "legacy_sources": {
+    "automatic_import": false,
+    "enabled": false
+  },
+  "partial_shard_count": 16,
+  "reject_shard_count": 0,
+  "safe_shard_count": 82,
+  "schema": "alina.data_catalog.v2",
+  "stale_shard_count": 0,
   "storage": {
     "control_plane": "git_main",
     "heavy_data": "github_releases",
+    "max_asset_bytes": 1900000000,
     "replay_selection": "SAFE_MANIFEST_ONLY",
-    "shard_strategy": "immutable_partitioned_assets",
-    "max_asset_bytes": 1900000000
-  },
-  "legacy_sources": {
-    "enabled": false,
-    "automatic_import": false
-  },
-  "active_data_status": "NO_DATA"
+    "shard_strategy": "immutable_partitioned_assets"
+  }
 }
