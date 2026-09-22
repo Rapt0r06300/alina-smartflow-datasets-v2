@@ -1,10 +1,6 @@
 name: collect-official-archives-v2
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/collect-official-archives-v2.yml'
   schedule:
     - cron: '11 6 * * *'
   workflow_dispatch:

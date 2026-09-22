@@ -1,10 +1,6 @@
 name: collect-market-data-v2
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/collect-market-data-v2.yml'
   workflow_dispatch:
     inputs:
       duration_minutes:
