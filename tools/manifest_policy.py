@@ -31,6 +31,22 @@ _FATAL_COUNTERS = (
     "desync_count",
 )
 
+_MATCHED_RECONCILIATION_FAMILIES = {
+    "trades",
+    "funding",
+    "fills",
+    "userfills",
+    "user_fills",
+}
+_CONTINUITY_RECONCILIATION = {
+    "MATCHED",
+    "SOURCE_CONTINUITY_VERIFIED",
+}
+_SNAPSHOT_RECONCILIATION = {
+    "MATCHED",
+    "SNAPSHOT_VERIFIED",
+}
+
 
 def load_json(path: str | Path) -> dict[str, Any]:
     value = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -115,7 +131,24 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
 
     reconciliation = manifest["reconciliation"]
     reconciliation_status = str(reconciliation.get("status") or "UNVERIFIED").upper()
-    if reconciliation_status != "MATCHED":
+    family = str(manifest.get("family") or "").lower()
+    transports = set()
+    provenance = manifest.get("provenance")
+    if isinstance(provenance, Mapping):
+        raw_transports = provenance.get("transports")
+        if isinstance(raw_transports, list):
+            transports = {str(value).lower() for value in raw_transports if str(value).strip()}
+
+    if family in _MATCHED_RECONCILIATION_FAMILIES:
+        if reconciliation_status != "MATCHED":
+            reasons.append("RECONCILIATION_MATCH_REQUIRED")
+    elif family in {"instrument_metadata", "open_interest"} and transports and transports.issubset({"http", "https"}):
+        if reconciliation_status not in _SNAPSHOT_RECONCILIATION:
+            reasons.append(f"RECONCILIATION_{reconciliation_status}")
+    elif "websocket" in transports:
+        if reconciliation_status not in _CONTINUITY_RECONCILIATION:
+            reasons.append(f"RECONCILIATION_{reconciliation_status}")
+    elif reconciliation_status != "MATCHED":
         reasons.append(f"RECONCILIATION_{reconciliation_status}")
 
     required = {str(x) for x in (manifest.get("required_channels") or []) if str(x)}
