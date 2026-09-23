@@ -52,3 +52,17 @@ def test_all_v2_indexers_use_bounded_release_manifest_polling() -> None:
         text = _workflow(name)
         assert "tools/download_release_manifests.py" in text, name
         assert "--attempts 12" in text, name
+
+
+def test_all_control_plane_writers_share_one_serial_concurrency_group() -> None:
+    for name in (
+        "collect-market-data-v2.yml",
+        "collect-copy-vault-v2.yml",
+        "collect-official-archives-v2.yml",
+        "collect-and-publish-v2.yml",
+        "reconcile-v2-catalog.yml",
+        "promote-manifest.yml",
+    ):
+        text = _workflow(name)
+        assert "group: dataset-v2-control-plane-index" in text, name
+        assert "cancel-in-progress: false" in text, name

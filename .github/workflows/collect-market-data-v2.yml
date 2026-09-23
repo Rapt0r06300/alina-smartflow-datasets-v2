@@ -193,6 +193,9 @@ jobs:
     if: github.event_name != 'push' && always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: dataset-v2-control-plane-index
+      cancel-in-progress: false
     permissions:
       contents: write
     env:

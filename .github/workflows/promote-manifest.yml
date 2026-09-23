@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: dataset-manifest-promotion
+  group: dataset-v2-control-plane-index
   cancel-in-progress: false
 
 jobs:
