@@ -44,28 +44,21 @@ jobs:
         run: |
           set -euo pipefail
           ROOT="$RUNNER_TEMP/v2-release-manifests"
-          mkdir -p "$ROOT"
-          COUNT=0
-
-          while IFS= read -r TAG; do
-            [ -n "$TAG" ] || continue
-            case "$TAG" in
-              data-v2-*|copy-vault-v2-*|archive-v2-*) ;;
-              *) continue ;;
-            esac
-
-            if ! gh release view "$TAG" --repo "$GITHUB_REPOSITORY"               --json assets --jq '.assets[].name' 2>/dev/null               | grep -Fxq 'RUN_MANIFEST.json'; then
-              echo "skip incomplete release: $TAG"
-              continue
-            fi
-
-            DEST="$ROOT/$TAG"
-            mkdir -p "$DEST"
-            gh release download "$TAG"               --repo "$GITHUB_REPOSITORY"               --pattern 'RUN_MANIFEST.json'               --dir "$DEST"
-            COUNT=$((COUNT + 1))
-          done < <(
-            gh release list               --repo "$GITHUB_REPOSITORY"               --limit 1000               --json tagName               --jq '.[].tagName'
-          )
+          TAGS="$RUNNER_TEMP/v2-production-release-tags.txt"
+          gh release list \
+            --repo "$GITHUB_REPOSITORY" \
+            --limit 1000 \
+            --json tagName \
+            --jq '.[].tagName' \
+            | awk '/^(data-v2-|copy-vault-v2-|archive-v2-)/' \
+            > "$TAGS"
+          python tools/download_release_manifests.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --destination "$ROOT" \
+            --tags-file "$TAGS" \
+            --attempts 12 \
+            --poll-seconds 10
+          COUNT="$(find "$ROOT" -name RUN_MANIFEST.json -type f | wc -l)"
 
           echo "RUN_MANIFEST_COUNT=$COUNT" >> "$GITHUB_ENV"
           echo "production run manifests found: $COUNT"

@@ -173,25 +173,18 @@ jobs:
       - name: Download completed archive run manifests
         run: |
           set -euo pipefail
-          ROOT="$RUNNER_TEMP/archive-run-manifests"
-          mkdir -p "$ROOT"
+          tags=()
           for venue in binance bybit; do
             for coin in BTC ETH SOL; do
-              tag="archive-v2-${GITHUB_RUN_ID}-${venue}-${coin}"
-              dir="$ROOT/${venue}-${coin}"
-              mkdir -p "$dir"
-              if gh release view "$tag" --repo "$GITHUB_REPOSITORY" \
-                --json assets --jq '.assets[].name' 2>/dev/null \
-                | grep -Fxq 'RUN_MANIFEST.json'; then
-                gh release download "$tag" \
-                  --repo "$GITHUB_REPOSITORY" \
-                  --pattern 'RUN_MANIFEST.json' \
-                  --dir "$dir"
-              else
-                echo "skip incomplete archive release: $tag"
-              fi
+              tags+=("archive-v2-${GITHUB_RUN_ID}-${venue}-${coin}")
             done
           done
+          python tools/download_release_manifests.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --destination "$RUNNER_TEMP/archive-run-manifests" \
+            --attempts 12 \
+            --poll-seconds 10 \
+            "${tags[@]}"
 
       - name: Index verified archive manifests
         run: |

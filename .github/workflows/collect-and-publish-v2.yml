@@ -210,19 +210,17 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/v2-run-manifests"
-          FOUND=0
+          tags=()
           for COLLECTOR in bbo native-bybit-0 native-bybit-1 native-okx-0 native-okx-1; do
-            TAG="data-v2-run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${COLLECTOR}"
-            DEST="$RUNNER_TEMP/v2-run-manifests/${COLLECTOR}"
-            mkdir -p "$DEST"
-            if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-              gh release download "$TAG"                 --repo "$GITHUB_REPOSITORY"                 --pattern RUN_MANIFEST.json                 --dir "$DEST"
-              FOUND=$((FOUND + 1))
-            else
-              echo "No published release for $COLLECTOR ($TAG)"
-            fi
+            tags+=("data-v2-run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${COLLECTOR}")
           done
+          python tools/download_release_manifests.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --destination "$RUNNER_TEMP/v2-run-manifests" \
+            --attempts 12 \
+            --poll-seconds 10 \
+            "${tags[@]}"
+          FOUND="$(find "$RUNNER_TEMP/v2-run-manifests" -name RUN_MANIFEST.json -type f | wc -l)"
           echo "RUN_MANIFEST_COUNT=$FOUND" >> "$GITHUB_ENV"
 
       - name: Index verified manifests

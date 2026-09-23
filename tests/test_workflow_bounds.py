@@ -39,3 +39,16 @@ def test_copy_vault_schedule_has_runtime_headroom() -> None:
     assert "duration_s must be in [60, 12000]" in text
     # 11,400 seconds = 190 minutes, comfortably below the 4-hour cadence.
     assert "timeout-minutes: 230" in text
+
+
+def test_all_v2_indexers_use_bounded_release_manifest_polling() -> None:
+    for name in (
+        "collect-market-data-v2.yml",
+        "collect-copy-vault-v2.yml",
+        "collect-official-archives-v2.yml",
+        "collect-and-publish-v2.yml",
+        "reconcile-v2-catalog.yml",
+    ):
+        text = _workflow(name)
+        assert "tools/download_release_manifests.py" in text, name
+        assert "--attempts 12" in text, name

@@ -166,22 +166,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/copy-vault-run-manifests"
+          tags=()
           for shard in 0 1 2 3 4 5 6 7 8 9; do
-            tag="copy-vault-v2-${GITHUB_RUN_ID}-s${shard}"
-            dir="$RUNNER_TEMP/copy-vault-run-manifests/s${shard}"
-            mkdir -p "$dir"
-            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" \
-              --json assets --jq '.assets[].name' 2>/dev/null \
-              | grep -Fxq 'RUN_MANIFEST.json'; then
-              gh release download "$tag" \
-                --repo "$GITHUB_REPOSITORY" \
-                --pattern "RUN_MANIFEST.json" \
-                --dir "$dir"
-            else
-              echo "skip incomplete Copy-Vault release: $tag"
-            fi
+            tags+=("copy-vault-v2-${GITHUB_RUN_ID}-s${shard}")
           done
+          python tools/download_release_manifests.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --destination "$RUNNER_TEMP/copy-vault-run-manifests" \
+            --attempts 12 \
+            --poll-seconds 10 \
+            "${tags[@]}"
 
       - name: Index verified manifests into SAFE / quarantine / rejected
         shell: bash
