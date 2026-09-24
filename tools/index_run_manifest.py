@@ -48,7 +48,7 @@ def _normalize_manifest(raw: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> dict[str, Any]:
-    return {
+    row = {
         "dataset_id": manifest.get("dataset_id"),
         "family": manifest.get("family"),
         "venue": manifest.get("venue"),
@@ -65,6 +65,20 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
         "bytes": manifest.get("bytes"),
         "event_count": manifest.get("event_count"),
     }
+    integration = manifest.get("event_intelligence")
+    if isinstance(integration, Mapping):
+        row.update(
+            {
+                "event_intelligence_idea_count": integration.get("idea_count"),
+                "event_intelligence_coverage_sha256": integration.get(
+                    "coverage_sha256"
+                ),
+                "linked_strategy_families": integration.get(
+                    "linked_strategy_families"
+                ),
+            }
+        )
+    return row
 
 
 def index_run_manifests(

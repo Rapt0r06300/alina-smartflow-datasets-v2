@@ -194,3 +194,44 @@ def test_reindex_moves_same_dataset_between_stages(tmp_path) -> None:
     index_run_manifests([run], root=root)
     assert not (root / "datasets/quarantine/trade-upgrade.manifest.json").exists()
     assert (root / "datasets/safe/trade-upgrade.manifest.json").is_file()
+
+
+def test_event_intelligence_binding_is_preserved_in_catalog_index(tmp_path) -> None:
+    root = _bootstrap_root(tmp_path)
+    run = tmp_path / "RUN_MANIFEST.json"
+    value = _manifest(
+        family="external_events",
+        reconciliation="UNAVAILABLE",
+        dataset_id="event-partial",
+    )
+    value["event_intelligence"] = {
+        "schema": "alina.event_intelligence_integration.v1",
+        "idea_count": 120,
+        "coverage_complete": True,
+        "coverage_sha256": "c" * 64,
+        "linked_strategy_families": [
+            "arbitrage",
+            "copy_vault",
+            "cross_venue_dislocation",
+            "lead_lag",
+        ],
+        "dataset_families": ["external_events"],
+        "proof_state": "STRUCTURAL_ONLY",
+        "proof_of_pnl_allowed": False,
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+    _write_run(run, [value])
+
+    result = index_run_manifests([run], root=root)
+    assert result["active_data_status"] == "PARTIAL"
+    [row] = json.loads((root / "catalog/DATA_INDEX.json").read_text())["shards"]
+    assert row["event_intelligence_idea_count"] == 120
+    assert row["event_intelligence_coverage_sha256"] == "c" * 64
+    assert row["linked_strategy_families"] == [
+        "arbitrage",
+        "copy_vault",
+        "cross_venue_dislocation",
+        "lead_lag",
+    ]

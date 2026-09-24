@@ -46,6 +46,7 @@ def test_all_v2_indexers_use_bounded_release_manifest_polling() -> None:
         "collect-market-data-v2.yml",
         "collect-copy-vault-v2.yml",
         "collect-official-archives-v2.yml",
+        "collect-event-intelligence-v2.yml",
         "collect-and-publish-v2.yml",
         "reconcile-v2-catalog.yml",
     ):
@@ -59,6 +60,7 @@ def test_all_control_plane_writers_share_one_serial_concurrency_group() -> None:
         "collect-market-data-v2.yml",
         "collect-copy-vault-v2.yml",
         "collect-official-archives-v2.yml",
+        "collect-event-intelligence-v2.yml",
         "collect-and-publish-v2.yml",
         "reconcile-v2-catalog.yml",
         "promote-manifest.yml",
@@ -66,3 +68,15 @@ def test_all_control_plane_writers_share_one_serial_concurrency_group() -> None:
         text = _workflow(name)
         assert "group: dataset-v2-control-plane-index" in text, name
         assert "cancel-in-progress: false" in text, name
+
+
+def test_event_intelligence_collection_is_hosted_bounded_pinned_and_read_only() -> None:
+    text = _workflow("collect-event-intelligence-v2.yml")
+    assert "runs-on: ubuntu-latest" in text
+    assert "self-hosted" not in text
+    assert "timeout-minutes: 30" in text
+    assert "actions/checkout@11d5960a326750d5838078e36cf38b85af677262" in text
+    assert "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065" in text
+    assert "tools/collect_event_intelligence_v2.py" in text
+    assert 'REAL_MAINNET_TRADING: "false"' in text
+    assert "tools/download_release_manifests.py" in text

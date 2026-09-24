@@ -1,5 +1,12 @@
 # Alina SmartFlow Datasets V2
 
+Event Intelligence is collected by `collect-event-intelligence-v2` from bounded
+public, read-only sources on GitHub Hosted. Every `external_events` manifest must
+carry the complete 120-idea integration contract linking Copy-Vault, Lead-Lag,
+Cross-Venue Dislocation and arbitrage. Because no exact independent reference
+exists for heterogeneous external events, these shards remain `PARTIAL` and are
+never accepted as PnL proof.
+
 Fresh public dataset repository for NEW Alina SmartFlow collection data only.
 
 ## Lifecycle

@@ -127,3 +127,57 @@ def test_http_snapshot_can_use_snapshot_verified() -> None:
     value["provenance"]["transports"] = ["https"]
     value["reconciliation"] = {"status": "SNAPSHOT_VERIFIED"}
     assert classify_manifest(value)[0] == "SAFE"
+
+
+def _event_contract() -> dict:
+    return {
+        "schema": "alina.event_intelligence_integration.v1",
+        "idea_count": 120,
+        "coverage_complete": True,
+        "coverage_sha256": "c" * 64,
+        "linked_strategy_families": [
+            "arbitrage",
+            "copy_vault",
+            "cross_venue_dislocation",
+            "lead_lag",
+        ],
+        "dataset_families": ["external_events"],
+        "proof_state": "STRUCTURAL_ONLY",
+        "proof_of_pnl_allowed": False,
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+
+
+def test_external_events_require_the_complete_120_idea_binding() -> None:
+    value = manifest()
+    value["family"] = "external_events"
+    value["provenance"]["transports"] = ["https"]
+    value["reconciliation"] = {
+        "status": "UNAVAILABLE",
+        "reason": "NO_INDEPENDENT_EXACT_REFERENCE",
+    }
+    value["event_intelligence"] = _event_contract()
+
+    status, reasons = classify_manifest(value)
+    assert status == "PARTIAL"
+    assert "RECONCILIATION_UNAVAILABLE" in reasons
+
+    del value["event_intelligence"]
+    status, reasons = classify_manifest(value)
+    assert status == "REJECT"
+    assert "MISSING:event_intelligence" in reasons
+
+
+def test_external_event_binding_cannot_claim_pnl_or_omit_a_module() -> None:
+    value = manifest()
+    value["family"] = "external_events"
+    value["reconciliation"] = {"status": "UNAVAILABLE"}
+    value["event_intelligence"] = _event_contract()
+    value["event_intelligence"]["proof_of_pnl_allowed"] = True
+    value["event_intelligence"]["linked_strategy_families"].remove("copy_vault")
+
+    status, reasons = classify_manifest(value)
+    assert status == "REJECT"
+    assert "INVALID:event_intelligence" in reasons

@@ -1,5 +1,14 @@
 # Storage architecture
 
+## Event Intelligence V2
+
+The scheduled `collect-event-intelligence-v2` workflow checks out an exact main
+repository SHA, collects keyless public event sources on `ubuntu-latest`, publishes
+immutable release assets, then serializes catalog indexing with every other control
+plane writer. The manifest preserves the 120-idea coverage digest and its four
+strategy-family bindings. `UNAVAILABLE` reconciliation remains `PARTIAL`; dataset
+quality never promotes it to `SAFE` and never authorizes a PnL claim.
+
 Alina SmartFlow V2 is designed to grow far beyond the practical size of a normal Git repository.
 
 ## Control plane

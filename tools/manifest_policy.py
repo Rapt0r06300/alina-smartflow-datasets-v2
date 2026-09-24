@@ -9,6 +9,12 @@ from typing import Any, Mapping
 
 STATUSES = {"SAFE", "PARTIAL", "STALE", "REJECT", "NO_DATA"}
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
+_EVENT_STRATEGY_FAMILIES = {
+    "arbitrage",
+    "copy_vault",
+    "cross_venue_dislocation",
+    "lead_lag",
+}
 REQUIRED = (
     "dataset_id",
     "family",
@@ -99,7 +105,35 @@ def validate_manifest(manifest: Mapping[str, Any]) -> list[str]:
     reconciliation = manifest.get("reconciliation")
     if not isinstance(reconciliation, Mapping):
         errors.append("MISSING:reconciliation")
+
+    if str(manifest.get("family") or "").lower() == "external_events":
+        integration = manifest.get("event_intelligence")
+        if not isinstance(integration, Mapping):
+            errors.append("MISSING:event_intelligence")
+        elif not _valid_event_intelligence(integration):
+            errors.append("INVALID:event_intelligence")
     return sorted(set(errors))
+
+
+def _valid_event_intelligence(value: Mapping[str, Any]) -> bool:
+    families = {
+        str(item)
+        for item in (value.get("linked_strategy_families") or [])
+        if str(item)
+    }
+    digest = str(value.get("coverage_sha256") or "").lower()
+    return bool(
+        value.get("schema") == "alina.event_intelligence_integration.v1"
+        and _int(value.get("idea_count")) == 120
+        and value.get("coverage_complete") is True
+        and _SHA256.fullmatch(digest)
+        and families == _EVENT_STRATEGY_FAMILIES
+        and value.get("proof_state") == "STRUCTURAL_ONLY"
+        and value.get("proof_of_pnl_allowed") is False
+        and value.get("paper_only") is True
+        and value.get("read_only") is True
+        and value.get("real_execution") is False
+    )
 
 
 def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
