@@ -7,7 +7,7 @@
     "safe": "datasets/safe"
   },
   "generation": "V2_FRESH",
-  "indexed_shard_count": 9973,
+  "indexed_shard_count": 10837,
   "latest_collection": {
     "collection_run_id": "market-35696301919",
     "partial_count": 94,
@@ -105,9 +105,9 @@
     "automatic_import": false,
     "enabled": false
   },
-  "partial_shard_count": 912,
+  "partial_shard_count": 1057,
   "reject_shard_count": 865,
-  "safe_shard_count": 8196,
+  "safe_shard_count": 8915,
   "schema": "alina.data_catalog.v2",
   "stale_shard_count": 0,
   "storage": {
