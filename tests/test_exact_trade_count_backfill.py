@@ -4,7 +4,7 @@ import gzip
 import hashlib
 import json
 
-from tools.backfill_exact_trade_counts import inspect_asset
+from tools.backfill_exact_trade_counts import _candidate_priority, inspect_asset
 
 
 def _write(path, rows):
@@ -66,3 +66,12 @@ def test_unknown_trade_shape_never_fabricates_unique_count(tmp_path):
     assert out["trade_count"] == 3
     assert out["unique_trade_count"] is None
     assert out["unique_trade_count_exact"] is False
+
+
+def test_candidate_priority_prefers_replayable_safe_before_rejected():
+    replayable = {"quality_status": "SAFE", "replay_compatible": True, "end_ts_ms": 300}
+    safe = {"quality_status": "SAFE", "replay_compatible": False, "end_ts_ms": 400}
+    partial = {"quality_status": "PARTIAL", "replay_compatible": False, "end_ts_ms": 500}
+    rejected = {"quality_status": "REJECT", "replay_compatible": False, "end_ts_ms": 600}
+    rows = [rejected, partial, safe, replayable]
+    assert sorted(rows, key=_candidate_priority) == [replayable, safe, partial, rejected]
