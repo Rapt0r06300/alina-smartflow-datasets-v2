@@ -1,16 +1,11 @@
 name: create-resumable-campaigns
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/create-resumable-campaigns.yml'
   schedule:
-    - cron: '7 * * * *'
+    - cron: '2,12,22,32,42,52 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: resumable-campaign-creation
@@ -43,22 +38,22 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
-
-          HOUR="$(date -u +%H)"
           BUCKET="$(date -u +%Y%m%d%H)"
-          DAY_ID="$(date -u +%Y%m%d)"
+          DAY="$(date -u +%Y%m%d)"
+          HOUR="$(date -u +%H)"
+          SLOT6="$((10#$HOUR / 6))"
           PREV_DAY="$(date -u -d 'yesterday' +%Y-%m-%d)"
-          NOW_MS="$(date -u +%s)000"
-          REPLAY_START_MS="$((NOW_MS - 2*60*60*1000))"
-          BACKTEST_START_MS="$((NOW_MS - 6*60*60*1000))"
-          PNL_START_MS="$((NOW_MS - 24*60*60*1000))"
-
+          NOW_MS="$(($(date -u +%s) * 1000))"
+          REPLAY_START_MS="$((NOW_MS - 6 * 60 * 60 * 1000))"
+          ECON_START_MS="$((NOW_MS - 7 * 24 * 60 * 60 * 1000))"
           CODE_SHA="$(git -C alina rev-parse HEAD)"
-          PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v3' | sha256sum | cut -d' ' -f1)"
-          FAMILIES='trades,agg_trades,bbo,l2Book,mark_price,funding,funding_settlement,open_interest,ticker,copy_vault_fills,copy_vault_l2,copy_vault_positions,copy_vault_selection,copy_vault_snapshot,external_events,instrument_metadata'
+          PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v4' | sha256sum | cut -d' ' -f1)"
 
           make_campaign() {
-            KIND="$1"; ID="$2"; CFG_TEXT="$3"; CURSOR="$4"
+            KIND="$1"
+            ID="$2"
+            CFG_TEXT="$3"
+            CURSOR="$4"
             P="catalog/campaigns/$ID.json"
             CFG_SHA="$(printf '%s' "$CFG_TEXT|$CURSOR" | sha256sum | cut -d' ' -f1)"
             if [ ! -f "$P" ]; then
@@ -66,69 +61,37 @@ jobs:
             fi
           }
 
-          # One-hour rolling collectors. The next campaign is created every hour;
-          # controller dispatch is every five minutes, so the system keeps working
-          # continuously without relying on a personal machine.
-          make_campaign market_collection "market-$BUCKET" "market-hourly-v3"             '{"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","duration_s":3600,"rotate_mb":64}'
-          make_campaign copy_vault_collection "copy-vault-$BUCKET" "copy-vault-hourly-v3"             '{"duration_s":3600,"max_vaults":20,"vault_shard_count":1,"vault_shard_index":0,"rotate_mb":64}'
-          make_campaign event_intelligence_collection "event-$BUCKET" "event-hourly-v3" '{}'
+          make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL","duration_s":3500,"rotate_mb":64}'
 
-          # Replay smoke on the latest two-hour SAFE window.
-          make_campaign replay "replay-$BUCKET" "replay-safe-generation-v3"             "{\"families\":\"$FAMILIES\",\"start_ts_ms\":$REPLAY_START_MS,\"end_ts_ms\":$NOW_MS}"
+          make_campaign             copy_vault_collection             "copy-vault-$BUCKET-v4"             "copy-vault-hourly-continuous-v4"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":1,"vault_shard_index":0,"rotate_mb":64}'
 
-          # Official archive fallback once daily for both supported archive venues.
+          make_campaign             event_intelligence_collection             "event-$BUCKET-v4"             "event-hourly-v4"             '{}'
+
+          make_campaign             replay             "replay-$BUCKET-v4"             "replay-hourly-safe-v4"             "{\"start_ts_ms\":$REPLAY_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":64}"
+
+          if [ "$((10#$HOUR % 6))" -eq 0 ]; then
+            make_campaign               backtest               "backtest-$DAY-s$SLOT6-v4"               "backtest-six-hourly-safe-v4"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+            make_campaign               module_pnl_proof               "pnl-$DAY-s$SLOT6-v4"               "pnl-six-hourly-safe-v4"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+          fi
+
           if [ "$HOUR" = "06" ]; then
-            make_campaign official_archive_collection "archives-binance-btc-$DAY_ID" "archives-daily-v3"               "{\"venue\":\"binance\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
-            make_campaign official_archive_collection "archives-bybit-btc-$DAY_ID" "archives-daily-v3"               "{\"venue\":\"bybit\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
+            make_campaign               official_archive_collection               "archives-binance-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"binance\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
+            make_campaign               official_archive_collection               "archives-bybit-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"bybit\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
           fi
-
-          # Economic validation every six hours on a bounded recent SAFE window.
-          case "$HOUR" in
-            00|06|12|18)
-              make_campaign backtest "backtest-$BUCKET" "backtest-6h-v3"                 "{\"families\":\"$FAMILIES\",\"start_ts_ms\":$BACKTEST_START_MS,\"end_ts_ms\":$NOW_MS}"
-              ;;
-          esac
-
-          # Daily independent module PnL proof. Missing/insufficient evidence stays
-          # explicitly unmeasurable or failed; no positive result is fabricated.
-          if [ "$HOUR" = "23" ]; then
-            make_campaign module_pnl_proof "pnl-$DAY_ID" "pnl-daily-v3"               "{\"families\":\"$FAMILIES\",\"start_ts_ms\":$PNL_START_MS,\"end_ts_ms\":$NOW_MS}"
-          fi
-
-      - name: Prune old terminal campaign manifests
-        shell: bash
-        run: |
-          python - <<'PY'
-          import datetime,json,pathlib
-          root=pathlib.Path("catalog/campaigns")
-          cutoff=datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(days=14)
-          terminal={"COMPLETE","FAILED","UNAVAILABLE","PARTIAL","REJECT"}
-          for path in root.glob("*.json"):
-              try:
-                  row=json.loads(path.read_text(encoding="utf-8"))
-                  created=datetime.datetime.fromisoformat(str(row.get("created_at","")).replace("Z","+00:00"))
-              except Exception:
-                  continue
-              if row.get("status") in terminal and created < cutoff:
-                  path.unlink()
-          PY
 
       - name: Commit campaign manifests
+        shell: bash
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add -A catalog/campaigns
+          git add catalog/campaigns
           git diff --cached --quiet && exit 0
-          git commit -m "campaign: create deterministic continuous work"
+          git commit -m "campaign: create continuous resumable work"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
             sleep $((i*2))
           done
           exit 1
-
-      - name: Kick resumable controller
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run resumable-campaign-controller.yml --ref main
