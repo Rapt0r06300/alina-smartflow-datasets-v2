@@ -38,6 +38,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "freeze_copy_vault_selection.py" in text
     assert "COPY_COUNT" in text
     assert "COPY_LANES" in text
+    assert "ACTIVE_COPY_CAMPAIGNS" in text
+    assert "active Copy-Vault sweep already exists" in text
+    assert "CONTINUATION_REQUIRED" in text
     assert "(COPY_COUNT + 9) / 10" in text
     assert "COPY_LANE<COPY_LANES" in text
     assert "copy-vault-$COPY_LANE-$BUCKET-v6" in text
