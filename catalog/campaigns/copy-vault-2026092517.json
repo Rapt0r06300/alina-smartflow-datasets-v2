@@ -1,0 +1,42 @@
+{
+  "attempts": 0,
+  "campaign_id": "copy-vault-2026092517",
+  "chunk_index": 0,
+  "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
+  "code_sha": "f9c2d15d17231fce45ea7774b7169a513c558fb0",
+  "completed_units": {},
+  "config_sha256": "d1632acc6bba1fe105cf19b901a33b62bb802f19d3b399ce720d2517c519f222",
+  "consecutive_failures": 0,
+  "created_at": "2026-09-25T17:52:04.869390+00:00",
+  "cursor": {
+    "duration_s": 3600,
+    "max_vaults": 20,
+    "rotate_mb": 64,
+    "vault_shard_count": 1,
+    "vault_shard_index": 0
+  },
+  "dataset_generation": "V2_FRESH",
+  "dataset_repo": "Rapt0r06300/alina-smartflow-datasets-v2",
+  "expires_at": "2026-10-02T17:52:04.869390+00:00",
+  "history": [],
+  "kind": "copy_vault_collection",
+  "lease": null,
+  "limits": {
+    "max_attempts": 12,
+    "max_chunks": 24,
+    "max_consecutive_failures": 4,
+    "max_no_progress": 3,
+    "max_wall_clock_s": 86400
+  },
+  "next_due_at": null,
+  "no_progress_count": 0,
+  "outputs": [],
+  "paper_only": true,
+  "read_only": true,
+  "real_execution": false,
+  "schema_version": "alina.resumable_campaign.v1",
+  "status": "PENDING",
+  "status_reason": "created",
+  "updated_at": "2026-09-25T17:52:04.869416Z",
+  "work_plan_sha256": "7377414f6eec5dbdef9d6c4e8565ac853d4a7ba0847f00d066bc56a0d7f003ac"
+}
