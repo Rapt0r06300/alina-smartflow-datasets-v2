@@ -60,12 +60,13 @@ def test_metrics_refresh_is_scheduled_and_serialized():
     assert "tools/build_catalog_metrics.py" in text
 
 def test_resumable_worker_has_real_partition_defaults_and_retry_policy():
-    text=_workflow("resumable-campaign-worker.yml")
-    assert '"duration_s":600' in text
-    assert '"max_vaults":20' in text
-    assert '"start_date":day' in text
-    assert 'TEMPORARY_EXTERNAL' in text
-    assert 'failure=True' in text
+    worker=_workflow("resumable-campaign-worker.yml")
+    creator=_workflow("create-resumable-campaigns.yml")
+    assert '"duration_s":600' in creator
+    assert '"max_vaults":20' in creator
+    assert '"start_date"' in creator
+    assert 'TEMPORARY_EXTERNAL' in worker
+    assert 'failure=True' in worker
 
 def test_resumable_creator_and_controller_track_current_main():
     creator=_workflow("create-resumable-campaigns.yml")
