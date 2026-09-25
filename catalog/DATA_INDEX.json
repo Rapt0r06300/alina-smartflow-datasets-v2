@@ -320405,6 +320405,56 @@
       "start_ts_ms": 1790329623979,
       "symbol": "0x65c6b7f0e9a6f72b351ca133e510a2329d047dbe",
       "venue": "hyperliquid"
+    },
+    {
+      "bytes": 10380,
+      "collection_run_id": "event-36145426601",
+      "dataset_id": "gdacs-external-events-global-1790345312521-1790345312521-3cb8618ad254",
+      "end_ts_ms": 1790345312521,
+      "event_count": 85,
+      "event_intelligence_coverage_sha256": "f886d879da724eed34e47b23310dfd5a86abaaf56af6b0ab28cfdba610ddc9e9",
+      "event_intelligence_idea_count": 120,
+      "family": "external_events",
+      "linked_strategy_families": [
+        "arbitrage",
+        "copy_vault",
+        "cross_venue_dislocation",
+        "lead_lag"
+      ],
+      "manifest_path": "datasets/quarantine/gdacs-external-events-global-1790345312521-1790345312521-3cb8618ad254.manifest.json",
+      "quality_status": "PARTIAL",
+      "release_asset": "gdacs-external-events-global-1790345312521-1790345312521-3cb8618ad254.jsonl.gz",
+      "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+      "release_tag": "event-intelligence-v2-36145426601",
+      "sha256": "3cb8618ad2549eeb3c0349b288f27b1924a9beaed19cbb50ff40b327d4e22863",
+      "start_ts_ms": 1790345312521,
+      "symbol": "GLOBAL",
+      "venue": "unknown"
+    },
+    {
+      "bytes": 9210,
+      "collection_run_id": "event-36145426601",
+      "dataset_id": "nasa-eonet-external-events-global-1790345312521-1790345312521-d4fdd7b2999f",
+      "end_ts_ms": 1790345312521,
+      "event_count": 100,
+      "event_intelligence_coverage_sha256": "f886d879da724eed34e47b23310dfd5a86abaaf56af6b0ab28cfdba610ddc9e9",
+      "event_intelligence_idea_count": 120,
+      "family": "external_events",
+      "linked_strategy_families": [
+        "arbitrage",
+        "copy_vault",
+        "cross_venue_dislocation",
+        "lead_lag"
+      ],
+      "manifest_path": "datasets/quarantine/nasa-eonet-external-events-global-1790345312521-1790345312521-d4fdd7b2999f.manifest.json",
+      "quality_status": "PARTIAL",
+      "release_asset": "nasa-eonet-external-events-global-1790345312521-1790345312521-d4fdd7b2999f.jsonl.gz",
+      "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+      "release_tag": "event-intelligence-v2-36145426601",
+      "sha256": "d4fdd7b2999ffb748a837ffaafcd2112b84453550b9e753441800147a06602b9",
+      "start_ts_ms": 1790345312521,
+      "symbol": "GLOBAL",
+      "venue": "unknown"
     }
   ]
 }
