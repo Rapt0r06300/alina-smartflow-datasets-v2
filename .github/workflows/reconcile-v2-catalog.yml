@@ -39,29 +39,42 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Download all production V2 run manifests
+      - name: Download only new production V2 run manifests
         shell: bash
         run: |
           set -euo pipefail
           ROOT="$RUNNER_TEMP/v2-release-manifests"
-          TAGS="$RUNNER_TEMP/v2-production-release-tags.txt"
-          gh release list \
-            --repo "$GITHUB_REPOSITORY" \
-            --limit 1000 \
-            --json tagName \
-            --jq '.[].tagName' \
-            | awk '/^(data-v2-|copy-vault-v2-|archive-v2-|event-intelligence-v2-)/' \
-            > "$TAGS"
-          python tools/download_release_manifests.py \
-            --repository "$GITHUB_REPOSITORY" \
-            --destination "$ROOT" \
-            --tags-file "$TAGS" \
-            --attempts 12 \
-            --poll-seconds 10
+          ALL_TAGS="$RUNNER_TEMP/v2-all-release-tags.txt"
+          TAGS="$RUNNER_TEMP/v2-new-release-tags.txt"
+          gh release list             --repo "$GITHUB_REPOSITORY"             --limit 1000             --json tagName             --jq '.[].tagName'             > "$ALL_TAGS"
+          python - <<'PY' "$ALL_TAGS" "$TAGS"
+          import json,re,sys
+          from pathlib import Path
+          all_path,out_path=map(Path,sys.argv[1:])
+          index=json.loads(Path("catalog/DATA_INDEX.json").read_text(encoding="utf-8"))
+          known={
+              str(row.get("release_tag"))
+              for row in (index.get("shards") or [])
+              if isinstance(row,dict) and row.get("release_tag")
+          }
+          allowed=re.compile(r"^(data-v2-|copy-vault-v2-|archive-v2-|event-intelligence-v2-)")
+          tags=[
+              line.strip()
+              for line in all_path.read_text(encoding="utf-8").splitlines()
+              if line.strip() and allowed.match(line.strip()) and line.strip() not in known
+          ]
+          out_path.write_text("\n".join(tags)+("\n" if tags else ""),encoding="utf-8")
+          print(f"new_release_tags={len(tags)}")
+          PY
+          if [ ! -s "$TAGS" ]; then
+            echo "RUN_MANIFEST_COUNT=0" >> "$GITHUB_ENV"
+            echo "No new production releases to reconcile."
+            exit 0
+          fi
+          python tools/download_release_manifests.py             --repository "$GITHUB_REPOSITORY"             --destination "$ROOT"             --tags-file "$TAGS"             --attempts 6             --poll-seconds 5
           COUNT="$(find "$ROOT" -name RUN_MANIFEST.json -type f | wc -l)"
-
           echo "RUN_MANIFEST_COUNT=$COUNT" >> "$GITHUB_ENV"
-          echo "production run manifests found: $COUNT"
+          echo "new production run manifests found: $COUNT"
 
       - name: Rebuild control-plane index from verified production releases
         if: env.RUN_MANIFEST_COUNT != '0'
