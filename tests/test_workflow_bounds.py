@@ -58,6 +58,14 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "128" in text
 
 
+def test_resumable_creator_encodes_copy_vault_cursor_as_valid_json():
+    text = _workflow("create-resumable-campaigns.yml")
+    assert "COPY_CURSOR=" in text
+    assert "json.dumps" in text
+    assert '"$COPY_CURSOR"' in text
+    assert '"{"duration_s":3500' not in text
+
+
 def test_controller_worker_are_bounded_hosted_and_non_recursive():
     controller = _workflow("resumable-campaign-controller.yml")
     worker = _workflow("resumable-campaign-worker.yml")
