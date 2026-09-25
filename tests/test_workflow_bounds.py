@@ -78,6 +78,8 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     controller = _workflow("resumable-campaign-controller.yml")
     worker = _workflow("resumable-campaign-worker.yml")
     assert "cron: '*/5 * * * *'" in controller
+    assert "push:" in controller
+    assert "resumable-campaign-controller.yml" in controller
     assert "timeout-minutes: 10" in controller
     assert "timeout-minutes: 345" in worker
     assert "cancel-in-progress: false" in controller
