@@ -1,0 +1,56 @@
+name: create-resumable-campaigns
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: resumable-campaign-creation
+  cancel-in-progress: false
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {fetch-depth: 0, persist-credentials: true}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with: {python-version: '3.12'}
+      - name: Checkout pinned campaign code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: 777d329176ded9e9262c33a9411adc99c55caa02
+          path: alina
+          persist-credentials: false
+      - name: Create deterministic due campaigns
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p catalog/campaigns
+          BUCKET="$(date -u +%Y%m%d%H)"
+          CODE_SHA="$(git -C alina rev-parse HEAD)"
+          make_campaign() {
+            KIND="$1"; ID="$2"; CFG="$3"
+            P="catalog/campaigns/$ID.json"
+            if [ ! -f "$P" ]; then
+              PYTHONPATH=alina/src python alina/tools/resumable_campaign.py create "$P"                 --campaign-id "$ID" --kind "$KIND" --code-sha "$CODE_SHA"                 --dataset-generation V2_FRESH                 --config-sha256 "$CFG" --work-plan-sha256 "$CFG"
+            fi
+          }
+          make_campaign market_collection "market-$BUCKET" "market-hourly-v1"
+          make_campaign copy_vault_collection "copy-vault-$BUCKET" "copy-vault-hourly-v1"
+          if [ "$(date -u +%H)" = "06" ]; then make_campaign official_archive_collection "archives-$(date -u +%Y%m%d)" "archives-daily-v1"; fi
+          make_campaign event_intelligence_collection "event-$BUCKET" "event-hourly-v1"
+          make_campaign replay "replay-$BUCKET" "replay-safe-generation-v1"
+          make_campaign backtest "backtest-$(date -u +%Y%m%d)" "backtest-daily-v1"
+          make_campaign module_pnl_proof "pnl-$(date -u +%Y%m%d)" "pnl-daily-v1"
+      - name: Commit campaign manifests
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/campaigns
+          git diff --cached --quiet && exit 0
+          git commit -m "campaign: create deterministic resumable work"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((i*2)); done
+          exit 1
