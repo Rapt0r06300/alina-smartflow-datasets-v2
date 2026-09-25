@@ -34,6 +34,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
+      - name: Refresh Dataset V2 main before pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
       - id: pin
         name: Read pinned code SHA
         shell: bash
@@ -133,6 +141,8 @@ jobs:
               part.setdefault("vault_shard_count",1)
               part.setdefault("vault_shard_index",0)
               part.setdefault("rotate_mb",64)
+              if part.get("selection_file"):
+                  part["selection_file"]=os.path.abspath(str(part["selection_file"]))
           elif kind=="official_archive_collection":
               part.setdefault("max_days",1)
           elif kind in {"replay","backtest","module_pnl_proof"}:
