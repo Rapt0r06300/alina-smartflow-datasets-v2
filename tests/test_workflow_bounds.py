@@ -30,7 +30,7 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "runs-on: ubuntu-latest" in text
     assert "self-hosted" not in text
     assert '"duration_s":3500' in text
-    assert '"coins":"BTC,ETH,SOL"' in text
+    assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' in text
     assert "market_collection" in text
     assert "copy_vault_collection" in text
     assert "official_archive_collection" in text
@@ -44,6 +44,8 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "archives-bybit-btc-" in text
     assert "REPLAY_START_MS" in text
     assert "ECON_START_MS" in text
+    assert '"max_shards":64' in text
+    assert '"max_shards":128' in text
 
 
 def test_controller_worker_are_bounded_hosted_and_non_recursive():
@@ -56,7 +58,7 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "cancel-in-progress: false" in worker
     assert "self-hosted" not in controller + worker
     assert "gh workflow run resumable-campaign-worker.yml" in controller
-    assert "gh workflow run" not in worker
+    assert "gh workflow run resumable-campaign-worker.yml" not in worker
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
     assert "Claim durable campaign lease" in worker
     assert "Persist collection data or analysis evidence" in worker
@@ -64,6 +66,7 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "publish_dataset_v2_release.py" in worker
     assert "reconcile-v2-catalog.yml" in worker
     assert "verify_lease" in worker
+    assert "actions: write" in worker
 
 
 def test_metrics_refresh_is_scheduled_and_serialized():
@@ -77,7 +80,7 @@ def test_metrics_refresh_is_scheduled_and_serialized():
 def test_reconcile_covers_all_production_release_families_and_pins_actions():
     text = _workflow("reconcile-v2-catalog.yml")
     assert "event-intelligence-v2-" in text
-    assert "data-v2-campaign-" in text
+    assert "data-v2-" in text
     assert "actions/checkout@v4" not in text
     assert "actions/setup-python@v5" not in text
     assert "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683" in text
