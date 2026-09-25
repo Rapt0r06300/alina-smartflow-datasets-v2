@@ -4,8 +4,8 @@ import gzip,json
 from pathlib import Path
 from typing import Any,Mapping
 
-TRADE_FAMILIES={"trades","agg_trades","fills","userfills","user_fills"}
-REPLAYABLE_FAMILIES={"trades","agg_trades","bbo","l2book","l2","book","funding_settlement","open_interest","fills","userfills","user_fills","external_events"}
+TRADE_FAMILIES={"trades","agg_trades","fills","userfills","user_fills","copy_vault_fills"}
+REPLAYABLE_FAMILIES={"trades","agg_trades","bbo","l2book","l2","book","funding","funding_settlement","open_interest","fills","userfills","user_fills","copy_vault_fills","copy_vault_l2","copy_vault_positions","copy_vault_selection","copy_vault_snapshot","external_events","activeassetctx","instrument_metadata","mark_price","ticker"}
 
 def _open(path:Path):
     return gzip.open(path,"rt",encoding="utf-8") if path.name.endswith(".gz") else path.open(encoding="utf-8")
@@ -44,6 +44,7 @@ def inspect_asset(path:str|Path,manifest:Mapping[str,Any])->dict[str,Any]:
     elif result["invalid_record_count"]>0: result["replay_reason"]="INVALID_RECORD"
     elif result["out_of_order_count"]>0: result["replay_reason"]="OUT_OF_ORDER"
     elif result["gap_count"]>0: result["replay_reason"]="GAP"
+    elif result["duplicate_count"]>0: result["replay_reason"]="DUPLICATES_PRESENT"
     elif family not in REPLAYABLE_FAMILIES: result["replay_reason"]="NO_REPLAY_ADAPTER"
     else: result["replay_compatible"]=True; result["replay_reason"]="SMOKE_OK"
     return result
