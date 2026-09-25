@@ -21,8 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      matrix: ${{ steps.due.outputs.matrix }}
-      count: ${{ steps.due.outputs.count }}
+      copy_matrix: ${{ steps.due.outputs.copy_matrix }}
+      copy_count: ${{ steps.due.outputs.copy_count }}
+      other_matrix: ${{ steps.due.outputs.other_matrix }}
+      other_count: ${{ steps.due.outputs.other_count }}
     steps:
       - name: Checkout Dataset V2
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -54,18 +56,43 @@ jobs:
           PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             | head -n 128 > "$RUNNER_TEMP/due.txt"
           python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
           import json,sys
+          from pathlib import Path
           ids=[line.strip() for line in open(sys.argv[1],encoding="utf-8") if line.strip()]
-          print("count="+str(len(ids)))
-          print("matrix="+json.dumps({"campaign_id":ids},separators=(",",":")))
+          copy_ids=[]
+          other_ids=[]
+          for campaign_id in ids:
+              path=Path("catalog/campaigns")/(campaign_id+".json")
+              try:
+                  kind=str(json.load(open(path,encoding="utf-8")).get("kind") or "")
+              except (OSError,ValueError,TypeError):
+                  kind=""
+              (copy_ids if kind=="copy_vault_collection" else other_ids).append(campaign_id)
+          print("copy_count="+str(len(copy_ids)))
+          print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))
+          print("other_count="+str(len(other_ids)))
+          print("other_matrix="+json.dumps({"campaign_id":other_ids},separators=(",",":")))
           PY
 
-  work:
+  copy_work:
     needs: select
-    if: needs.select.outputs.count != '0'
+    if: needs.select.outputs.copy_count != '0'
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.select.outputs.copy_matrix) }}
+    uses: ./.github/workflows/resumable-campaign-worker.yml
+    with:
+      campaign_id: ${{ matrix.campaign_id }}
+    permissions:
+      contents: write
+
+  other_work:
+    needs: select
+    if: needs.select.outputs.other_count != '0'
     strategy:
       fail-fast: false
       max-parallel: 12
-      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+      matrix: ${{ fromJSON(needs.select.outputs.other_matrix) }}
     uses: ./.github/workflows/resumable-campaign-worker.yml
     with:
       campaign_id: ${{ matrix.campaign_id }}
