@@ -31,7 +31,13 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
+          MAX_DISPATCH=12
+          DISPATCHED=0
           while IFS= read -r id; do
             [ -n "$id" ] || continue
             gh workflow run resumable-campaign-worker.yml -f campaign_id="$id"
+            DISPATCHED=$((DISPATCHED+1))
+            if [ "$DISPATCHED" -ge "$MAX_DISPATCH" ]; then
+              break
+            fi
           done < <(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py list-due catalog/campaigns | head -n 12)
