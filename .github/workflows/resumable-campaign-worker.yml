@@ -107,6 +107,7 @@ jobs:
       - id: unit
         name: Run one bounded real unit
         if: steps.claim.outputs.skip != 'true'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -151,9 +152,36 @@ jobs:
           test -s "$RUNNER_TEMP/result.json"
           cat "$RUNNER_TEMP/result.json"
 
+      - name: Normalize missing unit result
+        if: steps.claim.outputs.skip != 'true' && always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if python -m json.tool "$RUNNER_TEMP/result.json" >/dev/null 2>&1; then
+            exit 0
+          fi
+          python - <<'PY' "$RUNNER_TEMP/result.json"
+          import hashlib,json,sys
+          path=sys.argv[1]
+          payload={
+              "status":"FAILED",
+              "reason":"worker_unit_crash",
+              "failure_category":"INFRASTRUCTURE",
+          }
+          raw=json.dumps(payload,sort_keys=True,separators=(",",":")).encode()
+          row={
+              "status":"FAILED",
+              "sha256":hashlib.sha256(raw).hexdigest(),
+              "payload":payload,
+              "progressed":False,
+          }
+          open(path,"w",encoding="utf-8").write(json.dumps(row,sort_keys=True)+"\n")
+          PY
+
       - id: durable
         name: Persist collection data or analysis evidence
         if: steps.claim.outputs.skip != 'true'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -217,6 +245,36 @@ jobs:
             PY
             echo "evidence_tag=$TAG" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Downgrade result when durability failed
+        if: steps.claim.outputs.skip != 'true' && steps.durable.outcome == 'failure' && always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' "$RUNNER_TEMP/result.json"
+          import hashlib,json,sys
+          path=sys.argv[1]
+          previous={}
+          try:
+              previous=json.load(open(path,encoding="utf-8"))
+          except Exception:
+              pass
+          payload={
+              "status":"FAILED",
+              "reason":"durable_publication_failed",
+              "failure_category":"INFRASTRUCTURE",
+              "previous_status":previous.get("status"),
+              "previous_sha256":previous.get("sha256"),
+          }
+          raw=json.dumps(payload,sort_keys=True,separators=(",",":")).encode()
+          row={
+              "status":"FAILED",
+              "sha256":hashlib.sha256(raw).hexdigest(),
+              "payload":payload,
+              "progressed":False,
+          }
+          open(path,"w",encoding="utf-8").write(json.dumps(row,sort_keys=True)+"\n")
+          PY
 
       - name: Publish final campaign checkpoint
         if: steps.claim.outputs.skip != 'true' && always()
