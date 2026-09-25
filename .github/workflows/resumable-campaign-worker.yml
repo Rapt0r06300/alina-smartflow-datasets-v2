@@ -115,9 +115,9 @@ jobs:
                   m["campaign_id"],
                   str(idx),
               )
-          print("KIND="+shlex.quote(kind))
-          print("UNIT="+shlex.quote(str(idx)))
-          print("PART="+shlex.quote(json.dumps(part,separators=(",",":"))))
+          print("KIND="+kind)
+          print("UNIT="+str(idx))
+          print("PART_JSON="+json.dumps(part,separators=(",",":")))
           PY
           cat "$RUNNER_TEMP/unit.env" >> "$GITHUB_ENV"
 
@@ -127,7 +127,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH=alina/src python alina/tools/run_resumable_campaign.py             --campaign-id "$CAMPAIGN_ID"             --kind "$KIND"             --unit-id "$UNIT"             --partition-json "$PART"             --soft-deadline-s 18900             > "$RUNNER_TEMP/result.json"
+          PYTHONPATH=alina/src python alina/tools/run_resumable_campaign.py             --campaign-id "$CAMPAIGN_ID"             --kind "$KIND"             --unit-id "$UNIT"             --partition-json "$PART_JSON"             --soft-deadline-s 18900             > "$RUNNER_TEMP/result.json"
           python -m json.tool "$RUNNER_TEMP/result.json" >/dev/null
 
       - name: Publish collection bundle and index immediately
