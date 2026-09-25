@@ -1,18 +1,16 @@
 name: collect-copy-vault-v2
 
 on:
-  schedule:
-    - cron: '47 1-23/4 * * *'
   workflow_dispatch:
     inputs:
       duration_s:
-        description: Collection seconds per lane
+        description: "Diagnostic seconds"
         required: false
-        default: '11400'
+        default: "600"
       max_vaults:
-        description: Frozen public vault universe size
+        description: "Diagnostic public vault universe size"
         required: false
-        default: '100'
+        default: "20"
 
 permissions:
   contents: write
@@ -22,199 +20,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  prepare:
+  diagnostic:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    outputs:
-      collector_sha: ${{ steps.code.outputs.sha }}
-      selection: ${{ steps.selection.outputs.json }}
+    timeout-minutes: 60
     steps:
-      - name: Checkout Alina code
-        uses: actions/checkout@v4
-        with:
-          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
-          ref: main
-          path: alina
-          persist-credentials: false
-          fetch-depth: 1
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install collector
-        run: python -m pip install --disable-pip-version-check -e ./alina
-
-      - id: code
-        name: Pin collector SHA
-        run: echo "sha=$(git -C alina rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Validate bounded Copy-Vault inputs
-        env:
-          DURATION_S: ${{ inputs.duration_s || '11400' }}
-          MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
+      - name: Manual diagnostic only
         run: |
-          python - <<'PY'
-          import os
-          duration = int(os.environ["DURATION_S"])
-          max_vaults = int(os.environ["MAX_VAULTS"])
-          if not 60 <= duration <= 12000:
-              raise SystemExit("duration_s must be in [60, 12000]")
-          if not 1 <= max_vaults <= 100:
-              raise SystemExit("max_vaults must be in [1, 100]")
-          PY
-
-      - id: selection
-        name: Freeze one public vault universe
-        env:
-          MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
-        run: |
-          cd alina
-          python - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, os
-          from tools import collect_cloud_copy_vault as collector
-          _, selection = collector.discover_vaults(
-              max_vaults=max(1, int(os.environ["MAX_VAULTS"]))
-          )
-          print("json=" + json.dumps(selection, separators=(",", ":")))
-          PY
-
-  collect:
-    needs: prepare
-    strategy:
-      fail-fast: false
-      max-parallel: 10
-      matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    runs-on: ubuntu-latest
-    timeout-minutes: 230
-    env:
-      GH_TOKEN: ${{ github.token }}
-      COLLECTOR_SHA: ${{ needs.prepare.outputs.collector_sha }}
-      COLLECTION_RUN_ID: copy-vault-${{ github.run_id }}
-      DURATION_S: ${{ inputs.duration_s || '11400' }}
-      MAX_VAULTS: ${{ inputs.max_vaults || '100' }}
-      SELECTION_JSON: ${{ needs.prepare.outputs.selection }}
-    steps:
-      - name: Checkout pinned Alina code
-        uses: actions/checkout@v4
-        with:
-          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
-          ref: ${{ needs.prepare.outputs.collector_sha }}
-          path: alina
-          persist-credentials: false
-          fetch-depth: 1
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install collector
-        run: python -m pip install --disable-pip-version-check -e ./alina
-
-      - name: Materialize frozen selection
-        run: |
-          python - <<'PY'
-          import json, os
-          payload = json.loads(os.environ["SELECTION_JSON"])
-          with open("/tmp/vault-selection.json", "w", encoding="utf-8") as handle:
-              json.dump(payload, handle, indent=2)
-          PY
-
-      - name: Collect replay-grade Copy-Vault window
-        env:
-          ALINA_COLLECTION_RUN_ID: ${{ env.COLLECTION_RUN_ID }}
-        run: |
-          python alina/tools/collect_cloud_copy_vault.py             --output /tmp/alina-copy-vault             --selection-file /tmp/vault-selection.json             --duration-s "$DURATION_S"             --collector-version "$COLLECTOR_SHA"             --collection-run-id "$COLLECTION_RUN_ID"             --max-vaults "$MAX_VAULTS"             --vault-shard-count 10             --vault-shard-index "${{ matrix.shard }}"             --rotate-mb 256
-
-      - name: Publish immutable Copy-Vault V2 shards
-        run: |
-          python alina/tools/publish_dataset_v2_release.py /tmp/alina-copy-vault             --repository "${{ github.repository }}"             --tag "copy-vault-v2-${{ github.run_id }}-s${{ matrix.shard }}"             --target main             --title "Alina Copy-Vault V2 run ${{ github.run_id }} / shard ${{ matrix.shard }}"
-
-      - name: Final local summary
-        if: always()
-        run: |
-          if [ -f /tmp/alina-copy-vault/collection_summary.json ]; then
-            cat /tmp/alina-copy-vault/collection_summary.json
-          fi
-
-
-  index:
-    name: index-copy-vault-v2
-    needs: collect
-    if: always()
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    concurrency:
-      group: dataset-v2-control-plane-index
-      cancel-in-progress: false
-    permissions:
-      contents: write
-    env:
-      GH_TOKEN: ${{ github.token }}
-
-    steps:
-      - name: Checkout dataset control plane
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-          persist-credentials: true
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Download verified Copy-Vault run manifests
-        shell: bash
-        run: |
-          set -euo pipefail
-          tags=()
-          for shard in 0 1 2 3 4 5 6 7 8 9; do
-            tags+=("copy-vault-v2-${GITHUB_RUN_ID}-s${shard}")
-          done
-          python tools/download_release_manifests.py \
-            --repository "$GITHUB_REPOSITORY" \
-            --destination "$RUNNER_TEMP/copy-vault-run-manifests" \
-            --attempts 12 \
-            --poll-seconds 10 \
-            "${tags[@]}"
-
-      - name: Index verified manifests into SAFE / quarantine / rejected
-        shell: bash
-        run: |
-          set -euo pipefail
-          mapfile -t MANIFESTS < <(find "$RUNNER_TEMP/copy-vault-run-manifests" -name RUN_MANIFEST.json -type f | sort)
-          if [ "${#MANIFESTS[@]}" -eq 0 ]; then
-            echo "NO_VERIFIED_COPY_VAULT_RUN_MANIFESTS"
-            exit 2
-          fi
-          python tools/index_run_manifest.py "${MANIFESTS[@]}"
-
-      - name: Validate V2 control plane
-        shell: bash
-        run: |
-          set -euo pipefail
-          python tools/check_dataset_quality.py
-          python -m pip install --disable-pip-version-check pytest
-          python -m pytest -q tests
-
-      - name: Commit indexed Copy-Vault manifests
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog datasets
-          if git diff --cached --quiet; then
-            echo "No Copy-Vault index changes."
-            exit 0
-          fi
-          git commit -m "data: index verified Copy-Vault run ${GITHUB_RUN_ID}"
-          for attempt in 1 2 3 4 5; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            sleep $((attempt * 2))
-          done
-          exit 1
+          echo "Scheduled Copy-Vault collection migrated to resumable campaigns."
