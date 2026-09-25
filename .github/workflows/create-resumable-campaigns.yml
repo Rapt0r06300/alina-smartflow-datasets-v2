@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: resumable-campaign-creation
+  group: resumable-campaign-creation-v2
   cancel-in-progress: false
 
 jobs:
@@ -74,13 +74,13 @@ jobs:
           make_campaign             copy_vault_collection             "copy-vault-a-$BUCKET-v5"             "copy-vault-hourly-shard-a-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":0,"rotate_mb":64}'
           make_campaign             copy_vault_collection             "copy-vault-b-$BUCKET-v5"             "copy-vault-hourly-shard-b-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":1,"rotate_mb":64}'
 
-          make_campaign             event_intelligence_collection             "event-$BUCKET-v4"             "event-hourly-v4"             '{}'
+          make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
 
           make_campaign             replay             "replay-$BUCKET-v5"             "replay-hourly-newest-safe-v5"             '{"max_shards":64}'
 
           if [ "$((10#$HOUR % 6))" -eq 0 ]; then
-            make_campaign               backtest               "backtest-$DAY-s$SLOT6-v4"               "backtest-six-hourly-safe-v4"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
-            make_campaign               module_pnl_proof               "pnl-$DAY-s$SLOT6-v4"               "pnl-six-hourly-safe-v4"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+            make_campaign               backtest               "backtest-$DAY-s$SLOT6-v5"               "backtest-six-hourly-safe-v5"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+            make_campaign               module_pnl_proof               "pnl-$DAY-s$SLOT6-v5"               "pnl-six-hourly-safe-v5"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
           fi
 
           if [ "$HOUR" = "06" ]; then
@@ -106,8 +106,3 @@ jobs:
           exit 1
 
 
-  launch:
-    needs: create
-    uses: ./.github/workflows/resumable-campaign-controller.yml
-    permissions:
-      contents: write
