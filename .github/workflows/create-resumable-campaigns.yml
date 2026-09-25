@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: resumable-campaign-creation
@@ -61,7 +62,7 @@ jobs:
             fi
           }
 
-          make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL","duration_s":3500,"rotate_mb":64}'
+          make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","duration_s":3500,"rotate_mb":64}'
 
           make_campaign             copy_vault_collection             "copy-vault-$BUCKET-v4"             "copy-vault-hourly-continuous-v4"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":1,"vault_shard_index":0,"rotate_mb":64}'
 
@@ -95,3 +96,8 @@ jobs:
             sleep $((i*2))
           done
           exit 1
+
+      - name: Kick resumable controller
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run resumable-campaign-controller.yml --repo "$GITHUB_REPOSITORY"
