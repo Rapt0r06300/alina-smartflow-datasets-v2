@@ -43,7 +43,8 @@ jobs:
           m=json.load(open(sys.argv[1]))
           idx=m.get("chunk_index",0)
           kind=m["kind"]
-          part={"chunk_index":idx,"cursor":m.get("cursor",{}),"code_sha":m.get("code_sha")}
+          part=dict(m.get("cursor") or {})
+          part.update({"chunk_index":idx,"code_sha":m.get("code_sha")})
           if kind=="market_collection":
               part.update({"duration_s":600,"coins":"BTC,ETH,SOL"})
           elif kind=="copy_vault_collection":
