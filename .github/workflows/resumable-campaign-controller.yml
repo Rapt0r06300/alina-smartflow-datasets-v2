@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: resumable-campaign-controller
+  group: resumable-campaign-controller-v2
   cancel-in-progress: false
 
 jobs:
