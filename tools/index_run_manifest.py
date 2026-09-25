@@ -65,8 +65,8 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
         "bytes": manifest.get("bytes"),
         "event_count": manifest.get("event_count"),
         "record_count": manifest.get("record_count", manifest.get("event_count")),
-        "trade_count": manifest.get("trade_count", 0),
-        "replay_compatible": manifest.get("replay_compatible", False),
+        "trade_count": manifest.get("trade_count"),
+        "replay_compatible": manifest.get("replay_compatible"),
         "replay_schema_version": manifest.get("replay_schema_version"),
         "replay_reason": manifest.get("replay_reason"),
     }
