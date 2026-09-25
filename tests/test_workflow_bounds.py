@@ -157,7 +157,7 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
     assert "push:" in backfill
     assert "backfill-exact-trade-counts.yml" in backfill
     assert "backfill_exact_trade_counts.py" in backfill
-    assert 'default: "500"' in backfill
+    assert 'default: "2000"' in backfill
     assert 'inputs.limit || \'500\'' in backfill
     assert "runs-on: ubuntu-latest" in bridge
     assert "runs-on: ubuntu-latest" in backfill
