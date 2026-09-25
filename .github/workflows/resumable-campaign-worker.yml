@@ -136,7 +136,12 @@ jobs:
               part.setdefault("coins","BTC,ETH,SOL")
               part.setdefault("rotate_mb",64)
           elif kind=="copy_vault_collection":
+              COPY_VAULT_SWEEP_DURATION_CAP_S=300
               part.setdefault("duration_s",3500)
+              part["duration_s"] = min(
+                  float(part["duration_s"]),
+                  float(COPY_VAULT_SWEEP_DURATION_CAP_S),
+              )
               part.setdefault("max_vaults",10)
               part.setdefault("vault_shard_count",1)
               part.setdefault("vault_shard_index",0)
