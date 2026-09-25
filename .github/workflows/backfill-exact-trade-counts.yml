@@ -1,5 +1,10 @@
 name: backfill-exact-trade-counts
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/backfill-exact-trade-counts.yml'
+      - 'tools/backfill_exact_trade_counts.py'
   schedule:
     - cron: '13 * * * *'
   workflow_dispatch:
