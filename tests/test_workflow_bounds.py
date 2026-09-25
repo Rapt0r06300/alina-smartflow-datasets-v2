@@ -58,3 +58,18 @@ def test_metrics_refresh_is_scheduled_and_serialized():
     assert "group: dataset-v2-control-plane-index" in text
     assert "cancel-in-progress: false" in text
     assert "tools/build_catalog_metrics.py" in text
+
+def test_resumable_worker_has_real_partition_defaults_and_retry_policy():
+    text=_workflow("resumable-campaign-worker.yml")
+    assert '"duration_s":600' in text
+    assert '"max_vaults":20' in text
+    assert '"start_date":day' in text
+    assert 'TEMPORARY_EXTERNAL' in text
+    assert 'failure=True' in text
+
+def test_resumable_creator_and_controller_track_current_main():
+    creator=_workflow("create-resumable-campaigns.yml")
+    controller=_workflow("resumable-campaign-controller.yml")
+    assert "ref: main" in creator
+    assert "ref: main" in controller
+    assert "777d329176ded9e9262c33a9411adc99c55caa02" not in creator+controller
