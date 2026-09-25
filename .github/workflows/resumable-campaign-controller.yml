@@ -25,6 +25,14 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Refresh Dataset V2 main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+
       - name: Checkout current campaign CLI
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
