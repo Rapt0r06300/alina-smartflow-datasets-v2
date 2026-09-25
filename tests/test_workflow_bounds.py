@@ -61,6 +61,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "max_shards" in text
     assert "64" in text
     assert "128" in text
+    assert "gh workflow run resumable-campaign-controller.yml" in text
+    assert "uses: ./.github/workflows/resumable-campaign-controller.yml" not in text
+    assert "actions: write" in text
 
 
 def test_resumable_creator_encodes_copy_vault_cursor_as_valid_json():
