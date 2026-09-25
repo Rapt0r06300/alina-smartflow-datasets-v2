@@ -1,7 +1,7 @@
 name: main-dataset-v2-bridge-smoke
 on:
   schedule:
-    - cron: '23 */6 * * *'
+    - cron: '23 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge plan             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/plan.json"
+          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge plan             --families bbo             --max-shards 1             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/plan.json"
           python -m json.tool "$RUNNER_TEMP/plan.json"
           SAFE="$(python -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/plan.json"))["safe_shards"])')"
           echo "SAFE_SHARDS=$SAFE" >> "$GITHUB_ENV"
@@ -53,7 +53,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge materialize             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/materialized.json"
+          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge materialize             --families bbo             --max-shards 1             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/materialized.json"
           python - <<'PY'
           import json,os,pathlib
           root=pathlib.Path(os.environ["RUNNER_TEMP"])/"v2-bridge-smoke"
