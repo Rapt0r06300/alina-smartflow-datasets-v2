@@ -31,6 +31,10 @@ def test_resumable_creator_is_scheduled_and_hosted():
     assert 'make_campaign replay' in text
     assert 'make_campaign backtest' in text
     assert 'make_campaign module_pnl_proof' in text
+    assert "ref: main" in text
+    assert "--cursor-json" in text
+    assert "archives-binance-btc-" in text
+    assert "archives-bybit-btc-" in text
 
 def test_controller_worker_are_bounded_and_non_recursive():
     controller=_workflow("resumable-campaign-controller.yml")
@@ -42,6 +46,11 @@ def test_controller_worker_are_bounded_and_non_recursive():
     assert "self-hosted" not in controller+worker
     assert "gh workflow run resumable-campaign-worker.yml" in controller
     assert "gh workflow run" not in worker
+    assert "Acquire hashed lease" in worker
+    assert "publish_dataset_v2_release.py" in worker
+    assert "index_run_manifest.py" in worker
+    assert "worker_failed_before_result" in worker
+    assert "ref: ${{ steps.pin.outputs.sha }}" in worker
 
 def test_metrics_refresh_is_scheduled_and_serialized():
     text=_workflow("dataset-metrics-v2.yml")
