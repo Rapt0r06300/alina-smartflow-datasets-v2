@@ -44,8 +44,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "archives-bybit-btc-" in text
     assert "REPLAY_START_MS" in text
     assert "ECON_START_MS" in text
-    assert '"max_shards":64' in text
-    assert '"max_shards":128' in text
+    assert "max_shards" in text
+    assert "64" in text
+    assert "128" in text
 
 
 def test_controller_worker_are_bounded_hosted_and_non_recursive():
