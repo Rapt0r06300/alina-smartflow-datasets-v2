@@ -74,18 +74,36 @@ jobs:
 
           make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","duration_s":3500,"rotate_mb":64}'
 
-          COPY_SELECTION="catalog/copy_vault_selections/$BUCKET.json"
-          if [ ! -f "$COPY_SELECTION" ]; then
-            PYTHONPATH=alina/src python alina/tools/freeze_copy_vault_selection.py               --output "$COPY_SELECTION"
+          ACTIVE_COPY_CAMPAIGNS="$(python - <<'PY'
+          import glob,json
+          active={"PENDING","RUNNING","CONTINUATION_REQUIRED"}
+          count=0
+          for path in glob.glob("catalog/campaigns/copy-vault-*-v6.json"):
+              try:
+                  status=str(json.load(open(path,encoding="utf-8")).get("status") or "")
+              except (OSError,ValueError,TypeError):
+                  continue
+              if status in active:
+                  count += 1
+          print(count)
+          PY
+          )"
+          if [ "$ACTIVE_COPY_CAMPAIGNS" -gt 0 ]; then
+            echo "active Copy-Vault sweep already exists ($ACTIVE_COPY_CAMPAIGNS campaigns); skipping overlapping full-universe sweep"
+          else
+            COPY_SELECTION="catalog/copy_vault_selections/$BUCKET.json"
+            if [ ! -f "$COPY_SELECTION" ]; then
+              PYTHONPATH=alina/src python alina/tools/freeze_copy_vault_selection.py               --output "$COPY_SELECTION"
+            fi
+            COPY_COUNT="$(python -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["vaults"]))' "$COPY_SELECTION")"
+            test "$COPY_COUNT" -gt 0
+            COPY_SHA="$(sha256sum "$COPY_SELECTION" | cut -d' ' -f1)"
+            COPY_LANES="$(((COPY_COUNT + 9) / 10))"
+            for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
+              COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":3500,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
+              make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "$COPY_CURSOR"
+            done
           fi
-          COPY_COUNT="$(python -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["vaults"]))' "$COPY_SELECTION")"
-          test "$COPY_COUNT" -gt 0
-          COPY_SHA="$(sha256sum "$COPY_SELECTION" | cut -d' ' -f1)"
-          COPY_LANES="$(((COPY_COUNT + 9) / 10))"
-          for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
-            COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":3500,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
-            make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "$COPY_CURSOR"
-          done
 
           make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
 
