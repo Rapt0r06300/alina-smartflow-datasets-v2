@@ -136,6 +136,9 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
     backfill = _workflow("backfill-exact-trade-counts.yml")
     assert "schedule:" in bridge
     assert "schedule:" in backfill
+    assert "push:" in backfill
+    assert "backfill-exact-trade-counts.yml" in backfill
+    assert "backfill_exact_trade_counts.py" in backfill
     assert "runs-on: ubuntu-latest" in bridge
     assert "runs-on: ubuntu-latest" in backfill
     assert "self-hosted" not in bridge + backfill
