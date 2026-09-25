@@ -4,266 +4,27 @@ on:
   workflow_dispatch:
     inputs:
       duration_minutes:
-        description: "Collection window per shard (minutes, max recommended 300)"
+        description: "Diagnostic collection window (minutes)"
         required: false
-        default: "210"
+        default: "30"
       max_coins:
-        description: "Maximum exact multi-venue coins before sharding"
+        description: "Maximum multi-venue coins"
         required: false
-        default: "48"
-  schedule:
-    - cron: "17 */4 * * *"
+        default: "16"
 
 permissions:
   contents: write
 
 concurrency:
   group: dataset-v2-market-collection
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  prepare:
-    if: github.event_name != 'push'
-    name: freeze-market-universe
+  diagnostic:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    outputs:
-      source_sha: ${{ steps.params.outputs.source_sha }}
-      selected: ${{ steps.plan.outputs.selected }}
-      duration_seconds: ${{ steps.params.outputs.duration_seconds }}
+    timeout-minutes: 60
     steps:
-      - name: Checkout Alina collector source
-        uses: actions/checkout@v4
-        with:
-          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
-          ref: main
-          path: alina
-          fetch-depth: 1
-          persist-credentials: false
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install collector
-        run: python -m pip install --disable-pip-version-check -e ./alina
-
-      - id: params
-        name: Pin code and collection window
-        shell: bash
+      - name: Manual diagnostic only
         run: |
-          set -euo pipefail
-          SOURCE_SHA="$(git -C alina rev-parse HEAD)"
-          DURATION_MINUTES="${{ inputs.duration_minutes || '210' }}"
-          MAX_COINS="${{ inputs.max_coins || '48' }}"
-          python - <<'PY' "$DURATION_MINUTES" "$MAX_COINS"
-          import sys
-          duration = int(sys.argv[1])
-          max_coins = int(sys.argv[2])
-          if not 1 <= duration <= 300:
-              raise SystemExit("duration_minutes must be in [1, 300]")
-          if not 8 <= max_coins <= 96:
-              raise SystemExit("max_coins must be in [8, 96]")
-          PY
-          echo "source_sha=$SOURCE_SHA" >> "$GITHUB_OUTPUT"
-          echo "duration_seconds=$((DURATION_MINUTES * 60))" >> "$GITHUB_OUTPUT"
-          echo "max_coins=$MAX_COINS" >> "$GITHUB_OUTPUT"
-
-      - id: plan
-        name: Freeze exact multi-venue universe once
-        env:
-          MAX_COINS: ${{ steps.params.outputs.max_coins }}
-        run: |
-          set -euo pipefail
-          python alina/tools/discover_cloud_collection_plan.py             --output "$RUNNER_TEMP/collection-plan-all.json"             --min-venues 2             --max-coins "$MAX_COINS"             --batch-size 8
-          python - <<'PY' >> "$GITHUB_OUTPUT"
-          import json, os
-          from pathlib import Path
-          payload = json.loads(
-              (Path(os.environ["RUNNER_TEMP"]) / "collection-plan-all.json").read_text(
-                  encoding="utf-8"
-              )
-          )
-          selected = payload.get("selected") or []
-          if not selected:
-              raise SystemExit("NO_MULTI_VENUE_MARKETS")
-          print("selected=" + json.dumps(selected, separators=(",", ":")))
-          PY
-
-  collect:
-    name: collect-shard-${{ matrix.shard }}
-    needs: prepare
-    runs-on: ubuntu-latest
-    timeout-minutes: 345
-    strategy:
-      fail-fast: false
-      max-parallel: 8
-      matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7]
-
-    env:
-      PYTHONUTF8: "1"
-      PYTHONIOENCODING: "utf-8"
-      HL_ENABLE_MAINNET_EXECUTION: "0"
-      HL_ENABLE_TESTNET_EXECUTION: "0"
-      REAL_MAINNET_TRADING: "false"
-      TESTNET_EXECUTION_ENABLED: "false"
-      HYPERSMART_ENABLE_REAL_ORDERS: "0"
-      ENABLE_REAL_ORDERS: "0"
-      GH_TOKEN: ${{ github.token }}
-      DATASET_REPOSITORY: ${{ github.repository }}
-      SHARD_COUNT: "8"
-      COLLECTION_RUN_ID: market-${{ github.run_id }}
-      PLAN_JSON: ${{ needs.prepare.outputs.selected }}
-
-    steps:
-      - name: Checkout pinned Alina collector source
-        uses: actions/checkout@v4
-        with:
-          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
-          ref: ${{ needs.prepare.outputs.source_sha }}
-          path: alina
-          fetch-depth: 1
-          persist-credentials: false
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install collector
-        run: python -m pip install --disable-pip-version-check -e ./alina
-
-      - name: Select deterministic lane from frozen universe
-        id: plan
-        env:
-          SHARD_INDEX: ${{ matrix.shard }}
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          rows = json.loads(os.environ["PLAN_JSON"])
-          shard = int(os.environ["SHARD_INDEX"])
-          count = int(os.environ["SHARD_COUNT"])
-          selected = rows[shard::count]
-          target = Path(os.environ["RUNNER_TEMP"]) / "collection-plan-shard.json"
-          target.write_text(
-              json.dumps(
-                  {
-                      "schema": "alina.cloud_collection_plan.shard.v2",
-                      "shard_index": shard,
-                      "shard_count": count,
-                      "selected": selected,
-                      "collection_run_id": os.environ["COLLECTION_RUN_ID"],
-                      "read_only": True,
-                      "real_execution": False,
-                  },
-                  indent=2,
-                  sort_keys=True,
-              ) + "\n",
-              encoding="utf-8",
-          )
-          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
-              handle.write(f"count={len(selected)}\n")
-          print(f"shard={shard}/{count} selected={len(selected)}")
-          PY
-
-      - name: Collect bounded cloud window
-        if: steps.plan.outputs.count != '0'
-        env:
-          PYTHONPATH: alina/src:alina
-          ALINA_COLLECTION_RUN_ID: ${{ env.COLLECTION_RUN_ID }}
-        run: |
-          set -euo pipefail
-          python alina/tools/collect_cloud_window.py             --output "$RUNNER_TEMP/dataset-v2-bundle"             --plan-file "$RUNNER_TEMP/collection-plan-shard.json"             --duration-s "${{ needs.prepare.outputs.duration_seconds }}"             --collector-version "${{ needs.prepare.outputs.source_sha }}"             --collection-run-id "$COLLECTION_RUN_ID"             --rotate-mb 256
-
-      - name: Publish immutable verified release
-        if: steps.plan.outputs.count != '0'
-        env:
-          PYTHONPATH: alina/src:alina
-        run: |
-          set -euo pipefail
-          TAG="data-v2-${GITHUB_RUN_ID}-s${{ matrix.shard }}"
-          python alina/tools/publish_dataset_v2_release.py             "$RUNNER_TEMP/dataset-v2-bundle"             --repository "$DATASET_REPOSITORY"             --tag "$TAG"             --target main             --title "Alina Dataset V2 run ${GITHUB_RUN_ID} shard ${{ matrix.shard }}"
-
-  catalog:
-    name: update-dataset-catalog
-    needs: [prepare, collect]
-    if: github.event_name != 'push' && always()
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    concurrency:
-      group: dataset-v2-control-plane-index
-      cancel-in-progress: false
-    permissions:
-      contents: write
-    env:
-      GH_TOKEN: ${{ github.token }}
-      COLLECTION_RUN_ID: market-${{ github.run_id }}
-
-    steps:
-      - name: Checkout dataset control plane
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-          persist-credentials: true
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Download run manifests
-        shell: bash
-        run: |
-          set -euo pipefail
-          tags=()
-          for shard in 0 1 2 3 4 5 6 7; do
-            tags+=("data-v2-${GITHUB_RUN_ID}-s${shard}")
-          done
-          python tools/download_release_manifests.py \
-            --repository "$GITHUB_REPOSITORY" \
-            --destination "$RUNNER_TEMP/run-manifests" \
-            --attempts 12 \
-            --poll-seconds 10 \
-            "${tags[@]}"
-
-      - name: Index verified manifests into SAFE / quarantine / rejected
-        shell: bash
-        run: |
-          set -euo pipefail
-          mapfile -t MANIFESTS < <(find "$RUNNER_TEMP/run-manifests" -name RUN_MANIFEST.json -type f | sort)
-          if [ "${#MANIFESTS[@]}" -eq 0 ]; then
-            echo "NO_VERIFIED_RUN_MANIFESTS"
-            exit 2
-          fi
-          python tools/index_run_manifest.py "${MANIFESTS[@]}"
-
-      - name: Validate indexed control plane
-        shell: bash
-        run: |
-          set -euo pipefail
-          python tools/check_dataset_quality.py
-          python -m pip install --disable-pip-version-check pytest
-          python -m pytest -q tests
-
-      - name: Commit catalog update
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog datasets
-          if git diff --cached --quiet; then
-            echo "No catalog change."
-            exit 0
-          fi
-          git commit -m "data: index verified market run ${GITHUB_RUN_ID}"
-          for attempt in 1 2 3 4 5; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              exit 0
-            fi
-            sleep $((attempt * 2))
-          done
-          exit 1
+          echo "Scheduled market collection migrated to resumable campaigns."
+          echo "Use create-resumable-campaigns + controller/worker for automatic work."
