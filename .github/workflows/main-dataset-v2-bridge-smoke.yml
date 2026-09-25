@@ -1,0 +1,77 @@
+name: main-dataset-v2-bridge-smoke
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: main-dataset-v2-bridge-smoke
+  cancel-in-progress: false
+
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      REAL_MAINNET_TRADING: "false"
+      ENABLE_REAL_ORDERS: "0"
+    steps:
+      - name: Checkout Dataset V2 control plane
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Checkout current Alina main
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: main
+          path: alina
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Install Alina runtime
+        run: python -m pip install --disable-pip-version-check -e ./alina
+
+      - name: Plan SAFE replayable materialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge plan             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/plan.json"
+          python -m json.tool "$RUNNER_TEMP/plan.json"
+          SAFE="$(python -c 'import json,os; print(json.load(open(os.environ["RUNNER_TEMP"]+"/plan.json"))["safe_shards"])')"
+          echo "SAFE_SHARDS=$SAFE" >> "$GITHUB_ENV"
+
+      - name: Materialize and verify real V2 release assets
+        if: env.SAFE_SHARDS != '0'
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH=alina/src python -m hl_observer.ops.v2_dataset_bridge materialize             --output "$RUNNER_TEMP/v2-bridge-smoke"             > "$RUNNER_TEMP/materialized.json"
+          python - <<'PY'
+          import json,os,pathlib
+          root=pathlib.Path(os.environ["RUNNER_TEMP"])/"v2-bridge-smoke"
+          p=root/"runtime"/"reports"/"datasets"/"SELECTION_PROVENANCE.json"
+          row=json.loads(p.read_text(encoding="utf-8"))
+          assert row["quality_status_required"]=="SAFE"
+          assert row["selected_shards"]>0
+          assert row["real_execution"] is False
+          assert row["legacy_import"] is False
+          print(json.dumps({
+              "selected_shards":row["selected_shards"],
+              "selected_events":row["selected_events"],
+              "source_index_sha256":row["source_index_sha256"],
+          },sort_keys=True))
+          PY
+
+      - name: Report honest no-data state
+        if: env.SAFE_SHARDS == '0'
+        run: |
+          echo "Dataset V2 is reachable but currently has no SAFE+replay-compatible shard."
+          echo "Collection/reconciliation campaigns will continue automatically; this is not promoted to a replay success."
