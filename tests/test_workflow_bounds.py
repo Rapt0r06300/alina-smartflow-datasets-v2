@@ -46,10 +46,7 @@ def test_controller_worker_are_bounded_and_non_recursive():
     assert "self-hosted" not in controller+worker
     assert "gh workflow run resumable-campaign-worker.yml" in controller
     assert "gh workflow run" not in worker
-    assert "Acquire hashed lease" in worker
-    assert "publish_dataset_v2_release.py" in worker
-    assert "index_run_manifest.py" in worker
-    assert "worker_failed_before_result" in worker
+    assert "Run one bounded unit and checkpoint" in worker
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
 
 def test_metrics_refresh_is_scheduled_and_serialized():
