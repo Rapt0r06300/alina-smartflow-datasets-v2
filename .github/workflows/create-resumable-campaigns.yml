@@ -99,3 +99,10 @@ jobs:
             sleep $((i*2))
           done
           exit 1
+
+
+  launch:
+    needs: create
+    uses: ./.github/workflows/resumable-campaign-controller.yml
+    permissions:
+      contents: write
