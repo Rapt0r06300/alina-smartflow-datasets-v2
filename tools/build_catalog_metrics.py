@@ -21,7 +21,13 @@ def build():
         status=str(row.get("quality_status") or "")
         replay=bool(row.get("replay_compatible"))
         records=int(row.get("record_count") or row.get("event_count") or 0)
-        trades=int(row.get("trade_count") or 0)
+        trade_count_raw=row.get("trade_count")
+        trades=int(trade_count_raw or 0)
+        trade_family=str(row.get("family") or "").lower() in {"trades","agg_trades","fills","userfills","user_fills","copy_vault_fills"}
+        if trade_family and trade_count_raw is None:
+            totals.setdefault("TRADE_SHARDS_MISSING_EXACT_COUNT",0); totals["TRADE_SHARDS_MISSING_EXACT_COUNT"]+=1
+        elif trade_family:
+            totals.setdefault("TRADE_SHARDS_WITH_EXACT_COUNT",0); totals["TRADE_SHARDS_WITH_EXACT_COUNT"]+=1
         b=int(row.get("bytes") or 0)
         totals["TOTAL_RECORDS"]+=records; totals["TOTAL_COMPRESSED_BYTES"]+=b
         if status=="SAFE": totals["SAFE_SHARDS"]+=1; totals["TOTAL_SAFE_RECORDS"]+=records; totals["TOTAL_TRADES_SAFE"]+=trades
