@@ -9,11 +9,15 @@ on:
       - 'tools/manifest_policy.py'
       - 'tools/index_run_manifest.py'
   schedule:
-    - cron: '2,12,22,32,42,52 * * * *'
+    - cron: '2 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: resumable-campaign-creation-hourly
+  cancel-in-progress: false
 
 jobs:
   create:
