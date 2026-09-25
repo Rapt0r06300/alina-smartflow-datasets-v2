@@ -129,7 +129,7 @@ jobs:
               part.setdefault("rotate_mb",64)
           elif kind=="copy_vault_collection":
               part.setdefault("duration_s",3500)
-              part.setdefault("max_vaults",20)
+              part.setdefault("max_vaults",10)
               part.setdefault("vault_shard_count",1)
               part.setdefault("vault_shard_index",0)
               part.setdefault("rotate_mb",64)
