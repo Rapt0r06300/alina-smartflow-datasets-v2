@@ -129,9 +129,12 @@ def index_run_manifests(
             if not dataset_id:
                 raise ValueError("dataset_id required")
             status, reasons = classify_manifest(manifest)
+            if status == "SAFE" and manifest.get("replay_compatible") is not True:
+                status = "PARTIAL"
+                reasons = list(dict.fromkeys([*reasons, "REPLAY_COMPATIBILITY_NOT_PROVEN"]))
             manifest["quality_status"] = status
             manifest["quality_reasons"] = reasons
-            manifest["validation_allowed"] = status == "SAFE"
+            manifest["validation_allowed"] = status == "SAFE" and manifest.get("replay_compatible") is True
             # A SAFE shard may be used by validation, but dataset quality alone
             # never proves that any strategy has positive PnL.
             manifest["proof_of_pnl_allowed"] = False
