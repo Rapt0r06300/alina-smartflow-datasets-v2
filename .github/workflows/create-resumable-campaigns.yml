@@ -141,6 +141,17 @@ jobs:
 
   launch:
     needs: create
-    uses: ./.github/workflows/resumable-campaign-controller.yml
+    runs-on: ubuntu-latest
     permissions:
-      contents: write
+      actions: write
+      contents: read
+    steps:
+      - name: Dispatch resumable controller
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run resumable-campaign-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
