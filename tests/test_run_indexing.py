@@ -70,6 +70,9 @@ def _manifest(*, family: str, reconciliation: str, dataset_id: str) -> dict:
         "source": "bybit_public_ws",
         "quality_status": "SAFE",
         "asset_verified": True,
+        "replay_compatible": True,
+        "replay_schema_version": "alina.replay.v1",
+        "replay_reason": "SMOKE_OK",
         "provenance": {
             "public_data_only": True,
             "authenticated": False,
