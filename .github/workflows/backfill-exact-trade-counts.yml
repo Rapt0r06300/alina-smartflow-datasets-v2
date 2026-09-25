@@ -12,7 +12,7 @@ on:
       limit:
         description: "Maximum legacy trade shards to verify in this run"
         required: false
-        default: "500"
+        default: "2000"
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          LIMIT="${{ inputs.limit || '500' }}"
+          LIMIT="${{ inputs.limit || '2000' }}"
           python tools/backfill_exact_trade_counts.py --limit "$LIMIT"
           python tools/build_catalog_metrics.py
           python tools/check_dataset_quality.py
