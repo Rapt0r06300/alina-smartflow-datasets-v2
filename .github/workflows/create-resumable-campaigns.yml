@@ -79,7 +79,8 @@ jobs:
           COPY_SHA="$(sha256sum "$COPY_SELECTION" | cut -d' ' -f1)"
           COPY_LANES="$(((COPY_COUNT + 9) / 10))"
           for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
-            make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "{"duration_s":3500,"max_vaults":$COPY_COUNT,"vault_shard_count":$COPY_LANES,"vault_shard_index":$COPY_LANE,"rotate_mb":64,"selection_file":"$COPY_SELECTION","selection_sha256":"$COPY_SHA"}"
+            COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":3500,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
+            make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "$COPY_CURSOR"
           done
 
           make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
