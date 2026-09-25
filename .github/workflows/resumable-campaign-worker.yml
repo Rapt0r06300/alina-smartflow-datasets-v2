@@ -14,160 +14,79 @@ jobs:
   work:
     runs-on: ubuntu-latest
     timeout-minutes: 345
-    env:
-      HL_ENABLE_MAINNET_EXECUTION: "0"
-      HL_ENABLE_TESTNET_EXECUTION: "0"
-      REAL_MAINNET_TRADING: "false"
-      ENABLE_REAL_ORDERS: "0"
     steps:
-      - name: Checkout Dataset V2
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        with:
-          python-version: '3.12'
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: true}
       - id: pin
         name: Read pinned code SHA
         shell: bash
         run: |
           set -euo pipefail
-          M="catalog/campaigns/${{ inputs.campaign_id }}.json"
-          test -f "$M"
+          M="catalog/campaigns/${{ inputs.campaign_id }}.json"; test -f "$M"
           echo "sha=$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["code_sha"])' "$M")" >> "$GITHUB_OUTPUT"
-      - name: Checkout exact campaign code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: Rapt0r06300/hyperliquid-smart-wallet-observer
           ref: ${{ steps.pin.outputs.sha }}
           path: alina
           persist-credentials: false
-      - name: Install campaign runtime
-        run: |
-          python -m pip install --disable-pip-version-check -e ./alina
-      - id: lease
-        name: Acquire hashed lease and enter RUNNING
+      - name: Run one bounded unit and checkpoint
         env:
           CAMPAIGN_ID: "${{ inputs.campaign_id }}"
         shell: bash
         run: |
           set -euo pipefail
           M="catalog/campaigns/$CAMPAIGN_ID.json"
-          DIGEST="$(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py validate "$M")"
-          OUTPUT="$(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py start "$M"             --owner "${{ github.run_id }}" --ttl-s 20700 --expected-digest "$DIGEST")"
-          TOKEN="$(printf '%s\n' "$OUTPUT" | sed -n 's/^lease_token=//p')"
-          test -n "$TOKEN"
-          echo "::add-mask::$TOKEN"
-          echo "token=$TOKEN" >> "$GITHUB_OUTPUT"
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add "$M"
-          git commit -m "campaign: lease $CAMPAIGN_ID"
-          for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
-            sleep $((i*2))
-          done
-          exit 1
-      - id: unit
-        name: Run one bounded deterministic unit
-        env:
-          CAMPAIGN_ID: "${{ inputs.campaign_id }}"
-        shell: bash
-        run: |
-          set -euo pipefail
-          M="catalog/campaigns/$CAMPAIGN_ID.json"
-          python - <<'PY' "$M" "$RUNNER_TEMP" > "$RUNNER_TEMP/unit.env"
-          import hashlib,json,sys,shlex
-          p,tmp=sys.argv[1:]
-          m=json.load(open(p,encoding="utf-8"))
-          idx=int(m.get("chunk_index") or 0)
-          cursor=dict(m.get("cursor") or {})
-          cursor.update({
-              "chunk_index":idx,
-              "code_sha":m["code_sha"],
-              "collector_version":m["code_sha"],
-              "collection_run_id":f"{m['campaign_id']}-{idx}",
-              "output_root":f"{tmp}/alina-campaign-output",
-          })
-          if m["kind"] in {"backtest","module_pnl_proof"}:
-              cursor["workspace_root"]=f"{tmp}/alina-safe-workspace"
-          unit=hashlib.sha256(json.dumps({
-              "kind":m["kind"],"code_sha":m["code_sha"],
-              "config":m["config_sha256"],"dataset":m["dataset_generation"],
-              "partition":cursor,
-          },sort_keys=True,separators=(",",":")).encode()).hexdigest()
-          print("KIND="+shlex.quote(m["kind"]))
-          print("UNIT="+shlex.quote(unit))
-          print("PART="+shlex.quote(json.dumps(cursor,separators=(",",":"))))
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py validate "$M"
+          python - <<'PY' "$M" > "$RUNNER_TEMP/unit.env"
+          import datetime,json,shlex,sys
+          m=json.load(open(sys.argv[1]))
+          idx=m.get("chunk_index",0)
+          kind=m["kind"]
+          part={"chunk_index":idx,"cursor":m.get("cursor",{}),"code_sha":m.get("code_sha")}
+          if kind=="market_collection":
+              part.update({"duration_s":600,"coins":"BTC,ETH,SOL"})
+          elif kind=="copy_vault_collection":
+              part.update({"duration_s":600,"max_vaults":20,"vault_shard_count":1,"vault_shard_index":0})
+          elif kind=="official_archive_collection":
+              day=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(days=1)).date().isoformat()
+              part.update({"venue":"binance","coin":"BTC","symbol":"BTCUSDT","start_date":day,"end_date":day,"max_days":1})
+          elif kind in {"replay","backtest","module_pnl_proof"}:
+              part["workspace_root"]="$RUNNER_TEMP/alina-replay-workspace"
+          print("KIND="+shlex.quote(kind))
+          print("UNIT="+shlex.quote(str(idx)))
+          print("PART="+shlex.quote(json.dumps(part,separators=(",",":"))))
           PY
           source "$RUNNER_TEMP/unit.env"
-          PYTHONPATH=alina/src python alina/tools/run_resumable_campaign.py             --campaign-id "$CAMPAIGN_ID" --kind "$KIND" --unit-id "$UNIT"             --partition-json "$PART" --soft-deadline-s 18900 > "$RUNNER_TEMP/result.json"
-          echo "unit=$UNIT" >> "$GITHUB_OUTPUT"
-      - name: Publish immutable collection bundle
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          CAMPAIGN_ID: "${{ inputs.campaign_id }}"
-        shell: bash
-        run: |
-          set -euo pipefail
-          RESULT="$RUNNER_TEMP/result.json"
-          KIND="$(python -c 'import json; print(json.load(open("catalog/campaigns/${{ inputs.campaign_id }}.json"))["kind"])')"
-          case "$KIND" in
-            market_collection|copy_vault_collection|official_archive_collection|event_intelligence_collection)
-              BUNDLE="$(python -c 'import json,sys; print((json.load(open(sys.argv[1])).get("payload") or {}).get("bundle_root") or "")' "$RESULT")"
-              test -n "$BUNDLE"
-              test -f "$BUNDLE/BUNDLE_INDEX.json"
-              TAG="data-v2-campaign-${CAMPAIGN_ID}-${{ steps.unit.outputs.unit }}"
-              PYTHONPATH=alina/src python alina/tools/publish_dataset_v2_release.py "$BUNDLE"                 --repository "${{ github.repository }}" --tag "$TAG" --target main                 --title "Alina Dataset V2 campaign $CAMPAIGN_ID"
-              python tools/index_run_manifest.py "$BUNDLE/RUN_MANIFEST.json"
-              ;;
-          esac
-      - name: Checkpoint result fail-closed
-        if: always()
-        env:
-          CAMPAIGN_ID: "${{ inputs.campaign_id }}"
-          LEASE_TOKEN: "${{ steps.lease.outputs.token }}"
-          UNIT_ID: "${{ steps.unit.outputs.unit }}"
-        shell: bash
-        run: |
-          set -euo pipefail
-          M="catalog/campaigns/$CAMPAIGN_ID.json"
-          RESULT="$RUNNER_TEMP/result.json"
-          test -f "$RESULT" || printf '%s\n' '{"status":"FAILED","sha256":"missing-result","payload":{"reason":"worker_failed_before_result"},"progressed":false}' > "$RESULT"
-          PYTHONPATH=alina/src python - <<'PY' "$M" "$RESULT" "$LEASE_TOKEN" "$UNIT_ID"
+          PYTHONPATH=alina/src python alina/tools/run_resumable_campaign.py --campaign-id "$CAMPAIGN_ID" --kind "$KIND" --unit-id "$UNIT" --partition-json "$PART" --soft-deadline-s 18900 > "$RUNNER_TEMP/result.json"
+          PYTHONPATH=alina/src python - <<'PY' "$M" "$RUNNER_TEMP/result.json"
           import json,sys
-          from hl_observer.control_plane.resumable_campaign import (
-              CampaignManifest,complete_work_unit,mark_continuation,mark_terminal,verify_lease
-          )
-          p,rp,token,uid=sys.argv[1:]
-          m=CampaignManifest.from_dict(json.load(open(p,encoding="utf-8")))
-          if not verify_lease(m,token):
-              raise SystemExit("stale or expired lease")
-          r=json.load(open(rp,encoding="utf-8"))
-          digest=str(r.get("sha256") or "")
-          if not digest or digest=="missing-result":
-              digest="0"*64
-          complete_work_unit(m,uid or str(m.chunk_index),digest,r.get("payload") or {})
-          if r.get("status")=="COMPLETE":
+          from hl_observer.control_plane.resumable_campaign import CampaignManifest,complete_work_unit,mark_continuation,mark_terminal
+          p,rp=sys.argv[1:]
+          raw=json.load(open(p)); m=CampaignManifest.from_dict(raw); r=json.load(open(rp)); uid=str(m.chunk_index)
+          complete_work_unit(m,uid,r["sha256"],r["payload"])
+          if r["status"]=="COMPLETE":
               mark_terminal(m,"COMPLETE","unit_complete")
-          elif r.get("status")=="CONTINUATION_REQUIRED":
-              mark_continuation(m,"soft_deadline",progressed=bool(r.get("progressed")),failure=False)
+          elif r["status"]=="CONTINUATION_REQUIRED":
+              mark_continuation(m,"soft_deadline",progressed=r.get("progressed",False))
           else:
-              category=str((r.get("payload") or {}).get("failure_category") or "QUALITY")
-              retryable=category in {"INFRASTRUCTURE","TEMPORARY_EXTERNAL"}
-              if retryable:
-                  mark_continuation(m,"retryable_failure",progressed=False,failure=True)
+              payload=r.get("payload") or {}
+              category=str(payload.get("failure_category") or "QUALITY")
+              if category in {"INFRASTRUCTURE","TEMPORARY_EXTERNAL"}:
+                  mark_continuation(m,payload.get("reason","adapter_failed"),progressed=False,failure=True)
               else:
-                  mark_terminal(m,"FAILED",str((r.get("payload") or {}).get("reason") or "adapter_failed"))
-          open(p,"w",encoding="utf-8").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
+                  mark_terminal(m,"FAILED",payload.get("reason","adapter_failed"))
+          open(p,"w").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
           PY
+      - name: Publish checkpoint with bounded retry
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/campaigns catalog/DATA_INDEX.json catalog/DATA_QUALITY_REGISTRY.json catalog/DATA_CATALOG.json datasets || true
+          git add catalog/campaigns
           git diff --cached --quiet && exit 0
-          git commit -m "campaign: checkpoint $CAMPAIGN_ID"
+          git commit -m "campaign: checkpoint ${{ inputs.campaign_id }}"
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             sleep $((i*2))
