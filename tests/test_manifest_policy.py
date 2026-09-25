@@ -27,6 +27,9 @@ def manifest() -> dict:
         "quality_status": "PARTIAL",
         "release_asset": "bybit-btc-l2-1000-2000.jsonl.gz",
         "asset_verified": True,
+        "replay_compatible": True,
+        "replay_schema_version": "alina.replay.v1",
+        "replay_reason": "SMOKE_OK",
         "provenance": {
             "public_data_only": True,
             "authenticated": False,
