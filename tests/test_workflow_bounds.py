@@ -26,7 +26,7 @@ def test_legacy_long_collectors_are_manual_only():
 def test_resumable_creator_is_continuous_hosted_and_frozen():
     text = _workflow("create-resumable-campaigns.yml")
     assert "schedule:" in text
-    assert "2 * * * *" in text
+    assert "cron: \'2 * * * *\'" in text
     assert "group: resumable-campaign-creation-hourly" in text
     assert "cancel-in-progress: false" in text
     assert "runs-on: ubuntu-latest" in text
