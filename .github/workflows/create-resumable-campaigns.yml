@@ -37,6 +37,9 @@ jobs:
           path: alina
           persist-credentials: false
 
+      - name: Install current Alina runtime for deterministic discovery
+        run: python -m pip install --disable-pip-version-check -e ./alina
+
       - name: Create deterministic frozen campaigns
         shell: bash
         run: |
@@ -67,8 +70,17 @@ jobs:
 
           make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","duration_s":3500,"rotate_mb":64}'
 
-          make_campaign             copy_vault_collection             "copy-vault-a-$BUCKET-v5"             "copy-vault-hourly-shard-a-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":0,"rotate_mb":64}'
-          make_campaign             copy_vault_collection             "copy-vault-b-$BUCKET-v5"             "copy-vault-hourly-shard-b-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":1,"rotate_mb":64}'
+          COPY_SELECTION="catalog/copy_vault_selections/$BUCKET.json"
+          if [ ! -f "$COPY_SELECTION" ]; then
+            PYTHONPATH=alina/src python alina/tools/freeze_copy_vault_selection.py               --output "$COPY_SELECTION"
+          fi
+          COPY_COUNT="$(python -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["vaults"]))' "$COPY_SELECTION")"
+          test "$COPY_COUNT" -gt 0
+          COPY_SHA="$(sha256sum "$COPY_SELECTION" | cut -d' ' -f1)"
+          COPY_LANES="$(((COPY_COUNT + 9) / 10))"
+          for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
+            make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "{"duration_s":3500,"max_vaults":$COPY_COUNT,"vault_shard_count":$COPY_LANES,"vault_shard_index":$COPY_LANE,"rotate_mb":64,"selection_file":"$COPY_SELECTION","selection_sha256":"$COPY_SHA"}"
+          done
 
           make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
 
@@ -90,7 +102,7 @@ jobs:
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/campaigns
+          git add catalog/campaigns catalog/copy_vault_selections
           git diff --cached --quiet && exit 0
           git commit -m "campaign: create continuous resumable work"
           for i in 1 2 3 4 5; do
