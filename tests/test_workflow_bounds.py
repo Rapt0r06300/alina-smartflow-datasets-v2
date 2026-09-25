@@ -92,6 +92,8 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "max-parallel: 1" in controller
     assert "max-parallel: 12" in controller
     assert "head -n 128" in controller
+    assert 'list-due catalog/campaigns             | head -n 128' not in controller
+    assert 'all-due.txt' in controller
     assert "copy_matrix" in controller
     assert "other_matrix" in controller
     assert "fromJSON(needs.select.outputs.copy_matrix)" in controller
@@ -158,7 +160,7 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
     assert "backfill-exact-trade-counts.yml" in backfill
     assert "backfill_exact_trade_counts.py" in backfill
     assert 'default: "2000"' in backfill
-    assert 'inputs.limit || \'500\'' in backfill
+    assert 'inputs.limit || \'2000\'' in backfill
     assert "runs-on: ubuntu-latest" in bridge
     assert "runs-on: ubuntu-latest" in backfill
     assert "self-hosted" not in bridge + backfill
