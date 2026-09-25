@@ -86,9 +86,15 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "cancel-in-progress: false" in worker
     assert "self-hosted" not in controller + worker
     assert "uses: ./.github/workflows/resumable-campaign-worker.yml" in controller
+    assert "copy_work:" in controller
+    assert "other_work:" in controller
+    assert "max-parallel: 1" in controller
     assert "max-parallel: 12" in controller
     assert "head -n 128" in controller
-    assert "fromJSON(needs.select.outputs.matrix)" in controller
+    assert "copy_matrix" in controller
+    assert "other_matrix" in controller
+    assert "fromJSON(needs.select.outputs.copy_matrix)" in controller
+    assert "fromJSON(needs.select.outputs.other_matrix)" in controller
     assert "gh workflow run resumable-campaign-worker.yml" not in worker
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
     assert "Claim durable campaign lease" in worker
@@ -100,6 +106,8 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "Refresh Dataset V2 main" in controller
     assert "Refresh Dataset V2 main before pin" in worker
     assert 'os.path.abspath(str(part["selection_file"]))' in worker
+    assert "COPY_VAULT_SWEEP_DURATION_CAP_S=300" in worker
+    assert 'part["duration_s"] = min' in worker
     assert "actions: write" not in worker
 
 
