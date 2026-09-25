@@ -103,7 +103,9 @@ def _candidate(row: Mapping[str,Any], known: Mapping[str,Any], families: set[str
         return False
     if families and family not in families:
         return False
-    if row.get("quality_status")!="SAFE":
+    status=str(row.get("quality_status") or "")
+    pending=row.get("replay_validation_pending") is True
+    if status!="SAFE" and not (status=="PARTIAL" and pending):
         return False
     if row.get("replay_compatible") is True:
         return False
@@ -174,6 +176,8 @@ def _apply_result(
     ):
         if key in result:
             manifest[key]=result[key]
+    manifest.pop("replay_validation_pending",None)
+    manifest.pop("pre_replay_quality_status",None)
 
     status,reasons=classify_manifest(manifest)
     manifest["quality_status"]=status
@@ -186,6 +190,8 @@ def _apply_result(
     if target.resolve()!=manifest_path.resolve() and manifest_path.exists():
         manifest_path.unlink()
 
+    row.pop("replay_validation_pending",None)
+    row.pop("pre_replay_quality_status",None)
     row.update({
         "quality_status":status,
         "manifest_path":str(target.relative_to(root)).replace("\\","/"),
