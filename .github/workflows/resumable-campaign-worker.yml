@@ -5,10 +5,14 @@ on:
       campaign_id:
         required: true
         type: string
+  workflow_call:
+    inputs:
+      campaign_id:
+        required: true
+        type: string
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: resumable-${{ inputs.campaign_id }}
@@ -184,7 +188,6 @@ jobs:
             r["sha256"]=hashlib.sha256(raw).hexdigest()
             open(rp,"w").write(json.dumps(r,sort_keys=True)+"\n")
             PY
-            gh workflow run reconcile-v2-catalog.yml --repo "$GITHUB_REPOSITORY"
             echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
           else
             WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
