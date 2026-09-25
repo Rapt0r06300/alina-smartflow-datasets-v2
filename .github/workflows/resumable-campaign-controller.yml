@@ -53,7 +53,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
-          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             | head -n 128 > "$RUNNER_TEMP/due.txt"
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             > "$RUNNER_TEMP/all-due.txt"
+          head -n 128 "$RUNNER_TEMP/all-due.txt" > "$RUNNER_TEMP/due.txt"
           python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
           import json,sys
           from pathlib import Path
