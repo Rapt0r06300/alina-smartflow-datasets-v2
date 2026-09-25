@@ -119,7 +119,13 @@ jobs:
           print("UNIT="+str(idx))
           print("PART_JSON="+json.dumps(part,separators=(",",":")))
           PY
-          cat "$RUNNER_TEMP/unit.env" >> "$GITHUB_ENV"
+          {
+            echo "KIND=$(sed -n 's/^KIND=//p' "$RUNNER_TEMP/unit.env")"
+            echo "UNIT=$(sed -n 's/^UNIT=//p' "$RUNNER_TEMP/unit.env")"
+            echo 'PART_JSON<<ALINA_PART_JSON_EOF'
+            sed -n 's/^PART_JSON=//p' "$RUNNER_TEMP/unit.env"
+            echo 'ALINA_PART_JSON_EOF'
+          } >> "$GITHUB_ENV"
 
       - name: Run one bounded pinned unit
         env:
