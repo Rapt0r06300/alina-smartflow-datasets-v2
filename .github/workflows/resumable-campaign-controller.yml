@@ -1,7 +1,7 @@
 name: resumable-campaign-controller
 on:
   schedule:
-    - cron: '43 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -34,4 +34,4 @@ jobs:
           while IFS= read -r id; do
             [ -n "$id" ] || continue
             gh workflow run resumable-campaign-worker.yml -f campaign_id="$id"
-          done < <(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py list-due catalog/campaigns)
+          done < <(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py list-due catalog/campaigns | head -n 12)
