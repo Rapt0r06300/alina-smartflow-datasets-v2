@@ -275,6 +275,12 @@ jobs:
                   r.get("payload",{}).get("reason","continuation_required"),
                   progressed=bool(r.get("progressed",False)),
               )
+          elif r["status"] in {"UNAVAILABLE","PARTIAL","REJECT"}:
+              mark_terminal(
+                  m,
+                  r["status"],
+                  (r.get("payload") or {}).get("reason",r["status"].lower()),
+              )
           else:
               payload=r.get("payload") or {}
               category=str(payload.get("failure_category") or "QUALITY")
