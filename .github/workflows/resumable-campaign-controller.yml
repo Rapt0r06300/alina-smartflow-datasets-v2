@@ -51,7 +51,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
-          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             | head -n 8 > "$RUNNER_TEMP/due.txt"
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             | head -n 128 > "$RUNNER_TEMP/due.txt"
           python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
           import json,sys
           ids=[line.strip() for line in open(sys.argv[1],encoding="utf-8") if line.strip()]
@@ -64,7 +64,7 @@ jobs:
     if: needs.select.outputs.count != '0'
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 12
       matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
     uses: ./.github/workflows/resumable-campaign-worker.yml
     with:
