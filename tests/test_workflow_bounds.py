@@ -33,6 +33,11 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' in text
     assert "market_collection" in text
     assert "copy_vault_collection" in text
+    assert "copy-vault-a-" in text
+    assert "copy-vault-b-" in text
+    assert '"vault_shard_count":2' in text
+    assert '"vault_shard_index":0' in text
+    assert '"vault_shard_index":1' in text
     assert "official_archive_collection" in text
     assert "event_intelligence_collection" in text
     assert "make_campaign             replay" in text
@@ -96,7 +101,7 @@ def test_resumable_worker_preserves_frozen_cursor_and_retry_policy():
     worker = _workflow("resumable-campaign-worker.yml")
     assert 'part=dict(m.get("cursor") or {})' in worker
     assert 'part.setdefault("duration_s",3500)' in worker
-    assert 'part.setdefault("max_vaults",20)' in worker
+    assert 'part.setdefault("max_vaults",10)' in worker
     assert "TEMPORARY_EXTERNAL" in worker
     assert "failure=True" in worker
 
