@@ -35,13 +35,15 @@ for row in shards:
             assert row.get(key) not in (None, ""), f"SAFE index row missing {key}"
         assert int(row["bytes"]) > 0
         assert int(row["event_count"]) > 0
+        assert row.get("replay_compatible") is True, "SAFE index row must be replay compatible"
         assert row["release_repository"] == "Rapt0r06300/alina-smartflow-datasets-v2"
     manifest_path = root / row["manifest_path"]
     assert manifest_path.is_file()
     manifest = json.loads(manifest_path.read_text())
     assert manifest["dataset_id"] == row["dataset_id"]
     assert manifest["quality_status"] == row["quality_status"]
-    assert manifest["validation_allowed"] is (row["quality_status"] == "SAFE")
+    expected_validation = row["quality_status"] == "SAFE" and row.get("replay_compatible") is True
+    assert manifest["validation_allowed"] is expected_validation
 
 expected_active = (
     "SAFE"
