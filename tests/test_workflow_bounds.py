@@ -52,21 +52,23 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     controller = _workflow("resumable-campaign-controller.yml")
     worker = _workflow("resumable-campaign-worker.yml")
     assert "cron: '*/5 * * * *'" in controller
-    assert "timeout-minutes: 15" in controller
+    assert "timeout-minutes: 10" in controller
     assert "timeout-minutes: 345" in worker
     assert "cancel-in-progress: false" in controller
     assert "cancel-in-progress: false" in worker
     assert "self-hosted" not in controller + worker
-    assert "gh workflow run resumable-campaign-worker.yml" in controller
+    assert "uses: ./.github/workflows/resumable-campaign-worker.yml" in controller
+    assert "max-parallel: 4" in controller
+    assert "fromJSON(needs.select.outputs.matrix)" in controller
     assert "gh workflow run resumable-campaign-worker.yml" not in worker
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
     assert "Claim durable campaign lease" in worker
     assert "Persist collection data or analysis evidence" in worker
     assert "Publish final campaign checkpoint" in worker
     assert "publish_dataset_v2_release.py" in worker
-    assert "reconcile-v2-catalog.yml" in worker
     assert "verify_lease" in worker
-    assert "actions: write" in worker
+    assert "workflow_call:" in worker
+    assert "actions: write" not in worker
 
 
 def test_metrics_refresh_is_scheduled_and_serialized():
@@ -85,6 +87,8 @@ def test_reconcile_covers_all_production_release_families_and_pins_actions():
     assert "actions/setup-python@v5" not in text
     assert "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683" in text
     assert "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065" in text
+    assert "Download only new production V2 run manifests" in text
+    assert "known={" in text
 
 
 def test_resumable_worker_preserves_frozen_cursor_and_retry_policy():
