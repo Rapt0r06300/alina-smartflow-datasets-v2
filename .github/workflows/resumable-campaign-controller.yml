@@ -3,21 +3,27 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
-  actions: write
+
 concurrency:
   group: resumable-campaign-controller
   cancel-in-progress: false
+
 jobs:
-  dispatch:
+  select:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.due.outputs.matrix }}
+      count: ${{ steps.due.outputs.count }}
     steps:
       - name: Checkout Dataset V2
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          persist-credentials: true
+          persist-credentials: false
+
       - name: Checkout current campaign CLI
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -25,19 +31,30 @@ jobs:
           ref: main
           path: alina
           persist-credentials: false
-      - name: Dispatch due campaigns once
-        env:
-          GH_TOKEN: ${{ github.token }}
+
+      - id: due
+        name: Build bounded due-work matrix
+        shell: bash
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
-          MAX_DISPATCH=12
-          DISPATCHED=0
-          while IFS= read -r id; do
-            [ -n "$id" ] || continue
-            gh workflow run resumable-campaign-worker.yml -f campaign_id="$id"
-            DISPATCHED=$((DISPATCHED+1))
-            if [ "$DISPATCHED" -ge "$MAX_DISPATCH" ]; then
-              break
-            fi
-          done < <(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py list-due catalog/campaigns | head -n 12)
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             | head -n 8 > "$RUNNER_TEMP/due.txt"
+          python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
+          import json,sys
+          ids=[line.strip() for line in open(sys.argv[1],encoding="utf-8") if line.strip()]
+          print("count="+str(len(ids)))
+          print("matrix="+json.dumps({"campaign_id":ids},separators=(",",":")))
+          PY
+
+  work:
+    needs: select
+    if: needs.select.outputs.count != '0'
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    uses: ./.github/workflows/resumable-campaign-worker.yml
+    with:
+      campaign_id: ${{ matrix.campaign_id }}
+    permissions:
+      contents: write
