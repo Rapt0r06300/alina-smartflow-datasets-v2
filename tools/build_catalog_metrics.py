@@ -12,6 +12,7 @@ def build():
     shards=idx.get("shards") or []
     totals={"TOTAL_SHARDS":len(shards),"SAFE_SHARDS":0,"PARTIAL_SHARDS":0,"REJECTED_SHARDS":0,"REPLAYABLE_SHARDS":0,
             "TOTAL_TRADES_COLLECTED":0,"TOTAL_TRADES_SAFE":0,"TOTAL_TRADES_PARTIAL":0,"TOTAL_TRADES_REJECTED":0,"TOTAL_TRADES_REPLAYABLE":0,
+            "TOTAL_TRADE_RECORDS":0,"TRADE_SHARDS_WITH_EXACT_COUNT":0,"TRADE_SHARDS_MISSING_EXACT_COUNT":0,
             "TOTAL_RECORDS":0,"TOTAL_SAFE_RECORDS":0,"TOTAL_REPLAYABLE_RECORDS":0,"TOTAL_COMPRESSED_BYTES":0,"TOTAL_UNCOMPRESSED_BYTES":0}
     by_venue={}; by_symbol={}; by_family={}
     def bucket(table,key):
@@ -24,10 +25,12 @@ def build():
         trade_count_raw=row.get("trade_count")
         trades=int(trade_count_raw or 0)
         trade_family=str(row.get("family") or "").lower() in {"trades","agg_trades","fills","userfills","user_fills","copy_vault_fills"}
-        if trade_family and trade_count_raw is None:
-            totals.setdefault("TRADE_SHARDS_MISSING_EXACT_COUNT",0); totals["TRADE_SHARDS_MISSING_EXACT_COUNT"]+=1
-        elif trade_family:
-            totals.setdefault("TRADE_SHARDS_WITH_EXACT_COUNT",0); totals["TRADE_SHARDS_WITH_EXACT_COUNT"]+=1
+        if trade_family:
+            totals["TOTAL_TRADE_RECORDS"]+=records
+            if trade_count_raw is None:
+                totals["TRADE_SHARDS_MISSING_EXACT_COUNT"]+=1
+            else:
+                totals["TRADE_SHARDS_WITH_EXACT_COUNT"]+=1
         b=int(row.get("bytes") or 0)
         totals["TOTAL_RECORDS"]+=records; totals["TOTAL_COMPRESSED_BYTES"]+=b
         if status=="SAFE": totals["SAFE_SHARDS"]+=1; totals["TOTAL_SAFE_RECORDS"]+=records; totals["TOTAL_TRADES_SAFE"]+=trades
