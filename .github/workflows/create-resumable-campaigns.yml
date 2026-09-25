@@ -55,7 +55,7 @@ jobs:
           REPLAY_START_MS="$((NOW_MS - 6 * 60 * 60 * 1000))"
           ECON_START_MS="$((NOW_MS - 7 * 24 * 60 * 60 * 1000))"
           CODE_SHA="$(git -C alina rev-parse HEAD)"
-          PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v4' | sha256sum | cut -d' ' -f1)"
+          PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
 
           make_campaign() {
             KIND="$1"
@@ -71,11 +71,12 @@ jobs:
 
           make_campaign             market_collection             "market-$BUCKET-v4"             "market-hourly-continuous-v4"             '{"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","duration_s":3500,"rotate_mb":64}'
 
-          make_campaign             copy_vault_collection             "copy-vault-$BUCKET-v4"             "copy-vault-hourly-continuous-v4"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":1,"vault_shard_index":0,"rotate_mb":64}'
+          make_campaign             copy_vault_collection             "copy-vault-a-$BUCKET-v5"             "copy-vault-hourly-shard-a-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":0,"rotate_mb":64}'
+          make_campaign             copy_vault_collection             "copy-vault-b-$BUCKET-v5"             "copy-vault-hourly-shard-b-v5"             '{"duration_s":3500,"max_vaults":20,"vault_shard_count":2,"vault_shard_index":1,"rotate_mb":64}'
 
           make_campaign             event_intelligence_collection             "event-$BUCKET-v4"             "event-hourly-v4"             '{}'
 
-          make_campaign             replay             "replay-$BUCKET-v4"             "replay-hourly-safe-v4"             "{\"start_ts_ms\":$REPLAY_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":64}"
+          make_campaign             replay             "replay-$BUCKET-v5"             "replay-hourly-newest-safe-v5"             '{"max_shards":64}'
 
           if [ "$((10#$HOUR % 6))" -eq 0 ]; then
             make_campaign               backtest               "backtest-$DAY-s$SLOT6-v4"               "backtest-six-hourly-safe-v4"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
