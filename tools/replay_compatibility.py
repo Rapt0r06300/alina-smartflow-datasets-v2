@@ -28,8 +28,13 @@ def inspect_asset(path:str|Path,manifest:Mapping[str,Any])->dict[str,Any]:
                 if ts is None: result["invalid_record_count"]+=1
                 elif last is not None and ts < last: result["out_of_order_count"]+=1
                 if ts is not None: last=ts
-                if family in TRADE_FAMILIES: result["trade_count"]+=1
-                native=row.get("trade_id") or row.get("id") or row.get("exec_id")
+                if family in TRADE_FAMILIES:
+                    parsed=row.get("parsed_summary") if isinstance(row,dict) else None
+                    count=(parsed or {}).get("event_count") if isinstance(parsed,dict) else None
+                    try: count=int(count) if count is not None else 1
+                    except Exception: count=1
+                    result["trade_count"]+=max(1,count)
+                native=row.get("trade_id") or row.get("id") or row.get("exec_id") or row.get("sequence")
                 key=(manifest.get("venue"),manifest.get("symbol"),native if native is not None else (ts,row.get("side"),row.get("price"),row.get("size",row.get("qty"))))
                 if key in seen: result["duplicate_count"]+=1
                 else: seen.add(key)
