@@ -22,3 +22,19 @@ def test_out_of_order_is_not_replayable():
         out=inspect_asset(p,{"family":"trades","venue":"x","symbol":"Y"})
         assert out["out_of_order_count"]==1
         assert out["replay_compatible"] is False
+
+def test_tick_envelope_trade_batch_counts_underlying_trades():
+    with tempfile.TemporaryDirectory() as d:
+        p=Path(d)/"x.jsonl.gz"
+        row={
+            "exchange_ts_ms":1,
+            "sequence":7,
+            "parsed_summary":{"event_count":3},
+            "raw_payload":"{}"
+        }
+        with gzip.open(p,"wt",encoding="utf-8") as h:
+            h.write(json.dumps(row)+"\n")
+        out=inspect_asset(p,{"family":"trades","venue":"hyperliquid","symbol":"BTC"})
+        assert out["record_count"]==1
+        assert out["trade_count"]==3
+        assert out["replay_compatible"] is True
