@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
 REGISTRY_PATH = ROOT / "catalog" / "DATA_QUALITY_REGISTRY.json"
 CATALOG_PATH = ROOT / "catalog" / "DATA_CATALOG.json"
+TRADE_COUNT_PATCH_PATH = ROOT / "catalog" / "TRADE_COUNT_PATCH.json"
 
 _STAGE_BY_STATUS = {
     "SAFE": "safe",
@@ -70,6 +71,20 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
         "replay_schema_version": manifest.get("replay_schema_version"),
         "replay_reason": manifest.get("replay_reason"),
     }
+    patch_path = root / "catalog" / "TRADE_COUNT_PATCH.json"
+    if patch_path.is_file():
+        try:
+            patch_doc = json.loads(patch_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            patch_doc = {}
+        counts = patch_doc.get("counts") if isinstance(patch_doc, Mapping) else {}
+        patched = counts.get(str(manifest.get("dataset_id") or "")) if isinstance(counts, Mapping) else None
+        if isinstance(patched, Mapping):
+            row["trade_count"] = patched.get("trade_count")
+            row["trade_count_exact"] = patched.get("trade_count_exact") is True
+            row["unique_trade_count"] = patched.get("unique_trade_count")
+            row["unique_trade_count_exact"] = patched.get("unique_trade_count_exact") is True
+
     integration = manifest.get("event_intelligence")
     if isinstance(integration, Mapping):
         row.update(
