@@ -1,0 +1,5 @@
+{
+  "schema_version": "alina.data_metrics.v2",
+  "method": "catalog_exact_manifest_counts_no_byte_estimation",
+  "totals": {}
+}
