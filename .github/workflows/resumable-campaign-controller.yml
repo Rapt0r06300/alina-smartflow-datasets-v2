@@ -1,5 +1,9 @@
 name: resumable-campaign-controller
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/resumable-campaign-controller.yml'
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
