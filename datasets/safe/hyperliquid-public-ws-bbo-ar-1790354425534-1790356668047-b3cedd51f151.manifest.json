@@ -8,9 +8,11 @@
     "ready": false
   },
   "dataset_id": "hyperliquid-public-ws-bbo-ar-1790354425534-1790356668047-b3cedd51f151",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356668047,
   "event_count": 8176,
   "family": "bbo",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,9 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "bbo"
   ],
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -38,6 +42,7 @@
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 8176,
   "release": {
     "asset_id": 588849835,
     "asset_name": "hyperliquid-public-ws-bbo-ar-1790354425534-1790356668047-b3cedd51f151.jsonl.gz",
@@ -54,6 +59,9 @@
   "release_remote_size": 726271,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s6",
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
   "sha256": "b3cedd51f151c1db0983b0617e6838e4d646144c12eca17df5737af6b8d9d692",
@@ -91,6 +99,7 @@
       "p95": null
     }
   },
+  "trade_count": 0,
   "validation_allowed": true,
   "venue": "hyperliquid"
 }
