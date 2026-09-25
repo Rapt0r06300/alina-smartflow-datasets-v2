@@ -306,6 +306,27 @@ def _candidate(row: Mapping[str, Any], patch: Mapping[str, Any]) -> bool:
     )
 
 
+def _candidate_priority(row: Mapping[str, Any]) -> tuple[int, int, str]:
+    """Process the economically useful verified data first, without dropping any tier."""
+    status = str(row.get("quality_status") or "").upper()
+    replayable = row.get("replay_compatible") is True
+    if status == "SAFE" and replayable:
+        tier = 0
+    elif status == "SAFE":
+        tier = 1
+    elif status == "PARTIAL":
+        tier = 2
+    elif status == "REJECT":
+        tier = 3
+    else:
+        tier = 4
+    try:
+        end_ts = int(row.get("end_ts_ms") or 0)
+    except (TypeError, ValueError, OverflowError):
+        end_ts = 0
+    return (tier, -end_ts, str(row.get("dataset_id") or ""))
+
+
 def backfill(limit: int) -> dict[str, Any]:
     index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
     rows = index.get("shards")
@@ -316,10 +337,13 @@ def backfill(limit: int) -> dict[str, Any]:
     if not isinstance(counts, dict):
         raise BackfillError("invalid trade count patch counts")
 
-    candidates = [
-        row for row in rows
-        if isinstance(row, Mapping) and _candidate(row, counts)
-    ][: max(1, int(limit))]
+    candidates = sorted(
+        [
+            row for row in rows
+            if isinstance(row, Mapping) and _candidate(row, counts)
+        ],
+        key=_candidate_priority,
+    )[: max(1, int(limit))]
     updated = 0
     failed: list[dict[str, str]] = []
 
