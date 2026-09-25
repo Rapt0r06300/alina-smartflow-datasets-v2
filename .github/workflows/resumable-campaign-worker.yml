@@ -53,7 +53,7 @@ jobs:
               day=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(days=1)).date().isoformat()
               part.update({"venue":"binance","coin":"BTC","symbol":"BTCUSDT","start_date":day,"end_date":day,"max_days":1})
           elif kind in {"replay","backtest","module_pnl_proof"}:
-              part["workspace_root"]="$RUNNER_TEMP/alina-replay-workspace"
+              part["workspace_root"]=f"{__import__('os').environ['RUNNER_TEMP']}/alina-replay-workspace"
           print("KIND="+shlex.quote(kind))
           print("UNIT="+shlex.quote(str(idx)))
           print("PART="+shlex.quote(json.dumps(part,separators=(",",":"))))
