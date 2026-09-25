@@ -4,79 +4,48 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-
 def _workflow(name: str) -> str:
     return (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
 
-
-def test_long_collectors_are_not_push_triggered() -> None:
-    for name in ("collect-market-data-v2.yml", "collect-copy-vault-v2.yml"):
-        header = _workflow(name).split("permissions:", 1)[0]
-        assert "  push:" not in header
-
-
-def test_market_schedule_has_runtime_headroom() -> None:
-    text = _workflow("collect-market-data-v2.yml")
-    assert 'cron: "17 */4 * * *"' in text
-    assert 'default: "210"' in text
-    assert "inputs.duration_minutes || '210'" in text
-
-
-def test_copy_vault_sharding_respects_hyperliquid_user_cap() -> None:
-    text = _workflow("collect-copy-vault-v2.yml")
-    assert "cron: '47 1-23/4 * * *'" in text
-    assert "max-parallel: 10" in text
-    assert "shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" in text
-    assert "--vault-shard-count 10" in text
-    assert "for shard in 0 1 2 3 4 5 6 7 8 9; do" in text
-    assert 'default: \'100\'' in text
-    assert "max_vaults must be in [1, 100]" in text
-
-
-def test_copy_vault_schedule_has_runtime_headroom() -> None:
-    text = _workflow("collect-copy-vault-v2.yml")
-    assert "inputs.duration_s || '11400'" in text
-    assert "duration_s must be in [60, 12000]" in text
-    # 11,400 seconds = 190 minutes, comfortably below the 4-hour cadence.
-    assert "timeout-minutes: 230" in text
-
-
-def test_all_v2_indexers_use_bounded_release_manifest_polling() -> None:
+def test_legacy_long_collectors_are_manual_only():
     for name in (
         "collect-market-data-v2.yml",
         "collect-copy-vault-v2.yml",
         "collect-official-archives-v2.yml",
         "collect-event-intelligence-v2.yml",
-        "collect-and-publish-v2.yml",
-        "reconcile-v2-catalog.yml",
     ):
-        text = _workflow(name)
-        assert "tools/download_release_manifests.py" in text, name
-        assert "--attempts 12" in text, name
+        header=_workflow(name).split("permissions:",1)[0]
+        assert "schedule:" not in header
+        assert "workflow_dispatch" in header
+        assert "self-hosted" not in _workflow(name)
 
-
-def test_all_control_plane_writers_share_one_serial_concurrency_group() -> None:
-    for name in (
-        "collect-market-data-v2.yml",
-        "collect-copy-vault-v2.yml",
-        "collect-official-archives-v2.yml",
-        "collect-event-intelligence-v2.yml",
-        "collect-and-publish-v2.yml",
-        "reconcile-v2-catalog.yml",
-        "promote-manifest.yml",
-    ):
-        text = _workflow(name)
-        assert "group: dataset-v2-control-plane-index" in text, name
-        assert "cancel-in-progress: false" in text, name
-
-
-def test_event_intelligence_collection_is_hosted_bounded_pinned_and_read_only() -> None:
-    text = _workflow("collect-event-intelligence-v2.yml")
+def test_resumable_creator_is_scheduled_and_hosted():
+    text=_workflow("create-resumable-campaigns.yml")
+    assert "schedule:" in text
     assert "runs-on: ubuntu-latest" in text
     assert "self-hosted" not in text
-    assert "timeout-minutes: 30" in text
-    assert "actions/checkout@11d5960a326750d5838078e36cf38b85af677262" in text
-    assert "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065" in text
-    assert "tools/collect_event_intelligence_v2.py" in text
-    assert 'REAL_MAINNET_TRADING: "false"' in text
-    assert "tools/download_release_manifests.py" in text
+    assert "market_collection" in text
+    assert "copy_vault_collection" in text
+    assert "official_archive_collection" in text
+    assert "event_intelligence_collection" in text
+    assert 'make_campaign replay' in text
+    assert 'make_campaign backtest' in text
+    assert 'make_campaign module_pnl_proof' in text
+
+def test_controller_worker_are_bounded_and_non_recursive():
+    controller=_workflow("resumable-campaign-controller.yml")
+    worker=_workflow("resumable-campaign-worker.yml")
+    assert "timeout-minutes: 15" in controller
+    assert "timeout-minutes: 345" in worker
+    assert "cancel-in-progress: false" in controller
+    assert "cancel-in-progress: false" in worker
+    assert "self-hosted" not in controller+worker
+    assert "gh workflow run resumable-campaign-worker.yml" in controller
+    assert "gh workflow run" not in worker
+
+def test_metrics_refresh_is_scheduled_and_serialized():
+    text=_workflow("dataset-metrics-v2.yml")
+    assert "schedule:" in text
+    assert "group: dataset-v2-control-plane-index" in text
+    assert "cancel-in-progress: false" in text
+    assert "tools/build_catalog_metrics.py" in text
