@@ -1,0 +1,37 @@
+name: resumable-campaign-controller
+on:
+  schedule:
+    - cron: '43 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: resumable-campaign-controller
+  cancel-in-progress: false
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout Dataset V2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: true
+      - name: Checkout pinned campaign code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: 777d329176ded9e9262c33a9411adc99c55caa02
+          path: alina
+          persist-credentials: false
+      - name: Dispatch due campaigns once
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p catalog/campaigns
+          while IFS= read -r id; do
+            [ -n "$id" ] || continue
+            gh workflow run resumable-campaign-worker.yml -f campaign_id="$id"
+          done < <(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py list-due catalog/campaigns)

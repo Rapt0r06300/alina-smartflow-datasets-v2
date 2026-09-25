@@ -1,0 +1,65 @@
+name: resumable-campaign-worker
+on:
+  workflow_dispatch:
+    inputs:
+      campaign_id:
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: resumable-${{ inputs.campaign_id }}
+  cancel-in-progress: false
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with: {persist-credentials: true}
+      - id: pin
+        name: Read pinned code SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          M="catalog/campaigns/${{ inputs.campaign_id }}.json"; test -f "$M"
+          echo "sha=$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["code_sha"])' "$M")" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: ${{ steps.pin.outputs.sha }}
+          path: alina
+          persist-credentials: false
+      - name: Run one bounded unit and checkpoint
+        env: {CAMPAIGN_ID: "${{ inputs.campaign_id }}"}
+        shell: bash
+        run: |
+          set -euo pipefail
+          M="catalog/campaigns/$CAMPAIGN_ID.json"
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py validate "$M"
+          python - <<'PY' "$M" > "$RUNNER_TEMP/unit.env"
+          import json,sys,shlex
+          m=json.load(open(sys.argv[1])); idx=m.get('chunk_index',0); part={'chunk_index':idx,'cursor':m.get('cursor',{})}
+          print('KIND='+shlex.quote(m['kind'])); print('UNIT='+shlex.quote(str(idx))); print('PART='+shlex.quote(json.dumps(part,separators=(',',':'))))
+          PY
+          source "$RUNNER_TEMP/unit.env"
+          PYTHONPATH=alina/src python alina/tools/run_resumable_campaign.py --campaign-id "$CAMPAIGN_ID" --kind "$KIND" --unit-id "$UNIT" --partition-json "$PART" --soft-deadline-s 18900 > "$RUNNER_TEMP/result.json"
+          PYTHONPATH=alina/src python - <<'PY' "$M" "$RUNNER_TEMP/result.json"
+          import json,sys
+          from hl_observer.control_plane.resumable_campaign import CampaignManifest,complete_work_unit,mark_continuation,mark_terminal
+          p,rp=sys.argv[1:]; raw=json.load(open(p)); m=CampaignManifest.from_dict(raw); r=json.load(open(rp)); uid=str(m.chunk_index)
+          complete_work_unit(m,uid,r['sha256'],r['payload'])
+          if r['status']=='COMPLETE': mark_terminal(m,'COMPLETE','unit_complete')
+          elif r['status']=='CONTINUATION_REQUIRED': mark_continuation(m,'soft_deadline',progressed=r.get('progressed',False))
+          else: mark_terminal(m,'FAILED',r['payload'].get('reason','adapter_failed'))
+          open(p,'w').write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+'\n')
+          PY
+      - name: Publish checkpoint with bounded retry
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/campaigns; git diff --cached --quiet && exit 0
+          git commit -m "campaign: checkpoint ${{ inputs.campaign_id }}"
+          for i in 1 2 3 4 5; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep $((i*2)); done
+          exit 1
