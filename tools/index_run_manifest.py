@@ -14,6 +14,7 @@ INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
 REGISTRY_PATH = ROOT / "catalog" / "DATA_QUALITY_REGISTRY.json"
 CATALOG_PATH = ROOT / "catalog" / "DATA_CATALOG.json"
 TRADE_COUNT_PATCH_PATH = ROOT / "catalog" / "TRADE_COUNT_PATCH.json"
+REPLAY_COMPAT_PATCH_PATH = ROOT / "catalog" / "REPLAY_COMPAT_PATCH.json"
 
 _STAGE_BY_STATUS = {
     "SAFE": "safe",
@@ -32,6 +33,51 @@ def _atomic_json(path: Path, payload: Mapping[str, Any]) -> None:
         encoding="utf-8",
     )
     os.replace(temporary, path)
+
+
+def _load_replay_patch_results(root: Path) -> dict[str, Mapping[str, Any]]:
+    path = root / "catalog" / "REPLAY_COMPAT_PATCH.json"
+    if not path.is_file():
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    results = value.get("results") if isinstance(value, Mapping) else {}
+    if not isinstance(results, Mapping):
+        return {}
+    return {
+        str(key): dict(item)
+        for key, item in results.items()
+        if isinstance(item, Mapping)
+    }
+
+
+def _apply_replay_patch(
+    manifest: dict[str, Any],
+    patch_results: Mapping[str, Mapping[str, Any]],
+) -> None:
+    dataset_id = str(manifest.get("dataset_id") or "")
+    patch = patch_results.get(dataset_id)
+    if not isinstance(patch, Mapping):
+        return
+    expected_sha = str(manifest.get("sha256") or "").lower()
+    patched_sha = str(patch.get("asset_sha256") or "").lower()
+    if len(expected_sha) != 64 or patched_sha != expected_sha:
+        return
+    for key in (
+        "record_count",
+        "trade_count",
+        "invalid_record_count",
+        "out_of_order_count",
+        "duplicate_count",
+        "gap_count",
+        "replay_compatible",
+        "replay_schema_version",
+        "replay_reason",
+    ):
+        if key in patch:
+            manifest[key] = patch[key]
 
 
 def _normalize_manifest(raw: Mapping[str, Any]) -> dict[str, Any]:
@@ -114,6 +160,7 @@ def index_run_manifests(
     index = json.loads(index_path.read_text(encoding="utf-8"))
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    replay_patch_results = _load_replay_patch_results(base)
     rows_by_id = {
         str(row.get("dataset_id")): dict(row)
         for row in (index.get("shards") or [])
@@ -143,6 +190,7 @@ def index_run_manifests(
             dataset_id = str(manifest.get("dataset_id") or "").strip()
             if not dataset_id:
                 raise ValueError("dataset_id required")
+            _apply_replay_patch(manifest, replay_patch_results)
             status, reasons = classify_manifest(manifest)
             if status == "SAFE" and manifest.get("replay_compatible") is not True:
                 status = "PARTIAL"
