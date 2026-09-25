@@ -4,7 +4,40 @@
   "chunk_index": 0,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "a3dae46335b038d7588ce7c7e2ab93674c064c76",
-  "completed_units": {},
+  "completed_units": {
+    "0": {
+      "result": {
+        "command": [
+          "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+          "-m",
+          "hl_observer.ops.v2_dataset_bridge",
+          "materialize"
+        ],
+        "failure_category": "QUALITY",
+        "phase": "materialize_safe_v2",
+        "phases": [
+          {
+            "command": [
+              "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+              "-m",
+              "hl_observer.ops.v2_dataset_bridge",
+              "materialize"
+            ],
+            "name": "materialize_safe_v2",
+            "returncode": 2,
+            "stderr": "",
+            "stdout": "DATASET_V2_NO_GO: no SAFE shards match the selection\n"
+          }
+        ],
+        "reason": "dataset_materialization_failed",
+        "returncode": 2,
+        "status": "FAILED",
+        "stderr": "",
+        "stdout": "DATASET_V2_NO_GO: no SAFE shards match the selection\n"
+      },
+      "sha256": "897246d56278e940f57f86cbafd54d02edaf040f2dcd8d420e5043b98bc58bf6"
+    }
+  },
   "config_sha256": "397131decf16045d15c6fdec459f2e9fcf352510a6effa911cb20d5ee9b7ade8",
   "consecutive_failures": 0,
   "created_at": "2026-09-25T18:00:16.419527+00:00",
@@ -22,15 +55,16 @@
       "from": "PENDING",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-25T18:18:31.382233Z",
+      "from": "RUNNING",
+      "reason": "dataset_materialization_failed",
+      "to": "FAILED"
     }
   ],
   "kind": "backtest",
-  "lease": {
-    "acquired_at": "2026-09-25T18:18:27.767627Z",
-    "expires_at": "2026-09-26T00:03:27.767627Z",
-    "lease_token_sha256": "69edec4d1e00124e9daa3dc0b900e5d4d774e792dfc0e08a0b8f2a0647a65c0a",
-    "owner_run_id": "36172456244"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -45,8 +79,8 @@
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-25T18:18:27.767663Z",
+  "status": "FAILED",
+  "status_reason": "dataset_materialization_failed",
+  "updated_at": "2026-09-25T18:18:31.382233Z",
   "work_plan_sha256": "4b8c6fa37af27e2f9079c3c766d0525624e08e866ad213bdf4b6042b28ee16f6"
 }
