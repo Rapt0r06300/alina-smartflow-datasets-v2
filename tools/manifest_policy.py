@@ -162,6 +162,8 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
 
     if manifest.get("asset_verified") is not True:
         reasons.append("ASSET_NOT_VERIFIED")
+    if manifest.get("replay_compatible") is not True:
+        reasons.append("REPLAY_COMPATIBILITY_NOT_PROVEN")
 
     reconciliation = manifest["reconciliation"]
     reconciliation_status = str(reconciliation.get("status") or "UNVERIFIED").upper()
