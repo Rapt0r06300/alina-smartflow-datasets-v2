@@ -33,11 +33,15 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' in text
     assert "market_collection" in text
     assert "copy_vault_collection" in text
-    assert "copy-vault-a-" in text
-    assert "copy-vault-b-" in text
-    assert '"vault_shard_count":2' in text
-    assert '"vault_shard_index":0' in text
-    assert '"vault_shard_index":1' in text
+    assert "freeze_copy_vault_selection.py" in text
+    assert "COPY_COUNT" in text
+    assert "COPY_LANES" in text
+    assert "(COPY_COUNT + 9) / 10" in text
+    assert "COPY_LANE<COPY_LANES" in text
+    assert "copy-vault-$COPY_LANE-$BUCKET-v6" in text
+    assert "selection_file" in text
+    assert "selection_sha256" in text
+    assert "catalog/copy_vault_selections" in text
     assert "official_archive_collection" in text
     assert "event_intelligence_collection" in text
     assert "make_campaign             replay" in text
@@ -74,6 +78,9 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "publish_dataset_v2_release.py" in worker
     assert "verify_lease" in worker
     assert "workflow_call:" in worker
+    assert "Refresh Dataset V2 main" in controller
+    assert "Refresh Dataset V2 main before pin" in worker
+    assert 'os.path.abspath(str(part["selection_file"]))' in worker
     assert "actions: write" not in worker
 
 
