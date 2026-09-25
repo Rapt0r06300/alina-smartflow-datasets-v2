@@ -187,94 +187,59 @@ jobs:
           set -euo pipefail
           KIND="${{ steps.unit.outputs.kind }}"
           UNIT="${{ steps.unit.outputs.unit }}"
-          STATUS="$(python -c 'import json,os; print(json.load(open(os.path.join(os.environ["RUNNER_TEMP"],"result.json")))["status"])')"
+          RESULT="$RUNNER_TEMP/result.json"
+          STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$RESULT")"
           if [ "$STATUS" != "COMPLETE" ]; then
-            echo "No durable output publish required for status=$STATUS"
+            echo "No durable publish required for status=$STATUS"
             exit 0
           fi
 
-          if [[ "$KIND" == "market_collection" || "$KIND" == "copy_vault_collection" || "$KIND" == "official_archive_collection" || "$KIND" == "event_intelligence_collection" ]]; then
-            BUNDLE="$(python -c 'import json,os; print(json.load(open(os.path.join(os.environ["RUNNER_TEMP"],"result.json")))["payload"]["bundle_root"])')"
-            test -n "$BUNDLE"
-            test -f "$BUNDLE/BUNDLE_INDEX.json"
-            TAG="data-v2-campaign-$CAMPAIGN_ID-u$UNIT"
-            python alina/tools/publish_dataset_v2_release.py               "$BUNDLE"               --repository "$GITHUB_REPOSITORY"               --tag "$TAG"               --target main               --title "Alina Dataset V2 $CAMPAIGN_ID unit $UNIT"
-            test -f "$BUNDLE/RUN_MANIFEST.json"
-            python - <<'PY' "$RUNNER_TEMP/result.json" "$BUNDLE/RUN_MANIFEST.json" "$TAG"
-            import hashlib,json,sys
-            rp,mp,tag=sys.argv[1:]
-            r=json.load(open(rp))
-            m=json.load(open(mp))
-            p=r["payload"]
-            p["release_tag"]=tag
-            p["release_repository"]="Rapt0r06300/alina-smartflow-datasets-v2"
-            p["shard_count"]=int(m.get("shard_count") or 0)
-            p["safe_count"]=int(m.get("safe_count") or 0)
-            p["partial_count"]=int(m.get("partial_count") or 0)
-            p["reject_count"]=int(m.get("reject_count") or 0)
-            raw=json.dumps(p,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()
-            r["sha256"]=hashlib.sha256(raw).hexdigest()
-            open(rp,"w").write(json.dumps(r,sort_keys=True)+"\n")
-            PY
-            echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
-          else
-            WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
-            EVIDENCE="$RUNNER_TEMP/$CAMPAIGN_ID-u$UNIT-evidence.tgz"
-            mkdir -p "$RUNNER_TEMP/evidence"
-            cp "$RUNNER_TEMP/result.json" "$RUNNER_TEMP/evidence/result.json"
-            if [ -d "$WORKSPACE/runtime/reports" ]; then
-              cp -R "$WORKSPACE/runtime/reports" "$RUNNER_TEMP/evidence/reports"
-            fi
-            tar -C "$RUNNER_TEMP/evidence" -czf "$EVIDENCE" .
-            TAG="campaign-evidence-$CAMPAIGN_ID-u$UNIT"
-            if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-              gh release upload "$TAG" "$EVIDENCE" --clobber --repo "$GITHUB_REPOSITORY"
-            else
-              gh release create "$TAG" "$EVIDENCE"                 --repo "$GITHUB_REPOSITORY"                 --target main                 --title "Alina campaign evidence $CAMPAIGN_ID unit $UNIT"                 --notes "Paper/read-only evidence. No real execution."
-            fi
-            python - <<'PY' "$RUNNER_TEMP/result.json" "$TAG"
-            import hashlib,json,sys
-            rp,tag=sys.argv[1:]
-            r=json.load(open(rp))
-            p=r["payload"]
-            p["evidence_release_tag"]=tag
-            p["evidence_repository"]="Rapt0r06300/alina-smartflow-datasets-v2"
-            raw=json.dumps(p,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode()
-            r["sha256"]=hashlib.sha256(raw).hexdigest()
-            open(rp,"w").write(json.dumps(r,sort_keys=True)+"\n")
-            PY
-            echo "evidence_tag=$TAG" >> "$GITHUB_OUTPUT"
-          fi
+          case "$KIND" in
+            market_collection|copy_vault_collection|official_archive_collection|event_intelligence_collection)
+              BUNDLE="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["payload"]["bundle_root"])' "$RESULT")"
+              test -n "$BUNDLE"
+              test -f "$BUNDLE/BUNDLE_INDEX.json"
+              TAG="data-v2-campaign-$CAMPAIGN_ID-u$UNIT"
+              python alina/tools/publish_dataset_v2_release.py                 "$BUNDLE"                 --repository "$GITHUB_REPOSITORY"                 --tag "$TAG"                 --target main                 --title "Alina Dataset V2 $CAMPAIGN_ID unit $UNIT"
+              test -f "$BUNDLE/RUN_MANIFEST.json"
+              python tools/augment_campaign_result.py collection                 --result "$RESULT"                 --run-manifest "$BUNDLE/RUN_MANIFEST.json"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
+              echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
+              ;;
+            replay|backtest|module_pnl_proof)
+              WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
+              EVIDENCE_DIR="$RUNNER_TEMP/evidence"
+              EVIDENCE="$RUNNER_TEMP/$CAMPAIGN_ID-u$UNIT-evidence.tgz"
+              rm -rf "$EVIDENCE_DIR"
+              mkdir -p "$EVIDENCE_DIR"
+              cp "$RESULT" "$EVIDENCE_DIR/result.json"
+              if [ -d "$WORKSPACE/runtime/reports" ]; then
+                cp -R "$WORKSPACE/runtime/reports" "$EVIDENCE_DIR/reports"
+              fi
+              if [ -d "$WORKSPACE/runtime/scoreboards" ]; then
+                cp -R "$WORKSPACE/runtime/scoreboards" "$EVIDENCE_DIR/scoreboards"
+              fi
+              tar -C "$EVIDENCE_DIR" -czf "$EVIDENCE" .
+              TAG="campaign-evidence-$CAMPAIGN_ID-u$UNIT"
+              if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+                gh release upload "$TAG" "$EVIDENCE" --clobber --repo "$GITHUB_REPOSITORY"
+              else
+                gh release create "$TAG" "$EVIDENCE"                   --repo "$GITHUB_REPOSITORY"                   --target main                   --title "Alina campaign evidence $CAMPAIGN_ID unit $UNIT"                   --notes "Paper/read-only evidence. No real execution."
+              fi
+              python tools/augment_campaign_result.py evidence                 --result "$RESULT"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
+              echo "evidence_tag=$TAG" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "Unknown campaign kind: $KIND" >&2
+              exit 2
+              ;;
+          esac
 
       - name: Downgrade result when durability failed
         if: steps.claim.outputs.skip != 'true' && steps.durable.outcome == 'failure' && always()
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY' "$RUNNER_TEMP/result.json"
-          import hashlib,json,sys
-          path=sys.argv[1]
-          previous={}
-          try:
-              previous=json.load(open(path,encoding="utf-8"))
-          except Exception:
-              pass
-          payload={
-              "status":"FAILED",
-              "reason":"durable_publication_failed",
-              "failure_category":"INFRASTRUCTURE",
-              "previous_status":previous.get("status"),
-              "previous_sha256":previous.get("sha256"),
-          }
-          raw=json.dumps(payload,sort_keys=True,separators=(",",":")).encode()
-          row={
-              "status":"FAILED",
-              "sha256":hashlib.sha256(raw).hexdigest(),
-              "payload":payload,
-              "progressed":False,
-          }
-          open(path,"w",encoding="utf-8").write(json.dumps(row,sort_keys=True)+"\n")
-          PY
+          python tools/augment_campaign_result.py durability-failure             --result "$RUNNER_TEMP/result.json"
 
       - name: Publish final campaign checkpoint
         if: steps.claim.outputs.skip != 'true' && always()
