@@ -36,12 +36,12 @@
     "copy_vault_fills": {
       "bytes": 5084761,
       "records": 19563,
-      "replayable_trades": 3413,
-      "safe_trades": 3402,
+      "replayable_trades": 3423,
+      "safe_trades": 3412,
       "shards": 334,
-      "trade_shards_exact": 333,
-      "trade_shards_missing_exact": 1,
-      "trades": 46883,
+      "trade_shards_exact": 334,
+      "trade_shards_missing_exact": 0,
+      "trades": 46893,
       "unique_trades_within_shards": 0
     },
     "copy_vault_l2": {
@@ -7430,12 +7430,12 @@
     "0X570EB8D438BD209B0DEEEE3D2E0A8559F5D57FB7": {
       "bytes": 8658,
       "records": 13,
-      "replayable_trades": 0,
-      "safe_trades": 0,
+      "replayable_trades": 10,
+      "safe_trades": 10,
       "shards": 4,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 10,
       "unique_trades_within_shards": 0
     },
     "0X571C78786423135CF8282854F0204B75C36F077F": {
@@ -22920,12 +22920,12 @@
     "hyperliquid": {
       "bytes": 1730661316,
       "records": 11203672,
-      "replayable_trades": 43829,
-      "safe_trades": 3402,
+      "replayable_trades": 43839,
+      "safe_trades": 3412,
       "shards": 21962,
-      "trade_shards_exact": 957,
-      "trade_shards_missing_exact": 1,
-      "trades": 822077,
+      "trade_shards_exact": 958,
+      "trade_shards_missing_exact": 0,
+      "trades": 822087,
       "unique_trades_within_shards": 775188
     },
     "okx": {
@@ -22967,18 +22967,18 @@
     "TOTAL_REPLAYABLE_RECORDS": 5698989,
     "TOTAL_SAFE_RECORDS": 5320195,
     "TOTAL_SHARDS": 29180,
-    "TOTAL_TRADES_COLLECTED": 27036857,
-    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": false,
+    "TOTAL_TRADES_COLLECTED": 27036867,
+    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": true,
     "TOTAL_TRADES_PARTIAL": 2448082,
     "TOTAL_TRADES_REJECTED": 24585373,
-    "TOTAL_TRADES_REPLAYABLE": 478293,
-    "TOTAL_TRADES_SAFE": 3402,
+    "TOTAL_TRADES_REPLAYABLE": 478303,
+    "TOTAL_TRADES_SAFE": 3412,
     "TOTAL_UNCOMPRESSED_BYTES": 0,
     "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 2407048,
-    "TRADE_SHARDS_MISSING_EXACT_COUNT": 1,
+    "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
     "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 475,
-    "TRADE_SHARDS_WITH_EXACT_COUNT": 2242,
+    "TRADE_SHARDS_WITH_EXACT_COUNT": 2243,
     "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768
   }
 }

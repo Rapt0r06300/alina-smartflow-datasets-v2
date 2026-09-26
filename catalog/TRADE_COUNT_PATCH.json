@@ -6208,6 +6208,14 @@
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
+    "hyperliquid-public-userfills-copy-vault-fills-0x570eb8d438bd209b0deeee3d2e0a8559f5d57fb7-1790448671405-1790448840703-97d639b529ab": {
+      "asset_sha256": "97d639b529ab977614c521d17f9170971a44ff4764b638ef70679fbae914f79f",
+      "record_count_scanned": 9,
+      "trade_count": 10,
+      "trade_count_exact": true,
+      "unique_trade_count": null,
+      "unique_trade_count_exact": false
+    },
     "hyperliquid-public-userfills-copy-vault-fills-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790088068364-1790096036091-5eb9505f16a8": {
       "asset_sha256": "5eb9505f16a83dd88d7c57caaf85c37bfa482bc93b197f0f7b6e1e76463a81de",
       "record_count_scanned": 34,
@@ -17938,7 +17946,7 @@
     }
   },
   "method": "verified_release_asset_scan_no_estimation",
-  "processed_exact_shards": 2242,
+  "processed_exact_shards": 2243,
   "remaining_candidate_shards": 0,
   "schema": "alina.trade_count_patch.v1"
 }
