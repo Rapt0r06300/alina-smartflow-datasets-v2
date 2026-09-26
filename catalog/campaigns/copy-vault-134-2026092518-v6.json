@@ -1,12 +1,23 @@
 {
-  "attempts": 0,
+  "attempts": 1,
   "campaign_id": "copy-vault-134-2026092518-v6",
-  "chunk_index": 0,
+  "chunk_index": 1,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "471784abf63b4b0bc97c080dd58c94dcf47e4aba",
-  "completed_units": {},
+  "completed_units": {
+    "0": {
+      "result": {
+        "failure_category": "INFRASTRUCTURE",
+        "previous_sha256": "2f6e4f9659069e3bc27bd25b1a6c03a507f56850fde85a0bdc807468fa28e241",
+        "previous_status": "COMPLETE",
+        "reason": "durable_publication_failed",
+        "status": "FAILED"
+      },
+      "sha256": "39df59fc7bc5cf599459af4d8e9628d22fdda4379cd199b4d774ae8b6d51131b"
+    }
+  },
   "config_sha256": "8bb3fd0e43363e469b2dd3c1a1cdc169eddc513cb167124d8c0eef212d27ad22",
-  "consecutive_failures": 0,
+  "consecutive_failures": 1,
   "created_at": "2026-09-25T18:51:41.928789+00:00",
   "cursor": {
     "duration_s": 3500,
@@ -26,15 +37,16 @@
       "from": "PENDING",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-26T16:08:25.630320Z",
+      "from": "RUNNING",
+      "reason": "durable_publication_failed",
+      "to": "CONTINUATION_REQUIRED"
     }
   ],
   "kind": "copy_vault_collection",
-  "lease": {
-    "acquired_at": "2026-09-26T16:03:17.191294Z",
-    "expires_at": "2026-09-26T21:48:17.191294Z",
-    "lease_token_sha256": "57839942644af709c1c5e27693a4314fa9de15b4d4f74951fd32253c27a678f7",
-    "owner_run_id": "36241724666"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -43,14 +55,14 @@
     "max_wall_clock_s": 86400
   },
   "next_due_at": null,
-  "no_progress_count": 0,
+  "no_progress_count": 1,
   "outputs": [],
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-26T16:03:17.191384Z",
+  "status": "CONTINUATION_REQUIRED",
+  "status_reason": "durable_publication_failed",
+  "updated_at": "2026-09-26T16:08:25.630320Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
