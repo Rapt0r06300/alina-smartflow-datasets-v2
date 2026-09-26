@@ -26,10 +26,10 @@
   ],
   "kind": "replay",
   "lease": {
-    "acquired_at": "2026-09-25T17:54:17.793264Z",
-    "expires_at": "2026-09-25T23:39:17.793264Z",
-    "lease_token_sha256": "9c0f6278bf43fe4ae5d22145eb11569fe87433e99c67b098f927ddecc805e52e",
-    "owner_run_id": "36169868605"
+    "acquired_at": "2026-09-26T14:12:02.271233Z",
+    "expires_at": "2026-09-26T19:57:02.271233Z",
+    "lease_token_sha256": "2df871045d49ba0d34937457fb799438db33019452277acead750124442fdc96",
+    "owner_run_id": "36241724666"
   },
   "limits": {
     "max_attempts": 12,
