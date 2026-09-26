@@ -1,10 +1,10 @@
 {
   "active_dataset": {
-    "indexed_shards": 27889,
-    "partial_count": 18112,
+    "indexed_shards": 29180,
+    "partial_count": 18115,
     "proof_of_pnl_allowed": false,
-    "reject_count": 4607,
-    "safe_count": 5170,
+    "reject_count": 5147,
+    "safe_count": 5918,
     "stale_count": 0,
     "status": "SAFE",
     "validation_allowed": true
