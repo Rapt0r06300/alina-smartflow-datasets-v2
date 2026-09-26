@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 103190,
+  "bytes": 86622,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-l2book-chip-1790354572090-1790356667201-c92f3e72820a",
+  "dataset_id": "hyperliquid-public-ws-l2book-bio-1790354572037-1790356667201-634da3f555fb",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356667201,
   "event_count": 391,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,36 +37,37 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 391,
   "release": {
-    "asset_id": 588850939,
-    "asset_name": "hyperliquid-public-ws-l2book-chip-1790354572090-1790356667201-c92f3e72820a.jsonl.gz",
+    "asset_id": 588850921,
+    "asset_name": "hyperliquid-public-ws-l2book-bio-1790354572037-1790356667201-634da3f555fb.jsonl.gz",
     "release_id": 396794271,
-    "remote_digest": "sha256:c92f3e72820a93be66ecff03da45aae7c69ffd9e22bf0e43cb48785ff5dd7b6d",
-    "remote_size": 103190,
+    "remote_digest": "sha256:634da3f555fb12935766f254ae9592ab69d77157fa71de56287866a584448e5d",
+    "remote_size": 86622,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s2"
   },
-  "release_asset": "hyperliquid-public-ws-l2book-chip-1790354572090-1790356667201-c92f3e72820a.jsonl.gz",
-  "release_asset_id": 588850939,
+  "release_asset": "hyperliquid-public-ws-l2book-bio-1790354572037-1790356667201-634da3f555fb.jsonl.gz",
+  "release_asset_id": 588850921,
   "release_id": 396794271,
-  "release_remote_digest": "sha256:c92f3e72820a93be66ecff03da45aae7c69ffd9e22bf0e43cb48785ff5dd7b6d",
-  "release_remote_size": 103190,
+  "release_remote_digest": "sha256:634da3f555fb12935766f254ae9592ab69d77157fa71de56287866a584448e5d",
+  "release_remote_size": 86622,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s2",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "c92f3e72820a93be66ecff03da45aae7c69ffd9e22bf0e43cb48785ff5dd7b6d",
+  "sha256": "634da3f555fb12935766f254ae9592ab69d77157fa71de56287866a584448e5d",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354572090,
-  "symbol": "CHIP",
+  "start_ts_ms": 1790354572037,
+  "symbol": "BIO",
   "synchronization": {
     "clock_offset_ms": {
       "count": 391,
@@ -84,7 +88,7 @@
       "max": 857.0,
       "min": 260.0,
       "p50": 334.0,
-      "p95": 567.0
+      "p95": 561.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }

@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 692797,
+  "bytes": 679605,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-bbo-bch-1790354350117-1790356662569-34d6188608ef",
-  "end_ts_ms": 1790356662569,
-  "event_count": 7914,
+  "dataset_id": "hyperliquid-public-ws-bbo-fet-1790354350175-1790356663048-035e3f1d3933",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790356663048,
+  "event_count": 7728,
   "family": "bbo",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "bbo"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,57 +37,58 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 7728,
   "release": {
-    "asset_id": 588849225,
-    "asset_name": "hyperliquid-public-ws-bbo-bch-1790354350117-1790356662569-34d6188608ef.jsonl.gz",
+    "asset_id": 588849329,
+    "asset_name": "hyperliquid-public-ws-bbo-fet-1790354350175-1790356663048-035e3f1d3933.jsonl.gz",
     "release_id": 396793856,
-    "remote_digest": "sha256:34d6188608ef4f856bd9249cf498f970904fe9ac29c470d75c7ce5d0542bedbf",
-    "remote_size": 692797,
+    "remote_digest": "sha256:035e3f1d39330fff947972f3f9ed367d4857b54b6bf643230903454500135f4c",
+    "remote_size": 679605,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s7"
   },
-  "release_asset": "hyperliquid-public-ws-bbo-bch-1790354350117-1790356662569-34d6188608ef.jsonl.gz",
-  "release_asset_id": 588849225,
+  "release_asset": "hyperliquid-public-ws-bbo-fet-1790354350175-1790356663048-035e3f1d3933.jsonl.gz",
+  "release_asset_id": 588849329,
   "release_id": 396793856,
-  "release_remote_digest": "sha256:34d6188608ef4f856bd9249cf498f970904fe9ac29c470d75c7ce5d0542bedbf",
-  "release_remote_size": 692797,
+  "release_remote_digest": "sha256:035e3f1d39330fff947972f3f9ed367d4857b54b6bf643230903454500135f4c",
+  "release_remote_size": 679605,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s7",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "34d6188608ef4f856bd9249cf498f970904fe9ac29c470d75c7ce5d0542bedbf",
+  "sha256": "035e3f1d39330fff947972f3f9ed367d4857b54b6bf643230903454500135f4c",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354350117,
-  "symbol": "BCH",
+  "start_ts_ms": 1790354350175,
+  "symbol": "FET",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 7914,
+      "count": 7728,
       "max": -248.5,
       "min": -756.0,
-      "p50": -544.0,
-      "p95": -251.5
+      "p50": -489.0,
+      "p95": -252.0
     },
     "connection_count": 1,
     "connection_ids": [
       "hl-cloud-73ca2feb325a491d95895a9a694fe923"
     ],
-    "first_exchange_ts_ms": 1790354349818,
-    "last_exchange_ts_ms": 1790356662282,
+    "first_exchange_ts_ms": 1790354349881,
+    "last_exchange_ts_ms": 1790356662775,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 7914,
-      "max": 2207.0,
-      "min": 220.0,
-      "p50": 326.0,
-      "p95": 566.0
+      "count": 7728,
+      "max": 2066.0,
+      "min": 213.0,
+      "p50": 329.0,
+      "p95": 571.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
