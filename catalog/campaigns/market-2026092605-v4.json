@@ -16,9 +16,21 @@
   "dataset_generation": "V2_FRESH",
   "dataset_repo": "Rapt0r06300/alina-smartflow-datasets-v2",
   "expires_at": "2026-10-03T05:55:25.204870+00:00",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-09-26T14:12:52.386968Z",
+      "from": "PENDING",
+      "reason": "worker_started",
+      "to": "RUNNING"
+    }
+  ],
   "kind": "market_collection",
-  "lease": null,
+  "lease": {
+    "acquired_at": "2026-09-26T14:12:52.386909Z",
+    "expires_at": "2026-09-26T19:57:52.386909Z",
+    "lease_token_sha256": "de30b4541b4b597675765d5b62af4ddff2d582c8799e2640c39f029a226be518",
+    "owner_run_id": "36241724666"
+  },
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -33,8 +45,8 @@
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "PENDING",
-  "status_reason": "created",
-  "updated_at": "2026-09-26T05:55:25.204904Z",
+  "status": "RUNNING",
+  "status_reason": "worker_started",
+  "updated_at": "2026-09-26T14:12:52.386968Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
