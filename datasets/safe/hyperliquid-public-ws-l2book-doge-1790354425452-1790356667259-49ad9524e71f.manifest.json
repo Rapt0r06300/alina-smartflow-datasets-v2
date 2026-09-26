@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 107804,
+  "bytes": 132003,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-l2book-brett-1790354425413-1790356667259-b4240399d877",
+  "dataset_id": "hyperliquid-public-ws-l2book-doge-1790354425452-1790356667259-49ad9524e71f",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356667259,
   "event_count": 418,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,36 +37,37 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 418,
   "release": {
-    "asset_id": 588850190,
-    "asset_name": "hyperliquid-public-ws-l2book-brett-1790354425413-1790356667259-b4240399d877.jsonl.gz",
+    "asset_id": 588850221,
+    "asset_name": "hyperliquid-public-ws-l2book-doge-1790354425452-1790356667259-49ad9524e71f.jsonl.gz",
     "release_id": 396794062,
-    "remote_digest": "sha256:b4240399d8774f2abceafa038ab28c3be9b409a82aa1113939624c0efc269f6c",
-    "remote_size": 107804,
+    "remote_digest": "sha256:49ad9524e71f9a395d7be824f7929a776225ad29d1255313d1d20affd56ec84c",
+    "remote_size": 132003,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s6"
   },
-  "release_asset": "hyperliquid-public-ws-l2book-brett-1790354425413-1790356667259-b4240399d877.jsonl.gz",
-  "release_asset_id": 588850190,
+  "release_asset": "hyperliquid-public-ws-l2book-doge-1790354425452-1790356667259-49ad9524e71f.jsonl.gz",
+  "release_asset_id": 588850221,
   "release_id": 396794062,
-  "release_remote_digest": "sha256:b4240399d8774f2abceafa038ab28c3be9b409a82aa1113939624c0efc269f6c",
-  "release_remote_size": 107804,
+  "release_remote_digest": "sha256:49ad9524e71f9a395d7be824f7929a776225ad29d1255313d1d20affd56ec84c",
+  "release_remote_size": 132003,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s6",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "b4240399d8774f2abceafa038ab28c3be9b409a82aa1113939624c0efc269f6c",
+  "sha256": "49ad9524e71f9a395d7be824f7929a776225ad29d1255313d1d20affd56ec84c",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354425413,
-  "symbol": "BRETT",
+  "start_ts_ms": 1790354425452,
+  "symbol": "DOGE",
   "synchronization": {
     "clock_offset_ms": {
       "count": 418,
@@ -82,8 +86,8 @@
     "receive_minus_exchange_ms": {
       "count": 418,
       "max": 981.0,
-      "min": 326.0,
-      "p50": 399.0,
+      "min": 327.0,
+      "p50": 400.0,
       "p95": 628.0
     },
     "reconnect_delta": 0,
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
