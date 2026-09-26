@@ -22,10 +22,10 @@
   ],
   "kind": "event_intelligence_collection",
   "lease": {
-    "acquired_at": "2026-09-25T17:54:14.306052Z",
-    "expires_at": "2026-09-25T23:39:14.306052Z",
-    "lease_token_sha256": "c527762c197625970fa9f232018fe8995218f69daecc85325f963824c44ba13c",
-    "owner_run_id": "36169863047"
+    "acquired_at": "2026-09-26T14:12:30.919981Z",
+    "expires_at": "2026-09-26T19:57:30.919981Z",
+    "lease_token_sha256": "6b7b7594f6844a3b540b1bd429d61a297729576cbffa1ed5529e8b79c3cf9a28",
+    "owner_run_id": "36241724666"
   },
   "limits": {
     "max_attempts": 12,
