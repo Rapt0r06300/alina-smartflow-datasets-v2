@@ -1,0 +1,40 @@
+{
+  "attempts": 0,
+  "campaign_id": "pnl-20260926-s3-v5",
+  "chunk_index": 0,
+  "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
+  "code_sha": "4a7f9308acf861359547d7a03e0aca9c50b12795",
+  "completed_units": {},
+  "config_sha256": "08eabc09da865ab26dc21b958c0936bea8964b57226bd6b49e9a165232fdbbf9",
+  "consecutive_failures": 0,
+  "created_at": "2026-09-26T18:24:21.401399+00:00",
+  "cursor": {
+    "end_ts_ms": 1790447061000,
+    "max_shards": 128,
+    "start_ts_ms": 1789842261000
+  },
+  "dataset_generation": "V2_FRESH",
+  "dataset_repo": "Rapt0r06300/alina-smartflow-datasets-v2",
+  "expires_at": "2026-10-03T18:24:21.401399+00:00",
+  "history": [],
+  "kind": "module_pnl_proof",
+  "lease": null,
+  "limits": {
+    "max_attempts": 12,
+    "max_chunks": 24,
+    "max_consecutive_failures": 4,
+    "max_no_progress": 3,
+    "max_wall_clock_s": 86400
+  },
+  "next_due_at": null,
+  "no_progress_count": 0,
+  "outputs": [],
+  "paper_only": true,
+  "read_only": true,
+  "real_execution": false,
+  "schema_version": "alina.resumable_campaign.v1",
+  "status": "PENDING",
+  "status_reason": "created",
+  "updated_at": "2026-09-26T18:24:21.401431Z",
+  "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
+}
