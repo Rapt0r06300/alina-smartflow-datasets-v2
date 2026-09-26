@@ -14,13 +14,13 @@
     "agg_trades": {
       "bytes": 17049872,
       "records": 150485,
-      "replayable_trades": 0,
+      "replayable_trades": 150485,
       "safe_trades": 0,
       "shards": 15,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 15,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 150485,
+      "unique_trades_within_shards": 150485
     },
     "bbo": {
       "bytes": 502432304,
@@ -36,12 +36,12 @@
     "copy_vault_fills": {
       "bytes": 5077299,
       "records": 19544,
-      "replayable_trades": 520,
-      "safe_trades": 520,
+      "replayable_trades": 558,
+      "safe_trades": 558,
       "shards": 329,
-      "trade_shards_exact": 325,
-      "trade_shards_missing_exact": 4,
-      "trades": 46825,
+      "trade_shards_exact": 329,
+      "trade_shards_missing_exact": 0,
+      "trades": 46863,
       "unique_trades_within_shards": 0
     },
     "copy_vault_l2": {
@@ -201,13 +201,13 @@
     "trades": {
       "bytes": 2187910520,
       "records": 26100594,
-      "replayable_trades": 0,
+      "replayable_trades": 114149,
       "safe_trades": 0,
       "shards": 1818,
-      "trade_shards_exact": 1757,
-      "trade_shards_missing_exact": 61,
-      "trades": 26515094,
-      "unique_trades_within_shards": 1932170
+      "trade_shards_exact": 1818,
+      "trade_shards_missing_exact": 0,
+      "trades": 26629243,
+      "unique_trades_within_shards": 2046317
     }
   },
   "by_symbol": {
@@ -500,12 +500,12 @@
     "0X07FD993F0FA3A185F7207ADCCD29F7A87404689D": {
       "bytes": 1733843,
       "records": 6355,
-      "replayable_trades": 0,
-      "safe_trades": 0,
+      "replayable_trades": 22,
+      "safe_trades": 22,
       "shards": 74,
-      "trade_shards_exact": 19,
-      "trade_shards_missing_exact": 2,
-      "trades": 13013,
+      "trade_shards_exact": 21,
+      "trade_shards_missing_exact": 0,
+      "trades": 13035,
       "unique_trades_within_shards": 0
     },
     "0X08102A1029DB108BBE34172C7C40FB6301AF9FFC": {
@@ -1303,12 +1303,12 @@
     "0X29679C7FCC83AA81F5BE1BB287A3AD8EF89902F8": {
       "bytes": 5282,
       "records": 6,
-      "replayable_trades": 0,
-      "safe_trades": 0,
+      "replayable_trades": 3,
+      "safe_trades": 3,
       "shards": 4,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 3,
       "unique_trades_within_shards": 0
     },
     "0X2A3F5D0576F98EFE697F7DDD8288699818DD32ED": {
@@ -2546,12 +2546,12 @@
     "0X7491180D3E43719BD8A53CDFBEF27A1527A1D90F": {
       "bytes": 105209,
       "records": 111,
-      "replayable_trades": 0,
-      "safe_trades": 0,
+      "replayable_trades": 13,
+      "safe_trades": 13,
       "shards": 57,
-      "trade_shards_exact": 5,
-      "trade_shards_missing_exact": 1,
-      "trades": 377,
+      "trade_shards_exact": 6,
+      "trade_shards_missing_exact": 0,
+      "trades": 390,
       "unique_trades_within_shards": 0
     },
     "0X74BDC7938B85E64838C4A540BD86E9CA13D5350D": {
@@ -5131,35 +5131,35 @@
     "ADA": {
       "bytes": 40854509,
       "records": 297430,
-      "replayable_trades": 0,
+      "replayable_trades": 413,
       "safe_trades": 0,
       "shards": 215,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 12597,
-      "unique_trades_within_shards": 12597
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 13010,
+      "unique_trades_within_shards": 13010
     },
     "ADA-USDT-SWAP": {
       "bytes": 29419256,
       "records": 252900,
-      "replayable_trades": 0,
+      "replayable_trades": 320,
       "safe_trades": 0,
       "shards": 117,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 12338,
-      "unique_trades_within_shards": 12338
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 12658,
+      "unique_trades_within_shards": 12658
     },
     "ADAUSDT": {
       "bytes": 12292159,
       "records": 97499,
-      "replayable_trades": 0,
+      "replayable_trades": 3986,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 1238,
-      "unique_trades_within_shards": 1238
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 5224,
+      "unique_trades_within_shards": 5224
     },
     "ADA_USDT": {
       "bytes": 101371802,
@@ -5428,35 +5428,35 @@
     "APT": {
       "bytes": 22663787,
       "records": 160493,
-      "replayable_trades": 0,
+      "replayable_trades": 714,
       "safe_trades": 0,
       "shards": 146,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 4474,
-      "unique_trades_within_shards": 4474
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 5188,
+      "unique_trades_within_shards": 5188
     },
     "APT-USDT-SWAP": {
       "bytes": 27676645,
       "records": 229775,
-      "replayable_trades": 0,
+      "replayable_trades": 1126,
       "safe_trades": 0,
       "shards": 103,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 17641,
-      "unique_trades_within_shards": 17641
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 18767,
+      "unique_trades_within_shards": 18767
     },
     "APTUSDT": {
       "bytes": 18357920,
       "records": 140824,
-      "replayable_trades": 0,
+      "replayable_trades": 13419,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 1686,
-      "unique_trades_within_shards": 1686
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 15105,
+      "unique_trades_within_shards": 15105
     },
     "APT_USDT": {
       "bytes": 76603082,
@@ -5494,35 +5494,35 @@
     "ARB": {
       "bytes": 45338106,
       "records": 339442,
-      "replayable_trades": 0,
+      "replayable_trades": 874,
       "safe_trades": 0,
       "shards": 241,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 28715,
-      "unique_trades_within_shards": 28715
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 29589,
+      "unique_trades_within_shards": 29589
     },
     "ARB-USDT-SWAP": {
       "bytes": 48722860,
       "records": 310907,
-      "replayable_trades": 0,
+      "replayable_trades": 1906,
       "safe_trades": 0,
       "shards": 103,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 65855,
-      "unique_trades_within_shards": 65855
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 67761,
+      "unique_trades_within_shards": 67761
     },
     "ARBUSDT": {
       "bytes": 18650695,
       "records": 127523,
-      "replayable_trades": 0,
+      "replayable_trades": 15614,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 1655,
-      "unique_trades_within_shards": 1655
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 17269,
+      "unique_trades_within_shards": 17269
     },
     "ARB_USDT": {
       "bytes": 107315888,
@@ -5648,35 +5648,35 @@
     "AVAX": {
       "bytes": 29151713,
       "records": 217948,
-      "replayable_trades": 0,
+      "replayable_trades": 591,
       "safe_trades": 0,
       "shards": 219,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 9286,
-      "unique_trades_within_shards": 9286
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 9877,
+      "unique_trades_within_shards": 9877
     },
     "AVAX-USDT-SWAP": {
       "bytes": 31927705,
       "records": 256710,
-      "replayable_trades": 0,
+      "replayable_trades": 896,
       "safe_trades": 0,
       "shards": 103,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 28487,
-      "unique_trades_within_shards": 28487
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 29383,
+      "unique_trades_within_shards": 29383
     },
     "AVAXUSDT": {
       "bytes": 15626018,
       "records": 131523,
-      "replayable_trades": 0,
+      "replayable_trades": 5952,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 1708,
-      "unique_trades_within_shards": 1708
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 7660,
+      "unique_trades_within_shards": 7660
     },
     "AVAX_USDT": {
       "bytes": 109440220,
@@ -6121,35 +6121,35 @@
     "BNB": {
       "bytes": 27020005,
       "records": 198772,
-      "replayable_trades": 0,
+      "replayable_trades": 180,
       "safe_trades": 0,
       "shards": 190,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 5730,
-      "unique_trades_within_shards": 5730
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 5910,
+      "unique_trades_within_shards": 5910
     },
     "BNB-USDT-SWAP": {
       "bytes": 23926459,
       "records": 223309,
-      "replayable_trades": 0,
+      "replayable_trades": 159,
       "safe_trades": 0,
       "shards": 103,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 6308,
-      "unique_trades_within_shards": 6308
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 6467,
+      "unique_trades_within_shards": 6467
     },
     "BNBUSDT": {
       "bytes": 12963549,
       "records": 94909,
-      "replayable_trades": 0,
+      "replayable_trades": 5071,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 920,
-      "unique_trades_within_shards": 920
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 5991,
+      "unique_trades_within_shards": 5991
     },
     "BNB_USDT": {
       "bytes": 103306832,
@@ -6253,35 +6253,35 @@
     "BTC": {
       "bytes": 90825711,
       "records": 510793,
-      "replayable_trades": 0,
+      "replayable_trades": 6200,
       "safe_trades": 0,
       "shards": 637,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 158021,
-      "unique_trades_within_shards": 158021
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 164221,
+      "unique_trades_within_shards": 164221
     },
     "BTC-USDT-SWAP": {
       "bytes": 74413399,
       "records": 510320,
-      "replayable_trades": 0,
+      "replayable_trades": 6052,
       "safe_trades": 0,
       "shards": 117,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 248546,
-      "unique_trades_within_shards": 248546
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 254598,
+      "unique_trades_within_shards": 254598
     },
     "BTCUSDT": {
       "bytes": 796132966,
       "records": 9584938,
-      "replayable_trades": 0,
+      "replayable_trades": 33042,
       "safe_trades": 0,
       "shards": 92,
-      "trade_shards_exact": 63,
-      "trade_shards_missing_exact": 3,
-      "trades": 9490359,
-      "unique_trades_within_shards": 16916
+      "trade_shards_exact": 66,
+      "trade_shards_missing_exact": 0,
+      "trades": 9523401,
+      "unique_trades_within_shards": 49958
     },
     "BTC_USDT": {
       "bytes": 168325885,
@@ -6671,35 +6671,35 @@
     "DOGE": {
       "bytes": 42353853,
       "records": 322232,
-      "replayable_trades": 0,
+      "replayable_trades": 419,
       "safe_trades": 0,
       "shards": 195,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 18386,
-      "unique_trades_within_shards": 18386
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 18805,
+      "unique_trades_within_shards": 18805
     },
     "DOGE-USDT-SWAP": {
       "bytes": 45063090,
       "records": 292778,
-      "replayable_trades": 0,
+      "replayable_trades": 1458,
       "safe_trades": 0,
       "shards": 103,
-      "trade_shards_exact": 12,
-      "trade_shards_missing_exact": 1,
-      "trades": 42701,
-      "unique_trades_within_shards": 42701
+      "trade_shards_exact": 13,
+      "trade_shards_missing_exact": 0,
+      "trades": 44159,
+      "unique_trades_within_shards": 44159
     },
     "DOGEUSDT": {
       "bytes": 17052573,
       "records": 118126,
-      "replayable_trades": 0,
+      "replayable_trades": 9279,
       "safe_trades": 0,
       "shards": 39,
-      "trade_shards_exact": 9,
-      "trade_shards_missing_exact": 3,
-      "trades": 2581,
-      "unique_trades_within_shards": 2581
+      "trade_shards_exact": 12,
+      "trade_shards_missing_exact": 0,
+      "trades": 11860,
+      "unique_trades_within_shards": 11860
     },
     "DOGE_USDT": {
       "bytes": 122148404,
@@ -6990,24 +6990,24 @@
     "ETH": {
       "bytes": 89763661,
       "records": 532762,
-      "replayable_trades": 0,
+      "replayable_trades": 2590,
       "safe_trades": 0,
       "shards": 452,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 89001,
-      "unique_trades_within_shards": 88999
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 91591,
+      "unique_trades_within_shards": 91589
     },
     "ETH-USDT-SWAP": {
       "bytes": 86157529,
       "records": 547725,
-      "replayable_trades": 0,
+      "replayable_trades": 7018,
       "safe_trades": 0,
       "shards": 119,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 284173,
-      "unique_trades_within_shards": 284173
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 291191,
+      "unique_trades_within_shards": 291191
     },
     "ETHFI": {
       "bytes": 23678831,
@@ -7056,13 +7056,13 @@
     "ETHUSDT": {
       "bytes": 901673700,
       "records": 10965543,
-      "replayable_trades": 0,
+      "replayable_trades": 33429,
       "safe_trades": 0,
       "shards": 100,
-      "trade_shards_exact": 70,
-      "trade_shards_missing_exact": 3,
-      "trades": 10883585,
-      "unique_trades_within_shards": 7718
+      "trade_shards_exact": 73,
+      "trade_shards_missing_exact": 0,
+      "trades": 10917014,
+      "unique_trades_within_shards": 41147
     },
     "ETH_USDT": {
       "bytes": 166275567,
@@ -7529,35 +7529,35 @@
     "LINK": {
       "bytes": 17090620,
       "records": 70813,
-      "replayable_trades": 0,
+      "replayable_trades": 1108,
       "safe_trades": 0,
       "shards": 91,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 1108,
+      "unique_trades_within_shards": 1108
     },
     "LINK-USDT-SWAP": {
       "bytes": 2231584,
       "records": 17906,
-      "replayable_trades": 0,
+      "replayable_trades": 953,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 953,
+      "unique_trades_within_shards": 953
     },
     "LINKUSDT": {
       "bytes": 11502742,
       "records": 81002,
-      "replayable_trades": 0,
+      "replayable_trades": 7827,
       "safe_trades": 0,
       "shards": 11,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 7827,
+      "unique_trades_within_shards": 7827
     },
     "LINK_USDT": {
       "bytes": 2957877,
@@ -7837,35 +7837,35 @@
     "OP": {
       "bytes": 1608208,
       "records": 15358,
-      "replayable_trades": 0,
+      "replayable_trades": 558,
       "safe_trades": 0,
       "shards": 21,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 558,
+      "unique_trades_within_shards": 558
     },
     "OP-USDT-SWAP": {
       "bytes": 2202575,
       "records": 18736,
-      "replayable_trades": 0,
+      "replayable_trades": 2143,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 2143,
+      "unique_trades_within_shards": 2143
     },
     "OPUSDT": {
       "bytes": 14956415,
       "records": 107049,
-      "replayable_trades": 0,
+      "replayable_trades": 14340,
       "safe_trades": 0,
       "shards": 12,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 14340,
+      "unique_trades_within_shards": 14340
     },
     "OP_USDT": {
       "bytes": 2090774,
@@ -8211,35 +8211,35 @@
     "SOL": {
       "bytes": 58503621,
       "records": 372963,
-      "replayable_trades": 0,
+      "replayable_trades": 3936,
       "safe_trades": 0,
       "shards": 212,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 41744,
-      "unique_trades_within_shards": 41744
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 45680,
+      "unique_trades_within_shards": 45678
     },
     "SOL-USDT-SWAP": {
       "bytes": 46448120,
       "records": 301767,
-      "replayable_trades": 0,
+      "replayable_trades": 2303,
       "safe_trades": 0,
       "shards": 117,
-      "trade_shards_exact": 14,
-      "trade_shards_missing_exact": 1,
-      "trades": 44779,
-      "unique_trades_within_shards": 44779
+      "trade_shards_exact": 15,
+      "trade_shards_missing_exact": 0,
+      "trades": 47082,
+      "unique_trades_within_shards": 47082
     },
     "SOLUSDT": {
       "bytes": 374346496,
       "records": 4359583,
-      "replayable_trades": 0,
+      "replayable_trades": 23975,
       "safe_trades": 0,
       "shards": 65,
-      "trade_shards_exact": 35,
-      "trade_shards_missing_exact": 3,
-      "trades": 4238390,
-      "unique_trades_within_shards": 4780
+      "trade_shards_exact": 38,
+      "trade_shards_missing_exact": 0,
+      "trades": 4262365,
+      "unique_trades_within_shards": 28755
     },
     "SOL_USDT": {
       "bytes": 135866576,
@@ -8310,35 +8310,35 @@
     "SUI": {
       "bytes": 23638419,
       "records": 94728,
-      "replayable_trades": 0,
+      "replayable_trades": 2234,
       "safe_trades": 0,
       "shards": 105,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 2234,
+      "unique_trades_within_shards": 2234
     },
     "SUI-USDT-SWAP": {
       "bytes": 2950031,
       "records": 21124,
-      "replayable_trades": 0,
+      "replayable_trades": 2279,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 2279,
+      "unique_trades_within_shards": 2279
     },
     "SUIUSDT": {
       "bytes": 8618440,
       "records": 65009,
-      "replayable_trades": 0,
+      "replayable_trades": 25341,
       "safe_trades": 0,
       "shards": 12,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 25341,
+      "unique_trades_within_shards": 25341
     },
     "SUI_USDT": {
       "bytes": 4178952,
@@ -8409,13 +8409,13 @@
     "TON": {
       "bytes": 208973,
       "records": 4311,
-      "replayable_trades": 0,
+      "replayable_trades": 30,
       "safe_trades": 0,
       "shards": 13,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 30,
+      "unique_trades_within_shards": 30
     },
     "TONUSDT": {
       "bytes": 308618,
@@ -8453,35 +8453,35 @@
     "TRX": {
       "bytes": 2820661,
       "records": 22740,
-      "replayable_trades": 0,
+      "replayable_trades": 181,
       "safe_trades": 0,
       "shards": 40,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 181,
+      "unique_trades_within_shards": 181
     },
     "TRX-USDT-SWAP": {
       "bytes": 852339,
       "records": 9379,
-      "replayable_trades": 0,
+      "replayable_trades": 72,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 72,
+      "unique_trades_within_shards": 72
     },
     "TRXUSDT": {
       "bytes": 7455441,
       "records": 62616,
-      "replayable_trades": 0,
+      "replayable_trades": 1911,
       "safe_trades": 0,
       "shards": 11,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 1911,
+      "unique_trades_within_shards": 1911
     },
     "TRX_USDT": {
       "bytes": 1006859,
@@ -8618,35 +8618,35 @@
     "WIF": {
       "bytes": 5078231,
       "records": 27917,
-      "replayable_trades": 0,
+      "replayable_trades": 299,
       "safe_trades": 0,
       "shards": 37,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 299,
+      "unique_trades_within_shards": 299
     },
     "WIF-USDT-SWAP": {
       "bytes": 1457694,
       "records": 14896,
-      "replayable_trades": 0,
+      "replayable_trades": 518,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 518,
+      "unique_trades_within_shards": 518
     },
     "WIFUSDT": {
       "bytes": 8161498,
       "records": 71653,
-      "replayable_trades": 0,
+      "replayable_trades": 2293,
       "safe_trades": 0,
       "shards": 11,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 2293,
+      "unique_trades_within_shards": 2293
     },
     "WIF_USDT": {
       "bytes": 1585944,
@@ -8728,35 +8728,35 @@
     "XRP": {
       "bytes": 23764707,
       "records": 89567,
-      "replayable_trades": 0,
+      "replayable_trades": 2305,
       "safe_trades": 0,
       "shards": 108,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 2305,
+      "unique_trades_within_shards": 2305
     },
     "XRP-USDT-SWAP": {
       "bytes": 3101399,
       "records": 21570,
-      "replayable_trades": 0,
+      "replayable_trades": 2544,
       "safe_trades": 0,
       "shards": 7,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 2544,
+      "unique_trades_within_shards": 2544
     },
     "XRPUSDT": {
       "bytes": 9298074,
       "records": 69194,
-      "replayable_trades": 0,
+      "replayable_trades": 16776,
       "safe_trades": 0,
       "shards": 12,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 3,
-      "trades": 0,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 3,
+      "trade_shards_missing_exact": 0,
+      "trades": 16776,
+      "unique_trades_within_shards": 16776
     },
     "XRP_USDT": {
       "bytes": 3975095,
@@ -8851,35 +8851,35 @@
     "binance": {
       "bytes": 714680850,
       "records": 8806564,
-      "replayable_trades": 0,
+      "replayable_trades": 150485,
       "safe_trades": 0,
       "shards": 133,
-      "trade_shards_exact": 46,
-      "trade_shards_missing_exact": 15,
-      "trades": 7748556,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 61,
+      "trade_shards_missing_exact": 0,
+      "trades": 7899041,
+      "unique_trades_within_shards": 150485
     },
     "bitget": {
       "bytes": 125648807,
       "records": 1112804,
-      "replayable_trades": 0,
+      "replayable_trades": 2118,
       "safe_trades": 0,
       "shards": 1341,
-      "trade_shards_exact": 432,
-      "trade_shards_missing_exact": 15,
-      "trades": 68187,
-      "unique_trades_within_shards": 68187
+      "trade_shards_exact": 447,
+      "trade_shards_missing_exact": 0,
+      "trades": 70305,
+      "unique_trades_within_shards": 70305
     },
     "bybit": {
       "bytes": 1476040654,
       "records": 17006911,
-      "replayable_trades": 0,
+      "replayable_trades": 59652,
       "safe_trades": 0,
       "shards": 140,
-      "trade_shards_exact": 95,
-      "trade_shards_missing_exact": 15,
-      "trades": 16834364,
-      "unique_trades_within_shards": 0
+      "trade_shards_exact": 110,
+      "trade_shards_missing_exact": 0,
+      "trades": 16894016,
+      "unique_trades_within_shards": 59652
     },
     "gate": {
       "bytes": 2910650060,
@@ -8895,24 +8895,24 @@
     "hyperliquid": {
       "bytes": 1684701508,
       "records": 10907881,
-      "replayable_trades": 520,
-      "safe_trades": 520,
+      "replayable_trades": 23190,
+      "safe_trades": 558,
       "shards": 15356,
-      "trade_shards_exact": 917,
-      "trade_shards_missing_exact": 20,
-      "trades": 781603,
-      "unique_trades_within_shards": 734774
+      "trade_shards_exact": 937,
+      "trade_shards_missing_exact": 0,
+      "trades": 804273,
+      "unique_trades_within_shards": 757404
     },
     "okx": {
       "bytes": 1110446421,
       "records": 9349250,
-      "replayable_trades": 0,
+      "replayable_trades": 29747,
       "safe_trades": 0,
       "shards": 4827,
-      "trade_shards_exact": 592,
-      "trade_shards_missing_exact": 15,
-      "trades": 1129209,
-      "unique_trades_within_shards": 1129209
+      "trade_shards_exact": 607,
+      "trade_shards_missing_exact": 0,
+      "trades": 1158956,
+      "unique_trades_within_shards": 1158956
     },
     "unknown": {
       "bytes": 147489,
@@ -8942,18 +8942,18 @@
     "TOTAL_REPLAYABLE_RECORDS": 2985116,
     "TOTAL_SAFE_RECORDS": 2775100,
     "TOTAL_SHARDS": 22259,
-    "TOTAL_TRADES_COLLECTED": 26561919,
-    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": false,
-    "TOTAL_TRADES_PARTIAL": 1976026,
+    "TOTAL_TRADES_COLLECTED": 26826591,
+    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": true,
+    "TOTAL_TRADES_PARTIAL": 2240660,
     "TOTAL_TRADES_REJECTED": 24585373,
-    "TOTAL_TRADES_REPLAYABLE": 520,
-    "TOTAL_TRADES_SAFE": 520,
+    "TOTAL_TRADES_REPLAYABLE": 265192,
+    "TOTAL_TRADES_SAFE": 558,
     "TOTAL_UNCOMPRESSED_BYTES": 0,
     "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 1932170,
-    "TRADE_SHARDS_MISSING_EXACT_COUNT": 80,
-    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 546,
-    "TRADE_SHARDS_WITH_EXACT_COUNT": 2082,
-    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1616
+    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 2196802,
+    "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
+    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 470,
+    "TRADE_SHARDS_WITH_EXACT_COUNT": 2162,
+    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1692
   }
 }
