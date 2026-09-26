@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 97164,
+  "bytes": 77321,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-l2book-comp-1790354389924-1790356667251-416a0b9c8a20",
+  "dataset_id": "hyperliquid-public-ws-l2book-anime-1790354389731-1790356667251-22c10b1be130",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356667251,
   "event_count": 425,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,36 +37,37 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 425,
   "release": {
-    "asset_id": 588848074,
-    "asset_name": "hyperliquid-public-ws-l2book-comp-1790354389924-1790356667251-416a0b9c8a20.jsonl.gz",
+    "asset_id": 588847973,
+    "asset_name": "hyperliquid-public-ws-l2book-anime-1790354389731-1790356667251-22c10b1be130.jsonl.gz",
     "release_id": 396793495,
-    "remote_digest": "sha256:416a0b9c8a20baf19a9af581bd667770a550d329c8022eded82cda7657cb7924",
-    "remote_size": 97164,
+    "remote_digest": "sha256:22c10b1be130d06c44e17051e1eb6201418b12fc6a2528dcaeb573440dd7a3d1",
+    "remote_size": 77321,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s3"
   },
-  "release_asset": "hyperliquid-public-ws-l2book-comp-1790354389924-1790356667251-416a0b9c8a20.jsonl.gz",
-  "release_asset_id": 588848074,
+  "release_asset": "hyperliquid-public-ws-l2book-anime-1790354389731-1790356667251-22c10b1be130.jsonl.gz",
+  "release_asset_id": 588847973,
   "release_id": 396793495,
-  "release_remote_digest": "sha256:416a0b9c8a20baf19a9af581bd667770a550d329c8022eded82cda7657cb7924",
-  "release_remote_size": 97164,
+  "release_remote_digest": "sha256:22c10b1be130d06c44e17051e1eb6201418b12fc6a2528dcaeb573440dd7a3d1",
+  "release_remote_size": 77321,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s3",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "416a0b9c8a20baf19a9af581bd667770a550d329c8022eded82cda7657cb7924",
+  "sha256": "22c10b1be130d06c44e17051e1eb6201418b12fc6a2528dcaeb573440dd7a3d1",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354389924,
-  "symbol": "COMP",
+  "start_ts_ms": 1790354389731,
+  "symbol": "ANIME",
   "synchronization": {
     "clock_offset_ms": {
       "count": 425,
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
