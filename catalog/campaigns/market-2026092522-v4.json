@@ -1,12 +1,23 @@
 {
-  "attempts": 0,
+  "attempts": 1,
   "campaign_id": "market-2026092522-v4",
-  "chunk_index": 0,
+  "chunk_index": 1,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "a7ceca41324a1cd8dbf1f73938fd5f45f1f37fa7",
-  "completed_units": {},
+  "completed_units": {
+    "0": {
+      "result": {
+        "failure_category": "INFRASTRUCTURE",
+        "previous_sha256": "9d7316e626f7000719a5e10972ca3ef1787a1670b25cff034ba371ef16be8551",
+        "previous_status": "COMPLETE",
+        "reason": "durable_publication_failed",
+        "status": "FAILED"
+      },
+      "sha256": "fcc1a4ae1b6a2a14fa3d02b4a537595c78deb4e61508a0027132e4e27a012cbc"
+    }
+  },
   "config_sha256": "bb02720d9c632da42069136b1f64c289c8888a53efe6a4731db6be4548b246bc",
-  "consecutive_failures": 0,
+  "consecutive_failures": 1,
   "created_at": "2026-09-25T22:00:50.337296+00:00",
   "cursor": {
     "coins": "BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT",
@@ -22,15 +33,16 @@
       "from": "PENDING",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-26T15:20:22.691959Z",
+      "from": "RUNNING",
+      "reason": "durable_publication_failed",
+      "to": "CONTINUATION_REQUIRED"
     }
   ],
   "kind": "market_collection",
-  "lease": {
-    "acquired_at": "2026-09-26T14:12:28.326335Z",
-    "expires_at": "2026-09-26T19:57:28.326335Z",
-    "lease_token_sha256": "5f7e11199f9d2ea0688022bc0821137f0147ee06db3cf54920c75f9a4472ceb5",
-    "owner_run_id": "36241724666"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -39,14 +51,14 @@
     "max_wall_clock_s": 86400
   },
   "next_due_at": null,
-  "no_progress_count": 0,
+  "no_progress_count": 1,
   "outputs": [],
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-26T14:12:28.326374Z",
+  "status": "CONTINUATION_REQUIRED",
+  "status_reason": "durable_publication_failed",
+  "updated_at": "2026-09-26T15:20:22.691959Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
