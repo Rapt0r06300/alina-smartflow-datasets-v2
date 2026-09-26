@@ -8,9 +8,11 @@
     "ready": false
   },
   "dataset_id": "gate-public-ws-l2book-dydx-usdt-1790344067793-1790356665327-2d3d59b2d68f",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356665327,
   "event_count": 29534,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,13 +37,12 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 29534,
   "release": {
     "asset_id": 588847663,
     "asset_name": "gate-public-ws-l2book-dydx-usdt-1790344067793-1790356665327-2d3d59b2d68f.jsonl.gz",
@@ -57,7 +59,9 @@
   "release_remote_size": 3384590,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s0",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
   "sha256": "2d3d59b2d68fc397025b8393ecedea2b0ea24e222e55724c57d01a33c10bde27",
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "gate"
 }
