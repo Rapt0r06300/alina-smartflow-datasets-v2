@@ -376,12 +376,28 @@
       "unique_trade_count": 2669,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-adausdt-1790431933630-1790435432641-c43b18ea2b8d": {
+      "asset_sha256": "c43b18ea2b8ddb33f5c4deecfe8a4b311cb0324235ef14d4f527a59647d8472b",
+      "record_count_scanned": 2557,
+      "trade_count": 2557,
+      "trade_count_exact": true,
+      "unique_trade_count": 2557,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-aptusdt-1790364009417-1790367506735-5d06580f8c58": {
       "asset_sha256": "5d06580f8c587b07ed09e92a7374adb09f4d893267bd2fc47236e1bbaed50e0e",
       "record_count_scanned": 9421,
       "trade_count": 9421,
       "trade_count_exact": true,
       "unique_trade_count": 9421,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-aptusdt-1790431933962-1790435432509-d256d7bd4cfe": {
+      "asset_sha256": "d256d7bd4cfe3c0c391b4bad59f3a3db7ca89a8621831d991840dac8fe0021d8",
+      "record_count_scanned": 5026,
+      "trade_count": 5026,
+      "trade_count_exact": true,
+      "unique_trade_count": 5026,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-arbusdt-1790364007335-1790367506749-77db1f12990a": {
@@ -392,12 +408,28 @@
       "unique_trade_count": 11783,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-arbusdt-1790431933266-1790435432290-fc399e8c2421": {
+      "asset_sha256": "fc399e8c24215674ba6d3b007a62c30e1ca566e29940196a905db6fbb1ebbe67",
+      "record_count_scanned": 14470,
+      "trade_count": 14470,
+      "trade_count_exact": true,
+      "unique_trade_count": 14470,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-avaxusdt-1790364009003-1790367506788-870de382478d": {
       "asset_sha256": "870de382478d28e1df748c57236c095a03de56a3632eeb73307fd2ec0000294b",
       "record_count_scanned": 4028,
       "trade_count": 4028,
       "trade_count_exact": true,
       "unique_trade_count": 4028,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-avaxusdt-1790431935504-1790435432882-3b7e8cf4dd57": {
+      "asset_sha256": "3b7e8cf4dd57f616dde429e81e790398dd4b9146a60ff410511ec59fe2970e95",
+      "record_count_scanned": 11259,
+      "trade_count": 11259,
+      "trade_count_exact": true,
+      "unique_trade_count": 11259,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-bnbusdt-1790364007781-1790367506679-9d1521eb1e3b": {
@@ -408,12 +440,28 @@
       "unique_trade_count": 4651,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-bnbusdt-1790431933369-1790435432711-83e4b925b825": {
+      "asset_sha256": "83e4b925b82561820f7176adfc2fe6387d84042c3dcb864511bb9b19466716a1",
+      "record_count_scanned": 4969,
+      "trade_count": 4969,
+      "trade_count_exact": true,
+      "unique_trade_count": 4969,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-btcusdt-1790364008214-1790367505835-47c7792fb1a9": {
       "asset_sha256": "47c7792fb1a9e1b4a36fe81d337037e96c042b9f3407995e83ac505b4751d678",
       "record_count_scanned": 21633,
       "trade_count": 21633,
       "trade_count_exact": true,
       "unique_trade_count": 21633,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-btcusdt-1790431933950-1790435432786-b4fd3bd4cd5a": {
+      "asset_sha256": "b4fd3bd4cd5a414bb050012f5dc80f2370d6afa05455a7ecfc1f0eaf62aab823",
+      "record_count_scanned": 9784,
+      "trade_count": 9784,
+      "trade_count_exact": true,
+      "unique_trade_count": 9784,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-dogeusdt-1790364007219-1790367506262-589797d01f99": {
@@ -424,12 +472,28 @@
       "unique_trade_count": 6800,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-dogeusdt-1790431933641-1790435426591-6415fb1b22af": {
+      "asset_sha256": "6415fb1b22afde4ad7bebc92fc313e8fdd52ca28e133778295844f86401baa47",
+      "record_count_scanned": 5150,
+      "trade_count": 5150,
+      "trade_count_exact": true,
+      "unique_trade_count": 5150,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-ethusdt-1790364007288-1790367506040-34c45642a96a": {
       "asset_sha256": "34c45642a96a41f09a2690d45a2578870229b03c7e3e6019999140b238a603b7",
       "record_count_scanned": 21630,
       "trade_count": 21630,
       "trade_count_exact": true,
       "unique_trade_count": 21630,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-ethusdt-1790431933530-1790435432926-24a321a06231": {
+      "asset_sha256": "24a321a06231e539e1f6b0e851dc4ac1bb1a38615e3bfbbfb7d0d759a6f37a89",
+      "record_count_scanned": 8960,
+      "trade_count": 8960,
+      "trade_count_exact": true,
+      "unique_trade_count": 8960,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-linkusdt-1790364008573-1790367503914-779c8d4369fa": {
@@ -440,12 +504,28 @@
       "unique_trade_count": 5363,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-linkusdt-1790431933735-1790435432531-6c52a716192b": {
+      "asset_sha256": "6c52a716192b2f3bed7ad68de3f8e5c67c613c9e042b2152bcb83d9b5fecbeec",
+      "record_count_scanned": 12854,
+      "trade_count": 12854,
+      "trade_count_exact": true,
+      "unique_trade_count": 12854,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-opusdt-1790364009056-1790367506319-99075a6ab325": {
       "asset_sha256": "99075a6ab3250d4a490b1261d39c3c2751cf37823e82288de9a4dc4d881af098",
       "record_count_scanned": 10726,
       "trade_count": 10726,
       "trade_count_exact": true,
       "unique_trade_count": 10726,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-opusdt-1790431933331-1790435432304-f6e7cf451d0a": {
+      "asset_sha256": "f6e7cf451d0a3a016621262a81306504ab9038a4458540d51bfcd46d09a27252",
+      "record_count_scanned": 12474,
+      "trade_count": 12474,
+      "trade_count_exact": true,
+      "unique_trade_count": 12474,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-solusdt-1790364009276-1790367506633-adbc4db9047f": {
@@ -456,12 +536,28 @@
       "unique_trade_count": 18298,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-solusdt-1790431934456-1790435432443-bbefb3989588": {
+      "asset_sha256": "bbefb3989588ce7ec533b35d122fbbdbd0e8bbd7160d0834f294b14695202f00",
+      "record_count_scanned": 11096,
+      "trade_count": 11096,
+      "trade_count_exact": true,
+      "unique_trade_count": 11096,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-suiusdt-1790364007344-1790367506688-18eee9426633": {
       "asset_sha256": "18eee942663383d528a9033471394115a58c6afdf4d17657b66ea9c3707d1d6a",
       "record_count_scanned": 20451,
       "trade_count": 20451,
       "trade_count_exact": true,
       "unique_trade_count": 20451,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-suiusdt-1790431934611-1790435432906-23699a84ccfc": {
+      "asset_sha256": "23699a84ccfc60cbe640ec891038ec22b24553cc4c4b64d7353ae9086d2de86e",
+      "record_count_scanned": 7103,
+      "trade_count": 7103,
+      "trade_count_exact": true,
+      "unique_trade_count": 7103,
       "unique_trade_count_exact": true
     },
     "binance-usdm-public-agg-trades-trxusdt-1790364008119-1790367502928-983576c5ca16": {
@@ -472,6 +568,14 @@
       "unique_trade_count": 1807,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-trxusdt-1790431936033-1790435430782-80a42abf4080": {
+      "asset_sha256": "80a42abf408002fae1d216d7dd51c1e485d7f126dca6be54c49287112cc5b963",
+      "record_count_scanned": 2619,
+      "trade_count": 2619,
+      "trade_count_exact": true,
+      "unique_trade_count": 2619,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-wifusdt-1790364012122-1790367503033-907b806f8a00": {
       "asset_sha256": "907b806f8a00fe700c94a9340fbdd5aefdff862009ee17f3d4b4aa02270ed366",
       "record_count_scanned": 1440,
@@ -480,12 +584,28 @@
       "unique_trade_count": 1440,
       "unique_trade_count_exact": true
     },
+    "binance-usdm-public-agg-trades-wifusdt-1790431933694-1790435432636-8d9b8f7483e5": {
+      "asset_sha256": "8d9b8f7483e5ad82fb270e86aebf2bbf27776ba8395d9e843a69fef5d3fc58c9",
+      "record_count_scanned": 2667,
+      "trade_count": 2667,
+      "trade_count_exact": true,
+      "unique_trade_count": 2667,
+      "unique_trade_count_exact": true
+    },
     "binance-usdm-public-agg-trades-xrpusdt-1790364009622-1790367505926-01b0f49fe78f": {
       "asset_sha256": "01b0f49fe78fb80157054d4cd9cda7101050ba4ed3175c41892e5261fb97f7e3",
       "record_count_scanned": 9785,
       "trade_count": 9785,
       "trade_count_exact": true,
       "unique_trade_count": 9785,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-xrpusdt-1790431933467-1790435432635-30c2601b7258": {
+      "asset_sha256": "30c2601b7258f359d9a5328131678f897949685e3a122509bcbb74c2809f5343",
+      "record_count_scanned": 10978,
+      "trade_count": 10978,
+      "trade_count_exact": true,
+      "unique_trade_count": 10978,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-0gusdt-1790117941430-1790118001201-8bab61434d2d": {
@@ -782,6 +902,14 @@
       "trade_count": 74,
       "trade_count_exact": true,
       "unique_trade_count": 74,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790431933677-1790432059570-c94f02476a6e": {
+      "asset_sha256": "c94f02476a6e46ae7aa3cd1f3290d8602038e7dc3aa2c4de4ccb8ab654b7ec81",
+      "record_count_scanned": 18,
+      "trade_count": 89,
+      "trade_count_exact": true,
+      "unique_trade_count": 89,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-aerousdt-1790117940623-1790118017195-9b939a6e9147": {
@@ -1224,6 +1352,14 @@
       "unique_trade_count": 155,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-aptusdt-1790431933678-1790432060889-0a01c5e4d123": {
+      "asset_sha256": "0a01c5e4d1238d5242571b8cb7be912f5f8a16afc4ae796c1aac94e754c331a4",
+      "record_count_scanned": 28,
+      "trade_count": 128,
+      "trade_count_exact": true,
+      "unique_trade_count": 128,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-arbusdt-1790117943579-1790118071367-c16457c3fa2d": {
       "asset_sha256": "c16457c3fa2d433a23693ddfa9f0e2b912dcf1be30f3f2abeaedb838cfee26e5",
       "record_count_scanned": 212,
@@ -1302,6 +1438,14 @@
       "trade_count": 83,
       "trade_count_exact": true,
       "unique_trade_count": 83,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790431933837-1790432058764-5d550e5edcae": {
+      "asset_sha256": "5d550e5edcae81c7ecd585ce8b420c4c8f48206ecdd0a52621cac23ee0b8babb",
+      "record_count_scanned": 15,
+      "trade_count": 70,
+      "trade_count_exact": true,
+      "unique_trade_count": 70,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-arusdt-1790117942774-1790118055729-16f5884c203a": {
@@ -1598,6 +1742,14 @@
       "trade_count": 60,
       "trade_count_exact": true,
       "unique_trade_count": 60,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-avaxusdt-1790431933678-1790432056997-1452b77ddac9": {
+      "asset_sha256": "1452b77ddac9225a73fe4b90cba11ff33bafcb8a3dbad4f576f022369820ac04",
+      "record_count_scanned": 32,
+      "trade_count": 113,
+      "trade_count_exact": true,
+      "unique_trade_count": 113,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-avntusdt-1790117941203-1790118065702-744d072ace1b": {
@@ -2328,6 +2480,14 @@
       "unique_trade_count": 56,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-bnbusdt-1790431933677-1790432052432-9b5cff751928": {
+      "asset_sha256": "9b5cff7519286d7a1f53f29c7a2a19b9f4ae1f50ec43a9bee2079ebf7b7700af",
+      "record_count_scanned": 5,
+      "trade_count": 57,
+      "trade_count_exact": true,
+      "unique_trade_count": 57,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-bomeusdt-1790117940281-1790118079710-660217c82ec8": {
       "asset_sha256": "660217c82ec8f0ad5c089d7e12e4ac3e105e619c0f567fb2b063a5ca4708513a",
       "record_count_scanned": 17,
@@ -2550,6 +2710,14 @@
       "trade_count": 524,
       "trade_count_exact": true,
       "unique_trade_count": 524,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-btcusdt-1790431933834-1790432063384-74336e5a01c1": {
+      "asset_sha256": "74336e5a01c17b505479da3602b905e71923a21323717388ab42a62c5000c7cd",
+      "record_count_scanned": 74,
+      "trade_count": 137,
+      "trade_count_exact": true,
+      "unique_trade_count": 137,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-ccusdt-1790117943324-1790118065800-e47ab4571208": {
@@ -3136,6 +3304,14 @@
       "unique_trade_count": 60,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-dogeusdt-1790431933679-1790432062678-6e4f4daa5278": {
+      "asset_sha256": "6e4f4daa52782738a287b31f3306b16c3c1034e8325eb7b66e6d9ef5a1836aaa",
+      "record_count_scanned": 42,
+      "trade_count": 131,
+      "trade_count_exact": true,
+      "unique_trade_count": 131,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-dotusdt-1790117943580-1790118063858-d65086c7c393": {
       "asset_sha256": "d65086c7c393a66cd57f267bf52aa3f165226c1ee2dc747259711fe86c2acdfe",
       "record_count_scanned": 15,
@@ -3720,6 +3896,14 @@
       "unique_trade_count": 231,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-ethusdt-1790431933978-1790432055409-2eeb845ead51": {
+      "asset_sha256": "2eeb845ead5105af23eb3ee68ec15aec248c0fd31f406df24c313905f3f1f203",
+      "record_count_scanned": 39,
+      "trade_count": 102,
+      "trade_count_exact": true,
+      "unique_trade_count": 102,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-fartcoinusdt-1790117942780-1790118066181-80e1f137bc95": {
       "asset_sha256": "80e1f137bc956f9e8a6bc113019af8eb3d32020ef8cc2cb7105aa65e8520bbab",
       "record_count_scanned": 14,
@@ -3944,12 +4128,28 @@
       "unique_trade_count": 66,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-linkusdt-1790431933833-1790432063411-99c7dee71431": {
+      "asset_sha256": "99c7dee714318baa1eb440b8b71bb1b6ca7784ef9071efe2a3298ac752d14aef",
+      "record_count_scanned": 302,
+      "trade_count": 740,
+      "trade_count_exact": true,
+      "unique_trade_count": 740,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-opusdt-1790364007510-1790364113204-b9aca47be1f1": {
       "asset_sha256": "b9aca47be1f11717cc5b35574400ffc2999bea7fb4ca7de49b1cc2d26165468f",
       "record_count_scanned": 17,
       "trade_count": 71,
       "trade_count_exact": true,
       "unique_trade_count": 71,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-opusdt-1790431933832-1790432010708-c61d8aaa5124": {
+      "asset_sha256": "c61d8aaa5124fa0c2270528e30633d2e65d609224efa3037e39f33928d10f184",
+      "record_count_scanned": 19,
+      "trade_count": 82,
+      "trade_count_exact": true,
+      "unique_trade_count": 82,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-solusdt-1790117947596-1790118066662-dada909a0b49": {
@@ -4032,12 +4232,28 @@
       "unique_trade_count": 239,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-solusdt-1790431933833-1790432062487-01c70ff59c69": {
+      "asset_sha256": "01c70ff59c694183372d435c8e7dc38cf9eff1568b4faddc0a36d4bb1d420554",
+      "record_count_scanned": 63,
+      "trade_count": 190,
+      "trade_count_exact": true,
+      "unique_trade_count": 190,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-suiusdt-1790364007636-1790364133622-8afdcce00dbc": {
       "asset_sha256": "8afdcce00dbc7abb807cc11364de4c0ada911c10f2010d36434e51a577d49c45",
       "record_count_scanned": 71,
       "trade_count": 166,
       "trade_count_exact": true,
       "unique_trade_count": 166,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-suiusdt-1790431933833-1790432055122-f44d01f3c66e": {
+      "asset_sha256": "f44d01f3c66ead9a69859ed582033c4461bd1465654ba96febe559071fc46d51",
+      "record_count_scanned": 98,
+      "trade_count": 249,
+      "trade_count_exact": true,
+      "unique_trade_count": 249,
       "unique_trade_count_exact": true
     },
     "bitget-public-ws-trades-trxusdt-1790364007765-1790364007765-55b27ec6a428": {
@@ -4048,6 +4264,14 @@
       "unique_trade_count": 50,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-trxusdt-1790431933978-1790432040589-1d8c02d121c9": {
+      "asset_sha256": "1d8c02d121c9279dfb8c8b117816bcd36e0c1ae5b09b71b75f8a736e44654168",
+      "record_count_scanned": 8,
+      "trade_count": 106,
+      "trade_count_exact": true,
+      "unique_trade_count": 106,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-wifusdt-1790364007637-1790364130221-b4fa3daa668c": {
       "asset_sha256": "b4fa3daa668c7939dec6d6038b5780dc52f430d60c03400fde31ab13f5608b6e",
       "record_count_scanned": 16,
@@ -4056,12 +4280,28 @@
       "unique_trade_count": 75,
       "unique_trade_count_exact": true
     },
+    "bitget-public-ws-trades-wifusdt-1790431933676-1790432049824-37e4cfc55811": {
+      "asset_sha256": "37e4cfc55811ed8c20e8063b57739e0844fb54a45e5d77ef74e8bf4b6c6d92fc",
+      "record_count_scanned": 4,
+      "trade_count": 55,
+      "trade_count_exact": true,
+      "unique_trade_count": 55,
+      "unique_trade_count_exact": true
+    },
     "bitget-public-ws-trades-xrpusdt-1790364007637-1790364131475-5a06d02c647d": {
       "asset_sha256": "5a06d02c647d09ce26168f8de1dae9b05699f139f6b5142afd713c2e834153ec",
       "record_count_scanned": 57,
       "trade_count": 208,
       "trade_count_exact": true,
       "unique_trade_count": 208,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-xrpusdt-1790431933837-1790432062355-8caf1a9180c6": {
+      "asset_sha256": "8caf1a9180c677d64784d1f2b5d8cee3a81a3b7fd449807f69a0677636c0b4e7",
+      "record_count_scanned": 52,
+      "trade_count": 188,
+      "trade_count_exact": true,
+      "unique_trade_count": 188,
       "unique_trade_count_exact": true
     },
     "bybit-official-archive-trades-btcusdt-1789776000016-1789785214309-7def78acc8c0": {
@@ -4832,12 +5072,28 @@
       "unique_trade_count": 1243,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-adausdt-1790431957603-1790432822116-9f86c7aa0f27": {
+      "asset_sha256": "9f86c7aa0f277ae3056e775550a54719274773a5dc05565bc30ff5d852e5afc9",
+      "record_count_scanned": 213,
+      "trade_count": 691,
+      "trade_count_exact": true,
+      "unique_trade_count": 691,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-aptusdt-1790364010757-1790364906351-d48bc2e1edd9": {
       "asset_sha256": "d48bc2e1edd9dfc5add2b04ee1e241fe282f83338e6165b5aadec89ef9d13824",
       "record_count_scanned": 1035,
       "trade_count": 3843,
       "trade_count_exact": true,
       "unique_trade_count": 3843,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-aptusdt-1790431934384-1790432829031-1d6df0d61e66": {
+      "asset_sha256": "1d6df0d61e6675255238ced15d61d9cb430b4cf7b26dbcc014fb31d00c7d74fd",
+      "record_count_scanned": 419,
+      "trade_count": 1368,
+      "trade_count_exact": true,
+      "unique_trade_count": 1368,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-arbusdt-1790364010317-1790364906479-89f3b80beb54": {
@@ -4848,12 +5104,28 @@
       "unique_trade_count": 3748,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-arbusdt-1790431946667-1790432827547-2cb4cfc49a2b": {
+      "asset_sha256": "2cb4cfc49a2bc3795f272caa0a99cd2e4665b53a18d7ad371b2615d2ed98b9e5",
+      "record_count_scanned": 836,
+      "trade_count": 2749,
+      "trade_count_exact": true,
+      "unique_trade_count": 2749,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-avaxusdt-1790364012637-1790364905799-dcb7a559fb52": {
       "asset_sha256": "dcb7a559fb525438afdfc2a1f57291986481e2d4b5ca07af49a5303f85a8b0b8",
       "record_count_scanned": 502,
       "trade_count": 1864,
       "trade_count_exact": true,
       "unique_trade_count": 1864,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-avaxusdt-1790431944582-1790432826602-c0bd86d04758": {
+      "asset_sha256": "c0bd86d04758ded085119e502474914d54c612dea9c110e31e02147f1d6352e3",
+      "record_count_scanned": 813,
+      "trade_count": 3075,
+      "trade_count_exact": true,
+      "unique_trade_count": 3075,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-bnbusdt-1790364008708-1790364899990-8e7d6e10084a": {
@@ -4864,12 +5136,28 @@
       "unique_trade_count": 364,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-bnbusdt-1790431942109-1790432816607-f60ae06794fe": {
+      "asset_sha256": "f60ae06794fe1744f68805e479664076dd81dd93f3c15c3952cc4b3e9cde3973",
+      "record_count_scanned": 106,
+      "trade_count": 328,
+      "trade_count_exact": true,
+      "unique_trade_count": 328,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-btcusdt-1790364012653-1790364905152-67bd4d87c69f": {
       "asset_sha256": "67bd4d87c69fc8d53a941de678e124f081d6d770463412995ac619b9b9bd22b2",
       "record_count_scanned": 3974,
       "trade_count": 10885,
       "trade_count_exact": true,
       "unique_trade_count": 10885,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-btcusdt-1790431934419-1790432828702-214eac852617": {
+      "asset_sha256": "214eac852617571604ef321f2ba4d60f0ed2b1dde045402a29e329dba5b3d5d4",
+      "record_count_scanned": 1681,
+      "trade_count": 3335,
+      "trade_count_exact": true,
+      "unique_trade_count": 3335,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-dogeusdt-1790364009468-1790364906539-6428996ba797": {
@@ -4880,12 +5168,28 @@
       "unique_trade_count": 2419,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-dogeusdt-1790431934400-1790432823800-7edfd630dda9": {
+      "asset_sha256": "7edfd630dda9e03797451dc71e5f8a1e000da083b93eabeeb4cd3f4cdc0759b0",
+      "record_count_scanned": 341,
+      "trade_count": 2082,
+      "trade_count_exact": true,
+      "unique_trade_count": 2082,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-ethusdt-1790364011313-1790364905811-913e8ec70662": {
       "asset_sha256": "913e8ec706627a00e57b99db0f8eaee04363fc1abd61b6455ed2b516d8e7cd2c",
       "record_count_scanned": 2952,
       "trade_count": 11568,
       "trade_count_exact": true,
       "unique_trade_count": 11568,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-ethusdt-1790431935346-1790432826354-70e7e6e185dc": {
+      "asset_sha256": "70e7e6e185dc22c52b9a8f3a33d4b94756a4fffa471e75322d3beed7f16075ae",
+      "record_count_scanned": 912,
+      "trade_count": 3295,
+      "trade_count_exact": true,
+      "unique_trade_count": 3295,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-linkusdt-1790364012633-1790364905751-5b0ebe53b937": {
@@ -4896,12 +5200,28 @@
       "unique_trade_count": 2398,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-linkusdt-1790431936001-1790432828417-ce8f2e8d04f6": {
+      "asset_sha256": "ce8f2e8d04f68025424be392581db7844d365d6c197f0f093f147ccbed4eceba",
+      "record_count_scanned": 3668,
+      "trade_count": 12770,
+      "trade_count_exact": true,
+      "unique_trade_count": 12770,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-opusdt-1790364010536-1790364905973-c92bb6dbe1d9": {
       "asset_sha256": "c92bb6dbe1d97301fe64be82d60f6da7e0898576ba1a3c42d143c248cff7e555",
       "record_count_scanned": 875,
       "trade_count": 3543,
       "trade_count_exact": true,
       "unique_trade_count": 3543,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-opusdt-1790431935787-1790432828971-f3715cb657cd": {
+      "asset_sha256": "f3715cb657cdc77d6856c1c1b28198a45355c66d623477d79ee7bcfdab703668",
+      "record_count_scanned": 893,
+      "trade_count": 4448,
+      "trade_count_exact": true,
+      "unique_trade_count": 4448,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-solusdt-1790364008173-1790364905906-48150f874e2d": {
@@ -4912,12 +5232,28 @@
       "unique_trade_count": 5438,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-solusdt-1790431934971-1790432831777-1ea9f5f877af": {
+      "asset_sha256": "1ea9f5f877af80caee4e427a9d19efa9680c7832ecf17fcec10b95f4966d5113",
+      "record_count_scanned": 796,
+      "trade_count": 3623,
+      "trade_count_exact": true,
+      "unique_trade_count": 3623,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-suiusdt-1790364008722-1790364906295-376dcaf59860": {
       "asset_sha256": "376dcaf598608c5fadf802005b85a9f1a33d18b5e6320dfc7d46afb7d48c3791",
       "record_count_scanned": 1348,
       "trade_count": 4724,
       "trade_count_exact": true,
       "unique_trade_count": 4724,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-suiusdt-1790431934600-1790432829568-0066bbd68ec6": {
+      "asset_sha256": "0066bbd68ec6ccd0c618b76ac6fdf9d32bab2e13120b4f17abc228606f19534f",
+      "record_count_scanned": 726,
+      "trade_count": 2197,
+      "trade_count_exact": true,
+      "unique_trade_count": 2197,
       "unique_trade_count_exact": true
     },
     "bybit-public-ws-trades-trxusdt-1790364074431-1790364882961-b1f5a798cd1a": {
@@ -4928,6 +5264,14 @@
       "unique_trade_count": 54,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-trxusdt-1790431939039-1790432809089-a76168767871": {
+      "asset_sha256": "a7616876787193ff320650523fc5d52a9fd2c2c62bcd2d22ec5261a1abdce870",
+      "record_count_scanned": 60,
+      "trade_count": 160,
+      "trade_count_exact": true,
+      "unique_trade_count": 160,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-wifusdt-1790364011974-1790364903285-da494da60c10": {
       "asset_sha256": "da494da60c10744532cc01c3237be9970b19dc7e859f2c26d2b9f00eb345a36b",
       "record_count_scanned": 203,
@@ -4936,12 +5280,28 @@
       "unique_trade_count": 778,
       "unique_trade_count_exact": true
     },
+    "bybit-public-ws-trades-wifusdt-1790431937897-1790432820678-3af055380c1c": {
+      "asset_sha256": "3af055380c1c192c92bf226f1cb39a0f63bce512400ae322a5bd9006b39fa774",
+      "record_count_scanned": 160,
+      "trade_count": 671,
+      "trade_count_exact": true,
+      "unique_trade_count": 671,
+      "unique_trade_count_exact": true
+    },
     "bybit-public-ws-trades-xrpusdt-1790364009374-1790364906182-eee72f8724a3": {
       "asset_sha256": "eee72f8724a3e150c4b317843bdc3325b64f3a4605e7af3890236bb8ec48e037",
       "record_count_scanned": 1646,
       "trade_count": 6783,
       "trade_count_exact": true,
       "unique_trade_count": 6783,
+      "unique_trade_count_exact": true
+    },
+    "bybit-public-ws-trades-xrpusdt-1790431937665-1790432830183-a75b1c1f5953": {
+      "asset_sha256": "a75b1c1f595301796605da2640487b37ff4d3f4d5f26801f2092e7ed52fbb3b3",
+      "record_count_scanned": 1096,
+      "trade_count": 4318,
+      "trade_count_exact": true,
+      "unique_trade_count": 4318,
       "unique_trade_count_exact": true
     },
     "hyperliquid-public-userfills-copy-vault-fills-0x0399976a0e0c504da1c07fedb91c30edfd7e4395-1790173778182-1790179692639-79fb6b12c159": {
@@ -8064,6 +8424,14 @@
       "unique_trade_count": 413,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-ada-1790431933302-1790435397082-08a095692e26": {
+      "asset_sha256": "08a095692e2674294b5bf0cbfe6939cebcb89b245f6304aa39ac50132a896cec",
+      "record_count_scanned": 237,
+      "trade_count": 404,
+      "trade_count_exact": true,
+      "unique_trade_count": 404,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-aero-1790066987755-1790075472359-a6912ad0085b": {
       "asset_sha256": "a6912ad0085bfd233c82e729e30a33cd7ecb7b5e0c0b9f51ff200aba6e98ee2f",
       "record_count_scanned": 928,
@@ -8648,6 +9016,14 @@
       "unique_trade_count": 714,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-apt-1790431933324-1790435430093-8496340ede6a": {
+      "asset_sha256": "8496340ede6adc4548393a2a66df3b9063e355c3363b793a8ffd52d2e497ff80",
+      "record_count_scanned": 272,
+      "trade_count": 561,
+      "trade_count_exact": true,
+      "unique_trade_count": 561,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-ar-1790071487685-1790075351923-580365b4f4b8": {
       "asset_sha256": "580365b4f4b83848112b83e3533db939a3093555b6f23d539a623f14cdf6fc4e",
       "record_count_scanned": 367,
@@ -8846,6 +9222,14 @@
       "trade_count": 874,
       "trade_count_exact": true,
       "unique_trade_count": 874,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-arb-1790431933370-1790435428768-7c38a2f5c355": {
+      "asset_sha256": "7c38a2f5c355d50ae5f2cb4379e242cedeb42e54ea83c19b5cf93e0b53d868bb",
+      "record_count_scanned": 680,
+      "trade_count": 1727,
+      "trade_count_exact": true,
+      "unique_trade_count": 1727,
       "unique_trade_count_exact": true
     },
     "hyperliquid-public-ws-trades-aster-1790066987766-1790075476293-15a2268d2598": {
@@ -9142,6 +9526,14 @@
       "trade_count": 591,
       "trade_count_exact": true,
       "unique_trade_count": 591,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-avax-1790431933450-1790435428451-229935676bfb": {
+      "asset_sha256": "229935676bfbe45862fb1dd1de507af559e8baa47859e1754e8a07f02b697cde",
+      "record_count_scanned": 547,
+      "trade_count": 1013,
+      "trade_count_exact": true,
+      "unique_trade_count": 1013,
       "unique_trade_count_exact": true
     },
     "hyperliquid-public-ws-trades-avnt-1790069862709-1790074960463-0728c846eceb": {
@@ -10112,6 +10504,14 @@
       "unique_trade_count": 180,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-bnb-1790431933472-1790435424406-ef3dc1b36793": {
+      "asset_sha256": "ef3dc1b3679313c7e994aa44426a25d32fc9c7dfc98029483defed6bc81f795f",
+      "record_count_scanned": 209,
+      "trade_count": 322,
+      "trade_count_exact": true,
+      "unique_trade_count": 322,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-bome-1790070275931-1790075007733-bff3b9f0b63f": {
       "asset_sha256": "bff3b9f0b63f76990c43caaa5693340a65be7455e7d63ee1f923b205b2052566",
       "record_count_scanned": 261,
@@ -10422,6 +10822,14 @@
       "trade_count": 6200,
       "trade_count_exact": true,
       "unique_trade_count": 6200,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-btc-1790431933473-1790435432501-841bd1ecf614": {
+      "asset_sha256": "841bd1ecf614b3c0e104a6c67e210ba462b9025a44b84c3035a726d79ac59b91",
+      "record_count_scanned": 2668,
+      "trade_count": 4557,
+      "trade_count_exact": true,
+      "unique_trade_count": 4557,
       "unique_trade_count_exact": true
     },
     "hyperliquid-public-ws-trades-cashcat-1790070939881-1790075648368-8c8dbefe12c6": {
@@ -11224,6 +11632,14 @@
       "unique_trade_count": 419,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-doge-1790431933530-1790435419085-e28e1b5e8f30": {
+      "asset_sha256": "e28e1b5e8f30f21544ccdf17c2b0872183e00c00389eaa9b3202f15a579777b1",
+      "record_count_scanned": 206,
+      "trade_count": 367,
+      "trade_count_exact": true,
+      "unique_trade_count": 367,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-dot-1790066987962-1790075488768-5d6d4a7847fe": {
       "asset_sha256": "5d6d4a7847fe1a7fb6e63c10f147a6f40671a3848acccb625fbf0e95df5f21ad",
       "record_count_scanned": 303,
@@ -11920,6 +12336,14 @@
       "unique_trade_count": 2590,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-eth-1790431933598-1790435432337-e5c49640cba3": {
+      "asset_sha256": "e5c49640cba30c93282fe85be654d945e5beda086e5b14d3130f3007b1717a58",
+      "record_count_scanned": 1288,
+      "trade_count": 2345,
+      "trade_count_exact": true,
+      "unique_trade_count": 2345,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-ethfi-1790071487876-1790075350452-1be6480d8089": {
       "asset_sha256": "1be6480d80896fdeebf2316e8e1f93951470c0384f3dc5a5c6ed8d78a992e9e4",
       "record_count_scanned": 260,
@@ -12304,12 +12728,28 @@
       "unique_trade_count": 1108,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-link-1790431933642-1790435427236-e078bb5a8da3": {
+      "asset_sha256": "e078bb5a8da33f07ab9f6a858d87f8f9326038c91cb459a5616245c85bb1b1b6",
+      "record_count_scanned": 872,
+      "trade_count": 1755,
+      "trade_count_exact": true,
+      "unique_trade_count": 1755,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-op-1790364007611-1790367494657-17ba217e63e3": {
       "asset_sha256": "17ba217e63e3bc5cd5336d5253b0a28c0c3e9423451c73ecd12ed0ff0aebed5a",
       "record_count_scanned": 289,
       "trade_count": 558,
       "trade_count_exact": true,
       "unique_trade_count": 558,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-op-1790431933696-1790435419752-824dea4c611e": {
+      "asset_sha256": "824dea4c611ead0ad8e89c5893822a562f679a6ff2b49349b07dcd250c35aa51",
+      "record_count_scanned": 177,
+      "trade_count": 314,
+      "trade_count_exact": true,
+      "unique_trade_count": 314,
       "unique_trade_count_exact": true
     },
     "hyperliquid-public-ws-trades-sol-1790061503803-1790061622374-0bae9bcfdc6d": {
@@ -12432,6 +12872,14 @@
       "unique_trade_count": 3934,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-sol-1790431933751-1790435411662-bc4411c2cc23": {
+      "asset_sha256": "bc4411c2cc236014b1bf984471c7bf3de63911d936442f93e84271c6ae3f9670",
+      "record_count_scanned": 731,
+      "trade_count": 1463,
+      "trade_count_exact": true,
+      "unique_trade_count": 1463,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-sui-1790364007721-1790367503097-615971f26694": {
       "asset_sha256": "615971f266947516699aa24839fcdf0bed82b2e3a2de9870621ffaad38d307e2",
       "record_count_scanned": 1193,
@@ -12440,8 +12888,24 @@
       "unique_trade_count": 2234,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-sui-1790431933806-1790435431335-daa500b5bb2b": {
+      "asset_sha256": "daa500b5bb2b768a8335bbf69538b30c5ef373a199d1560b88ada55bc95aad54",
+      "record_count_scanned": 430,
+      "trade_count": 910,
+      "trade_count_exact": true,
+      "unique_trade_count": 910,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-ton-1790364007785-1790364007785-297e88aa0942": {
       "asset_sha256": "297e88aa0942e7f8a96ed5e741c0b5dae6a4cc4b4df609cdb5d58ea947e9b8de",
+      "record_count_scanned": 1,
+      "trade_count": 30,
+      "trade_count_exact": true,
+      "unique_trade_count": 30,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-ton-1790431933861-1790431933861-d87dfac72e9b": {
+      "asset_sha256": "d87dfac72e9bb707ff574fb335c6b19bfaaeb90810db7c563b791e20a1548676",
       "record_count_scanned": 1,
       "trade_count": 30,
       "trade_count_exact": true,
@@ -12456,6 +12920,14 @@
       "unique_trade_count": 181,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-trx-1790431933971-1790435430954-3d89526ab1d4": {
+      "asset_sha256": "3d89526ab1d458f0f8a0747203ee209eef97d82725afaf4184986f4261be52d6",
+      "record_count_scanned": 313,
+      "trade_count": 578,
+      "trade_count_exact": true,
+      "unique_trade_count": 578,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-wif-1790364007896-1790367503529-19c5e50fbfe8": {
       "asset_sha256": "19c5e50fbfe8c04be1e69de8b8a22d7cf11ad42e27dc5ecf892fc0dc5d1a34cf",
       "record_count_scanned": 123,
@@ -12464,12 +12936,28 @@
       "unique_trade_count": 299,
       "unique_trade_count_exact": true
     },
+    "hyperliquid-public-ws-trades-wif-1790431934005-1790435429031-f74630c607c1": {
+      "asset_sha256": "f74630c607c170778cc3875ebb474e9e93986f5d56d41cafeab8451587a8e855",
+      "record_count_scanned": 331,
+      "trade_count": 722,
+      "trade_count_exact": true,
+      "unique_trade_count": 722,
+      "unique_trade_count_exact": true
+    },
     "hyperliquid-public-ws-trades-xrp-1790364007957-1790367506387-10c5defb0821": {
       "asset_sha256": "10c5defb08210c73f972f8288531aedabb386e77a15ff8e375becc5320d68361",
       "record_count_scanned": 1145,
       "trade_count": 2305,
       "trade_count_exact": true,
       "unique_trade_count": 2305,
+      "unique_trade_count_exact": true
+    },
+    "hyperliquid-public-ws-trades-xrp-1790431934042-1790435429639-e3957700fabe": {
+      "asset_sha256": "e3957700fabea1915af52887238d922ce5d987204c6a15e29170130cdb729aef",
+      "record_count_scanned": 460,
+      "trade_count": 716,
+      "trade_count_exact": true,
+      "unique_trade_count": 716,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-0g-usdt-swap-1790059871128-1790060760647-229e91c137d7": {
@@ -12926,6 +13414,14 @@
       "trade_count": 320,
       "trade_count_exact": true,
       "unique_trade_count": 320,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-ada-usdt-swap-1790431941726-1790432826085-0816fdc2167a": {
+      "asset_sha256": "0816fdc2167a779a1ad89613e88f95b4c208d8581847da6337c5b568ae71ecd3",
+      "record_count_scanned": 227,
+      "trade_count": 227,
+      "trade_count_exact": true,
+      "unique_trade_count": 227,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-aero-usdt-swap-1790059727491-1790060581338-60e4664f5f26": {
@@ -13512,6 +14008,14 @@
       "unique_trade_count": 1126,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-apt-usdt-swap-1790431961293-1790432832377-fd7de380a6ae": {
+      "asset_sha256": "fd7de380a6ae4bbf37d5bfba89c1f469361ba511bff6c954e2ddd436a259a2fd",
+      "record_count_scanned": 344,
+      "trade_count": 344,
+      "trade_count_exact": true,
+      "unique_trade_count": 344,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-ar-usdt-swap-1790059724210-1790060615489-f01b2d27a27a": {
       "asset_sha256": "f01b2d27a27a55b0b8373d80007a3d8df9ad6c77ea2f3798e1811c59f9ea6389",
       "record_count_scanned": 575,
@@ -13710,6 +14214,14 @@
       "trade_count": 1906,
       "trade_count_exact": true,
       "unique_trade_count": 1906,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-arb-usdt-swap-1790431933838-1790432832140-e6c1b0c9ed13": {
+      "asset_sha256": "e6c1b0c9ed13fbe9f4f57bdda05a926d8a7d83c99ebd4d339957fe828815716d",
+      "record_count_scanned": 1347,
+      "trade_count": 1347,
+      "trade_count_exact": true,
+      "unique_trade_count": 1347,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-aster-usdt-swap-1790059683255-1790060574645-eae46f6eee1d": {
@@ -14006,6 +14518,14 @@
       "trade_count": 896,
       "trade_count_exact": true,
       "unique_trade_count": 896,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-avax-usdt-swap-1790431943051-1790432832870-eb3a0d48a1a6": {
+      "asset_sha256": "eb3a0d48a1a65d658c4b4164016bfb3663725ab606810aa3d72c4a1fd7f8af5a",
+      "record_count_scanned": 955,
+      "trade_count": 955,
+      "trade_count_exact": true,
+      "unique_trade_count": 955,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-avnt-usdt-swap-1790059757996-1790060621416-b266fb216d4d": {
@@ -14976,6 +15496,14 @@
       "unique_trade_count": 159,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-bnb-usdt-swap-1790431951647-1790432829760-7e96c8692809": {
+      "asset_sha256": "7e96c8692809a07a441fa12a9d0fa873ed51952c56fceb7ef09625a60174be53",
+      "record_count_scanned": 186,
+      "trade_count": 186,
+      "trade_count_exact": true,
+      "unique_trade_count": 186,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-bome-usdt-swap-1790059728737-1790060626945-6e2097e77bed": {
       "asset_sha256": "6e2097e77bedc536d10d5b78ec837322773846fb21b508a4641164f41974bfba",
       "record_count_scanned": 1825,
@@ -15286,6 +15814,14 @@
       "trade_count": 6052,
       "trade_count_exact": true,
       "unique_trade_count": 6052,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-btc-usdt-swap-1790431933838-1790432829614-39c61470756c": {
+      "asset_sha256": "39c61470756c523f61a6446088afe051ca1e9e68177d9afb775f76f7daf5ab7b",
+      "record_count_scanned": 2216,
+      "trade_count": 2216,
+      "trade_count_exact": true,
+      "unique_trade_count": 2216,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-cashcat-usdt-swap-1790059907832-1790060798700-fe1d81528c61": {
@@ -16088,6 +16624,14 @@
       "unique_trade_count": 1458,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-doge-usdt-swap-1790431935951-1790432831114-41d70a4fe85d": {
+      "asset_sha256": "41d70a4fe85de4cba7c6b19ef0d0395e02a7af23d29f35ad12d42b07532c4e79",
+      "record_count_scanned": 899,
+      "trade_count": 899,
+      "trade_count_exact": true,
+      "unique_trade_count": 899,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-dot-usdt-swap-1790059683470-1790060581374-35ac475df6d5": {
       "asset_sha256": "35ac475df6d593f7cbbad125d6559bff1de683241f054c685ee36a2ce3431201",
       "record_count_scanned": 596,
@@ -16784,6 +17328,14 @@
       "unique_trade_count": 7018,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-eth-usdt-swap-1790431934153-1790432832213-86d22fad33c4": {
+      "asset_sha256": "86d22fad33c4f109cc4c141241a4486245ca199ca0557e9820d6b1797caeceba",
+      "record_count_scanned": 3077,
+      "trade_count": 3077,
+      "trade_count_exact": true,
+      "unique_trade_count": 3077,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-ethfi-usdt-swap-1790059729324-1790060621408-62c32430ba39": {
       "asset_sha256": "62c32430ba39e356121f5ca9493410111311a9b83c7b3613ff917384b7ee684f",
       "record_count_scanned": 742,
@@ -17168,12 +17720,28 @@
       "unique_trade_count": 953,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-link-usdt-swap-1790431935576-1790432828467-f77948a2bf5a": {
+      "asset_sha256": "f77948a2bf5a3592347b6234b3cc14e174b3f25af3e30f020bf226009030e5ae",
+      "record_count_scanned": 5227,
+      "trade_count": 5227,
+      "trade_count_exact": true,
+      "unique_trade_count": 5227,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-op-usdt-swap-1790364010479-1790364906227-2a2a544367f4": {
       "asset_sha256": "2a2a544367f4a61bca670c83c036861da33dfe78bb128e4e2b9fe31f9f80397c",
       "record_count_scanned": 2143,
       "trade_count": 2143,
       "trade_count_exact": true,
       "unique_trade_count": 2143,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-op-usdt-swap-1790431933835-1790432832252-cbcccf124870": {
+      "asset_sha256": "cbcccf124870231a52bbfbcacdeb4284ef224cb4fda3b91ac557f9597509ab23",
+      "record_count_scanned": 2260,
+      "trade_count": 2260,
+      "trade_count_exact": true,
+      "unique_trade_count": 2260,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-sol-usdt-swap-1790059927490-1790060825863-e88b870fcadb": {
@@ -17296,12 +17864,28 @@
       "unique_trade_count": 2303,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-sol-usdt-swap-1790431934527-1790432829937-b6c130e43ba4": {
+      "asset_sha256": "b6c130e43ba4d8042b122b81c1f3bfecd7abb71cfb0210bd918e54aec50e03fd",
+      "record_count_scanned": 1980,
+      "trade_count": 1980,
+      "trade_count_exact": true,
+      "unique_trade_count": 1980,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-sui-usdt-swap-1790364010466-1790364906687-200e7584a8a3": {
       "asset_sha256": "200e7584a8a3eee14e99b23878d0a92fa64b256ce4ddeabbe863aef4a53f1de4",
       "record_count_scanned": 2279,
       "trade_count": 2279,
       "trade_count_exact": true,
       "unique_trade_count": 2279,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-sui-usdt-swap-1790431933838-1790432829704-6365d6c15bb9": {
+      "asset_sha256": "6365d6c15bb9a2b7ba63d85f656c67ee6b4f4f0c9de5e4e2fc4bde522169981b",
+      "record_count_scanned": 1886,
+      "trade_count": 1886,
+      "trade_count_exact": true,
+      "unique_trade_count": 1886,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-trx-usdt-swap-1790364011089-1790364900475-f055e8ff8014": {
@@ -17312,12 +17896,28 @@
       "unique_trade_count": 72,
       "unique_trade_count_exact": true
     },
+    "okx-public-ws-trades-trx-usdt-swap-1790431962987-1790432825317-5d3d3bf9acf8": {
+      "asset_sha256": "5d3d3bf9acf8b8725d596220e41cdf501712316fc33f80506b00bfa1dde48b42",
+      "record_count_scanned": 136,
+      "trade_count": 136,
+      "trade_count_exact": true,
+      "unique_trade_count": 136,
+      "unique_trade_count_exact": true
+    },
     "okx-public-ws-trades-wif-usdt-swap-1790364012591-1790364906083-f142367bbe69": {
       "asset_sha256": "f142367bbe692199f990daaa83bd0a1ff69a08a7da30ff71e9412533665ed786",
       "record_count_scanned": 518,
       "trade_count": 518,
       "trade_count_exact": true,
       "unique_trade_count": 518,
+      "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-wif-usdt-swap-1790431937824-1790432831074-8d1ea16040c8": {
+      "asset_sha256": "8d1ea16040c8d8835314623e71974b44c7cafecae8a0b57400f54319c3fe0d57",
+      "record_count_scanned": 476,
+      "trade_count": 476,
+      "trade_count_exact": true,
+      "unique_trade_count": 476,
       "unique_trade_count_exact": true
     },
     "okx-public-ws-trades-xrp-usdt-swap-1790364011476-1790364905943-6e06ea751eae": {
@@ -17327,10 +17927,18 @@
       "trade_count_exact": true,
       "unique_trade_count": 2544,
       "unique_trade_count_exact": true
+    },
+    "okx-public-ws-trades-xrp-usdt-swap-1790431933838-1790432832513-a23d91d000bd": {
+      "asset_sha256": "a23d91d000bdb7499465faa392a59aebe88458c2660680b663502e6a13f3db5e",
+      "record_count_scanned": 1733,
+      "trade_count": 1733,
+      "trade_count_exact": true,
+      "unique_trade_count": 1733,
+      "unique_trade_count_exact": true
     }
   },
   "method": "verified_release_asset_scan_no_estimation",
-  "processed_exact_shards": 2166,
+  "processed_exact_shards": 2242,
   "remaining_candidate_shards": 0,
   "schema": "alina.trade_count_patch.v1"
 }
