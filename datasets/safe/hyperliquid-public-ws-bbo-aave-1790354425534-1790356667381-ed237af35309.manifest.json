@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 702569,
+  "bytes": 1047030,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-bbo-fartcoin-1790354425634-1790356667492-3595299ded88",
-  "end_ts_ms": 1790356667492,
-  "event_count": 7778,
+  "dataset_id": "hyperliquid-public-ws-bbo-aave-1790354425534-1790356667381-ed237af35309",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790356667381,
+  "event_count": 11783,
   "family": "bbo",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "bbo"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,39 +37,40 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 11783,
   "release": {
-    "asset_id": 588850038,
-    "asset_name": "hyperliquid-public-ws-bbo-fartcoin-1790354425634-1790356667492-3595299ded88.jsonl.gz",
+    "asset_id": 588849800,
+    "asset_name": "hyperliquid-public-ws-bbo-aave-1790354425534-1790356667381-ed237af35309.jsonl.gz",
     "release_id": 396794062,
-    "remote_digest": "sha256:3595299ded887cd5e7f5ce472b74249b154d6065afc11cafdbd87eea8faccae8",
-    "remote_size": 702569,
+    "remote_digest": "sha256:ed237af353098fc06b893d05025b1db34d4e4f6c984fbf73d58b62e5f44ea903",
+    "remote_size": 1047030,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s6"
   },
-  "release_asset": "hyperliquid-public-ws-bbo-fartcoin-1790354425634-1790356667492-3595299ded88.jsonl.gz",
-  "release_asset_id": 588850038,
+  "release_asset": "hyperliquid-public-ws-bbo-aave-1790354425534-1790356667381-ed237af35309.jsonl.gz",
+  "release_asset_id": 588849800,
   "release_id": 396794062,
-  "release_remote_digest": "sha256:3595299ded887cd5e7f5ce472b74249b154d6065afc11cafdbd87eea8faccae8",
-  "release_remote_size": 702569,
+  "release_remote_digest": "sha256:ed237af353098fc06b893d05025b1db34d4e4f6c984fbf73d58b62e5f44ea903",
+  "release_remote_size": 1047030,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s6",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "3595299ded887cd5e7f5ce472b74249b154d6065afc11cafdbd87eea8faccae8",
+  "sha256": "ed237af353098fc06b893d05025b1db34d4e4f6c984fbf73d58b62e5f44ea903",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354425634,
-  "symbol": "FARTCOIN",
+  "start_ts_ms": 1790354425534,
+  "symbol": "AAVE",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 7778,
+      "count": 11783,
       "max": -272.0,
       "min": -674.5,
       "p50": -432.0,
@@ -76,15 +80,15 @@
     "connection_ids": [
       "hl-cloud-5172c763186d43639038f39d4beca6bb"
     ],
-    "first_exchange_ts_ms": 1790354425327,
-    "last_exchange_ts_ms": 1790356667167,
+    "first_exchange_ts_ms": 1790354425064,
+    "last_exchange_ts_ms": 1790356667101,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 7778,
-      "max": 1811.0,
-      "min": 243.0,
-      "p50": 341.0,
-      "p95": 608.0
+      "count": 11783,
+      "max": 2018.0,
+      "min": 240.0,
+      "p50": 333.0,
+      "p95": 586.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
