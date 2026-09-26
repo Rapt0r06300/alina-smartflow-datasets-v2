@@ -26,10 +26,10 @@
   ],
   "kind": "market_collection",
   "lease": {
-    "acquired_at": "2026-09-25T17:54:24.810585Z",
-    "expires_at": "2026-09-25T23:39:24.810585Z",
-    "lease_token_sha256": "eebdf141e0326675d181c75cf7924651354c13e46a986b955a6e0f959bf24836",
-    "owner_run_id": "36169865785"
+    "acquired_at": "2026-09-26T14:11:59.375962Z",
+    "expires_at": "2026-09-26T19:56:59.375962Z",
+    "lease_token_sha256": "8ff6938dd0538b09a783728d3198fb3acaa7c0eb24419ef06df6524a9c8bf580",
+    "owner_run_id": "36241724666"
   },
   "limits": {
     "max_attempts": 12,
