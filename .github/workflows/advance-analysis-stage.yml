@@ -32,7 +32,7 @@ jobs:
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add control/alina-phase.json
+          git add control/alina-phase.json control/phase-receipts
           git diff --cached --quiet && exit 0
           git commit -m "phase: advance analysis stage to ${{ inputs.stage }}"
           git push origin HEAD:main
