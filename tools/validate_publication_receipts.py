@@ -30,6 +30,14 @@ def main():
             raise SystemExit(f"{path}: unsafe receipt flags")
         if not isinstance(row["phase_epoch"], int) or row["phase_epoch"] < 1:
             raise SystemExit(f"{path}: invalid phase epoch")
+        if row["phase"] == "ANALYZE":
+            for key in (
+                "source_collection_epoch",
+                "collection_cutoff_at_utc",
+                "dataset_selection_id",
+            ):
+                if row.get(key) in (None, ""):
+                    raise SystemExit(f"{path}: missing frozen lineage field {key}")
         for key in ("result_sha256", "payload_digest"):
             if len(str(row[key])) != 64:
                 raise SystemExit(f"{path}: invalid {key}")
