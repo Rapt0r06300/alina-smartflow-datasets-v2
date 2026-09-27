@@ -71,6 +71,7 @@ def main():
     if PATCH_PATH.exists():
         prior=json.loads(PATCH_PATH.read_text(encoding="utf-8"))
     counts=prior.get("counts") if isinstance(prior.get("counts"),dict) else {}
+    failure_reasons=prior.get("failure_reasons") if isinstance(prior.get("failure_reasons"),dict) else {}
     covered=set(prior.get("covered_dataset_ids") or [])
     candidates=sorted(
         _remaining(rows, covered),
@@ -122,10 +123,13 @@ def main():
                     exact=True,
                 )
                 covered.add(dataset_id)
+                failure_reasons.pop(dataset_id, None)
                 db.commit()
                 shutil.rmtree(Path(tmp)/dataset_id,ignore_errors=True)
             except Exception as exc:
-                failed.append({"dataset_id":dataset_id,"reason":type(exc).__name__})
+                failure={"dataset_id":dataset_id,"reason":type(exc).__name__}
+                failed.append(failure)
+                failure_reasons[dataset_id]=failure
         global_count=db.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
         identity_rows=[row[0] for row in db.execute("SELECT identity FROM ids ORDER BY identity")]
     for row in rows:
@@ -147,6 +151,7 @@ def main():
         "covered_dataset_ids":sorted(covered),
         "attempted":attempted,
         "failed":failed,
+        "failure_reasons":dict(sorted(failure_reasons.items())),
         "remaining_candidate_shards":len(_remaining(rows, covered)),
         "global_unique_trade_count":global_count,
         "global_identity_digest":hashlib.sha256(json.dumps(identity_rows,separators=(",",":")).encode()).hexdigest(),
