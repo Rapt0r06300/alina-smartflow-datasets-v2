@@ -57,6 +57,8 @@ def main():
         "dataset_selection_id": a.dataset_selection_id or None,
         "checkpoint_id": a.checkpoint_id or None,
         "analysis_stage": payload.get("analysis_stage"),
+        "collection_plan_sha256": payload.get("collection_plan_sha256"),
+        "universe_discovery_required": payload.get("universe_discovery_required"),
         "release_tag": a.release_tag or None,
         "evidence_tag": a.evidence_tag or None,
         "result_sha256": hashlib.sha256(canonical(result).encode()).hexdigest(),
