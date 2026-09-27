@@ -25,10 +25,6 @@ on:
         required: false
         default: ""
         type: string
-      requested_handoff_at_utc:
-        required: false
-        default: ""
-        type: string
   workflow_call:
     inputs:
       campaign_id:
@@ -336,6 +332,8 @@ jobs:
           SELECTION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("dataset_selection_id") or "")' "$M")"
           CHECKPOINT="$(python -c 'import json,sys; print((json.load(open(sys.argv[1])).get("cursor") or {}).get("checkpoint_id") or "")' "$M")"
           STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+          DATASET_HEAD="$(git rev-parse HEAD)"
+          MANIFEST_SHA="$(sha256sum "$M" | cut -d' ' -f1)"
           python tools/record_publication_receipt.py             --campaign-id "$CAMPAIGN_ID"             --unit-id "$UNIT"             --kind "$KIND"             --status "$STATUS"             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --code-sha "$CODE_SHA"             --dataset-generation "$GENERATION"             --source-collection-epoch "$SOURCE_EPOCH"             --collection-cutoff-at-utc "$CUTOFF"             --dataset-selection-id "$SELECTION"             --checkpoint-id "$CHECKPOINT"             --alina-head "$CODE_SHA"             --dataset-head "$DATASET_HEAD"             --manifest-sha256 "$MANIFEST_SHA"             --release-tag "$RELEASE_TAG"             --evidence-tag "$EVIDENCE_TAG"             --result "$RUNNER_TEMP/result.json"
 
       - name: Downgrade result when durability failed
