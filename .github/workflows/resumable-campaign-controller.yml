@@ -53,7 +53,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p catalog/campaigns
-          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             > "$RUNNER_TEMP/all-due.txt"
+          PHASE_META="$(python tools/phase_gate.py read)"
+          PHASE="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["phase"])' "$PHASE_META")"
+          PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
+          echo "phase=$PHASE epoch=$PHASE_EPOCH"
+          PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             --current-phase "$PHASE"             --current-epoch "$PHASE_EPOCH"             > "$RUNNER_TEMP/all-due.txt"
           head -n 128 "$RUNNER_TEMP/all-due.txt" > "$RUNNER_TEMP/due.txt"
           python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
           import json,sys
