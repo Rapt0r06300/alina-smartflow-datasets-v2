@@ -2,46 +2,77 @@
   "campaign_count": 3,
   "campaigns": [
     {
+      "analysis_stage": null,
       "campaign_id": "event-2026092717-v5",
       "checkpoint_count": 0,
       "completed_unit_count": 1,
       "has_lease": false,
       "history_count": 2,
       "schema_version": "alina.resumable_campaign.v1",
-      "status": "COMPLETE"
+      "status": "COMPLETE",
+      "terminal_evidence_digest": null
     },
     {
+      "analysis_stage": null,
       "campaign_id": "market-2026092717-v4",
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": true,
       "history_count": 1,
       "schema_version": "alina.resumable_campaign.v1",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "terminal_evidence_digest": null
     },
     {
+      "analysis_stage": null,
       "campaign_id": "replay-2026092717-v5",
       "checkpoint_count": 0,
       "completed_unit_count": 1,
       "has_lease": false,
       "history_count": 2,
       "schema_version": "alina.resumable_campaign.v1",
-      "status": "COMPLETE"
+      "status": "COMPLETE",
+      "terminal_evidence_digest": null
     }
   ],
   "failure_matrix": {
-    "after_checkpoint_before_lease_release": "CHECKPOINT_LINEAGE_REQUIRED",
-    "after_publish_before_terminal_manifest": "TERMINAL_EVIDENCE_REQUIRED",
-    "before_checkpoint_write": "DURABLE_STATE_REQUIRED",
-    "duplicate_worker_wakeup": "UNIT_DIGEST_IDEMPOTENT",
-    "during_publish": "PUBLICATION_RECEIPT_REQUIRED",
-    "lease_expiry": "STALE_LEASE_REFUSED"
+    "after_checkpoint_before_lease_release": {
+      "convergence_rule": "same_unit_digest_is_idempotent",
+      "observed": true,
+      "required_evidence": "checkpoint_lineage_and_lease_validation"
+    },
+    "after_publish_before_terminal_manifest": {
+      "convergence_rule": "published_artifact_adopted_without_duplicate",
+      "observed": false,
+      "required_evidence": "terminal_artifact_and_manifest_reconciliation"
+    },
+    "before_checkpoint_write": {
+      "convergence_rule": "resume_from_last_durable_cursor",
+      "observed": false,
+      "required_evidence": "durable_campaign_manifest"
+    },
+    "duplicate_worker_wakeup": {
+      "convergence_rule": "duplicate_unit_wakeup_no_duplicate_publication",
+      "observed": true,
+      "required_evidence": "completed_unit_digest"
+    },
+    "during_publish": {
+      "convergence_rule": "receipt_identity_conflict_refuses_publish",
+      "observed": false,
+      "required_evidence": "publication_receipt"
+    },
+    "lease_expiry": {
+      "convergence_rule": "stale_lease_refused",
+      "observed": true,
+      "required_evidence": "lease_token_and_expiry"
+    }
   },
-  "generated_at_utc": "2026-09-27T19:32:17.891547Z",
+  "failure_matrix_status": "BLOCKED",
+  "generated_at_utc": "2026-09-27T20:23:43.211924Z",
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "03912ea0c716605f8a2706d36e3089bc8dc5891b3ff0d23ad18e90cd86e58a62",
+  "receipt_digest": "b6d93b60d708eddb2f22295e74cb7d92f0575f76a672c428b47786aa8aa861a6",
   "schema": "alina.campaign_resilience_receipt.v1",
   "status": "BLOCKED",
   "violations": [
@@ -2409,6 +2440,15 @@
       "code": "V2_LINEAGE_REQUIRED"
     },
     {
+      "campaign_id": "event-2026092717-v5",
+      "code": "TERMINAL_EVIDENCE_REQUIRED"
+    },
+    {
+      "campaign_id": "event-2026092717-v5",
+      "code": "PUBLICATION_RECEIPT_MISSING",
+      "unit_id": "0"
+    },
+    {
       "campaign_id": "market-2026092517",
       "code": "RECOVERY_FIELDS_MISSING",
       "fields": [
@@ -2653,6 +2693,15 @@
     {
       "campaign_id": "replay-2026092717-v5",
       "code": "V2_LINEAGE_REQUIRED"
+    },
+    {
+      "campaign_id": "replay-2026092717-v5",
+      "code": "TERMINAL_EVIDENCE_REQUIRED"
+    },
+    {
+      "campaign_id": "replay-2026092717-v5",
+      "code": "PUBLICATION_RECEIPT_MISSING",
+      "unit_id": "0"
     }
   ]
 }
