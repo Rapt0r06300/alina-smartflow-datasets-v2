@@ -47,6 +47,14 @@ def _bucket(table: dict[str, dict[str, int]], key: str) -> dict[str, int]:
 def build() -> dict[str, Any]:
     idx = json.loads(INDEX.read_text(encoding="utf-8"))
     shards = idx.get("shards") or []
+    size_doc = {}
+    try:
+        size_doc = json.loads(UNCOMPRESSED_PATCH.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        size_doc = {}
+    size_rows = size_doc.get("sizes") if isinstance(size_doc, dict) else {}
+    if not isinstance(size_rows, dict):
+        size_rows = {}
     totals: dict[str, Any] = {
         "TOTAL_SHARDS": len(shards),
         "SAFE_SHARDS": 0,
@@ -64,6 +72,9 @@ def build() -> dict[str, Any]:
         "TOTAL_REPLAYABLE_RECORDS": 0,
         "TOTAL_COMPRESSED_BYTES": 0,
         "TOTAL_UNCOMPRESSED_BYTES": 0,
+        "UNCOMPRESSED_SIZE_EXACT_ASSETS": 0,
+        "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 0,
+        "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 0,
         "TRADE_SHARDS_WITH_EXACT_COUNT": 0,
         "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
         "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 0,
@@ -80,7 +91,19 @@ def build() -> dict[str, Any]:
         replay = row.get("replay_compatible") is True
         records = _int(row.get("record_count") or row.get("event_count"))
         compressed = _int(row.get("bytes"))
-        uncompressed = _int(row.get("uncompressed_bytes"))
+        size_entry = size_rows.get(str(row.get("dataset_id")))
+        if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
+            uncompressed = int(size_entry["uncompressed_bytes"])
+            totals["UNCOMPRESSED_SIZE_EXACT_ASSETS"] += 1
+        elif isinstance(size_entry, dict) and size_entry.get("status") == "UNAVAILABLE":
+            uncompressed = 0
+            totals["UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS"] += 1
+        else:
+            uncompressed = _int(row.get("uncompressed_bytes"))
+            if uncompressed:
+                totals["UNCOMPRESSED_SIZE_EXACT_ASSETS"] += 1
+            else:
+                totals["UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS"] += 1
         family = str(row.get("family") or "").lower()
         trade_family = family in TRADE_FAMILIES
         trade_exact = trade_family and row.get("trade_count_exact") is True
@@ -183,8 +206,16 @@ def build() -> dict[str, Any]:
         except (OSError,ValueError,TypeError):
             totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"]=False
 
+    totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"] = (
+        totals["UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS"] == 0
+        and size_doc.get("coverage_complete") is True
+    )
+    totals["UNCOMPRESSED_SIZE_PATCH_DIGEST"] = (
+        hashlib.sha256(json.dumps(size_doc, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        if size_doc else None
+    )
     payload = {
-        "schema_version": "alina.data_metrics.v3",
+        "schema_version": "alina.data_metrics.v4",
         "method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
         "totals": totals,
         "by_venue": dict(sorted(by_venue.items())),
