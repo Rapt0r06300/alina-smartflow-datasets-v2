@@ -64,7 +64,7 @@ def main():
             if row.get("creation_phase") == "ANALYZE"
             and int(row.get("phase_epoch") or 0) == int(state["epoch"])
             and row.get("source_collection_epoch") == state.get("source_collection_epoch")
-            and row.get("status") in {"COMPLETE", "PARTIAL", "UNAVAILABLE", "REJECT", "FAILED"}
+            and row.get("status") == "COMPLETE"
         }
         if not required_kinds.issubset(observed):
             raise SystemExit(f"stage gate missing terminal campaign kinds: {sorted(required_kinds - observed)}")
