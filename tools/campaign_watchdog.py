@@ -149,6 +149,8 @@ def main():
                 })
                 row["lease"] = None
                 row["status"] = "STUCK"
+                counts[status] = max(0, counts.get(status, 0) - 1)
+                counts["STUCK"] = counts.get("STUCK", 0) + 1
                 row["stuck_reason"] = "LEASE_EXPIRED_REQUIRES_RECONCILIATION"
                 row["updated_at"] = now.isoformat().replace("+00:00", "Z")
                 lease_repairs.append(campaign_id)
