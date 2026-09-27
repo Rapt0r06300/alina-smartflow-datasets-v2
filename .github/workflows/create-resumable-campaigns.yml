@@ -79,6 +79,8 @@ jobs:
           PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
 
+          PYTHONPATH=alina/src python tools/import_operator_intents.py             --alina-root alina             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --source-collection-epoch "$SOURCE_COLLECTION_EPOCH"             --collection-cutoff-at-utc "$COLLECTION_CUTOFF"             --code-sha "$CODE_SHA"
+
           make_campaign() {
             KIND="$1"
             ID="$2"
