@@ -138,7 +138,12 @@ def main() -> int:
             "unique_record_count_exact":bool(totals.get("UNIQUE_RECORDS_COVERAGE_COMPLETE")),
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
-            "uncompressed_bytes_exact":totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
+            "uncompressed_bytes_coverage_complete":totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
+            "uncompressed_bytes_exact":(
+                totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True
+                and int(totals.get("UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS") or 0) == 0
+                and int(totals.get("UNCOMPRESSED_SIZE_EXACT_ASSETS") or 0) > 0
+            ),
             "uncompressed_size_exact_assets":int(totals.get("UNCOMPRESSED_SIZE_EXACT_ASSETS") or 0),
             "uncompressed_size_unavailable_assets":int(totals.get("UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS") or 0),
             "uncompressed_size_unclassified_assets":int(totals.get("UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS") or 0),
