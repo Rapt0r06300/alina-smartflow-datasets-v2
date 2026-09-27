@@ -84,6 +84,9 @@ def main() -> int:
     body.pop("receipt_digest", None)
     if hashlib.sha256(canonical(body).encode()).hexdigest() != receipt_digest:
         raise SystemExit("health receipt digest mismatch")
+    consistency = health.get("phase_consistency") or {}
+    if consistency.get("status") == "BLOCKED":
+        raise SystemExit("health receipt reports active campaign phase mismatch")
 
     phase = json.loads(Path(args.phase).read_text(encoding="utf-8"))
     required_phase = {"phase", "epoch", "requested_at_utc", "collection_started_at_utc",
