@@ -5,12 +5,38 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 
 def now():
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def validate_identity(value: str, name: str) -> str:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{0,127}", value or ""):
+        raise SystemExit(f"invalid {name}")
+    return value
+
+
+def validate_stamp(value: str) -> str:
+    if not value or not str(value).endswith("Z"):
+        raise SystemExit("timestamp must be UTC and end in Z")
+    try:
+        parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise SystemExit("invalid UTC timestamp") from exc
+    if parsed.tzinfo != timezone.utc:
+        raise SystemExit("timestamp timezone must be UTC")
+    return str(value)
+
+
+def atomic_write(path: Path, payload: str) -> None:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(payload, encoding="utf-8")
+    os.replace(temporary, path)
 
 
 def digest(value):
@@ -56,6 +82,8 @@ def main():
     parser.add_argument("--path", default="control/alina-phase.json")
     parser.add_argument("--receipt-dir", default="control/phase-receipts")
     args = parser.parse_args()
+    args.request_id = validate_identity(args.request_id, "request id")
+    args.requested_by = validate_identity(args.requested_by, "requested_by")
 
     path = Path(args.path)
     state = json.loads(path.read_text(encoding="utf-8"))
@@ -91,7 +119,7 @@ def main():
         raise SystemExit("invalid current phase state")
     if args.phase == "ANALYZE" and old_phase != "COLLECT":
         raise SystemExit("ANALYZE requires current COLLECT phase")
-    stamp = args.cutoff_at_utc or now()
+    stamp = validate_stamp(args.cutoff_at_utc or now())
     if args.phase == "COLLECT":
         next_state = {
             **state,
