@@ -68,6 +68,8 @@ def build() -> dict[str, Any]:
         "TOTAL_TRADES_REPLAYABLE": 0,
         "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 0,
         "TOTAL_RECORDS": 0,
+        "TOTAL_VALID_RECORDS": 0,
+        "TOTAL_UNIQUE_RECORDS": 0,
         "TOTAL_SAFE_RECORDS": 0,
         "TOTAL_REPLAYABLE_RECORDS": 0,
         "TOTAL_INVALID_RECORDS": 0,
@@ -98,6 +100,8 @@ def build() -> dict[str, Any]:
         invalid = _int(row.get("invalid_record_count"))
         duplicates = _int(row.get("duplicate_count"))
         gaps = _int(row.get("gap_count"))
+        valid_records = _int(row.get("valid_record_count")) if row.get("valid_record_count") is not None else max(0, records - invalid)
+        unique_records = _int(row.get("unique_record_count")) if row.get("unique_record_count") is not None else max(0, valid_records - duplicates)
         compressed = _int(row.get("bytes"))
         size_entry = size_rows.get(str(row.get("dataset_id")))
         if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
@@ -120,6 +124,8 @@ def build() -> dict[str, Any]:
         unique_trades = _int(row.get("unique_trade_count")) if unique_exact else 0
 
         totals["TOTAL_RECORDS"] += records
+        totals["TOTAL_VALID_RECORDS"] += valid_records
+        totals["TOTAL_UNIQUE_RECORDS"] += unique_records
         totals["TOTAL_INVALID_RECORDS"] += invalid
         totals["TOTAL_DUPLICATE_RECORDS"] += duplicates
         totals["TOTAL_GAP_RECORDS"] += gaps
