@@ -186,7 +186,12 @@ def main():
                     "--collection-cutoff-at-utc",
                     args.collection_cutoff_at_utc,
                     "--dataset-selection-id",
-                    "operator-" + str(args.source_collection_epoch),
+                    "operator-"
+                    + str(args.source_collection_epoch)
+                    + "-"
+                    + hashlib.sha256(
+                        str(args.collection_cutoff_at_utc).encode()
+                    ).hexdigest()[:16],
                     "--operator-request-id",
                     request_id,
                 ]
