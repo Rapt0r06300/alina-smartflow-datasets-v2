@@ -8,6 +8,14 @@ from pathlib import Path
 PHASES={"IDLE","COLLECT","ANALYZE"}
 COLLECT_KINDS={"market_collection","copy_vault_collection","official_archive_collection","event_intelligence_collection"}
 ANALYZE_KINDS={"replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard"}
+ANALYSIS_STAGE_BY_KIND={
+    "replay":"REPLAY",
+    "backtest":"BACKTEST",
+    "oos":"OOS",
+    "forward_paper":"FORWARD_PAPER",
+    "module_pnl_proof":"PNL_PROOF",
+    "scoreboard":"SCOREBOARD",
+}
 
 def load(path: Path) -> dict:
     try:
@@ -51,7 +59,13 @@ def main() -> int:
         return 0
     if args.command=="allow":
         if not args.kind: raise SystemExit("--kind required")
-        allowed=(state["phase"]=="COLLECT" and args.kind in COLLECT_KINDS) or (state["phase"]=="ANALYZE" and args.kind in ANALYZE_KINDS)
+        allowed = (
+            state["phase"] == "COLLECT" and args.kind in COLLECT_KINDS
+        ) or (
+            state["phase"] == "ANALYZE"
+            and args.kind in ANALYZE_KINDS
+            and state.get("analysis_stage") == ANALYSIS_STAGE_BY_KIND.get(args.kind)
+        )
         if not allowed: return 1
         print(json.dumps({"phase":state["phase"],"phase_epoch":state["epoch"],"source_collection_epoch":state["source_collection_epoch"],"collection_cutoff_at_utc":state["collection_cutoff_at_utc"]},sort_keys=True))
         return 0
@@ -66,6 +80,14 @@ def main() -> int:
     allowed_kinds = COLLECT_KINDS if state["phase"] == "COLLECT" else ANALYZE_KINDS
     if kind not in allowed_kinds:
         raise SystemExit(f"manifest kind {kind!r} is not allowed in phase {state['phase']}")
+    if (
+        state["phase"] == "ANALYZE"
+        and state.get("analysis_stage") != ANALYSIS_STAGE_BY_KIND.get(kind)
+    ):
+        raise SystemExit(
+            f"manifest kind {kind!r} is not allowed in analysis stage "
+            f"{state.get('analysis_stage')!r}"
+        )
     if state["phase"]=="ANALYZE":
         if manifest.get("source_collection_epoch")!=state["source_collection_epoch"] or manifest.get("collection_cutoff_at_utc")!=state["collection_cutoff_at_utc"]:
             raise SystemExit("manifest analysis freeze mismatch")
