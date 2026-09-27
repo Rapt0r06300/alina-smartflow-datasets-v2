@@ -42,7 +42,7 @@ def main() -> int:
         campaigns.append({
             "campaign_id":row.get("campaign_id"),
             "kind":row.get("kind"),
-            "analysis_stage": ANALYSIS_STAGE_BY_KIND.get(str(row.get("kind") or "")),
+            "analysis_stage": row.get("analysis_stage") or ANALYSIS_STAGE_BY_KIND.get(str(row.get("kind") or "")),
             "status":row.get("status"),
             "status_reason":row.get("status_reason"),
             "phase_epoch":row.get("phase_epoch"),
