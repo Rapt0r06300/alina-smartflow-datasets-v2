@@ -373,7 +373,7 @@ jobs:
           complete_work_unit(m,uid,r["sha256"],r["payload"])
           m.cursor["checkpoint_id"] = r["sha256"]
           if r["status"]=="COMPLETE":
-              mark_terminal(m,"COMPLETE","unit_complete")
+              mark_terminal(m,"COMPLETE","unit_complete",r["sha256"])
           elif r["status"]=="CONTINUATION_REQUIRED":
               mark_continuation(
                   m,
