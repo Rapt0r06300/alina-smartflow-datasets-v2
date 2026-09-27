@@ -67,7 +67,13 @@ def main() -> int:
             and state.get("analysis_stage") == ANALYSIS_STAGE_BY_KIND.get(args.kind)
         )
         if not allowed: return 1
-        print(json.dumps({"phase":state["phase"],"phase_epoch":state["epoch"],"source_collection_epoch":state["source_collection_epoch"],"collection_cutoff_at_utc":state["collection_cutoff_at_utc"]},sort_keys=True))
+        print(json.dumps({
+            "phase": state["phase"],
+            "phase_epoch": state["epoch"],
+            "analysis_stage": state.get("analysis_stage"),
+            "source_collection_epoch": state["source_collection_epoch"],
+            "collection_cutoff_at_utc": state["collection_cutoff_at_utc"],
+        }, sort_keys=True))
         return 0
     if not args.manifest: raise SystemExit("--manifest required")
     try: manifest=json.loads(Path(args.manifest).read_text(encoding="utf-8"))
