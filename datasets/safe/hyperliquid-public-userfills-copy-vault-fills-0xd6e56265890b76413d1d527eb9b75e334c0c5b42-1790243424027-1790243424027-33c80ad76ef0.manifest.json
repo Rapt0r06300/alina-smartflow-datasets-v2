@@ -1,6 +1,6 @@
 {
   "asset_verified": true,
-  "bytes": 10076,
+  "bytes": 866,
   "collection_run_id": "copy-vault-35966017810",
   "collector_version": "25f27e9667e8634e83a067153049b963216a6ab5",
   "copy_vault_selection": {
@@ -12,10 +12,12 @@
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x65aee08c9235025355ac6c5ad020fb167ecef4fe-1790238423898-1790242748223-fcff5db51668",
-  "end_ts_ms": 1790242748223,
-  "event_count": 45,
+  "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790243424027-1790243424027-33c80ad76ef0",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790243424027,
+  "event_count": 1,
   "family": "copy_vault_fills",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -25,10 +27,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "copy_vault_fills"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -39,41 +42,42 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
-    "live_count": 65,
+    "live_count": 109,
     "live_only": 0,
-    "matched_count": 65,
+    "matched_count": 109,
     "missing_from_live": 0,
-    "reference_count": 65,
+    "reference_count": 109,
     "status": "MATCHED"
   },
+  "record_count": 1,
   "release": {
-    "asset_id": 585658447,
-    "asset_name": "hyperliquid-public-userfills-copy-vault-fills-0x65aee08c9235025355ac6c5ad020fb167ecef4fe-1790238423898-1790242748223-fcff5db51668.jsonl.gz",
+    "asset_id": 585658550,
+    "asset_name": "hyperliquid-public-userfills-copy-vault-fills-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790243424027-1790243424027-33c80ad76ef0.jsonl.gz",
     "release_id": 395543452,
-    "remote_digest": "sha256:fcff5db51668c64904b03a58292c8f829fb73f8ae24dd5ac1885b09a238ad67c",
-    "remote_size": 10076,
+    "remote_digest": "sha256:33c80ad76ef079672a04a994e5c81a7b861afbd59a33796c4f4e72032713586d",
+    "remote_size": 866,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "copy-vault-v2-35966017810-s3"
   },
-  "release_asset": "hyperliquid-public-userfills-copy-vault-fills-0x65aee08c9235025355ac6c5ad020fb167ecef4fe-1790238423898-1790242748223-fcff5db51668.jsonl.gz",
-  "release_asset_id": 585658447,
+  "release_asset": "hyperliquid-public-userfills-copy-vault-fills-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790243424027-1790243424027-33c80ad76ef0.jsonl.gz",
+  "release_asset_id": 585658550,
   "release_id": 395543452,
-  "release_remote_digest": "sha256:fcff5db51668c64904b03a58292c8f829fb73f8ae24dd5ac1885b09a238ad67c",
-  "release_remote_size": 10076,
+  "release_remote_digest": "sha256:33c80ad76ef079672a04a994e5c81a7b861afbd59a33796c4f4e72032713586d",
+  "release_remote_size": 866,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "copy-vault-v2-35966017810-s3",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "fcff5db51668c64904b03a58292c8f829fb73f8ae24dd5ac1885b09a238ad67c",
+  "sha256": "33c80ad76ef079672a04a994e5c81a7b861afbd59a33796c4f4e72032713586d",
   "source": "hyperliquid_public_userfills",
-  "start_ts_ms": 1790238423898,
-  "symbol": "0x65aee08c9235025355ac6c5ad020fb167ecef4fe",
+  "start_ts_ms": 1790243424027,
+  "symbol": "0xd6e56265890b76413d1d527eb9b75e334c0c5b42",
   "synchronization": {
     "clock_offset_ms": {
       "count": 0,
@@ -84,17 +88,17 @@
     },
     "connection_count": 1,
     "connection_ids": [
-      "copy-vault-e29f55dfd2f344b1bcd2c62539dd1c2c"
+      "copy-vault-42ca7f8fe6e2461990670e01ae031b31"
     ],
-    "first_exchange_ts_ms": 1790238423397,
-    "last_exchange_ts_ms": 1790242747929,
+    "first_exchange_ts_ms": 1790243423546,
+    "last_exchange_ts_ms": 1790243423546,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 45,
-      "max": 912.0,
-      "min": 249.0,
-      "p50": 343.0,
-      "p95": 868.0
+      "count": 1,
+      "max": 481.0,
+      "min": 481.0,
+      "p50": 481.0,
+      "p95": 481.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
@@ -105,6 +109,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 1,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
