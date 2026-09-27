@@ -60,6 +60,7 @@ def _dispatch_successor(row: dict, repository: str, now: datetime) -> tuple[bool
         return False, (cp.stderr or cp.stdout or "dispatch_failed").strip()[-500:]
     cursor["successor_dispatch_at_utc"] = now.isoformat().replace("+00:00", "Z")
     row["cursor"] = cursor
+    row["updated_at"] = now.isoformat().replace("+00:00", "Z")
     return True, "dispatched"
 
 
