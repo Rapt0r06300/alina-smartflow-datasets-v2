@@ -17,6 +17,7 @@ jobs:
     uses: ./.github/workflows/resumable-campaign-worker.yml
     with:
       campaign_id: ${{ inputs.campaign_id }}
+      max_units: 1
     permissions:
       contents: write
 
@@ -26,6 +27,7 @@ jobs:
     uses: ./.github/workflows/resumable-campaign-worker.yml
     with:
       campaign_id: ${{ inputs.campaign_id }}
+      max_units: 0
     permissions:
       contents: write
 
@@ -58,6 +60,9 @@ jobs:
               "fresh_runner_for_segment_b": True,
               "runner_filesystem_reused": False,
               "durable_dataset_state_required": True,
+              "segment_a_max_units": 1,
+              "segment_a_must_checkpoint_before_segment_b": True,
+              "segment_b_max_units": 0,
               "paper_only": True,
               "read_only": True,
               "real_execution": False,
