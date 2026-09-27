@@ -6,7 +6,7 @@ import argparse
 import json
 import os
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -32,9 +32,16 @@ def _run_state(run_id: str) -> tuple[str, str]:
         return "unknown", "gh_unavailable"
 
 
-def _dispatch_successor(row: dict, repository: str) -> tuple[bool, str]:
+def _dispatch_successor(row: dict, repository: str, now: datetime) -> tuple[bool, str]:
     campaign_id = str(row.get("campaign_id") or "")
     cursor = row.get("cursor") if isinstance(row.get("cursor"), dict) else {}
+    marker = cursor.get("successor_dispatch_at_utc")
+    if marker:
+        try:
+            if parse(marker) + timedelta(minutes=20) > now:
+                return False, "dispatch_recent"
+        except (TypeError, ValueError):
+            pass
     predecessor = str(cursor.get("last_run_id") or "")
     status, detail = _run_state(predecessor)
     if predecessor and status != "completed":
@@ -51,6 +58,8 @@ def _dispatch_successor(row: dict, repository: str) -> tuple[bool, str]:
     cp = subprocess.run(command, text=True, capture_output=True, check=False)
     if cp.returncode != 0:
         return False, (cp.stderr or cp.stdout or "dispatch_failed").strip()[-500:]
+    cursor["successor_dispatch_at_utc"] = now.isoformat().replace("+00:00", "Z")
+    row["cursor"] = cursor
     return True, "dispatched"
 
 
@@ -96,9 +105,13 @@ def main():
             and status == "CONTINUATION_REQUIRED"
             and repository
         ):
-            ok, detail = _dispatch_successor(row, repository)
+            ok, detail = _dispatch_successor(row, repository, now)
             if ok:
                 dispatched.append(str(row.get("campaign_id") or path.stem))
+                path.write_text(
+                    json.dumps(row, sort_keys=True, indent=2) + "\\n",
+                    encoding="utf-8",
+                )
             else:
                 dispatch_failures.append({
                     "campaign_id": str(row.get("campaign_id") or path.stem),
