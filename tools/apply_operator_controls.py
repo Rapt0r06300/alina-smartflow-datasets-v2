@@ -22,12 +22,29 @@ def main():
         if row.get("paper_only") is not True or row.get("read_only") is not True or row.get("real_execution") is not False:
             raise SystemExit(f"unsafe operator intent: {path}")
         intent = str(row.get("intent") or "")
-        if intent not in {"pause", "resume"}:
+        if intent not in {"pause", "resume", "retry"}:
             continue
         request_id = str(row.get("request_id") or "")
         if not request_id:
             raise SystemExit(f"missing request id: {path}")
         config = row.get("config") if isinstance(row.get("config"), dict) else {}
+        if intent == "retry":
+            campaign_id = str(config.get("campaign_id") or "")
+            target = Path("catalog/campaigns") / (campaign_id + ".json")
+            if not campaign_id or not target.is_file():
+                raise SystemExit("retry intent requires an existing config.campaign_id")
+            command = [
+                "python",
+                str(Path(a.alina_root) / "tools/resumable_campaign.py"),
+                "retry",
+                str(target),
+                "--reason",
+                request_id,
+            ]
+            result = subprocess.run(command, check=False, capture_output=True, text=True)
+            if result.returncode:
+                raise SystemExit(result.stderr or result.stdout or "campaign retry failed")
+            continue
         target = "IDLE" if intent == "pause" else str(config.get("phase") or config.get("resume_phase") or "COLLECT")
         if target not in {"IDLE", "COLLECT", "ANALYZE"}:
             raise SystemExit(f"invalid resume phase: {target}")
