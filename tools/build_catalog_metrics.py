@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "catalog" / "DATA_INDEX.json"
 METRICS = ROOT / "catalog" / "DATA_METRICS.json"
 UNIQUE_PATCH = ROOT / "catalog" / "TRADE_UNIQUE_COUNT_PATCH.json"
+TRADE_COUNT_PATCH = ROOT / "catalog" / "TRADE_COUNT_PATCH.json"
 UNCOMPRESSED_PATCH = ROOT / "catalog" / "UNCOMPRESSED_SIZE_PATCH.json"
 TRADE_FAMILIES = {
     "trades",
@@ -87,6 +88,7 @@ def build() -> dict[str, Any]:
         "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 0,
         "TRADE_SHARDS_WITH_EXACT_COUNT": 0,
         "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
+        "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
         "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 0,
         "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
     }
@@ -204,6 +206,12 @@ def build() -> dict[str, Any]:
                 if replay:
                     bucket["replayable_trades"] += trades
 
+    if TRADE_COUNT_PATCH.is_file():
+        try:
+            trade_patch = json.loads(TRADE_COUNT_PATCH.read_text(encoding="utf-8"))
+            totals["TRADE_COUNT_FAILURE_REASON_COUNT"] = len(trade_patch.get("failure_reasons") or {})
+        except (OSError, ValueError, TypeError):
+            totals["TRADE_COUNT_FAILURE_REASON_COUNT"] = 0
     totals["TOTAL_TRADES_COUNT_COVERAGE_COMPLETE"] = (
         totals["TRADE_SHARDS_MISSING_EXACT_COUNT"] == 0
     )
