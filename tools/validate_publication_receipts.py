@@ -39,6 +39,12 @@ def main():
             ):
                 if row.get(key) in (None, ""):
                     raise SystemExit(f"{path}: missing frozen lineage field {key}")
+        if (
+            row["kind"] == "market_collection"
+            and row.get("universe_discovery_required") is True
+            and len(str(row.get("collection_plan_sha256") or "")) != 64
+        ):
+            raise SystemExit(f"{path}: missing discovered-universe digest")
         for key in ("result_sha256", "payload_digest"):
             if len(str(row[key])) != 64:
                 raise SystemExit(f"{path}: invalid {key}")
