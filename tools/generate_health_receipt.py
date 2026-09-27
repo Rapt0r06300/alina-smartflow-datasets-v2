@@ -42,9 +42,18 @@ def main() -> int:
             "updated_at":row.get("updated_at"),
         })
     counts={}
+    backlog_by_kind={}
+    stuck=[]
+    pending=[]
     for row in campaigns:
         key=f'{row["kind"]}:{row["status"]}'
         counts[key]=counts.get(key,0)+1
+        if row["status"] in {"PENDING","CONTINUATION_REQUIRED","STUCK"}:
+            backlog_by_kind[row["kind"]]=backlog_by_kind.get(row["kind"],0)+1
+        if row["status"]=="STUCK":
+            stuck.append({"campaign_id":row["campaign_id"],"kind":row["kind"],"reason":row["status_reason"],"next_due_at":row.get("next_due_at")})
+        if row["status"]=="PENDING":
+            pending.append(row)
     body={
         "schema_version":"alina.dataset_health_receipt.v1",
         "dataset_commit":args.dataset_commit,
@@ -55,11 +64,14 @@ def main() -> int:
         "by_venue":metrics.get("by_venue") or {},
         "by_family":metrics.get("by_family") or {},
         "campaign_counts":counts,
+        "backlog_by_kind":backlog_by_kind,
+        "stuck_campaigns":stuck,
+        "pending_campaign_count":len(pending),
         "campaigns":campaigns,
         "coverage":{
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
-            "uncompressed_bytes_exact":totals.get("TOTAL_UNCOMPRESSED_BYTES") not in (None,0),
+            "uncompressed_bytes_exact":totals.get("TOTAL_UNCOMPRESSED_BYTES") not in (None,0) and totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
             "safe_shards":int(totals.get("SAFE_SHARDS") or 0),
             "replayable_shards":int(totals.get("REPLAYABLE_SHARDS") or 0),
         },
