@@ -41,6 +41,17 @@ def main():
     for required in gate.get("required_files", []):
         if not Path(required).is_file():
             raise SystemExit(f"stage gate missing required file: {required}")
+    required_coverage = gate.get("required_coverage") or {}
+    if required_coverage:
+        health = json.loads(Path("catalog/DATASET_HEALTH_RECEIPT.json").read_text(encoding="utf-8"))
+        coverage = health.get("coverage") if isinstance(health.get("coverage"), dict) else {}
+        for key, requirement in required_coverage.items():
+            value = coverage.get(key)
+            if isinstance(requirement, dict) and "min" in requirement:
+                if not isinstance(value, (int, float)) or value < requirement["min"]:
+                    raise SystemExit(f"stage gate coverage {key} below minimum")
+            elif value is not requirement:
+                raise SystemExit(f"stage gate coverage {key} is not proven")
     required_kinds = set(gate.get("required_campaign_kinds", []))
     if required_kinds:
         rows = [
