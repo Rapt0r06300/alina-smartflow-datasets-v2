@@ -1,0 +1,43 @@
+{
+  "attempts": 0,
+  "campaign_id": "archives-bybit-btc-20260927-v4",
+  "chunk_index": 0,
+  "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
+  "code_sha": "4a7f9308acf861359547d7a03e0aca9c50b12795",
+  "completed_units": {},
+  "config_sha256": "b40cbc1ee1b5ac780a89ce1056c012c4cc001d4ca5a44b2326c0b73384686c3e",
+  "consecutive_failures": 0,
+  "created_at": "2026-09-27T06:20:48.763692+00:00",
+  "cursor": {
+    "coin": "BTC",
+    "end_date": "2026-09-26",
+    "max_days": 1,
+    "start_date": "2026-09-26",
+    "symbol": "BTCUSDT",
+    "venue": "bybit"
+  },
+  "dataset_generation": "V2_FRESH",
+  "dataset_repo": "Rapt0r06300/alina-smartflow-datasets-v2",
+  "expires_at": "2026-10-04T06:20:48.763692+00:00",
+  "history": [],
+  "kind": "official_archive_collection",
+  "lease": null,
+  "limits": {
+    "max_attempts": 12,
+    "max_chunks": 24,
+    "max_consecutive_failures": 4,
+    "max_no_progress": 3,
+    "max_wall_clock_s": 86400
+  },
+  "next_due_at": null,
+  "no_progress_count": 0,
+  "outputs": [],
+  "paper_only": true,
+  "read_only": true,
+  "real_execution": false,
+  "schema_version": "alina.resumable_campaign.v1",
+  "status": "PENDING",
+  "status_reason": "created",
+  "updated_at": "2026-09-27T06:20:48.763725Z",
+  "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
+}
