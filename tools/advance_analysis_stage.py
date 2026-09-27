@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 
 
@@ -122,7 +123,12 @@ def main():
     if a.stage != current:
         previous = dict(state)
         state = {**state, "analysis_stage": a.stage, "request_id": a.request_id}
-        path.write_text(json.dumps(state, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        temporary = path.with_suffix(path.suffix + ".tmp")
+        temporary.write_text(
+            json.dumps(state, sort_keys=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        os.replace(temporary, path)
     else:
         previous = dict(state)
     receipt = {
