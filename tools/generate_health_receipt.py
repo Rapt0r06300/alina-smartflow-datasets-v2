@@ -54,6 +54,10 @@ def main() -> int:
             "lease":row.get("lease"),
             "updated_at":row.get("updated_at"),
             "next_due_at":row.get("next_due_at"),
+            "last_checkpoint_id":(row.get("cursor") or {}).get("checkpoint_id") if isinstance(row.get("cursor"),dict) else None,
+            "completed_unit_count":len(row.get("completed_units") or {}) if isinstance(row.get("completed_units"),dict) else 0,
+            "lease_owner":(row.get("lease") or {}).get("owner_run_id") if isinstance(row.get("lease"),dict) else None,
+            "lease_expires_at":(row.get("lease") or {}).get("expires_at") if isinstance(row.get("lease"),dict) else None,
         })
     phase_mismatches=[]
     active_statuses={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}
@@ -97,6 +101,8 @@ def main() -> int:
             stuck.append({"campaign_id":row["campaign_id"],"kind":row["kind"],"reason":row["status_reason"],"next_due_at":row.get("next_due_at")})
         if row["status"]=="PENDING":
             pending.append(row)
+    pending_ages=[row.get("updated_at") for row in campaigns if row.get("status")=="PENDING" and row.get("updated_at")]
+    due_ages=[row.get("next_due_at") for row in campaigns if row.get("next_due_at")]
     body={
         "schema_version":"alina.dataset_health_receipt.v2",
         "dataset_commit":args.dataset_commit,
@@ -112,6 +118,8 @@ def main() -> int:
         "backlog_by_kind":backlog_by_kind,
         "stuck_campaigns":stuck,
         "pending_campaign_count":len(pending),
+        "oldest_pending_updated_at":min(pending_ages) if pending_ages else None,
+        "oldest_next_due_at":min(due_ages) if due_ages else None,
         "campaigns":campaigns,
         "phase_consistency":{
             "status":"BLOCKED" if phase_mismatches else "CONSISTENT",
