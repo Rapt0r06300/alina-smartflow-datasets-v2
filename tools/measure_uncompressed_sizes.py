@@ -25,7 +25,12 @@ def main():
             continue
         if not (row.get("release_repository") and row.get("release_tag") and row.get("release_asset")):
             sizes[dataset_id]={"status":"UNAVAILABLE","reason":"no_immutable_release_asset","retryable":False}
-    candidates=sorted([r for r in all_rows if str(r.get("dataset_id")) not in sizes],key=lambda r:str(r.get("dataset_id")))[:max(1,a.limit)]
+    candidates=sorted([
+        r for r in all_rows
+        if str(r.get("dataset_id")) not in sizes
+        or (isinstance(sizes.get(str(r.get("dataset_id"))), Mapping)
+            and sizes.get(str(r.get("dataset_id"))).get("retryable") is True)
+    ],key=lambda r:str(r.get("dataset_id")))[:max(1,a.limit)]
     failed=[]; attempted=0
     with tempfile.TemporaryDirectory(prefix="alina-uncompressed-") as tmp:
         for row in candidates:
