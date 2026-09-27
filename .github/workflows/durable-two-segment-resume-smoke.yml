@@ -60,7 +60,11 @@ jobs:
             sleep 20
           done
           case "$terminal" in
-            COMPLETE|FAILED|UNAVAILABLE|PARTIAL|REJECT) ;;
+            COMPLETE) ;;
+            FAILED|UNAVAILABLE|PARTIAL|REJECT)
+              echo "resume smoke reached non-success terminal state: $terminal" >&2
+              exit 1
+              ;;
             *) echo "resume smoke did not reach terminal state: $terminal" >&2; exit 1 ;;
           esac
           python - <<'PY' "$M" >> "$GITHUB_ENV"
