@@ -17,3 +17,10 @@ jobs:
           clean: true
       - name: Reconstruct durable state without cache
         run: python tools/restore_durable_state.py
+      - name: Upload durable restore receipt
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: durable-restore-receipt-${{ github.run_id }}
+          path: catalog/DURABLE_RESTORE_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 30
