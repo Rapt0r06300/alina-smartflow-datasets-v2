@@ -7,7 +7,7 @@ from pathlib import Path
 
 PHASES={"IDLE","COLLECT","ANALYZE"}
 COLLECT_KINDS={"market_collection","copy_vault_collection","official_archive_collection","event_intelligence_collection"}
-ANALYZE_KINDS={"replay","backtest","module_pnl_proof"}
+ANALYZE_KINDS={"replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard"}
 
 def load(path: Path) -> dict:
     try:
