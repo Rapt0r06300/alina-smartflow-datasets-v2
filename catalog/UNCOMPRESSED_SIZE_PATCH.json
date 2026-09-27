@@ -1,0 +1,1012 @@
+{
+  "attempted": 200,
+  "coverage_complete": false,
+  "exact_assets": 200,
+  "failed": [],
+  "method": "exact_gzip_decompression_byte_count_or_explicit_unavailable",
+  "remaining_assets": 35855,
+  "schema": "alina.uncompressed_size_patch.v2",
+  "sizes": {
+    "binance-usdm-official-archive-trades-btcusdt-1789776000141-1789798765030-80d6b0a5dacb": {
+      "asset_sha256": "80d6b0a5dacb433a2f84cae16cbfa3e37669856895f19cff98224476a7a274b7",
+      "compressed_bytes": 14297431,
+      "uncompressed_bytes": 269088127
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789798765032-1789829352014-2879e5b7812e": {
+      "asset_sha256": "2879e5b7812e8d54872451f26af812c9f164e4fb1825ea912011441bf8199b0b",
+      "compressed_bytes": 14449936,
+      "uncompressed_bytes": 269083629
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789829352014-1789851298516-ad1db890de5b": {
+      "asset_sha256": "ad1db890de5b0823ab637dc8bd4fdca907d85222890eb758a8443af0766c2631",
+      "compressed_bytes": 14355493,
+      "uncompressed_bytes": 269076975
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789851298519-1789862399508-3f452590c795": {
+      "asset_sha256": "3f452590c7955913c923fcee4443fe00fd34b2a2dca57c6ad59a8c4494a996cd",
+      "compressed_bytes": 5060995,
+      "uncompressed_bytes": 94991994
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789862400002-1789880296380-17d4f64785f3": {
+      "asset_sha256": "17d4f64785f3844517009feb96a905a0f0dd8c69088a2163a0f95401098ef1c1",
+      "compressed_bytes": 14160874,
+      "uncompressed_bytes": 269083104
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789880296380-1789909388718-053af3fadfc1": {
+      "asset_sha256": "053af3fadfc1111f4bba6af388afddf5bbe2dd1540500a2a47947e9274b38079",
+      "compressed_bytes": 14363651,
+      "uncompressed_bytes": 269078291
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789909388718-1789924385683-4b4c20c7c897": {
+      "asset_sha256": "4b4c20c7c897c30b9823b2de20cf5f3f8f6c1e197f1d11c7c5b71a966742b90f",
+      "compressed_bytes": 14201560,
+      "uncompressed_bytes": 269086630
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789924385684-1789946361984-bac951fb708d": {
+      "asset_sha256": "bac951fb708d3064db4c98adb6ef69f70ec65210bbb4293616adf83a293672d0",
+      "compressed_bytes": 14105588,
+      "uncompressed_bytes": 269087821
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1789946361984-1789948799844-ad51e2af10ea": {
+      "asset_sha256": "ad51e2af10eaa726872151f2b89f493c84830bbea9e1672b780989d21ee40097",
+      "compressed_bytes": 1545697,
+      "uncompressed_bytes": 29597278
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790035200005-1790042978810-6d898194d9e9": {
+      "asset_sha256": "6d898194d9e9f7b80254d9f8232e2cb8ae0594cd28bab851c29f2670cf636dd8",
+      "compressed_bytes": 13885829,
+      "uncompressed_bytes": 269082011
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790042978821-1790054302036-b4d9fe78e0f6": {
+      "asset_sha256": "b4d9fe78e0f6b0ef60f2f8f1bab9380483ffb8108eca5384837141e1a071f563",
+      "compressed_bytes": 14037396,
+      "uncompressed_bytes": 269085635
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790054302045-1790066663513-0435593eca52": {
+      "asset_sha256": "0435593eca52b89729971b63a7cc41cf1f2004ba884dc63331affc2644cb1186",
+      "compressed_bytes": 14107677,
+      "uncompressed_bytes": 269089126
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790066663559-1790077527132-6728767559db": {
+      "asset_sha256": "6728767559db6d38e669935650c2596330bbc8f55952f532daff3024e796f135",
+      "compressed_bytes": 14066152,
+      "uncompressed_bytes": 269085850
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790077527135-1790086225495-4612e29d4527": {
+      "asset_sha256": "4612e29d4527f733dae768676b7cf55c45e0ccb9bfff57062d5c56a19d6eae0b",
+      "compressed_bytes": 13890096,
+      "uncompressed_bytes": 269089736
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790086225495-1790092175892-29f1d470f128": {
+      "asset_sha256": "29f1d470f12802798839266fc4ce38f2e00df8d536f09b0095dde12f2c522f71",
+      "compressed_bytes": 13831838,
+      "uncompressed_bytes": 269088963
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790092176088-1790101959911-9e2d687661ce": {
+      "asset_sha256": "9e2d687661ce6f2535b7468397f73667a0dc1892a82773b734f55dd14a5f663e",
+      "compressed_bytes": 13825873,
+      "uncompressed_bytes": 269082243
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790101959912-1790120935628-4d73893c6527": {
+      "asset_sha256": "4d73893c65272cb6ebbc87eb589051ab4412241510e9d0df1d3d98d7eeed8e0b",
+      "compressed_bytes": 13975154,
+      "uncompressed_bytes": 269088137
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790120935628-1790121599037-495a40c1b66c": {
+      "asset_sha256": "495a40c1b66cab1e81f5f9225d820201cf9b41adfb4c65695263970783f45b12",
+      "compressed_bytes": 477732,
+      "uncompressed_bytes": 9339936
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790380800082-1790430019279-b37e587d4b3c": {
+      "asset_sha256": "b37e587d4b3cf5cab4dafbc5492488b49ca05937828767e459a45b6fcbcb3b1b",
+      "compressed_bytes": 14536857,
+      "uncompressed_bytes": 269082606
+    },
+    "binance-usdm-official-archive-trades-btcusdt-1790430019537-1790467199959-1aaa2f204375": {
+      "asset_sha256": "1aaa2f20437564868878520d364be282381510778a0efeb3ab8289b1e8f60d66",
+      "compressed_bytes": 10615457,
+      "uncompressed_bytes": 196822189
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789776000003-1789796291633-6c8e3c4b4a17": {
+      "asset_sha256": "6c8e3c4b4a170ac7723a83cddcaabd5d270b8b060a7147e5d2c4a4519712bc54",
+      "compressed_bytes": 14769267,
+      "uncompressed_bytes": 269049782
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789796291784-1789811720682-fee016bd8176": {
+      "asset_sha256": "fee016bd81762abdfcc3dfbc1d0c7fb46ab447456c5fed1323675cc54f08f0a7",
+      "compressed_bytes": 14625385,
+      "uncompressed_bytes": 269052800
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789811720683-1789835644928-3c489d6b5a84": {
+      "asset_sha256": "3c489d6b5a84ccbbb0f2a6ad670282799d96c8ec51dff918d51d1c639bc1d2f7",
+      "compressed_bytes": 14772785,
+      "uncompressed_bytes": 269049564
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789835644928-1789855180746-8a4a3f84e574": {
+      "asset_sha256": "8a4a3f84e574d437f763d3c7118f4543afd94bb836802f8a3f147b4bcd2f21c0",
+      "compressed_bytes": 14536659,
+      "uncompressed_bytes": 269053594
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789855180746-1789862399909-1c4bdacdc8bf": {
+      "asset_sha256": "1c4bdacdc8bfcfae7341a356e03cc33e0a5bc12dadbf3ffeb3207d9e15c983d8",
+      "compressed_bytes": 3308664,
+      "uncompressed_bytes": 59907604
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789862400005-1789874564080-a44bb5065bbf": {
+      "asset_sha256": "a44bb5065bbfde470fa59172b48195d1322e89868e54937aa9fa54ebe9c56c7d",
+      "compressed_bytes": 14486587,
+      "uncompressed_bytes": 269051524
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789874564081-1789897303645-5887fc4f8507": {
+      "asset_sha256": "5887fc4f850766ac596f51bedd49961eeb3de82fa5bf16f239ee2cf97735b4e7",
+      "compressed_bytes": 14699039,
+      "uncompressed_bytes": 269054353
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789897303645-1789919185570-b018fd920818": {
+      "asset_sha256": "b018fd92081892608d351a937b547314134a943c43903fbe224b53befad97aa7",
+      "compressed_bytes": 14743277,
+      "uncompressed_bytes": 269059158
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789919185570-1789925958358-e52fa736c4c2": {
+      "asset_sha256": "e52fa736c4c22c342fcbb0e0f2c7cf66dfdac7ca2f69693a85e56f21f08cb877",
+      "compressed_bytes": 14402520,
+      "uncompressed_bytes": 269062491
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789925958360-1789942443850-00e56e00cb02": {
+      "asset_sha256": "00e56e00cb02a3db355ffe7494689a110d3b736132ede39ef1fa4132cd3112be",
+      "compressed_bytes": 14458648,
+      "uncompressed_bytes": 269054701
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1789942443850-1789948799859-f6bd3016ad9f": {
+      "asset_sha256": "f6bd3016ad9fcef80902b4e36944f93b1210b96b46d5ae84a342b3da06c1d3ed",
+      "compressed_bytes": 5572230,
+      "uncompressed_bytes": 103550413
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790035200006-1790043205272-ab0d050e2ce2": {
+      "asset_sha256": "ab0d050e2ce2f8433315d13bab71a1fef4fd80d0349d2278a14b468e2a040c77",
+      "compressed_bytes": 14267536,
+      "uncompressed_bytes": 269058788
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790043205272-1790055206948-ecb74ee8eba1": {
+      "asset_sha256": "ecb74ee8eba17ae09b9114a570636b498b83a8a3c92569b4c0f80ec9a8ac675c",
+      "compressed_bytes": 14440642,
+      "uncompressed_bytes": 269058082
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790055206948-1790068405167-3e1e2936cfd8": {
+      "asset_sha256": "3e1e2936cfd856ecbc6da54013c0ea7722645f1d2b743a67980ed0faeb13a835",
+      "compressed_bytes": 14578256,
+      "uncompressed_bytes": 269063772
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790068405167-1790083772235-f0f5fc9fdd3b": {
+      "asset_sha256": "f0f5fc9fdd3b63694f080f6c7e120609aa0fc63376327b45521fda0057b02e6f",
+      "compressed_bytes": 14597127,
+      "uncompressed_bytes": 269058505
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790083772235-1790089332889-1f1b4c02e485": {
+      "asset_sha256": "1f1b4c02e485155f746665ef7070af1e27868bacb2980d6bc8d4afac6ebde50c",
+      "compressed_bytes": 14279793,
+      "uncompressed_bytes": 269066526
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790089332889-1790100008599-d8a61b196d09": {
+      "asset_sha256": "d8a61b196d09ee9c0592478659f6982e4c715fe0675e08683c32ccc598c4ccc0",
+      "compressed_bytes": 14401210,
+      "uncompressed_bytes": 269064152
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790100008599-1790119253103-8973c75141cb": {
+      "asset_sha256": "8973c75141cbc0828a94dcd1b84728ddcdacae9bb49ae972df514c4de2bff2ab",
+      "compressed_bytes": 14490982,
+      "uncompressed_bytes": 269065008
+    },
+    "binance-usdm-official-archive-trades-ethusdt-1790119253103-1790121599291-39db4722339b": {
+      "asset_sha256": "39db4722339bbc18545c05c7a7a7b3ffa1c78936e75359edd2a9fa1ecf566272",
+      "compressed_bytes": 2004918,
+      "uncompressed_bytes": 37181431
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789776000003-1789841831962-b2693683375f": {
+      "asset_sha256": "b2693683375f295e8889efc5918224bc29d3641359d67e0d87c2066322b911ae",
+      "compressed_bytes": 16113203,
+      "uncompressed_bytes": 268737510
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789841832089-1789862399764-101972967729": {
+      "asset_sha256": "1019729677299010e4193573837400bffba7d10fd0f003476183092dea82f8e0",
+      "compressed_bytes": 4144015,
+      "uncompressed_bytes": 69123619
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789862400002-1789927404801-e198c8b80557": {
+      "asset_sha256": "e198c8b80557ed7594a7a9fc3b24d82f8fe62a0263bde2f5b7e88a24cbe41abf",
+      "compressed_bytes": 16113926,
+      "uncompressed_bytes": 268748442
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789927405834-1789948799877-aed6846bee22": {
+      "asset_sha256": "aed6846bee22ffe38315755fb721e91354beedd8455ad787d9e63b735cab4ed6",
+      "compressed_bytes": 4439467,
+      "uncompressed_bytes": 73811369
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789948800002-1789984960044-ab4256098f7e": {
+      "asset_sha256": "ab4256098f7e8e2511724a2f05a7a217b8d8fcc47e7f46d2789bfe3fdf37c5cd",
+      "compressed_bytes": 16001192,
+      "uncompressed_bytes": 268775708
+    },
+    "binance-usdm-official-archive-trades-solusdt-1789984960202-1790018353128-b605b6f2051d": {
+      "asset_sha256": "b605b6f2051db7232491869f8f7439ea922085f47fd266a08af55a763bde7897",
+      "compressed_bytes": 16071160,
+      "uncompressed_bytes": 268779797
+    },
+    "binance-usdm-official-archive-trades-solusdt-1790018353532-1790035199947-13fa119aaab9": {
+      "asset_sha256": "13fa119aaab92e3094e12df6b47464d01b2831d24403858e3079338ff82aac73",
+      "compressed_bytes": 5643731,
+      "uncompressed_bytes": 94105874
+    },
+    "binance-usdm-official-archive-trades-solusdt-1790035200009-1790085605809-2107d0545fb5": {
+      "asset_sha256": "2107d0545fb584d9e42f79c06cd6edc5a179ab9142a142f67050a0c66fecfb34",
+      "compressed_bytes": 16140075,
+      "uncompressed_bytes": 268758636
+    },
+    "binance-usdm-official-archive-trades-solusdt-1790085605819-1790121599107-753b031ab798": {
+      "asset_sha256": "753b031ab7985c4a9b80a376088dbbd69b17554022dc12975374c6e87af16785",
+      "compressed_bytes": 9950567,
+      "uncompressed_bytes": 165915004
+    },
+    "binance-usdm-public-agg-trades-adausdt-1790364009641-1790367505368-1be3afb6c278": {
+      "asset_sha256": "1be3afb6c2780afe8c650f60c9878d799e4c9db7d65e1274da02b5520bb15ad4",
+      "compressed_bytes": 329827,
+      "uncompressed_bytes": 3058990
+    },
+    "binance-usdm-public-agg-trades-adausdt-1790431933630-1790435432641-c43b18ea2b8d": {
+      "asset_sha256": "c43b18ea2b8ddb33f5c4deecfe8a4b311cb0324235ef14d4f527a59647d8472b",
+      "compressed_bytes": 315718,
+      "uncompressed_bytes": 2929223
+    },
+    "binance-usdm-public-agg-trades-aptusdt-1790364009417-1790367506735-5d06580f8c58": {
+      "asset_sha256": "5d06580f8c587b07ed09e92a7374adb09f4d893267bd2fc47236e1bbaed50e0e",
+      "compressed_bytes": 1112714,
+      "uncompressed_bytes": 10776679
+    },
+    "binance-usdm-public-agg-trades-aptusdt-1790431933962-1790435432509-d256d7bd4cfe": {
+      "asset_sha256": "d256d7bd4cfe3c0c391b4bad59f3a3db7ca89a8621831d991840dac8fe0021d8",
+      "compressed_bytes": 602113,
+      "uncompressed_bytes": 5751253
+    },
+    "binance-usdm-public-agg-trades-arbusdt-1790364007335-1790367506749-77db1f12990a": {
+      "asset_sha256": "77db1f12990a1421dd5a0cee1dbdcfc868bff10ae1b9f1b476c5b3733ad0640c",
+      "compressed_bytes": 1344983,
+      "uncompressed_bytes": 13518787
+    },
+    "binance-usdm-public-agg-trades-arbusdt-1790431933266-1790435432290-fc399e8c2421": {
+      "asset_sha256": "fc399e8c24215674ba6d3b007a62c30e1ca566e29940196a905db6fbb1ebbe67",
+      "compressed_bytes": 1634062,
+      "uncompressed_bytes": 16610801
+    },
+    "binance-usdm-public-agg-trades-avaxusdt-1790364009003-1790367506788-870de382478d": {
+      "asset_sha256": "870de382478d28e1df748c57236c095a03de56a3632eeb73307fd2ec0000294b",
+      "compressed_bytes": 472181,
+      "uncompressed_bytes": 4607416
+    },
+    "binance-usdm-public-agg-trades-avaxusdt-1790431935504-1790435432882-3b7e8cf4dd57": {
+      "asset_sha256": "3b7e8cf4dd57f616dde429e81e790398dd4b9146a60ff410511ec59fe2970e95",
+      "compressed_bytes": 1277466,
+      "uncompressed_bytes": 12885119
+    },
+    "binance-usdm-public-agg-trades-bnbusdt-1790364007781-1790367506679-9d1521eb1e3b": {
+      "asset_sha256": "9d1521eb1e3b71910d7440bd426975c36c8861bacdbd9eaca6e9bd44a774cebb",
+      "compressed_bytes": 530927,
+      "uncompressed_bytes": 5332091
+    },
+    "binance-usdm-public-agg-trades-bnbusdt-1790431933369-1790435432711-83e4b925b825": {
+      "asset_sha256": "83e4b925b82561820f7176adfc2fe6387d84042c3dcb864511bb9b19466716a1",
+      "compressed_bytes": 573138,
+      "uncompressed_bytes": 5696876
+    },
+    "binance-usdm-public-agg-trades-btcusdt-1790364008214-1790367505835-47c7792fb1a9": {
+      "asset_sha256": "47c7792fb1a9e1b4a36fe81d337037e96c042b9f3407995e83ac505b4751d678",
+      "compressed_bytes": 2139679,
+      "uncompressed_bytes": 24975032
+    },
+    "binance-usdm-public-agg-trades-btcusdt-1790431933950-1790435432786-b4fd3bd4cd5a": {
+      "asset_sha256": "b4fd3bd4cd5a414bb050012f5dc80f2370d6afa05455a7ecfc1f0eaf62aab823",
+      "compressed_bytes": 1058864,
+      "uncompressed_bytes": 11295830
+    },
+    "binance-usdm-public-agg-trades-dogeusdt-1790364007219-1790367506262-589797d01f99": {
+      "asset_sha256": "589797d01f996e9ebe1896bd3ac1fa8742fd7a6cbc6f8c4bb1e8dc48edf24fca",
+      "compressed_bytes": 828286,
+      "uncompressed_bytes": 7858831
+    },
+    "binance-usdm-public-agg-trades-dogeusdt-1790431933641-1790435426591-6415fb1b22af": {
+      "asset_sha256": "6415fb1b22afde4ad7bebc92fc313e8fdd52ca28e133778295844f86401baa47",
+      "compressed_bytes": 633339,
+      "uncompressed_bytes": 5945324
+    },
+    "binance-usdm-public-agg-trades-ethusdt-1790364007288-1790367506040-34c45642a96a": {
+      "asset_sha256": "34c45642a96a41f09a2690d45a2578870229b03c7e3e6019999140b238a603b7",
+      "compressed_bytes": 2266897,
+      "uncompressed_bytes": 24949137
+    },
+    "binance-usdm-public-agg-trades-ethusdt-1790431933530-1790435432926-24a321a06231": {
+      "asset_sha256": "24a321a06231e539e1f6b0e851dc4ac1bb1a38615e3bfbbfb7d0d759a6f37a89",
+      "compressed_bytes": 1026793,
+      "uncompressed_bytes": 10335170
+    },
+    "binance-usdm-public-agg-trades-linkusdt-1790364008573-1790367503914-779c8d4369fa": {
+      "asset_sha256": "779c8d4369fa1acfb8e44d23b64c75990cf99afe162797813f95bf6b6ec3c21f",
+      "compressed_bytes": 651427,
+      "uncompressed_bytes": 6167522
+    },
+    "binance-usdm-public-agg-trades-linkusdt-1790431933735-1790435432531-6c52a716192b": {
+      "asset_sha256": "6c52a716192b2f3bed7ad68de3f8e5c67c613c9e042b2152bcb83d9b5fecbeec",
+      "compressed_bytes": 1517427,
+      "uncompressed_bytes": 14777373
+    },
+    "binance-usdm-public-agg-trades-opusdt-1790364009056-1790367506319-99075a6ab325": {
+      "asset_sha256": "99075a6ab3250d4a490b1261d39c3c2751cf37823e82288de9a4dc4d881af098",
+      "compressed_bytes": 1234522,
+      "uncompressed_bytes": 12301724
+    },
+    "binance-usdm-public-agg-trades-opusdt-1790431933331-1790435432304-f6e7cf451d0a": {
+      "asset_sha256": "f6e7cf451d0a3a016621262a81306504ab9038a4458540d51bfcd46d09a27252",
+      "compressed_bytes": 1434844,
+      "uncompressed_bytes": 14305897
+    },
+    "binance-usdm-public-agg-trades-solusdt-1790364009276-1790367506633-adbc4db9047f": {
+      "asset_sha256": "adbc4db9047f40b13e1125734054d1ae3aa391ea4ea7d60f7e800f8ed442089a",
+      "compressed_bytes": 2146262,
+      "uncompressed_bytes": 21068727
+    },
+    "binance-usdm-public-agg-trades-solusdt-1790431934456-1790435432443-bbefb3989588": {
+      "asset_sha256": "bbefb3989588ce7ec533b35d122fbbdbd0e8bbd7160d0834f294b14695202f00",
+      "compressed_bytes": 1310762,
+      "uncompressed_bytes": 12774844
+    },
+    "binance-usdm-public-agg-trades-suiusdt-1790364007344-1790367506688-18eee9426633": {
+      "asset_sha256": "18eee942663383d528a9033471394115a58c6afdf4d17657b66ea9c3707d1d6a",
+      "compressed_bytes": 2403587,
+      "uncompressed_bytes": 23520998
+    },
+    "binance-usdm-public-agg-trades-suiusdt-1790431934611-1790435432906-23699a84ccfc": {
+      "asset_sha256": "23699a84ccfc60cbe640ec891038ec22b24553cc4c4b64d7353ae9086d2de86e",
+      "compressed_bytes": 871116,
+      "uncompressed_bytes": 8165664
+    },
+    "binance-usdm-public-agg-trades-trxusdt-1790364008119-1790367502928-983576c5ca16": {
+      "asset_sha256": "983576c5ca16ddfe8f4b5a8122dac0f2de45edaa684c453d060b0b5082e47c37",
+      "compressed_bytes": 218769,
+      "uncompressed_bytes": 2062451
+    },
+    "binance-usdm-public-agg-trades-trxusdt-1790431936033-1790435430782-80a42abf4080": {
+      "asset_sha256": "80a42abf408002fae1d216d7dd51c1e485d7f126dca6be54c49287112cc5b963",
+      "compressed_bytes": 314491,
+      "uncompressed_bytes": 2991315
+    },
+    "binance-usdm-public-agg-trades-wifusdt-1790364012122-1790367503033-907b806f8a00": {
+      "asset_sha256": "907b806f8a00fe700c94a9340fbdd5aefdff862009ee17f3d4b4aa02270ed366",
+      "compressed_bytes": 183190,
+      "uncompressed_bytes": 1658843
+    },
+    "binance-usdm-public-agg-trades-wifusdt-1790431933694-1790435432636-8d9b8f7483e5": {
+      "asset_sha256": "8d9b8f7483e5ad82fb270e86aebf2bbf27776ba8395d9e843a69fef5d3fc58c9",
+      "compressed_bytes": 330641,
+      "uncompressed_bytes": 3072801
+    },
+    "binance-usdm-public-agg-trades-xrpusdt-1790364009622-1790367505926-01b0f49fe78f": {
+      "asset_sha256": "01b0f49fe78fb80157054d4cd9cda7101050ba4ed3175c41892e5261fb97f7e3",
+      "compressed_bytes": 1186621,
+      "uncompressed_bytes": 11234715
+    },
+    "binance-usdm-public-agg-trades-xrpusdt-1790431933467-1790435432635-30c2601b7258": {
+      "asset_sha256": "30c2601b7258f359d9a5328131678f897949685e3a122509bcbb74c2809f5343",
+      "compressed_bytes": 1287183,
+      "uncompressed_bytes": 12577799
+    },
+    "binance-usdm-public-bbo-adausdt-1790366902574-1790367506797-bb47a29a72e3": {
+      "asset_sha256": "bb47a29a72e3f88672c7b7baa03707c66da129d509f92443a805802ae924dbcc",
+      "compressed_bytes": 2020409,
+      "uncompressed_bytes": 25372678
+    },
+    "binance-usdm-public-bbo-adausdt-1790434193418-1790435432820-3764bd00df97": {
+      "asset_sha256": "3764bd00df97a6985686af63105fa42998c88644defacd70c053f042bb3de750",
+      "compressed_bytes": 3341001,
+      "uncompressed_bytes": 41492661
+    },
+    "binance-usdm-public-bbo-aptusdt-1790365898720-1790367506740-6bac85ecdde0": {
+      "asset_sha256": "6bac85ecdde0941b9d6ce39cec8df8010b8942d12f1af2aba757c98edff9b669",
+      "compressed_bytes": 4895970,
+      "uncompressed_bytes": 61499687
+    },
+    "binance-usdm-public-bbo-aptusdt-1790435356313-1790435432739-834fd574d81a": {
+      "asset_sha256": "834fd574d81a4f17e160e33fef68cf836ca2d1e4caece8f96dfdd8ba7576c915",
+      "compressed_bytes": 145063,
+      "uncompressed_bytes": 1758043
+    },
+    "binance-usdm-public-bbo-arbusdt-1790366167673-1790367506779-02e5ac542437": {
+      "asset_sha256": "02e5ac5424372e0fc0f9300b323bb34acfc43314d2bde89a2c2dc067431bb951",
+      "compressed_bytes": 3721102,
+      "uncompressed_bytes": 46246325
+    },
+    "binance-usdm-public-bbo-arbusdt-1790435330965-1790435432856-f31b458768af": {
+      "asset_sha256": "f31b458768af7ac2964ca79496e9b4bba1f2e43f632334044c5ccb7aec67ca1c",
+      "compressed_bytes": 871280,
+      "uncompressed_bytes": 11368495
+    },
+    "binance-usdm-public-bbo-avaxusdt-1790366244625-1790367506744-72c8a075735f": {
+      "asset_sha256": "72c8a075735f7608519cfe77d6e0add802fa8aaacb1b1b52492f62327deea11a",
+      "compressed_bytes": 4570846,
+      "uncompressed_bytes": 59806133
+    },
+    "binance-usdm-public-bbo-avaxusdt-1790434779168-1790435432953-302d77508bfe": {
+      "asset_sha256": "302d77508bfe57350b591874cbf899dcd87cdf960c152291d7f417670db8346b",
+      "compressed_bytes": 2983964,
+      "uncompressed_bytes": 39404223
+    },
+    "binance-usdm-public-bbo-bnbusdt-1790366904745-1790367506530-1626013722d4": {
+      "asset_sha256": "1626013722d4ea02d0fc52dc5922cbe50c51819635eae5fafd05d80cc832a2d7",
+      "compressed_bytes": 1749312,
+      "uncompressed_bytes": 21605072
+    },
+    "binance-usdm-public-bbo-bnbusdt-1790435025611-1790435432562-c8b640f454b6": {
+      "asset_sha256": "c8b640f454b686c26e53b41bb35f7aa4319861a0bb6ff0da6ee752f4a3a5f866",
+      "compressed_bytes": 847248,
+      "uncompressed_bytes": 10100024
+    },
+    "binance-usdm-public-bbo-btcusdt-1790367393099-1790367506792-243b43e31157": {
+      "asset_sha256": "243b43e311570bc9df2eab466773913bce83aaec77afb99b0de1e2276c6adb7b",
+      "compressed_bytes": 1310077,
+      "uncompressed_bytes": 18128716
+    },
+    "binance-usdm-public-bbo-btcusdt-1790435411416-1790435432941-4d3d0787affb": {
+      "asset_sha256": "4d3d0787affb19323fbadd784a3f0383fd6f6c275b24459bb5f39887c195baa4",
+      "compressed_bytes": 35562,
+      "uncompressed_bytes": 407419
+    },
+    "binance-usdm-public-bbo-dogeusdt-1790367028222-1790367506763-0b3a98aebc61": {
+      "asset_sha256": "0b3a98aebc6183909c6f21c15c92d6fe6663e1d477e4c51a886cf0cb5dfa60ad",
+      "compressed_bytes": 3176454,
+      "uncompressed_bytes": 41196573
+    },
+    "binance-usdm-public-bbo-dogeusdt-1790434547134-1790435432781-8b8ad76f580b": {
+      "asset_sha256": "8b8ad76f580b8cea4d02ae8984e085ef0fbe88e97f0a29d1e141f5c210d888a2",
+      "compressed_bytes": 4190332,
+      "uncompressed_bytes": 52793790
+    },
+    "binance-usdm-public-bbo-ethusdt-1790367493061-1790367506800-bbd2d63821f6": {
+      "asset_sha256": "bbd2d63821f6bb01ff0d774f2485f869bd5fc84f43db65742ee4ca055bf149a1",
+      "compressed_bytes": 58468,
+      "uncompressed_bytes": 700230
+    },
+    "binance-usdm-public-bbo-ethusdt-1790434842147-1790435432944-924db74ff5ac": {
+      "asset_sha256": "924db74ff5aceceda1fa37dce276f884c428f6fb7e77a141876c0cfd1ea3a11d",
+      "compressed_bytes": 4705066,
+      "uncompressed_bytes": 60261272
+    },
+    "binance-usdm-public-bbo-linkusdt-1790366336529-1790367506357-472cc8bc6374": {
+      "asset_sha256": "472cc8bc6374201c1a96c47407d688499146d650290e8df0dea1ee6773fff5ec",
+      "compressed_bytes": 2568310,
+      "uncompressed_bytes": 32079783
+    },
+    "binance-usdm-public-bbo-linkusdt-1790434426758-1790435432928-6cc7e3e1c599": {
+      "asset_sha256": "6cc7e3e1c599f2ceccbc1e9088152d155803e0bbbaf79c6600e1e48a5fa0f68d",
+      "compressed_bytes": 3833041,
+      "uncompressed_bytes": 48344138
+    },
+    "binance-usdm-public-bbo-opusdt-1790364007366-1790367506785-c9af112a0c97": {
+      "asset_sha256": "c9af112a0c974e1de5651beb10cd2dbb3d66ac3b95eadb0fc984ff0fd4144dfd",
+      "compressed_bytes": 4718867,
+      "uncompressed_bytes": 56526848
+    },
+    "binance-usdm-public-bbo-opusdt-1790435123371-1790435432953-2f2d0cb30d6d": {
+      "asset_sha256": "2f2d0cb30d6d8c7cd48dcb75d60eb0e855ce7176fd70d956ae25c02a251a9f6a",
+      "compressed_bytes": 1579710,
+      "uncompressed_bytes": 21353636
+    },
+    "binance-usdm-public-bbo-solusdt-1790367069499-1790367506633-b224daf5790e": {
+      "asset_sha256": "b224daf5790ef6351c99a84558b9cd8af060614fed728041b6e8eeb134b32c68",
+      "compressed_bytes": 4358930,
+      "uncompressed_bytes": 57432314
+    },
+    "binance-usdm-public-bbo-solusdt-1790435230002-1790435432884-4c0a778eef15": {
+      "asset_sha256": "4c0a778eef15a3f29db45eb7874d102163a6cbbd0c12f3761965b77a701570e7",
+      "compressed_bytes": 1149961,
+      "uncompressed_bytes": 14866774
+    },
+    "binance-usdm-public-bbo-suiusdt-1790367338174-1790367506755-d1b1f2d97ddd": {
+      "asset_sha256": "d1b1f2d97ddd1679800030a0a3e8e4dc6278e71ad5e0c4e818244df6de262e7a",
+      "compressed_bytes": 1545848,
+      "uncompressed_bytes": 20098755
+    },
+    "binance-usdm-public-bbo-suiusdt-1790435160620-1790435432949-a745e768c9df": {
+      "asset_sha256": "a745e768c9df2adb66dc528cde49d6eb448d48839086ebcc34c9a021125b867b",
+      "compressed_bytes": 1480177,
+      "uncompressed_bytes": 18803846
+    },
+    "binance-usdm-public-bbo-trxusdt-1790364007511-1790367505757-66937856a981": {
+      "asset_sha256": "66937856a981ed7b7b2676dfba4517b6dd70371abd3ec604a5f574e15f471fda",
+      "compressed_bytes": 2534572,
+      "uncompressed_bytes": 28825053
+    },
+    "binance-usdm-public-bbo-trxusdt-1790431934486-1790435431933-933c6947516f": {
+      "asset_sha256": "933c6947516f8d439b031b4c9315aaaf803e60fc59736e16d86ecfe21d91caa4",
+      "compressed_bytes": 2768876,
+      "uncompressed_bytes": 32063753
+    },
+    "binance-usdm-public-bbo-wifusdt-1790364007219-1790367506063-1de5d2f48d96": {
+      "asset_sha256": "1de5d2f48d960ff011f484072c5a7b92e5e5d22bedcd09e4cff13fda57c2f7de",
+      "compressed_bytes": 3386936,
+      "uncompressed_bytes": 41838246
+    },
+    "binance-usdm-public-bbo-wifusdt-1790431933512-1790435432957-8512bafb4f34": {
+      "asset_sha256": "8512bafb4f34fc4bfd6aa968b947411fceee46b57d89c21dbd8eb82da72bd292",
+      "compressed_bytes": 3651797,
+      "uncompressed_bytes": 45334785
+    },
+    "binance-usdm-public-bbo-xrpusdt-1790367183437-1790367506756-b50826f45c0c": {
+      "asset_sha256": "b50826f45c0c176760872b2659c7d1afc311a874b8ca7b227a1ff63a8e507f48",
+      "compressed_bytes": 2475609,
+      "uncompressed_bytes": 31540654
+    },
+    "binance-usdm-public-bbo-xrpusdt-1790434681660-1790435432944-52d90cd8e909": {
+      "asset_sha256": "52d90cd8e9099ba1cd93ca485ec2208d050eba4bf61f05dede7f4176f0efef82",
+      "compressed_bytes": 4632534,
+      "uncompressed_bytes": 57641092
+    },
+    "binance-usdm-public-l2book-adausdt-1790364007179-1790367506774-ae167e02c23c": {
+      "asset_sha256": "ae167e02c23cc5148314c5d244d2f3b44fe1c09d8a6d9c66b4f9b10ab56c6b2b",
+      "compressed_bytes": 5177342,
+      "uncompressed_bytes": 52161796
+    },
+    "binance-usdm-public-l2book-adausdt-1790431933326-1790435432828-5fb9d4ef3c60": {
+      "asset_sha256": "5fb9d4ef3c60f10bde0d3a18943bc851ba39b7a28dac6cdb99ae4ab734a66ac5",
+      "compressed_bytes": 4746641,
+      "uncompressed_bytes": 49880745
+    },
+    "binance-usdm-public-l2book-aptusdt-1790364007174-1790367506714-8db273ce53f2": {
+      "asset_sha256": "8db273ce53f2235183c383c65169e3a743dff0a0494e1ed2b6b4ff9351557513",
+      "compressed_bytes": 6606641,
+      "uncompressed_bytes": 57076788
+    },
+    "binance-usdm-public-l2book-aptusdt-1790431933295-1790435432965-a1ea1c7a0df8": {
+      "asset_sha256": "a1ea1c7a0df89a353ce30eb9a7f6eec54c93291827441516bba215e1712d8ffb",
+      "compressed_bytes": 5359711,
+      "uncompressed_bytes": 49596870
+    },
+    "binance-usdm-public-l2book-arbusdt-1790364007307-1790367506764-11e01fc325de": {
+      "asset_sha256": "11e01fc325de011491e52014b998c6caa49c1c21f833a1fc2456cb4896a54851",
+      "compressed_bytes": 7817547,
+      "uncompressed_bytes": 62528776
+    },
+    "binance-usdm-public-l2book-arbusdt-1790431933362-1790435432890-02ac21749437": {
+      "asset_sha256": "02ac21749437d23cc49801ab2978348c53cd2958edc69db7e9de11f235835c78",
+      "compressed_bytes": 7988030,
+      "uncompressed_bytes": 64007077
+    },
+    "binance-usdm-public-l2book-avaxusdt-1790364007173-1790367506790-89df373fe3aa": {
+      "asset_sha256": "89df373fe3aa6127344fd2c8dada4c7b9883b1d5095a70d55d98e984c7edc70c",
+      "compressed_bytes": 5435253,
+      "uncompressed_bytes": 54403164
+    },
+    "binance-usdm-public-l2book-avaxusdt-1790431933324-1790435432900-a25c57d4de34": {
+      "asset_sha256": "a25c57d4de346f80d6d74f13b1469c6c2dab21ac1556a76c983397c4ebce309c",
+      "compressed_bytes": 6460603,
+      "uncompressed_bytes": 59253753
+    },
+    "binance-usdm-public-l2book-bnbusdt-1790364007213-1790367506639-0753d01525b6": {
+      "asset_sha256": "0753d01525b65b02d7a3507af84313d046f9d003636b5412fcdefa94f398607b",
+      "compressed_bytes": 6153277,
+      "uncompressed_bytes": 61298294
+    },
+    "binance-usdm-public-l2book-bnbusdt-1790431933358-1790435432914-b99bff85c00d": {
+      "asset_sha256": "b99bff85c00dc53d8989e677e3b49a7042dac2ee9ddd40bdde9470f1479f3bc9",
+      "compressed_bytes": 5592102,
+      "uncompressed_bytes": 58307025
+    },
+    "binance-usdm-public-l2book-btcusdt-1790365842753-1790367506792-9860f79f3a3c": {
+      "asset_sha256": "9860f79f3a3c6963fff198f1b1806c955c93b2ec725524c1da53d1ebd1d3b883",
+      "compressed_bytes": 7924501,
+      "uncompressed_bytes": 60667328
+    },
+    "binance-usdm-public-l2book-btcusdt-1790434325471-1790435432885-4616aa5e0566": {
+      "asset_sha256": "4616aa5e05663b278d81dd666f02cce441e4696ecf7ea6c54863274ac8bccac8",
+      "compressed_bytes": 3831547,
+      "uncompressed_bytes": 31639266
+    },
+    "binance-usdm-public-l2book-dogeusdt-1790364007304-1790367506702-b87d70b9457e": {
+      "asset_sha256": "b87d70b9457ede954d7ee1345ac46ebfb5b3b5fe038f4d4cbaa36dcc21bccf84",
+      "compressed_bytes": 7666865,
+      "uncompressed_bytes": 65949867
+    },
+    "binance-usdm-public-l2book-dogeusdt-1790431933294-1790435432903-24785117acdf": {
+      "asset_sha256": "24785117acdf3b65a13e10e03411641daf2e64b41fa26a71749615995a5cfcdb",
+      "compressed_bytes": 6255022,
+      "uncompressed_bytes": 58649435
+    },
+    "binance-usdm-public-l2book-ethusdt-1790366026262-1790367506716-177037bbe2cf": {
+      "asset_sha256": "177037bbe2cf7122a1e461a3d435995fea9a82299451209f33c2c2e180a17754",
+      "compressed_bytes": 7116863,
+      "uncompressed_bytes": 47938254
+    },
+    "binance-usdm-public-l2book-ethusdt-1790434505493-1790435432944-73d854349314": {
+      "asset_sha256": "73d85434931431a300d01a13a12348dbdb139a20de732fb38eff1b1d7c9d6310",
+      "compressed_bytes": 3253909,
+      "uncompressed_bytes": 24773332
+    },
+    "binance-usdm-public-l2book-linkusdt-1790364007357-1790367506774-7597175e2383": {
+      "asset_sha256": "7597175e238342040bdf4d565689d85b134209582ea231b39f8f28c005168399",
+      "compressed_bytes": 5924984,
+      "uncompressed_bytes": 52503765
+    },
+    "binance-usdm-public-l2book-linkusdt-1790431933264-1790435432862-70680546947a": {
+      "asset_sha256": "70680546947a3d04c29f2a4e5ac485ab72da662c266608c01e3c3e04cb0dd99a",
+      "compressed_bytes": 8038077,
+      "uncompressed_bytes": 63901718
+    },
+    "binance-usdm-public-l2book-opusdt-1790364007307-1790367506801-0191e8cd96f6": {
+      "asset_sha256": "0191e8cd96f6bc13ba0708fcc03aa07f59c651057e067ca2bd4b566a3a5caf07",
+      "compressed_bytes": 6674805,
+      "uncompressed_bytes": 56260130
+    },
+    "binance-usdm-public-l2book-opusdt-1790431933357-1790435432948-75a716281cbb": {
+      "asset_sha256": "75a716281cbbd3f1e659f0a63aac4d91ffc94a9e2cb547c4ae583f951a99e720",
+      "compressed_bytes": 7240581,
+      "uncompressed_bytes": 60898441
+    },
+    "binance-usdm-public-l2book-solusdt-1790366991308-1790367506758-87c3c84950a6": {
+      "asset_sha256": "87c3c84950a66d033887b95f6ecf5e5d1b87815aa916170b9fb1f752835de8c2",
+      "compressed_bytes": 1309927,
+      "uncompressed_bytes": 11004100
+    },
+    "binance-usdm-public-l2book-solusdt-1790435367959-1790435432917-bcc27242a755": {
+      "asset_sha256": "bcc27242a755b7287a42d6a43a95c9a25aa0baea7aefbe6e7dd2bf6aa1d5fdc1",
+      "compressed_bytes": 156723,
+      "uncompressed_bytes": 1339442
+    },
+    "binance-usdm-public-l2book-suiusdt-1790366957881-1790367506763-1336f64ccca6": {
+      "asset_sha256": "1336f64ccca66fb243961519e837a991eeec9f345a6985b3a2ddcbd9c6f8c0de",
+      "compressed_bytes": 1779459,
+      "uncompressed_bytes": 12879439
+    },
+    "binance-usdm-public-l2book-suiusdt-1790431933295-1790435432918-9322382e93ef": {
+      "asset_sha256": "9322382e93ef360487c49080f724cb6564d3aded7e9ea7ccb692380a9cf27e98",
+      "compressed_bytes": 7266328,
+      "uncompressed_bytes": 62076730
+    },
+    "binance-usdm-public-l2book-trxusdt-1790364007304-1790367506710-2e6f78ccd929": {
+      "asset_sha256": "2e6f78ccd929f77bdd929eafd8cac50b6c124cc4d459f040ffffd515bd9d4889",
+      "compressed_bytes": 3608372,
+      "uncompressed_bytes": 39662941
+    },
+    "binance-usdm-public-l2book-trxusdt-1790431933328-1790435432840-0df30ed994ab": {
+      "asset_sha256": "0df30ed994ab579c379fc82bcf4f0d2afc13fee8f58ac0cbb4a1c552a9cb667a",
+      "compressed_bytes": 3414649,
+      "uncompressed_bytes": 37165325
+    },
+    "binance-usdm-public-l2book-wifusdt-1790364007316-1790367506626-7919e9f0f77e": {
+      "asset_sha256": "7919e9f0f77eb960a6642be26bb51ee8ef2c936b796ccfbd010cec3f1c01fba4",
+      "compressed_bytes": 3137937,
+      "uncompressed_bytes": 32620751
+    },
+    "binance-usdm-public-l2book-wifusdt-1790431933360-1790435432948-145cd55e0001": {
+      "asset_sha256": "145cd55e0001925481d8bb84edbd3f375b729e5fe9cf5cf6e4810433080aaab5",
+      "compressed_bytes": 2983960,
+      "uncompressed_bytes": 30357024
+    },
+    "binance-usdm-public-l2book-xrpusdt-1790366872482-1790367506735-3340481a60a1": {
+      "asset_sha256": "3340481a60a1abbc498714f48a4861b45e01a2d6b6db1953c7a5ee0cbe910408",
+      "compressed_bytes": 1880556,
+      "uncompressed_bytes": 14565342
+    },
+    "binance-usdm-public-l2book-xrpusdt-1790435225135-1790435432914-5dc402610eab": {
+      "asset_sha256": "5dc402610eabf436014d134b1369621e6802584027920a74bee3cda1f2db751d",
+      "compressed_bytes": 489384,
+      "uncompressed_bytes": 4267530
+    },
+    "binance-usdm-public-liquidations-adausdt-1790366462291-1790366462291-78db3227969b": {
+      "asset_sha256": "78db3227969bbb777c3a754d6d52631f30df4c5790a22d15fab4de1dccf0f51d",
+      "compressed_bytes": 966,
+      "uncompressed_bytes": 2154
+    },
+    "binance-usdm-public-liquidations-adausdt-1790433633189-1790433633189-3e94085bbb55": {
+      "asset_sha256": "3e94085bbb552ef835ad9c207e4b738b39284c82b898625230a68bddef347f4e",
+      "compressed_bytes": 959,
+      "uncompressed_bytes": 2150
+    },
+    "binance-usdm-public-liquidations-aptusdt-1790365980239-1790367504198-c9f4a567e9ce": {
+      "asset_sha256": "c9f4a567e9ce8f8e93b4c0b3653fdaf5a298482d8faeb41ec28427c86e5cdded",
+      "compressed_bytes": 1813,
+      "uncompressed_bytes": 12947
+    },
+    "binance-usdm-public-liquidations-aptusdt-1790433620255-1790434839216-f5e9d3269f09": {
+      "asset_sha256": "f5e9d3269f09a38f35676ef5e22ba2a7ccd7e34a7e4e5b1aff72c6d7a0c3fe20",
+      "compressed_bytes": 1491,
+      "uncompressed_bytes": 8615
+    },
+    "binance-usdm-public-liquidations-arbusdt-1790367489218-1790367489218-2a84297229bc": {
+      "asset_sha256": "2a84297229bcfbb1033ab7987a6a174089a8026aebc578925abe9374f842161c",
+      "compressed_bytes": 973,
+      "uncompressed_bytes": 2167
+    },
+    "binance-usdm-public-liquidations-arbusdt-1790433604225-1790435417323-0497a38155e3": {
+      "asset_sha256": "0497a38155e3c8dde7b46058cbfc69c455eccfd8208f5379a5092e28dd9bf266",
+      "compressed_bytes": 1820,
+      "uncompressed_bytes": 12982
+    },
+    "binance-usdm-public-liquidations-avaxusdt-1790366468217-1790366468217-0ef66e334bf3": {
+      "asset_sha256": "0ef66e334bf307a3f1598c31106a6e613d703a7ecb18ec2661821d6ebb26b20c",
+      "compressed_bytes": 955,
+      "uncompressed_bytes": 2143
+    },
+    "binance-usdm-public-liquidations-avaxusdt-1790432715303-1790435013261-2f48c7a7b3ea": {
+      "asset_sha256": "2f48c7a7b3ea3abf88c0271f7394a12ba3b4b14a68fc7492a1dc1f3c6eb98c17",
+      "compressed_bytes": 2487,
+      "uncompressed_bytes": 23613
+    },
+    "binance-usdm-public-liquidations-bnbusdt-1790366645232-1790366645232-dd06bd504e83": {
+      "asset_sha256": "dd06bd504e839851fcf1701c2553c0e8753005d46bd10fd56e5fb7a934e91b8c",
+      "compressed_bytes": 961,
+      "uncompressed_bytes": 2149
+    },
+    "binance-usdm-public-liquidations-bnbusdt-1790433462298-1790435330160-fdb075d75bb1": {
+      "asset_sha256": "fdb075d75bb13ff6942b343b30de1b8207bac6fc86c1b9117618c60b74242919",
+      "compressed_bytes": 1155,
+      "uncompressed_bytes": 4300
+    },
+    "binance-usdm-public-liquidations-btcusdt-1790432094283-1790435293199-fc7ed2501caf": {
+      "asset_sha256": "fc7ed2501cafbf9ebf5caa15154217a02e5d17fd17113e3482e692cdc809c875",
+      "compressed_bytes": 2682,
+      "uncompressed_bytes": 25918
+    },
+    "binance-usdm-public-liquidations-dogeusdt-1790366541201-1790366647463-74c61e00b9a1": {
+      "asset_sha256": "74c61e00b9a1e75f9600c1f07654160b0fe29b682425efa666e38dc02d2ec252",
+      "compressed_bytes": 1308,
+      "uncompressed_bytes": 6476
+    },
+    "binance-usdm-public-liquidations-dogeusdt-1790432740222-1790435257347-a5e5525ed76a": {
+      "asset_sha256": "a5e5525ed76abca816b9d360006374d917fea17ac8fbaa3a6b89ca0633c1223d",
+      "compressed_bytes": 2404,
+      "uncompressed_bytes": 21640
+    },
+    "binance-usdm-public-liquidations-ethusdt-1790365095851-1790366525214-7207763c8ee4": {
+      "asset_sha256": "7207763c8ee487c36664d7348d8b9309526c0806c766f1d0f88af816eaeb2346",
+      "compressed_bytes": 1499,
+      "uncompressed_bytes": 8636
+    },
+    "binance-usdm-public-liquidations-ethusdt-1790432076316-1790435293199-18748512c557": {
+      "asset_sha256": "18748512c5574790138d54ddaf8fb8de6b5a65eeb0a1fcd7b347075bb6cabf45",
+      "compressed_bytes": 2571,
+      "uncompressed_bytes": 23722
+    },
+    "binance-usdm-public-liquidations-linkusdt-1790431992159-1790434760165-1cf8638d0dee": {
+      "asset_sha256": "1cf8638d0deedf3506dc793f3fafca94a5ee3af9896d1d3e92d264c9c46fa379",
+      "compressed_bytes": 3602,
+      "uncompressed_bytes": 38787
+    },
+    "binance-usdm-public-liquidations-opusdt-1790365600217-1790366573267-0ddee55bb5f6": {
+      "asset_sha256": "0ddee55bb5f621eeba3fd6fb8fd6584a7cf2a743871a0548fbf5b8bdaec30c37",
+      "compressed_bytes": 2125,
+      "uncompressed_bytes": 17331
+    },
+    "binance-usdm-public-liquidations-opusdt-1790432116278-1790435257347-c826ab864cb2": {
+      "asset_sha256": "c826ab864cb2cb4193d061bb851465471b2e157b588ffe0215dc56b067bda5cf",
+      "compressed_bytes": 1995,
+      "uncompressed_bytes": 15147
+    },
+    "binance-usdm-public-liquidations-solusdt-1790365207230-1790367214190-180f969c74e5": {
+      "asset_sha256": "180f969c74e5ca0ac9ebe7002f7e31fb7c0f822c802bb1920fe5e5b97120a8bf",
+      "compressed_bytes": 1480,
+      "uncompressed_bytes": 8620
+    },
+    "binance-usdm-public-liquidations-solusdt-1790432094283-1790435416223-ac6a85b00587": {
+      "asset_sha256": "ac6a85b005879b502e3cf6b4da641a353d66d9491175efd40c7625b7d3932c6b",
+      "compressed_bytes": 2247,
+      "uncompressed_bytes": 19392
+    },
+    "binance-usdm-public-liquidations-suiusdt-1790364666330-1790367446198-1e8a19dc231b": {
+      "asset_sha256": "1e8a19dc231bf0b45b49752e8827857ccc4f687179860797611c67c34b0f55d2",
+      "compressed_bytes": 8167,
+      "uncompressed_bytes": 105782
+    },
+    "binance-usdm-public-liquidations-suiusdt-1790433570242-1790435345289-ca471940529d": {
+      "asset_sha256": "ca471940529d50bb0618493d565276f89e575356af7f840ba6143f67bbffe91f",
+      "compressed_bytes": 1504,
+      "uncompressed_bytes": 8621
+    },
+    "binance-usdm-public-liquidations-wifusdt-1790432740222-1790434646207-be4c6633313b": {
+      "asset_sha256": "be4c6633313b7546f38ab400e0725495e032f3cf1d6a399b6c3bdf2d9d143dfc",
+      "compressed_bytes": 1802,
+      "uncompressed_bytes": 12976
+    },
+    "binance-usdm-public-liquidations-xrpusdt-1790366344264-1790366344264-95e89e3a3dfa": {
+      "asset_sha256": "95e89e3a3dfa6dac56f29cd4cc8d3c4f4b790e9214883cff459baaefe213a448",
+      "compressed_bytes": 957,
+      "uncompressed_bytes": 2148
+    },
+    "binance-usdm-public-liquidations-xrpusdt-1790433137231-1790435368190-c78cc74d15ce": {
+      "asset_sha256": "c78cc74d15ce9d068a00f679532d5089790fe8485f1500858625f4902235af82",
+      "compressed_bytes": 1464,
+      "uncompressed_bytes": 8609
+    },
+    "binance-usdm-public-mark-funding-adausdt-1790364008119-1790367506120-7d3578aa1b61": {
+      "asset_sha256": "7d3578aa1b61b82f13ed270b5d90873cf68717a0c5db4044190a732d81f7d7a4",
+      "compressed_bytes": 394252,
+      "uncompressed_bytes": 7251313
+    },
+    "binance-usdm-public-mark-funding-adausdt-1790431934128-1790435432140-fdf8b98bdabb": {
+      "asset_sha256": "fdf8b98bdabbc500a90b3455d2ec74f670237d92bbdd15bfb6ddff9c77d3e6c7",
+      "compressed_bytes": 392722,
+      "uncompressed_bytes": 7252601
+    },
+    "binance-usdm-public-mark-funding-aptusdt-1790364008123-1790367506123-3e89cb499b6e": {
+      "asset_sha256": "3e89cb499b6e0998d26b260ea3117adcd02fdface722162f1506147ea3e86b82",
+      "compressed_bytes": 386959,
+      "uncompressed_bytes": 7246628
+    },
+    "binance-usdm-public-mark-funding-aptusdt-1790431934130-1790435432146-08349d32f2f5": {
+      "asset_sha256": "08349d32f2f5d09ce63d34c13e9fa9902fe59420387a3741dc735cb8d79a3dde",
+      "compressed_bytes": 376054,
+      "uncompressed_bytes": 7245525
+    },
+    "binance-usdm-public-mark-funding-arbusdt-1790364008123-1790367506125-6bfd9155528c": {
+      "asset_sha256": "6bfd9155528c8b70f0f0befeda2a3af9fa21858d7eb251153718d35f771dec63",
+      "compressed_bytes": 396993,
+      "uncompressed_bytes": 7272150
+    },
+    "binance-usdm-public-mark-funding-arbusdt-1790431934130-1790435432146-b42d4f2dd92e": {
+      "asset_sha256": "b42d4f2dd92e297950d59aa19ea67a53d400f3861458d5c4c06b563edf932b54",
+      "compressed_bytes": 396518,
+      "uncompressed_bytes": 7269538
+    },
+    "binance-usdm-public-mark-funding-avaxusdt-1790364008120-1790367506121-3785a30b2c09": {
+      "asset_sha256": "3785a30b2c0924d252852a24039bd5c6b820949a8f12c671bb6674f07985ce02",
+      "compressed_bytes": 395676,
+      "uncompressed_bytes": 7282650
+    },
+    "binance-usdm-public-mark-funding-avaxusdt-1790431934128-1790435432140-16be6e02cc22": {
+      "asset_sha256": "16be6e02cc22c13893fe94d507ae99f3d3d20018f27ca46b0e0f5b4ddfffdab3",
+      "compressed_bytes": 408065,
+      "uncompressed_bytes": 7283353
+    },
+    "binance-usdm-public-mark-funding-bnbusdt-1790364008119-1790367506120-07023354ecd1": {
+      "asset_sha256": "07023354ecd108571b1d4d1b80ee85fd815909b23f86f3b02f2273668149f7cf",
+      "compressed_bytes": 388347,
+      "uncompressed_bytes": 7298238
+    },
+    "binance-usdm-public-mark-funding-bnbusdt-1790431934128-1790435432140-40b3635008f1": {
+      "asset_sha256": "40b3635008f14877ff22ca40d6073448572e54cc5083e8f794e34f19cbf75fcc",
+      "compressed_bytes": 387668,
+      "uncompressed_bytes": 7288924
+    },
+    "binance-usdm-public-mark-funding-btcusdt-1790364008118-1790367506120-263906e76828": {
+      "asset_sha256": "263906e76828e53b7120f29648f81c4f025107c3df250afd7e3b97a4df8236be",
+      "compressed_bytes": 413160,
+      "uncompressed_bytes": 7360906
+    },
+    "binance-usdm-public-mark-funding-btcusdt-1790431934128-1790435432136-3e224648758b": {
+      "asset_sha256": "3e224648758b6210ff4858d7d113a7ce4c860b58998787c1c5dc2a2a88e3c5fe",
+      "compressed_bytes": 406606,
+      "uncompressed_bytes": 7368467
+    },
+    "binance-usdm-public-mark-funding-dogeusdt-1790364008120-1790367506120-5b7198f7632a": {
+      "asset_sha256": "5b7198f7632a27a1408a598393dd9df0e6cda0746c696b45d1b7894a81b3db8d",
+      "compressed_bytes": 387493,
+      "uncompressed_bytes": 7260406
+    },
+    "binance-usdm-public-mark-funding-dogeusdt-1790431934128-1790435432140-9353fc4f70ae": {
+      "asset_sha256": "9353fc4f70ae8674e3834c6b183095110963eab30763eac7e8c65a01b2c26335",
+      "compressed_bytes": 379608,
+      "uncompressed_bytes": 7271073
+    },
+    "binance-usdm-public-mark-funding-ethusdt-1790364008118-1790367506120-84d047dcf432": {
+      "asset_sha256": "84d047dcf432703533f7b922cb1dee2a43fd5466ff61148a160857f7688a6fa5",
+      "compressed_bytes": 406330,
+      "uncompressed_bytes": 7336229
+    },
+    "binance-usdm-public-mark-funding-ethusdt-1790431934128-1790435432136-1e4541073f16": {
+      "asset_sha256": "1e4541073f1631062817d8fb1249ea998b6df42e86e8223c0e44817387c4b757",
+      "compressed_bytes": 394961,
+      "uncompressed_bytes": 7338298
+    },
+    "binance-usdm-public-mark-funding-linkusdt-1790364008119-1790367506120-9c746545368f": {
+      "asset_sha256": "9c746545368fed757ccfbd7e8eb2e8feac71885983d45057ee519f3363a72bc6",
+      "compressed_bytes": 408963,
+      "uncompressed_bytes": 7282341
+    },
+    "binance-usdm-public-mark-funding-linkusdt-1790431934128-1790435432139-0b84dbb44751": {
+      "asset_sha256": "0b84dbb4475173d54be5e2be486fc70a06b68abfbdd38371040cf1eeac3b062e",
+      "compressed_bytes": 415075,
+      "uncompressed_bytes": 7291668
+    },
+    "binance-usdm-public-mark-funding-opusdt-1790364008122-1790367506121-29418f5cdf7d": {
+      "asset_sha256": "29418f5cdf7dc7285fa8d15c0d13fddf6b71164c0045a5efa876afd8ce811815",
+      "compressed_bytes": 380639,
+      "uncompressed_bytes": 7258171
+    },
+    "binance-usdm-public-mark-funding-opusdt-1790431934130-1790435432146-d30fcd745c3f": {
+      "asset_sha256": "d30fcd745c3f6ef26f7ab1ff28c0c76cfb827c50dee606d528003f35700287db",
+      "compressed_bytes": 379983,
+      "uncompressed_bytes": 7250149
+    },
+    "binance-usdm-public-mark-funding-solusdt-1790364008120-1790367506121-9589b2f11e15": {
+      "asset_sha256": "9589b2f11e157a9bf12940b736533edfc3b1c1fa4b506a847b9a566635a2dfe3",
+      "compressed_bytes": 413321,
+      "uncompressed_bytes": 7303880
+    },
+    "binance-usdm-public-mark-funding-solusdt-1790431934128-1790435432140-0086239c16b9": {
+      "asset_sha256": "0086239c16b9fbfa8b7fcb9cc436bf0d0a72ab7a5a296949f9804c4a5d7967bd",
+      "compressed_bytes": 405727,
+      "uncompressed_bytes": 7306196
+    },
+    "binance-usdm-public-mark-funding-suiusdt-1790364008123-1790367506125-b000e6a64460": {
+      "asset_sha256": "b000e6a64460278544b5ada5873621fec6e29f85d5f8689240736a4c9e45fbc4",
+      "compressed_bytes": 415624,
+      "uncompressed_bytes": 7260101
+    },
+    "binance-usdm-public-mark-funding-suiusdt-1790431934130-1790435432146-c538b3436c7a": {
+      "asset_sha256": "c538b3436c7a00236cca3ccfdba93e0428da2f084f23cd651bce67186c8db444",
+      "compressed_bytes": 404658,
+      "uncompressed_bytes": 7261155
+    },
+    "binance-usdm-public-mark-funding-tonusdt-1790364008124-1790367506125-decac9bf46b9": {
+      "asset_sha256": "decac9bf46b9ccfd2f6242ec6719e2ffbcf89d4caf3fe8a4876f383b88d7f4a1",
+      "compressed_bytes": 308618,
+      "uncompressed_bytes": 7230837
+    },
+    "binance-usdm-public-mark-funding-tonusdt-1790431934137-1790435432146-35f4b4fd2550": {
+      "asset_sha256": "35f4b4fd2550b19c220d3665a992cbe97bc6b6a650c5b1fd65e40c7d46882453",
+      "compressed_bytes": 308321,
+      "uncompressed_bytes": 7231093
+    },
+    "binance-usdm-public-mark-funding-trxusdt-1790364008119-1790367506120-6727649e77f5": {
+      "asset_sha256": "6727649e77f5fd4360d4301e478e4f8e65b1b7caf544d94300d4deb3bc35d1a7",
+      "compressed_bytes": 358210,
+      "uncompressed_bytes": 7276243
+    },
+    "binance-usdm-public-mark-funding-trxusdt-1790431934128-1790435432139-3d59b52780f2": {
+      "asset_sha256": "3d59b52780f24c9483905750e00e56633b882315df489e3afb6a27638dd19b1d",
+      "compressed_bytes": 359177,
+      "uncompressed_bytes": 7276783
+    },
+    "binance-usdm-public-mark-funding-wifusdt-1790364008124-1790367506125-88c8f845bf1a": {
+      "asset_sha256": "88c8f845bf1a88df340baedea21379f2d126faaa9e2e3a6547fe74f0b5a352ed",
+      "compressed_bytes": 360448,
+      "uncompressed_bytes": 7244259
+    },
+    "binance-usdm-public-mark-funding-wifusdt-1790431934130-1790435432146-c94aed538d39": {
+      "asset_sha256": "c94aed538d39ec5e69de6b391289859c9e283d54b9dd3d3e7cc005155b22e2ea",
+      "compressed_bytes": 369795,
+      "uncompressed_bytes": 7246813
+    },
+    "binance-usdm-public-mark-funding-xrpusdt-1790364008120-1790367506120-20a7ef1ffbf3": {
+      "asset_sha256": "20a7ef1ffbf37a867f963d5103547b64058abbc9dd211ec5bd5d0c7cd1222cd2",
+      "compressed_bytes": 406348,
+      "uncompressed_bytes": 7260465
+    },
+    "binance-usdm-public-mark-funding-xrpusdt-1790431934128-1790435432136-c1f1d884b398": {
+      "asset_sha256": "c1f1d884b39890851531c895711a5f912131f314732df82169cc75f9b1e78584",
+      "compressed_bytes": 404195,
+      "uncompressed_bytes": 7263048
+    },
+    "binance-usdm-public-ticker-adausdt-1790364007246-1790367504987-7531410a226b": {
+      "asset_sha256": "7531410a226bb7ef9f9d4c923ae24b549c79027cade22debd6527af3a5cc6500",
+      "compressed_bytes": 199094,
+      "uncompressed_bytes": 3107375
+    },
+    "binance-usdm-public-ticker-adausdt-1790431934875-1790435432811-8842fb36055d": {
+      "asset_sha256": "8842fb36055dcbadb714a9bfbbdf44f161b35ca6a29102b2112e80efcfdc4f66",
+      "compressed_bytes": 199301,
+      "uncompressed_bytes": 3133526
+    },
+    "binance-usdm-public-ticker-aptusdt-1790364007597-1790367505163-64eeeba7aac7": {
+      "asset_sha256": "64eeeba7aac7239a54466f33c54dcb4b52131a381991cceec7eb5e176c3f5b39",
+      "compressed_bytes": 249483,
+      "uncompressed_bytes": 3687766
+    },
+    "binance-usdm-public-ticker-aptusdt-1790431934225-1790435432780-4cf1d83132cf": {
+      "asset_sha256": "4cf1d83132cf35a2b1bedf74dbf790567c5305574b8c070652725bc172022eb5",
+      "compressed_bytes": 216141,
+      "uncompressed_bytes": 3217221
+    },
+    "binance-usdm-public-ticker-arbusdt-1790364007212-1790367505521-9c7bd5309251": {
+      "asset_sha256": "9c7bd53092512b5a34bd99b9d0761fde7c1247560055ec7e96e9adae28ee6644",
+      "compressed_bytes": 252076,
+      "uncompressed_bytes": 3690542
+    }
+  },
+  "unavailable_assets": 0
+}
