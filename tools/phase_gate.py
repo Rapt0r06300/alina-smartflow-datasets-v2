@@ -49,6 +49,11 @@ def load(path: Path) -> dict:
         or value["analysis_stage"] not in ANALYSIS_STAGES
     ):
         raise SystemExit("invalid ANALYZE state")
+    if phase=="ANALYZE":
+        started=datetime.fromisoformat(str(value["collection_started_at_utc"]).replace("Z","+00:00"))
+        cutoff=datetime.fromisoformat(str(value["collection_cutoff_at_utc"]).replace("Z","+00:00"))
+        if cutoff < started:
+            raise SystemExit("ANALYZE cutoff precedes collection start")
     return value
 
 def main() -> int:
