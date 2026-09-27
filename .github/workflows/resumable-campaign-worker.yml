@@ -313,7 +313,7 @@ jobs:
           esac
 
       - name: Record immutable publication receipt
-        if: steps.claim.outputs.skip != 'true' && steps.unit.outcome == 'success' && steps.durable.outcome == 'success'
+        if: ${{ false }}
         shell: bash
         env:
           PHASE: "${{ steps.pin.outputs.phase }}"
@@ -424,6 +424,48 @@ jobs:
           done
           exit 1
 
+
+
+      - name: Record publication receipt after final checkpoint
+        if: steps.claim.outputs.skip != 'true' && steps.unit.outcome == 'success' && steps.durable.outcome == 'success'
+        shell: bash
+        env:
+          PHASE: "${{ steps.pin.outputs.phase }}"
+          PHASE_EPOCH: "${{ steps.pin.outputs.phase_epoch }}"
+          RELEASE_TAG: "${{ steps.durable.outputs.release_tag }}"
+          EVIDENCE_TAG: "${{ steps.durable.outputs.evidence_tag }}"
+        run: |
+          set -euo pipefail
+          M="catalog/campaigns/$CAMPAIGN_ID.json"
+          KIND="${{ steps.unit.outputs.kind }}"
+          UNIT="${{ steps.unit.outputs.unit }}"
+          CODE_SHA="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["code_sha"])' "$M")"
+          GENERATION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["dataset_generation"])' "$M")"
+          SOURCE_EPOCH="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("source_collection_epoch") or "")' "$M")"
+          CUTOFF="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("collection_cutoff_at_utc") or "")' "$M")"
+          SELECTION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("dataset_selection_id") or "")' "$M")"
+          CHECKPOINT="$(python -c 'import json,sys; print((json.load(open(sys.argv[1])).get("cursor") or {}).get("checkpoint_id") or "")' "$M")"
+          STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+          DATASET_HEAD="$(git rev-parse HEAD)"
+          MANIFEST_SHA="$(sha256sum "$M" | cut -d' ' -f1)"
+          python tools/record_publication_receipt.py \\
+            --campaign-id "$CAMPAIGN_ID" --unit-id "$UNIT" --kind "$KIND" --status "$STATUS" \\
+            --phase "$PHASE" --phase-epoch "$PHASE_EPOCH" --code-sha "$CODE_SHA" \\
+            --dataset-generation "$GENERATION" --source-collection-epoch "$SOURCE_EPOCH" \\
+            --collection-cutoff-at-utc "$CUTOFF" --dataset-selection-id "$SELECTION" \\
+            --checkpoint-id "$CHECKPOINT" --alina-head "$CODE_SHA" --dataset-head "$DATASET_HEAD" \\
+            --manifest-sha256 "$MANIFEST_SHA" --release-tag "$RELEASE_TAG" \\
+            --evidence-tag "$EVIDENCE_TAG" --result "$RUNNER_TEMP/result.json"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/receipts
+          git diff --cached --quiet && exit 0
+          git commit -m "campaign: publish receipt $CAMPAIGN_ID"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep $((i*2))
+          done
+          exit 1
 
       - name: Dispatch current-epoch collection successor
         if: steps.claim.outputs.skip != 'true' && steps.pin.outputs.phase == 'COLLECT' && steps.unit.outcome == 'success' && (inputs.max_units == 0 || inputs.max_units == '')
