@@ -1,7 +1,7 @@
 {
-  "attempts": 1,
+  "attempts": 2,
   "campaign_id": "market-2026092610-v4",
-  "chunk_index": 1,
+  "chunk_index": 2,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "953769476108d8dd61ade47ed4e0fd1d442aeffb",
   "completed_units": {
@@ -14,10 +14,20 @@
         "status": "FAILED"
       },
       "sha256": "fc3d5edb3e50f0ef3d7f58b574a965fc3d2d776744ee28217f61338ddbe3f0a9"
+    },
+    "1": {
+      "result": {
+        "failure_category": "INFRASTRUCTURE",
+        "previous_sha256": "111efc4143cfb24c11e37974d2f32e0a6e01db42a0a4e0f3edf88c2f01e290a0",
+        "previous_status": "COMPLETE",
+        "reason": "durable_publication_failed",
+        "status": "FAILED"
+      },
+      "sha256": "e2cd2ec7ab0a89b9ddfbf4ab7cea8952c7323e061f425af026446ef012162986"
     }
   },
   "config_sha256": "bb02720d9c632da42069136b1f64c289c8888a53efe6a4731db6be4548b246bc",
-  "consecutive_failures": 1,
+  "consecutive_failures": 2,
   "created_at": "2026-09-26T10:56:51.712043+00:00",
   "cursor": {
     "coins": "BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT",
@@ -45,15 +55,16 @@
       "from": "CONTINUATION_REQUIRED",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-27T03:29:14.928524Z",
+      "from": "RUNNING",
+      "reason": "durable_publication_failed",
+      "to": "CONTINUATION_REQUIRED"
     }
   ],
   "kind": "market_collection",
-  "lease": {
-    "acquired_at": "2026-09-27T02:25:22.862133Z",
-    "expires_at": "2026-09-27T08:10:22.862133Z",
-    "lease_token_sha256": "1859297492d256f489916eccd40411c06c5580516e6164ddb9201b0893fbd60a",
-    "owner_run_id": "36282528467"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -62,14 +73,14 @@
     "max_wall_clock_s": 86400
   },
   "next_due_at": null,
-  "no_progress_count": 1,
+  "no_progress_count": 2,
   "outputs": [],
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-27T02:25:22.862179Z",
+  "status": "CONTINUATION_REQUIRED",
+  "status_reason": "durable_publication_failed",
+  "updated_at": "2026-09-27T03:29:14.928524Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
