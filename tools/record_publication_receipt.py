@@ -23,6 +23,10 @@ def main():
     p.add_argument("--phase-epoch", required=True, type=int)
     p.add_argument("--code-sha", required=True)
     p.add_argument("--dataset-generation", required=True)
+    p.add_argument("--source-collection-epoch")
+    p.add_argument("--collection-cutoff-at-utc")
+    p.add_argument("--dataset-selection-id")
+    p.add_argument("--checkpoint-id")
     p.add_argument("--release-tag")
     p.add_argument("--evidence-tag")
     p.add_argument("--result", required=True)
@@ -44,6 +48,14 @@ def main():
         "phase_epoch": a.phase_epoch,
         "code_sha": a.code_sha,
         "dataset_generation": a.dataset_generation,
+        "source_collection_epoch": (
+            int(a.source_collection_epoch)
+            if a.source_collection_epoch not in (None, "")
+            else None
+        ),
+        "collection_cutoff_at_utc": a.collection_cutoff_at_utc or None,
+        "dataset_selection_id": a.dataset_selection_id or None,
+        "checkpoint_id": a.checkpoint_id or None,
         "release_tag": a.release_tag or None,
         "evidence_tag": a.evidence_tag or None,
         "result_sha256": hashlib.sha256(canonical(result).encode()).hexdigest(),
