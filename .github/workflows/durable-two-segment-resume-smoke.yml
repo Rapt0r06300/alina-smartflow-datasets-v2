@@ -1,0 +1,73 @@
+name: durable-two-segment-resume-smoke
+on:
+  workflow_dispatch:
+    inputs:
+      campaign_id:
+        description: "Existing current-epoch continuation campaign"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: durable-two-segment-resume-${{ inputs.campaign_id }}
+  cancel-in-progress: false
+jobs:
+  segment_a:
+    name: Segment A durable checkpoint
+    uses: ./.github/workflows/resumable-campaign-worker.yml
+    with:
+      campaign_id: ${{ inputs.campaign_id }}
+    permissions:
+      contents: write
+
+  segment_b:
+    name: Segment B fresh-runner resume
+    needs: segment_a
+    uses: ./.github/workflows/resumable-campaign-worker.yml
+    with:
+      campaign_id: ${{ inputs.campaign_id }}
+    permissions:
+      contents: write
+
+  receipt:
+    name: Publish two-segment receipt
+    needs: [segment_a, segment_b]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 1
+      - name: Build cloud resume receipt
+        env:
+          CAMPAIGN_ID: ${{ inputs.campaign_id }}
+          SEGMENT_A_RESULT: ${{ needs.segment_a.result }}
+          SEGMENT_B_RESULT: ${{ needs.segment_b.result }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path("catalog/RESUME_SMOKE_RECEIPT.json")
+          payload = {
+              "schema": "alina.two_segment_resume_receipt.v1",
+              "workflow_run_id": os.environ["GITHUB_RUN_ID"],
+              "segment_a_workflow_result": os.environ["SEGMENT_A_RESULT"],
+              "segment_b_workflow_result": os.environ["SEGMENT_B_RESULT"],
+              "campaign_id": os.environ["CAMPAIGN_ID"],
+              "fresh_runner_for_segment_b": True,
+              "runner_filesystem_reused": False,
+              "durable_dataset_state_required": True,
+              "paper_only": True,
+              "read_only": True,
+              "real_execution": False,
+          }
+          path.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+          PY
+      - name: Upload resume receipt
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: two-segment-resume-receipt-${{ github.run_id }}
+          path: catalog/RESUME_SMOKE_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 30
