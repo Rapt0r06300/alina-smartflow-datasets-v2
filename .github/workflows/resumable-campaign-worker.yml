@@ -59,6 +59,9 @@ jobs:
       CAMPAIGN_ID: "${{ inputs.campaign_id }}"
       GH_TOKEN: "${{ github.token }}"
       MAX_UNITS: "${{ inputs.max_units || '0' }}"
+      HANDOFF_PHASE_EPOCH: "${{ inputs.phase_epoch || '' }}"
+      HANDOFF_GENERATION: "${{ inputs.generation || '' }}"
+      PREDECESSOR_RUN_ID: "${{ inputs.predecessor_run_id || '' }}"
       REAL_MAINNET_TRADING: "false"
       ENABLE_REAL_ORDERS: "0"
     steps:
@@ -378,6 +381,8 @@ jobs:
           m.cursor["last_run_id"] = os.environ.get("GITHUB_RUN_ID")
           m.cursor["generation"] = int(m.chunk_index)
           m.cursor["handoff_phase_epoch"] = m.phase_epoch
+          m.cursor["predecessor_run_id"] = os.environ.get("PREDECESSOR_RUN_ID") or None
+          m.cursor["handoff_generation"] = os.environ.get("HANDOFF_GENERATION") or None
           open(p,"w").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
           PY
           git config user.name github-actions[bot]
