@@ -70,6 +70,11 @@ def build() -> dict[str, Any]:
         "TOTAL_RECORDS": 0,
         "TOTAL_SAFE_RECORDS": 0,
         "TOTAL_REPLAYABLE_RECORDS": 0,
+        "TOTAL_INVALID_RECORDS": 0,
+        "TOTAL_DUPLICATE_RECORDS": 0,
+        "TOTAL_GAP_RECORDS": 0,
+        "TOTAL_QUARANTINED_RECORDS": 0,
+        "TOTAL_REJECTED_RECORDS": 0,
         "TOTAL_COMPRESSED_BYTES": 0,
         "TOTAL_UNCOMPRESSED_BYTES": 0,
         "UNCOMPRESSED_SIZE_EXACT_ASSETS": 0,
@@ -90,6 +95,9 @@ def build() -> dict[str, Any]:
         status = str(row.get("quality_status") or "")
         replay = row.get("replay_compatible") is True
         records = _int(row.get("record_count") or row.get("event_count"))
+        invalid = _int(row.get("invalid_record_count"))
+        duplicates = _int(row.get("duplicate_count"))
+        gaps = _int(row.get("gap_count"))
         compressed = _int(row.get("bytes"))
         size_entry = size_rows.get(str(row.get("dataset_id")))
         if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
@@ -112,6 +120,13 @@ def build() -> dict[str, Any]:
         unique_trades = _int(row.get("unique_trade_count")) if unique_exact else 0
 
         totals["TOTAL_RECORDS"] += records
+        totals["TOTAL_INVALID_RECORDS"] += invalid
+        totals["TOTAL_DUPLICATE_RECORDS"] += duplicates
+        totals["TOTAL_GAP_RECORDS"] += gaps
+        if status in {"PARTIAL", "QUARANTINE", "QUARANTINED"}:
+            totals["TOTAL_QUARANTINED_RECORDS"] += records
+        if status in {"REJECT", "REJECTED"}:
+            totals["TOTAL_REJECTED_RECORDS"] += records
         totals["TOTAL_COMPRESSED_BYTES"] += compressed
         totals["TOTAL_UNCOMPRESSED_BYTES"] += uncompressed
 
