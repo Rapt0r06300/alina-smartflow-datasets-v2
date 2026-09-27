@@ -171,7 +171,12 @@ def main():
         if old_receipt != receipt:
             raise SystemExit("analysis stage receipt identity conflict")
     else:
-        receipt_path.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        temporary_receipt = receipt_path.with_suffix(receipt_path.suffix + ".tmp")
+        temporary_receipt.write_text(
+            json.dumps(receipt, sort_keys=True, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        os.replace(temporary_receipt, receipt_path)
     print(json.dumps(state, sort_keys=True))
 
 
