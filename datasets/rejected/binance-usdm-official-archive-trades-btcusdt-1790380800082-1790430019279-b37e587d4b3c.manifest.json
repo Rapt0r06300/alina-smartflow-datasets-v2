@@ -1,4 +1,5 @@
 {
+  "asset_sha256": "b37e587d4b3cf5cab4dafbc5492488b49ca05937828767e459a45b6fcbcb3b1b",
   "asset_verified": true,
   "bytes": 14536857,
   "collection_run_id": "archives-binance-btc-20260927-v4-0",
@@ -45,6 +46,7 @@
     "status": "UNVERIFIED"
   },
   "record_count": 200000,
+  "record_count_scanned": 200000,
   "release": {
     "asset_id": 593469210,
     "asset_name": "binance-usdm-official-archive-trades-btcusdt-1790380800082-1790430019279-b37e587d4b3c.jsonl.gz",
@@ -101,6 +103,8 @@
   },
   "trade_count": 200000,
   "trade_count_exact": true,
+  "unique_trade_count": null,
+  "unique_trade_count_exact": false,
   "validation_allowed": false,
   "venue": "binance"
 }

@@ -1,4 +1,5 @@
 {
+  "asset_sha256": "ddca95b5578d2d009d29138405f20bf84c7b78a016a53b5e92236f25edd60473",
   "asset_verified": true,
   "bytes": 16721884,
   "collection_run_id": "archives-bybit-btc-20260927-v4-0",
@@ -45,6 +46,7 @@
     "status": "UNVERIFIED"
   },
   "record_count": 190000,
+  "record_count_scanned": 190000,
   "release": {
     "asset_id": 593468929,
     "asset_name": "bybit-official-archive-trades-btcusdt-1790414036019-1790455263519-ddca95b5578d.jsonl.gz",
@@ -101,6 +103,8 @@
   },
   "trade_count": 190000,
   "trade_count_exact": true,
+  "unique_trade_count": null,
+  "unique_trade_count_exact": false,
   "validation_allowed": false,
   "venue": "bybit"
 }
