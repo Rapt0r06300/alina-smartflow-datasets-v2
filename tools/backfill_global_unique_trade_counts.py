@@ -4,9 +4,31 @@ from __future__ import annotations
 import argparse, hashlib, json, sqlite3, shutil, tempfile
 from pathlib import Path
 from typing import Any, Mapping
-from backfill_exact_trade_counts import _candidate, _download, _native_trade_keys, _load_patch
+from backfill_exact_trade_counts import _download, _native_trade_keys, _load_patch
 
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def _unique_candidate(row: Mapping[str, Any], covered: set[str]) -> bool:
+    dataset_id = str(row.get("dataset_id") or "")
+    if not dataset_id or dataset_id in covered:
+        return False
+    if row.get("trade_count_exact") is not True:
+        return False
+    return bool(
+        row.get("release_repository")
+        and row.get("release_tag")
+        and row.get("release_asset")
+        and row.get("sha256")
+        and row.get("bytes")
+    )
+
+
+def _remaining(rows: list[object], covered: set[str]) -> list[Mapping[str, Any]]:
+    return [
+        row for row in rows
+        if isinstance(row, Mapping) and _unique_candidate(row, covered)
+    ]
 INDEX_PATH=ROOT/"catalog"/"DATA_INDEX.json"
 PATCH_PATH=ROOT/"catalog"/"TRADE_UNIQUE_COUNT_PATCH.json"
 
@@ -27,7 +49,7 @@ def main():
     counts=prior.get("counts") if isinstance(prior.get("counts"),dict) else {}
     covered=set(prior.get("covered_dataset_ids") or [])
     candidates=sorted(
-        [r for r in rows if isinstance(r,Mapping) and _candidate(r,exact_patch.get("counts",{})) and str(r.get("dataset_id")) not in covered],
+        _remaining(rows, covered),
         key=lambda r:str(r.get("dataset_id") or ""),
     )[:max(1,args.limit)]
     attempted=0; failed=[]
@@ -74,10 +96,10 @@ def main():
         "covered_dataset_ids":sorted(covered),
         "attempted":attempted,
         "failed":failed,
-        "remaining_candidate_shards":len([r for r in rows if isinstance(r,Mapping) and _candidate(r,exact_patch.get("counts",{})) and str(r.get("dataset_id")) not in covered]),
+        "remaining_candidate_shards":len(_remaining(rows, covered)),
         "global_unique_trade_count":global_count,
         "global_identity_digest":hashlib.sha256(json.dumps(identity_rows,separators=(",",":")).encode()).hexdigest(),
-        "coverage_complete":len(failed)==0 and not [r for r in rows if isinstance(r,Mapping) and _candidate(r,exact_patch.get("counts",{})) and str(r.get("dataset_id")) not in covered],
+        "coverage_complete":len(failed)==0 and not _remaining(rows, covered),
     }
     PATCH_PATH.write_text(json.dumps(result,sort_keys=True,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({k:result[k] for k in ("attempted","global_unique_trade_count","remaining_candidate_shards","coverage_complete")},sort_keys=True))
