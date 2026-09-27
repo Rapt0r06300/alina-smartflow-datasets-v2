@@ -21,6 +21,14 @@ on:
         required: false
         default: ""
         type: string
+      requested_handoff_at_utc:
+        required: false
+        default: ""
+        type: string
+      requested_handoff_at_utc:
+        required: false
+        default: ""
+        type: string
   workflow_call:
     inputs:
       campaign_id:
@@ -62,6 +70,7 @@ jobs:
       HANDOFF_PHASE_EPOCH: "${{ inputs.phase_epoch || '' }}"
       HANDOFF_GENERATION: "${{ inputs.generation || '' }}"
       PREDECESSOR_RUN_ID: "${{ inputs.predecessor_run_id || '' }}"
+      REQUESTED_HANDOFF_AT_UTC: "${{ inputs.requested_handoff_at_utc || '' }}"
       REAL_MAINNET_TRADING: "false"
       ENABLE_REAL_ORDERS: "0"
     steps:
@@ -400,6 +409,9 @@ jobs:
           m.cursor["handoff_phase_epoch"] = m.phase_epoch
           m.cursor["predecessor_run_id"] = os.environ.get("PREDECESSOR_RUN_ID") or None
           m.cursor["handoff_generation"] = os.environ.get("HANDOFF_GENERATION") or None
+          m.cursor["requested_handoff_at_utc"] = (
+              os.environ.get("REQUESTED_HANDOFF_AT_UTC") or None
+          )
           open(p,"w").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
           PY
           git config user.name github-actions[bot]
