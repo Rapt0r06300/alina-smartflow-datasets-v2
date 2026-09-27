@@ -1,0 +1,38 @@
+name: advance-analysis-stage
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "Monotonic ANALYZE stage"
+        required: true
+        type: choice
+        options: [DRAIN, QUALITY, REPLAY, BACKTEST, OOS, FORWARD_PAPER, PNL_PROOF, SCOREBOARD, DONE]
+      request_id:
+        required: true
+        type: string
+      expected_epoch:
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  advance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Advance stage
+        run: |
+          set -euo pipefail
+          python tools/advance_analysis_stage.py             --stage "${{ inputs.stage }}"             --request-id "${{ inputs.request_id }}"             --expected-epoch "${{ inputs.expected_epoch }}"
+      - name: Persist stage
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add control/alina-phase.json
+          git diff --cached --quiet && exit 0
+          git commit -m "phase: advance analysis stage to ${{ inputs.stage }}"
+          git push origin HEAD:main
