@@ -135,6 +135,11 @@ jobs:
           part.update({
               "chunk_index":idx,
               "code_sha":m.get("code_sha"),
+              "creation_phase":m.get("creation_phase"),
+              "phase_epoch":m.get("phase_epoch"),
+              "source_collection_epoch":m.get("source_collection_epoch"),
+              "collection_cutoff_at_utc":m.get("collection_cutoff_at_utc"),
+              "dataset_selection_id":m.get("dataset_selection_id"),
               "output_root":os.path.join(os.environ["RUNNER_TEMP"],"campaign-output"),
           })
           if kind=="market_collection":
