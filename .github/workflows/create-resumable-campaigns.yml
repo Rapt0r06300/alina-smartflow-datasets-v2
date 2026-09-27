@@ -9,6 +9,8 @@ on:
       - 'tools/manifest_policy.py'
       - 'tools/index_run_manifest.py'
       - 'tools/phase_gate.py'
+      - 'tools/apply_operator_controls.py'
+      - 'tools/set_phase.py'
       - 'control/alina-phase.json'
   schedule:
     - cron: '2 * * * *'
@@ -60,6 +62,7 @@ jobs:
           REPLAY_START_MS="$((NOW_MS - 6 * 60 * 60 * 1000))"
           ECON_START_MS="$((NOW_MS - 7 * 24 * 60 * 60 * 1000))"
           CODE_SHA="$(git -C alina rev-parse HEAD)"
+          PYTHONPATH=alina/src python tools/apply_operator_controls.py --alina-root alina --phase-path control/alina-phase.json
           PHASE_META="$(python tools/phase_gate.py read)"
           PHASE="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["phase"])' "$PHASE_META")"
           PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
