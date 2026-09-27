@@ -161,7 +161,7 @@ jobs:
                   part["selection_file"]=os.path.abspath(str(part["selection_file"]))
           elif kind=="official_archive_collection":
               part.setdefault("max_days",1)
-          elif kind in {"replay","backtest","module_pnl_proof"}:
+          elif kind in {"replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard"}:
               part["workspace_root"]=os.path.join(
                   os.environ["RUNNER_TEMP"],
                   "alina-replay-workspace",
@@ -231,7 +231,7 @@ jobs:
               python tools/augment_campaign_result.py collection                 --result "$RESULT"                 --run-manifest "$BUNDLE/RUN_MANIFEST.json"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
               echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
               ;;
-            replay|backtest|module_pnl_proof)
+            replay|backtest|oos|forward_paper|module_pnl_proof|scoreboard)
               WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
               EVIDENCE_DIR="$RUNNER_TEMP/evidence"
               EVIDENCE="$RUNNER_TEMP/$CAMPAIGN_ID-u$UNIT-evidence.tgz"
