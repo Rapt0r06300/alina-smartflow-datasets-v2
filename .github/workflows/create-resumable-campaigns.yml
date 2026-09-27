@@ -65,6 +65,7 @@ jobs:
           PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
           SOURCE_COLLECTION_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["source_collection_epoch"] or "")' "$PHASE_META")"
           COLLECTION_CUTOFF="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["collection_cutoff_at_utc"] or "")' "$PHASE_META")"
+          REQUEST_ID="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("request_id") or "phase-"+str(json.loads(sys.argv[1])["epoch"]))' "$PHASE_META")"
           if [ "$PHASE" = "IDLE" ]; then
             echo "IDLE: no new campaign intent is created"
             exit 0
@@ -73,8 +74,9 @@ jobs:
           if [ "$PHASE" = "ANALYZE" ]; then
             test -n "$SOURCE_COLLECTION_EPOCH"
             test -n "$COLLECTION_CUTOFF"
-            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF")
+            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF" --dataset-selection-id "phase-${SOURCE_COLLECTION_EPOCH}-${COLLECTION_CUTOFF}" --operator-request-id "$REQUEST_ID")
           fi
+          PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
 
           make_campaign() {
