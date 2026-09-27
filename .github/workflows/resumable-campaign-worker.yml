@@ -447,4 +447,5 @@ jobs:
             -f campaign_id="$CAMPAIGN_ID" \
             -f phase_epoch="${{ steps.pin.outputs.phase_epoch }}" \
             -f generation="$UNIT" \
-            -f predecessor_run_id="$GITHUB_RUN_ID"
+            -f predecessor_run_id="$GITHUB_RUN_ID" \
+            -f requested_handoff_at_utc="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
