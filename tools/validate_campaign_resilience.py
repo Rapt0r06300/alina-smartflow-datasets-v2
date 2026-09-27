@@ -96,6 +96,8 @@ def main() -> int:
             "campaign_id": campaign_id,
             "status": manifest.get("status"),
             "schema_version": manifest.get("schema_version"),
+            "analysis_stage": manifest.get("analysis_stage"),
+            "terminal_evidence_digest": manifest.get("terminal_evidence_digest"),
             "checkpoint_count": len(manifest.get("checkpoint_lineage") or []),
             "completed_unit_count": len(units),
             "history_count": len(manifest.get("history") or []),
