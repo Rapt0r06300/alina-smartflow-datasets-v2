@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - "catalog/campaigns/**"
+      - "control/alina-phase.json"
       - "tools/campaign_watchdog.py"
       - ".github/workflows/campaign-watchdog.yml"
 permissions:
