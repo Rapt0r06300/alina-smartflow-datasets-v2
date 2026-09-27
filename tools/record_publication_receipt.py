@@ -56,6 +56,7 @@ def main():
         "collection_cutoff_at_utc": a.collection_cutoff_at_utc or None,
         "dataset_selection_id": a.dataset_selection_id or None,
         "checkpoint_id": a.checkpoint_id or None,
+        "analysis_stage": payload.get("analysis_stage"),
         "release_tag": a.release_tag or None,
         "evidence_tag": a.evidence_tag or None,
         "result_sha256": hashlib.sha256(canonical(result).encode()).hexdigest(),
