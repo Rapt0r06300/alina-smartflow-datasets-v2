@@ -21,10 +21,10 @@ def main():
     all_rows=[r for r in rows if isinstance(r,Mapping) and r.get("dataset_id")]
     for row in all_rows:
         dataset_id=str(row["dataset_id"])
-        if dataset_id in sizes:
+        if dataset_id in sizes and not (isinstance(sizes.get(dataset_id), Mapping) and sizes[dataset_id].get("retryable") is True):
             continue
         if not (row.get("release_repository") and row.get("release_tag") and row.get("release_asset")):
-            sizes[dataset_id]={"status":"UNAVAILABLE","reason":"no_immutable_release_asset"}
+            sizes[dataset_id]={"status":"UNAVAILABLE","reason":"no_immutable_release_asset","retryable":False}
     candidates=sorted([r for r in all_rows if str(r.get("dataset_id")) not in sizes],key=lambda r:str(r.get("dataset_id")))[:max(1,a.limit)]
     failed=[]; attempted=0
     with tempfile.TemporaryDirectory(prefix="alina-uncompressed-") as tmp:
@@ -39,7 +39,7 @@ def main():
             except Exception as exc:
                 reason=f"{type(exc).__name__}:{str(exc)[:240]}"
                 failed.append({"dataset_id":dataset_id,"reason":reason})
-                sizes[dataset_id]={"status":"UNAVAILABLE","reason":reason}
+                sizes[dataset_id]={"status":"UNAVAILABLE","reason":reason,"retryable":True}
             shutil.rmtree(Path(tmp)/dataset_id,ignore_errors=True)
     remaining=len([r for r in rows if isinstance(r,Mapping) and str(r.get("dataset_id")) not in sizes and r.get("release_repository") and r.get("release_tag") and r.get("release_asset")])
     body={"schema":"alina.uncompressed_size_patch.v1","method":"exact_gzip_decompression_byte_count","sizes":dict(sorted(sizes.items())),"attempted":attempted,"failed":failed,"remaining_assets":remaining,"coverage_complete":remaining==0 and not failed}
