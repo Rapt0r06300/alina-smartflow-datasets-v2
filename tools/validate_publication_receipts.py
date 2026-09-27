@@ -29,6 +29,11 @@ def main():
                     raise SystemExit(f"{path}: missing cross-repository publication field {key}")
             if len(str(row["manifest_sha256"])) != 64:
                 raise SystemExit(f"{path}: invalid manifest_sha256")
+        expected_id=f'{row["campaign_id"]}:u{row["unit_id"]}'
+        if row["receipt_id"] != expected_id:
+            raise SystemExit(f"{path}: receipt identity mismatch")
+        if path.stem != f'{row["campaign_id"]}-u{row["unit_id"]}':
+            raise SystemExit(f"{path}: receipt filename identity mismatch")
         if row["receipt_id"] in seen:
             raise SystemExit(f"{path}: duplicate receipt identity")
         seen.add(row["receipt_id"])
