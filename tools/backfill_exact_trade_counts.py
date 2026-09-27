@@ -272,6 +272,34 @@ def _download(row: Mapping[str, Any], destination: Path) -> Path:
     return path
 
 
+def _persist_manifest_counts(row: Mapping[str, Any], result: Mapping[str, Any]) -> None:
+    manifest_path = ROOT / str(row.get("manifest_path") or "")
+    if not manifest_path.is_file():
+        return
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return
+    if not isinstance(manifest, dict):
+        return
+    for key in (
+        "trade_count",
+        "trade_count_exact",
+        "unique_trade_count",
+        "unique_trade_count_exact",
+        "record_count_scanned",
+        "asset_sha256",
+    ):
+        if key in result:
+            manifest[key] = result[key]
+    temporary = manifest_path.with_suffix(manifest_path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temporary, manifest_path)
+
+
 def _load_patch() -> dict[str, Any]:
     if not PATCH_PATH.is_file():
         return {
@@ -364,6 +392,7 @@ def backfill(limit: int) -> dict[str, Any]:
                 continue
             counts[dataset_id] = result
             row.update(result)
+            _persist_manifest_counts(row, result)
             updated += 1
             shutil.rmtree(tmp_root / dataset_id, ignore_errors=True)
 
