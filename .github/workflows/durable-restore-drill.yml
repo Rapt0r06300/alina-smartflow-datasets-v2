@@ -1,0 +1,19 @@
+name: durable-restore-drill
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: durable-restore-drill
+  cancel-in-progress: false
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          clean: true
+      - name: Reconstruct durable state without cache
+        run: python tools/restore_durable_state.py
