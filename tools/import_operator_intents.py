@@ -111,7 +111,19 @@ def main():
         for campaign_kind in campaign_kinds(intent):
             campaign_id = "operator-" + request_id[:32] + "-" + campaign_kind
             target = Path("catalog/campaigns") / (campaign_id + ".json")
+            receipt_target = Path("catalog/dispatch-receipts") / (campaign_id + ".json")
             if target.exists():
+                if not receipt_target.exists():
+                    existing = json.loads(target.read_text(encoding="utf-8"))
+                    write_dispatch_receipt(
+                        campaign_id=campaign_id,
+                        request_id=request_id,
+                        code_sha=str(existing.get("code_sha") or args.code_sha),
+                        dataset_sha=args.dataset_repo_sha,
+                        phase=str(existing.get("creation_phase") or args.phase),
+                        phase_epoch=int(existing.get("phase_epoch") or args.phase_epoch),
+                        source_epoch=existing.get("source_collection_epoch"),
+                    )
                 continue
 
             config = dict(row.get("config") or {})
