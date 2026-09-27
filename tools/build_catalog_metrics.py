@@ -92,6 +92,7 @@ def build() -> dict[str, Any]:
         "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 0,
         "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
         "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
+        "TOTAL_CROSS_SHARD_OVERLAP_TRADES": 0,
     }
     by_venue: dict[str, dict[str, int]] = {}
     by_symbol: dict[str, dict[str, int]] = {}
@@ -228,6 +229,7 @@ def build() -> dict[str, Any]:
                 global_unique_digest = unique_patch.get("global_identity_digest")
                 global_unique_complete = unique_patch.get("coverage_complete") is True
                 totals["GLOBAL_UNIQUE_FAILURE_REASON_COUNT"] = len(unique_patch.get("failure_reasons") or {})
+                totals["TOTAL_CROSS_SHARD_OVERLAP_TRADES"] = _int(unique_patch.get("cross_shard_overlap_count"))
         except (OSError, ValueError, TypeError):
             global_unique = None
     totals["TOTAL_UNIQUE_TRADES_GLOBAL"] = int(global_unique) if isinstance(global_unique, int) else None
