@@ -91,6 +91,7 @@ def build() -> dict[str, Any]:
         "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
         "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 0,
         "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
+        "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
     }
     by_venue: dict[str, dict[str, int]] = {}
     by_symbol: dict[str, dict[str, int]] = {}
@@ -226,6 +227,7 @@ def build() -> dict[str, Any]:
                 global_unique = unique_patch.get("global_unique_trade_count")
                 global_unique_digest = unique_patch.get("global_identity_digest")
                 global_unique_complete = unique_patch.get("coverage_complete") is True
+                totals["GLOBAL_UNIQUE_FAILURE_REASON_COUNT"] = len(unique_patch.get("failure_reasons") or {})
         except (OSError, ValueError, TypeError):
             global_unique = None
     totals["TOTAL_UNIQUE_TRADES_GLOBAL"] = int(global_unique) if isinstance(global_unique, int) else None
