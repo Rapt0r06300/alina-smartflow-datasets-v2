@@ -255,6 +255,24 @@ jobs:
               ;;
           esac
 
+      - name: Record immutable publication receipt
+        if: steps.claim.outputs.skip != 'true' && steps.unit.outcome == 'success' && steps.durable.outcome == 'success'
+        shell: bash
+        env:
+          PHASE: "${{ steps.pin.outputs.phase }}"
+          PHASE_EPOCH: "${{ steps.pin.outputs.phase_epoch }}"
+          RELEASE_TAG: "${{ steps.durable.outputs.release_tag }}"
+          EVIDENCE_TAG: "${{ steps.durable.outputs.evidence_tag }}"
+        run: |
+          set -euo pipefail
+          M="catalog/campaigns/$CAMPAIGN_ID.json"
+          KIND="${{ steps.unit.outputs.kind }}"
+          UNIT="${{ steps.unit.outputs.unit }}"
+          CODE_SHA="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["code_sha"])' "$M")"
+          GENERATION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["dataset_generation"])' "$M")"
+          STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+          python tools/record_publication_receipt.py             --campaign-id "$CAMPAIGN_ID"             --unit-id "$UNIT"             --kind "$KIND"             --status "$STATUS"             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --code-sha "$CODE_SHA"             --dataset-generation "$GENERATION"             --release-tag "$RELEASE_TAG"             --evidence-tag "$EVIDENCE_TAG"             --result "$RUNNER_TEMP/result.json"
+
       - name: Downgrade result when durability failed
         if: steps.claim.outputs.skip != 'true' && steps.durable.outcome == 'failure' && always()
         shell: bash
@@ -318,7 +336,7 @@ jobs:
           PY
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add "$M"
+          git add "$M" catalog/receipts
           git commit -m "campaign: checkpoint $CAMPAIGN_ID"
           for i in 1 2 3 4 5; do
             if git pull --rebase origin main && git push origin HEAD:main; then
