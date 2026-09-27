@@ -54,6 +54,7 @@ def _dispatch_successor(row: dict, repository: str, now: datetime) -> tuple[bool
         "-f", f"phase_epoch={row.get('phase_epoch')}",
         "-f", f"generation={int(row.get('chunk_index') or 0)}",
         "-f", f"predecessor_run_id={predecessor or 'unknown'}",
+        "-f", f"requested_handoff_at_utc={now.isoformat().replace('+00:00', 'Z')}",
     ]
     cp = subprocess.run(command, text=True, capture_output=True, check=False)
     if cp.returncode != 0:
