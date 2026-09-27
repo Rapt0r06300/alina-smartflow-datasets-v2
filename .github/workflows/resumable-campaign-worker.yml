@@ -5,11 +5,19 @@ on:
       campaign_id:
         required: true
         type: string
+      max_units:
+        required: false
+        default: "0"
+        type: string
   workflow_call:
     inputs:
       campaign_id:
         required: true
         type: string
+      max_units:
+        required: false
+        default: 0
+        type: number
 
 permissions:
   contents: write
@@ -26,6 +34,7 @@ jobs:
     env:
       CAMPAIGN_ID: "${{ inputs.campaign_id }}"
       GH_TOKEN: "${{ github.token }}"
+      MAX_UNITS: "${{ inputs.max_units || '0' }}"
       REAL_MAINNET_TRADING: "false"
       ENABLE_REAL_ORDERS: "0"
     steps:
@@ -361,7 +370,7 @@ jobs:
 
 
       - name: Dispatch current-epoch collection successor
-        if: steps.claim.outputs.skip != 'true' && steps.pin.outputs.phase == 'COLLECT' && steps.unit.outcome == 'success'
+        if: steps.claim.outputs.skip != 'true' && steps.pin.outputs.phase == 'COLLECT' && steps.unit.outcome == 'success' && (inputs.max_units == 0 || inputs.max_units == '')
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
