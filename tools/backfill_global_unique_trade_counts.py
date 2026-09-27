@@ -86,7 +86,7 @@ def main():
             attempted+=1; dataset_id=str(row.get("dataset_id") or "")
             try:
                 asset=_download(row,Path(tmp)/dataset_id)
-                total=0; unique=0; exact=True; shard_ids=set()
+                total=0; unique=0; global_new=0; exact=True; shard_ids=set()
                 import gzip
                 with gzip.open(asset,"rt",encoding="utf-8") as handle:
                     for line in handle:
@@ -102,15 +102,19 @@ def main():
                             before=db.total_changes
                             db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(d,))
                             inserted = int(db.total_changes > before)
-                            unique += inserted
+                            global_new += inserted
                             shard_ids.add(d)
                 if not exact:
                     failed.append({"dataset_id":dataset_id,"reason":"identity_missing"})
                     continue
+                unique=len(shard_ids)
                 counts[dataset_id]={
                     "trade_count_scanned": total,
-                    "unique_trade_count": len(shard_ids),
+                    "unique_trade_count": unique,
                     "unique_trade_count_exact": True,
+                    "global_new_identity_count": global_new,
+                    "cross_shard_overlap_count": max(0, unique - global_new),
+                    "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
                 }
                 _persist_manifest_unique_counts(
                     row,
@@ -137,6 +141,8 @@ def main():
     result={
         "schema":"alina.global_unique_trade_patch.v1",
         "method":"sqlite_sha256_identity_dedup_across_immutable_release_assets",
+        "identity_version":"native-id-or-venue-family-symbol-time-side-price-size-v1",
+        "collision_policy":"native identifiers preferred; deterministic composite fallback is retained and ambiguous missing identities fail closed",
         "counts":dict(sorted(counts.items())),
         "covered_dataset_ids":sorted(covered),
         "attempted":attempted,
@@ -144,6 +150,7 @@ def main():
         "remaining_candidate_shards":len(_remaining(rows, covered)),
         "global_unique_trade_count":global_count,
         "global_identity_digest":hashlib.sha256(json.dumps(identity_rows,separators=(",",":")).encode()).hexdigest(),
+        "cross_shard_overlap_count":sum(int(v.get("cross_shard_overlap_count") or 0) for v in counts.values() if isinstance(v,Mapping)),
         "coverage_complete":len(failed)==0 and not _remaining(rows, covered),
     }
     PATCH_PATH.write_text(json.dumps(result,sort_keys=True,indent=2)+"\n",encoding="utf-8")
