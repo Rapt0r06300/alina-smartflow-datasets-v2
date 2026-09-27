@@ -2,14 +2,27 @@
   "schema_version": "alina.analysis_stage_gates.v1",
   "stages": {
     "DRAIN": {"requires_no_active_collection": true},
-    "QUALITY": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]},
+    "QUALITY": {
+      "required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"],
+      "required_coverage": {
+        "trade_count_exact": true,
+        "unique_trade_count_exact": true,
+        "uncompressed_bytes_exact": true
+      }
+    },
     "REPLAY": {"required_campaign_kinds": ["replay"]},
     "BACKTEST": {"required_campaign_kinds": ["backtest"]},
     "OOS": {"required_campaign_kinds": ["backtest"]},
     "FORWARD_PAPER": {"required_campaign_kinds": ["module_pnl_proof"]},
     "PNL_PROOF": {"required_campaign_kinds": ["module_pnl_proof"]},
-    "SCOREBOARD": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]},
-    "DONE": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]}
+    "SCOREBOARD": {
+      "required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"],
+      "required_coverage": {"replayable_shards": {"min": 1}}
+    },
+    "DONE": {
+      "required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"],
+      "required_coverage": {"replayable_shards": {"min": 1}}
+    }
   },
   "paper_only": true,
   "read_only": true,
