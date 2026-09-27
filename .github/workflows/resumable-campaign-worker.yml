@@ -223,6 +223,16 @@ jobs:
           source "$RUNNER_TEMP/unit.env"
           if [ "$KIND" = "market_collection" ]; then
             python alina/tools/discover_cloud_collection_plan.py               --output "$RUNNER_TEMP/collection-plan.json"               --min-venues 2               --max-coins "${MAX_COINS:-0}"               --batch-size 8
+          elif [[ "$KIND" = "replay" || "$KIND" = "backtest" || "$KIND" = "oos" || "$KIND" = "forward_paper" || "$KIND" = "module_pnl_proof" || "$KIND" = "scoreboard" ]]; then
+            WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
+            mkdir -p "$WORKSPACE"
+            test -d alina/tools
+            test -d alina/src
+            cp -R alina/tools "$WORKSPACE/tools"
+            cp -R alina/src "$WORKSPACE/src"
+            cp alina/pyproject.toml "$WORKSPACE/pyproject.toml"
+            if [ -f alina/requirements.txt ]; then cp alina/requirements.txt "$WORKSPACE/requirements.txt"; fi
+            echo "prepared pinned Alina runtime in $WORKSPACE"
           fi
           echo "kind=$KIND" >> "$GITHUB_OUTPUT"
           echo "unit=$UNIT" >> "$GITHUB_OUTPUT"
