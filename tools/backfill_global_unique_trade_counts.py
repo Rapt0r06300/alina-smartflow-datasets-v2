@@ -124,6 +124,16 @@ def main():
                 failed.append({"dataset_id":dataset_id,"reason":type(exc).__name__})
         global_count=db.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
         identity_rows=[row[0] for row in db.execute("SELECT identity FROM ids ORDER BY identity")]
+    for row in rows:
+        if isinstance(row, dict):
+            patch_row = counts.get(str(row.get("dataset_id") or ""))
+            if isinstance(patch_row, Mapping):
+                row.update(patch_row)
+    INDEX_PATH.write_text(
+        json.dumps(index, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     result={
         "schema":"alina.global_unique_trade_patch.v1",
         "method":"sqlite_sha256_identity_dedup_across_immutable_release_assets",
