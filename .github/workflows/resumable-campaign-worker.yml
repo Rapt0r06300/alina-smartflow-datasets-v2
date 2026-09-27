@@ -145,7 +145,7 @@ jobs:
           if kind=="market_collection":
               part.setdefault("duration_s",3500)
               part.setdefault("plan_file",os.path.join(os.environ["RUNNER_TEMP"],"collection-plan.json"))
-              part.setdefault("max_coins",120)
+              part.setdefault("max_coins",0)
               part.setdefault("rotate_mb",64)
           elif kind=="copy_vault_collection":
               COPY_VAULT_SWEEP_DURATION_CAP_S=300
@@ -174,7 +174,7 @@ jobs:
           PY
           source "$RUNNER_TEMP/unit.env"
           if [ "$KIND" = "market_collection" ]; then
-            python alina/tools/discover_cloud_collection_plan.py               --output "$RUNNER_TEMP/collection-plan.json"               --min-venues 2               --max-coins "${MAX_COINS:-120}"               --batch-size 8
+            python alina/tools/discover_cloud_collection_plan.py               --output "$RUNNER_TEMP/collection-plan.json"               --min-venues 2               --max-coins "${MAX_COINS:-0}"               --batch-size 8
           fi
           echo "kind=$KIND" >> "$GITHUB_OUTPUT"
           echo "unit=$UNIT" >> "$GITHUB_OUTPUT"
