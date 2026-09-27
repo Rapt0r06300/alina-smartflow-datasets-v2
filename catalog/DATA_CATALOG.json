@@ -105,9 +105,9 @@
     "automatic_import": false,
     "enabled": false
   },
-  "partial_shard_count": 18079,
+  "partial_shard_count": 18064,
   "reject_shard_count": 7167,
-  "safe_shard_count": 9015,
+  "safe_shard_count": 9030,
   "schema": "alina.data_catalog.v2",
   "stale_shard_count": 0,
   "storage": {
