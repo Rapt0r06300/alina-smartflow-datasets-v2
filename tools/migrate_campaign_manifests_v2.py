@@ -15,6 +15,7 @@ def main():
     p.add_argument("--source-collection-epoch", type=int)
     p.add_argument("--collection-cutoff-at-utc")
     p.add_argument("--dataset-selection-id")
+    p.add_argument("--analysis-stage")
     p.add_argument("--apply", action="store_true")
     a = p.parse_args()
     if a.phase == "ANALYZE" and (
@@ -42,8 +43,19 @@ def main():
             "source_collection_epoch": a.source_collection_epoch,
             "collection_cutoff_at_utc": a.collection_cutoff_at_utc,
             "dataset_selection_id": a.dataset_selection_id,
+            "analysis_stage": a.analysis_stage or ({
+                "replay": "REPLAY",
+                "backtest": "BACKTEST",
+                "oos": "OOS",
+                "forward_paper": "FORWARD_PAPER",
+                "module_pnl_proof": "PNL_PROOF",
+                "scoreboard": "SCOREBOARD",
+            }.get(str(row.get("kind") or "")) if a.phase == "ANALYZE" else None),
             "checkpoint_lineage": list(row.get("checkpoint_lineage") or []),
-            "terminal_evidence_digest": row.get("terminal_evidence_digest"),
+            "terminal_evidence_digest": row.get("terminal_evidence_digest") or (
+                next(iter(reversed(list((row.get("completed_units") or {}).values()))), {}).get("sha256")
+                if row.get("status") == "COMPLETE" else None
+            ),
         }
         if a.apply:
             path.write_text(json.dumps(migrated, sort_keys=True, indent=2) + "\n", encoding="utf-8")
