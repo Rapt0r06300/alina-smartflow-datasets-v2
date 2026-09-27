@@ -426,4 +426,4 @@ jobs:
           gh workflow run resumable-campaign-worker.yml \\
             --repo "$GITHUB_REPOSITORY" \\
             --ref main \\
-            -f campaign_id="$CAMPAIGN_ID"
+            -f campaign_id="$CAMPAIGN_ID" \\\n            -f phase_epoch="${{ steps.pin.outputs.phase_epoch }}" \\\n            -f generation="$UNIT" \\\n            -f predecessor_run_id="$GITHUB_RUN_ID"
