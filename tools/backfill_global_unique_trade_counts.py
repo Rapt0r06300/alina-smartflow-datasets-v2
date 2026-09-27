@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse, hashlib, json, sqlite3, shutil, tempfile
 from pathlib import Path
 from typing import Any, Mapping
-from backfill_exact_trade_counts import _download, _native_trade_keys, _load_patch
+from backfill_exact_trade_counts import _download, _native_trade_keys
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -42,7 +42,6 @@ def main():
     index=json.loads(INDEX_PATH.read_text(encoding="utf-8"))
     rows=index.get("shards")
     if not isinstance(rows,list): raise SystemExit("invalid DATA_INDEX shards")
-    exact_patch=_load_patch()
     prior={}
     if PATCH_PATH.exists():
         prior=json.loads(PATCH_PATH.read_text(encoding="utf-8"))
