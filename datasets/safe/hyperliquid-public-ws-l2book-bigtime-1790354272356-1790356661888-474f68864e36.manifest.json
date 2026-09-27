@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 103748,
+  "bytes": 108612,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "hyperliquid-public-ws-l2book-atom-1790354272298-1790356661888-600e2aa273f4",
+  "dataset_id": "hyperliquid-public-ws-l2book-bigtime-1790354272356-1790356661888-474f68864e36",
+  "duplicate_count": 0,
   "end_ts_ms": 1790356661888,
   "event_count": 445,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,36 +37,37 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 445,
   "release": {
-    "asset_id": 588848093,
-    "asset_name": "hyperliquid-public-ws-l2book-atom-1790354272298-1790356661888-600e2aa273f4.jsonl.gz",
+    "asset_id": 588848134,
+    "asset_name": "hyperliquid-public-ws-l2book-bigtime-1790354272356-1790356661888-474f68864e36.jsonl.gz",
     "release_id": 396793494,
-    "remote_digest": "sha256:600e2aa273f46a384a5b00a868c2af81f3e7c03a5fa0d9b87500b38927a29d6e",
-    "remote_size": 103748,
+    "remote_digest": "sha256:474f68864e36f15588cf404d7cf5e6ae69703f3852630b2764b4ba32dec1c3e9",
+    "remote_size": 108612,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s1"
   },
-  "release_asset": "hyperliquid-public-ws-l2book-atom-1790354272298-1790356661888-600e2aa273f4.jsonl.gz",
-  "release_asset_id": 588848093,
+  "release_asset": "hyperliquid-public-ws-l2book-bigtime-1790354272356-1790356661888-474f68864e36.jsonl.gz",
+  "release_asset_id": 588848134,
   "release_id": 396793494,
-  "release_remote_digest": "sha256:600e2aa273f46a384a5b00a868c2af81f3e7c03a5fa0d9b87500b38927a29d6e",
-  "release_remote_size": 103748,
+  "release_remote_digest": "sha256:474f68864e36f15588cf404d7cf5e6ae69703f3852630b2764b4ba32dec1c3e9",
+  "release_remote_size": 108612,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s1",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "SMOKE_OK",
+  "replay_schema_version": "alina.replay.v1",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "600e2aa273f46a384a5b00a868c2af81f3e7c03a5fa0d9b87500b38927a29d6e",
+  "sha256": "474f68864e36f15588cf404d7cf5e6ae69703f3852630b2764b4ba32dec1c3e9",
   "source": "hyperliquid_public_ws",
-  "start_ts_ms": 1790354272298,
-  "symbol": "ATOM",
+  "start_ts_ms": 1790354272356,
+  "symbol": "BIGTIME",
   "synchronization": {
     "clock_offset_ms": {
       "count": 445,
@@ -95,6 +99,7 @@
       "p95": null
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "validation_allowed": true,
   "venue": "hyperliquid"
 }
