@@ -90,6 +90,10 @@ jobs:
             CFG_TEXT="$3"
             CURSOR="$4"
             P="catalog/campaigns/$ID.json"
+            if ! python tools/phase_gate.py allow --kind "$KIND" >/dev/null; then
+              echo "phase gate denied $KIND for $PHASE; skipping"
+              return 0
+            fi
             CFG_SHA="$(printf '%s' "$CFG_TEXT|$CURSOR" | sha256sum | cut -d' ' -f1)"
             if [ ! -f "$P" ]; then
               PYTHONPATH=alina/src python alina/tools/resumable_campaign.py create "$P"                 --campaign-id "$ID"                 --kind "$KIND"                 --code-sha "$CODE_SHA"                 --dataset-generation V2_FRESH                 --config-sha256 "$CFG_SHA"                 --work-plan-sha256 "$PLAN_SHA"                 --cursor-json "$CURSOR"                 "${PHASE_ARGS[@]}"
