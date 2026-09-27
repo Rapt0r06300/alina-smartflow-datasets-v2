@@ -49,6 +49,7 @@ jobs:
           set -euo pipefail
           M="catalog/campaigns/$CAMPAIGN_ID.json"
           test -f "$M"
+          python tools/phase_gate.py manifest --manifest "$M"
           python - <<'PY' "$M" >> "$GITHUB_OUTPUT"
           import json,sys
           m=json.load(open(sys.argv[1]))
