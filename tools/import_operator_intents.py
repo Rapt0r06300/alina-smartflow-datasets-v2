@@ -118,7 +118,7 @@ def main():
             continue
         if (
             expected_phase == "ANALYZE"
-            and row.get("analysis_stage") not in (None, args.analysis_stage)
+            and row.get("analysis_stage") not in (None, "DRAIN", args.analysis_stage)
         ):
             raise SystemExit(f"analysis stage intent mismatch: {path}")
 
