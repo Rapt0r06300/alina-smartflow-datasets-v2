@@ -8,6 +8,8 @@ on:
       - '.github/workflows/resumable-campaign-worker.yml'
       - 'tools/manifest_policy.py'
       - 'tools/index_run_manifest.py'
+      - 'tools/phase_gate.py'
+      - 'control/alina-phase.json'
   schedule:
     - cron: '2 * * * *'
   workflow_dispatch:
@@ -58,6 +60,21 @@ jobs:
           REPLAY_START_MS="$((NOW_MS - 6 * 60 * 60 * 1000))"
           ECON_START_MS="$((NOW_MS - 7 * 24 * 60 * 60 * 1000))"
           CODE_SHA="$(git -C alina rev-parse HEAD)"
+          PHASE_META="$(python tools/phase_gate.py read)"
+          PHASE="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["phase"])' "$PHASE_META")"
+          PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
+          SOURCE_COLLECTION_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["source_collection_epoch"] or "")' "$PHASE_META")"
+          COLLECTION_CUTOFF="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["collection_cutoff_at_utc"] or "")' "$PHASE_META")"
+          if [ "$PHASE" = "IDLE" ]; then
+            echo "IDLE: no new campaign intent is created"
+            exit 0
+          fi
+          PHASE_ARGS=(--creation-phase "$PHASE" --phase-epoch "$PHASE_EPOCH")
+          if [ "$PHASE" = "ANALYZE" ]; then
+            test -n "$SOURCE_COLLECTION_EPOCH"
+            test -n "$COLLECTION_CUTOFF"
+            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF")
+          fi
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
 
           make_campaign() {
@@ -68,7 +85,7 @@ jobs:
             P="catalog/campaigns/$ID.json"
             CFG_SHA="$(printf '%s' "$CFG_TEXT|$CURSOR" | sha256sum | cut -d' ' -f1)"
             if [ ! -f "$P" ]; then
-              PYTHONPATH=alina/src python alina/tools/resumable_campaign.py create "$P"                 --campaign-id "$ID"                 --kind "$KIND"                 --code-sha "$CODE_SHA"                 --dataset-generation V2_FRESH                 --config-sha256 "$CFG_SHA"                 --work-plan-sha256 "$PLAN_SHA"                 --cursor-json "$CURSOR"
+              PYTHONPATH=alina/src python alina/tools/resumable_campaign.py create "$P"                 --campaign-id "$ID"                 --kind "$KIND"                 --code-sha "$CODE_SHA"                 --dataset-generation V2_FRESH                 --config-sha256 "$CFG_SHA"                 --work-plan-sha256 "$PLAN_SHA"                 --cursor-json "$CURSOR"                 "${PHASE_ARGS[@]}"
             fi
           }
 
