@@ -321,7 +321,10 @@ def _candidate(row: Mapping[str, Any], patch: Mapping[str, Any]) -> bool:
     if family not in TRADE_FAMILIES:
         return False
     dataset_id = str(row.get("dataset_id") or "")
-    if not dataset_id or dataset_id in patch:
+    counts = patch.get("counts") if isinstance(patch, Mapping) else {}
+    if not isinstance(counts, Mapping):
+        counts = {}
+    if not dataset_id or dataset_id in counts:
         return False
     if row.get("trade_count_exact") is True and int(row.get("trade_count") or 0) > 0:
         return False
@@ -374,6 +377,9 @@ def backfill(limit: int) -> dict[str, Any]:
     )[: max(1, int(limit))]
     updated = 0
     failed: list[dict[str, str]] = []
+    failure_reasons = patch_doc.get("failure_reasons")
+    if not isinstance(failure_reasons, dict):
+        failure_reasons = {}
 
     with tempfile.TemporaryDirectory(prefix="alina-trade-count-") as tmp:
         tmp_root = Path(tmp)
