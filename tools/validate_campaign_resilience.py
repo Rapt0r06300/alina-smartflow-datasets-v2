@@ -39,6 +39,17 @@ def main() -> int:
             continue
         if manifest.get("schema_version") != "alina.resumable_campaign.v2":
             violations.append({"campaign_id": campaign_id, "code": "V2_LINEAGE_REQUIRED"})
+        if manifest.get("creation_phase") == "ANALYZE":
+            expected_stage = {
+                "replay": "REPLAY",
+                "backtest": "BACKTEST",
+                "oos": "OOS",
+                "forward_paper": "FORWARD_PAPER",
+                "module_pnl_proof": "PNL_PROOF",
+                "scoreboard": "SCOREBOARD",
+            }.get(str(manifest.get("kind") or ""))
+            if expected_stage and manifest.get("analysis_stage") not in (None, expected_stage):
+                violations.append({"campaign_id": campaign_id, "code": "ANALYSIS_STAGE_MISMATCH"})
         for field in ("history", "completed_units", "checkpoint_lineage"):
             if not isinstance(manifest.get(field), (list, dict)):
                 violations.append({"campaign_id": campaign_id, "code": f"{field.upper()}_TYPE_INVALID"})
