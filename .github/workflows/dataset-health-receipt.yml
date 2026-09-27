@@ -23,16 +23,18 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+      - name: Generate Copy-Vault coverage
+        run: python tools/build_copy_vault_coverage_receipt.py
       - name: Generate receipt
         run: |
           set -euo pipefail
           python tools/generate_health_receipt.py --dataset-commit "$(git rev-parse HEAD)"
-      - name: Publish receipt
+      - name: Publish receipts
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/DATASET_HEALTH_RECEIPT.json
+          git add catalog/DATASET_HEALTH_RECEIPT.json catalog/COPY_VAULT_COVERAGE_RECEIPT.json
           git diff --cached --quiet && exit 0
           git commit -m "health: publish Dataset V2 receipt"
           git push origin HEAD:main
