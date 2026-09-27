@@ -262,6 +262,7 @@ def build() -> dict[str, Any]:
         "schema_version": "alina.data_metrics.v4",
         "method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
         "source_index_sha256": hashlib.sha256(INDEX.read_bytes()).hexdigest(),
+        "dataset_generation": idx.get("dataset_generation") or idx.get("generation") or "V2_FRESH",
         "totals": totals,
         "by_venue": dict(sorted(by_venue.items())),
         "by_symbol": dict(sorted(by_symbol.items())),
