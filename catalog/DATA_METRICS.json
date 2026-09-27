@@ -36,12 +36,12 @@
     "copy_vault_fills": {
       "bytes": 5088377,
       "records": 19570,
-      "replayable_trades": 6591,
-      "safe_trades": 6580,
+      "replayable_trades": 6594,
+      "safe_trades": 6583,
       "shards": 337,
-      "trade_shards_exact": 336,
-      "trade_shards_missing_exact": 1,
-      "trades": 46898,
+      "trade_shards_exact": 337,
+      "trade_shards_missing_exact": 0,
+      "trades": 46901,
       "unique_trades_within_shards": 0
     },
     "copy_vault_l2": {
@@ -21455,12 +21455,12 @@
     "0XB6E319939F793C36A0360E13B239D31F177F7A21": {
       "bytes": 6729,
       "records": 7,
-      "replayable_trades": 0,
-      "safe_trades": 0,
+      "replayable_trades": 3,
+      "safe_trades": 3,
       "shards": 4,
-      "trade_shards_exact": 0,
-      "trade_shards_missing_exact": 1,
-      "trades": 0,
+      "trade_shards_exact": 1,
+      "trade_shards_missing_exact": 0,
+      "trades": 3,
       "unique_trades_within_shards": 0
     },
     "0XB6ECB3DED403B4B0BB96D1B7F62DEEB351A43778": {
@@ -34085,12 +34085,12 @@
     "hyperliquid": {
       "bytes": 1745380353,
       "records": 11245164,
-      "replayable_trades": 47007,
-      "safe_trades": 6580,
+      "replayable_trades": 47010,
+      "safe_trades": 6583,
       "shards": 27035,
-      "trade_shards_exact": 960,
-      "trade_shards_missing_exact": 1,
-      "trades": 822092,
+      "trade_shards_exact": 961,
+      "trade_shards_missing_exact": 0,
+      "trades": 822095,
       "unique_trades_within_shards": 775188
     },
     "okx": {
@@ -34119,10 +34119,13 @@
   "method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "notes": {
     "TOTAL_TRADES_COLLECTED": "sum of shards whose trade_count_exact=true only; unknown legacy trade shards are excluded, never zero-filled",
+    "TOTAL_UNIQUE_TRADES_GLOBAL": "published only from TRADE_UNIQUE_COUNT_PATCH.json after deterministic cross-shard identity deduplication; missing patch means unknown",
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": "deduplicated within each verified shard only; this is not a claim of global cross-shard uniqueness"
   },
   "schema_version": "alina.data_metrics.v3",
   "totals": {
+    "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
+    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": null,
     "PARTIAL_SHARDS": 18064,
     "REJECTED_SHARDS": 7167,
     "REPLAYABLE_SHARDS": 9205,
@@ -34132,18 +34135,19 @@
     "TOTAL_REPLAYABLE_RECORDS": 6625660,
     "TOTAL_SAFE_RECORDS": 6246130,
     "TOTAL_SHARDS": 34261,
-    "TOTAL_TRADES_COLLECTED": 27036872,
-    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": false,
+    "TOTAL_TRADES_COLLECTED": 27036875,
+    "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE": true,
     "TOTAL_TRADES_PARTIAL": 2444919,
     "TOTAL_TRADES_REJECTED": 24585373,
-    "TOTAL_TRADES_REPLAYABLE": 481471,
-    "TOTAL_TRADES_SAFE": 6580,
+    "TOTAL_TRADES_REPLAYABLE": 481474,
+    "TOTAL_TRADES_SAFE": 6583,
     "TOTAL_UNCOMPRESSED_BYTES": 0,
     "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
+    "TOTAL_UNIQUE_TRADES_GLOBAL": null,
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 2407048,
-    "TRADE_SHARDS_MISSING_EXACT_COUNT": 1,
+    "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
     "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 478,
-    "TRADE_SHARDS_WITH_EXACT_COUNT": 2245,
+    "TRADE_SHARDS_WITH_EXACT_COUNT": 2246,
     "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768
   }
 }
