@@ -1,0 +1,1579 @@
+{
+  "attempted": 200,
+  "collision_policy": "native identifiers preferred; deterministic composite fallback is retained and ambiguous missing identities fail closed",
+  "counts": {
+    "binance-usdm-public-agg-trades-adausdt-1790364009641-1790367505368-1be3afb6c278": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 2669,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 2669,
+      "unique_trade_count": 2669,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-adausdt-1790431933630-1790435432641-c43b18ea2b8d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 2557,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 2557,
+      "unique_trade_count": 2557,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-aptusdt-1790364009417-1790367506735-5d06580f8c58": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 9421,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 9421,
+      "unique_trade_count": 9421,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-aptusdt-1790431933962-1790435432509-d256d7bd4cfe": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 5026,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 5026,
+      "unique_trade_count": 5026,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-arbusdt-1790364007335-1790367506749-77db1f12990a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 11783,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 11783,
+      "unique_trade_count": 11783,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-arbusdt-1790431933266-1790435432290-fc399e8c2421": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 14470,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 14470,
+      "unique_trade_count": 14470,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-avaxusdt-1790364009003-1790367506788-870de382478d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 4028,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 4028,
+      "unique_trade_count": 4028,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-avaxusdt-1790431935504-1790435432882-3b7e8cf4dd57": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 11259,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 11259,
+      "unique_trade_count": 11259,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-bnbusdt-1790364007781-1790367506679-9d1521eb1e3b": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 4651,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 4651,
+      "unique_trade_count": 4651,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-bnbusdt-1790431933369-1790435432711-83e4b925b825": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 4969,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 4969,
+      "unique_trade_count": 4969,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-btcusdt-1790364008214-1790367505835-47c7792fb1a9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 21633,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 21633,
+      "unique_trade_count": 21633,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-btcusdt-1790431933950-1790435432786-b4fd3bd4cd5a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 9784,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 9784,
+      "unique_trade_count": 9784,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-dogeusdt-1790364007219-1790367506262-589797d01f99": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 6800,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 6800,
+      "unique_trade_count": 6800,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-dogeusdt-1790431933641-1790435426591-6415fb1b22af": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 5150,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 5150,
+      "unique_trade_count": 5150,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-ethusdt-1790364007288-1790367506040-34c45642a96a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 21630,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 21630,
+      "unique_trade_count": 21630,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-ethusdt-1790431933530-1790435432926-24a321a06231": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 8960,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 8960,
+      "unique_trade_count": 8960,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-linkusdt-1790364008573-1790367503914-779c8d4369fa": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 5363,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 5363,
+      "unique_trade_count": 5363,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-linkusdt-1790431933735-1790435432531-6c52a716192b": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 12854,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 12854,
+      "unique_trade_count": 12854,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-opusdt-1790364009056-1790367506319-99075a6ab325": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 10726,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 10726,
+      "unique_trade_count": 10726,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-opusdt-1790431933331-1790435432304-f6e7cf451d0a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 12474,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 12474,
+      "unique_trade_count": 12474,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-solusdt-1790364009276-1790367506633-adbc4db9047f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 18298,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 18298,
+      "unique_trade_count": 18298,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-solusdt-1790431934456-1790435432443-bbefb3989588": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 11096,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 11096,
+      "unique_trade_count": 11096,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-suiusdt-1790364007344-1790367506688-18eee9426633": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 20451,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 20451,
+      "unique_trade_count": 20451,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-suiusdt-1790431934611-1790435432906-23699a84ccfc": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 7103,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 7103,
+      "unique_trade_count": 7103,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-trxusdt-1790364008119-1790367502928-983576c5ca16": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 1807,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 1807,
+      "unique_trade_count": 1807,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-trxusdt-1790431936033-1790435430782-80a42abf4080": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 2619,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 2619,
+      "unique_trade_count": 2619,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-wifusdt-1790364012122-1790367503033-907b806f8a00": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 1440,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 1440,
+      "unique_trade_count": 1440,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-wifusdt-1790431933694-1790435432636-8d9b8f7483e5": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 2667,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 2667,
+      "unique_trade_count": 2667,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-xrpusdt-1790364009622-1790367505926-01b0f49fe78f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 9785,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 9785,
+      "unique_trade_count": 9785,
+      "unique_trade_count_exact": true
+    },
+    "binance-usdm-public-agg-trades-xrpusdt-1790431933467-1790435432635-30c2601b7258": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 10978,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 10978,
+      "unique_trade_count": 10978,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790117941430-1790118001201-8bab61434d2d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790138726249-1790138776990-b524cbb1f107": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 61,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 61,
+      "unique_trade_count": 61,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790170776750-1790170860580-c31f478b37ab": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 71,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 71,
+      "unique_trade_count": 71,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790204457933-1790204584181-e843965ab26d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790225442460-1790225551679-9fe23e4fea3a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 59,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 59,
+      "unique_trade_count": 59,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790256852360-1790256914806-b7d39387fc81": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 59,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 59,
+      "unique_trade_count": 59,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790291824687-1790291824687-8ab28177d8c1": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790312283910-1790312400569-62c57916d3cf": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 57,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 57,
+      "unique_trade_count": 57,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-0gusdt-1790344063033-1790344191787-19a07f62fd0c": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 61,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 61,
+      "unique_trade_count": 61,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790117940227-1790117940227-0d8c0c252258": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790138730117-1790138810120-c7b67bc98be5": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790170770749-1790170770749-1e7a328a3f80": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790204466053-1790204466053-7335e8591ad7": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790225422348-1790225422348-1c704a59fcbd": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790256848460-1790256921254-447d2432112e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 66,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 66,
+      "unique_trade_count": 66,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790291820353-1790291820353-61728f30f282": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790312281030-1790312366249-2da31974ba2e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-2zusdt-1790344083845-1790344132285-1a7130aeba97": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 67,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 67,
+      "unique_trade_count": 67,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790117942775-1790118068474-8b882fd572d9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 138,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 138,
+      "unique_trade_count": 138,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790138736156-1790138861999-fa77d7f7f884": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 124,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 124,
+      "unique_trade_count": 124,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790170775241-1790170899654-52f9cafca061": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 219,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 219,
+      "unique_trade_count": 219,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790204480940-1790204599081-82689df47190": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 63,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 63,
+      "unique_trade_count": 63,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790225428133-1790225428133-7ddf10b4c1f6": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790256848747-1790256982038-3025f0967a7f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 172,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 172,
+      "unique_trade_count": 172,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790291824466-1790291952892-6c00717bb405": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 131,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 131,
+      "unique_trade_count": 131,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790312284059-1790312406677-cc8c9069d9de": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 73,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 73,
+      "unique_trade_count": 73,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aaveusdt-1790344068896-1790344185622-6352181aa819": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 116,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 116,
+      "unique_trade_count": 116,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790117943453-1790118063421-155546c759f5": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 142,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 142,
+      "unique_trade_count": 142,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790138724508-1790138839543-8c73f636f70e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 97,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 97,
+      "unique_trade_count": 97,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790170777071-1790170892616-00729810f82e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 176,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 176,
+      "unique_trade_count": 176,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790204466582-1790204592911-42a8759e40a8": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 91,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 91,
+      "unique_trade_count": 91,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790225430283-1790225531547-985f6fbafccd": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 63,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 63,
+      "unique_trade_count": 63,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790256842529-1790256977777-3354ecbcd2d6": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 246,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 246,
+      "unique_trade_count": 246,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790291824741-1790291942876-df689518eab3": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 75,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 75,
+      "unique_trade_count": 75,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790312288271-1790312410818-7070b12fb52a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 82,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 82,
+      "unique_trade_count": 82,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790344063942-1790344202591-ade28d180607": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 266,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 266,
+      "unique_trade_count": 266,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790364007381-1790364119270-88db92e532c0": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 74,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 74,
+      "unique_trade_count": 74,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-adausdt-1790431933677-1790432059570-c94f02476a6e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 89,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 89,
+      "unique_trade_count": 89,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790117940623-1790118017195-9b939a6e9147": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790138734394-1790138868500-37924c3e9bd4": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 55,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 55,
+      "unique_trade_count": 55,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790170774846-1790170888136-801e2efe0141": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 72,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 72,
+      "unique_trade_count": 72,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790204470095-1790204615201-e6f9e59140a8": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 73,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 73,
+      "unique_trade_count": 73,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790225429411-1790225551505-d615e7e9fc23": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 55,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 55,
+      "unique_trade_count": 55,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790256856902-1790256960769-232c204e56d9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 69,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 69,
+      "unique_trade_count": 69,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790291825918-1790291933409-93d5c1e1be45": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 93,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 93,
+      "unique_trade_count": 93,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790312287280-1790312404850-e909282065f1": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 65,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 65,
+      "unique_trade_count": 65,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aerousdt-1790344067989-1790344211151-b4a907ae61d4": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 160,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 160,
+      "unique_trade_count": 160,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790117942595-1790118001764-291b2f7b98aa": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790138724008-1790138866056-7461dba500e0": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 89,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 89,
+      "unique_trade_count": 89,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790170775602-1790170883987-f4db197fec62": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790204475658-1790204475658-c962f944585d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790225428289-1790225502600-34047ddbc6de": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 55,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 55,
+      "unique_trade_count": 55,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790256847865-1790256951651-73419820f031": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790291827325-1790291827325-f69c3eccb35b": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790312278446-1790312278446-ffa8aff2ebb2": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aixbtusdt-1790344063386-1790344174928-ab708b19bf35": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 57,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 57,
+      "unique_trade_count": 57,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790117947469-1790118069353-9bdb105191b5": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 53,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 53,
+      "unique_trade_count": 53,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790138725138-1790138836876-95d09809dabc": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 70,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 70,
+      "unique_trade_count": 70,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790170774475-1790170903676-d21ba9801e7f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 58,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 58,
+      "unique_trade_count": 58,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790204470501-1790204533436-643086466bcf": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 53,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 53,
+      "unique_trade_count": 53,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790225438096-1790225582625-1ba0c0e53d1a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 65,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 65,
+      "unique_trade_count": 65,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790256855394-1790256980331-3fa507d82f73": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 101,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 101,
+      "unique_trade_count": 101,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790291829574-1790291953628-9b808a6cc4f9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 93,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 93,
+      "unique_trade_count": 93,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790312286938-1790312411105-24ad57d0fe49": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 69,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 69,
+      "unique_trade_count": 69,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-algousdt-1790344070043-1790344191889-eddbcef0dc84": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 78,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 78,
+      "unique_trade_count": 78,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790117941056-1790117941056-de3431ee802f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790138718451-1790138834627-411d0a08354f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790170776529-1790170888448-aa861281da61": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790204470784-1790204470784-991171f71125": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790225439134-1790225439134-6f4ee82c85e9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790256850186-1790256951187-114d47b77cc4": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790291825811-1790291910916-6063aea36c25": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790312281644-1790312281644-7d0101f36a9c": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-animeusdt-1790344068218-1790344171145-6ff164951559": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 53,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 53,
+      "unique_trade_count": 53,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790117941734-1790118047373-483eea1db56d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 67,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 67,
+      "unique_trade_count": 67,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790138726550-1790138836698-3d4426ccb163": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 53,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 53,
+      "unique_trade_count": 53,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790170776878-1790170860253-942bdd82f809": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 60,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 60,
+      "unique_trade_count": 60,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790204458061-1790204514145-6a0b18a61b62": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790225442344-1790225466364-533a9418e924": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790256852510-1790256950648-a50f2b525360": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 69,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 69,
+      "unique_trade_count": 69,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790291824828-1790291824828-53a490bbc78b": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 50,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 50,
+      "unique_trade_count": 50,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790312284003-1790312323364-a98a76479633": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-apeusdt-1790344063032-1790344186611-60989282b856": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 71,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 71,
+      "unique_trade_count": 71,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790117940357-1790118074864-c0e33c92e47a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 190,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 190,
+      "unique_trade_count": 190,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790138730345-1790138844754-2e5270cfde75": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 162,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 162,
+      "unique_trade_count": 162,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790170770863-1790170906493-891a4d51575f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 224,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 224,
+      "unique_trade_count": 224,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790204466198-1790204589087-c3720ddc72e2": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 277,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 277,
+      "unique_trade_count": 277,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790225422475-1790225554876-7457ee356ace": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 93,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 93,
+      "unique_trade_count": 93,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790256848567-1790256992233-2793acda09f8": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 406,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 406,
+      "unique_trade_count": 406,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790291820354-1790291956019-58141e0e1419": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 122,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 122,
+      "unique_trade_count": 122,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790312281180-1790312393256-c5c6814e6f66": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 63,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 63,
+      "unique_trade_count": 63,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790344083981-1790344219961-60d6e48585f4": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 149,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 149,
+      "unique_trade_count": 149,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790364007509-1790364131183-b4ae1fcc6ca4": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 155,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 155,
+      "unique_trade_count": 155,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-aptusdt-1790431933678-1790432060889-0a01c5e4d123": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 128,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 128,
+      "unique_trade_count": 128,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790117943579-1790118071367-c16457c3fa2d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 440,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 440,
+      "unique_trade_count": 440,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790138724508-1790138839749-ed9ac13232e9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 149,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 149,
+      "unique_trade_count": 149,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790170777173-1790170899303-8aa41471e258": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 105,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 105,
+      "unique_trade_count": 105,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790204466582-1790204586477-d74b5678f7d2": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 112,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 112,
+      "unique_trade_count": 112,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790225430409-1790225553610-efa383834121": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 81,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 81,
+      "unique_trade_count": 81,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790256842530-1790256980409-0ba1b8a2aa6c": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 306,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 306,
+      "unique_trade_count": 306,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790291824866-1790291925342-d3b52df7bb1e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 65,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 65,
+      "unique_trade_count": 65,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790312288402-1790312422630-f3116ecce7b9": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 68,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 68,
+      "unique_trade_count": 68,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790344063942-1790344204799-5cb70fc83f5f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 329,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 329,
+      "unique_trade_count": 329,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790364007637-1790364131824-0a693aa34e5e": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 83,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 83,
+      "unique_trade_count": 83,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arbusdt-1790431933837-1790432058764-5d550e5edcae": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 70,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 70,
+      "unique_trade_count": 70,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790117942774-1790118055729-16f5884c203a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 58,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 58,
+      "unique_trade_count": 58,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790138736213-1790138801742-0f3dc54bd51f": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 53,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 53,
+      "unique_trade_count": 53,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790170775238-1790170890709-938e4e5970be": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 54,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 54,
+      "unique_trade_count": 54,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790204480834-1790204570971-0b9d1f09013a": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 64,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 64,
+      "unique_trade_count": 64,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790225428010-1790225461676-3d32049cb156": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790256848747-1790256981070-002bf02417c2": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 81,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 81,
+      "unique_trade_count": 81,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790291824468-1790291912532-bc33eeb16457": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 52,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 52,
+      "unique_trade_count": 52,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790312284059-1790312347285-9a9dfcef79df": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 51,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 51,
+      "unique_trade_count": 51,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-arusdt-1790344069035-1790344157650-f1ba885bd77d": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 75,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 75,
+      "unique_trade_count": 75,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790117940624-1790118053323-ee479224f467": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 61,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 61,
+      "unique_trade_count": 61,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790138734474-1790138866559-ad9a88f38401": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 81,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 81,
+      "unique_trade_count": 81,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790170774975-1790170888604-3cba0757b182": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 62,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 62,
+      "unique_trade_count": 62,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790204470095-1790204592908-44a1ffd81eef": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 66,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 66,
+      "unique_trade_count": 66,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790225429411-1790225560225-cfa7b6f3bab8": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 202,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 202,
+      "unique_trade_count": 202,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790256856899-1790256956847-a9f89f94e85b": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 79,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 79,
+      "unique_trade_count": 79,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790291825918-1790291945553-883d87210af8": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 104,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 104,
+      "unique_trade_count": 104,
+      "unique_trade_count_exact": true
+    },
+    "bitget-public-ws-trades-asterusdt-1790312287281-1790312317146-e73bd9a9b916": {
+      "cross_shard_overlap_count": 0,
+      "global_new_identity_count": 63,
+      "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+      "trade_count_scanned": 63,
+      "unique_trade_count": 63,
+      "unique_trade_count_exact": true
+    }
+  },
+  "coverage_complete": false,
+  "covered_dataset_ids": [
+    "binance-usdm-public-agg-trades-adausdt-1790364009641-1790367505368-1be3afb6c278",
+    "binance-usdm-public-agg-trades-adausdt-1790431933630-1790435432641-c43b18ea2b8d",
+    "binance-usdm-public-agg-trades-aptusdt-1790364009417-1790367506735-5d06580f8c58",
+    "binance-usdm-public-agg-trades-aptusdt-1790431933962-1790435432509-d256d7bd4cfe",
+    "binance-usdm-public-agg-trades-arbusdt-1790364007335-1790367506749-77db1f12990a",
+    "binance-usdm-public-agg-trades-arbusdt-1790431933266-1790435432290-fc399e8c2421",
+    "binance-usdm-public-agg-trades-avaxusdt-1790364009003-1790367506788-870de382478d",
+    "binance-usdm-public-agg-trades-avaxusdt-1790431935504-1790435432882-3b7e8cf4dd57",
+    "binance-usdm-public-agg-trades-bnbusdt-1790364007781-1790367506679-9d1521eb1e3b",
+    "binance-usdm-public-agg-trades-bnbusdt-1790431933369-1790435432711-83e4b925b825",
+    "binance-usdm-public-agg-trades-btcusdt-1790364008214-1790367505835-47c7792fb1a9",
+    "binance-usdm-public-agg-trades-btcusdt-1790431933950-1790435432786-b4fd3bd4cd5a",
+    "binance-usdm-public-agg-trades-dogeusdt-1790364007219-1790367506262-589797d01f99",
+    "binance-usdm-public-agg-trades-dogeusdt-1790431933641-1790435426591-6415fb1b22af",
+    "binance-usdm-public-agg-trades-ethusdt-1790364007288-1790367506040-34c45642a96a",
+    "binance-usdm-public-agg-trades-ethusdt-1790431933530-1790435432926-24a321a06231",
+    "binance-usdm-public-agg-trades-linkusdt-1790364008573-1790367503914-779c8d4369fa",
+    "binance-usdm-public-agg-trades-linkusdt-1790431933735-1790435432531-6c52a716192b",
+    "binance-usdm-public-agg-trades-opusdt-1790364009056-1790367506319-99075a6ab325",
+    "binance-usdm-public-agg-trades-opusdt-1790431933331-1790435432304-f6e7cf451d0a",
+    "binance-usdm-public-agg-trades-solusdt-1790364009276-1790367506633-adbc4db9047f",
+    "binance-usdm-public-agg-trades-solusdt-1790431934456-1790435432443-bbefb3989588",
+    "binance-usdm-public-agg-trades-suiusdt-1790364007344-1790367506688-18eee9426633",
+    "binance-usdm-public-agg-trades-suiusdt-1790431934611-1790435432906-23699a84ccfc",
+    "binance-usdm-public-agg-trades-trxusdt-1790364008119-1790367502928-983576c5ca16",
+    "binance-usdm-public-agg-trades-trxusdt-1790431936033-1790435430782-80a42abf4080",
+    "binance-usdm-public-agg-trades-wifusdt-1790364012122-1790367503033-907b806f8a00",
+    "binance-usdm-public-agg-trades-wifusdt-1790431933694-1790435432636-8d9b8f7483e5",
+    "binance-usdm-public-agg-trades-xrpusdt-1790364009622-1790367505926-01b0f49fe78f",
+    "binance-usdm-public-agg-trades-xrpusdt-1790431933467-1790435432635-30c2601b7258",
+    "bitget-public-ws-trades-0gusdt-1790117941430-1790118001201-8bab61434d2d",
+    "bitget-public-ws-trades-0gusdt-1790138726249-1790138776990-b524cbb1f107",
+    "bitget-public-ws-trades-0gusdt-1790170776750-1790170860580-c31f478b37ab",
+    "bitget-public-ws-trades-0gusdt-1790204457933-1790204584181-e843965ab26d",
+    "bitget-public-ws-trades-0gusdt-1790225442460-1790225551679-9fe23e4fea3a",
+    "bitget-public-ws-trades-0gusdt-1790256852360-1790256914806-b7d39387fc81",
+    "bitget-public-ws-trades-0gusdt-1790291824687-1790291824687-8ab28177d8c1",
+    "bitget-public-ws-trades-0gusdt-1790312283910-1790312400569-62c57916d3cf",
+    "bitget-public-ws-trades-0gusdt-1790344063033-1790344191787-19a07f62fd0c",
+    "bitget-public-ws-trades-2zusdt-1790117940227-1790117940227-0d8c0c252258",
+    "bitget-public-ws-trades-2zusdt-1790138730117-1790138810120-c7b67bc98be5",
+    "bitget-public-ws-trades-2zusdt-1790170770749-1790170770749-1e7a328a3f80",
+    "bitget-public-ws-trades-2zusdt-1790204466053-1790204466053-7335e8591ad7",
+    "bitget-public-ws-trades-2zusdt-1790225422348-1790225422348-1c704a59fcbd",
+    "bitget-public-ws-trades-2zusdt-1790256848460-1790256921254-447d2432112e",
+    "bitget-public-ws-trades-2zusdt-1790291820353-1790291820353-61728f30f282",
+    "bitget-public-ws-trades-2zusdt-1790312281030-1790312366249-2da31974ba2e",
+    "bitget-public-ws-trades-2zusdt-1790344083845-1790344132285-1a7130aeba97",
+    "bitget-public-ws-trades-aaveusdt-1790117942775-1790118068474-8b882fd572d9",
+    "bitget-public-ws-trades-aaveusdt-1790138736156-1790138861999-fa77d7f7f884",
+    "bitget-public-ws-trades-aaveusdt-1790170775241-1790170899654-52f9cafca061",
+    "bitget-public-ws-trades-aaveusdt-1790204480940-1790204599081-82689df47190",
+    "bitget-public-ws-trades-aaveusdt-1790225428133-1790225428133-7ddf10b4c1f6",
+    "bitget-public-ws-trades-aaveusdt-1790256848747-1790256982038-3025f0967a7f",
+    "bitget-public-ws-trades-aaveusdt-1790291824466-1790291952892-6c00717bb405",
+    "bitget-public-ws-trades-aaveusdt-1790312284059-1790312406677-cc8c9069d9de",
+    "bitget-public-ws-trades-aaveusdt-1790344068896-1790344185622-6352181aa819",
+    "bitget-public-ws-trades-adausdt-1790117943453-1790118063421-155546c759f5",
+    "bitget-public-ws-trades-adausdt-1790138724508-1790138839543-8c73f636f70e",
+    "bitget-public-ws-trades-adausdt-1790170777071-1790170892616-00729810f82e",
+    "bitget-public-ws-trades-adausdt-1790204466582-1790204592911-42a8759e40a8",
+    "bitget-public-ws-trades-adausdt-1790225430283-1790225531547-985f6fbafccd",
+    "bitget-public-ws-trades-adausdt-1790256842529-1790256977777-3354ecbcd2d6",
+    "bitget-public-ws-trades-adausdt-1790291824741-1790291942876-df689518eab3",
+    "bitget-public-ws-trades-adausdt-1790312288271-1790312410818-7070b12fb52a",
+    "bitget-public-ws-trades-adausdt-1790344063942-1790344202591-ade28d180607",
+    "bitget-public-ws-trades-adausdt-1790364007381-1790364119270-88db92e532c0",
+    "bitget-public-ws-trades-adausdt-1790431933677-1790432059570-c94f02476a6e",
+    "bitget-public-ws-trades-aerousdt-1790117940623-1790118017195-9b939a6e9147",
+    "bitget-public-ws-trades-aerousdt-1790138734394-1790138868500-37924c3e9bd4",
+    "bitget-public-ws-trades-aerousdt-1790170774846-1790170888136-801e2efe0141",
+    "bitget-public-ws-trades-aerousdt-1790204470095-1790204615201-e6f9e59140a8",
+    "bitget-public-ws-trades-aerousdt-1790225429411-1790225551505-d615e7e9fc23",
+    "bitget-public-ws-trades-aerousdt-1790256856902-1790256960769-232c204e56d9",
+    "bitget-public-ws-trades-aerousdt-1790291825918-1790291933409-93d5c1e1be45",
+    "bitget-public-ws-trades-aerousdt-1790312287280-1790312404850-e909282065f1",
+    "bitget-public-ws-trades-aerousdt-1790344067989-1790344211151-b4a907ae61d4",
+    "bitget-public-ws-trades-aixbtusdt-1790117942595-1790118001764-291b2f7b98aa",
+    "bitget-public-ws-trades-aixbtusdt-1790138724008-1790138866056-7461dba500e0",
+    "bitget-public-ws-trades-aixbtusdt-1790170775602-1790170883987-f4db197fec62",
+    "bitget-public-ws-trades-aixbtusdt-1790204475658-1790204475658-c962f944585d",
+    "bitget-public-ws-trades-aixbtusdt-1790225428289-1790225502600-34047ddbc6de",
+    "bitget-public-ws-trades-aixbtusdt-1790256847865-1790256951651-73419820f031",
+    "bitget-public-ws-trades-aixbtusdt-1790291827325-1790291827325-f69c3eccb35b",
+    "bitget-public-ws-trades-aixbtusdt-1790312278446-1790312278446-ffa8aff2ebb2",
+    "bitget-public-ws-trades-aixbtusdt-1790344063386-1790344174928-ab708b19bf35",
+    "bitget-public-ws-trades-algousdt-1790117947469-1790118069353-9bdb105191b5",
+    "bitget-public-ws-trades-algousdt-1790138725138-1790138836876-95d09809dabc",
+    "bitget-public-ws-trades-algousdt-1790170774475-1790170903676-d21ba9801e7f",
+    "bitget-public-ws-trades-algousdt-1790204470501-1790204533436-643086466bcf",
+    "bitget-public-ws-trades-algousdt-1790225438096-1790225582625-1ba0c0e53d1a",
+    "bitget-public-ws-trades-algousdt-1790256855394-1790256980331-3fa507d82f73",
+    "bitget-public-ws-trades-algousdt-1790291829574-1790291953628-9b808a6cc4f9",
+    "bitget-public-ws-trades-algousdt-1790312286938-1790312411105-24ad57d0fe49",
+    "bitget-public-ws-trades-algousdt-1790344070043-1790344191889-eddbcef0dc84",
+    "bitget-public-ws-trades-animeusdt-1790117941056-1790117941056-de3431ee802f",
+    "bitget-public-ws-trades-animeusdt-1790138718451-1790138834627-411d0a08354f",
+    "bitget-public-ws-trades-animeusdt-1790170776529-1790170888448-aa861281da61",
+    "bitget-public-ws-trades-animeusdt-1790204470784-1790204470784-991171f71125",
+    "bitget-public-ws-trades-animeusdt-1790225439134-1790225439134-6f4ee82c85e9",
+    "bitget-public-ws-trades-animeusdt-1790256850186-1790256951187-114d47b77cc4",
+    "bitget-public-ws-trades-animeusdt-1790291825811-1790291910916-6063aea36c25",
+    "bitget-public-ws-trades-animeusdt-1790312281644-1790312281644-7d0101f36a9c",
+    "bitget-public-ws-trades-animeusdt-1790344068218-1790344171145-6ff164951559",
+    "bitget-public-ws-trades-apeusdt-1790117941734-1790118047373-483eea1db56d",
+    "bitget-public-ws-trades-apeusdt-1790138726550-1790138836698-3d4426ccb163",
+    "bitget-public-ws-trades-apeusdt-1790170776878-1790170860253-942bdd82f809",
+    "bitget-public-ws-trades-apeusdt-1790204458061-1790204514145-6a0b18a61b62",
+    "bitget-public-ws-trades-apeusdt-1790225442344-1790225466364-533a9418e924",
+    "bitget-public-ws-trades-apeusdt-1790256852510-1790256950648-a50f2b525360",
+    "bitget-public-ws-trades-apeusdt-1790291824828-1790291824828-53a490bbc78b",
+    "bitget-public-ws-trades-apeusdt-1790312284003-1790312323364-a98a76479633",
+    "bitget-public-ws-trades-apeusdt-1790344063032-1790344186611-60989282b856",
+    "bitget-public-ws-trades-aptusdt-1790117940357-1790118074864-c0e33c92e47a",
+    "bitget-public-ws-trades-aptusdt-1790138730345-1790138844754-2e5270cfde75",
+    "bitget-public-ws-trades-aptusdt-1790170770863-1790170906493-891a4d51575f",
+    "bitget-public-ws-trades-aptusdt-1790204466198-1790204589087-c3720ddc72e2",
+    "bitget-public-ws-trades-aptusdt-1790225422475-1790225554876-7457ee356ace",
+    "bitget-public-ws-trades-aptusdt-1790256848567-1790256992233-2793acda09f8",
+    "bitget-public-ws-trades-aptusdt-1790291820354-1790291956019-58141e0e1419",
+    "bitget-public-ws-trades-aptusdt-1790312281180-1790312393256-c5c6814e6f66",
+    "bitget-public-ws-trades-aptusdt-1790344083981-1790344219961-60d6e48585f4",
+    "bitget-public-ws-trades-aptusdt-1790364007509-1790364131183-b4ae1fcc6ca4",
+    "bitget-public-ws-trades-aptusdt-1790431933678-1790432060889-0a01c5e4d123",
+    "bitget-public-ws-trades-arbusdt-1790117943579-1790118071367-c16457c3fa2d",
+    "bitget-public-ws-trades-arbusdt-1790138724508-1790138839749-ed9ac13232e9",
+    "bitget-public-ws-trades-arbusdt-1790170777173-1790170899303-8aa41471e258",
+    "bitget-public-ws-trades-arbusdt-1790204466582-1790204586477-d74b5678f7d2",
+    "bitget-public-ws-trades-arbusdt-1790225430409-1790225553610-efa383834121",
+    "bitget-public-ws-trades-arbusdt-1790256842530-1790256980409-0ba1b8a2aa6c",
+    "bitget-public-ws-trades-arbusdt-1790291824866-1790291925342-d3b52df7bb1e",
+    "bitget-public-ws-trades-arbusdt-1790312288402-1790312422630-f3116ecce7b9",
+    "bitget-public-ws-trades-arbusdt-1790344063942-1790344204799-5cb70fc83f5f",
+    "bitget-public-ws-trades-arbusdt-1790364007637-1790364131824-0a693aa34e5e",
+    "bitget-public-ws-trades-arbusdt-1790431933837-1790432058764-5d550e5edcae",
+    "bitget-public-ws-trades-arusdt-1790117942774-1790118055729-16f5884c203a",
+    "bitget-public-ws-trades-arusdt-1790138736213-1790138801742-0f3dc54bd51f",
+    "bitget-public-ws-trades-arusdt-1790170775238-1790170890709-938e4e5970be",
+    "bitget-public-ws-trades-arusdt-1790204480834-1790204570971-0b9d1f09013a",
+    "bitget-public-ws-trades-arusdt-1790225428010-1790225461676-3d32049cb156",
+    "bitget-public-ws-trades-arusdt-1790256848747-1790256981070-002bf02417c2",
+    "bitget-public-ws-trades-arusdt-1790291824468-1790291912532-bc33eeb16457",
+    "bitget-public-ws-trades-arusdt-1790312284059-1790312347285-9a9dfcef79df",
+    "bitget-public-ws-trades-arusdt-1790344069035-1790344157650-f1ba885bd77d",
+    "bitget-public-ws-trades-asterusdt-1790117940624-1790118053323-ee479224f467",
+    "bitget-public-ws-trades-asterusdt-1790138734474-1790138866559-ad9a88f38401",
+    "bitget-public-ws-trades-asterusdt-1790170774975-1790170888604-3cba0757b182",
+    "bitget-public-ws-trades-asterusdt-1790204470095-1790204592908-44a1ffd81eef",
+    "bitget-public-ws-trades-asterusdt-1790225429411-1790225560225-cfa7b6f3bab8",
+    "bitget-public-ws-trades-asterusdt-1790256856899-1790256956847-a9f89f94e85b",
+    "bitget-public-ws-trades-asterusdt-1790291825918-1790291945553-883d87210af8",
+    "bitget-public-ws-trades-asterusdt-1790312287281-1790312317146-e73bd9a9b916"
+  ],
+  "cross_shard_overlap_count": 0,
+  "failed": [
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789776000141-1789798765030-80d6b0a5dacb",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789798765032-1789829352014-2879e5b7812e",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789829352014-1789851298516-ad1db890de5b",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789851298519-1789862399508-3f452590c795",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789862400002-1789880296380-17d4f64785f3",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789880296380-1789909388718-053af3fadfc1",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789909388718-1789924385683-4b4c20c7c897",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789924385684-1789946361984-bac951fb708d",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1789946361984-1789948799844-ad51e2af10ea",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790035200005-1790042978810-6d898194d9e9",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790042978821-1790054302036-b4d9fe78e0f6",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790054302045-1790066663513-0435593eca52",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790066663559-1790077527132-6728767559db",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790077527135-1790086225495-4612e29d4527",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790086225495-1790092175892-29f1d470f128",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790092176088-1790101959911-9e2d687661ce",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790101959912-1790120935628-4d73893c6527",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790120935628-1790121599037-495a40c1b66c",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790380800082-1790430019279-b37e587d4b3c",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-btcusdt-1790430019537-1790467199959-1aaa2f204375",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789776000003-1789796291633-6c8e3c4b4a17",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789796291784-1789811720682-fee016bd8176",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789811720683-1789835644928-3c489d6b5a84",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789835644928-1789855180746-8a4a3f84e574",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789855180746-1789862399909-1c4bdacdc8bf",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789862400005-1789874564080-a44bb5065bbf",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789874564081-1789897303645-5887fc4f8507",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789897303645-1789919185570-b018fd920818",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789919185570-1789925958358-e52fa736c4c2",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789925958360-1789942443850-00e56e00cb02",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1789942443850-1789948799859-f6bd3016ad9f",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790035200006-1790043205272-ab0d050e2ce2",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790043205272-1790055206948-ecb74ee8eba1",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790055206948-1790068405167-3e1e2936cfd8",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790068405167-1790083772235-f0f5fc9fdd3b",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790083772235-1790089332889-1f1b4c02e485",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790089332889-1790100008599-d8a61b196d09",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790100008599-1790119253103-8973c75141cb",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-ethusdt-1790119253103-1790121599291-39db4722339b",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789776000003-1789841831962-b2693683375f",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789841832089-1789862399764-101972967729",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789862400002-1789927404801-e198c8b80557",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789927405834-1789948799877-aed6846bee22",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789948800002-1789984960044-ab4256098f7e",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1789984960202-1790018353128-b605b6f2051d",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1790018353532-1790035199947-13fa119aaab9",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1790035200009-1790085605809-2107d0545fb5",
+      "reason": "identity_missing"
+    },
+    {
+      "dataset_id": "binance-usdm-official-archive-trades-solusdt-1790085605819-1790121599107-753b031ab798",
+      "reason": "identity_missing"
+    }
+  ],
+  "failure_reasons": {},
+  "global_identity_digest": "65694da7fe76fdb31931260108917748e1a965f99d30cec7f81929d768956afa",
+  "global_unique_trade_count": 283817,
+  "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
+  "method": "sqlite_sha256_identity_dedup_across_immutable_release_assets",
+  "remaining_candidate_shards": 2099,
+  "schema": "alina.global_unique_trade_patch.v1"
+}
