@@ -121,8 +121,11 @@ def main():
         if not request_id:
             raise SystemExit(f"missing request id: {path}")
 
-        if args.phase == "ANALYZE" and args.analysis_stage not in set(STAGE_BY_KIND.values()):
-            raise SystemExit("ANALYZE import requires a valid explicit analysis stage")
+        if args.phase == "ANALYZE":
+            if args.analysis_stage == "DRAIN":
+                continue
+            if args.analysis_stage not in set(STAGE_BY_KIND.values()):
+                raise SystemExit("ANALYZE import requires a valid explicit analysis stage")
         for campaign_kind in campaign_kinds(intent, args.analysis_stage):
             campaign_id = "operator-" + request_id[:32] + "-" + campaign_kind
             target = Path("catalog/campaigns") / (campaign_id + ".json")
