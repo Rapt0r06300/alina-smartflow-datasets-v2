@@ -104,7 +104,7 @@ jobs:
 
           ACTIVE_COPY_CAMPAIGNS="$(python - <<'PY'
           import glob,json
-          active={"PENDING","RUNNING","CONTINUATION_REQUIRED"}
+          active={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}
           count=0
           for path in glob.glob("catalog/campaigns/copy-vault-*-v6.json"):
               try:
