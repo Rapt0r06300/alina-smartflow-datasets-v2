@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Import immutable operator intents from Alina main into Dataset V2 campaigns."""
 from __future__ import annotations
-import argparse, hashlib, json, subprocess
+import argparse, hashlib, json, os, subprocess
 from pathlib import Path
 
 COLLECT={"start_collection"}
@@ -45,6 +45,6 @@ def main():
               "--cursor-json",json.dumps(config,separators=(",",":")),"--creation-phase",a.phase,"--phase-epoch",str(a.phase_epoch)]
         if a.phase=="ANALYZE":
             args += ["--source-collection-epoch",a.source_collection_epoch,"--collection-cutoff-at-utc",a.collection_cutoff_at_utc,"--dataset-selection-id","operator-"+str(a.source_collection_epoch), "--operator-request-id",request_id]
-        subprocess.run(args,check=True)
+        env=os.environ.copy()\n        env["PYTHONPATH"]=str(Path(a.alina_root)/"src")+os.pathsep+env.get("PYTHONPATH","")\n        subprocess.run(args,check=True,env=env)
         print(json.dumps({"request_id":request_id,"campaign_id":campaign_id,"kind":campaign_kind},sort_keys=True))
 if __name__=="__main__": main()
