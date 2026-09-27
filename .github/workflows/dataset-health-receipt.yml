@@ -10,6 +10,7 @@ on:
       - "catalog/campaigns/**"
       - "control/alina-phase.json"
       - "tools/generate_health_receipt.py"
+      - "tools/build_copy_vault_coverage_receipt.py"
 permissions:
   contents: write
 concurrency:
