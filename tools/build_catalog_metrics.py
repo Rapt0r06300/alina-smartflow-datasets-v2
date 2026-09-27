@@ -90,6 +90,8 @@ def build() -> dict[str, Any]:
     by_venue: dict[str, dict[str, int]] = {}
     by_symbol: dict[str, dict[str, int]] = {}
     by_family: dict[str, dict[str, int]] = {}
+    valid_record_count_missing = 0
+    unique_record_count_missing = 0
 
     for row in shards:
         if not isinstance(row, dict):
@@ -100,8 +102,16 @@ def build() -> dict[str, Any]:
         invalid = _int(row.get("invalid_record_count"))
         duplicates = _int(row.get("duplicate_count"))
         gaps = _int(row.get("gap_count"))
-        valid_records = _int(row.get("valid_record_count")) if row.get("valid_record_count") is not None else max(0, records - invalid)
-        unique_records = _int(row.get("unique_record_count")) if row.get("unique_record_count") is not None else max(0, valid_records - duplicates)
+        if row.get("valid_record_count") is None:
+            valid_record_count_missing += 1
+            valid_records = 0
+        else:
+            valid_records = _int(row.get("valid_record_count"))
+        if row.get("unique_record_count") is None:
+            unique_record_count_missing += 1
+            unique_records = 0
+        else:
+            unique_records = _int(row.get("unique_record_count"))
         compressed = _int(row.get("bytes"))
         size_entry = size_rows.get(str(row.get("dataset_id")))
         if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
@@ -228,6 +238,10 @@ def build() -> dict[str, Any]:
         except (OSError,ValueError,TypeError):
             totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"]=False
 
+    totals["VALID_RECORD_COUNT_MISSING_SHARDS"] = valid_record_count_missing
+    totals["UNIQUE_RECORD_COUNT_MISSING_SHARDS"] = unique_record_count_missing
+    totals["VALID_RECORDS_COVERAGE_COMPLETE"] = valid_record_count_missing == 0
+    totals["UNIQUE_RECORDS_COVERAGE_COMPLETE"] = unique_record_count_missing == 0
     totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"] = (
         totals["UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS"] == 0
         and size_doc.get("coverage_complete") is True
