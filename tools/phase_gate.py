@@ -6,6 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 PHASES={"IDLE","COLLECT","ANALYZE"}
+ANALYSIS_STAGES={"DRAIN","QUALITY","REPLAY","BACKTEST","OOS","FORWARD_PAPER","PNL_PROOF","SCOREBOARD","DONE"}
 COLLECT_KINDS={"market_collection","copy_vault_collection","official_archive_collection","event_intelligence_collection"}
 ANALYZE_KINDS={"replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard"}
 ANALYSIS_STAGE_BY_KIND={
@@ -42,7 +43,11 @@ def load(path: Path) -> dict:
         raise SystemExit("IDLE state contains active-phase fields")
     if phase=="COLLECT" and (value["collection_started_at_utc"] is None or value["collection_cutoff_at_utc"] is not None or value["source_collection_epoch"] is not None or value["analysis_stage"] is not None):
         raise SystemExit("invalid COLLECT state")
-    if phase=="ANALYZE" and (value["collection_cutoff_at_utc"] is None or not isinstance(value["source_collection_epoch"],int) or value["analysis_stage"] is None):
+    if phase=="ANALYZE" and (
+        value["collection_cutoff_at_utc"] is None
+        or not isinstance(value["source_collection_epoch"], int)
+        or value["analysis_stage"] not in ANALYSIS_STAGES
+    ):
         raise SystemExit("invalid ANALYZE state")
     return value
 
