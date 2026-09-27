@@ -26,10 +26,12 @@ def main() -> int:
     p.add_argument("--phase",default="control/alina-phase.json")
     p.add_argument("--campaign-dir",default="catalog/campaigns")
     p.add_argument("--output",default="catalog/DATASET_HEALTH_RECEIPT.json")
+    p.add_argument("--replay-reasons",default="catalog/REPLAY_COMPATIBILITY_REASONS.json")
     p.add_argument("--dataset-commit",required=True)
     args=p.parse_args()
     metrics=load(Path(args.metrics))
     phase=load(Path(args.phase))
+    replay_reasons=load(Path(args.replay_reasons), {}) if Path(args.replay_reasons).is_file() else {}
     totals=dict(metrics.get("totals") or {})
     campaigns=[]
     for path in sorted(Path(args.campaign_dir).glob("*.json")):
@@ -114,6 +116,12 @@ def main() -> int:
         "by_family":metrics.get("by_family") or {},
         "by_symbol":metrics.get("by_symbol") or {},
         "metrics_digest":hashlib.sha256(canonical(metrics).encode()).hexdigest(),
+        "replay_compatibility_reasons": {
+            "receipt_digest": replay_reasons.get("receipt_digest") if isinstance(replay_reasons,dict) else None,
+            "reason_counts": replay_reasons.get("reason_counts") if isinstance(replay_reasons,dict) else {},
+            "safe_not_replayable_count": replay_reasons.get("safe_not_replayable_count") if isinstance(replay_reasons,dict) else None,
+            "replayable_not_safe_count": replay_reasons.get("replayable_not_safe_count") if isinstance(replay_reasons,dict) else None,
+        },
         "campaign_counts":counts,
         "backlog_by_kind":backlog_by_kind,
         "stuck_campaigns":stuck,
