@@ -149,7 +149,7 @@ jobs:
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/campaigns catalog/copy_vault_selections
+          git add catalog/campaigns catalog/copy_vault_selections control/phase-receipts
           git diff --cached --quiet && exit 0
           git commit -m "campaign: create continuous resumable work"
           for i in 1 2 3 4 5; do
