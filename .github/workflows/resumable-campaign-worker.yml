@@ -93,7 +93,7 @@ jobs:
           echo "phase=$PHASE" >> "$GITHUB_OUTPUT"
           echo "phase_epoch=$PHASE_EPOCH" >> "$GITHUB_OUTPUT"
           python - <<'PY' "$M" >> "$GITHUB_OUTPUT"
-          import json,sys
+          import json,os,sys
           m=json.load(open(sys.argv[1]))
           handoff_epoch=os.environ.get("HANDOFF_PHASE_EPOCH") or ""
           if handoff_epoch and int(handoff_epoch) != int(m.get("phase_epoch") or 0):
