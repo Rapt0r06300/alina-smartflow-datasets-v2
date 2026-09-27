@@ -24,10 +24,10 @@ ANALYZE = {
 KIND = {
     "replay": "replay",
     "backtest": "backtest",
-    "oos": "backtest",
-    "forward_paper": "module_pnl_proof",
+    "oos": "oos",
+    "forward_paper": "forward_paper",
     "module_pnl_proof": "module_pnl_proof",
-    "scoreboard": "module_pnl_proof",
+    "scoreboard": "scoreboard",
 }
 
 
@@ -69,7 +69,7 @@ def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, ph
 
 def campaign_kinds(intent):
     if intent == "full_cycle":
-        return ("replay", "backtest", "module_pnl_proof")
+        return ("replay", "backtest", "oos", "forward_paper", "module_pnl_proof", "scoreboard")
     return (KIND.get(intent, "replay"),)
 
 
