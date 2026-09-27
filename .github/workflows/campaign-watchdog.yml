@@ -1,0 +1,34 @@
+name: campaign-watchdog
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "catalog/campaigns/**"
+      - "tools/campaign_watchdog.py"
+      - ".github/workflows/campaign-watchdog.yml"
+permissions:
+  contents: write
+concurrency:
+  group: campaign-watchdog
+  cancel-in-progress: false
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - run: python tools/campaign_watchdog.py
+      - name: Persist watchdog receipt
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/CAMPAIGN_WATCHDOG_RECEIPT.json
+          git diff --cached --quiet && exit 0
+          git commit -m "watchdog: persist campaign health receipt"
+          git push origin HEAD:main
