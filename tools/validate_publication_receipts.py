@@ -35,6 +35,7 @@ def main():
                 "source_collection_epoch",
                 "collection_cutoff_at_utc",
                 "dataset_selection_id",
+                "analysis_stage",
             ):
                 if row.get(key) in (None, ""):
                     raise SystemExit(f"{path}: missing frozen lineage field {key}")
