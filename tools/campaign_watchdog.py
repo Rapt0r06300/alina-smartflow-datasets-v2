@@ -80,10 +80,18 @@ def main():
     dispatched = []
     dispatch_failures = []
     phase = {}
+    phase_error = None
     try:
         phase = json.loads(Path(a.phase_state).read_text(encoding="utf-8"))
+        if (
+            not isinstance(phase, dict)
+            or phase.get("phase") not in {"IDLE", "COLLECT", "ANALYZE"}
+            or not isinstance(phase.get("epoch"), int)
+        ):
+            raise ValueError("invalid phase state")
     except (OSError, ValueError):
         phase = {}
+        phase_error = "invalid_phase_state"
     repository = os.environ.get("GITHUB_REPOSITORY", "")
     for path in manifests:
         row = json.loads(path.read_text(encoding="utf-8"))
@@ -134,10 +142,15 @@ def main():
             dispatch_failures, key=lambda item: item["campaign_id"]
         ),
         "phase_checked": phase,
+        "phase_error": phase_error,
         "paper_only": True,
         "read_only": True,
         "real_execution": False,
-        "watchdog_status": "BLOCKED" if unsafe else ("ATTENTION" if stuck or expired_leases else "HEALTHY"),
+        "watchdog_status": (
+            "BLOCKED"
+            if unsafe or phase_error
+            else ("ATTENTION" if stuck or expired_leases or dispatch_failures else "HEALTHY")
+        ),
     }
     target = Path(a.output)
     target.parent.mkdir(parents=True, exist_ok=True)
