@@ -19,11 +19,17 @@ def main():
         manifest_path=Path(a.campaign_dir)/f"{campaign_id}.json"
         if not manifest_path.is_file():
             errors.append({"receipt":str(receipt_path),"code":"CAMPAIGN_MANIFEST_MISSING"}); continue
-        manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest_bytes=manifest_path.read_bytes()
+        manifest_sha=hashlib.sha256(manifest_bytes).hexdigest()
+        if row.get("manifest_sha256") != manifest_sha:
+            errors.append({"receipt":str(receipt_path),"code":"MANIFEST_SHA256_MISMATCH"})
+        manifest=json.loads(manifest_bytes.decode("utf-8"))
         units=manifest.get("completed_units") or {}
         unit=str(row.get("unit_id"))
         if unit not in units:
             errors.append({"receipt":str(receipt_path),"code":"PUBLISHED_UNIT_NOT_IN_MANIFEST","unit_id":unit})
+        elif row.get("checkpoint_id") and isinstance(units.get(unit), dict) and units[unit].get("sha256") != row.get("checkpoint_id"):
+            errors.append({"receipt":str(receipt_path),"code":"CHECKPOINT_DIGEST_MISMATCH","unit_id":unit})
         if manifest.get("code_sha") not in (None,row.get("alina_head")):
             errors.append({"receipt":str(receipt_path),"code":"ALINA_CODE_SHA_MISMATCH"})
         if row.get("publication_state") not in {"RELEASE_AND_RECEIPT_WRITTEN","RECONCILED"}:
