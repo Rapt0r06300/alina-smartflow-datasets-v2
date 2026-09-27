@@ -1,0 +1,44 @@
+name: uncompressed-size-v2
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum new assets to measure in this run"
+        required: false
+        default: "100"
+  schedule:
+    - cron: "41 */3 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: dataset-v2-uncompressed-size
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@a26af69be951a213d495c4e3e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Measure exact or unavailable sizes
+        env:
+          MEASURE_LIMIT: ${{ inputs.limit || '100' }}
+        run: python tools/measure_uncompressed_sizes.py --limit "${MEASURE_LIMIT}"
+      - name: Publish size patch
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/UNCOMPRESSED_SIZE_PATCH.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: advance uncompressed size coverage"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i*2))
+          done
+          exit 1
