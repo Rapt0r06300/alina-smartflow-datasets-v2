@@ -137,6 +137,7 @@ def main() -> int:
             "valid_record_count_exact":bool(totals.get("VALID_RECORDS_COVERAGE_COMPLETE")),
             "unique_record_count_exact":bool(totals.get("UNIQUE_RECORDS_COVERAGE_COMPLETE")),
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
+            "trade_count_failure_reason_count":int(totals.get("TRADE_COUNT_FAILURE_REASON_COUNT") or 0),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
             "uncompressed_bytes_coverage_complete":totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
             "uncompressed_bytes_exact":(
