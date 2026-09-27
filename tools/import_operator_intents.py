@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 
 COLLECT = {"start_collection"}
@@ -36,6 +37,36 @@ def digest(value):
     ).hexdigest()
 
 
+def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, phase, phase_epoch, source_epoch):
+    receipt = {
+        "schema": "alina.dispatch_receipt.v1",
+        "request_id": request_id,
+        "campaign_id": campaign_id,
+        "main_code_sha": code_sha,
+        "dataset_repo_sha": dataset_sha,
+        "creation_phase": phase,
+        "phase_epoch": phase_epoch,
+        "source_collection_epoch": source_epoch,
+        "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
+        "dispatched_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+    target = Path("catalog/dispatch-receipts") / (campaign_id + ".json")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        old = json.loads(target.read_text(encoding="utf-8"))
+        stable = dict(receipt)
+        stable.pop("dispatched_at_utc", None)
+        old_stable = dict(old)
+        old_stable.pop("dispatched_at_utc", None)
+        if stable != old_stable:
+            raise SystemExit("dispatch receipt identity conflict")
+        return
+    target.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+
 def campaign_kinds(intent):
     if intent == "full_cycle":
         return ("replay", "backtest", "module_pnl_proof")
@@ -50,6 +81,7 @@ def main():
     parser.add_argument("--source-collection-epoch", default="")
     parser.add_argument("--collection-cutoff-at-utc", default="")
     parser.add_argument("--code-sha", required=True)
+    parser.add_argument("--dataset-repo-sha", required=True)
     args = parser.parse_args()
 
     intent_root = Path(args.alina_root) / "control" / "operator-intents"
@@ -131,6 +163,15 @@ def main():
                 + env.get("PYTHONPATH", "")
             )
             subprocess.run(command, check=True, env=env)
+            write_dispatch_receipt(
+                campaign_id=campaign_id,
+                request_id=request_id,
+                code_sha=args.code_sha,
+                dataset_sha=args.dataset_repo_sha,
+                phase=args.phase,
+                phase_epoch=args.phase_epoch,
+                source_epoch=args.source_collection_epoch if args.phase == "ANALYZE" else None,
+            )
             print(
                 json.dumps(
                     {
