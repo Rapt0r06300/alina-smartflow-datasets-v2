@@ -77,7 +77,7 @@ jobs:
           if [ "$PHASE" = "ANALYZE" ]; then
             test -n "$SOURCE_COLLECTION_EPOCH"
             test -n "$COLLECTION_CUTOFF"
-            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF" --dataset-selection-id "phase-${SOURCE_COLLECTION_EPOCH}-${COLLECTION_CUTOFF}" --operator-request-id "$REQUEST_ID")
+            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF" --dataset-selection-id "phase-${SOURCE_COLLECTION_EPOCH}-${COLLECTION_CUTOFF}" --analysis-stage "$ANALYSIS_STAGE" --operator-request-id "$REQUEST_ID")
           fi
           PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
