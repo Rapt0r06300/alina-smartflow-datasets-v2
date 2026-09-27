@@ -1,50 +1,147 @@
 #!/usr/bin/env python3
 """Import immutable operator intents from Alina main into Dataset V2 campaigns."""
 from __future__ import annotations
-import argparse, hashlib, json, os, subprocess
+
+import argparse
+import hashlib
+import json
+import os
+import subprocess
 from pathlib import Path
 
-COLLECT={"start_collection"}
-ANALYZE={"analyze","replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard","full_cycle"}
-KIND={"replay":"replay","backtest":"backtest","oos":"backtest","forward_paper":"module_pnl_proof","module_pnl_proof":"module_pnl_proof","scoreboard":"module_pnl_proof"}
+COLLECT = {"start_collection"}
+ANALYZE = {
+    "analyze",
+    "replay",
+    "backtest",
+    "oos",
+    "forward_paper",
+    "module_pnl_proof",
+    "scoreboard",
+    "full_cycle",
+}
+KIND = {
+    "replay": "replay",
+    "backtest": "backtest",
+    "oos": "backtest",
+    "forward_paper": "module_pnl_proof",
+    "module_pnl_proof": "module_pnl_proof",
+    "scoreboard": "module_pnl_proof",
+}
 
-def digest(v): return hashlib.sha256(json.dumps(v,sort_keys=True,separators=(",",":")).encode()).hexdigest()
+
+def digest(value):
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
+def campaign_kinds(intent):
+    if intent == "full_cycle":
+        return ("replay", "backtest", "module_pnl_proof")
+    return (KIND.get(intent, "replay"),)
+
 
 def main():
-    p=argparse.ArgumentParser()
-    p.add_argument("--alina-root",required=True)
-    p.add_argument("--phase",required=True)
-    p.add_argument("--phase-epoch",required=True,type=int)
-    p.add_argument("--source-collection-epoch",default="")
-    p.add_argument("--collection-cutoff-at-utc",default="")
-    p.add_argument("--code-sha",required=True)
-    a=p.parse_args()
-    intent_root=Path(a.alina_root)/"control"/"operator-intents"
-    if not intent_root.is_dir(): return
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--alina-root", required=True)
+    parser.add_argument("--phase", required=True)
+    parser.add_argument("--phase-epoch", required=True, type=int)
+    parser.add_argument("--source-collection-epoch", default="")
+    parser.add_argument("--collection-cutoff-at-utc", default="")
+    parser.add_argument("--code-sha", required=True)
+    args = parser.parse_args()
+
+    intent_root = Path(args.alina_root) / "control" / "operator-intents"
+    if not intent_root.is_dir():
+        return
+
     for path in sorted(intent_root.glob("*.json")):
-        row=json.loads(path.read_text(encoding="utf-8"))
-        if row.get("paper_only") is not True or row.get("read_only") is not True or row.get("real_execution") is not False:
+        row = json.loads(path.read_text(encoding="utf-8"))
+        if (
+            row.get("paper_only") is not True
+            or row.get("read_only") is not True
+            or row.get("real_execution") is not False
+        ):
             raise SystemExit(f"unsafe operator intent: {path}")
-        intent=str(row.get("intent") or "")
-        if intent not in COLLECT|ANALYZE: continue
-        expected_phase="COLLECT" if intent in COLLECT else "ANALYZE"
-        if a.phase!=expected_phase: continue
-        campaign_kind="market_collection" if intent in COLLECT else KIND.get(intent,"replay")
-        request_id=str(row.get("request_id") or "")
-        if not request_id: raise SystemExit(f"missing request id: {path}")
-        campaign_id="operator-"+request_id[:32]+"-"+campaign_kind
-        target=Path("catalog/campaigns")/(campaign_id+".json")
-        if target.exists(): continue
-        config=dict(row.get("config") or {})
-        config["operator_intent"]=intent
-        config["request_id"]=request_id
-        cfg=digest(config)
-        args=["python",str(Path(a.alina_root)/"tools/resumable_campaign.py"),"create",str(target),
-              "--campaign-id",campaign_id,"--kind",campaign_kind,"--code-sha",a.code_sha,
-              "--dataset-generation","V2_OPERATOR","--config-sha256",cfg,"--work-plan-sha256",digest({"intent":intent}),
-              "--cursor-json",json.dumps(config,separators=(",",":")),"--creation-phase",a.phase,"--phase-epoch",str(a.phase_epoch)]
-        if a.phase=="ANALYZE":
-            args += ["--source-collection-epoch",a.source_collection_epoch,"--collection-cutoff-at-utc",a.collection_cutoff_at_utc,"--dataset-selection-id","operator-"+str(a.source_collection_epoch), "--operator-request-id",request_id]
-        env=os.environ.copy()\n        env["PYTHONPATH"]=str(Path(a.alina_root)/"src")+os.pathsep+env.get("PYTHONPATH","")\n        subprocess.run(args,check=True,env=env)
-        print(json.dumps({"request_id":request_id,"campaign_id":campaign_id,"kind":campaign_kind},sort_keys=True))
-if __name__=="__main__": main()
+
+        intent = str(row.get("intent") or "")
+        if intent not in COLLECT | ANALYZE:
+            continue
+        expected_phase = "COLLECT" if intent in COLLECT else "ANALYZE"
+        if args.phase != expected_phase:
+            continue
+
+        request_id = str(row.get("request_id") or "")
+        if not request_id:
+            raise SystemExit(f"missing request id: {path}")
+
+        for campaign_kind in campaign_kinds(intent):
+            campaign_id = "operator-" + request_id[:32] + "-" + campaign_kind
+            target = Path("catalog/campaigns") / (campaign_id + ".json")
+            if target.exists():
+                continue
+
+            config = dict(row.get("config") or {})
+            config["operator_intent"] = intent
+            config["request_id"] = request_id
+            config["operator_stage"] = campaign_kind
+            config_sha = digest(config)
+            plan = {"intent": intent, "stage": campaign_kind}
+            command = [
+                "python",
+                str(Path(args.alina_root) / "tools/resumable_campaign.py"),
+                "create",
+                str(target),
+                "--campaign-id",
+                campaign_id,
+                "--kind",
+                campaign_kind,
+                "--code-sha",
+                args.code_sha,
+                "--dataset-generation",
+                "V2_OPERATOR",
+                "--config-sha256",
+                config_sha,
+                "--work-plan-sha256",
+                digest(plan),
+                "--cursor-json",
+                json.dumps(config, separators=(",", ":")),
+                "--creation-phase",
+                args.phase,
+                "--phase-epoch",
+                str(args.phase_epoch),
+            ]
+            if args.phase == "ANALYZE":
+                command += [
+                    "--source-collection-epoch",
+                    args.source_collection_epoch,
+                    "--collection-cutoff-at-utc",
+                    args.collection_cutoff_at_utc,
+                    "--dataset-selection-id",
+                    "operator-" + str(args.source_collection_epoch),
+                    "--operator-request-id",
+                    request_id,
+                ]
+
+            env = os.environ.copy()
+            env["PYTHONPATH"] = (
+                str(Path(args.alina_root) / "src")
+                + os.pathsep
+                + env.get("PYTHONPATH", "")
+            )
+            subprocess.run(command, check=True, env=env)
+            print(
+                json.dumps(
+                    {
+                        "request_id": request_id,
+                        "campaign_id": campaign_id,
+                        "kind": campaign_kind,
+                    },
+                    sort_keys=True,
+                )
+            )
+
+
+if __name__ == "__main__":
+    main()
