@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -12,10 +14,52 @@ def parse(value):
     return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
 
 
+def _run_state(run_id: str) -> tuple[str, str]:
+    if not run_id:
+        return "missing", ""
+    try:
+        cp = subprocess.run(
+            ["gh", "run", "view", run_id, "--json", "status,conclusion"],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        if cp.returncode != 0:
+            return "unknown", (cp.stderr or "").strip()[-300:]
+        payload = json.loads(cp.stdout or "{}")
+        return str(payload.get("status") or "unknown"), str(payload.get("conclusion") or "")
+    except (OSError, ValueError):
+        return "unknown", "gh_unavailable"
+
+
+def _dispatch_successor(row: dict, repository: str) -> tuple[bool, str]:
+    campaign_id = str(row.get("campaign_id") or "")
+    cursor = row.get("cursor") if isinstance(row.get("cursor"), dict) else {}
+    predecessor = str(cursor.get("last_run_id") or "")
+    status, detail = _run_state(predecessor)
+    if predecessor and status != "completed":
+        return False, "predecessor_active"
+    command = [
+        "gh", "workflow", "run", "resumable-campaign-worker.yml",
+        "--repo", repository,
+        "--ref", "main",
+        "-f", f"campaign_id={campaign_id}",
+        "-f", f"phase_epoch={row.get('phase_epoch')}",
+        "-f", f"generation={int(row.get('chunk_index') or 0)}",
+        "-f", f"predecessor_run_id={predecessor or 'unknown'}",
+    ]
+    cp = subprocess.run(command, text=True, capture_output=True, check=False)
+    if cp.returncode != 0:
+        return False, (cp.stderr or cp.stdout or "dispatch_failed").strip()[-500:]
+    return True, "dispatched"
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--campaign-root", default="catalog/campaigns")
+    p.add_argument("--phase-state", default="control/alina-phase.json")
     p.add_argument("--output", default="catalog/CAMPAIGN_WATCHDOG_RECEIPT.json")
+    p.add_argument("--dispatch", action="store_true")
     a = p.parse_args()
     now = datetime.now(timezone.utc)
     active = {"PENDING", "RUNNING", "CONTINUATION_REQUIRED", "STUCK"}
@@ -24,6 +68,14 @@ def main():
     expired_leases = []
     unsafe = []
     manifests = sorted(Path(a.campaign_root).glob("*.json"))
+    dispatched = []
+    dispatch_failures = []
+    phase = {}
+    try:
+        phase = json.loads(Path(a.phase_state).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        phase = {}
+    repository = os.environ.get("GITHUB_REPOSITORY", "")
     for path in manifests:
         row = json.loads(path.read_text(encoding="utf-8"))
         status = str(row.get("status") or "")
@@ -36,6 +88,22 @@ def main():
             unsafe.append(path.name)
         if status == "STUCK":
             stuck.append(str(row.get("campaign_id") or path.stem))
+        if (
+            a.dispatch
+            and phase.get("phase") == "COLLECT"
+            and row.get("creation_phase") == "COLLECT"
+            and row.get("phase_epoch") == phase.get("epoch")
+            and status == "CONTINUATION_REQUIRED"
+            and repository
+        ):
+            ok, detail = _dispatch_successor(row, repository)
+            if ok:
+                dispatched.append(str(row.get("campaign_id") or path.stem))
+            else:
+                dispatch_failures.append({
+                    "campaign_id": str(row.get("campaign_id") or path.stem),
+                    "reason": detail,
+                })
         lease = row.get("lease")
         if isinstance(lease, dict) and lease.get("expires_at"):
             if parse(lease["expires_at"]) <= now and status in active:
@@ -48,6 +116,11 @@ def main():
         "stuck_campaigns": sorted(stuck),
         "expired_leases": sorted(expired_leases),
         "unsafe_campaigns": sorted(unsafe),
+        "successors_dispatched": sorted(dispatched),
+        "successor_dispatch_failures": sorted(
+            dispatch_failures, key=lambda item: item["campaign_id"]
+        ),
+        "phase_checked": phase,
         "paper_only": True,
         "read_only": True,
         "real_execution": False,
