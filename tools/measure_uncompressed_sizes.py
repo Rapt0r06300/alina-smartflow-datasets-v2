@@ -46,8 +46,15 @@ def main():
                 failed.append({"dataset_id":dataset_id,"reason":reason})
                 sizes[dataset_id]={"status":"UNAVAILABLE","reason":reason,"retryable":True}
             shutil.rmtree(Path(tmp)/dataset_id,ignore_errors=True)
-    remaining=len([r for r in rows if isinstance(r,Mapping) and str(r.get("dataset_id")) not in sizes and r.get("release_repository") and r.get("release_tag") and r.get("release_asset")])
-    body={"schema":"alina.uncompressed_size_patch.v1","method":"exact_gzip_decompression_byte_count","sizes":dict(sorted(sizes.items())),"attempted":attempted,"failed":failed,"remaining_assets":remaining,"coverage_complete":remaining==0 and not failed}
+    remaining=len([
+        r for r in all_rows
+        if str(r.get("dataset_id")) not in sizes
+        or (isinstance(sizes.get(str(r.get("dataset_id"))), Mapping)
+            and sizes.get(str(r.get("dataset_id"))).get("retryable") is True)
+    ])
+    exact=sum(1 for v in sizes.values() if isinstance(v,Mapping) and v.get("status") != "UNAVAILABLE" and isinstance(v.get("uncompressed_bytes"),int))
+    unavailable=sum(1 for v in sizes.values() if isinstance(v,Mapping) and v.get("status") == "UNAVAILABLE" and v.get("retryable") is not True)
+    body={"schema":"alina.uncompressed_size_patch.v2","method":"exact_gzip_decompression_byte_count_or_explicit_unavailable","sizes":dict(sorted(sizes.items())),"attempted":attempted,"failed":failed,"remaining_assets":remaining,"exact_assets":exact,"unavailable_assets":unavailable,"coverage_complete":remaining==0}
     PATCH.write_text(json.dumps(body,sort_keys=True,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"attempted":attempted,"remaining_assets":remaining,"coverage_complete":body["coverage_complete"]},sort_keys=True))
+    print(json.dumps({"attempted":attempted,"remaining_assets":remaining,"exact_assets":exact,"unavailable_assets":unavailable,"coverage_complete":body["coverage_complete"]},sort_keys=True))
 if __name__=="__main__": main()
