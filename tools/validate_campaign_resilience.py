@@ -59,6 +59,21 @@ def main() -> int:
                     "code": "CHECKPOINT_DIGEST_INVALID",
                     "unit_id": str(unit_id),
                 })
+            receipt_path = Path("catalog/receipts") / f"{campaign_id}-u{unit_id}.json"
+            if not receipt_path.is_file():
+                violations.append({
+                    "campaign_id": campaign_id,
+                    "code": "PUBLICATION_RECEIPT_MISSING",
+                    "unit_id": str(unit_id),
+                })
+        if manifest.get("checkpoint_lineage") and not (
+            isinstance(manifest.get("cursor"), dict)
+            and manifest["cursor"].get("checkpoint_id")
+        ):
+            violations.append({
+                "campaign_id": campaign_id,
+                "code": "CHECKPOINT_CURSOR_MISSING",
+            })
         lease = manifest.get("lease")
         if lease is not None:
             required_lease = {"owner_run_id", "lease_token_sha256", "acquired_at", "expires_at"}
