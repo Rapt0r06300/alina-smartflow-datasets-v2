@@ -116,6 +116,11 @@ def main():
         expected_phase = "COLLECT" if intent in COLLECT else "ANALYZE"
         if args.phase != expected_phase:
             continue
+        if (
+            expected_phase == "ANALYZE"
+            and row.get("analysis_stage") not in (None, args.analysis_stage)
+        ):
+            raise SystemExit(f"analysis stage intent mismatch: {path}")
 
         request_id = str(row.get("request_id") or "")
         if not request_id:
