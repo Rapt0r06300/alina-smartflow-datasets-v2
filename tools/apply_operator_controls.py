@@ -17,8 +17,13 @@ def main():
     if not root.is_dir():
         return
     state = json.loads(Path(a.phase_path).read_text(encoding="utf-8"))
-    for path in sorted(root.glob("*.json")):
+    rows = []
+    for path in root.glob("*.json"):
         row = json.loads(path.read_text(encoding="utf-8"))
+        if str(row.get("intent") or "") in {"pause", "resume", "retry"}:
+            rows.append((str(row.get("requested_at_utc") or ""), str(row.get("request_id") or ""), path, row))
+    # One control decision is authoritative: the newest immutable intent.
+    for _, _, path, row in sorted(rows, reverse=True)[:1]:
         if row.get("paper_only") is not True or row.get("read_only") is not True or row.get("real_execution") is not False:
             raise SystemExit(f"unsafe operator intent: {path}")
         intent = str(row.get("intent") or "")
@@ -27,6 +32,8 @@ def main():
         request_id = str(row.get("request_id") or "")
         if not request_id:
             raise SystemExit(f"missing request id: {path}")
+        if state.get("request_id") == request_id:
+            continue
         config = row.get("config") if isinstance(row.get("config"), dict) else {}
         if intent == "retry":
             campaign_id = str(config.get("campaign_id") or "")
