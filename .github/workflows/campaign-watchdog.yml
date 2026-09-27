@@ -22,7 +22,10 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
-      - run: python tools/campaign_watchdog.py
+      - name: Inspect and repair current-epoch collection handoffs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/campaign_watchdog.py --dispatch
       - name: Persist watchdog receipt
         run: |
           set -euo pipefail
