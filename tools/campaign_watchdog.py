@@ -81,6 +81,7 @@ def main():
     manifests = sorted(Path(a.campaign_root).glob("*.json"))
     dispatched = []
     dispatch_failures = []
+    lease_repairs = []
     phase = {}
     phase_error = None
     try:
@@ -150,6 +151,7 @@ def main():
                 row["status"] = "STUCK"
                 row["stuck_reason"] = "LEASE_EXPIRED_REQUIRES_RECONCILIATION"
                 row["updated_at"] = now.isoformat().replace("+00:00", "Z")
+                lease_repairs.append(campaign_id)
                 path.write_text(
                     json.dumps(row, sort_keys=True, indent=2) + "\\n",
                     encoding="utf-8",
@@ -161,6 +163,7 @@ def main():
         "status_counts": dict(sorted(counts.items())),
         "stuck_campaigns": sorted(stuck),
         "expired_leases": sorted(expired_leases),
+        "lease_repairs": sorted(lease_repairs),
         "unsafe_campaigns": sorted(unsafe),
         "successors_dispatched": sorted(dispatched),
         "successor_dispatch_failures": sorted(
