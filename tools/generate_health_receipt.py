@@ -98,7 +98,7 @@ def main() -> int:
         if row["status"]=="PENDING":
             pending.append(row)
     body={
-        "schema_version":"alina.dataset_health_receipt.v1",
+        "schema_version":"alina.dataset_health_receipt.v2",
         "dataset_commit":args.dataset_commit,
         "metrics_schema_version":metrics.get("schema_version"),
         "metrics_method":metrics.get("method"),
@@ -106,6 +106,8 @@ def main() -> int:
         "totals":totals,
         "by_venue":metrics.get("by_venue") or {},
         "by_family":metrics.get("by_family") or {},
+        "by_symbol":metrics.get("by_symbol") or {},
+        "metrics_digest":hashlib.sha256(canonical(metrics).encode()).hexdigest(),
         "campaign_counts":counts,
         "backlog_by_kind":backlog_by_kind,
         "stuck_campaigns":stuck,
@@ -118,7 +120,10 @@ def main() -> int:
         "coverage":{
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
-            "uncompressed_bytes_exact":totals.get("TOTAL_UNCOMPRESSED_BYTES") not in (None,0) and totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
+            "uncompressed_bytes_exact":totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
+            "uncompressed_size_exact_assets":int(totals.get("UNCOMPRESSED_SIZE_EXACT_ASSETS") or 0),
+            "uncompressed_size_unavailable_assets":int(totals.get("UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS") or 0),
+            "uncompressed_size_unclassified_assets":int(totals.get("UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS") or 0),
             "safe_shards":int(totals.get("SAFE_SHARDS") or 0),
             "replayable_shards":int(totals.get("REPLAYABLE_SHARDS") or 0),
         },
