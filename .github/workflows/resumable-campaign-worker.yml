@@ -342,6 +342,9 @@ jobs:
                   )
               else:
                   mark_terminal(m,"FAILED",payload.get("reason","adapter_failed"))
+          m.cursor["last_run_id"] = os.environ.get("GITHUB_RUN_ID")
+          m.cursor["generation"] = int(m.chunk_index)
+          m.cursor["handoff_phase_epoch"] = m.phase_epoch
           open(p,"w").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
           PY
           git config user.name github-actions[bot]
