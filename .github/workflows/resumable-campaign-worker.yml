@@ -352,6 +352,7 @@ jobs:
           r=json.load(open(rp))
           uid=str(m.chunk_index)
           complete_work_unit(m,uid,r["sha256"],r["payload"])
+          m.cursor["checkpoint_id"] = r["sha256"]
           if r["status"]=="COMPLETE":
               mark_terminal(m,"COMPLETE","unit_complete")
           elif r["status"]=="CONTINUATION_REQUIRED":
@@ -359,6 +360,12 @@ jobs:
                   m,
                   r.get("payload",{}).get("reason","continuation_required"),
                   progressed=bool(r.get("progressed",False)),
+                  checkpoint={
+                      "unit_id": uid,
+                      "result_sha256": r["sha256"],
+                      "phase_epoch": m.phase_epoch,
+                      "source_collection_epoch": m.source_collection_epoch,
+                  },
               )
           elif r["status"] in {"UNAVAILABLE","PARTIAL","REJECT"}:
               mark_terminal(
