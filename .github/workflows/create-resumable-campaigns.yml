@@ -69,6 +69,7 @@ jobs:
           PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
           SOURCE_COLLECTION_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["source_collection_epoch"] or "")' "$PHASE_META")"
           COLLECTION_CUTOFF="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["collection_cutoff_at_utc"] or "")' "$PHASE_META")"
+          ANALYSIS_STAGE="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("analysis_stage") or "")' "$PHASE_META")"
           REQUEST_ID="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("request_id") or "phase-"+str(json.loads(sys.argv[1])["epoch"]))' "$PHASE_META")"
           if [ "$PHASE" = "IDLE" ]; then
             echo "IDLE: no new campaign intent is created"
@@ -83,7 +84,7 @@ jobs:
           PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
 
-          PYTHONPATH=alina/src python tools/import_operator_intents.py             --alina-root alina             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --source-collection-epoch "$SOURCE_COLLECTION_EPOCH"             --collection-cutoff-at-utc "$COLLECTION_CUTOFF"             --code-sha "$CODE_SHA"             --dataset-repo-sha "$DATASET_REPO_SHA"
+          PYTHONPATH=alina/src python tools/import_operator_intents.py             --alina-root alina             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --analysis-stage "$ANALYSIS_STAGE"             --source-collection-epoch "$SOURCE_COLLECTION_EPOCH"             --collection-cutoff-at-utc "$COLLECTION_CUTOFF"             --code-sha "$CODE_SHA"             --dataset-repo-sha "$DATASET_REPO_SHA"
 
           make_campaign() {
             KIND="$1"
