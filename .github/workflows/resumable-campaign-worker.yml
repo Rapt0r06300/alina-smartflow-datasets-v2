@@ -95,6 +95,12 @@ jobs:
           python - <<'PY' "$M" >> "$GITHUB_OUTPUT"
           import json,sys
           m=json.load(open(sys.argv[1]))
+          handoff_epoch=os.environ.get("HANDOFF_PHASE_EPOCH") or ""
+          if handoff_epoch and int(handoff_epoch) != int(m.get("phase_epoch") or 0):
+              raise SystemExit("handoff phase epoch mismatch")
+          handoff_generation=os.environ.get("HANDOFF_GENERATION") or ""
+          if handoff_generation and int(handoff_generation) < int(m.get("chunk_index") or 0):
+              raise SystemExit("handoff generation is stale")
           print("sha="+str(m["code_sha"]))
           print("kind="+str(m["kind"]))
           print("status="+str(m["status"]))
