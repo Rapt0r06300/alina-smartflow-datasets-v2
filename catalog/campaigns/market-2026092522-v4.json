@@ -1,7 +1,7 @@
 {
-  "attempts": 1,
+  "attempts": 2,
   "campaign_id": "market-2026092522-v4",
-  "chunk_index": 1,
+  "chunk_index": 2,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "a7ceca41324a1cd8dbf1f73938fd5f45f1f37fa7",
   "completed_units": {
@@ -14,10 +14,20 @@
         "status": "FAILED"
       },
       "sha256": "fcc1a4ae1b6a2a14fa3d02b4a537595c78deb4e61508a0027132e4e27a012cbc"
+    },
+    "1": {
+      "result": {
+        "failure_category": "INFRASTRUCTURE",
+        "previous_sha256": "6b7cf1e8e949423fa058fffa85981ed62e09c2efe30f213413bf310eec416990",
+        "previous_status": "COMPLETE",
+        "reason": "durable_publication_failed",
+        "status": "FAILED"
+      },
+      "sha256": "bcce8ded06d60a5f90b03b1a01821863e502930213859faba1bf035309c5f731"
     }
   },
   "config_sha256": "bb02720d9c632da42069136b1f64c289c8888a53efe6a4731db6be4548b246bc",
-  "consecutive_failures": 1,
+  "consecutive_failures": 2,
   "created_at": "2026-09-25T22:00:50.337296+00:00",
   "cursor": {
     "coins": "BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT",
@@ -45,6 +55,12 @@
       "from": "CONTINUATION_REQUIRED",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-27T03:29:14.804183Z",
+      "from": "RUNNING",
+      "reason": "stop_limit_reached",
+      "to": "FAILED"
     }
   ],
   "kind": "market_collection",
@@ -62,14 +78,14 @@
     "max_wall_clock_s": 86400
   },
   "next_due_at": null,
-  "no_progress_count": 1,
+  "no_progress_count": 2,
   "outputs": [],
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-27T02:23:23.826294Z",
+  "status": "FAILED",
+  "status_reason": "stop_limit_reached",
+  "updated_at": "2026-09-27T03:29:14.804183Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
