@@ -48,25 +48,40 @@ def write_receipt(state, *, previous_phase, previous_epoch, request_id, path):
 
 
 def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--phase", choices=["IDLE", "COLLECT", "ANALYZE"], required=True)
-    p.add_argument("--request-id", required=True)
-    p.add_argument("--requested-by", default="operator")
-    p.add_argument("--cutoff-at-utc")
-    p.add_argument("--path", default="control/alina-phase.json")
-    p.add_argument("--receipt-dir", default="control/phase-receipts")
-    a = p.parse_args()
-    path = Path(a.path)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--phase", choices=["IDLE", "COLLECT", "ANALYZE"], required=True)
+    parser.add_argument("--request-id", required=True)
+    parser.add_argument("--requested-by", default="operator")
+    parser.add_argument("--cutoff-at-utc")
+    parser.add_argument("--path", default="control/alina-phase.json")
+    parser.add_argument("--receipt-dir", default="control/phase-receipts")
+    args = parser.parse_args()
+
+    path = Path(args.path)
     state = json.loads(path.read_text(encoding="utf-8"))
-    receipt_path = Path(a.receipt_dir) / (a.request_id + ".json")
-    if state.get("request_id") == a.request_id and state.get("phase") == a.phase:
-        write_receipt(
-            state,
-            previous_phase=state.get("phase"),
-            previous_epoch=state.get("epoch"),
-            request_id=a.request_id,
-            path=receipt_path,
-        )
+    receipt_path = Path(args.receipt_dir) / (args.request_id + ".json")
+    if state.get("request_id") == args.request_id and state.get("phase") == args.phase:
+        if receipt_path.exists():
+            existing = json.loads(receipt_path.read_text(encoding="utf-8"))
+            if (
+                existing.get("schema") != "alina.phase_transition_receipt.v1"
+                or existing.get("request_id") != args.request_id
+                or existing.get("new_phase") != state.get("phase")
+                or existing.get("new_epoch") != state.get("epoch")
+                or existing.get("state_digest") != digest(state)
+                or existing.get("paper_only") is not True
+                or existing.get("read_only") is not True
+                or existing.get("real_execution") is not False
+            ):
+                raise SystemExit("phase receipt identity conflict")
+        else:
+            write_receipt(
+                state,
+                previous_phase=state.get("phase"),
+                previous_epoch=state.get("epoch"),
+                request_id=args.request_id,
+                path=receipt_path,
+            )
         print(json.dumps(state, sort_keys=True))
         return 0
 
@@ -74,10 +89,10 @@ def main():
     old_epoch = state.get("epoch")
     if old_phase not in {"IDLE", "COLLECT", "ANALYZE"} or not isinstance(old_epoch, int) or old_epoch < 1:
         raise SystemExit("invalid current phase state")
-    if a.phase == "ANALYZE" and old_phase != "COLLECT":
+    if args.phase == "ANALYZE" and old_phase != "COLLECT":
         raise SystemExit("ANALYZE requires current COLLECT phase")
-    stamp = a.cutoff_at_utc or now()
-    if a.phase == "COLLECT":
+    stamp = args.cutoff_at_utc or now()
+    if args.phase == "COLLECT":
         next_state = {
             **state,
             "phase": "COLLECT",
@@ -87,10 +102,10 @@ def main():
             "collection_cutoff_at_utc": None,
             "source_collection_epoch": None,
             "analysis_stage": None,
-            "requested_by": a.requested_by,
-            "request_id": a.request_id,
+            "requested_by": args.requested_by,
+            "request_id": args.request_id,
         }
-    elif a.phase == "ANALYZE":
+    elif args.phase == "ANALYZE":
         next_state = {
             **state,
             "phase": "ANALYZE",
@@ -99,8 +114,8 @@ def main():
             "collection_cutoff_at_utc": stamp,
             "source_collection_epoch": old_epoch,
             "analysis_stage": "DRAIN",
-            "requested_by": a.requested_by,
-            "request_id": a.request_id,
+            "requested_by": args.requested_by,
+            "request_id": args.request_id,
         }
     else:
         next_state = {
@@ -112,15 +127,15 @@ def main():
             "collection_cutoff_at_utc": None,
             "source_collection_epoch": None,
             "analysis_stage": None,
-            "requested_by": a.requested_by,
-            "request_id": a.request_id,
+            "requested_by": args.requested_by,
+            "request_id": args.request_id,
         }
     path.write_text(json.dumps(next_state, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     write_receipt(
         next_state,
         previous_phase=old_phase,
         previous_epoch=old_epoch,
-        request_id=a.request_id,
+        request_id=args.request_id,
         path=receipt_path,
     )
     print(json.dumps(next_state, sort_keys=True))
