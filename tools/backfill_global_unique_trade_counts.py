@@ -86,7 +86,7 @@ def main():
             attempted+=1; dataset_id=str(row.get("dataset_id") or "")
             try:
                 asset=_download(row,Path(tmp)/dataset_id)
-                total=0; unique=0; shard_unique=0; exact=True
+                total=0; unique=0; exact=True; shard_ids=set()
                 import gzip
                 with gzip.open(asset,"rt",encoding="utf-8") as handle:
                     for line in handle:
@@ -103,18 +103,18 @@ def main():
                             db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(d,))
                             inserted = int(db.total_changes > before)
                             unique += inserted
-                            shard_unique += inserted
+                            shard_ids.add(d)
                 if not exact:
                     failed.append({"dataset_id":dataset_id,"reason":"identity_missing"})
                     continue
                 counts[dataset_id]={
                     "trade_count_scanned": total,
-                    "unique_trade_count": shard_unique,
+                    "unique_trade_count": len(shard_ids),
                     "unique_trade_count_exact": True,
                 }
                 _persist_manifest_unique_counts(
                     row,
-                    unique_count=shard_unique,
+                    unique_count=len(shard_ids),
                     exact=True,
                 )
                 covered.add(dataset_id)
