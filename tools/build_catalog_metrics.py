@@ -183,6 +183,7 @@ def build() -> dict[str, Any]:
     totals["TOTAL_TRADES_COUNT_COVERAGE_COMPLETE"] = (
         totals["TRADE_SHARDS_MISSING_EXACT_COUNT"] == 0
     )
+    unique_patch = {}
     global_unique = None
     global_unique_digest = None
     global_unique_complete = False
