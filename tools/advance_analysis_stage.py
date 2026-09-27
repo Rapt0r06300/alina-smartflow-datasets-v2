@@ -50,7 +50,7 @@ def main():
             if isinstance(requirement, dict) and "min" in requirement:
                 if not isinstance(value, (int, float)) or value < requirement["min"]:
                     raise SystemExit(f"stage gate coverage {key} below minimum")
-            elif value is not requirement:
+            elif value != requirement:
                 raise SystemExit(f"stage gate coverage {key} is not proven")
     required_kinds = set(gate.get("required_campaign_kinds", []))
     if required_kinds:
@@ -79,6 +79,44 @@ def main():
                 and row.get("status") in active
             ):
                 raise SystemExit(f"DRAIN barrier not closed: {manifest_path.name}")
+    terminal_rows = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(Path(a.campaign_root).glob("*.json"))
+        if path.is_file()
+    ]
+    frozen_rows = [
+        row for row in terminal_rows
+        if row.get("creation_phase") == "ANALYZE"
+        and int(row.get("phase_epoch") or 0) == int(state["epoch"])
+        and row.get("source_collection_epoch") == state.get("source_collection_epoch")
+    ]
+    selection_ids = sorted({
+        str(row.get("dataset_selection_id"))
+        for row in frozen_rows
+        if row.get("dataset_selection_id")
+    })
+    code_shas = sorted({
+        str(row.get("code_sha"))
+        for row in frozen_rows
+        if row.get("code_sha")
+    })
+    checkpoint_ids = sorted({
+        str((row.get("cursor") or {}).get("checkpoint_id"))
+        for row in frozen_rows
+        if isinstance(row.get("cursor"), dict) and row["cursor"].get("checkpoint_id")
+    })
+    artifact_ids = sorted({
+        str(value)
+        for row in frozen_rows
+        for value in (
+            row.get("release_tag"),
+            row.get("evidence_tag"),
+            (row.get("cursor") or {}).get("artifact_id")
+            if isinstance(row.get("cursor"), dict)
+            else None,
+        )
+        if value
+    })
     if state.get("request_id") != a.request_id and a.stage == current:
         raise SystemExit("stage identity conflict")
     if a.stage != current:
@@ -95,6 +133,25 @@ def main():
         "previous_stage": previous.get("analysis_stage"),
         "new_stage": state.get("analysis_stage"),
         "state_digest": hashlib.sha256(json.dumps(state, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+        "input_selection_ids": selection_ids,
+        "input_selection_digest": hashlib.sha256(
+            json.dumps(selection_ids, separators=(",", ":")).encode()
+        ).hexdigest() if selection_ids else None,
+        "code_shas": code_shas,
+        "config_hash": hashlib.sha256(
+            Path(a.gate_registry).read_bytes()
+        ).hexdigest(),
+        "checkpoint_ids": checkpoint_ids,
+        "output_artifact_ids": artifact_ids,
+        "resume_cursor_present": any(
+            isinstance(row.get("cursor"), dict) and bool(row.get("cursor"))
+            for row in frozen_rows
+        ),
+        "contract_status": (
+            "COMPLETE"
+            if selection_ids and code_shas and checkpoint_ids and artifact_ids
+            else "INCOMPLETE_EVIDENCE"
+        ),
         "paper_only": True,
         "read_only": True,
         "real_execution": False,
