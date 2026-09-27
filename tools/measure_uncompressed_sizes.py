@@ -18,7 +18,14 @@ def main():
     rows=index.get("shards")
     prior=json.loads(PATCH.read_text(encoding="utf-8")) if PATCH.exists() else {"sizes":{}}
     sizes=prior.get("sizes") if isinstance(prior.get("sizes"),dict) else {}
-    candidates=sorted([r for r in rows if isinstance(r,Mapping) and str(r.get("dataset_id")) not in sizes and r.get("release_repository") and r.get("release_tag") and r.get("release_asset")],key=lambda r:str(r.get("dataset_id")))[:max(1,a.limit)]
+    all_rows=[r for r in rows if isinstance(r,Mapping) and r.get("dataset_id")]
+    for row in all_rows:
+        dataset_id=str(row["dataset_id"])
+        if dataset_id in sizes:
+            continue
+        if not (row.get("release_repository") and row.get("release_tag") and row.get("release_asset")):
+            sizes[dataset_id]={"status":"UNAVAILABLE","reason":"no_immutable_release_asset"}
+    candidates=sorted([r for r in all_rows if str(r.get("dataset_id")) not in sizes],key=lambda r:str(r.get("dataset_id")))[:max(1,a.limit)]
     failed=[]; attempted=0
     with tempfile.TemporaryDirectory(prefix="alina-uncompressed-") as tmp:
         for row in candidates:
@@ -30,7 +37,9 @@ def main():
                     for chunk in iter(lambda:handle.read(4*1024*1024),b""): total+=len(chunk)
                 sizes[dataset_id]={"uncompressed_bytes":total,"compressed_bytes":int(row.get("bytes") or 0),"asset_sha256":hashlib.sha256(asset.read_bytes()).hexdigest()}
             except Exception as exc:
-                failed.append({"dataset_id":dataset_id,"reason":type(exc).__name__})
+                reason=f"{type(exc).__name__}:{str(exc)[:240]}"
+                failed.append({"dataset_id":dataset_id,"reason":reason})
+                sizes[dataset_id]={"status":"UNAVAILABLE","reason":reason}
             shutil.rmtree(Path(tmp)/dataset_id,ignore_errors=True)
     remaining=len([r for r in rows if isinstance(r,Mapping) and str(r.get("dataset_id")) not in sizes and r.get("release_repository") and r.get("release_tag") and r.get("release_asset")])
     body={"schema":"alina.uncompressed_size_patch.v1","method":"exact_gzip_decompression_byte_count","sizes":dict(sorted(sizes.items())),"attempted":attempted,"failed":failed,"remaining_assets":remaining,"coverage_complete":remaining==0 and not failed}
