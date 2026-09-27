@@ -97,7 +97,25 @@ def main():
         phase_error = "invalid_phase_state"
     repository = os.environ.get("GITHUB_REPOSITORY", "")
     for path in manifests:
-        row = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            row = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError, TypeError) as exc:
+            unsafe.append(path.name)
+            counts["INVALID_MANIFEST"] = counts.get("INVALID_MANIFEST", 0) + 1
+            dispatch_failures.append({
+                "campaign_id": path.stem,
+                "reason": "invalid_manifest",
+                "detail": str(exc)[-300:],
+            })
+            continue
+        if not isinstance(row, dict):
+            unsafe.append(path.name)
+            counts["INVALID_MANIFEST"] = counts.get("INVALID_MANIFEST", 0) + 1
+            dispatch_failures.append({
+                "campaign_id": path.stem,
+                "reason": "manifest_not_object",
+            })
+            continue
         status = str(row.get("status") or "")
         counts[status] = counts.get(status, 0) + 1
         if status in active and (
