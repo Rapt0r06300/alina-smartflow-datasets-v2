@@ -1,0 +1,17 @@
+{
+  "schema_version": "alina.analysis_stage_gates.v1",
+  "stages": {
+    "DRAIN": {"requires_no_active_collection": true},
+    "QUALITY": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]},
+    "REPLAY": {"required_campaign_kinds": ["replay"]},
+    "BACKTEST": {"required_campaign_kinds": ["backtest"]},
+    "OOS": {"required_campaign_kinds": ["backtest"]},
+    "FORWARD_PAPER": {"required_campaign_kinds": ["module_pnl_proof"]},
+    "PNL_PROOF": {"required_campaign_kinds": ["module_pnl_proof"]},
+    "SCOREBOARD": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]},
+    "DONE": {"required_files": ["catalog/DATASET_HEALTH_RECEIPT.json"]}
+  },
+  "paper_only": true,
+  "read_only": true,
+  "real_execution": false
+}
