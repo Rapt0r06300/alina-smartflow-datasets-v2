@@ -34,6 +34,9 @@ def main() -> int:
             "status":row.get("status"),
             "status_reason":row.get("status_reason"),
             "phase_epoch":row.get("phase_epoch"),
+            "source_collection_epoch":row.get("source_collection_epoch"),
+            "collection_cutoff_at_utc":row.get("collection_cutoff_at_utc"),
+            "creation_phase":row.get("creation_phase"),
             "chunk_index":row.get("chunk_index"),
             "attempts":row.get("attempts"),
             "no_progress_count":row.get("no_progress_count"),
@@ -42,6 +45,31 @@ def main() -> int:
             "updated_at":row.get("updated_at"),
             "next_due_at":row.get("next_due_at"),
         })
+    phase_mismatches=[]
+    active_statuses={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}
+    for row in campaigns:
+        if row["status"] not in active_statuses:
+            continue
+        if row.get("phase_epoch") != phase.get("epoch"):
+            phase_mismatches.append({
+                "campaign_id": row.get("campaign_id"),
+                "reason": "PHASE_EPOCH_MISMATCH",
+            })
+            continue
+        if phase.get("phase") == "COLLECT" and row.get("creation_phase") != "COLLECT":
+            phase_mismatches.append({
+                "campaign_id": row.get("campaign_id"),
+                "reason": "COLLECT_KIND_PHASE_MISMATCH",
+            })
+        if phase.get("phase") == "ANALYZE" and (
+            row.get("creation_phase") != "ANALYZE"
+            or row.get("source_collection_epoch") != phase.get("source_collection_epoch")
+            or row.get("collection_cutoff_at_utc") != phase.get("collection_cutoff_at_utc")
+        ):
+            phase_mismatches.append({
+                "campaign_id": row.get("campaign_id"),
+                "reason": "ANALYZE_FREEZE_MISMATCH",
+            })
     counts={}
     backlog_by_kind={}
     stuck=[]
@@ -69,6 +97,10 @@ def main() -> int:
         "stuck_campaigns":stuck,
         "pending_campaign_count":len(pending),
         "campaigns":campaigns,
+        "phase_consistency":{
+            "status":"BLOCKED" if phase_mismatches else "CONSISTENT",
+            "mismatches":phase_mismatches,
+        },
         "coverage":{
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
