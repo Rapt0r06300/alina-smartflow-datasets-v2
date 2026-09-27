@@ -40,6 +40,40 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 1
+      - name: Wait for durable resumed campaign to reach terminal state
+        shell: bash
+        run: |
+          set -euo pipefail
+          M="catalog/campaigns/${{ inputs.campaign_id }}.json"
+          terminal=""
+          for i in $(seq 1 90); do
+            git fetch origin main
+            git checkout -q main
+            git reset --hard -q origin/main
+            test -f "$M"
+            terminal="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+            case "$terminal" in
+              COMPLETE|FAILED|UNAVAILABLE|PARTIAL|REJECT)
+                break
+                ;;
+            esac
+            sleep 20
+          done
+          case "$terminal" in
+            COMPLETE|FAILED|UNAVAILABLE|PARTIAL|REJECT) ;;
+            *) echo "resume smoke did not reach terminal state: $terminal" >&2; exit 1 ;;
+          esac
+          python - <<'PY' "$M" >> "$GITHUB_ENV"
+          import json,sys
+          row=json.load(open(sys.argv[1],encoding="utf-8"))
+          print("RESUME_TERMINAL_STATUS="+str(row.get("status") or ""))
+          print("RESUME_PHASE_EPOCH="+str(row.get("phase_epoch") or ""))
+          print("RESUME_SOURCE_EPOCH="+str(row.get("source_collection_epoch") or ""))
+          print("RESUME_SELECTION_ID="+str(row.get("dataset_selection_id") or ""))
+          print("RESUME_CHECKPOINT_ID="+str((row.get("cursor") or {}).get("checkpoint_id") or ""))
+          print("RESUME_COMPLETED_UNITS="+str(len(row.get("completed_units") or {})))
+          PY
+
       - name: Build cloud resume receipt
         env:
           CAMPAIGN_ID: ${{ inputs.campaign_id }}
@@ -60,6 +94,12 @@ jobs:
               "fresh_runner_for_segment_b": True,
               "runner_filesystem_reused": False,
               "durable_dataset_state_required": True,
+              "terminal_campaign_status": os.environ.get("RESUME_TERMINAL_STATUS"),
+              "terminal_phase_epoch": os.environ.get("RESUME_PHASE_EPOCH"),
+              "terminal_source_collection_epoch": os.environ.get("RESUME_SOURCE_EPOCH"),
+              "terminal_selection_id": os.environ.get("RESUME_SELECTION_ID"),
+              "terminal_checkpoint_id": os.environ.get("RESUME_CHECKPOINT_ID"),
+              "terminal_completed_units": int(os.environ.get("RESUME_COMPLETED_UNITS") or "0"),
               "segment_a_max_units": 1,
               "segment_a_must_checkpoint_before_segment_b": True,
               "segment_b_max_units": 0,
