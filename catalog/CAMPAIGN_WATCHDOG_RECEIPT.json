@@ -1,0 +1,33 @@
+{
+  "campaign_count": 374,
+  "expired_leases": [],
+  "generated_at_utc": "2026-09-27T19:43:55.659985Z",
+  "paper_only": true,
+  "phase_checked": {
+    "analysis_stage": null,
+    "collection_cutoff_at_utc": null,
+    "collection_started_at_utc": null,
+    "epoch": 1,
+    "phase": "IDLE",
+    "request_id": "bootstrap-idle",
+    "requested_at_utc": "2026-09-27T00:00:00Z",
+    "requested_by": "bootstrap",
+    "schema_version": 1,
+    "source_collection_epoch": null
+  },
+  "phase_error": null,
+  "read_only": true,
+  "real_execution": false,
+  "schema": "alina.campaign_watchdog_receipt.v1",
+  "status_counts": {
+    "COMPLETE": 342,
+    "CONTINUATION_REQUIRED": 4,
+    "FAILED": 25,
+    "RUNNING": 3
+  },
+  "stuck_campaigns": [],
+  "successor_dispatch_failures": [],
+  "successors_dispatched": [],
+  "unsafe_campaigns": [],
+  "watchdog_status": "HEALTHY"
+}
