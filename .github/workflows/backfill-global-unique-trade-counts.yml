@@ -30,12 +30,14 @@ jobs:
         run: |
           set -euo pipefail
           python tools/backfill_global_unique_trade_counts.py --limit "${{ inputs.limit || '200' }}"
+          python tools/build_catalog_metrics.py
+          python tools/check_dataset_quality.py
       - name: Publish deduplication patch
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/TRADE_UNIQUE_COUNT_PATCH.json
+          git add catalog/TRADE_UNIQUE_COUNT_PATCH.json catalog/DATA_INDEX.json catalog/DATA_METRICS.json catalog/DATA_CATALOG.json catalog/DATA_QUALITY_REGISTRY.json datasets
           git diff --cached --quiet && exit 0
           git commit -m "data: publish global unique trade count progress"
           git push origin HEAD:main
