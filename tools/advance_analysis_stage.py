@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -17,6 +18,7 @@ def main():
     p.add_argument("--expected-epoch", type=int, required=True)
     p.add_argument("--path", default="control/alina-phase.json")
     p.add_argument("--campaign-root", default="catalog/campaigns")
+    p.add_argument("--receipt-dir", default="control/phase-receipts")
     a = p.parse_args()
     path = Path(a.path)
     state = json.loads(path.read_text(encoding="utf-8"))
@@ -43,8 +45,31 @@ def main():
     if state.get("request_id") != a.request_id and a.stage == current:
         raise SystemExit("stage identity conflict")
     if a.stage != current:
+        previous = dict(state)
         state = {**state, "analysis_stage": a.stage, "request_id": a.request_id}
         path.write_text(json.dumps(state, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    else:
+        previous = dict(state)
+    receipt = {
+        "schema": "alina.analysis_stage_receipt.v1",
+        "request_id": a.request_id,
+        "phase": "ANALYZE",
+        "epoch": a.expected_epoch,
+        "previous_stage": previous.get("analysis_stage"),
+        "new_stage": state.get("analysis_stage"),
+        "state_digest": hashlib.sha256(json.dumps(state, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+    receipt_path = Path(a.receipt_dir) / (a.request_id + "-stage.json")
+    receipt_path.parent.mkdir(parents=True, exist_ok=True)
+    if receipt_path.exists():
+        old_receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if old_receipt != receipt:
+            raise SystemExit("analysis stage receipt identity conflict")
+    else:
+        receipt_path.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(state, sort_keys=True))
 
 
