@@ -1,12 +1,37 @@
 #!/usr/bin/env python3
 """Compute reproducible cross-shard unique trade counts from immutable assets."""
 from __future__ import annotations
-import argparse, hashlib, json, sqlite3, shutil, tempfile
+import argparse, hashlib, json, os, sqlite3, shutil, tempfile
 from pathlib import Path
 from typing import Any, Mapping
 from backfill_exact_trade_counts import _download, _native_trade_keys
 
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def _persist_manifest_unique_counts(
+    row: Mapping[str, Any],
+    *,
+    unique_count: int,
+    exact: bool,
+) -> None:
+    manifest_path = ROOT / str(row.get("manifest_path") or "")
+    if not manifest_path.is_file():
+        return
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return
+    if not isinstance(manifest, dict):
+        return
+    manifest["unique_trade_count"] = int(unique_count) if exact else None
+    manifest["unique_trade_count_exact"] = bool(exact)
+    temporary = manifest_path.with_suffix(manifest_path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temporary, manifest_path)
 
 
 def _unique_candidate(row: Mapping[str, Any], covered: set[str]) -> bool:
@@ -61,7 +86,7 @@ def main():
             attempted+=1; dataset_id=str(row.get("dataset_id") or "")
             try:
                 asset=_download(row,Path(tmp)/dataset_id)
-                total=0; unique=0; exact=True
+                total=0; unique=0; shard_unique=0; exact=True
                 import gzip
                 with gzip.open(asset,"rt",encoding="utf-8") as handle:
                     for line in handle:
@@ -76,11 +101,22 @@ def main():
                             d=digest_identity(key)
                             before=db.total_changes
                             db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(d,))
-                            unique += int(db.total_changes>before)
+                            inserted = int(db.total_changes > before)
+                            unique += inserted
+                            shard_unique += inserted
                 if not exact:
                     failed.append({"dataset_id":dataset_id,"reason":"identity_missing"})
                     continue
-                counts[dataset_id]={"trade_count_scanned":total,"unique_trade_count_exact":True}
+                counts[dataset_id]={
+                    "trade_count_scanned": total,
+                    "unique_trade_count": shard_unique,
+                    "unique_trade_count_exact": True,
+                }
+                _persist_manifest_unique_counts(
+                    row,
+                    unique_count=shard_unique,
+                    exact=True,
+                )
                 covered.add(dataset_id)
                 db.commit()
                 shutil.rmtree(Path(tmp)/dataset_id,ignore_errors=True)
