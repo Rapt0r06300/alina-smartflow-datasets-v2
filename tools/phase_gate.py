@@ -62,6 +62,10 @@ def main() -> int:
         raise SystemExit("phase-aware worker refuses v1 manifest")
     if manifest.get("creation_phase")!=state["phase"] or manifest.get("phase_epoch")!=state["epoch"]:
         raise SystemExit("manifest phase/epoch mismatch")
+    kind = str(manifest.get("kind") or "")
+    allowed_kinds = COLLECT_KINDS if state["phase"] == "COLLECT" else ANALYZE_KINDS
+    if kind not in allowed_kinds:
+        raise SystemExit(f"manifest kind {kind!r} is not allowed in phase {state['phase']}")
     if state["phase"]=="ANALYZE":
         if manifest.get("source_collection_epoch")!=state["source_collection_epoch"] or manifest.get("collection_cutoff_at_utc")!=state["collection_cutoff_at_utc"]:
             raise SystemExit("manifest analysis freeze mismatch")
