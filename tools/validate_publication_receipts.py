@@ -21,8 +21,14 @@ def main():
         missing = required - set(row)
         if missing:
             raise SystemExit(f"{path}: missing {sorted(missing)}")
-        if row["schema"] != "alina.publication_receipt.v1":
+        if row["schema"] not in {"alina.publication_receipt.v1", "alina.publication_receipt.v2"}:
             raise SystemExit(f"{path}: unsupported schema")
+        if row["schema"] == "alina.publication_receipt.v2":
+            for key in ("alina_head", "dataset_head", "manifest_sha256", "publication_state"):
+                if row.get(key) in (None, ""):
+                    raise SystemExit(f"{path}: missing cross-repository publication field {key}")
+            if len(str(row["manifest_sha256"])) != 64:
+                raise SystemExit(f"{path}: invalid manifest_sha256")
         if row["receipt_id"] in seen:
             raise SystemExit(f"{path}: duplicate receipt identity")
         seen.add(row["receipt_id"])
