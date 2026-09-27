@@ -29,6 +29,14 @@ KIND = {
     "module_pnl_proof": "module_pnl_proof",
     "scoreboard": "scoreboard",
 }
+STAGE_BY_KIND = {
+    "replay": "REPLAY",
+    "backtest": "BACKTEST",
+    "oos": "OOS",
+    "forward_paper": "FORWARD_PAPER",
+    "module_pnl_proof": "PNL_PROOF",
+    "scoreboard": "SCOREBOARD",
+}
 
 
 def digest(value):
@@ -67,10 +75,14 @@ def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, ph
     target.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
 
 
-def campaign_kinds(intent):
+def campaign_kinds(intent, analysis_stage=""):
     if intent == "full_cycle":
-        return ("replay", "backtest", "oos", "forward_paper", "module_pnl_proof", "scoreboard")
-    return (KIND.get(intent, "replay"),)
+        return tuple(
+            kind for kind, stage in STAGE_BY_KIND.items()
+            if stage == analysis_stage
+        )
+    kind = KIND.get(intent, "replay")
+    return (kind,) if STAGE_BY_KIND.get(kind) == analysis_stage else ()
 
 
 def main():
@@ -80,6 +92,7 @@ def main():
     parser.add_argument("--phase-epoch", required=True, type=int)
     parser.add_argument("--source-collection-epoch", default="")
     parser.add_argument("--collection-cutoff-at-utc", default="")
+    parser.add_argument("--analysis-stage", default="")
     parser.add_argument("--code-sha", required=True)
     parser.add_argument("--dataset-repo-sha", required=True)
     args = parser.parse_args()
@@ -108,7 +121,9 @@ def main():
         if not request_id:
             raise SystemExit(f"missing request id: {path}")
 
-        for campaign_kind in campaign_kinds(intent):
+        if args.phase == "ANALYZE" and args.analysis_stage not in set(STAGE_BY_KIND.values()):
+            raise SystemExit("ANALYZE import requires a valid explicit analysis stage")
+        for campaign_kind in campaign_kinds(intent, args.analysis_stage):
             campaign_id = "operator-" + request_id[:32] + "-" + campaign_kind
             target = Path("catalog/campaigns") / (campaign_id + ".json")
             receipt_target = Path("catalog/dispatch-receipts") / (campaign_id + ".json")
