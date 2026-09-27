@@ -383,20 +383,19 @@ def backfill(limit: int) -> dict[str, Any]:
                 path = _download(row, tmp_root / dataset_id)
                 result = inspect_asset(path, row)
             except Exception as exc:
-                failed.append(
-                    {
-                        "dataset_id": dataset_id,
-                        "error": type(exc).__name__,
-                    }
-                )
+                failure = {"dataset_id": dataset_id, "error": type(exc).__name__}
+                failed.append(failure)
+                failure_reasons[dataset_id] = failure
                 continue
             counts[dataset_id] = result
+            failure_reasons.pop(dataset_id, None)
             row.update(result)
             _persist_manifest_counts(row, result)
             updated += 1
             shutil.rmtree(tmp_root / dataset_id, ignore_errors=True)
 
     patch_doc["counts"] = dict(sorted(counts.items()))
+    patch_doc["failure_reasons"] = dict(sorted(failure_reasons.items()))
     patch_doc["processed_exact_shards"] = len(counts)
     patch_doc["remaining_candidate_shards"] = max(0, len([
         row for row in rows
