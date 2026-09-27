@@ -126,6 +126,8 @@ def main() -> int:
             "mismatches":phase_mismatches,
         },
         "coverage":{
+            "valid_record_count_exact":bool(totals.get("VALID_RECORDS_COVERAGE_COMPLETE")),
+            "unique_record_count_exact":bool(totals.get("UNIQUE_RECORDS_COVERAGE_COMPLETE")),
             "trade_count_exact":bool(totals.get("TOTAL_TRADES_COUNT_COVERAGE_COMPLETE")),
             "unique_trade_count_exact":bool(totals.get("TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE")),
             "uncompressed_bytes_exact":totals.get("UNCOMPRESSED_SIZE_COVERAGE_COMPLETE") is True,
