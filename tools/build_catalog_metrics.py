@@ -38,6 +38,9 @@ def _bucket(table: dict[str, dict[str, int]], key: str) -> dict[str, int]:
             "safe_trades": 0,
             "replayable_trades": 0,
             "bytes": 0,
+            "uncompressed_bytes": 0,
+            "uncompressed_exact_assets": 0,
+            "uncompressed_unavailable_assets": 0,
             "trade_shards_exact": 0,
             "trade_shards_missing_exact": 0,
         }
@@ -183,6 +186,11 @@ def build() -> dict[str, Any]:
             bucket["shards"] += 1
             bucket["records"] += records
             bucket["bytes"] += compressed
+            bucket["uncompressed_bytes"] += uncompressed
+            if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
+                bucket["uncompressed_exact_assets"] += 1
+            elif isinstance(size_entry, dict) and size_entry.get("status") == "UNAVAILABLE":
+                bucket["uncompressed_unavailable_assets"] += 1
             if trade_family:
                 if trade_exact:
                     bucket["trades"] += trades
