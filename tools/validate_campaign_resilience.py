@@ -62,6 +62,8 @@ def main() -> int:
             )
         ):
             violations.append({"campaign_id": campaign_id, "code": "UNSAFE_EXECUTION_IDENTITY"})
+        if manifest.get("status") == "COMPLETE" and not manifest.get("terminal_evidence_digest"):
+            violations.append({"campaign_id": campaign_id, "code": "TERMINAL_EVIDENCE_REQUIRED"})
         units = manifest.get("completed_units") or {}
         for unit_id, unit in units.items():
             if not isinstance(unit, dict) or len(str(unit.get("sha256") or "")) != 64:
