@@ -11,6 +11,15 @@ def canonical(value: Any) -> str:
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
+ANALYSIS_STAGE_BY_KIND = {
+    "replay": "REPLAY",
+    "backtest": "BACKTEST",
+    "oos": "OOS",
+    "forward_paper": "FORWARD_PAPER",
+    "module_pnl_proof": "PNL_PROOF",
+    "scoreboard": "SCOREBOARD",
+}
+
 def main() -> int:
     p=argparse.ArgumentParser()
     p.add_argument("--metrics",default="catalog/DATA_METRICS.json")
@@ -31,6 +40,7 @@ def main() -> int:
         campaigns.append({
             "campaign_id":row.get("campaign_id"),
             "kind":row.get("kind"),
+            "analysis_stage": ANALYSIS_STAGE_BY_KIND.get(str(row.get("kind") or "")),
             "status":row.get("status"),
             "status_reason":row.get("status_reason"),
             "phase_epoch":row.get("phase_epoch"),
@@ -65,6 +75,10 @@ def main() -> int:
             row.get("creation_phase") != "ANALYZE"
             or row.get("source_collection_epoch") != phase.get("source_collection_epoch")
             or row.get("collection_cutoff_at_utc") != phase.get("collection_cutoff_at_utc")
+            or (
+                row.get("analysis_stage") is not None
+                and row.get("analysis_stage") != phase.get("analysis_stage")
+            )
         ):
             phase_mismatches.append({
                 "campaign_id": row.get("campaign_id"),
