@@ -12,15 +12,13 @@ on:
       - 'tools/apply_operator_controls.py'
       - 'tools/set_phase.py'
       - 'control/alina-phase.json'
-  schedule:
-    - cron: '2 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: resumable-campaign-creation-hourly
+  group: resumable-campaign-creation-intent
   cancel-in-progress: false
 
 jobs:
