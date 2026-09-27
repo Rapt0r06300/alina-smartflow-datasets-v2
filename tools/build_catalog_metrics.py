@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "catalog" / "DATA_INDEX.json"
 METRICS = ROOT / "catalog" / "DATA_METRICS.json"
 UNIQUE_PATCH = ROOT / "catalog" / "TRADE_UNIQUE_COUNT_PATCH.json"
+UNCOMPRESSED_PATCH = ROOT / "catalog" / "UNCOMPRESSED_SIZE_PATCH.json"
 TRADE_FAMILIES = {
     "trades",
     "agg_trades",
@@ -162,6 +163,24 @@ def build() -> dict[str, Any]:
         totals["TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT"] == 0
         and global_unique_complete
     )
+
+    if UNCOMPRESSED_PATCH.is_file():
+        try:
+            size_doc=json.loads(UNCOMPRESSED_PATCH.read_text(encoding="utf-8"))
+            size_rows=size_doc.get("sizes") if isinstance(size_doc,dict) else {}
+            if isinstance(size_rows,dict):
+                total_uncompressed=sum(
+                    int(row.get("uncompressed_bytes") or 0)
+                    for row in size_rows.values()
+                    if isinstance(row,dict)
+                )
+                totals["TOTAL_UNCOMPRESSED_BYTES"]=total_uncompressed
+                totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"]=size_doc.get("coverage_complete") is True
+                totals["UNCOMPRESSED_SIZE_PATCH_DIGEST"]=hashlib.sha256(
+                    json.dumps(size_doc,sort_keys=True,separators=(",",":")).encode()
+                ).hexdigest()
+        except (OSError,ValueError,TypeError):
+            totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"]=False
 
     payload = {
         "schema_version": "alina.data_metrics.v3",
