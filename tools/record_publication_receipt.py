@@ -30,6 +30,10 @@ def main():
     p.add_argument("--release-tag")
     p.add_argument("--evidence-tag")
     p.add_argument("--result", required=True)
+    p.add_argument("--alina-head", default="")
+    p.add_argument("--dataset-head", default="")
+    p.add_argument("--manifest-sha256", default="")
+    p.add_argument("--publication-state", default="RELEASE_AND_RECEIPT_WRITTEN")
     p.add_argument("--output", default="")
     a = p.parse_args()
 
@@ -38,7 +42,7 @@ def main():
     if not isinstance(payload, dict):
         payload = {}
     receipt = {
-        "schema": "alina.publication_receipt.v1",
+        "schema": "alina.publication_receipt.v2",
         "receipt_id": f"{a.campaign_id}:u{a.unit_id}",
         "campaign_id": a.campaign_id,
         "unit_id": a.unit_id,
@@ -63,6 +67,10 @@ def main():
         "evidence_tag": a.evidence_tag or None,
         "result_sha256": hashlib.sha256(canonical(result).encode()).hexdigest(),
         "payload_digest": hashlib.sha256(canonical(payload).encode()).hexdigest(),
+        "alina_head": a.alina_head or None,
+        "dataset_head": a.dataset_head or None,
+        "manifest_sha256": a.manifest_sha256 or None,
+        "publication_state": a.publication_state,
         "paper_only": True,
         "read_only": True,
         "real_execution": False,
