@@ -40,6 +40,7 @@ def main() -> int:
             "consecutive_failures":row.get("consecutive_failures"),
             "lease":row.get("lease"),
             "updated_at":row.get("updated_at"),
+            "next_due_at":row.get("next_due_at"),
         })
     counts={}
     backlog_by_kind={}
