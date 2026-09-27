@@ -19,6 +19,7 @@ def main():
     p.add_argument("--path", default="control/alina-phase.json")
     p.add_argument("--campaign-root", default="catalog/campaigns")
     p.add_argument("--receipt-dir", default="control/phase-receipts")
+    p.add_argument("--gate-registry", default="control/analysis-stage-gates.json")
     a = p.parse_args()
     path = Path(a.path)
     state = json.loads(path.read_text(encoding="utf-8"))
@@ -31,6 +32,24 @@ def main():
         raise SystemExit("invalid current analysis stage")
     if ORDER.index(a.stage) < ORDER.index(current):
         raise SystemExit(f"analysis stage regression: {current}->{a.stage}")
+    gates = json.loads(Path(a.gate_registry).read_text(encoding="utf-8"))
+    if gates.get("paper_only") is not True or gates.get("read_only") is not True or gates.get("real_execution") is not False:
+        raise SystemExit("unsafe analysis gate registry")
+    gate = gates.get("stages", {}).get(a.stage)
+    if not isinstance(gate, dict):
+        raise SystemExit(f"missing gate for stage {a.stage}")
+    for required in gate.get("required_files", []):
+        if not Path(required).is_file():
+            raise SystemExit(f"stage gate missing required file: {required}")
+    required_kinds = set(gate.get("required_campaign_kinds", []))
+    if required_kinds:
+        rows = [
+            json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted(Path(a.campaign_root).glob("*.json"))
+        ]
+        observed = {str(row.get("kind")) for row in rows if row.get("status") in {"COMPLETE", "PARTIAL", "UNAVAILABLE", "REJECT", "FAILED"}}
+        if not required_kinds.issubset(observed):
+            raise SystemExit(f"stage gate missing terminal campaign kinds: {sorted(required_kinds - observed)}")
     if current == "DRAIN" and a.stage != "DRAIN":
         source_epoch = int(state.get("source_collection_epoch") or 0)
         active = {"PENDING", "RUNNING", "CONTINUATION_REQUIRED", "STUCK"}
