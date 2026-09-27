@@ -113,6 +113,9 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
         "event_count": manifest.get("event_count"),
         "record_count": manifest.get("record_count", manifest.get("event_count")),
         "trade_count": manifest.get("trade_count"),
+        "trade_count_exact": manifest.get("trade_count_exact"),
+        "unique_trade_count": manifest.get("unique_trade_count"),
+        "unique_trade_count_exact": manifest.get("unique_trade_count_exact"),
         "replay_compatible": manifest.get("replay_compatible"),
         "replay_schema_version": manifest.get("replay_schema_version"),
         "replay_reason": manifest.get("replay_reason"),
@@ -130,6 +133,26 @@ def _index_row(manifest: Mapping[str, Any], manifest_path: Path, root: Path) -> 
             row["trade_count_exact"] = patched.get("trade_count_exact") is True
             row["unique_trade_count"] = patched.get("unique_trade_count")
             row["unique_trade_count_exact"] = patched.get("unique_trade_count_exact") is True
+
+    unique_patch_path = root / "catalog" / "TRADE_UNIQUE_COUNT_PATCH.json"
+    if unique_patch_path.is_file():
+        try:
+            unique_doc = json.loads(unique_patch_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            unique_doc = {}
+        unique_counts = (
+            unique_doc.get("counts") if isinstance(unique_doc, Mapping) else {}
+        )
+        unique_row = (
+            unique_counts.get(str(manifest.get("dataset_id") or ""))
+            if isinstance(unique_counts, Mapping)
+            else None
+        )
+        if isinstance(unique_row, Mapping):
+            row["unique_trade_count"] = unique_row.get("unique_trade_count")
+            row["unique_trade_count_exact"] = (
+                unique_row.get("unique_trade_count_exact") is True
+            )
 
     integration = manifest.get("event_intelligence")
     if isinstance(integration, Mapping):
