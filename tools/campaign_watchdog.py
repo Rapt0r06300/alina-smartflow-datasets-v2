@@ -109,7 +109,7 @@ def main():
             if ok:
                 dispatched.append(str(row.get("campaign_id") or path.stem))
                 path.write_text(
-                    json.dumps(row, sort_keys=True, indent=2) + "\\n",
+                    json.dumps(row, sort_keys=True, indent=2) + "\n",
                     encoding="utf-8",
                 )
             else:
