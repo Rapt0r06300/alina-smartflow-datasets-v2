@@ -58,7 +58,14 @@ def main():
             json.loads(path.read_text(encoding="utf-8"))
             for path in sorted(Path(a.campaign_root).glob("*.json"))
         ]
-        observed = {str(row.get("kind")) for row in rows if row.get("status") in {"COMPLETE", "PARTIAL", "UNAVAILABLE", "REJECT", "FAILED"}}
+        observed = {
+            str(row.get("kind"))
+            for row in rows
+            if row.get("creation_phase") == "ANALYZE"
+            and int(row.get("phase_epoch") or 0) == int(state["epoch"])
+            and row.get("source_collection_epoch") == state.get("source_collection_epoch")
+            and row.get("status") in {"COMPLETE", "PARTIAL", "UNAVAILABLE", "REJECT", "FAILED"}
+        }
         if not required_kinds.issubset(observed):
             raise SystemExit(f"stage gate missing terminal campaign kinds: {sorted(required_kinds - observed)}")
     if current == "DRAIN" and a.stage != "DRAIN":
