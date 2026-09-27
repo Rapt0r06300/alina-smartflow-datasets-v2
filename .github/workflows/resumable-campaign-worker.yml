@@ -50,6 +50,11 @@ jobs:
           M="catalog/campaigns/$CAMPAIGN_ID.json"
           test -f "$M"
           python tools/phase_gate.py manifest --manifest "$M"
+          PHASE_META="$(python tools/phase_gate.py read)"
+          PHASE="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["phase"])' "$PHASE_META")"
+          PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
+          echo "phase=$PHASE" >> "$GITHUB_OUTPUT"
+          echo "phase_epoch=$PHASE_EPOCH" >> "$GITHUB_OUTPUT"
           python - <<'PY' "$M" >> "$GITHUB_OUTPUT"
           import json,sys
           m=json.load(open(sys.argv[1]))
@@ -95,7 +100,7 @@ jobs:
               ;;
           esac
           DIGEST="$(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py validate "$M")"
-          CLAIM="$(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py start "$M"             --owner "$GITHUB_RUN_ID" --ttl-s 20700 --expected-digest "$DIGEST")"
+          CLAIM="$(PYTHONPATH=alina/src python alina/tools/resumable_campaign.py start "$M"             --owner "$GITHUB_RUN_ID" --ttl-s 20700 --expected-digest "$DIGEST"             --expected-phase "${{ steps.pin.outputs.phase }}"             --expected-epoch "${{ steps.pin.outputs.phase_epoch }}")"
           TOKEN="$(printf '%s\n' "$CLAIM" | sed -n 's/^lease_token=//p' | tail -1)"
           test -n "$TOKEN"
           echo "::add-mask::$TOKEN"
