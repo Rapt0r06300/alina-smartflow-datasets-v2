@@ -129,8 +129,31 @@ def main():
                 })
         lease = row.get("lease")
         if isinstance(lease, dict) and lease.get("expires_at"):
-            if parse(lease["expires_at"]) <= now and status in active:
-                expired_leases.append(str(row.get("campaign_id") or path.stem))
+            try:
+                lease_expired = parse(lease["expires_at"]) <= now
+            except (TypeError, ValueError):
+                lease_expired = True
+            if lease_expired and status in active:
+                campaign_id = str(row.get("campaign_id") or path.stem)
+                expired_leases.append(campaign_id)
+                # Expired ownership must not remain resumable or appear alive to
+                # the operator surface. Preserve the evidence, revoke the lease,
+                # and force the next worker to reconcile from the last checkpoint.
+                history = row.setdefault("history", [])
+                history.append({
+                    "at_utc": now.isoformat().replace("+00:00", "Z"),
+                    "event": "WATCHDOG_LEASE_EXPIRED",
+                    "previous_status": status,
+                    "previous_lease": dict(lease),
+                })
+                row["lease"] = None
+                row["status"] = "STUCK"
+                row["stuck_reason"] = "LEASE_EXPIRED_REQUIRES_RECONCILIATION"
+                row["updated_at"] = now.isoformat().replace("+00:00", "Z")
+                path.write_text(
+                    json.dumps(row, sort_keys=True, indent=2) + "\\n",
+                    encoding="utf-8",
+                )
     receipt = {
         "schema": "alina.campaign_watchdog_receipt.v1",
         "generated_at_utc": now.isoformat().replace("+00:00", "Z"),
