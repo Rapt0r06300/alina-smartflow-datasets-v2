@@ -8,6 +8,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "catalog" / "DATA_INDEX.json"
 METRICS = ROOT / "catalog" / "DATA_METRICS.json"
+UNIQUE_PATCH = ROOT / "catalog" / "TRADE_UNIQUE_COUNT_PATCH.json"
 TRADE_FAMILIES = {
     "trades",
     "agg_trades",
@@ -142,8 +143,24 @@ def build() -> dict[str, Any]:
     totals["TOTAL_TRADES_COUNT_COVERAGE_COMPLETE"] = (
         totals["TRADE_SHARDS_MISSING_EXACT_COUNT"] == 0
     )
+    global_unique = None
+    global_unique_digest = None
+    global_unique_complete = False
+    if UNIQUE_PATCH.is_file():
+        try:
+            unique_patch = json.loads(UNIQUE_PATCH.read_text(encoding="utf-8"))
+            if isinstance(unique_patch, dict):
+                global_unique = unique_patch.get("global_unique_trade_count")
+                global_unique_digest = unique_patch.get("global_identity_digest")
+                global_unique_complete = unique_patch.get("coverage_complete") is True
+        except (OSError, ValueError, TypeError):
+            global_unique = None
+    totals["TOTAL_UNIQUE_TRADES_GLOBAL"] = int(global_unique) if isinstance(global_unique, int) else None
+    totals["GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST"] = global_unique_digest
+    totals["GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE"] = bool(global_unique_complete)
     totals["TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE"] = (
         totals["TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT"] == 0
+        and global_unique_complete
     )
 
     payload = {
@@ -161,6 +178,10 @@ def build() -> dict[str, Any]:
             "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": (
                 "deduplicated within each verified shard only; this is not a claim "
                 "of global cross-shard uniqueness"
+            ),
+            "TOTAL_UNIQUE_TRADES_GLOBAL": (
+                "published only from TRADE_UNIQUE_COUNT_PATCH.json after deterministic "
+                "cross-shard identity deduplication; missing patch means unknown"
             ),
         },
     }
