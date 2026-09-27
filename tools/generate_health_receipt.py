@@ -31,7 +31,7 @@ def main() -> int:
     args=p.parse_args()
     metrics=load(Path(args.metrics))
     phase=load(Path(args.phase))
-    replay_reasons=load(Path(args.replay_reasons), {}) if Path(args.replay_reasons).is_file() else {}
+    replay_reasons=load(Path(args.replay_reasons)) if Path(args.replay_reasons).is_file() else {}
     totals=dict(metrics.get("totals") or {})
     campaigns=[]
     for path in sorted(Path(args.campaign_dir).glob("*.json")):
