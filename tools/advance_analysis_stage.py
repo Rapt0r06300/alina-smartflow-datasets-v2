@@ -33,6 +33,8 @@ def main():
         raise SystemExit("invalid current analysis stage")
     if ORDER.index(a.stage) < ORDER.index(current):
         raise SystemExit(f"analysis stage regression: {current}->{a.stage}")
+    if ORDER.index(a.stage) > ORDER.index(current) + 1:
+        raise SystemExit(f"analysis stage skip is forbidden: {current}->{a.stage}")
     gates = json.loads(Path(a.gate_registry).read_text(encoding="utf-8"))
     if gates.get("paper_only") is not True or gates.get("read_only") is not True or gates.get("real_execution") is not False:
         raise SystemExit("unsafe analysis gate registry")
