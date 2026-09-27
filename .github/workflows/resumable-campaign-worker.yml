@@ -9,6 +9,18 @@ on:
         required: false
         default: "0"
         type: string
+      phase_epoch:
+        required: false
+        default: ""
+        type: string
+      generation:
+        required: false
+        default: ""
+        type: string
+      predecessor_run_id:
+        required: false
+        default: ""
+        type: string
   workflow_call:
     inputs:
       campaign_id:
@@ -18,6 +30,18 @@ on:
         required: false
         default: 0
         type: number
+      phase_epoch:
+        required: false
+        default: ""
+        type: string
+      generation:
+        required: false
+        default: ""
+        type: string
+      predecessor_run_id:
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
