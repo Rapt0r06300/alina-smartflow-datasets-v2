@@ -1,10 +1,26 @@
 {
-  "attempts": 0,
+  "attempts": 1,
   "campaign_id": "copy-vault-233-2026092518-v6",
-  "chunk_index": 0,
+  "chunk_index": 1,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
   "code_sha": "471784abf63b4b0bc97c080dd58c94dcf47e4aba",
-  "completed_units": {},
+  "completed_units": {
+    "0": {
+      "result": {
+        "command": [
+          "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+          "/home/runner/work/alina-smartflow-datasets-v2/alina-smartflow-datasets-v2/alina/tools/collect_cloud_copy_vault.py",
+          "--output",
+          "/home/runner/work/_temp/campaign-output/copy-vault-233-2026092518-v6/0"
+        ],
+        "phase": "unit",
+        "phases": [],
+        "reason": "adapter_timeout",
+        "status": "CONTINUATION_REQUIRED"
+      },
+      "sha256": "ee341c7b7c5a91bb840617d696150cfef56ea061fd6f938dc014893b575130af"
+    }
+  },
   "config_sha256": "2cd0a4d2bdaa93ef3f6e1d9733e6fbef5385c0f7afcecfe7059c336c748798e1",
   "consecutive_failures": 0,
   "created_at": "2026-09-25T18:51:50.362470+00:00",
@@ -26,6 +42,12 @@
       "from": "PENDING",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-27T09:30:15.041459Z",
+      "from": "RUNNING",
+      "reason": "stop_limit_reached",
+      "to": "FAILED"
     }
   ],
   "kind": "copy_vault_collection",
@@ -43,14 +65,14 @@
     "max_wall_clock_s": 86400
   },
   "next_due_at": null,
-  "no_progress_count": 0,
+  "no_progress_count": 1,
   "outputs": [],
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "updated_at": "2026-09-27T04:15:18.314225Z",
+  "status": "FAILED",
+  "status_reason": "stop_limit_reached",
+  "updated_at": "2026-09-27T09:30:15.041459Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
