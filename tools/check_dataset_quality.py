@@ -35,24 +35,15 @@ for row in shards:
             assert row.get(key) not in (None, ""), f"SAFE index row missing {key}"
         assert int(row["bytes"]) > 0
         assert int(row["event_count"]) > 0
-        replay_state = row.get("replay_compatible")
-        if replay_state is False:
-            # Historical SAFE rows may have been reindexed before replay
-            # compatibility was part of the schema. They remain historical
-            # quality evidence but are not selectable by the current replay
-            # consumer, which requires replay_compatible is True.
-            assert str(row.get("replay_schema_version") or "") == ""
+        assert row.get("replay_compatible") is True, "SAFE must be explicitly replay-compatible"
+        assert str(row.get("replay_schema_version") or ""), "SAFE replay schema missing"
         assert row["release_repository"] == "Rapt0r06300/alina-smartflow-datasets-v2"
     manifest_path = root / row["manifest_path"]
     assert manifest_path.is_file()
     manifest = json.loads(manifest_path.read_text())
     assert manifest["dataset_id"] == row["dataset_id"]
     assert manifest["quality_status"] == row["quality_status"]
-    replay_state = row.get("replay_compatible")
-    explicit_replay = bool(str(row.get("replay_schema_version") or ""))
-    expected_validation = row["quality_status"] == "SAFE" and (
-        replay_state is True if explicit_replay else True
-    )
+    expected_validation = row["quality_status"] == "SAFE" and row.get("replay_compatible") is True
     assert manifest["validation_allowed"] is expected_validation
 
 expected_active = (
