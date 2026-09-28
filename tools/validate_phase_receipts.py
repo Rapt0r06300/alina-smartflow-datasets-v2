@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -21,6 +22,10 @@ def main():
             raise SystemExit(f"{path}: unsafe receipt flags")
         if row.get("schema") not in {"alina.phase_transition_receipt.v1", "alina.analysis_stage_receipt.v1"}:
             raise SystemExit(f"{path}: unsupported receipt schema")
+        if not re.fullmatch(r"[0-9a-f]{64}", str(row.get("request_id") or "")):
+            raise SystemExit(f"{path}: invalid request id")
+        if not isinstance(row.get("new_epoch", row.get("epoch")), int) or int(row.get("new_epoch", row.get("epoch"))) < 1:
+            raise SystemExit(f"{path}: invalid epoch")
         if not isinstance(row.get("epoch"), int) and row.get("schema") == "alina.analysis_stage_receipt.v1":
             raise SystemExit(f"{path}: invalid analysis epoch")
         digest = str(row.get("state_digest") or "")
