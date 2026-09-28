@@ -14571,10 +14571,10 @@
     {
       "dataset_id": "gate-public-ws-l2book-2z-usdt-1790344083657-1790354043970-794f18f3950e",
       "family": "l2Book",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "gate-public-ws-l2book-aave-usdt-1790117942377-1790130541778-32fbcf5b7e7b",
@@ -15787,10 +15787,10 @@
     {
       "dataset_id": "gate-public-ws-l2book-aztec-usdt-1790344083812-1790354044062-fda7fa3c748c",
       "family": "l2Book",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "gate-public-ws-l2book-baby-usdt-1790117963935-1790130541837-9cacc57967c9",
@@ -16379,10 +16379,10 @@
     {
       "dataset_id": "gate-public-ws-l2book-bome-usdt-1790344083672-1790354044080-77c2932846a5",
       "family": "l2Book",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "gate-public-ws-l2book-brett-usdt-1790117942533-1790130541836-b535747df28c",
@@ -17043,10 +17043,10 @@
     {
       "dataset_id": "gate-public-ws-l2book-dash-usdt-1790344083656-1790354043961-1bafbf48d430",
       "family": "l2Book",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "gate-public-ws-l2book-doge-usdt-1790117942528-1790130541831-c74c6f8e6211",
@@ -17723,10 +17723,10 @@
     {
       "dataset_id": "gate-public-ws-l2book-ethfi-usdt-1790344083739-1790354044078-4504ad9f5cf8",
       "family": "l2Book",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "gate-public-ws-l2book-fartcoin-usdt-1790117942410-1790130541811-f70c1e6fac5b",
@@ -160004,9 +160004,9 @@
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x15a141990fc6591838646467273c41c92999772f-1790232878408-1790232878408-8227383f3a2b",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x15a141990fc6591838646467273c41c92999772f-1790260391900-1790267367445-93eb91610d61",
@@ -160076,9 +160076,9 @@
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x15be61aef0ea4e4dc93c79b668f26b3f1be75a66-1790221493808-1790221494373-f2170662ebed",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x15be61aef0ea4e4dc93c79b668f26b3f1be75a66-1790241149786-1790241346329-54e2f9890fea",
@@ -160348,9 +160348,9 @@
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x32b1223d162056db0fb94ab244d1ef821421b95c-1790233743472-1790234039454-f5182b73db62",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x32b1223d162056db0fb94ab244d1ef821421b95c-1790288418817-1790288567961-20a1a82595ae",
@@ -161300,9 +161300,9 @@
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x9e02aca9865e1859bb7865f6f64801e804a173df-1790221088573-1790221442277-89dfd12ad16d",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x9e02aca9865e1859bb7865f6f64801e804a173df-1790232408386-1790239366752-06109e768b02",
@@ -162188,9 +162188,9 @@
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0xce56eb8261493462e3eb00a72c2bda2cb5fdccee-1790239390180-1790239390180-3c4454fe633d",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0xce56eb8261493462e3eb00a72c2bda2cb5fdccee-1790266516147-1790267526000-e65fa25f15e1",
@@ -234075,10 +234075,10 @@
     {
       "dataset_id": "hyperliquid-public-ws-bbo-2z-1790323951050-1790324864221-5e5d4074ee71",
       "family": "bbo",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-ws-bbo-2z-1790354409066-1790356682990-6ce24a85694c",
@@ -234507,10 +234507,10 @@
     {
       "dataset_id": "hyperliquid-public-ws-bbo-aixbt-1790323155400-1790324874773-49d6e52c2597",
       "family": "bbo",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-ws-bbo-aixbt-1790354275225-1790356659152-75bb8958a144",
@@ -234699,10 +234699,10 @@
     {
       "dataset_id": "hyperliquid-public-ws-bbo-anime-1790323079964-1790324863550-dafabede3ac1",
       "family": "bbo",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-ws-bbo-anime-1790354390890-1790356667503-d406954903ee",
@@ -234795,10 +234795,10 @@
     {
       "dataset_id": "hyperliquid-public-ws-bbo-ape-1790322368842-1790324866869-796f85fffef2",
       "family": "bbo",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-ws-bbo-ape-1790354290750-1790356660220-63c09715d6b3",
@@ -236091,10 +236091,10 @@
     {
       "dataset_id": "hyperliquid-public-ws-bbo-bigtime-1790323161402-1790324874538-584ab8c2986a",
       "family": "bbo",
-      "quality_status": "PARTIAL",
-      "reason_code": "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN",
-      "replay_compatible": false,
-      "replay_schema_version": null
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     },
     {
       "dataset_id": "hyperliquid-public-ws-bbo-bigtime-1790354279783-1790356661038-8c3e5aa780b4",
@@ -288445,18 +288445,18 @@
     "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
     "NOT_SAFE_OR_REPLAYABLE:PARTIAL:NO_REPLAY_ADAPTER": 62,
     "NOT_SAFE_OR_REPLAYABLE:PARTIAL:NO_REPLAY_COMPATIBILITY": 1852,
-    "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN": 15870,
+    "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN": 15855,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:GAP": 30,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP": 6150,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_MONOTONIC_TIMESTAMP": 5,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:NO_REPLAY_COMPATIBILITY": 1717,
-    "REPLAYABLE_BUT_PARTIAL": 196,
-    "SAFE_REPLAY_COMPATIBLE": 10118
+    "REPLAYABLE_BUT_PARTIAL": 201,
+    "SAFE_REPLAY_COMPATIBLE": 10128
   },
-  "receipt_digest": "7584e3f288ddf7fb2c5def6340da14a83a32d95a128771155def77f21c79b434",
-  "replayable_not_safe_count": 196,
+  "receipt_digest": "e1a8554a3d8c7c11dbdb4492d646c57574b2fb9a149de2f93ff26c478507acc4",
+  "replayable_not_safe_count": 201,
   "row_count": 36055,
   "safe_not_replayable_count": 0,
   "schema": "alina.replay_compatibility_reasons.v1",
-  "source_index_sha256": "61583035cbf9fd40567f414640b0e6eac3c18bf895b6b036d3883840eeec9f5a"
+  "source_index_sha256": "596180a5c0836f545043257d4890567e94ec468da3c25efd378393e74cbf7852"
 }
