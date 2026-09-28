@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import re
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,6 +29,8 @@ def main() -> int:
             violations.append({"path": str(path), "code": "INVALID_MANIFEST", "detail": str(exc)})
             continue
         campaign_id = str(manifest.get("campaign_id") or path.stem)
+        if campaign_id.startswith("operator-") and not re.fullmatch(r"[0-9a-f]{64}", str(manifest.get("operator_request_id") or "")):
+            violations.append({"campaign_id": campaign_id, "code": "OPERATOR_REQUEST_ID_INVALID"})
         required = {
             "schema_version", "status", "history", "completed_units",
             "checkpoint_lineage", "limits", "attempts", "chunk_index",
