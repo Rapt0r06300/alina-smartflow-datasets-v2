@@ -56,6 +56,14 @@ def main():
         if key in seen:
             raise SystemExit(f"{path}: duplicate dispatch identity")
         seen.add(key)
+        ack_path = Path("catalog/operator-acks") / (str(receipt["campaign_id"]) + ".json")
+        if ack_path.is_file():
+            ack = json.loads(ack_path.read_text(encoding="utf-8"))
+            if ack.get("schema") != "alina.operator_ack.v1" or ack.get("state") != "MATERIALIZED":
+                raise SystemExit(f"{path}: invalid operator acknowledgement")
+            for field in ("request_id", "campaign_id", "main_code_sha", "dataset_repo_sha", "phase", "phase_epoch"):
+                if ack.get(field) != receipt.get(field if field != "phase" else "creation_phase"):
+                    raise SystemExit(f"{path}: operator acknowledgement mismatch: {field}")
         campaign_path = Path("catalog/campaigns") / (str(receipt["campaign_id"]) + ".json")
         if not campaign_path.is_file():
             raise SystemExit(f"{path}: missing campaign manifest")
