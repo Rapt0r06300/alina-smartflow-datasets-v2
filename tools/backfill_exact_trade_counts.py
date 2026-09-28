@@ -44,7 +44,7 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _trade_increment(record: Mapping[str, Any]) -> int:
+def _summary_trade_count(record: Mapping[str, Any]) -> int | None:
     parsed = record.get("parsed_summary")
     if isinstance(parsed, Mapping):
         for key in ("event_count", "fill_count"):
@@ -54,7 +54,11 @@ def _trade_increment(record: Mapping[str, Any]) -> int:
                     return max(0, int(value))
                 except (TypeError, ValueError, OverflowError):
                     pass
-    return 1
+    return None
+
+
+def _trade_increment(record: Mapping[str, Any]) -> int:
+    return _summary_trade_count(record) or 1
 
 
 def _raw_payload(record: Mapping[str, Any]) -> Any:
@@ -221,8 +225,11 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
                 symbol=symbol,
             )
             if keys is None:
-                # A summary count is not proof of the underlying trade cardinality.
-                trade_count_exact = False
+                summary_count = _summary_trade_count(raw)
+                if summary_count is None:
+                    trade_count_exact = False
+                else:
+                    trade_count += summary_count
                 unique_proven = False
             else:
                 trade_count += len(keys)
