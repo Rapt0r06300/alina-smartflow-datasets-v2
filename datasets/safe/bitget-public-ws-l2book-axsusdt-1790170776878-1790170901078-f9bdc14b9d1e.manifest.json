@@ -101,6 +101,8 @@
   },
   "trade_count": 0,
   "trade_count_exact": true,
+  "unique_trade_count": 515,
+  "unique_trade_count_exact": true,
   "validation_allowed": true,
   "venue": "bitget"
 }
