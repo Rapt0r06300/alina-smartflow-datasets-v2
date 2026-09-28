@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -41,6 +42,10 @@ def main():
             raise SystemExit(f"{path}: unsafe receipt flags")
         if not isinstance(row["phase_epoch"], int) or row["phase_epoch"] < 1:
             raise SystemExit(f"{path}: invalid phase epoch")
+        if row["phase"] not in {"COLLECT", "ANALYZE"}:
+            raise SystemExit(f"{path}: invalid phase")
+        if not re.fullmatch(r"[0-9a-f]{40}", str(row["code_sha"])):
+            raise SystemExit(f"{path}: invalid code sha")
         if row["phase"] == "ANALYZE":
             for key in (
                 "source_collection_epoch",
@@ -57,7 +62,7 @@ def main():
         ):
             raise SystemExit(f"{path}: missing discovered-universe digest")
         for key in ("result_sha256", "payload_digest"):
-            if len(str(row[key])) != 64:
+            if not re.fullmatch(r"[0-9a-f]{64}", str(row[key])):
                 raise SystemExit(f"{path}: invalid {key}")
     print(f"validated {len(seen)} publication receipts")
 
