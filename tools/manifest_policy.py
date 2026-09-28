@@ -164,15 +164,19 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
         reasons.append("ASSET_NOT_VERIFIED")
     if manifest.get("replay_compatible") is not True:
         reasons.append("REPLAY_COMPATIBILITY_NOT_PROVEN")
+    elif not str(manifest.get("replay_schema_version") or "").strip():
+        reasons.append("REPLAY_SCHEMA_NOT_PROVEN")
+    elif not str(manifest.get("replay_reason") or "").strip():
+        reasons.append("REPLAY_RECEIPT_NOT_PROVEN")
 
     trade_family = str(manifest.get("family") or "").lower() in {
         "trades", "agg_trades", "fills", "userfills", "user_fills",
         "copy_vault_fills",
     }
     if trade_family:
-        if manifest.get("trade_count_exact") is not True:
+        if manifest.get("trade_count_exact") is not True or _int(manifest.get("trade_count")) is None:
             reasons.append("TRADE_COUNT_NOT_EXACT")
-        if manifest.get("unique_trade_count_exact") is not True:
+        if manifest.get("unique_trade_count_exact") is not True or _int(manifest.get("unique_trade_count")) is None:
             reasons.append("UNIQUE_TRADE_COUNT_NOT_EXACT")
 
     reconciliation = manifest["reconciliation"]
