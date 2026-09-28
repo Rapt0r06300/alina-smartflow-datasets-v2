@@ -57,11 +57,11 @@
     }
   },
   "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-28T08:44:36.008561Z",
+  "generated_at_utc": "2026-09-28T12:32:14.254021Z",
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "2955d57ceb490731a24d94cac3a63c5cbacc11374d8976296d68c51f4e502726",
+  "receipt_digest": "994f621c25f1a996f78155168e678a6947219a81a3af87ed8f4ddd5ee7cc927c",
   "schema": "alina.campaign_resilience_receipt.v1",
   "status": "BLOCKED",
   "violations": [
