@@ -162,8 +162,9 @@ def main():
         "remaining_candidate_shards":len(_remaining(rows, covered)),
         "global_unique_trade_count":global_count,
         "global_identity_digest":hashlib.sha256(json.dumps(identity_rows,separators=(",",":")).encode()).hexdigest(),
-        # Raw identities remain in the temporary sqlite database only; the digest
-        # is a receipt, while counts were calculated from collision-free strings.
+        # Persistence is deliberately collision-free: later incremental shards
+        # need the prior exact identity set to compute cross-shard overlaps.
+        "identities": identity_rows,
         "cross_shard_overlap_count":sum(int(v.get("cross_shard_overlap_count") or 0) for v in counts.values() if isinstance(v,Mapping)),
         "coverage_complete":len(failed)==0 and not _remaining(rows, covered),
     }
