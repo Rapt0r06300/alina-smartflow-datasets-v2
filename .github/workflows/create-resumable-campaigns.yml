@@ -1,5 +1,7 @@
 name: create-resumable-campaigns
 on:
+  schedule:
+    - cron: '23 */6 * * *'
   push:
     branches: [main]
     paths:
