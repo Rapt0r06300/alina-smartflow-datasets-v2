@@ -1,10 +1,10 @@
 {
   "attempted": 200,
   "coverage_complete": false,
-  "exact_assets": 200,
+  "exact_assets": 400,
   "failed": [],
   "method": "exact_gzip_decompression_byte_count_or_explicit_unavailable",
-  "remaining_assets": 35855,
+  "remaining_assets": 35655,
   "schema": "alina.uncompressed_size_patch.v2",
   "sizes": {
     "binance-usdm-official-archive-trades-btcusdt-1789776000141-1789798765030-80d6b0a5dacb": {
@@ -1006,6 +1006,1006 @@
       "asset_sha256": "9c7bd53092512b5a34bd99b9d0761fde7c1247560055ec7e96e9adae28ee6644",
       "compressed_bytes": 252076,
       "uncompressed_bytes": 3690542
+    },
+    "binance-usdm-public-ticker-arbusdt-1790431935161-1790435432875-087d59f9f301": {
+      "asset_sha256": "087d59f9f30168cb349666618d9e057b693008f6687867ef7b70049471f8af4c",
+      "compressed_bytes": 239441,
+      "uncompressed_bytes": 3481870
+    },
+    "binance-usdm-public-ticker-avaxusdt-1790364008852-1790367506307-bd5076192309": {
+      "asset_sha256": "bd5076192309a6dac85c3393b0ed9d67b216ba4225e251db6fe30726e03c7526",
+      "compressed_bytes": 202570,
+      "uncompressed_bytes": 3173255
+    },
+    "binance-usdm-public-ticker-avaxusdt-1790431933710-1790435432244-12556fb82d6a": {
+      "asset_sha256": "12556fb82d6a8b3ccab1ffd4fa0a533c1c309507f8b93361ea9b239d45923315",
+      "compressed_bytes": 232955,
+      "uncompressed_bytes": 3586109
+    },
+    "binance-usdm-public-ticker-bnbusdt-1790364008309-1790367504889-01d750975ec2": {
+      "asset_sha256": "01d750975ec2f930ac568d55a93d09f86395d9eee371287651ea8a86d7110c3b",
+      "compressed_bytes": 207033,
+      "uncompressed_bytes": 3262599
+    },
+    "binance-usdm-public-ticker-bnbusdt-1790431934702-1790435432112-b1f1508405a6": {
+      "asset_sha256": "b1f1508405a6dfafa16acc13ff59bb3c1644341c563d0bca5070b002229100c2",
+      "compressed_bytes": 218891,
+      "uncompressed_bytes": 3518233
+    },
+    "binance-usdm-public-ticker-btcusdt-1790364007299-1790367504877-5dcb5d92e5ba": {
+      "asset_sha256": "5dcb5d92e5bab983e9e3754fd188e866edc6ceda785dabbceffd18860a867a63",
+      "compressed_bytes": 237509,
+      "uncompressed_bytes": 3715139
+    },
+    "binance-usdm-public-ticker-btcusdt-1790431933779-1790435432186-b617f374631b": {
+      "asset_sha256": "b617f374631bb5d75f2d2ab652b12ece70d2cf77edd52a943f64b982f66dbd1e",
+      "compressed_bytes": 233077,
+      "uncompressed_bytes": 3748107
+    },
+    "binance-usdm-public-ticker-dogeusdt-1790364008749-1790367505949-c4293c27a577": {
+      "asset_sha256": "c4293c27a577a6bfae0537d47da4b7e1cc801de261442a5fc4bb03ce473493af",
+      "compressed_bytes": 243482,
+      "uncompressed_bytes": 3693042
+    },
+    "binance-usdm-public-ticker-dogeusdt-1790431934268-1790435426748-7d0433fe539f": {
+      "asset_sha256": "7d0433fe539f6dca5db95dc31a8900c6c5c012280e96582b1fa5ff7f4910f584",
+      "compressed_bytes": 239194,
+      "uncompressed_bytes": 3708857
+    },
+    "binance-usdm-public-ticker-ethusdt-1790364008081-1790367506443-2ba3092c0465": {
+      "asset_sha256": "2ba3092c0465362d9c5a2263cf1e6db2bb4a3b439645d959f8288677fbd5ed27",
+      "compressed_bytes": 247336,
+      "uncompressed_bytes": 3743411
+    },
+    "binance-usdm-public-ticker-ethusdt-1790431935100-1790435431765-74e6d7dfa236": {
+      "asset_sha256": "74e6d7dfa236e2030182d341ff91523ad30b51c318922457eb1a26c0d633439b",
+      "compressed_bytes": 237617,
+      "uncompressed_bytes": 3736469
+    },
+    "binance-usdm-public-ticker-linkusdt-1790364008572-1790367504491-02dd8a573ed9": {
+      "asset_sha256": "02dd8a573ed954185bbe7f7102cbb8ff844e59d036fb1c8a1770fe37898fbf0f",
+      "compressed_bytes": 225424,
+      "uncompressed_bytes": 3379601
+    },
+    "binance-usdm-public-ticker-linkusdt-1790431934017-1790435432043-cd7b2319ac3a": {
+      "asset_sha256": "cd7b2319ac3a9e62d02db002d6962060dc41a50ed2ce5c1bdbe6c6132c3c1b6b",
+      "compressed_bytes": 251083,
+      "uncompressed_bytes": 3724447
+    },
+    "binance-usdm-public-ticker-opusdt-1790364008993-1790367505877-0e8a7de6994e": {
+      "asset_sha256": "0e8a7de6994ec939f7118e2b68897d6cebe76f5d90a378e44c27aec5a06a74ec",
+      "compressed_bytes": 251421,
+      "uncompressed_bytes": 3631975
+    },
+    "binance-usdm-public-ticker-opusdt-1790431933782-1790435432062-4b97fc23befd": {
+      "asset_sha256": "4b97fc23befd375f82017f455179844a716a51962a35c7b19100a45b035777bd",
+      "compressed_bytes": 253439,
+      "uncompressed_bytes": 3662540
+    },
+    "binance-usdm-public-ticker-solusdt-1790364009271-1790367506746-1ad090dd4362": {
+      "asset_sha256": "1ad090dd4362114b13448122295fa87b2eb94fda3353d1fbc2ca83c737e7b98d",
+      "compressed_bytes": 252350,
+      "uncompressed_bytes": 3797652
+    },
+    "binance-usdm-public-ticker-solusdt-1790431935115-1790435431834-eba803cf1c54": {
+      "asset_sha256": "eba803cf1c5445280b3c1ce5f3bb3d7c02d47c36eb4800f49fca6c5e148581e8",
+      "compressed_bytes": 243425,
+      "uncompressed_bytes": 3795697
+    },
+    "binance-usdm-public-ticker-suiusdt-1790364008127-1790367506038-84e5244d9934": {
+      "asset_sha256": "84e5244d9934c231b98b72240d1cfeae7ce367090ab9a635307667c32d317f76",
+      "compressed_bytes": 262119,
+      "uncompressed_bytes": 3789194
+    },
+    "binance-usdm-public-ticker-suiusdt-1790431935063-1790435431656-56fb1d7f432b": {
+      "asset_sha256": "56fb1d7f432b9f457a09bf12483331083bfd064a42048f0784988d952fa41dfb",
+      "compressed_bytes": 246247,
+      "uncompressed_bytes": 3674656
+    },
+    "binance-usdm-public-ticker-trxusdt-1790364007249-1790367504689-60d14ffa51cd": {
+      "asset_sha256": "60d14ffa51cdf30bbc81583f886ea601e74b6b1e9e05d3174cb546fccb10fa01",
+      "compressed_bytes": 157738,
+      "uncompressed_bytes": 2487004
+    },
+    "binance-usdm-public-ticker-trxusdt-1790431933796-1790435430634-a2b757160323": {
+      "asset_sha256": "a2b757160323dba611557006c03b566b77ceeac54a5f8e3e4dcab7f5b042cb8e",
+      "compressed_bytes": 193413,
+      "uncompressed_bytes": 3052524
+    },
+    "binance-usdm-public-ticker-wifusdt-1790364011974-1790367502883-b8f717854569": {
+      "asset_sha256": "b8f71785456954e80c18ffc0ad3e6c13c15996a32c2b5115099508930b91159c",
+      "compressed_bytes": 151177,
+      "uncompressed_bytes": 2264852
+    },
+    "binance-usdm-public-ticker-wifusdt-1790431933545-1790435432318-6a68afb43814": {
+      "asset_sha256": "6a68afb4381449f02f40c07d0c190299a5d17932cbb6168d8796fae98a10fb53",
+      "compressed_bytes": 180867,
+      "uncompressed_bytes": 2709278
+    },
+    "binance-usdm-public-ticker-xrpusdt-1790364009475-1790367505003-d882f7b2ab92": {
+      "asset_sha256": "d882f7b2ab92fd03290d8de3813309101b0a5a4828d84e6f1673233cffef5af7",
+      "compressed_bytes": 251709,
+      "uncompressed_bytes": 3725228
+    },
+    "binance-usdm-public-ticker-xrpusdt-1790431933620-1790435432576-65b02031f523": {
+      "asset_sha256": "65b02031f523396ac728bc0762daa175be08845f8080211c3e704daf4cf215db",
+      "compressed_bytes": 243549,
+      "uncompressed_bytes": 3736593
+    },
+    "bitget-public-ws-l2book-0gusdt-1790117941430-1790118078540-a5d1e3a1d4e6": {
+      "asset_sha256": "a5d1e3a1d4e63c370cfad1225d2b367e166819649bb563546ae5fcf9bba3da09",
+      "compressed_bytes": 166470,
+      "uncompressed_bytes": 1917427
+    },
+    "bitget-public-ws-l2book-0gusdt-1790138726249-1790138861428-12513c9fd116": {
+      "asset_sha256": "12513c9fd1164ea7246557aee831ec42483e2f0f6ecba7a3c4dcfde48daeb8f5",
+      "compressed_bytes": 166966,
+      "uncompressed_bytes": 1919319
+    },
+    "bitget-public-ws-l2book-0gusdt-1790170776749-1790170901395-7bc4d29f028e": {
+      "asset_sha256": "7bc4d29f028ee468532722b3fb91385b9879288c398964e8d91c3ca05ef56679",
+      "compressed_bytes": 159934,
+      "uncompressed_bytes": 1800330
+    },
+    "bitget-public-ws-l2book-0gusdt-1790204457806-1790204595973-d8f827cfb65f": {
+      "asset_sha256": "d8f827cfb65fbe9bd5c8f4e730beaebd555f4ad5e3e980769a268b7ae1e58aa7",
+      "compressed_bytes": 171953,
+      "uncompressed_bytes": 1959415
+    },
+    "bitget-public-ws-l2book-0gusdt-1790225442459-1790225571087-76828cc22878": {
+      "asset_sha256": "76828cc22878f3c2dfa21edf5affcbf5c0fdfd60ffa5adea3687c9498945fa8c",
+      "compressed_bytes": 167890,
+      "uncompressed_bytes": 1876095
+    },
+    "bitget-public-ws-l2book-0gusdt-1790256852211-1790256982895-78749fa71ccb": {
+      "asset_sha256": "78749fa71ccb63cc8816a5561cacd888c1744a4655a1604d9ad8d52f59d5b3c3",
+      "compressed_bytes": 166173,
+      "uncompressed_bytes": 1870928
+    },
+    "bitget-public-ws-l2book-0gusdt-1790291824546-1790291963293-42820bc1b2d6": {
+      "asset_sha256": "42820bc1b2d683ba13c28037990edd972453f9617898ba053be85286be941aaf",
+      "compressed_bytes": 166698,
+      "uncompressed_bytes": 1934257
+    },
+    "bitget-public-ws-l2book-0gusdt-1790312283816-1790312405337-50e559676f7f": {
+      "asset_sha256": "50e559676f7f066da5cc57983c5b7280d7489a6b37f2058452b6eb9f1bde9d30",
+      "compressed_bytes": 148874,
+      "uncompressed_bytes": 1713696
+    },
+    "bitget-public-ws-l2book-0gusdt-1790344063033-1790344193409-f760059a503f": {
+      "asset_sha256": "f760059a503fc99cf312fe5c2b3c2552dc5f4cb91f032eb4aa45f804c8b5310f",
+      "compressed_bytes": 168351,
+      "uncompressed_bytes": 1911608
+    },
+    "bitget-public-ws-l2book-2zusdt-1790117940097-1790118076282-570579307be2": {
+      "asset_sha256": "570579307be2f39028f2658f611c72c9da73f8e1b1c850bfb1f16cf7dc6dbdd2",
+      "compressed_bytes": 24023,
+      "uncompressed_bytes": 238655
+    },
+    "bitget-public-ws-l2book-2zusdt-1790138730230-1790138870844-45748709bcd1": {
+      "asset_sha256": "45748709bcd1b4a00ab7510d2960b8efbd60ac038b744c5e3828e303d5d4cf68",
+      "compressed_bytes": 18990,
+      "uncompressed_bytes": 186516
+    },
+    "bitget-public-ws-l2book-2zusdt-1790170770634-1790170907860-e54627f7384c": {
+      "asset_sha256": "e54627f7384c655984ee3bf81a64f4318fa09a90ba0279c50b406d40769111fa",
+      "compressed_bytes": 52931,
+      "uncompressed_bytes": 559967
+    },
+    "bitget-public-ws-l2book-2zusdt-1790204466053-1790204590914-51fb4ad44446": {
+      "asset_sha256": "51fb4ad444463a8e43e4e9aea68e5cab394ec334afd3c8084634741632870594",
+      "compressed_bytes": 16622,
+      "uncompressed_bytes": 161211
+    },
+    "bitget-public-ws-l2book-2zusdt-1790225422221-1790225563605-fd0c5476c155": {
+      "asset_sha256": "fd0c5476c15516530020ce58efb229c1035964356f26214aa8b94375604741f6",
+      "compressed_bytes": 21636,
+      "uncompressed_bytes": 211972
+    },
+    "bitget-public-ws-l2book-2zusdt-1790256848460-1790256994266-81e9c7e85cb6": {
+      "asset_sha256": "81e9c7e85cb68e5cff55a79e5a624801758e71616f25e5df94cec95c0e206297",
+      "compressed_bytes": 31245,
+      "uncompressed_bytes": 309785
+    },
+    "bitget-public-ws-l2book-2zusdt-1790291820351-1790291961233-5f085506598e": {
+      "asset_sha256": "5f085506598ec7db186750c23191b2b1f98f19de7967ac86f906ce0d6f5dbdc8",
+      "compressed_bytes": 26431,
+      "uncompressed_bytes": 259311
+    },
+    "bitget-public-ws-l2book-2zusdt-1790312280879-1790312415933-bd17bef75b53": {
+      "asset_sha256": "bd17bef75b53fbe2f7ee5ae0e7cb1194c933d5f7e8a62335cbd3e6e5db451959",
+      "compressed_bytes": 39590,
+      "uncompressed_bytes": 397611
+    },
+    "bitget-public-ws-l2book-2zusdt-1790344083708-1790344220177-8b67fe8d37ef": {
+      "asset_sha256": "8b67fe8d37ef3f2925c1712f3cbba2ed001a76a8eee2457836424b6e6e6bfb25",
+      "compressed_bytes": 79619,
+      "uncompressed_bytes": 811592
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790117942640-1790118071386-1380b2c8679a": {
+      "asset_sha256": "1380b2c8679ae93f225b6c25e801848518b2263cb8b16ef5be97f896ede91218",
+      "compressed_bytes": 189751,
+      "uncompressed_bytes": 1890023
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790138736104-1790138864479-886f1216fe09": {
+      "asset_sha256": "886f1216fe09436494284c7d14b07fac1cd24586733afc7e06237db4033ff933",
+      "compressed_bytes": 177921,
+      "uncompressed_bytes": 1843773
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790170775240-1790170908578-15863fb11245": {
+      "asset_sha256": "15863fb112451f974eac706bed5061a0d1408e249acb7d17b5a275c2619f8821",
+      "compressed_bytes": 205591,
+      "uncompressed_bytes": 2019706
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790204480834-1790204601078-480dfa8b1862": {
+      "asset_sha256": "480dfa8b18628414d48ab72cd49fa79797f4d1a2d62f11fb637d1132f26b9c00",
+      "compressed_bytes": 165085,
+      "uncompressed_bytes": 1699068
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790225428133-1790225571104-f00710b05ffa": {
+      "asset_sha256": "f00710b05ffa551b1174078f10cbecfd4761202ff30769075dc23a27d69f530d",
+      "compressed_bytes": 192650,
+      "uncompressed_bytes": 2045959
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790256848746-1790256983383-44895a54a553": {
+      "asset_sha256": "44895a54a5536fbcb3546e76777d86ce15964a2ba3464ff21f4ddb452992117b",
+      "compressed_bytes": 228648,
+      "uncompressed_bytes": 2208653
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790291824324-1790291954523-e8e2b11026ac": {
+      "asset_sha256": "e8e2b11026ac7fc338eb81588948bf75b08b53f986e4db83624392b22347e739",
+      "compressed_bytes": 137217,
+      "uncompressed_bytes": 1388686
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790312283935-1790312411377-ed7fde30f718": {
+      "asset_sha256": "ed7fde30f71889b216980a100f6edda7bfb1573cf302ec293acb701f01f1f8d8",
+      "compressed_bytes": 99484,
+      "uncompressed_bytes": 1048005
+    },
+    "bitget-public-ws-l2book-aaveusdt-1790344068896-1790344192889-a5ca3bccc24e": {
+      "asset_sha256": "a5ca3bccc24ea54ae7295b740692fbf5d40200f9ac6a4185d006ce71dc10c619",
+      "compressed_bytes": 218370,
+      "uncompressed_bytes": 2072564
+    },
+    "bitget-public-ws-l2book-adausdt-1790117943451-1790118072196-085a036baa48": {
+      "asset_sha256": "085a036baa48c2c6098b9232dc028e6438a38b7801d60eb1b050a1777d47a9d2",
+      "compressed_bytes": 161282,
+      "uncompressed_bytes": 1736333
+    },
+    "bitget-public-ws-l2book-adausdt-1790138724396-1790138844160-96a8e2968c96": {
+      "asset_sha256": "96a8e2968c967986ad3b309488d3c56c7593efce5743a443659ad1de8101271d",
+      "compressed_bytes": 153334,
+      "uncompressed_bytes": 1659996
+    },
+    "bitget-public-ws-l2book-adausdt-1790170777070-1790170902181-c7e099fc2d5b": {
+      "asset_sha256": "c7e099fc2d5b236f83eaa695751ee59e435399fc1b74641da628968f2125a80a",
+      "compressed_bytes": 168555,
+      "uncompressed_bytes": 1743295
+    },
+    "bitget-public-ws-l2book-adausdt-1790204466455-1790204604178-7b49257e68fd": {
+      "asset_sha256": "7b49257e68fd0c5dd564b3fb4895f4e5710e46c89842b45670831743d9301f1b",
+      "compressed_bytes": 175638,
+      "uncompressed_bytes": 1916687
+    },
+    "bitget-public-ws-l2book-adausdt-1790225430282-1790225562180-21f26cc07b31": {
+      "asset_sha256": "21f26cc07b31d037555069477cb94a94c64ea12d5aa4eed8b51d000ccc835602",
+      "compressed_bytes": 159395,
+      "uncompressed_bytes": 1782745
+    },
+    "bitget-public-ws-l2book-adausdt-1790256842380-1790256980822-4c672779fb37": {
+      "asset_sha256": "4c672779fb37cc8a21f7ea662809721f25778e2eae983703dd3110344f2fec16",
+      "compressed_bytes": 201345,
+      "uncompressed_bytes": 1991640
+    },
+    "bitget-public-ws-l2book-adausdt-1790291824741-1790291952191-9fee88943ff9": {
+      "asset_sha256": "9fee88943ff93b34919a113d0714708b56a43abb538bc5c5365c8ed20d9ccf4b",
+      "compressed_bytes": 132087,
+      "uncompressed_bytes": 1397605
+    },
+    "bitget-public-ws-l2book-adausdt-1790312288140-1790312429579-2a45e96da25c": {
+      "asset_sha256": "2a45e96da25c3e3b77efbe02731bbe913a93d03784bbab4f80afa46ada0f3a4c",
+      "compressed_bytes": 123595,
+      "uncompressed_bytes": 1345277
+    },
+    "bitget-public-ws-l2book-adausdt-1790344063942-1790344205272-bd2df3699d4c": {
+      "asset_sha256": "bd2df3699d4ce5aba22bade83becb95335caf6801bda4deedc017d646b6d633d",
+      "compressed_bytes": 216558,
+      "uncompressed_bytes": 2075848
+    },
+    "bitget-public-ws-l2book-adausdt-1790364007381-1790364134478-55d5dc3adab4": {
+      "asset_sha256": "55d5dc3adab4d8cd3e197aa6e5e22f93e7a4859b7e519f1a70018fe7615af8bd",
+      "compressed_bytes": 149522,
+      "uncompressed_bytes": 1715000
+    },
+    "bitget-public-ws-l2book-adausdt-1790431933527-1790432063392-8feff17f13d2": {
+      "asset_sha256": "8feff17f13d2bd4e5360df07746f7a6ab3351d2b12869462db4cd1e3a93800fa",
+      "compressed_bytes": 153585,
+      "uncompressed_bytes": 1761517
+    },
+    "bitget-public-ws-l2book-aerousdt-1790117940474-1790118075977-959ee3c7c69d": {
+      "asset_sha256": "959ee3c7c69d392659b9836d19fb346e653958fb1a8e4da793a0b041e131f65f",
+      "compressed_bytes": 168900,
+      "uncompressed_bytes": 1863980
+    },
+    "bitget-public-ws-l2book-aerousdt-1790138734342-1790138868583-144e82d12a65": {
+      "asset_sha256": "144e82d12a65c3ca57f50f775803ad3037ab7c8e71792670c7848bbe0ff898c5",
+      "compressed_bytes": 156899,
+      "uncompressed_bytes": 1831423
+    },
+    "bitget-public-ws-l2book-aerousdt-1790170774719-1790170905987-81c309c60582": {
+      "asset_sha256": "81c309c60582cbf020ab8c995e7cb503a6990fd7a4ba313016fb99ae7a364e13",
+      "compressed_bytes": 175378,
+      "uncompressed_bytes": 1856913
+    },
+    "bitget-public-ws-l2book-aerousdt-1790204470095-1790204615268-075cb04adc65": {
+      "asset_sha256": "075cb04adc6552ff69fd2dc0f659b8000660fadfb4e220d8fa45105138bb226f",
+      "compressed_bytes": 194735,
+      "uncompressed_bytes": 2061639
+    },
+    "bitget-public-ws-l2book-aerousdt-1790225429265-1790225566002-0ada18901d11": {
+      "asset_sha256": "0ada18901d1134e598f729d6dac6bbe0b4540ee0bf9636073779cbd2ff8482a9",
+      "compressed_bytes": 166142,
+      "uncompressed_bytes": 1870427
+    },
+    "bitget-public-ws-l2book-aerousdt-1790256856898-1790256982854-ccbab1e55923": {
+      "asset_sha256": "ccbab1e5592331da3d2ae760b5b10de2398759ef45558983f6c7eff8020ed10d",
+      "compressed_bytes": 167305,
+      "uncompressed_bytes": 1663968
+    },
+    "bitget-public-ws-l2book-aerousdt-1790291825791-1790291954490-74183aa44450": {
+      "asset_sha256": "74183aa44450ae66d74bbbdcefc4a58f432dda95432e4288f8446acb52b4f306",
+      "compressed_bytes": 88738,
+      "uncompressed_bytes": 930950
+    },
+    "bitget-public-ws-l2book-aerousdt-1790312287153-1790312412087-b130a2a0def8": {
+      "asset_sha256": "b130a2a0def89116fe1109238bace1b84f9048f3489561130fcddc99f402a82f",
+      "compressed_bytes": 65622,
+      "uncompressed_bytes": 703897
+    },
+    "bitget-public-ws-l2book-aerousdt-1790344067988-1790344212192-76a326d039df": {
+      "asset_sha256": "76a326d039df90a9adc259838e1fdedfa368922d2255f985f3fd30b7aa525458",
+      "compressed_bytes": 192548,
+      "uncompressed_bytes": 2025679
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790117942594-1790118075992-ae5f4b3fbaf7": {
+      "asset_sha256": "ae5f4b3fbaf7c5563eb39282ba1752bb7f257369805740916f0036400e24d852",
+      "compressed_bytes": 154180,
+      "uncompressed_bytes": 1782802
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790138723876-1790138872879-1fee27563d78": {
+      "asset_sha256": "1fee27563d78be5448689809f5998f0bc0dd38b10f70309a48e291b3e05f332d",
+      "compressed_bytes": 181276,
+      "uncompressed_bytes": 2026921
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790170775459-1790170901381-6abb71080dec": {
+      "asset_sha256": "6abb71080dec1429ace3497be2841bcafef84bc3364b8966398e89190dac8b01",
+      "compressed_bytes": 146748,
+      "uncompressed_bytes": 1691998
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790204475659-1790204604059-b98cfd349d4d": {
+      "asset_sha256": "b98cfd349d4d2bd8f519e35851b93fcc20d4242b96cb49da0a9ff81696ef73b0",
+      "compressed_bytes": 147569,
+      "uncompressed_bytes": 1705971
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790225428174-1790225568569-d35ef1660d5e": {
+      "asset_sha256": "d35ef1660d5e572b7496d6a43c37821d4e6c5205b9311e6bb61a8e2850a8ea11",
+      "compressed_bytes": 163272,
+      "uncompressed_bytes": 1895656
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790256847712-1790256989480-ce4d946d12d2": {
+      "asset_sha256": "ce4d946d12d264cfe0fbf937f77725e572f3eb284e2d467f73da7aee379415f4",
+      "compressed_bytes": 55043,
+      "uncompressed_bytes": 564767
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790291827325-1790291971124-769a3a5e87cf": {
+      "asset_sha256": "769a3a5e87cf3d79548f07dfb5816222170450c8d247fbb7694cfd24d04c5cb0",
+      "compressed_bytes": 15090,
+      "uncompressed_bytes": 146675
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790312278445-1790312399184-daf83edeb990": {
+      "asset_sha256": "daf83edeb9902acc5c6773e00f68c44ca7b69e255434ab9208c6e0c3936fa8a9",
+      "compressed_bytes": 21391,
+      "uncompressed_bytes": 213165
+    },
+    "bitget-public-ws-l2book-aixbtusdt-1790344063272-1790344184481-ab335f9aeef9": {
+      "asset_sha256": "ab335f9aeef91c2f48893e85f2fbbe37d7ebeeff63ad11453a5a37199d3a0a82",
+      "compressed_bytes": 145732,
+      "uncompressed_bytes": 1635831
+    },
+    "bitget-public-ws-l2book-algousdt-1790117947469-1790118075979-59b5d643922c": {
+      "asset_sha256": "59b5d643922c66fe466f2cf73e31fd6fb87984466e4f8ad79dca6fcf2d7e7ce4",
+      "compressed_bytes": 150231,
+      "uncompressed_bytes": 1713666
+    },
+    "bitget-public-ws-l2book-algousdt-1790138724990-1790138865992-b65810680454": {
+      "asset_sha256": "b6581068045454805e3280b7694b86d4f324caea9ae3a65d31f7f18280990619",
+      "compressed_bytes": 164862,
+      "uncompressed_bytes": 1900814
+    },
+    "bitget-public-ws-l2book-algousdt-1790170774474-1790170911091-fef39f72a6d8": {
+      "asset_sha256": "fef39f72a6d8ae1a46ab98fc5825650cff2a126c7bbe34aa528f4bf3407f5358",
+      "compressed_bytes": 163321,
+      "uncompressed_bytes": 1843033
+    },
+    "bitget-public-ws-l2book-algousdt-1790204470387-1790204603374-1dbd99923ee8": {
+      "asset_sha256": "1dbd99923ee8125b171afa7dde200b481ac56484b14b0e3c3b96401f4c03deca",
+      "compressed_bytes": 155388,
+      "uncompressed_bytes": 1794081
+    },
+    "bitget-public-ws-l2book-algousdt-1790225438095-1790225585368-be26cbd148d1": {
+      "asset_sha256": "be26cbd148d1aad0a585ab8e1acd7c2f43ef4c66213d0f1f9778ef0538f70fbb",
+      "compressed_bytes": 172486,
+      "uncompressed_bytes": 1964379
+    },
+    "bitget-public-ws-l2book-algousdt-1790256855394-1790256984085-be83e2382f5b": {
+      "asset_sha256": "be83e2382f5b400b60eed77578240176f3704bb00c05f62680ff38748735f821",
+      "compressed_bytes": 172399,
+      "uncompressed_bytes": 1839590
+    },
+    "bitget-public-ws-l2book-algousdt-1790291829573-1790291962853-442f19848e7e": {
+      "asset_sha256": "442f19848e7eb1efcc7a77ce06783cd3c3679c15c18626f300783e70351ee9ac",
+      "compressed_bytes": 170200,
+      "uncompressed_bytes": 1846983
+    },
+    "bitget-public-ws-l2book-algousdt-1790312287062-1790312429476-95e2953228a6": {
+      "asset_sha256": "95e2953228a69459b97fbdfee94bcbc379851c57897a49bd6994c212afb97c2d",
+      "compressed_bytes": 170641,
+      "uncompressed_bytes": 1920885
+    },
+    "bitget-public-ws-l2book-algousdt-1790344070043-1790344199567-71462435c868": {
+      "asset_sha256": "71462435c868a38a6e6b4626e44ef7b572f03d4b1d1c0edfdedc1f35ce316432",
+      "compressed_bytes": 188261,
+      "uncompressed_bytes": 1902412
+    },
+    "bitget-public-ws-l2book-animeusdt-1790117940911-1790118075987-6ac8849b6685": {
+      "asset_sha256": "6ac8849b6685f103b70b89fcf53caf138868e9f6232b3c7b428592da54d759d0",
+      "compressed_bytes": 152850,
+      "uncompressed_bytes": 1778098
+    },
+    "bitget-public-ws-l2book-animeusdt-1790138718323-1790138861780-36a1988fb22b": {
+      "asset_sha256": "36a1988fb22bc7f1a36f45f6aba0978b1fdc48b271e9451dd99018b607f10e94",
+      "compressed_bytes": 168585,
+      "uncompressed_bytes": 1953243
+    },
+    "bitget-public-ws-l2book-animeusdt-1790170776528-1790170904394-2bdc4f9acbf5": {
+      "asset_sha256": "2bdc4f9acbf5d4b42e0c134181852ed171c2e3301faa0334fb0f25440d86841e",
+      "compressed_bytes": 147657,
+      "uncompressed_bytes": 1702289
+    },
+    "bitget-public-ws-l2book-animeusdt-1790204470784-1790204598572-d81e5adf3d98": {
+      "asset_sha256": "d81e5adf3d986a9848200ec05453c1c01aacb3db019046f905e9ccc2216c3154",
+      "compressed_bytes": 144208,
+      "uncompressed_bytes": 1691179
+    },
+    "bitget-public-ws-l2book-animeusdt-1790225439027-1790225561769-ad95ccbc6399": {
+      "asset_sha256": "ad95ccbc6399ce768f1737491865a0f3424bb4ee9ddfcb5fec7050bcd670546c",
+      "compressed_bytes": 141301,
+      "uncompressed_bytes": 1655275
+    },
+    "bitget-public-ws-l2book-animeusdt-1790256850034-1790256980794-8b19cfbad11b": {
+      "asset_sha256": "8b19cfbad11b8e59a5fe4d574873648fe230fc4415751e74b9c2ad8219c518be",
+      "compressed_bytes": 148624,
+      "uncompressed_bytes": 1745006
+    },
+    "bitget-public-ws-l2book-animeusdt-1790291825808-1790291969482-b57ce56f1618": {
+      "asset_sha256": "b57ce56f1618b4a8234ce3654f839e37d1fa93adb9064bb8a72d026387cc7364",
+      "compressed_bytes": 159094,
+      "uncompressed_bytes": 1897546
+    },
+    "bitget-public-ws-l2book-animeusdt-1790312281643-1790312423385-f00bc8423a32": {
+      "asset_sha256": "f00bc8423a32d2181f21071c0a64725eaf4b069b35c5eb394c174a44e8515bbb",
+      "compressed_bytes": 161444,
+      "uncompressed_bytes": 1908466
+    },
+    "bitget-public-ws-l2book-animeusdt-1790344068333-1790344192874-f0127f37d768": {
+      "asset_sha256": "f0127f37d768236446bbe57ddd27abff1d3567d526ccc147abf61ac34099805c",
+      "compressed_bytes": 150250,
+      "uncompressed_bytes": 1685633
+    },
+    "bitget-public-ws-l2book-apeusdt-1790117941581-1790118078579-5b9a6e822ac3": {
+      "asset_sha256": "5b9a6e822ac32bca3c3f18149dd1e97ce72ac3204f96cae16b37fa6346fcb1d1",
+      "compressed_bytes": 161122,
+      "uncompressed_bytes": 1832377
+    },
+    "bitget-public-ws-l2book-apeusdt-1790138726400-1790138861394-55940f592154": {
+      "asset_sha256": "55940f592154a4c67aa486d5b391d46f98a588970fec9a9c7925c643974f41d3",
+      "compressed_bytes": 154127,
+      "uncompressed_bytes": 1788724
+    },
+    "bitget-public-ws-l2book-apeusdt-1790170776750-1790170901389-c6e9bfa72a20": {
+      "asset_sha256": "c6e9bfa72a202b325f81749a0d44ccd79c3bc9302a6a5ff5b44341389e91f5c0",
+      "compressed_bytes": 153925,
+      "uncompressed_bytes": 1708047
+    },
+    "bitget-public-ws-l2book-apeusdt-1790204457936-1790204595978-52b58692c590": {
+      "asset_sha256": "52b58692c590f237ecd2d9b234268cd6db7566c77fa55f474a574b502ba474cc",
+      "compressed_bytes": 158591,
+      "uncompressed_bytes": 1833417
+    },
+    "bitget-public-ws-l2book-apeusdt-1790225442462-1790225571116-429b029218c8": {
+      "asset_sha256": "429b029218c8ffa19f4f943d195b5decab407f8bb63848e0129b1b5811c9b16b",
+      "compressed_bytes": 150156,
+      "uncompressed_bytes": 1741400
+    },
+    "bitget-public-ws-l2book-apeusdt-1790256852361-1790256982918-352565294bb4": {
+      "asset_sha256": "352565294bb4f51faa5aa96a3ea571ae2af8e19ec1d27ec954d593fed5b881c1",
+      "compressed_bytes": 53414,
+      "uncompressed_bytes": 556753
+    },
+    "bitget-public-ws-l2book-apeusdt-1790291824687-1790291962715-b9472303278e": {
+      "asset_sha256": "b9472303278eb4b50cf89c28d7d2fdb0651582828c07caf1782c2ea5b855d6fb",
+      "compressed_bytes": 22702,
+      "uncompressed_bytes": 222385
+    },
+    "bitget-public-ws-l2book-apeusdt-1790312283912-1790312405249-4bcc1be87600": {
+      "asset_sha256": "4bcc1be87600facceec9fc10a5f97ab492576c32ea6f25f64890cc17e51ee6c7",
+      "compressed_bytes": 18195,
+      "uncompressed_bytes": 170287
+    },
+    "bitget-public-ws-l2book-apeusdt-1790344063164-1790344193380-078e5003a9a8": {
+      "asset_sha256": "078e5003a9a815d9119ee07f12b7f58042c12dc99019afbad6b7b95ba128d1b5",
+      "compressed_bytes": 156723,
+      "uncompressed_bytes": 1767181
+    },
+    "bitget-public-ws-l2book-aptusdt-1790117940227-1790118081085-8e53d7e2d9ab": {
+      "asset_sha256": "8e53d7e2d9abc196e1817ed01227412c0f7b8b947d73c129fb35200d8ab47fd4",
+      "compressed_bytes": 229186,
+      "uncompressed_bytes": 2137334
+    },
+    "bitget-public-ws-l2book-aptusdt-1790138730344-1790138874189-d5385a7b58ca": {
+      "asset_sha256": "d5385a7b58ca2efb7886bda539f7b9c3a9948d5f093027b54b9828dd9138cbe9",
+      "compressed_bytes": 212071,
+      "uncompressed_bytes": 2082751
+    },
+    "bitget-public-ws-l2book-aptusdt-1790170770749-1790170908588-c12d3e8ad05a": {
+      "asset_sha256": "c12d3e8ad05a7cb1acb61be422bfb025041c73837672bec1a7d16a05f7b15106",
+      "compressed_bytes": 212912,
+      "uncompressed_bytes": 2025892
+    },
+    "bitget-public-ws-l2book-aptusdt-1790204466198-1790204591376-a2c2b62a049f": {
+      "asset_sha256": "a2c2b62a049f556d3382dbae62689ee78aa46d0b30eb07adf0a06faa748ff45c",
+      "compressed_bytes": 187193,
+      "uncompressed_bytes": 1820247
+    },
+    "bitget-public-ws-l2book-aptusdt-1790225422474-1790225564485-683ef7d09700": {
+      "asset_sha256": "683ef7d097003e31753dc5ec635f2a321330b9c62bfeabdbbd9506d746cb4049",
+      "compressed_bytes": 200236,
+      "uncompressed_bytes": 2030001
+    },
+    "bitget-public-ws-l2book-aptusdt-1790256848567-1790256995282-8efacadb9706": {
+      "asset_sha256": "8efacadb97069ae40c7c4defd711f0d99373155f8aa1ad362d8bd5f40e81d450",
+      "compressed_bytes": 267689,
+      "uncompressed_bytes": 2313248
+    },
+    "bitget-public-ws-l2book-aptusdt-1790291820354-1790291963369-a74541373449": {
+      "asset_sha256": "a7454137344917d1133f7adeb7f0e6e2e23e12ad2826980df91186cc9b76a2f1",
+      "compressed_bytes": 206601,
+      "uncompressed_bytes": 2050109
+    },
+    "bitget-public-ws-l2book-aptusdt-1790312281031-1790312420800-4fd3dc637520": {
+      "asset_sha256": "4fd3dc6375208db4147c934bf2c47bf588dfdb26ee392f29068942af8f07d466",
+      "compressed_bytes": 186152,
+      "uncompressed_bytes": 1954670
+    },
+    "bitget-public-ws-l2book-aptusdt-1790344083900-1790344220799-8d4774ae9dee": {
+      "asset_sha256": "8d4774ae9dee3e2fdb459d1f4e7e69a4f5e457c1f0191f5b1bd0f4fbfa22fa29",
+      "compressed_bytes": 238766,
+      "uncompressed_bytes": 2123031
+    },
+    "bitget-public-ws-l2book-aptusdt-1790364007385-1790364134467-532d588dadee": {
+      "asset_sha256": "532d588dadeefa064751bc217fa71a95a974b2e4236c8d226ad21a6b065957fe",
+      "compressed_bytes": 186798,
+      "uncompressed_bytes": 1849490
+    },
+    "bitget-public-ws-l2book-aptusdt-1790431933528-1790432063388-1bbd2c59f473": {
+      "asset_sha256": "1bbd2c59f473ac19b650fe1e84a09d02c5550889846caacbd6c00d508968075a",
+      "compressed_bytes": 163625,
+      "uncompressed_bytes": 1809668
+    },
+    "bitget-public-ws-l2book-arbusdt-1790117943454-1790118072184-a9b41cafbd0f": {
+      "asset_sha256": "a9b41cafbd0fe73e2a22adbf6c40c559c0fe869302525a0dae0c2943dae1b786",
+      "compressed_bytes": 198224,
+      "uncompressed_bytes": 1874992
+    },
+    "bitget-public-ws-l2book-arbusdt-1790138724396-1790138844168-a4aba24690e8": {
+      "asset_sha256": "a4aba24690e88b41af0da43ed56ea84a85ddc77d4ebf1682d8e9be8b381f1dc9",
+      "compressed_bytes": 169768,
+      "uncompressed_bytes": 1710704
+    },
+    "bitget-public-ws-l2book-arbusdt-1790170777072-1790170902171-fcd6b0bf07d4": {
+      "asset_sha256": "fcd6b0bf07d4db0954607b85fb442023ba42d7eba5e826a335586f3f67088708",
+      "compressed_bytes": 170934,
+      "uncompressed_bytes": 1746759
+    },
+    "bitget-public-ws-l2book-arbusdt-1790204466456-1790204604073-d4feaa16789f": {
+      "asset_sha256": "d4feaa16789fb88d4c1e41fa2eeebaf2a24d13cd79c2a84f69839a64c0123c54",
+      "compressed_bytes": 178805,
+      "uncompressed_bytes": 1892164
+    },
+    "bitget-public-ws-l2book-arbusdt-1790225430407-1790225562176-cee155bed4a2": {
+      "asset_sha256": "cee155bed4a2340dc8d704363b056a1fd4e5782778ad85f78a57fa9735953d77",
+      "compressed_bytes": 156649,
+      "uncompressed_bytes": 1789945
+    },
+    "bitget-public-ws-l2book-arbusdt-1790256842529-1790256980796-4783d6799714": {
+      "asset_sha256": "4783d6799714aae567931d3ad3ac5f46d5b3fe8a4361c87abc343afbb2cfcf9f",
+      "compressed_bytes": 302538,
+      "uncompressed_bytes": 2513246
+    },
+    "bitget-public-ws-l2book-arbusdt-1790291824866-1790291952164-d756e0a84719": {
+      "asset_sha256": "d756e0a84719a6bd4305c4ef39979fd1d6dcd4b6fd44dfb88d02107ee65830a0",
+      "compressed_bytes": 183825,
+      "uncompressed_bytes": 1839342
+    },
+    "bitget-public-ws-l2book-arbusdt-1790312288271-1790312429483-ab9abc9b0de4": {
+      "asset_sha256": "ab9abc9b0de47addd8f966e0178f9683a85f295cd7373233bf81a2fe73885491",
+      "compressed_bytes": 190784,
+      "uncompressed_bytes": 2011247
+    },
+    "bitget-public-ws-l2book-arbusdt-1790344063828-1790344205272-af84c9d81ae9": {
+      "asset_sha256": "af84c9d81ae9ccf0606f8b056636f203bc6df6197770130f8f5c067b046b9002",
+      "compressed_bytes": 276758,
+      "uncompressed_bytes": 2352688
+    },
+    "bitget-public-ws-l2book-arbusdt-1790364007637-1790364134485-df5e640c440b": {
+      "asset_sha256": "df5e640c440bd93965807238e493d3e596d1002a93b2fc645201efb26f813782",
+      "compressed_bytes": 183672,
+      "uncompressed_bytes": 1879307
+    },
+    "bitget-public-ws-l2book-arbusdt-1790431933833-1790432063081-7840adee0333": {
+      "asset_sha256": "7840adee0333d9783caf99a8d2569121ae48b9097491c378e1016eb79e36ca58",
+      "compressed_bytes": 105251,
+      "uncompressed_bytes": 1056058
+    },
+    "bitget-public-ws-l2book-arusdt-1790117942638-1790118071421-51288bf971ea": {
+      "asset_sha256": "51288bf971ea3a9c2a31774edb94e5683ad9cfaa626060134ecb56773ffc930c",
+      "compressed_bytes": 84326,
+      "uncompressed_bytes": 857895
+    },
+    "bitget-public-ws-l2book-arusdt-1790138736212-1790138864494-b111fff283f9": {
+      "asset_sha256": "b111fff283f9d367be3241386511e6ef11d95001f4bbbd98b2622545f398fd9e",
+      "compressed_bytes": 49303,
+      "uncompressed_bytes": 471719
+    },
+    "bitget-public-ws-l2book-arusdt-1790170775145-1790170908466-08bf758ce587": {
+      "asset_sha256": "08bf758ce587feb8dca35f537ae1b00b37501267970d3d570a7ed1584a41d1e6",
+      "compressed_bytes": 94824,
+      "uncompressed_bytes": 953446
+    },
+    "bitget-public-ws-l2book-arusdt-1790204480833-1790204600705-cad666e77e55": {
+      "asset_sha256": "cad666e77e55791f0da2e88c8266a3135064f7a70c11f2d4cd3a178d115f7d2a",
+      "compressed_bytes": 95039,
+      "uncompressed_bytes": 959584
+    },
+    "bitget-public-ws-l2book-arusdt-1790225428010-1790225570715-d894d7d2db1a": {
+      "asset_sha256": "d894d7d2db1a00f6a998dd3889044383806ce0a2297156efabc1ea0f2d7e9984",
+      "compressed_bytes": 54088,
+      "uncompressed_bytes": 534142
+    },
+    "bitget-public-ws-l2book-arusdt-1790256848746-1790256983396-3046aa59e946": {
+      "asset_sha256": "3046aa59e94630e2bf5a7198e1c10f32a61ba548a77b76170c89eccf1461ea59",
+      "compressed_bytes": 96501,
+      "uncompressed_bytes": 992909
+    },
+    "bitget-public-ws-l2book-arusdt-1790291824325-1790291953972-2936961d6902": {
+      "asset_sha256": "2936961d69024785c706c7e55a0f5cfe9e51ec002486f53e48f8bf9154ccf542",
+      "compressed_bytes": 52671,
+      "uncompressed_bytes": 552369
+    },
+    "bitget-public-ws-l2book-arusdt-1790312283937-1790312411380-73f319833f2c": {
+      "asset_sha256": "73f319833f2cee155ddfcf07a717a09e081f801914e73ea2433d432f219bdfa5",
+      "compressed_bytes": 31383,
+      "uncompressed_bytes": 323744
+    },
+    "bitget-public-ws-l2book-arusdt-1790344068897-1790344192850-6601c5e2cebc": {
+      "asset_sha256": "6601c5e2cebc80183903e3fb50a7a431e7a75afe9d38aaaced94e411788434ac",
+      "compressed_bytes": 90951,
+      "uncompressed_bytes": 893369
+    },
+    "bitget-public-ws-l2book-asterusdt-1790117940623-1790118075989-ed187e495432": {
+      "asset_sha256": "ed187e495432f285e606ac849978bcddd2d62d24dee4e224ee9d02467cdf074d",
+      "compressed_bytes": 165418,
+      "uncompressed_bytes": 1801908
+    },
+    "bitget-public-ws-l2book-asterusdt-1790138734473-1790138868575-cba056022048": {
+      "asset_sha256": "cba05602204831c03be006a604dfee63f4d9218957ae6654ec2b0762d75dace6",
+      "compressed_bytes": 156771,
+      "uncompressed_bytes": 1772996
+    },
+    "bitget-public-ws-l2book-asterusdt-1790170774972-1790170905978-20d347c44672": {
+      "asset_sha256": "20d347c44672d3381d1c1bfaef97220d36bc04e7bfb1661e805850b17748855c",
+      "compressed_bytes": 164925,
+      "uncompressed_bytes": 1761101
+    },
+    "bitget-public-ws-l2book-asterusdt-1790204469980-1790204615371-3de223037eb7": {
+      "asset_sha256": "3de223037eb72faf8af9792ff2d654555ebaa7077db1610e4827ea30aeee6e1e",
+      "compressed_bytes": 173649,
+      "uncompressed_bytes": 1930765
+    },
+    "bitget-public-ws-l2book-asterusdt-1790225429411-1790225565992-1e466d76fa53": {
+      "asset_sha256": "1e466d76fa53b3f9faa0c2c97d61aecbb2ffce0bcb332d11d8dfc58fbdd7acd6",
+      "compressed_bytes": 161797,
+      "uncompressed_bytes": 1807339
+    },
+    "bitget-public-ws-l2book-asterusdt-1790256856764-1790256982898-26b25c28f6bc": {
+      "asset_sha256": "26b25c28f6bc1c3e07e5735dbbb3147b026843840c738d34eb334f210c5cf23f",
+      "compressed_bytes": 166618,
+      "uncompressed_bytes": 1721268
+    },
+    "bitget-public-ws-l2book-asterusdt-1790291825917-1790291954472-f6fb864667c8": {
+      "asset_sha256": "f6fb864667c8b0fd4bc82cd9a2300201d1c1b693b13d194714292c1916d2baec",
+      "compressed_bytes": 153173,
+      "uncompressed_bytes": 1693259
+    },
+    "bitget-public-ws-l2book-asterusdt-1790312287281-1790312412182-8504bf111b62": {
+      "asset_sha256": "8504bf111b62badff0f3d730022539f1b26d071b9d54b127346a0cadf1f23ba6",
+      "compressed_bytes": 135518,
+      "uncompressed_bytes": 1602796
+    },
+    "bitget-public-ws-l2book-asterusdt-1790344067990-1790344212172-51e36fab92b5": {
+      "asset_sha256": "51e36fab92b595946cfa8a318e91dbd8d328c9e5ea518b43a3a0ce4874fcfc18",
+      "compressed_bytes": 210018,
+      "uncompressed_bytes": 2071167
+    },
+    "bitget-public-ws-l2book-atomusdt-1790117942596-1790118075985-071245afa786": {
+      "asset_sha256": "071245afa786df19f2c59ca85657c10b53cc902e9f91190e2edb6d430c66a37e",
+      "compressed_bytes": 133574,
+      "uncompressed_bytes": 1344517
+    },
+    "bitget-public-ws-l2book-atomusdt-1790138724003-1790138872918-a92ac8e85d9d": {
+      "asset_sha256": "a92ac8e85d9dcbc310c000d0dcb34aca7c5e73661d0ead4463a275cc02dbbffb",
+      "compressed_bytes": 86698,
+      "uncompressed_bytes": 914041
+    },
+    "bitget-public-ws-l2book-atomusdt-1790170775602-1790170901249-10e309bc6d53": {
+      "asset_sha256": "10e309bc6d53b998996832fa3d32a2b2f0127d1664242ffec63d8aadd9d94726",
+      "compressed_bytes": 116704,
+      "uncompressed_bytes": 1196747
+    },
+    "bitget-public-ws-l2book-atomusdt-1790204475766-1790204604095-3cdf67ba8e86": {
+      "asset_sha256": "3cdf67ba8e864742ec133c941ccc15ec61380ca3b149fe44b7df1b221d00d2bc",
+      "compressed_bytes": 129459,
+      "uncompressed_bytes": 1346367
+    },
+    "bitget-public-ws-l2book-atomusdt-1790225428403-1790225567970-2e9d8176a4ae": {
+      "asset_sha256": "2e9d8176a4aed193434a524ed87e1a1f9b7d2467ec77095ad5898513f4328974",
+      "compressed_bytes": 77816,
+      "uncompressed_bytes": 792187
+    },
+    "bitget-public-ws-l2book-atomusdt-1790256847712-1790256989381-ea34b63c06db": {
+      "asset_sha256": "ea34b63c06db20c90b50ef4a56fd240f3f821479cf322cc4b5841101137de475",
+      "compressed_bytes": 187061,
+      "uncompressed_bytes": 1849465
+    },
+    "bitget-public-ws-l2book-atomusdt-1790291827326-1790291974995-0b2fe0845b99": {
+      "asset_sha256": "0b2fe0845b99ed19eb1d515b945b2c00436cbab8bd2acec8c3568c320590b404",
+      "compressed_bytes": 105479,
+      "uncompressed_bytes": 1099313
+    },
+    "bitget-public-ws-l2book-atomusdt-1790312278594-1790312399555-e60023b3324e": {
+      "asset_sha256": "e60023b3324ed7af0ccd49956d91df36ffcefb2af4507bb3124aed1a209a7bfc",
+      "compressed_bytes": 53686,
+      "uncompressed_bytes": 545448
+    },
+    "bitget-public-ws-l2book-atomusdt-1790344063387-1790344184467-21fe1af0b8d6": {
+      "asset_sha256": "21fe1af0b8d66bdc9006847a0a98708abff09b36be81923394b27d2f16d2f4f9",
+      "compressed_bytes": 156962,
+      "uncompressed_bytes": 1599389
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790117947594-1790118075982-55a19304453d": {
+      "asset_sha256": "55a19304453dab7cac005080deb8936cf379bc77ffdcd91d56ed1f01614ab5cb",
+      "compressed_bytes": 200028,
+      "uncompressed_bytes": 1914373
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790138725137-1790138865992-524f8c9ec642": {
+      "asset_sha256": "524f8c9ec642899160eeebf8470bf333137196ee9fc0c979790ed327f389b2a1",
+      "compressed_bytes": 192355,
+      "uncompressed_bytes": 2006940
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790170774475-1790170911078-a50b05c894cc": {
+      "asset_sha256": "a50b05c894cc7370347215026afd46c812b4d75b43d503d7fe56c1404b8341d6",
+      "compressed_bytes": 227201,
+      "uncompressed_bytes": 2134261
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790204470387-1790204603374-cce7e96208f6": {
+      "asset_sha256": "cce7e96208f68f80b763cc5509d77f6a48d9fe2260f8fa1bdcd73f30127330dc",
+      "compressed_bytes": 185915,
+      "uncompressed_bytes": 1904398
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790225438096-1790225585259-bc27cc86c517": {
+      "asset_sha256": "bc27cc86c51768bbef2db65737276820bc56917b553c1af71c70fbf4d0a7aa19",
+      "compressed_bytes": 200051,
+      "uncompressed_bytes": 2069426
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790256855507-1790256984163-249c110f7d0d": {
+      "asset_sha256": "249c110f7d0d492be8f4a752daa6fc218b2808f6e2bdc5deaae23e414cef9af2",
+      "compressed_bytes": 229377,
+      "uncompressed_bytes": 2050549
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790291829574-1790291962857-9372adc84e91": {
+      "asset_sha256": "9372adc84e9155fbee81ed4ff8962811153eb5f3702157fd82c43b7c63a2b42d",
+      "compressed_bytes": 199439,
+      "uncompressed_bytes": 1942069
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790312287186-1790312429469-f2be11e095d1": {
+      "asset_sha256": "f2be11e095d1551299099b355137137ed5c5ee97a3506737b81fa4da483198af",
+      "compressed_bytes": 191553,
+      "uncompressed_bytes": 1988260
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790344070151-1790344199466-fa1c1563d8a3": {
+      "asset_sha256": "fa1c1563d8a3f9481448943a99a60e1f65ad9e4ce4b01456f61891d14d10a9d4",
+      "compressed_bytes": 247138,
+      "uncompressed_bytes": 2131157
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790364007509-1790364134470-348094bda28f": {
+      "asset_sha256": "348094bda28f74f0e7919d96c1a86a0504766e9b850343ef7ce9058fb4c34f71",
+      "compressed_bytes": 163180,
+      "uncompressed_bytes": 1783210
+    },
+    "bitget-public-ws-l2book-avaxusdt-1790431933677-1790432063385-acae45dfa839": {
+      "asset_sha256": "acae45dfa83943e18792ab5812add842f332c838df0bac3925a6505d6c5ca3d1",
+      "compressed_bytes": 133177,
+      "uncompressed_bytes": 1372477
+    },
+    "bitget-public-ws-l2book-avntusdt-1790117941057-1790118075987-a228e20d7abe": {
+      "asset_sha256": "a228e20d7abe421b9798511f23018df9b1b711a82fb4d6db273b73e1d5bdbd78",
+      "compressed_bytes": 155784,
+      "uncompressed_bytes": 1809093
+    },
+    "bitget-public-ws-l2book-avntusdt-1790138718579-1790138861779-6a4e0aecfe69": {
+      "asset_sha256": "6a4e0aecfe6934c4312dcf2381f3a1a782f46fd0a3c862fca7fdf35e2b7172f4",
+      "compressed_bytes": 167440,
+      "uncompressed_bytes": 1931905
+    },
+    "bitget-public-ws-l2book-avntusdt-1790170776665-1790170904391-b03f0adb4925": {
+      "asset_sha256": "b03f0adb4925359d90a8a74215cd645454bea69ff24fab8ab48b477ec494bfd9",
+      "compressed_bytes": 147344,
+      "uncompressed_bytes": 1712797
+    },
+    "bitget-public-ws-l2book-avntusdt-1790204470907-1790204598569-b1a11de42473": {
+      "asset_sha256": "b1a11de4247341e69530ad27f60b408ef318f07dc99f2facb6b891ee349ab789",
+      "compressed_bytes": 147989,
+      "uncompressed_bytes": 1702029
+    },
+    "bitget-public-ws-l2book-avntusdt-1790225439242-1790225561769-77a51c5f4513": {
+      "asset_sha256": "77a51c5f4513435a162e55b761feac68c6b991093b60c7a777b4ca521b040ef8",
+      "compressed_bytes": 146855,
+      "uncompressed_bytes": 1676471
+    },
+    "bitget-public-ws-l2book-avntusdt-1790256850339-1790256980790-9d009f6a445c": {
+      "asset_sha256": "9d009f6a445c8599cccfc9234c77379ba0e9391b8d5783f310984800f7fc92ef",
+      "compressed_bytes": 41126,
+      "uncompressed_bytes": 427948
+    },
+    "bitget-public-ws-l2book-avntusdt-1790291825936-1790291968530-1606979ac69c": {
+      "asset_sha256": "1606979ac69ccfafd7a7e4da271bc414fe86909e3b4fab3c7134ea13a86bebfd",
+      "compressed_bytes": 21917,
+      "uncompressed_bytes": 221633
+    },
+    "bitget-public-ws-l2book-avntusdt-1790312281644-1790312423095-fd1a0070f834": {
+      "asset_sha256": "fd1a0070f83406c5eba9bc30cbd96205f5547cbf7c39ac9c8ed4cb48b07df66d",
+      "compressed_bytes": 19474,
+      "uncompressed_bytes": 192158
+    },
+    "bitget-public-ws-l2book-avntusdt-1790344068447-1790344192869-28e753913bd4": {
+      "asset_sha256": "28e753913bd43d228c39178e393e7905bb6c909f3fff904d6ac4565946e6a53f",
+      "compressed_bytes": 148039,
+      "uncompressed_bytes": 1684316
+    },
+    "bitget-public-ws-l2book-axsusdt-1790117941735-1790118069863-726e457b40ed": {
+      "asset_sha256": "726e457b40ed8b39a28e428deb6b0e773fe2b14d07fb0689bcb1c2b005933485",
+      "compressed_bytes": 35343,
+      "uncompressed_bytes": 361984
+    },
+    "bitget-public-ws-l2book-axsusdt-1790138726550-1790138861394-e0c49226a1e7": {
+      "asset_sha256": "e0c49226a1e7fa527240b0500e8cf325a51b17732c24fb1957570e2fe44e631f",
+      "compressed_bytes": 37211,
+      "uncompressed_bytes": 386828
+    },
+    "bitget-public-ws-l2book-axsusdt-1790170776878-1790170901078-f9bdc14b9d1e": {
+      "asset_sha256": "f9bdc14b9d1e601b79aafcec153223ff39afbb54fb0a05d150a213005cf12480",
+      "compressed_bytes": 63214,
+      "uncompressed_bytes": 679276
+    },
+    "bitget-public-ws-l2book-axsusdt-1790204458060-1790204596030-a2d2e7bb3125": {
+      "asset_sha256": "a2d2e7bb31254aed6a87ddde139dca364b25e6bcbd2dc3d5e41fd25af0c20d89",
+      "compressed_bytes": 41995,
+      "uncompressed_bytes": 438934
+    },
+    "bitget-public-ws-l2book-axsusdt-1790225442574-1790225560566-42cfc50a3d95": {
+      "asset_sha256": "42cfc50a3d9554f44481034815b88ef6a1a5f625783945d4966470a6e070c58a",
+      "compressed_bytes": 34199,
+      "uncompressed_bytes": 352663
+    },
+    "bitget-public-ws-l2book-axsusdt-1790256852510-1790256982862-7e243a61cf27": {
+      "asset_sha256": "7e243a61cf274fe2413158dd6302900701228ef3fb534005d9de0ccdd8cbf606",
+      "compressed_bytes": 73969,
+      "uncompressed_bytes": 799306
+    },
+    "bitget-public-ws-l2book-axsusdt-1790291824828-1790291959174-6b8d5c12c06d": {
+      "asset_sha256": "6b8d5c12c06db051f7f5f12af90b84b40db51ad4bed6f95dcd741862a93760c1",
+      "compressed_bytes": 20275,
+      "uncompressed_bytes": 200754
+    },
+    "bitget-public-ws-l2book-axsusdt-1790312284006-1790312405141-01a8fa01aa33": {
+      "asset_sha256": "01a8fa01aa3368a3f60a8a8a3fd53159ce3a428e64c4d7a17a29b3f8f672e2b9",
+      "compressed_bytes": 24424,
+      "uncompressed_bytes": 236146
+    },
+    "bitget-public-ws-l2book-axsusdt-1790344063162-1790344193378-98f729056466": {
+      "asset_sha256": "98f7290564660944b5b42a95845003c5e1bf74279d4afe217ecd8659b5a8b3f4",
+      "compressed_bytes": 80495,
+      "uncompressed_bytes": 830983
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790117940227-1790118081105-052302452477": {
+      "asset_sha256": "052302452477bee1a779993acc44c4b86f1c0a9f5b36943e0a7df8a23a085af1",
+      "compressed_bytes": 160997,
+      "uncompressed_bytes": 1904730
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790138730230-1790138874083-5b489cbafa48": {
+      "asset_sha256": "5b489cbafa489381480120a1b9f7762fa7559af1b502a28d28dbf42a6ca62ae8",
+      "compressed_bytes": 164667,
+      "uncompressed_bytes": 1953633
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790170770749-1790170908588-bfcff8ed80e5": {
+      "asset_sha256": "bfcff8ed80e5560f19776c858a04484f58e5ce6edee61ef6902e6bd86e9e1b8f",
+      "compressed_bytes": 156275,
+      "uncompressed_bytes": 1833846
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790204466053-1790204591386-1e19cb8e240d": {
+      "asset_sha256": "1e19cb8e240dcc95956fd629f6fb13f9068b59f7ef3049633ccb6f88c1b7742b",
+      "compressed_bytes": 141982,
+      "uncompressed_bytes": 1660392
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790225422347-1790225564493-ac3372bc3702": {
+      "asset_sha256": "ac3372bc3702465b60bdee1167aa97c68093b1cc2d590f0d24a75e80f5ad1b90",
+      "compressed_bytes": 160465,
+      "uncompressed_bytes": 1882326
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790256848460-1790256995367-3e1ad857f2fc": {
+      "asset_sha256": "3e1ad857f2fcb9f626aee343666782b8afd3c4cc220a722c4c047695ca90afc8",
+      "compressed_bytes": 169671,
+      "uncompressed_bytes": 1945955
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790291820350-1790291963377-0a5dc2da52c5": {
+      "asset_sha256": "0a5dc2da52c594ab9321819dbfcc90cfd778609143e8f8668001cce4adf6c8f4",
+      "compressed_bytes": 159736,
+      "uncompressed_bytes": 1895540
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790312281030-1790312420807-f34ca22a894a": {
+      "asset_sha256": "f34ca22a894a9c76ea8fe67d2aeb9508598fd5d3c14104c425f126919b61b0d5",
+      "compressed_bytes": 155779,
+      "uncompressed_bytes": 1841915
+    },
+    "bitget-public-ws-l2book-aztecusdt-1790344083845-1790344220786-4c6b9be89309": {
+      "asset_sha256": "4c6b9be893099e461f4a2233feaf942ff7510131fe4643627bae97d2bd0325ce",
+      "compressed_bytes": 157097,
+      "uncompressed_bytes": 1852742
+    },
+    "bitget-public-ws-l2book-babyusdt-1790117942502-1790118071382-a5f9fd3dcfe4": {
+      "asset_sha256": "a5f9fd3dcfe487fa3679f6782b3494751efc181e56b3d37fb13555717d4db781",
+      "compressed_bytes": 147046,
+      "uncompressed_bytes": 1717528
+    },
+    "bitget-public-ws-l2book-babyusdt-1790138736104-1790138864474-cb1793b829bb": {
+      "asset_sha256": "cb1793b829bb577335f4e7b4b3911b6f55204ef2fdef2cc67216c14c0e80f3d6",
+      "compressed_bytes": 145618,
+      "uncompressed_bytes": 1688110
+    },
+    "bitget-public-ws-l2book-babyusdt-1790170775054-1790170908575-b5e055c7cbd5": {
+      "asset_sha256": "b5e055c7cbd5118e42905c35e7cac192b6145a36ad50f4e4964d2de96b2e66ed",
+      "compressed_bytes": 152089,
+      "uncompressed_bytes": 1763617
+    },
+    "bitget-public-ws-l2book-babyusdt-1790204480833-1790204601073-e6b4656b024b": {
+      "asset_sha256": "e6b4656b024b6f14efb10800f22792d96752cb5cd84dd8820fd7ab9005b17432",
+      "compressed_bytes": 137451,
+      "uncompressed_bytes": 1597522
+    },
+    "bitget-public-ws-l2book-babyusdt-1790225428010-1790225571102-9a1e67b3f47b": {
+      "asset_sha256": "9a1e67b3f47bbc92166825e13090814a2f6ccb408d009681ba5d1be13149d09e",
+      "compressed_bytes": 163839,
+      "uncompressed_bytes": 1933252
     }
   },
   "unavailable_assets": 0
