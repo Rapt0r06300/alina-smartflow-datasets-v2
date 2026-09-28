@@ -34,7 +34,24 @@ def _identity(row: Mapping[str, Any], manifest: Mapping[str, Any], ts: float) ->
     size=row.get("size",row.get("qty"))
     if side is None or price is None or size is None:
         return None
-    return (manifest.get("venue"),manifest.get("symbol"),"composite",ts,str(side),str(price),str(size))
+    try:
+        price_value=float(price)
+        size_value=float(size)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if (
+        not math.isfinite(price_value)
+        or not math.isfinite(size_value)
+        or price_value <= 0.0
+        or size_value <= 0.0
+    ):
+        return None
+    if not str(side).strip():
+        return None
+    return (
+        manifest.get("venue"), manifest.get("symbol"), "composite", ts,
+        str(side), str(price), str(size),
+    )
 
 
 def inspect_asset(path: str | Path, manifest: Mapping[str, Any]) -> dict[str, Any]:
