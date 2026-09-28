@@ -150,7 +150,8 @@ def main():
                     pending_ages_seconds.append(created_age)
             except (TypeError, ValueError):
                 created_age = None
-        due_raw = row.get("next_due_at_utc") or row.get("next_due_at") or (row.get("cursor") or {}).get("next_due_at_utc") if isinstance(row.get("cursor"), dict) else None
+        cursor = row.get("cursor") if isinstance(row.get("cursor"), dict) else {}
+        due_raw = row.get("next_due_at_utc") or row.get("next_due_at") or cursor.get("next_due_at_utc")
         if due_raw:
             try:
                 next_due_candidates.append({"campaign_id": str(row.get("campaign_id") or path.stem), "at_utc": parse(due_raw).isoformat().replace("+00:00", "Z")})
@@ -174,8 +175,8 @@ def main():
             "created_age_seconds": created_age,
             "next_due_at_utc": due_raw,
             "lease": lease,
-            "chunk_index": row.get("chunk_index") or (row.get("cursor") or {}).get("chunk_index") if isinstance(row.get("cursor"), dict) else row.get("chunk_index"),
-            "attempts": row.get("attempts") or (row.get("cursor") or {}).get("attempts") if isinstance(row.get("cursor"), dict) else row.get("attempts"),
+            "chunk_index": row.get("chunk_index") or cursor.get("chunk_index"),
+            "attempts": row.get("attempts") or cursor.get("attempts"),
             "no_progress_count": row.get("no_progress_count"),
             "consecutive_failure_count": row.get("consecutive_failure_count"),
             "last_checkpoint": row.get("checkpoint") or row.get("last_checkpoint"),
