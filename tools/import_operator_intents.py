@@ -73,8 +73,37 @@ def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, ph
         old_stable.pop("dispatched_at_utc", None)
         if stable != old_stable:
             raise SystemExit("dispatch receipt identity conflict")
-        return
-    target.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    else:
+        target.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+    ack = {
+        "schema": "alina.operator_ack.v1",
+        "request_id": request_id,
+        "campaign_id": campaign_id,
+        "state": "MATERIALIZED",
+        "main_code_sha": code_sha,
+        "dataset_repo_sha": dataset_sha,
+        "phase": phase,
+        "phase_epoch": phase_epoch,
+        "source_collection_epoch": source_epoch,
+        "strategy_family": strategy_family,
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+        "acknowledged_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+    }
+    ack_target = Path("catalog/operator-acks") / (campaign_id + ".json")
+    ack_target.parent.mkdir(parents=True, exist_ok=True)
+    if ack_target.exists():
+        old = json.loads(ack_target.read_text(encoding="utf-8"))
+        stable = dict(ack)
+        stable.pop("acknowledged_at_utc", None)
+        old_stable = dict(old)
+        old_stable.pop("acknowledged_at_utc", None)
+        if stable != old_stable:
+            raise SystemExit("operator acknowledgement identity conflict")
+    else:
+        ack_target.write_text(json.dumps(ack, sort_keys=True, indent=2) + "\n", encoding="utf-8")
 
 
 def campaign_kinds(intent, analysis_stage=""):
