@@ -88,6 +88,12 @@ def main():
     now = datetime.now(timezone.utc)
     active = {"PENDING", "RUNNING", "CONTINUATION_REQUIRED", "STUCK"}
     counts = {}
+    kind_counts = {}
+    backlog_by_kind = {}
+    campaign_health = []
+    pending_ages_seconds = []
+    next_due_candidates = []
+    lease_summary = []
     stuck = []
     expired_leases = []
     unsafe = []
@@ -130,7 +136,51 @@ def main():
             })
             continue
         status = str(row.get("status") or "")
+        kind = str(row.get("kind") or "UNKNOWN")
         counts[status] = counts.get(status, 0) + 1
+        kind_counts[kind] = kind_counts.get(kind, 0) + 1
+        if status in active:
+            backlog_by_kind[kind] = backlog_by_kind.get(kind, 0) + 1
+        created_raw = row.get("created_at_utc") or row.get("created_at") or row.get("updated_at")
+        created_age = None
+        if created_raw:
+            try:
+                created_age = max(0.0, (now - parse(created_raw)).total_seconds())
+                if status == "PENDING":
+                    pending_ages_seconds.append(created_age)
+            except (TypeError, ValueError):
+                created_age = None
+        due_raw = row.get("next_due_at_utc") or row.get("next_due_at") or (row.get("cursor") or {}).get("next_due_at_utc") if isinstance(row.get("cursor"), dict) else None
+        if due_raw:
+            try:
+                next_due_candidates.append({"campaign_id": str(row.get("campaign_id") or path.stem), "at_utc": parse(due_raw).isoformat().replace("+00:00", "Z")})
+            except (TypeError, ValueError):
+                pass
+        lease = row.get("lease") if isinstance(row.get("lease"), dict) else None
+        if lease:
+            lease_summary.append({
+                "campaign_id": str(row.get("campaign_id") or path.stem),
+                "owner": lease.get("owner") or lease.get("owner_id"),
+                "acquired_at_utc": lease.get("acquired_at_utc"),
+                "expires_at_utc": lease.get("expires_at") or lease.get("expires_at_utc"),
+            })
+        campaign_health.append({
+            "campaign_id": str(row.get("campaign_id") or path.stem),
+            "kind": kind,
+            "status": status,
+            "phase": row.get("creation_phase"),
+            "phase_epoch": row.get("phase_epoch"),
+            "execution_backend": row.get("execution_backend") or "github-hosted",
+            "created_age_seconds": created_age,
+            "next_due_at_utc": due_raw,
+            "lease": lease,
+            "chunk_index": row.get("chunk_index") or (row.get("cursor") or {}).get("chunk_index") if isinstance(row.get("cursor"), dict) else row.get("chunk_index"),
+            "attempts": row.get("attempts") or (row.get("cursor") or {}).get("attempts") if isinstance(row.get("cursor"), dict) else row.get("attempts"),
+            "no_progress_count": row.get("no_progress_count"),
+            "consecutive_failure_count": row.get("consecutive_failure_count"),
+            "last_checkpoint": row.get("checkpoint") or row.get("last_checkpoint"),
+            "reason": row.get("stuck_reason") or row.get("blocking_reason") or row.get("reason"),
+        })
         if status in active and (
             row.get("paper_only") is not True
             or row.get("read_only") is not True
@@ -188,6 +238,12 @@ def main():
         "generated_at_utc": now.isoformat().replace("+00:00", "Z"),
         "campaign_count": len(manifests),
         "status_counts": dict(sorted(counts.items())),
+        "kind_counts": dict(sorted(kind_counts.items())),
+        "backlog_by_kind": dict(sorted(backlog_by_kind.items())),
+        "oldest_pending_age_seconds": max(pending_ages_seconds) if pending_ages_seconds else None,
+        "next_due_campaigns": sorted(next_due_candidates, key=lambda item: item["at_utc"]),
+        "active_leases": sorted(lease_summary, key=lambda item: item["campaign_id"]),
+        "campaign_health": sorted(campaign_health, key=lambda item: item["campaign_id"]),
         "stuck_campaigns": sorted(stuck),
         "expired_leases": sorted(expired_leases),
         "lease_repairs": sorted(lease_repairs),
