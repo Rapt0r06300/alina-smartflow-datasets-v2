@@ -197,7 +197,8 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
         raise BackfillError("asset sha256 mismatch")
 
     trade_count = 0
-    unique_hashes: set[int] = set()
+    # Exact identity strings, never truncated hashes: a collision would invalidate an exact count.
+    unique_identities: set[str] = set()
     unique_proven = True
     records = 0
     venue = str(row.get("venue") or "unknown")
@@ -222,18 +223,14 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
             if keys is None:
                 unique_proven = False
             else:
-                for key in keys:
-                    digest = hashlib.blake2b(
-                        key.encode("utf-8"),
-                        digest_size=8,
-                    ).digest()
-                    unique_hashes.add(int.from_bytes(digest, "big"))
+                unique_identities.update(keys)
 
     return {
         "trade_count": trade_count,
         "trade_count_exact": True,
-        "unique_trade_count": len(unique_hashes) if unique_proven else None,
+        "unique_trade_count": len(unique_identities) if unique_proven else None,
         "unique_trade_count_exact": unique_proven,
+        "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
         "record_count_scanned": records,
         "asset_sha256": actual_sha,
     }
@@ -289,6 +286,7 @@ def _persist_manifest_counts(row: Mapping[str, Any], result: Mapping[str, Any]) 
         "unique_trade_count_exact",
         "record_count_scanned",
         "asset_sha256",
+        "unique_identity_method",
     ):
         if key in result:
             manifest[key] = result[key]
