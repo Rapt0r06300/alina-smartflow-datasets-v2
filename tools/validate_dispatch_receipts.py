@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 COLLECT_KINDS = {
@@ -31,6 +32,14 @@ def main():
             raise SystemExit(f"{path}: missing {sorted(missing)}")
         if receipt["schema"] != "alina.dispatch_receipt.v1":
             raise SystemExit(f"{path}: unsupported schema")
+        if not re.fullmatch(r"[0-9a-f]{64}", str(receipt["request_id"])):
+            raise SystemExit(f"{path}: invalid request id")
+        if not re.fullmatch(r"[0-9a-f]{40}", str(receipt["main_code_sha"])):
+            raise SystemExit(f"{path}: invalid main code sha")
+        if not re.fullmatch(r"[0-9a-f]{40}", str(receipt["dataset_repo_sha"])):
+            raise SystemExit(f"{path}: invalid dataset sha")
+        if str(receipt["campaign_id"]) != str(receipt["campaign_id"]).strip():
+            raise SystemExit(f"{path}: campaign id is not canonical")
         if (
             receipt["paper_only"] is not True
             or receipt["read_only"] is not True
