@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 2916487,
+  "bytes": 2476386,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "okx-public-ws-l2book-doge-usdt-swap-1790344069065-1790344967995-d98708fb6829",
-  "end_ts_ms": 1790344967995,
-  "event_count": 8958,
+  "dataset_id": "okx-public-ws-l2book-aave-usdt-swap-1790344069021-1790344967991-c75ffaefe2cd",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790344967991,
+  "event_count": 8721,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,39 +37,40 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 8721,
   "release": {
-    "asset_id": 588851285,
-    "asset_name": "okx-public-ws-l2book-doge-usdt-swap-1790344069065-1790344967995-d98708fb6829.jsonl.gz",
+    "asset_id": 588851118,
+    "asset_name": "okx-public-ws-l2book-aave-usdt-swap-1790344069021-1790344967991-c75ffaefe2cd.jsonl.gz",
     "release_id": 396794062,
-    "remote_digest": "sha256:d98708fb68291d0ca81d008f386b300838c9e9e7a98cd0bedf11a9ad98086692",
-    "remote_size": 2916487,
+    "remote_digest": "sha256:c75ffaefe2cdc6b4fb1d1a5f63d00fba7d48d7d0c0a202a68eaade6ad442802a",
+    "remote_size": 2476386,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s6"
   },
-  "release_asset": "okx-public-ws-l2book-doge-usdt-swap-1790344069065-1790344967995-d98708fb6829.jsonl.gz",
-  "release_asset_id": 588851285,
+  "release_asset": "okx-public-ws-l2book-aave-usdt-swap-1790344069021-1790344967991-c75ffaefe2cd.jsonl.gz",
+  "release_asset_id": 588851118,
   "release_id": 396794062,
-  "release_remote_digest": "sha256:d98708fb68291d0ca81d008f386b300838c9e9e7a98cd0bedf11a9ad98086692",
-  "release_remote_size": 2916487,
+  "release_remote_digest": "sha256:c75ffaefe2cdc6b4fb1d1a5f63d00fba7d48d7d0c0a202a68eaade6ad442802a",
+  "release_remote_size": 2476386,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s6",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+  "replay_schema_version": "alina.replay.v2",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "d98708fb68291d0ca81d008f386b300838c9e9e7a98cd0bedf11a9ad98086692",
+  "sha256": "c75ffaefe2cdc6b4fb1d1a5f63d00fba7d48d7d0c0a202a68eaade6ad442802a",
   "source": "okx_public_ws",
-  "start_ts_ms": 1790344069065,
-  "symbol": "DOGE-USDT-SWAP",
+  "start_ts_ms": 1790344069021,
+  "symbol": "AAVE-USDT-SWAP",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 8958,
+      "count": 8721,
       "max": 132.5,
       "min": 34.0,
       "p50": 36.5,
@@ -76,25 +80,27 @@
     "connection_ids": [
       "okx-049a13ecc3834f27b35f4f97df0bca38"
     ],
-    "first_exchange_ts_ms": 1790344068908,
-    "last_exchange_ts_ms": 1790344967908,
+    "first_exchange_ts_ms": 1790344068905,
+    "last_exchange_ts_ms": 1790344967905,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 8958,
-      "max": 265.0,
+      "count": 8721,
+      "max": 197.0,
       "min": 84.0,
-      "p50": 86.0,
-      "p95": 89.0
+      "p50": 85.0,
+      "p95": 87.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
-      "count": 8958,
+      "count": 8721,
       "max": 166.471616,
       "min": 0.0,
       "p50": 165.246212,
       "p95": 165.933794
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "trade_count_exact": true,
+  "validation_allowed": true,
   "venue": "okx"
 }
