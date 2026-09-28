@@ -187,6 +187,8 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
             and _SHA256.fullmatch(str(runtime.get("runtime_evidence_sha256") or "").lower())
             and _int(runtime.get("accepted_event_count")) is not None
             and _int(runtime.get("accepted_event_count")) >= 0
+            and _SHA256.fullmatch(str(runtime.get("economic_research_sha256") or "").lower())
+            and runtime.get("economic_research_state") in {"UNMEASURABLE", "REQUIRES_SCOREBOARD"}
             and _SHA256.fullmatch(str(runtime.get("market_response_sha256") or "").lower())
             and runtime.get("market_response_state") in {"UNMEASURABLE", "REQUIRES_SCOREBOARD"}
             and _SHA256.fullmatch(str(runtime.get("research_protocol_sha256") or "").lower())
