@@ -66,6 +66,8 @@ def validate_manifest(manifest: Mapping[str, Any]) -> list[str]:
     for key in REQUIRED:
         if key not in manifest:
             errors.append(f"MISSING:{key}")
+        elif key in {"dataset_id", "family", "venue", "symbol", "collector_version", "source"} and not str(manifest.get(key) or "").strip():
+            errors.append(f"INVALID:{key}")
 
     if manifest.get("quality_status") not in STATUSES:
         errors.append("INVALID:quality_status")
@@ -105,6 +107,11 @@ def validate_manifest(manifest: Mapping[str, Any]) -> list[str]:
     reconciliation = manifest.get("reconciliation")
     if not isinstance(reconciliation, Mapping):
         errors.append("MISSING:reconciliation")
+    for key in _FATAL_COUNTERS + ("duplicate_count",):
+        if isinstance(integrity, Mapping):
+            value = _int(integrity.get(key))
+            if value is not None and value < 0:
+                errors.append(f"INVALID_INTEGRITY:{key}")
 
     if str(manifest.get("family") or "").lower() == "external_events":
         integration = manifest.get("event_intelligence")
@@ -162,6 +169,8 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
 
     if manifest.get("asset_verified") is not True:
         reasons.append("ASSET_NOT_VERIFIED")
+    if manifest.get("validation_allowed") is True and manifest.get("replay_compatible") is not True:
+        reasons.append("VALIDATION_WITHOUT_REPLAY_COMPATIBILITY")
     if manifest.get("replay_compatible") is not True:
         reasons.append("REPLAY_COMPATIBILITY_NOT_PROVEN")
     elif not str(manifest.get("replay_schema_version") or "").strip():
