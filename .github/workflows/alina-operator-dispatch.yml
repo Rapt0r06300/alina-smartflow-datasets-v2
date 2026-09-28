@@ -53,6 +53,7 @@ jobs:
           CUTOFF: ${{ github.event.client_payload.collection_cutoff_at_utc || inputs.collection_cutoff_at_utc }}
           ANALYSIS_STAGE: ${{ github.event.client_payload.analysis_stage || inputs.analysis_stage }}
           INTENT: ${{ github.event.client_payload.intent || inputs.intent }}
+          STRATEGY_FAMILY: ${{ github.event.client_payload.strategy_family || inputs.strategy_family || 'all' }}
         run: |
           set -euo pipefail
           python - <<'PY'
@@ -75,6 +76,9 @@ jobs:
           allowed={"start_collection"} if phase=="COLLECT" else {"analyze","replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard","full_cycle"}
           if intent not in allowed:
               raise SystemExit("intent is incompatible with phase")
+          family=os.environ["STRATEGY_FAMILY"]
+          if family not in {"all","copy_vault","lead_lag","cross_venue_dislocation"}:
+              raise SystemExit("unsupported strategy family")
           if phase=="ANALYZE" and not os.environ["ANALYSIS_STAGE"]:
               raise SystemExit("analysis_stage is required for ANALYZE")
           row={
@@ -87,6 +91,7 @@ jobs:
               "collection_cutoff_at_utc":os.environ["CUTOFF"] or None,
               "analysis_stage":os.environ["ANALYSIS_STAGE"] or None,
               "intent":intent,
+              "strategy_family":family,
               "paper_only":True,
               "read_only":True,
               "real_execution":False,
