@@ -183,9 +183,21 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
         "copy_vault_fills",
     }
     if trade_family:
-        if manifest.get("trade_count_exact") is not True or _int(manifest.get("trade_count")) is None:
+        trade_count = _int(manifest.get("trade_count"))
+        unique_trade_count = _int(manifest.get("unique_trade_count"))
+        if (
+            manifest.get("trade_count_exact") is not True
+            or trade_count is None
+            or trade_count < 0
+            or trade_count > event_count
+        ):
             reasons.append("TRADE_COUNT_NOT_EXACT")
-        if manifest.get("unique_trade_count_exact") is not True or _int(manifest.get("unique_trade_count")) is None:
+        if (
+            manifest.get("unique_trade_count_exact") is not True
+            or unique_trade_count is None
+            or unique_trade_count < 0
+            or (trade_count is not None and unique_trade_count > trade_count)
+        ):
             reasons.append("UNIQUE_TRADE_COUNT_NOT_EXACT")
 
     reconciliation = manifest["reconciliation"]
