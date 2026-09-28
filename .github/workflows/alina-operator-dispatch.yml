@@ -73,7 +73,7 @@ jobs:
           if epoch < 1:
               raise SystemExit("phase_epoch must be positive")
           intent=os.environ["INTENT"]
-          allowed={"start_collection"} if phase=="COLLECT" else {"analyze","replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard","full_cycle"}
+          allowed={"start_collection"} if phase=="COLLECT" else {"analyze","replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard","full_cycle","drain"}
           if intent not in allowed:
               raise SystemExit("intent is incompatible with phase")
           family=os.environ["STRATEGY_FAMILY"]
