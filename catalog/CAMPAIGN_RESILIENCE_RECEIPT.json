@@ -34,7 +34,7 @@
     }
   },
   "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-28T17:57:22.576224Z",
+  "generated_at_utc": "2026-09-28T18:01:51.852384Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -3009,43 +3009,11 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "be14e1676194e9757188592cf272e58f8439787fa36be750b6cba63594cf1a85",
+  "receipt_digest": "6a7ced8e278f910fcc7c38e68af7de14888434a0508df438411e5eed2b711f66",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "BLOCKED",
   "v2_campaign_count": 0,
   "violations": [
-    {
-      "campaign_id": "copy-vault-105-2026092518-v6",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "copy-vault-148-2026092518-v6",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "copy-vault-200-2026092518-v6",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "copy-vault-233-2026092518-v6",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "market-2026092517",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "market-2026092522-v4",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "market-2026092605-v4",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
-    {
-      "campaign_id": "market-2026092610-v4",
-      "code": "LEGACY_V1_LEASE_ACTIVE"
-    },
     {
       "code": "INVALID_MANIFEST",
       "detail": "Extra data: line 82 column 2 (char 2603)",
