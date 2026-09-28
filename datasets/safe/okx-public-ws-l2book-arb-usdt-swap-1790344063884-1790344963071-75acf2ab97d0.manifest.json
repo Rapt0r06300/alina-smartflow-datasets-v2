@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 1617756,
+  "bytes": 3206207,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "okx-public-ws-l2book-dot-usdt-swap-1790344063977-1790344963075-6ed86c4dd33c",
-  "end_ts_ms": 1790344963075,
-  "event_count": 8173,
+  "dataset_id": "okx-public-ws-l2book-arb-usdt-swap-1790344063884-1790344963071-75acf2ab97d0",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790344963071,
+  "event_count": 8890,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,39 +37,40 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 8890,
   "release": {
-    "asset_id": 588850803,
-    "asset_name": "okx-public-ws-l2book-dot-usdt-swap-1790344063977-1790344963075-6ed86c4dd33c.jsonl.gz",
+    "asset_id": 588850646,
+    "asset_name": "okx-public-ws-l2book-arb-usdt-swap-1790344063884-1790344963071-75acf2ab97d0.jsonl.gz",
     "release_id": 396793856,
-    "remote_digest": "sha256:6ed86c4dd33c88d35b11f116524d9db07c93c0e282f1ffd4a4812a80e72a6ad3",
-    "remote_size": 1617756,
+    "remote_digest": "sha256:75acf2ab97d0ad7e671119656415d9cd5087213ce88570aae184f0d0623abae9",
+    "remote_size": 3206207,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s7"
   },
-  "release_asset": "okx-public-ws-l2book-dot-usdt-swap-1790344063977-1790344963075-6ed86c4dd33c.jsonl.gz",
-  "release_asset_id": 588850803,
+  "release_asset": "okx-public-ws-l2book-arb-usdt-swap-1790344063884-1790344963071-75acf2ab97d0.jsonl.gz",
+  "release_asset_id": 588850646,
   "release_id": 396793856,
-  "release_remote_digest": "sha256:6ed86c4dd33c88d35b11f116524d9db07c93c0e282f1ffd4a4812a80e72a6ad3",
-  "release_remote_size": 1617756,
+  "release_remote_digest": "sha256:75acf2ab97d0ad7e671119656415d9cd5087213ce88570aae184f0d0623abae9",
+  "release_remote_size": 3206207,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s7",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+  "replay_schema_version": "alina.replay.v2",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "6ed86c4dd33c88d35b11f116524d9db07c93c0e282f1ffd4a4812a80e72a6ad3",
+  "sha256": "75acf2ab97d0ad7e671119656415d9cd5087213ce88570aae184f0d0623abae9",
   "source": "okx_public_ws",
-  "start_ts_ms": 1790344063977,
-  "symbol": "DOT-USDT-SWAP",
+  "start_ts_ms": 1790344063884,
+  "symbol": "ARB-USDT-SWAP",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 8173,
+      "count": 8890,
       "max": 52.0,
       "min": 23.0,
       "p50": 26.0,
@@ -80,21 +84,23 @@
     "last_exchange_ts_ms": 1790344963008,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 8173,
-      "max": 169.0,
-      "min": 64.0,
-      "p50": 67.0,
-      "p95": 71.0
+      "count": 8890,
+      "max": 99.0,
+      "min": 61.0,
+      "p50": 63.0,
+      "p95": 65.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
-      "count": 8173,
+      "count": 8890,
       "max": 124.183576,
       "min": 0.0,
       "p50": 116.825874,
       "p95": 120.160903
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "trade_count_exact": true,
+  "validation_allowed": true,
   "venue": "okx"
 }
