@@ -17,6 +17,7 @@ on:
 permissions:
   contents: write
 
+# Shared mutation lane prevents stale DATA_INDEX/DATA_METRICS writers.
 concurrency:
   group: dataset-v2-control-plane-index
   cancel-in-progress: false
