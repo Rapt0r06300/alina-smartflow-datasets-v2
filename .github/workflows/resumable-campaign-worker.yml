@@ -49,7 +49,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: resumable-${{ inputs.campaign_id }}
