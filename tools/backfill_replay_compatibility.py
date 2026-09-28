@@ -166,6 +166,7 @@ def _apply_result(
     for key in (
         "record_count",
         "trade_count",
+        "trade_count_exact",
         "invalid_record_count",
         "out_of_order_count",
         "duplicate_count",
@@ -197,6 +198,7 @@ def _apply_result(
         "manifest_path":str(target.relative_to(root)).replace("\\","/"),
         "record_count":manifest.get("record_count",manifest.get("event_count")),
         "trade_count":manifest.get("trade_count"),
+        "trade_count_exact":manifest.get("trade_count_exact"),
         "replay_compatible":manifest.get("replay_compatible"),
         "replay_schema_version":manifest.get("replay_schema_version"),
         "replay_reason":manifest.get("replay_reason"),
