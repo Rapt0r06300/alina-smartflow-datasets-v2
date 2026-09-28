@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 506216,
+  "bytes": 420930,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "okx-public-ws-l2book-blur-usdt-swap-1790344068367-1790344967666-dfdad79c8705",
+  "dataset_id": "okx-public-ws-l2book-comp-usdt-swap-1790344068366-1790344967666-e08323620220",
+  "duplicate_count": 0,
   "end_ts_ms": 1790344967666,
-  "event_count": 4077,
+  "event_count": 3413,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,43 +37,44 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 3413,
   "release": {
-    "asset_id": 588849258,
-    "asset_name": "okx-public-ws-l2book-blur-usdt-swap-1790344068367-1790344967666-dfdad79c8705.jsonl.gz",
+    "asset_id": 588849289,
+    "asset_name": "okx-public-ws-l2book-comp-usdt-swap-1790344068366-1790344967666-e08323620220.jsonl.gz",
     "release_id": 396793495,
-    "remote_digest": "sha256:dfdad79c870599d66b312574e4138cdddc5bd50dd685331901d3365eb1da0f0b",
-    "remote_size": 506216,
+    "remote_digest": "sha256:e08323620220ff4a5860dade2c4f74a8d6a866c944bb11bae9cb863071739b90",
+    "remote_size": 420930,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s3"
   },
-  "release_asset": "okx-public-ws-l2book-blur-usdt-swap-1790344068367-1790344967666-dfdad79c8705.jsonl.gz",
-  "release_asset_id": 588849258,
+  "release_asset": "okx-public-ws-l2book-comp-usdt-swap-1790344068366-1790344967666-e08323620220.jsonl.gz",
+  "release_asset_id": 588849289,
   "release_id": 396793495,
-  "release_remote_digest": "sha256:dfdad79c870599d66b312574e4138cdddc5bd50dd685331901d3365eb1da0f0b",
-  "release_remote_size": 506216,
+  "release_remote_digest": "sha256:e08323620220ff4a5860dade2c4f74a8d6a866c944bb11bae9cb863071739b90",
+  "release_remote_size": 420930,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s3",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+  "replay_schema_version": "alina.replay.v2",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "dfdad79c870599d66b312574e4138cdddc5bd50dd685331901d3365eb1da0f0b",
+  "sha256": "e08323620220ff4a5860dade2c4f74a8d6a866c944bb11bae9cb863071739b90",
   "source": "okx_public_ws",
-  "start_ts_ms": 1790344068367,
-  "symbol": "BLUR-USDT-SWAP",
+  "start_ts_ms": 1790344068366,
+  "symbol": "COMP-USDT-SWAP",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 4077,
+      "count": 3413,
       "max": 58.0,
       "min": 18.0,
       "p50": 23.0,
-      "p95": 46.0
+      "p95": 58.0
     },
     "connection_count": 1,
     "connection_ids": [
@@ -80,21 +84,23 @@
     "last_exchange_ts_ms": 1790344967608,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 4077,
+      "count": 3413,
       "max": 174.0,
       "min": 56.0,
-      "p50": 58.0,
-      "p95": 60.0
+      "p50": 57.0,
+      "p95": 59.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
-      "count": 4077,
+      "count": 3413,
       "max": 120.933353,
       "min": 0.0,
-      "p50": 117.362061,
-      "p95": 119.782901
+      "p50": 117.370579,
+      "p95": 118.9134
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "trade_count_exact": true,
+  "validation_allowed": true,
   "venue": "okx"
 }
