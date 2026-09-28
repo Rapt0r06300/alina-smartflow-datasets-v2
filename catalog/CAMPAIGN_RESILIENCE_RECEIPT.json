@@ -1,5 +1,5 @@
 {
-  "campaign_count": 3,
+  "campaign_count": 2,
   "campaigns": [
     {
       "analysis_stage": null,
@@ -10,17 +10,6 @@
       "history_count": 2,
       "schema_version": "alina.resumable_campaign.v1",
       "status": "COMPLETE",
-      "terminal_evidence_digest": null
-    },
-    {
-      "analysis_stage": null,
-      "campaign_id": "market-2026092717-v4",
-      "checkpoint_count": 0,
-      "completed_unit_count": 0,
-      "has_lease": true,
-      "history_count": 1,
-      "schema_version": "alina.resumable_campaign.v1",
-      "status": "RUNNING",
       "terminal_evidence_digest": null
     },
     {
@@ -68,11 +57,11 @@
     }
   },
   "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-27T21:23:59.044900Z",
+  "generated_at_utc": "2026-09-28T00:49:47.805834Z",
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "5eea3ecbf1bc4f74d403fdac5d87faa97fe6aa20968c22267f5bc0b59477651f",
+  "receipt_digest": "1ed4cd3eb1c625bedbdc89c2049161e93902666c087bdbc7b0a12d7ecdcf2077",
   "schema": "alina.campaign_resilience_receipt.v1",
   "status": "BLOCKED",
   "violations": [
@@ -2498,18 +2487,14 @@
       ]
     },
     {
-      "campaign_id": "market-2026092614-v4",
-      "code": "RECOVERY_FIELDS_MISSING",
-      "fields": [
-        "checkpoint_lineage"
-      ]
+      "code": "INVALID_MANIFEST",
+      "detail": "Extra data: line 82 column 2 (char 2603)",
+      "path": "catalog/campaigns/market-2026092614-v4.json"
     },
     {
-      "campaign_id": "market-2026092618-v4",
-      "code": "RECOVERY_FIELDS_MISSING",
-      "fields": [
-        "checkpoint_lineage"
-      ]
+      "code": "INVALID_MANIFEST",
+      "detail": "Extra data: line 82 column 2 (char 2603)",
+      "path": "catalog/campaigns/market-2026092618-v4.json"
     },
     {
       "campaign_id": "market-2026092621-v4",
@@ -2540,8 +2525,9 @@
       ]
     },
     {
-      "campaign_id": "market-2026092717-v4",
-      "code": "V2_LINEAGE_REQUIRED"
+      "code": "INVALID_MANIFEST",
+      "detail": "Extra data: line 66 column 2 (char 2120)",
+      "path": "catalog/campaigns/market-2026092717-v4.json"
     },
     {
       "campaign_id": "pnl-20260925-s3-v4",
