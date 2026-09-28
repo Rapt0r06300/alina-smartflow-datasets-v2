@@ -5,7 +5,7 @@ on:
     paths:
       - '.github/workflows/resumable-campaign-controller.yml'
   schedule:
-    - cron: '2 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
   workflow_call:
 
