@@ -1,16 +1,18 @@
 {
   "asset_verified": true,
-  "bytes": 1094098,
+  "bytes": 358907,
   "collection_run_id": "market-36143095458",
   "collector_version": "f8a19b3e5789025360af759319a03226265ea091",
   "cost_model": {
     "applicable": false,
     "ready": false
   },
-  "dataset_id": "okx-public-ws-l2book-aero-usdt-swap-1790344068323-1790344967087-cc9d283ad3b1",
-  "end_ts_ms": 1790344967087,
-  "event_count": 7369,
+  "dataset_id": "okx-public-ws-l2book-celo-usdt-swap-1790344068164-1790344967092-d5e615fb0870",
+  "duplicate_count": 0,
+  "end_ts_ms": 1790344967092,
+  "event_count": 2800,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,67 +37,70 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 2800,
   "release": {
-    "asset_id": 588849650,
-    "asset_name": "okx-public-ws-l2book-aero-usdt-swap-1790344068323-1790344967087-cc9d283ad3b1.jsonl.gz",
+    "asset_id": 588849828,
+    "asset_name": "okx-public-ws-l2book-celo-usdt-swap-1790344068164-1790344967092-d5e615fb0870.jsonl.gz",
     "release_id": 396793769,
-    "remote_digest": "sha256:cc9d283ad3b1f87287277bfdf726f8ef3fa41253114d32a2ab7b1e2b2004aff9",
-    "remote_size": 1094098,
+    "remote_digest": "sha256:d5e615fb08702ae73a575fc726a1dce33ace67984610fb1a5390098763f302cd",
+    "remote_size": 358907,
     "repository": "Rapt0r06300/alina-smartflow-datasets-v2",
     "tag": "data-v2-36143095458-s0"
   },
-  "release_asset": "okx-public-ws-l2book-aero-usdt-swap-1790344068323-1790344967087-cc9d283ad3b1.jsonl.gz",
-  "release_asset_id": 588849650,
+  "release_asset": "okx-public-ws-l2book-celo-usdt-swap-1790344068164-1790344967092-d5e615fb0870.jsonl.gz",
+  "release_asset_id": 588849828,
   "release_id": 396793769,
-  "release_remote_digest": "sha256:cc9d283ad3b1f87287277bfdf726f8ef3fa41253114d32a2ab7b1e2b2004aff9",
-  "release_remote_size": 1094098,
+  "release_remote_digest": "sha256:d5e615fb08702ae73a575fc726a1dce33ace67984610fb1a5390098763f302cd",
+  "release_remote_size": 358907,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s0",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+  "replay_schema_version": "alina.replay.v2",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
-  "sha256": "cc9d283ad3b1f87287277bfdf726f8ef3fa41253114d32a2ab7b1e2b2004aff9",
+  "sha256": "d5e615fb08702ae73a575fc726a1dce33ace67984610fb1a5390098763f302cd",
   "source": "okx_public_ws",
-  "start_ts_ms": 1790344068323,
-  "symbol": "AERO-USDT-SWAP",
+  "start_ts_ms": 1790344068164,
+  "symbol": "CELO-USDT-SWAP",
   "synchronization": {
     "clock_offset_ms": {
-      "count": 7369,
+      "count": 2800,
       "max": 58.0,
       "min": 9.0,
-      "p50": 28.0,
-      "p95": 58.0
+      "p50": 27.5,
+      "p95": 53.5
     },
     "connection_count": 1,
     "connection_ids": [
       "okx-50eb8c467f344597a626b330242211b6"
     ],
-    "first_exchange_ts_ms": 1790344068009,
-    "last_exchange_ts_ms": 1790344967000,
+    "first_exchange_ts_ms": 1790344068005,
+    "last_exchange_ts_ms": 1790344967005,
     "max_reconnect_count": 0,
     "receive_minus_exchange_ms": {
-      "count": 7369,
-      "max": 314.0,
+      "count": 2800,
+      "max": 261.0,
       "min": 82.0,
       "p50": 85.0,
-      "p95": 88.0
+      "p95": 90.0
     },
     "reconnect_delta": 0,
     "transport_rtt_ms": {
-      "count": 7369,
+      "count": 2800,
       "max": 175.857924,
       "min": 0.0,
-      "p50": 169.745257,
+      "p50": 169.774635,
       "p95": 172.543064
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "trade_count_exact": true,
+  "validation_allowed": true,
   "venue": "okx"
 }

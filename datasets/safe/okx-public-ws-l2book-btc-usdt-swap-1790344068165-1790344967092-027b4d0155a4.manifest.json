@@ -8,9 +8,11 @@
     "ready": false
   },
   "dataset_id": "okx-public-ws-l2book-btc-usdt-swap-1790344068165-1790344967092-027b4d0155a4",
+  "duplicate_count": 0,
   "end_ts_ms": 1790344967092,
   "event_count": 8987,
   "family": "l2Book",
+  "gap_count": 0,
   "integrity": {
     "desync_count": 0,
     "duplicate_count": 0,
@@ -20,10 +22,11 @@
     "missing_timestamp_count": 0,
     "regression_count": 0
   },
+  "invalid_record_count": 0,
   "observed_channels": [
     "l2Book"
   ],
-  "pre_replay_quality_status": "SAFE",
+  "out_of_order_count": 0,
   "proof_of_pnl_allowed": false,
   "provenance": {
     "authenticated": false,
@@ -34,13 +37,12 @@
       "websocket"
     ]
   },
-  "quality_reasons": [
-    "REPLAY_COMPATIBILITY_NOT_PROVEN"
-  ],
-  "quality_status": "PARTIAL",
+  "quality_reasons": [],
+  "quality_status": "SAFE",
   "reconciliation": {
     "status": "SOURCE_CONTINUITY_VERIFIED"
   },
+  "record_count": 8987,
   "release": {
     "asset_id": 588849793,
     "asset_name": "okx-public-ws-l2book-btc-usdt-swap-1790344068165-1790344967092-027b4d0155a4.jsonl.gz",
@@ -57,7 +59,9 @@
   "release_remote_size": 4850112,
   "release_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
   "release_tag": "data-v2-36143095458-s0",
-  "replay_validation_pending": true,
+  "replay_compatible": true,
+  "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+  "replay_schema_version": "alina.replay.v2",
   "required_channels": [],
   "schema": "alina.shard_manifest.v2",
   "sha256": "027b4d0155a469fe946e3af345cf3f51ccda6e25075e56faff828a8c19c216b1",
@@ -95,6 +99,8 @@
       "p95": 172.543064
     }
   },
-  "validation_allowed": false,
+  "trade_count": 0,
+  "trade_count_exact": true,
+  "validation_allowed": true,
   "venue": "okx"
 }

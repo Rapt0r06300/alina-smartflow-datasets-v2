@@ -1,7 +1,7 @@
 {
   "method": "verified_release_asset_parse_chronology_smoke",
-  "processed_assets": 360,
-  "remaining_candidates_for_filter": 7749,
+  "processed_assets": 375,
+  "remaining_candidates_for_filter": 7744,
   "results": {
     "gate-public-ws-l2book-0g-usdt-1790344063370-1790356661667-840b5b505c1f": {
       "asset_sha256": "840b5b505c1f647db6afecee0cfc948e167a03eab397ed95e1791ee1c2bf5509",
@@ -722,6 +722,22 @@
       "replay_reason": "SMOKE_OK",
       "replay_schema_version": "alina.replay.v1",
       "trade_count": 0,
+      "verified_from_release": true
+    },
+    "hyperliquid-public-userfills-copy-vault-fills-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790196525759-1790206412648-fb1f8e1cdbb0": {
+      "asset_sha256": "fb1f8e1cdbb08221ca28a02116037bc48d0ee6ca0c1c201610bcaf0aac6aabef",
+      "asset_size": 51911,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 208,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 208,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": false,
       "verified_from_release": true
     },
     "hyperliquid-public-userfills-copy-vault-fills-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790206515917-1790207005549-bd70cf848a22": {
@@ -1635,6 +1651,22 @@
       "trade_count": 8,
       "verified_from_release": true
     },
+    "hyperliquid-public-userfills-copy-vault-fills-0x8825e6ed11c7f9c0874579c9f4bba192b9e81c8f-1790206694391-1790206694391-ef97e030c38a": {
+      "asset_sha256": "ef97e030c38a8601dc5c95180055d0ed25d7e4eebd06ef9b02f93f7028700200",
+      "asset_size": 864,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 1,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 1,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": false,
+      "verified_from_release": true
+    },
     "hyperliquid-public-userfills-copy-vault-fills-0x8825e6ed11c7f9c0874579c9f4bba192b9e81c8f-1790239791060-1790239791060-de8d017939e4": {
       "asset_sha256": "de8d017939e4f472a2f87f3c15e57946077600d2429b316833745019b8287a4c",
       "asset_size": 864,
@@ -1939,6 +1971,22 @@
       "trade_count": 16,
       "verified_from_release": true
     },
+    "hyperliquid-public-userfills-copy-vault-fills-0xb65dd7c56afbf3b272ab5fc49be44b47dca18003-1790201252456-1790206325639-aa185a101931": {
+      "asset_sha256": "aa185a1019318287495e256f09a53f53d183f795536f6bd41d91739f592a300c",
+      "asset_size": 1338,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 3,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 3,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": false,
+      "verified_from_release": true
+    },
     "hyperliquid-public-userfills-copy-vault-fills-0xb65dd7c56afbf3b272ab5fc49be44b47dca18003-1790212710155-1790220453474-9e5b484fa3b9": {
       "asset_sha256": "9e5b484fa3b9c5e9af3e9f8fadd915817973c741e8983d5da82ba3fe32fb9a8e",
       "asset_size": 2370,
@@ -2137,6 +2185,22 @@
       "trade_count": 25,
       "verified_from_release": true
     },
+    "hyperliquid-public-userfills-copy-vault-fills-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790196181923-1790206726232-ba849c31183b": {
+      "asset_sha256": "ba849c31183bd9db5f2b24f6fe6394aa2578d5927310c72f7a9ade1ca22ae45b",
+      "asset_size": 377391,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 1636,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 1636,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": false,
+      "verified_from_release": true
+    },
     "hyperliquid-public-userfills-copy-vault-fills-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790206862858-1790207481457-ab67418ad41e": {
       "asset_sha256": "ab67418ad41eab1b17deb48d36dd22df3efe18a058f504c2ea2c6042b6fa491d",
       "asset_size": 14763,
@@ -2178,6 +2242,22 @@
       "method": "parse_chronology_smoke",
       "out_of_order_count": 0,
       "record_count": 7,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": false,
+      "verified_from_release": true
+    },
+    "hyperliquid-public-userfills-copy-vault-fills-0xc3b1bf1f1e6fb8161ef4dc2f34e2c56f70b94b11-1790206715797-1790206715797-d58cb1fe3cb7": {
+      "asset_sha256": "d58cb1fe3cb7a5aa019dd6cf06b09b154840a563b7c8cd54d5129bbfc2c3b00f",
+      "asset_size": 891,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 1,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 1,
       "replay_compatible": false,
       "replay_reason": "INVALID_RECORD",
       "replay_schema_version": "alina.replay.v2",
@@ -2639,6 +2719,22 @@
       "trade_count": 0,
       "verified_from_release": true
     },
+    "hyperliquid-public-ws-bbo-ada-1790302535178-1790304423989-2068ba395e80": {
+      "asset_sha256": "2068ba395e804c27f7d9db29b9dc15f3dbd4c308d24d8e18dadb7892f149a247",
+      "asset_size": 598499,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 6731,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 6731,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
     "hyperliquid-public-ws-bbo-ada-1790322491820-1790324887073-1fb12bb97b76": {
       "asset_sha256": "1fb12bb97b7636cdf488e0026cb60c8f0737b0422005899714ebf8599ce36fe6",
       "asset_size": 762522,
@@ -2943,6 +3039,22 @@
       "trade_count": 0,
       "verified_from_release": true
     },
+    "hyperliquid-public-ws-bbo-arb-1790302535304-1790304423989-c54575d98180": {
+      "asset_sha256": "c54575d981804a78452043dc155b77ff00dcca42cda07890871ee442002a8abd",
+      "asset_size": 825934,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 9162,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 9162,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
     "hyperliquid-public-ws-bbo-arb-1790322491798-1790324887022-c24005cedf5d": {
       "asset_sha256": "c24005cedf5dcca360b95d9c76f7dcff780379cc403c346811f858fc7c3b00c0",
       "asset_size": 917382,
@@ -3245,6 +3357,22 @@
       "replay_reason": "SMOKE_OK",
       "replay_schema_version": "alina.replay.v1",
       "trade_count": 0,
+      "verified_from_release": true
+    },
+    "hyperliquid-public-ws-bbo-bch-1790302535304-1790304423951-ce9f717b472e": {
+      "asset_sha256": "ce9f717b472e9b06345958872648a7b54704df6fcec78bd40f27f7e22c6c7761",
+      "asset_size": 573141,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 6481,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 6481,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
       "verified_from_release": true
     },
     "hyperliquid-public-ws-bbo-bch-1790322492255-1790324886921-9c6e558c5400": {
@@ -3598,6 +3726,22 @@
       "trade_count": 0,
       "verified_from_release": true
     },
+    "hyperliquid-public-ws-bbo-cc-1790302535304-1790304423951-23296aac54fe": {
+      "asset_sha256": "23296aac54fe92b3b9d05db35a4b96050040bd4e1fe69b6825bad84f84fadc64",
+      "asset_size": 266573,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 2984,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 2984,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
     "hyperliquid-public-ws-bbo-cc-1790322491880-1790324887073-97ca95b1616b": {
       "asset_sha256": "97ca95b1616bcd774662a11d0f46a497ab200d268b1cc478e484af8f413923df",
       "asset_size": 370746,
@@ -3900,6 +4044,22 @@
       "replay_reason": "SMOKE_OK",
       "replay_schema_version": "alina.replay.v1",
       "trade_count": 0,
+      "verified_from_release": true
+    },
+    "hyperliquid-public-ws-bbo-dot-1790302535711-1790304423989-b5068a2e545d": {
+      "asset_sha256": "b5068a2e545d64eaa4827d97494d3e1f6bc67f4c3c941fa514b0fff688a845e2",
+      "asset_size": 488485,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 5422,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 5422,
+      "replay_compatible": false,
+      "replay_reason": "INVALID_RECORD",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
       "verified_from_release": true
     },
     "hyperliquid-public-ws-bbo-dot-1790322497398-1790324887073-a49cecb48dd1": {
@@ -5126,6 +5286,22 @@
       "trade_count_exact": true,
       "verified_from_release": true
     },
+    "okx-public-ws-l2book-aero-usdt-swap-1790344068323-1790344967087-cc9d283ad3b1": {
+      "asset_sha256": "cc9d283ad3b1f87287277bfdf726f8ef3fa41253114d32a2ab7b1e2b2004aff9",
+      "asset_size": 1094098,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 0,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 7369,
+      "replay_compatible": true,
+      "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
     "okx-public-ws-l2book-algo-usdt-swap-1790344070185-1790344969361-d2da71fae93d": {
       "asset_sha256": "d2da71fae93d790b41a0f5032664f8faf279ebe6c9e899464d98315a7312a124",
       "asset_size": 1144903,
@@ -5183,6 +5359,22 @@
       "method": "parse_chronology_smoke",
       "out_of_order_count": 0,
       "record_count": 5928,
+      "replay_compatible": true,
+      "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
+    "okx-public-ws-l2book-aster-usdt-swap-1790344068165-1790344967096-3f52231c95dd": {
+      "asset_sha256": "3f52231c95dd10a5e70b9f69e732efbe4fe51275912aa0854110b60000402ace",
+      "asset_size": 1129897,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 0,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 6377,
       "replay_compatible": true,
       "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
       "replay_schema_version": "alina.replay.v2",
@@ -5318,6 +5510,38 @@
       "trade_count_exact": true,
       "verified_from_release": true
     },
+    "okx-public-ws-l2book-btc-usdt-swap-1790344068165-1790344967092-027b4d0155a4": {
+      "asset_sha256": "027b4d0155a469fe946e3af345cf3f51ccda6e25075e56faff828a8c19c216b1",
+      "asset_size": 4850112,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 0,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 8987,
+      "replay_compatible": true,
+      "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
+    "okx-public-ws-l2book-celo-usdt-swap-1790344068164-1790344967092-d5e615fb0870": {
+      "asset_sha256": "d5e615fb08702ae73a575fc726a1dce33ace67984610fb1a5390098763f302cd",
+      "asset_size": 358907,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 0,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 2800,
+      "replay_compatible": true,
+      "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
     "okx-public-ws-l2book-chip-usdt-swap-1790344070189-1790344969362-d2400b62fd07": {
       "asset_sha256": "d2400b62fd076b9322ff897f478502bda843495453eb0141dbbdc9e2bc2d4b91",
       "asset_size": 1058639,
@@ -5375,6 +5599,22 @@
       "method": "parse_chronology_smoke",
       "out_of_order_count": 0,
       "record_count": 8958,
+      "replay_compatible": true,
+      "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
+      "replay_schema_version": "alina.replay.v2",
+      "trade_count": 0,
+      "trade_count_exact": true,
+      "verified_from_release": true
+    },
+    "okx-public-ws-l2book-dydx-usdt-swap-1790344068323-1790344967096-b4be476d86a0": {
+      "asset_sha256": "b4be476d86a06022ae068282cd5289096bc33c1f4277036e5aba999b13cac09b",
+      "asset_size": 906936,
+      "duplicate_count": 0,
+      "gap_count": 0,
+      "invalid_record_count": 0,
+      "method": "parse_chronology_smoke",
+      "out_of_order_count": 0,
+      "record_count": 6046,
       "replay_compatible": true,
       "replay_reason": "STRICT_PARSE_CHRONOLOGY_OK",
       "replay_schema_version": "alina.replay.v2",
