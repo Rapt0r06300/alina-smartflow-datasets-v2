@@ -48,6 +48,8 @@ def main():
             raise SystemExit(f"{path}: unsafe receipt")
         if receipt["creation_phase"] not in {"COLLECT", "ANALYZE"}:
             raise SystemExit(f"{path}: invalid phase identity")
+        if receipt.get("strategy_family", "all") not in {"all", "copy_vault", "lead_lag", "cross_venue_dislocation"}:
+            raise SystemExit(f"{path}: invalid strategy family")
         if not isinstance(receipt["phase_epoch"], int) or receipt["phase_epoch"] < 1:
             raise SystemExit(f"{path}: invalid phase epoch")
         key = (receipt["request_id"], receipt["campaign_id"])
