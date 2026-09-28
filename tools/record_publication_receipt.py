@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -36,6 +37,17 @@ def main():
     p.add_argument("--publication-state", default="RELEASE_AND_RECEIPT_WRITTEN")
     p.add_argument("--output", default="")
     a = p.parse_args()
+
+    if not re.fullmatch(r"[0-9a-f]{40}", a.code_sha):
+        raise SystemExit("code_sha must be a commit SHA")
+    if a.phase not in {"COLLECT", "ANALYZE"} or a.phase_epoch < 1:
+        raise SystemExit("invalid phase identity")
+    if a.phase == "ANALYZE" and (
+        a.source_collection_epoch in (None, "")
+        or a.collection_cutoff_at_utc in (None, "")
+        or a.dataset_selection_id in (None, "")
+    ):
+        raise SystemExit("analysis publication requires frozen selection identity")
 
     result = json.loads(Path(a.result).read_text(encoding="utf-8"))
     payload = result.get("payload") if isinstance(result, dict) else {}
