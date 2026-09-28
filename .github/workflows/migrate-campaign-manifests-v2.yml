@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/campaigns
+          git add catalog/campaigns catalog/campaign-history
           git diff --cached --quiet && exit 0
           git commit -m "campaign: migrate manifests to schema v2"
           git push origin HEAD:main
