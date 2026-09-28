@@ -23,7 +23,7 @@ def main():
     p.add_argument("--receipt-dir", default="control/phase-receipts")
     p.add_argument("--gate-registry", default="control/analysis-stage-gates.json")
     a = p.parse_args()
-    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{0,127}", a.request_id):
+    if not re.fullmatch(r"[0-9a-f]{64}", a.request_id):
         raise SystemExit("invalid request id")
     path = Path(a.path)
     state = json.loads(path.read_text(encoding="utf-8"))
