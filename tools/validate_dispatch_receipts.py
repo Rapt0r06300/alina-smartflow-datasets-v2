@@ -58,6 +58,8 @@ def main():
         if not campaign_path.is_file():
             raise SystemExit(f"{path}: missing campaign manifest")
         campaign = json.loads(campaign_path.read_text(encoding="utf-8"))
+        if str(receipt["campaign_id"]).startswith("operator-") and campaign.get("operator_request_id") != receipt["request_id"]:
+            raise SystemExit(f"{path}: operator request identity mismatch")
         for field in ("code_sha", "creation_phase", "phase_epoch"):
             expected = receipt["main_code_sha"] if field == "code_sha" else receipt[field]
             if campaign.get(field) != expected:
