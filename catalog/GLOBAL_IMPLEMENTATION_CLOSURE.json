@@ -1,5 +1,5 @@
 {
-  "alina_head": "8efe159e92f81833ca0218fb38f2e329919a03de",
+  "alina_head": "c97413fedcc0f9610491e44a1eaf57f43bec32fc",
   "cloud_only": true,
   "dataset": {
     "campaign_count": 374,
@@ -52,7 +52,7 @@
     "metrics_digest": null,
     "watchdog_status": "BLOCKED"
   },
-  "dataset_v2_head": "cef41349c8f466c88705047e1d722eb5dfe3ffe1",
+  "dataset_v2_head": "9fa00dec6268bce79884cd49694865a9a355ac23",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": false,
@@ -75,30 +75,34 @@
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "SCOREBOARD_RECEIPT_MISSING",
-      "state": "UNMEASURABLE"
+      "reason": "ECONOMIC_BINDING_INVALID:ECONOMIC_CONTRACT_MISSING",
+      "state": "MORE_DATA"
     },
     "cross_venue_dislocation": {
-      "evidence_paths": [],
-      "net_pnl_usd": null,
+      "evidence_paths": [
+        "docs/audit/CROSS_VENUE_DISLOCATION_FINAL_verdict.json"
+      ],
+      "net_pnl_usd": -0.1366,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "SCOREBOARD_RECEIPT_MISSING",
-      "state": "UNMEASURABLE"
+      "reason": "ECONOMIC_GATE_REJECTED",
+      "state": "KILL"
     },
     "lead_lag": {
-      "evidence_paths": [],
+      "evidence_paths": [
+        "runtime/audit/v2_lead_lag/lead_lag_shadow_frozen.json"
+      ],
       "net_pnl_usd": null,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "SCOREBOARD_RECEIPT_MISSING",
-      "state": "UNMEASURABLE"
+      "reason": "ECONOMIC_BINDING_INVALID:ECONOMIC_CONTRACT_MISSING",
+      "state": "MORE_DATA"
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-28T19:51:26.424371Z",
+  "generated_at_utc": "2026-09-28T19:53:30.327721Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": null,
@@ -112,7 +116,7 @@
     "schema_version": 1,
     "source_collection_epoch": null
   },
-  "receipt_digest": "fe28a12cf0c8bec17d0490ec88d83613039166eabc16850d860bd6236a4817db",
+  "receipt_digest": "6df9279b3c82485b5168dec3bd36d2dff5d2481a03cfb13ef9630392e8dfd517",
   "schema": "alina.global_implementation_closure.v1",
   "security": {
     "carry": "DISABLED_BY_SCOPE",
