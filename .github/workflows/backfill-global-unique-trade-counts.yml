@@ -1,5 +1,8 @@
 name: backfill-global-unique-trade-counts
 on:
+  workflow_run:
+    workflows: [backfill-exact-trade-counts, backfill-global-unique-trade-counts]
+    types: [completed]
   workflow_dispatch:
     inputs:
       limit:
@@ -17,6 +20,7 @@ jobs:
   deduplicate:
     runs-on: ubuntu-latest
     timeout-minutes: 330
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
