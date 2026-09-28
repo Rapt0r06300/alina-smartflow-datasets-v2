@@ -22,6 +22,11 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+      - name: Sync latest main before generating receipts
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git rebase origin/main
       - name: Build resilience receipt
         run: python tools/validate_campaign_resilience.py
       - name: Publish resilience receipt
@@ -32,5 +37,8 @@ jobs:
           git add catalog/CAMPAIGN_RESILIENCE_RECEIPT.json
           git diff --cached --quiet && exit 0
           git commit -m "recovery: publish campaign resilience receipt"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          if ! git push origin HEAD:main; then
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
