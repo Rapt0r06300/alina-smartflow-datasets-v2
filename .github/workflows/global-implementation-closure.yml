@@ -1,13 +1,21 @@
 name: global-implementation-closure
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "catalog/DATA_INDEX.json"
+      - "catalog/DATASET_HEALTH_RECEIPT.json"
+      - "catalog/CAMPAIGN_WATCHDOG_RECEIPT.json"
+      - "tools/build_global_implementation_closure.py"
+      - ".github/workflows/global-implementation-closure.yml"
   schedule:
     - cron: '47 */6 * * *'
 permissions:
   contents: write
 concurrency:
   group: global-implementation-closure
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   receipt:
     runs-on: ubuntu-latest
