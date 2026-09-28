@@ -57,8 +57,11 @@ def _remaining(rows: list[object], covered: set[str]) -> list[Mapping[str, Any]]
 INDEX_PATH=ROOT/"catalog"/"DATA_INDEX.json"
 PATCH_PATH=ROOT/"catalog"/"TRADE_UNIQUE_COUNT_PATCH.json"
 
-def digest_identity(value: str) -> str:
-    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+def canonical_identity(value: str) -> str:
+    """Store the full canonical identity: dedup counts must not rely on hashes."""
+    if not isinstance(value, str) or not value:
+        raise ValueError("empty trade identity")
+    return value
 
 def main():
     p=argparse.ArgumentParser()
@@ -70,6 +73,10 @@ def main():
     prior={}
     if PATCH_PATH.exists():
         prior=json.loads(PATCH_PATH.read_text(encoding="utf-8"))
+    # v1 stored SHA-256 digests in the unique set. That is not an exact identity
+    # proof, so invalidate it and recompute from immutable assets.
+    if not isinstance(prior, dict) or prior.get("schema") != "alina.global_unique_trade_patch.v2":
+        prior = {}
     counts=prior.get("counts") if isinstance(prior.get("counts"),dict) else {}
     failure_reasons=prior.get("failure_reasons") if isinstance(prior.get("failure_reasons"),dict) else {}
     covered=set(prior.get("covered_dataset_ids") or [])
@@ -81,8 +88,8 @@ def main():
     with tempfile.TemporaryDirectory(prefix="alina-global-unique-") as tmp:
         db=sqlite3.connect(Path(tmp)/"identities.sqlite")
         db.execute("CREATE TABLE ids (identity TEXT PRIMARY KEY)")
-        for old in prior.get("identity_digests") or []:
-            db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(str(old),))
+        for old in prior.get("identities") or []:
+            db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(canonical_identity(str(old)),))
         for row in candidates:
             attempted+=1; dataset_id=str(row.get("dataset_id") or "")
             try:
@@ -99,7 +106,7 @@ def main():
                             exact=False; continue
                         total+=len(keys)
                         for key in keys:
-                            d=digest_identity(key)
+                            d=canonical_identity(key)
                             before=db.total_changes
                             db.execute("INSERT OR IGNORE INTO ids(identity) VALUES (?)",(d,))
                             inserted = int(db.total_changes > before)
@@ -143,10 +150,10 @@ def main():
     )
 
     result={
-        "schema":"alina.global_unique_trade_patch.v1",
-        "method":"sqlite_sha256_identity_dedup_across_immutable_release_assets",
-        "identity_version":"native-id-or-venue-family-symbol-time-side-price-size-v1",
-        "collision_policy":"native identifiers preferred; deterministic composite fallback is retained and ambiguous missing identities fail closed",
+        "schema":"alina.global_unique_trade_patch.v2",
+        "method":"sqlite_full_canonical_identity_dedup_across_immutable_release_assets",
+        "identity_version":"native-id-or-venue-family-symbol-time-side-price-size-v2-full-string",
+        "collision_policy":"full canonical identity strings; native identifiers preferred; ambiguous missing identities fail closed",
         "counts":dict(sorted(counts.items())),
         "covered_dataset_ids":sorted(covered),
         "attempted":attempted,
@@ -155,6 +162,8 @@ def main():
         "remaining_candidate_shards":len(_remaining(rows, covered)),
         "global_unique_trade_count":global_count,
         "global_identity_digest":hashlib.sha256(json.dumps(identity_rows,separators=(",",":")).encode()).hexdigest(),
+        # Raw identities remain in the temporary sqlite database only; the digest
+        # is a receipt, while counts were calculated from collision-free strings.
         "cross_shard_overlap_count":sum(int(v.get("cross_shard_overlap_count") or 0) for v in counts.values() if isinstance(v,Mapping)),
         "coverage_complete":len(failed)==0 and not _remaining(rows, covered),
     }
