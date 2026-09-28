@@ -26,25 +26,26 @@ def _timestamp(row: Mapping[str, Any]) -> float | None:
 
 
 def _identity(row: Mapping[str, Any], manifest: Mapping[str, Any], ts: float) -> tuple[Any, ...] | None:
+    price=row.get("price")
+    size=row.get("size", row.get("qty"))
+    if price is not None or size is not None:
+        try:
+            price_value=float(price)
+            size_value=float(size)
+        except (TypeError, ValueError, OverflowError):
+            return None
+        if (
+            not math.isfinite(price_value)
+            or not math.isfinite(size_value)
+            or price_value <= 0.0
+            or size_value <= 0.0
+        ):
+            return None
     native=row.get("trade_id") or row.get("id") or row.get("exec_id") or row.get("sequence")
     if native is not None and str(native):
-        return (manifest.get("venue"),manifest.get("symbol"),"native",str(native))
+        return (manifest.get("venue"), manifest.get("symbol"), "native", str(native))
     side=row.get("side")
-    price=row.get("price")
-    size=row.get("size",row.get("qty"))
     if side is None or price is None or size is None:
-        return None
-    try:
-        price_value=float(price)
-        size_value=float(size)
-    except (TypeError, ValueError, OverflowError):
-        return None
-    if (
-        not math.isfinite(price_value)
-        or not math.isfinite(size_value)
-        or price_value <= 0.0
-        or size_value <= 0.0
-    ):
         return None
     if not str(side).strip():
         return None
