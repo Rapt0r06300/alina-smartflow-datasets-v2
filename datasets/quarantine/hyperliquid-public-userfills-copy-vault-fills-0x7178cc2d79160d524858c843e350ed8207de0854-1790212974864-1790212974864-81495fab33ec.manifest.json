@@ -1,4 +1,5 @@
 {
+  "asset_sha256": "81495fab33ec36a89d2faba32bf0a2caa45dbb11388a0ac77835d73ce2552b4e",
   "asset_verified": true,
   "bytes": 866,
   "collection_run_id": "copy-vault-35936119549",
@@ -57,6 +58,7 @@
     "status": "MATCHED"
   },
   "record_count": 1,
+  "record_count_scanned": 1,
   "release": {
     "asset_id": 585089852,
     "asset_name": "hyperliquid-public-userfills-copy-vault-fills-0x7178cc2d79160d524858c843e350ed8207de0854-1790212974864-1790212974864-81495fab33ec.jsonl.gz",
@@ -113,8 +115,11 @@
       "p95": null
     }
   },
-  "trade_count": 0,
-  "trade_count_exact": false,
+  "trade_count": 1,
+  "trade_count_exact": true,
+  "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
+  "unique_trade_count": null,
+  "unique_trade_count_exact": false,
   "validation_allowed": false,
   "venue": "hyperliquid"
 }
