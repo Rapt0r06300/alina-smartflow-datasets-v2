@@ -1,7 +1,7 @@
 name: backfill-global-unique-trade-counts
 on:
   workflow_run:
-    workflows: [backfill-exact-trade-counts, backfill-global-unique-trade-counts]
+    workflows: [backfill-exact-trade-counts]
     types: [completed]
   workflow_dispatch:
     inputs:
