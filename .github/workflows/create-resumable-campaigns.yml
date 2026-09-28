@@ -105,7 +105,7 @@ jobs:
             fi
           }
 
-          make_campaign             market_collection             "market-$BUCKET-v5"             "market-hourly-discovered-universe-v5"             '{"duration_s":3500,"max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full"}'
+          make_campaign             market_collection             "market-$BUCKET-v5"             "market-hourly-discovered-universe-v5"             '{"duration_s":3500,"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT","max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full"}'
 
           ACTIVE_COPY_CAMPAIGNS="$(python - <<'PY'
           import glob,json
