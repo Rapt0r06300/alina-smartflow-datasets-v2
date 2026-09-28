@@ -58,6 +58,22 @@ def main():
                     raise SystemExit(f"stage gate coverage {key} below minimum")
             elif value != requirement:
                 raise SystemExit(f"stage gate coverage {key} is not proven")
+    required_watchdog_status = gate.get("required_watchdog_status")
+    if required_watchdog_status:
+        watchdog = json.loads(Path("catalog/CAMPAIGN_WATCHDOG_RECEIPT.json").read_text(encoding="utf-8"))
+        if watchdog.get("watchdog_status") != required_watchdog_status:
+            raise SystemExit("stage gate watchdog status is not proven")
+    required_resilience_status = gate.get("required_resilience_status")
+    if required_resilience_status:
+        resilience = json.loads(Path("catalog/CAMPAIGN_RESILIENCE_RECEIPT.json").read_text(encoding="utf-8"))
+        if resilience.get("status") != required_resilience_status:
+            raise SystemExit("stage gate resilience status is not proven")
+    required_global_flags = gate.get("required_global_flags") or {}
+    if required_global_flags:
+        closure = json.loads(Path("catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json").read_text(encoding="utf-8"))
+        for key, expected in required_global_flags.items():
+            if closure.get(key) is not expected:
+                raise SystemExit(f"stage gate global flag {key} is not proven")
     required_kinds = set(gate.get("required_campaign_kinds", []))
     if required_kinds:
         rows = [
