@@ -96,7 +96,20 @@ def main() -> int:
     except (OSError,ValueError) as exc: raise SystemExit(f"invalid manifest: {exc}")
     if manifest.get("schema_version")!="alina.resumable_campaign.v2":
         raise SystemExit("phase-aware worker refuses v1 manifest")
-    if manifest.get("creation_phase")!=state["phase"] or manifest.get("phase_epoch")!=state["epoch"]:
+    campaign_id = str(manifest.get("campaign_id") or "").strip()
+    if not campaign_id:
+        raise SystemExit("manifest campaign_id required")
+    creation_phase = str(manifest.get("creation_phase") or "")
+    if creation_phase not in PHASES:
+        raise SystemExit("manifest creation_phase invalid")
+    manifest_epoch = manifest.get("phase_epoch")
+    if (
+        isinstance(manifest_epoch, bool)
+        or not isinstance(manifest_epoch, int)
+        or manifest_epoch < 1
+        or creation_phase != state["phase"]
+        or manifest_epoch != state["epoch"]
+    ):
         raise SystemExit("manifest phase/epoch mismatch")
     kind = str(manifest.get("kind") or "")
     allowed_kinds = COLLECT_KINDS if state["phase"] == "COLLECT" else ANALYZE_KINDS
@@ -113,7 +126,7 @@ def main() -> int:
     if state["phase"]=="ANALYZE":
         if manifest.get("source_collection_epoch")!=state["source_collection_epoch"] or manifest.get("collection_cutoff_at_utc")!=state["collection_cutoff_at_utc"]:
             raise SystemExit("manifest analysis freeze mismatch")
-    print(json.dumps({"phase":state["phase"],"epoch":state["epoch"],"campaign_id":manifest.get("campaign_id")},sort_keys=True))
+    print(json.dumps({"phase":state["phase"],"epoch":state["epoch"],"campaign_id":campaign_id},sort_keys=True))
     return 0
 
 if __name__=="__main__":
