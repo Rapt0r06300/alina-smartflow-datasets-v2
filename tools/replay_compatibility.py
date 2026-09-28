@@ -58,7 +58,7 @@ def _identity(row: Mapping[str, Any], manifest: Mapping[str, Any], ts: float) ->
 def inspect_asset(path: str | Path, manifest: Mapping[str, Any]) -> dict[str, Any]:
     p=Path(path)
     family=str(manifest.get("family") or "").lower()
-    result={"record_count":0,"trade_count":0,"trade_count_exact":family not in TRADE_FAMILIES,
+    result={"record_count":0,"trade_count":0,"trade_count_exact":True,
             "invalid_record_count":0,"out_of_order_count":0,"duplicate_count":0,
             "gap_count":int((manifest.get("integrity") or {}).get("gap_count") or 0),
             "replay_compatible":False,"replay_schema_version":"alina.replay.v2",
@@ -97,7 +97,18 @@ def inspect_asset(path: str | Path, manifest: Mapping[str, Any]) -> dict[str, An
                 else:
                     seen.add(identity)
                     if family in TRADE_FAMILIES:
-                        result["trade_count"]+=1
+                        parsed=row.get("parsed_summary")
+                        batch_count=None
+                        if isinstance(parsed,Mapping):
+                            for key in ("event_count","fill_count"):
+                                try:
+                                    value=parsed.get(key)
+                                    if value is not None and not isinstance(value,bool):
+                                        batch_count=max(0,int(value))
+                                        break
+                                except (TypeError,ValueError,OverflowError):
+                                    pass
+                        result["trade_count"]+=(batch_count if batch_count is not None else 1)
     except (OSError,EOFError,UnicodeError,gzip.BadGzipFile):
         result["replay_reason"]="TRUNCATED_OR_UNREADABLE"
         return result
