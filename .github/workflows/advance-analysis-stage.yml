@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: advance-analysis-stage
@@ -69,3 +70,10 @@ jobs:
             sleep $((i*2))
           done
           exit 1
+      - name: Materialize next stage campaigns
+        env:
+          GH_TOKEN: "${{ github.token }}"
+        run: |
+          set -euo pipefail
+          gh workflow run create-resumable-campaigns.yml --repo "${{ github.repository }}" --ref main
+          gh workflow run resumable-campaign-controller.yml --repo "${{ github.repository }}" --ref main
