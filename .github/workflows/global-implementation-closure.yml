@@ -1,0 +1,38 @@
+name: global-implementation-closure
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: global-implementation-closure
+  cancel-in-progress: false
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: Rapt0r06300/hyperliquid-smart-wallet-observer
+          ref: main
+          path: alina
+          fetch-depth: 0
+      - name: Build fail-closed global closure receipt
+        run: |
+          set -euo pipefail
+          python tools/build_global_implementation_closure.py --alina-root alina
+      - name: Publish closure receipt
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
+          git diff --cached --quiet && exit 0
+          git commit -m "closure: publish cross-repo implementation receipt"
+          git pull --rebase origin main
+          git push origin HEAD:main
