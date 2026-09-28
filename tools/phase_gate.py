@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fail-closed phase/epoch gate for Dataset V2 campaign creation and workers."""
 from __future__ import annotations
-import argparse, json, sys
+import argparse, json, re, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -99,6 +99,10 @@ def main() -> int:
     campaign_id = str(manifest.get("campaign_id") or "").strip()
     if not campaign_id:
         raise SystemExit("manifest campaign_id required")
+    operator_request_id = manifest.get("operator_request_id")
+    if campaign_id.startswith("operator-"):
+        if not isinstance(operator_request_id, str) or not re.fullmatch(r"[0-9a-f]{64}", operator_request_id):
+            raise SystemExit("operator campaign requires canonical request identity")
     creation_phase = str(manifest.get("creation_phase") or "")
     if creation_phase not in PHASES:
         raise SystemExit("manifest creation_phase invalid")
