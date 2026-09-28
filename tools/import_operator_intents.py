@@ -20,6 +20,7 @@ ANALYZE = {
     "module_pnl_proof",
     "scoreboard",
     "full_cycle",
+    "drain",
 }
 KIND = {
     "replay": "replay",
