@@ -184,3 +184,35 @@ def test_external_event_binding_cannot_claim_pnl_or_omit_a_module() -> None:
     status, reasons = classify_manifest(value)
     assert status == "REJECT"
     assert "INVALID:event_intelligence" in reasons
+
+
+def test_external_event_runtime_requires_all_bound_evidence_receipts() -> None:
+    value = manifest()
+    value["family"] = "external_events"
+    value["provenance"]["transports"] = ["https"]
+    value["reconciliation"] = {
+        "status": "UNAVAILABLE",
+        "reason": "NO_INDEPENDENT_EXACT_REFERENCE",
+    }
+    value["event_intelligence"] = _event_contract()
+    value["event_intelligence_runtime"] = {
+        "schema": "alina.event_intelligence_runtime_evidence.v1",
+        "runtime_evidence_sha256": "a" * 64,
+        "accepted_event_count": 4,
+        "economic_research_sha256": "b" * 64,
+        "economic_research_state": "UNMEASURABLE",
+        "market_response_sha256": "c" * 64,
+        "market_response_state": "UNMEASURABLE",
+        "research_protocol_sha256": "d" * 64,
+        "research_protocol_state": "UNMEASURABLE",
+        "proof_state": "STRUCTURAL_ONLY",
+        "proof_of_pnl_allowed": False,
+    }
+    status, reasons = classify_manifest(value)
+    assert status == "PARTIAL"
+    assert "EVENT_INTELLIGENCE_RUNTIME_EVIDENCE_INVALID" not in reasons
+
+    del value["event_intelligence_runtime"]["economic_research_sha256"]
+    status, reasons = classify_manifest(value)
+    assert status == "PARTIAL"
+    assert "EVENT_INTELLIGENCE_RUNTIME_EVIDENCE_INVALID" in reasons
