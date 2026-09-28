@@ -189,6 +189,8 @@ def main():
                 args.phase,
                 "--phase-epoch",
                 str(args.phase_epoch),
+                "--operator-request-id",
+                request_id,
             ]
             if args.phase == "ANALYZE":
                 command += [
