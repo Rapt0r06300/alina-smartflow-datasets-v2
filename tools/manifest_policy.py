@@ -178,6 +178,20 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
     elif not str(manifest.get("replay_reason") or "").strip():
         reasons.append("REPLAY_RECEIPT_NOT_PROVEN")
 
+    if str(manifest.get("family") or "").lower() == "external_events":
+        runtime = manifest.get("event_intelligence_runtime")
+        if not isinstance(runtime, Mapping):
+            reasons.append("EVENT_INTELLIGENCE_RUNTIME_EVIDENCE_MISSING")
+        elif not (
+            runtime.get("schema") == "alina.event_intelligence_runtime_evidence.v1"
+            and _SHA256.fullmatch(str(runtime.get("runtime_evidence_sha256") or "").lower())
+            and _int(runtime.get("accepted_event_count")) is not None
+            and _int(runtime.get("accepted_event_count")) >= 0
+            and runtime.get("proof_state") == "STRUCTURAL_ONLY"
+            and runtime.get("proof_of_pnl_allowed") is False
+        ):
+            reasons.append("EVENT_INTELLIGENCE_RUNTIME_EVIDENCE_INVALID")
+
     trade_family = str(manifest.get("family") or "").lower() in {
         "trades", "agg_trades", "fills", "userfills", "user_fills",
         "copy_vault_fills",
