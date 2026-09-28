@@ -107,7 +107,23 @@ def main() -> None:
             "checkpoint_lineage": list(row.get("checkpoint_lineage") or []),
             "terminal_evidence_digest": row.get("terminal_evidence_digest") or (
                 next(iter(reversed(list((row.get("completed_units") or {}).values()))), {}).get("sha256")
-                if row.get("status") == "COMPLETE" else None
+                if row.get("status") == "COMPLETE"
+                else hashlib.sha256(
+                    json.dumps(
+                        {
+                            "campaign_id": row.get("campaign_id"),
+                            "status": row.get("status"),
+                            "reason": row.get("status_reason"),
+                            "completed_units": row.get("completed_units") or {},
+                            "checkpoint_lineage": row.get("checkpoint_lineage") or [],
+                        },
+                        sort_keys=True,
+                        separators=(",", ":"),
+                        ensure_ascii=False,
+                    ).encode("utf-8")
+                ).hexdigest()
+                if row.get("status") in {"COMPLETE", "FAILED", "UNAVAILABLE", "PARTIAL", "REJECT"}
+                else None
             ),
         }
         if args.apply:
