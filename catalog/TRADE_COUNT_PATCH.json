@@ -5365,6 +5365,7 @@
       "record_count_scanned": 2,
       "trade_count": 16,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5373,6 +5374,7 @@
       "record_count_scanned": 845,
       "trade_count": 1554,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5381,6 +5383,7 @@
       "record_count_scanned": 134,
       "trade_count": 254,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5389,6 +5392,7 @@
       "record_count_scanned": 736,
       "trade_count": 1565,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5397,6 +5401,7 @@
       "record_count_scanned": 119,
       "trade_count": 185,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5405,6 +5410,7 @@
       "record_count_scanned": 739,
       "trade_count": 1814,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5413,6 +5419,7 @@
       "record_count_scanned": 35,
       "trade_count": 104,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5537,6 +5544,7 @@
       "record_count_scanned": 14,
       "trade_count": 15,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5545,6 +5553,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5553,6 +5562,7 @@
       "record_count_scanned": 3,
       "trade_count": 5,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5561,6 +5571,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5569,6 +5580,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5577,6 +5589,7 @@
       "record_count_scanned": 3,
       "trade_count": 3,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5585,6 +5598,7 @@
       "record_count_scanned": 8,
       "trade_count": 8,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5593,6 +5607,7 @@
       "record_count_scanned": 3,
       "trade_count": 3,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5674,6 +5689,7 @@
       "record_count_scanned": 4,
       "trade_count": 4,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5682,6 +5698,7 @@
       "record_count_scanned": 43,
       "trade_count": 49,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5690,6 +5707,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5698,6 +5716,7 @@
       "record_count_scanned": 13,
       "trade_count": 14,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5706,6 +5725,7 @@
       "record_count_scanned": 2,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5714,6 +5734,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5787,6 +5808,7 @@
       "record_count_scanned": 2,
       "trade_count": 44,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5795,6 +5817,7 @@
       "record_count_scanned": 3,
       "trade_count": 27,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5851,6 +5874,7 @@
       "record_count_scanned": 23,
       "trade_count": 66,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5859,6 +5883,7 @@
       "record_count_scanned": 3,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5867,6 +5892,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5875,6 +5901,7 @@
       "record_count_scanned": 14,
       "trade_count": 17,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5891,6 +5918,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5924,6 +5952,7 @@
       "record_count_scanned": 325,
       "trade_count": 440,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5932,6 +5961,7 @@
       "record_count_scanned": 134,
       "trade_count": 177,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5940,6 +5970,7 @@
       "record_count_scanned": 10,
       "trade_count": 11,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5980,6 +6011,7 @@
       "record_count_scanned": 1,
       "trade_count": 15,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5988,6 +6020,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -5996,6 +6029,7 @@
       "record_count_scanned": 1,
       "trade_count": 12,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6020,6 +6054,7 @@
       "record_count_scanned": 5,
       "trade_count": 67,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6052,6 +6087,7 @@
       "record_count_scanned": 1,
       "trade_count": 11,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6060,6 +6096,7 @@
       "record_count_scanned": 1,
       "trade_count": 23,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6076,6 +6113,7 @@
       "record_count_scanned": 1,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6084,6 +6122,7 @@
       "record_count_scanned": 3,
       "trade_count": 10,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6092,6 +6131,7 @@
       "record_count_scanned": 1,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6108,6 +6148,7 @@
       "record_count_scanned": 1,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6116,6 +6157,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6132,6 +6174,7 @@
       "record_count_scanned": 7,
       "trade_count": 30,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6140,6 +6183,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6148,6 +6192,7 @@
       "record_count_scanned": 4,
       "trade_count": 7,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6221,6 +6266,7 @@
       "record_count_scanned": 1,
       "trade_count": 7,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6229,6 +6275,7 @@
       "record_count_scanned": 2,
       "trade_count": 11,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6245,6 +6292,7 @@
       "record_count_scanned": 6,
       "trade_count": 16,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6301,6 +6349,7 @@
       "record_count_scanned": 12,
       "trade_count": 52,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6325,6 +6374,7 @@
       "record_count_scanned": 5,
       "trade_count": 58,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6398,6 +6448,7 @@
       "record_count_scanned": 20,
       "trade_count": 32,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6406,6 +6457,7 @@
       "record_count_scanned": 3,
       "trade_count": 3,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6414,6 +6466,7 @@
       "record_count_scanned": 12,
       "trade_count": 28,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6422,6 +6475,7 @@
       "record_count_scanned": 20,
       "trade_count": 23,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6430,6 +6484,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6438,6 +6493,7 @@
       "record_count_scanned": 2,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6446,6 +6502,7 @@
       "record_count_scanned": 20,
       "trade_count": 47,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6527,6 +6584,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6535,6 +6593,7 @@
       "record_count_scanned": 1,
       "trade_count": 29,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6608,6 +6667,7 @@
       "record_count_scanned": 210,
       "trade_count": 467,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6624,6 +6684,7 @@
       "record_count_scanned": 1,
       "trade_count": 20,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6632,6 +6693,7 @@
       "record_count_scanned": 8,
       "trade_count": 10,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6664,6 +6726,7 @@
       "record_count_scanned": 3,
       "trade_count": 29,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6720,6 +6783,7 @@
       "record_count_scanned": 8,
       "trade_count": 50,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6728,6 +6792,7 @@
       "record_count_scanned": 1,
       "trade_count": 3,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6744,6 +6809,7 @@
       "record_count_scanned": 7,
       "trade_count": 21,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6785,6 +6851,7 @@
       "record_count_scanned": 7,
       "trade_count": 31,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6810,6 +6877,7 @@
       "record_count_scanned": 1,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6826,6 +6894,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -6938,6 +7007,7 @@
       "record_count_scanned": 46,
       "trade_count": 223,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7036,6 +7106,7 @@
       "record_count_scanned": 36,
       "trade_count": 42,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7044,6 +7115,7 @@
       "record_count_scanned": 7,
       "trade_count": 11,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7052,6 +7124,7 @@
       "record_count_scanned": 16,
       "trade_count": 19,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7060,6 +7133,7 @@
       "record_count_scanned": 9,
       "trade_count": 9,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7068,6 +7142,7 @@
       "record_count_scanned": 27,
       "trade_count": 30,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7076,6 +7151,7 @@
       "record_count_scanned": 2,
       "trade_count": 4,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7174,6 +7250,7 @@
       "record_count_scanned": 2,
       "trade_count": 7,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7182,6 +7259,7 @@
       "record_count_scanned": 76,
       "trade_count": 296,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7206,6 +7284,7 @@
       "record_count_scanned": 11,
       "trade_count": 14,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7214,6 +7293,7 @@
       "record_count_scanned": 2,
       "trade_count": 2,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7222,6 +7302,7 @@
       "record_count_scanned": 18,
       "trade_count": 23,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7296,6 +7377,7 @@
       "record_count_scanned": 31,
       "trade_count": 72,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7320,6 +7402,7 @@
       "record_count_scanned": 32,
       "trade_count": 40,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7328,6 +7411,7 @@
       "record_count_scanned": 59,
       "trade_count": 99,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7352,6 +7436,7 @@
       "record_count_scanned": 2,
       "trade_count": 4,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7360,6 +7445,7 @@
       "record_count_scanned": 17,
       "trade_count": 17,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7368,6 +7454,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7458,6 +7545,7 @@
       "record_count_scanned": 22,
       "trade_count": 59,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7466,6 +7554,7 @@
       "record_count_scanned": 179,
       "trade_count": 566,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7474,6 +7563,7 @@
       "record_count_scanned": 65,
       "trade_count": 168,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7566,6 +7656,7 @@
       "record_count_scanned": 3,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7574,6 +7665,7 @@
       "record_count_scanned": 3,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7582,6 +7674,7 @@
       "record_count_scanned": 2,
       "trade_count": 4,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7590,6 +7683,7 @@
       "record_count_scanned": 11,
       "trade_count": 21,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7598,6 +7692,7 @@
       "record_count_scanned": 53,
       "trade_count": 155,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7606,6 +7701,7 @@
       "record_count_scanned": 2,
       "trade_count": 5,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7656,6 +7752,7 @@
       "record_count_scanned": 16,
       "trade_count": 19,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7664,6 +7761,7 @@
       "record_count_scanned": 18,
       "trade_count": 24,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7672,6 +7770,7 @@
       "record_count_scanned": 6,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7680,6 +7779,7 @@
       "record_count_scanned": 7,
       "trade_count": 10,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7745,6 +7845,7 @@
       "record_count_scanned": 1,
       "trade_count": 22,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7753,6 +7854,7 @@
       "record_count_scanned": 1,
       "trade_count": 30,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7761,6 +7863,7 @@
       "record_count_scanned": 4,
       "trade_count": 64,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7769,6 +7872,7 @@
       "record_count_scanned": 1,
       "trade_count": 3,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7777,6 +7881,7 @@
       "record_count_scanned": 8,
       "trade_count": 86,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7826,6 +7931,7 @@
       "record_count_scanned": 3,
       "trade_count": 7,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7834,6 +7940,7 @@
       "record_count_scanned": 4,
       "trade_count": 10,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7842,6 +7949,7 @@
       "record_count_scanned": 3,
       "trade_count": 19,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7858,6 +7966,7 @@
       "record_count_scanned": 4,
       "trade_count": 27,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7906,6 +8015,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7914,6 +8024,7 @@
       "record_count_scanned": 1,
       "trade_count": 6,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7922,6 +8033,7 @@
       "record_count_scanned": 1,
       "trade_count": 1,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7946,6 +8058,7 @@
       "record_count_scanned": 23,
       "trade_count": 33,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7954,6 +8067,7 @@
       "record_count_scanned": 14,
       "trade_count": 20,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7962,6 +8076,7 @@
       "record_count_scanned": 36,
       "trade_count": 47,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7970,6 +8085,7 @@
       "record_count_scanned": 10,
       "trade_count": 10,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7978,6 +8094,7 @@
       "record_count_scanned": 8,
       "trade_count": 12,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
@@ -7986,6 +8103,7 @@
       "record_count_scanned": 22,
       "trade_count": 27,
       "trade_count_exact": true,
+      "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
       "unique_trade_count": null,
       "unique_trade_count_exact": false
     },
