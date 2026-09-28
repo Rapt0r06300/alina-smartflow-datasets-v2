@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reconcile publication receipts with durable campaign manifests fail-closed."""
 from __future__ import annotations
-import argparse, hashlib, json
+import argparse, hashlib, json, re
 from pathlib import Path
 
 def main():
@@ -11,11 +11,26 @@ def main():
     a=p.parse_args()
     errors=[]; checked=0
     for receipt_path in sorted(Path(a.receipt_dir).glob("*.json")):
-        row=json.loads(receipt_path.read_text(encoding="utf-8"))
+        try:
+            row=json.loads(receipt_path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as exc:
+            errors.append({"receipt":str(receipt_path),"code":"RECEIPT_INVALID_JSON"})
+            continue
+        if not isinstance(row, dict):
+            errors.append({"receipt":str(receipt_path),"code":"RECEIPT_NOT_OBJECT"})
+            continue
         if row.get("schema")!="alina.publication_receipt.v2":
             continue
         checked+=1
-        campaign_id=str(row.get("campaign_id") or "")
+        campaign_id=str(row.get("campaign_id") or "").strip()
+        unit_id=str(row.get("unit_id") or "").strip()
+        if not campaign_id or not unit_id:
+            errors.append({"receipt":str(receipt_path),"code":"RECEIPT_IDENTITY_MISSING"})
+            continue
+        for key in ("alina_head", "dataset_head"):
+            value = str(row.get(key) or "").lower()
+            if value and not re.fullmatch(r"[0-9a-f]{40}", value):
+                errors.append({"receipt":str(receipt_path),"code":f"INVALID_{key.upper()}"})
         manifest_path=Path(a.campaign_dir)/f"{campaign_id}.json"
         if not manifest_path.is_file():
             errors.append({"receipt":str(receipt_path),"code":"CAMPAIGN_MANIFEST_MISSING"}); continue
@@ -25,7 +40,7 @@ def main():
             errors.append({"receipt":str(receipt_path),"code":"MANIFEST_SHA256_MISMATCH"})
         manifest=json.loads(manifest_bytes.decode("utf-8"))
         units=manifest.get("completed_units") or {}
-        unit=str(row.get("unit_id"))
+        unit=unit_id
         if unit not in units:
             errors.append({"receipt":str(receipt_path),"code":"PUBLISHED_UNIT_NOT_IN_MANIFEST","unit_id":unit})
         elif row.get("checkpoint_id") and isinstance(units.get(unit), dict) and units[unit].get("sha256") != row.get("checkpoint_id"):
