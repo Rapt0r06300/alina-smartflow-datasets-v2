@@ -47,7 +47,8 @@ def promote(manifest_path: str | Path, *, asset_path: str | Path | None = None) 
     manifest["quality_status"] = status
     manifest["quality_reasons"] = reasons
     manifest["validation_allowed"] = status == "SAFE"
-    manifest["proof_of_pnl_allowed"] = status == "SAFE"
+    # Dataset quality authorizes validation inputs only; it never proves strategy PnL.
+    manifest["proof_of_pnl_allowed"] = False
 
     dataset_id = str(manifest.get("dataset_id") or "").strip()
     if not dataset_id:
@@ -86,7 +87,7 @@ def promote(manifest_path: str | Path, *, asset_path: str | Path | None = None) 
     registry["active_dataset"] = {
         "status": index["active_data_status"],
         "validation_allowed": index["active_data_status"] == "SAFE",
-        "proof_of_pnl_allowed": index["active_data_status"] == "SAFE",
+        "proof_of_pnl_allowed": False,
     }
     _atomic_json(REGISTRY_PATH, registry)
     return {
