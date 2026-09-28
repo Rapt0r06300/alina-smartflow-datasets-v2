@@ -197,6 +197,7 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
         raise BackfillError("asset sha256 mismatch")
 
     trade_count = 0
+    trade_count_exact = True
     # Exact identity strings, never truncated hashes: a collision would invalidate an exact count.
     unique_identities: set[str] = set()
     unique_proven = True
@@ -213,7 +214,6 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
             if not isinstance(raw, Mapping):
                 continue
             records += 1
-            trade_count += _trade_increment(raw)
             keys = _native_trade_keys(
                 raw,
                 venue=venue,
@@ -221,13 +221,16 @@ def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
                 symbol=symbol,
             )
             if keys is None:
+                # A summary count is not proof of the underlying trade cardinality.
+                trade_count_exact = False
                 unique_proven = False
             else:
+                trade_count += len(keys)
                 unique_identities.update(keys)
 
     return {
-        "trade_count": trade_count,
-        "trade_count_exact": True,
+        "trade_count": trade_count if trade_count_exact else None,
+        "trade_count_exact": trade_count_exact,
         "unique_trade_count": len(unique_identities) if unique_proven else None,
         "unique_trade_count_exact": unique_proven,
         "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
