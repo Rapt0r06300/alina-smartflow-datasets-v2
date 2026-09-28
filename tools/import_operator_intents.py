@@ -76,6 +76,8 @@ def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, ph
 
 
 def campaign_kinds(intent, analysis_stage=""):
+    if intent == "start_collection":
+        return ("market_collection", "copy_vault_collection", "event_intelligence_collection")
     if intent == "full_cycle":
         return tuple(
             kind for kind, stage in STAGE_BY_KIND.items()
