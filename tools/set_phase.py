@@ -21,6 +21,12 @@ def validate_identity(value: str, name: str) -> str:
     return value
 
 
+def validate_request_id(value: str) -> str:
+    if not re.fullmatch(r"[0-9a-f]{64}", value or ""):
+        raise SystemExit("request id must be exactly 64 lowercase hex characters")
+    return value
+
+
 def validate_stamp(value: str) -> str:
     if not value or not str(value).endswith("Z"):
         raise SystemExit("timestamp must be UTC and end in Z")
@@ -82,7 +88,7 @@ def main():
     parser.add_argument("--path", default="control/alina-phase.json")
     parser.add_argument("--receipt-dir", default="control/phase-receipts")
     args = parser.parse_args()
-    args.request_id = validate_identity(args.request_id, "request id")
+    args.request_id = validate_request_id(args.request_id)
     args.requested_by = validate_identity(args.requested_by, "requested_by")
 
     path = Path(args.path)
