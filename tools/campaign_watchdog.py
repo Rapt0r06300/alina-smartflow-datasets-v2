@@ -9,6 +9,8 @@ import subprocess
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+PENDING_CONTROLLER_SLO_SECONDS = 15 * 60
+
 
 def parse(value):
     parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
@@ -92,6 +94,7 @@ def main():
     backlog_by_kind = {}
     campaign_health = []
     pending_ages_seconds = []
+    stalled_pending = []
     next_due_candidates = []
     lease_summary = []
     stuck = []
@@ -165,6 +168,13 @@ def main():
                 "acquired_at_utc": lease.get("acquired_at_utc"),
                 "expires_at_utc": lease.get("expires_at") or lease.get("expires_at_utc"),
             })
+        if (
+            status == "PENDING"
+            and created_age is not None
+            and created_age > PENDING_CONTROLLER_SLO_SECONDS
+            and int(row.get("attempts") or cursor.get("attempts") or 0) == 0
+        ):
+            stalled_pending.append(str(row.get("campaign_id") or path.stem))
         campaign_health.append({
             "campaign_id": str(row.get("campaign_id") or path.stem),
             "kind": kind,
@@ -242,6 +252,8 @@ def main():
         "kind_counts": dict(sorted(kind_counts.items())),
         "backlog_by_kind": dict(sorted(backlog_by_kind.items())),
         "oldest_pending_age_seconds": max(pending_ages_seconds) if pending_ages_seconds else None,
+        "pending_controller_slo_seconds": PENDING_CONTROLLER_SLO_SECONDS,
+        "stalled_pending_campaigns": sorted(stalled_pending),
         "next_due_campaigns": sorted(next_due_candidates, key=lambda item: item["at_utc"]),
         "active_leases": sorted(lease_summary, key=lambda item: item["campaign_id"]),
         "campaign_health": sorted(campaign_health, key=lambda item: item["campaign_id"]),
