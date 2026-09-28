@@ -13,7 +13,7 @@ on:
       limit:
         description: "Maximum immutable trade assets to scan"
         required: false
-        default: "200"
+        default: "1000"
   schedule:
     - cron: "43 */2 * * *"
 permissions:
@@ -43,7 +43,7 @@ jobs:
           GH_TOKEN: "${{ github.token }}"
         run: |
           set -euo pipefail
-          python tools/backfill_global_unique_trade_counts.py --limit "${{ inputs.limit || '200' }}"
+          python tools/backfill_global_unique_trade_counts.py --limit "${{ inputs.limit || '1000' }}"
           python tools/build_catalog_metrics.py
           python tools/check_dataset_quality.py
       - name: Publish deduplication patch

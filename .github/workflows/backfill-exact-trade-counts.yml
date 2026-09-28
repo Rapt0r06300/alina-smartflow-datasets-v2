@@ -33,6 +33,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
+      - name: Sync latest main before processing
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git rebase origin/main
+
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
@@ -55,8 +62,9 @@ jobs:
           git add catalog/DATA_INDEX.json catalog/DATA_METRICS.json catalog/TRADE_COUNT_PATCH.json datasets
           git diff --cached --quiet && exit 0
           git commit -m "data: backfill verified exact trade counts"
-          for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
-            sleep $((i*2))
-          done
-          exit 1
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

@@ -1,33 +1,45 @@
 name: uncompressed-size-v2
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/uncompressed-size-v2.yml"
+      - "tools/measure_uncompressed_sizes.py"
   workflow_dispatch:
     inputs:
       limit:
         description: "Maximum new assets to measure in this run"
         required: false
-        default: "100"
+        default: "1000"
   schedule:
     - cron: "41 */3 * * *"
 permissions:
   contents: write
 concurrency:
-  group: dataset-v2-uncompressed-size
+  group: dataset-v2-control-plane-index
   cancel-in-progress: false
 jobs:
   measure:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
           persist-credentials: true
-      - uses: actions/setup-python@a26af69be951a213d495c4e3e4022e16d87065
+      - name: Sync latest main before processing
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git rebase origin/main
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.12"
       - name: Measure exact or unavailable sizes
         env:
-          MEASURE_LIMIT: ${{ inputs.limit || '100' }}
+          MEASURE_LIMIT: ${{ inputs.limit || '1000' }}
         run: python tools/measure_uncompressed_sizes.py --limit "${MEASURE_LIMIT}"
       - name: Rebuild catalog metrics
         run: python tools/build_catalog_metrics.py
@@ -39,8 +51,9 @@ jobs:
           git add catalog/UNCOMPRESSED_SIZE_PATCH.json catalog/DATA_METRICS.json
           git diff --cached --quiet && exit 0
           git commit -m "data: advance uncompressed size coverage"
-          for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
-            sleep $((i*2))
-          done
-          exit 1
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
