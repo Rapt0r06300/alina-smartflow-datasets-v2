@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: resumable-campaign-creation-intent
+  group: resumable-campaign-creation-hourly
   cancel-in-progress: false
 
 jobs:
