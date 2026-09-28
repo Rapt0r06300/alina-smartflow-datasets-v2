@@ -11,7 +11,20 @@ from pathlib import Path
 
 
 def parse(value):
-    return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise ValueError("timestamp must be timezone-aware")
+    return parsed.astimezone(timezone.utc)
+
+
+def _write_atomic(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(payload, sort_keys=True, indent=2) + "\n")
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
 
 
 def _run_state(run_id: str) -> tuple[str, str]:
@@ -137,10 +150,7 @@ def main():
             ok, detail = _dispatch_successor(row, repository, now)
             if ok:
                 dispatched.append(str(row.get("campaign_id") or path.stem))
-                path.write_text(
-                    json.dumps(row, sort_keys=True, indent=2) + "\n",
-                    encoding="utf-8",
-                )
+                _write_atomic(path, row)
             else:
                 dispatch_failures.append({
                     "campaign_id": str(row.get("campaign_id") or path.stem),
@@ -172,10 +182,7 @@ def main():
                 row["stuck_reason"] = "LEASE_EXPIRED_REQUIRES_RECONCILIATION"
                 row["updated_at"] = now.isoformat().replace("+00:00", "Z")
                 lease_repairs.append(campaign_id)
-                path.write_text(
-                    json.dumps(row, sort_keys=True, indent=2) + "\\n",
-                    encoding="utf-8",
-                )
+                _write_atomic(path, row)
     receipt = {
         "schema": "alina.campaign_watchdog_receipt.v1",
         "generated_at_utc": now.isoformat().replace("+00:00", "Z"),
@@ -201,8 +208,7 @@ def main():
         ),
     }
     target = Path(a.output)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    _write_atomic(target, receipt)
 
 
 if __name__ == "__main__":
