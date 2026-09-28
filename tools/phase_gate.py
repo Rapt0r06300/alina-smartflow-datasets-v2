@@ -2,7 +2,7 @@
 """Fail-closed phase/epoch gate for Dataset V2 campaign creation and workers."""
 from __future__ import annotations
 import argparse, json, sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 PHASES={"IDLE","COLLECT","ANALYZE"}
@@ -36,8 +36,12 @@ def load(path: Path) -> dict:
         raise SystemExit("invalid phase epoch")
     for key in ("requested_at_utc","collection_started_at_utc","collection_cutoff_at_utc"):
         if value[key] is not None:
-            try: datetime.fromisoformat(str(value[key]).replace("Z","+00:00"))
-            except ValueError: raise SystemExit(f"invalid timestamp: {key}")
+            try:
+                parsed = datetime.fromisoformat(str(value[key]).replace("Z","+00:00"))
+            except ValueError:
+                raise SystemExit(f"invalid timestamp: {key}")
+            if parsed.tzinfo is None or parsed.utcoffset() is None:
+                raise SystemExit(f"timestamp must be timezone-aware: {key}")
     phase=value["phase"]
     if phase=="IDLE" and any(value[k] is not None for k in ("collection_started_at_utc","collection_cutoff_at_utc","source_collection_epoch","analysis_stage")):
         raise SystemExit("IDLE state contains active-phase fields")
@@ -45,7 +49,9 @@ def load(path: Path) -> dict:
         raise SystemExit("invalid COLLECT state")
     if phase=="ANALYZE" and (
         value["collection_cutoff_at_utc"] is None
+        or isinstance(value["source_collection_epoch"], bool)
         or not isinstance(value["source_collection_epoch"], int)
+        or value["source_collection_epoch"] < 1
         or value["analysis_stage"] not in ANALYSIS_STAGES
     ):
         raise SystemExit("invalid ANALYZE state")
