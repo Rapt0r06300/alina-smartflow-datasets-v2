@@ -476,26 +476,3 @@ jobs:
             sleep $((i*2))
           done
           exit 1
-
-      - name: Dispatch current-epoch collection successor
-        if: steps.claim.outputs.skip != 'true' && steps.pin.outputs.phase == 'COLLECT' && steps.unit.outcome == 'success' && (inputs.max_units == 0 || inputs.max_units == '')
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          M="catalog/campaigns/$CAMPAIGN_ID.json"
-          STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
-          if [ "$STATUS" != "CONTINUATION_REQUIRED" ]; then
-            echo "No successor dispatch for terminal or stuck status=$STATUS"
-            exit 0
-          fi
-          python tools/phase_gate.py manifest --manifest "$M"
-          gh workflow run resumable-campaign-worker.yml \
-            --repo "$GITHUB_REPOSITORY" \
-            --ref main \
-            -f campaign_id="$CAMPAIGN_ID" \
-            -f phase_epoch="${{ steps.pin.outputs.phase_epoch }}" \
-            -f generation="$UNIT" \
-            -f predecessor_run_id="$GITHUB_RUN_ID" \
-            -f requested_handoff_at_utc="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
