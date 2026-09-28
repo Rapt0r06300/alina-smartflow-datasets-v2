@@ -18,7 +18,7 @@ def test_metrics_file_is_machine_readable_and_counts_shards():
     assert "TRADE_SHARDS_WITH_EXACT_COUNT" in totals
     assert "TRADE_SHARDS_MISSING_EXACT_COUNT" in totals
     assert "TOTAL_TRADES_COUNT_COVERAGE_COMPLETE" in totals
-    assert out["schema_version"] == "alina.data_metrics.v3"
+    assert out["schema_version"] == "alina.data_metrics.v4"
 
 
 def test_trade_totals_never_zero_fill_unknown_legacy_counts(tmp_path, monkeypatch):
