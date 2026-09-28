@@ -16,7 +16,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dataset-health-receipt
+  group: dataset-v2-receipt-publish
   cancel-in-progress: false
 jobs:
   generate:
@@ -42,4 +42,5 @@ jobs:
           git add catalog/DATASET_HEALTH_RECEIPT.json catalog/COPY_VAULT_COVERAGE_RECEIPT.json catalog/CAMPAIGN_RESILIENCE_RECEIPT.json
           git diff --cached --quiet && exit 0
           git commit -m "health: publish Dataset V2 receipt"
+          git pull --rebase origin main
           git push origin HEAD:main

@@ -86,7 +86,7 @@ def main() -> int:
                         "status": status or None,
                     }
                 )
-            if lease is not None:
+            if lease is not None and status not in LEGACY_TERMINAL_STATUSES:
                 violations.append({"campaign_id": campaign_id, "code": "LEGACY_V1_LEASE_ACTIVE"})
             continue
 
