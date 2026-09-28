@@ -133,7 +133,15 @@ def main():
                 continue
             if args.analysis_stage not in set(STAGE_BY_KIND.values()):
                 raise SystemExit("ANALYZE import requires a valid explicit analysis stage")
+        requested_family = str((row.get("config") or {}).get("strategy_family") or "all")
+        if requested_family not in {"all", "copy_vault", "lead_lag", "cross_venue_dislocation"}:
+            raise SystemExit(f"unsupported strategy family: {requested_family}")
         for campaign_kind in campaign_kinds(intent, args.analysis_stage):
+            if intent == "start_collection":
+                if requested_family == "copy_vault" and campaign_kind != "copy_vault_collection":
+                    continue
+                if requested_family in {"lead_lag", "cross_venue_dislocation"} and campaign_kind == "copy_vault_collection":
+                    continue
             campaign_id = "operator-" + request_id[:32] + "-" + campaign_kind
             target = Path("catalog/campaigns") / (campaign_id + ".json")
             receipt_target = Path("catalog/dispatch-receipts") / (campaign_id + ".json")
