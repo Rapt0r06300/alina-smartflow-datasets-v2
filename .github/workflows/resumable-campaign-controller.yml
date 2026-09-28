@@ -5,7 +5,7 @@ on:
     paths:
       - '.github/workflows/resumable-campaign-controller.yml'
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '2 * * * *'
   workflow_dispatch:
   workflow_call:
 
@@ -27,7 +27,7 @@ jobs:
       other_count: ${{ steps.due.outputs.other_count }}
     steps:
       - name: Checkout Dataset V2
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
 
@@ -40,7 +40,7 @@ jobs:
           git reset --hard origin/main
 
       - name: Checkout current campaign CLI
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: Rapt0r06300/hyperliquid-smart-wallet-observer
           ref: main
