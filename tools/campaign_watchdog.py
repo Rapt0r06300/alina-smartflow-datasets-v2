@@ -273,7 +273,7 @@ def main():
         "watchdog_status": (
             "BLOCKED"
             if unsafe or phase_error
-            else ("ATTENTION" if stuck or expired_leases or dispatch_failures else "HEALTHY")
+            else ("ATTENTION" if stuck or expired_leases or dispatch_failures or stalled_pending else "HEALTHY")
         ),
     }
     target = Path(a.output)
