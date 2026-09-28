@@ -46,7 +46,7 @@ def digest(value):
     ).hexdigest()
 
 
-def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, phase, phase_epoch, source_epoch):
+def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, phase, phase_epoch, source_epoch, strategy_family="all"):
     receipt = {
         "schema": "alina.dispatch_receipt.v1",
         "request_id": request_id,
@@ -56,6 +56,7 @@ def write_dispatch_receipt(*, campaign_id, request_id, code_sha, dataset_sha, ph
         "creation_phase": phase,
         "phase_epoch": phase_epoch,
         "source_collection_epoch": source_epoch,
+        "strategy_family": strategy_family,
         "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
         "dispatched_at_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "paper_only": True,
@@ -157,6 +158,7 @@ def main():
                         phase=str(existing.get("creation_phase") or args.phase),
                         phase_epoch=int(existing.get("phase_epoch") or args.phase_epoch),
                         source_epoch=existing.get("source_collection_epoch"),
+                        strategy_family=requested_family,
                     )
                 continue
 
@@ -224,6 +226,7 @@ def main():
                 phase=args.phase,
                 phase_epoch=args.phase_epoch,
                 source_epoch=args.source_collection_epoch if args.phase == "ANALYZE" else None,
+                strategy_family=requested_family,
             )
             print(
                 json.dumps(
