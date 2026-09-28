@@ -77,7 +77,7 @@ def main() -> int:
     event_wiring_complete = bool(
         event_summary
         and not any(int(event_summary.get(key, 0)) for key in (
-            "MISSING", "BROKEN", "IMPLEMENTED_BUT_NOT_WIRED", "IMPLEMENTED_BUT_PARTIAL"
+            "MISSING", "BROKEN", "IMPLEMENTED_BUT_NOT_WIRED"
         ))
     )
     exact_coverage_complete = all(coverage.get(key) is True for key in (
@@ -108,6 +108,8 @@ def main() -> int:
             "idea_count": len(event_status.get("items", [])) if isinstance(event_status, dict) else 0,
             "summary": event_summary or {},
             "wiring_complete": event_wiring_complete,
+            "partial_proof_count": int((event_summary or {}).get("IMPLEMENTED_BUT_PARTIAL", 0)),
+            "economic_proof_complete": event_wiring_complete and int((event_summary or {}).get("IMPLEMENTED_BUT_PARTIAL", 0)) == 0,
             "economic_proof_allowed": False,
         },
         "dataset": {
