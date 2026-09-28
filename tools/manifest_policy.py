@@ -187,6 +187,8 @@ def classify_manifest(manifest: Mapping[str, Any]) -> tuple[str, list[str]]:
             and _SHA256.fullmatch(str(runtime.get("runtime_evidence_sha256") or "").lower())
             and _int(runtime.get("accepted_event_count")) is not None
             and _int(runtime.get("accepted_event_count")) >= 0
+            and _SHA256.fullmatch(str(runtime.get("research_protocol_sha256") or "").lower())
+            and runtime.get("research_protocol_state") in {"UNMEASURABLE", "REQUIRES_SCOREBOARD"}
             and runtime.get("proof_state") == "STRUCTURAL_ONLY"
             and runtime.get("proof_of_pnl_allowed") is False
         ):
