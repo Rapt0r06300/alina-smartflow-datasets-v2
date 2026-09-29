@@ -88,10 +88,20 @@ def _native_trade_keys(
             keys.append(f"{venue}|{family}|{symbol}|{prefix}|{value}")
 
     if venue == "binance" and isinstance(raw, Mapping):
+        # Websocket envelopes carry compact native keys; official archive
+        # normalizers may expose the same keys at the TickEnvelope top level.
+        source = raw
         if family == "agg_trades":
-            add("a", raw.get("a"))
+            add("a", source.get("a") or source.get("agg_trade_id") or record.get("agg_trade_id"))
         else:
-            add("t", raw.get("t"))
+            add(
+                "t",
+                source.get("t")
+                or source.get("trade_id")
+                or source.get("id")
+                or record.get("trade_id")
+                or record.get("native_id"),
+            )
         return keys or None
 
     if venue == "hyperliquid" and isinstance(raw, Mapping):
@@ -117,21 +127,24 @@ def _native_trade_keys(
 
     if venue == "bybit" and isinstance(raw, Mapping):
         rows = raw.get("data")
-        if isinstance(rows, list):
-            for row in rows:
-                if isinstance(row, Mapping):
-                    if row.get("i") is not None:
-                        add("i", row.get("i"))
-                    else:
-                        fallback = (
-                            row.get("T"),
-                            row.get("p"),
-                            row.get("v"),
-                            row.get("S"),
-                            row.get("s"),
-                        )
+        if not isinstance(rows, list):
+            rows = [raw]
+        for row in rows:
+            if isinstance(row, Mapping):
+                native = row.get("i") or row.get("trade_id") or row.get("execId")
+                if native is not None:
+                    add("i", native)
+                else:
+                    fallback = (
+                        row.get("T") or row.get("timestamp"),
+                        row.get("p") or row.get("price"),
+                        row.get("v") or row.get("size"),
+                        row.get("S") or row.get("side"),
+                        row.get("s") or row.get("symbol") or symbol,
+                    )
+                    if any(value is not None for value in fallback[:-1]):
                         add("fallback", "|".join("" if v is None else str(v) for v in fallback))
-            return keys or None
+        return keys or None
 
     if venue == "okx" and isinstance(raw, Mapping):
         rows = raw.get("data")
