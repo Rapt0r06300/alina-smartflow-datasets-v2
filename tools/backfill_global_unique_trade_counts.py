@@ -14,7 +14,10 @@ import tempfile
 from pathlib import Path
 from typing import Any, Mapping
 
-from backfill_exact_trade_counts import _download, _native_trade_keys
+try:
+    from tools.backfill_exact_trade_counts import _download, _native_trade_keys
+except ModuleNotFoundError:
+    from backfill_exact_trade_counts import _download, _native_trade_keys
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
