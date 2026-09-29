@@ -1,10 +1,10 @@
 {
-  "alina_head": "c97413fedcc0f9610491e44a1eaf57f43bec32fc",
+  "alina_head": "710d022e5c1fee23639df14873bb170a21cb820f",
   "cloud_only": true,
   "dataset": {
     "campaign_count": 374,
     "coverage": {
-      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 1,
+      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 2,
       "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
       "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "b95e928b112a84d7153a8434cb47aac93721eb74a3c3ea539ae1241e06d2c7f9",
       "PARTIAL_SHARDS": 16619,
@@ -28,7 +28,7 @@
       "TOTAL_TRADES_REJECTED": 25404113,
       "TOTAL_TRADES_REPLAYABLE": 482100,
       "TOTAL_TRADES_SAFE": 6687,
-      "TOTAL_UNCOMPRESSED_BYTES": 15085409650,
+      "TOTAL_UNCOMPRESSED_BYTES": 15186118270,
       "TOTAL_UNIQUE_RECORDS": 0,
       "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
       "TOTAL_UNIQUE_TRADES_GLOBAL": 1021328,
@@ -40,19 +40,19 @@
       "TRADE_SHARDS_WITH_EXACT_COUNT": 2251,
       "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768,
       "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": false,
-      "UNCOMPRESSED_SIZE_EXACT_ASSETS": 920,
-      "UNCOMPRESSED_SIZE_PATCH_DIGEST": "4de59466a97de6ef298731ef1a5b9cd935ae699c9a3cf6d1ddf5073a6ac1ee69",
-      "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 940,
-      "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 34195,
+      "UNCOMPRESSED_SIZE_EXACT_ASSETS": 970,
+      "UNCOMPRESSED_SIZE_PATCH_DIGEST": "1fdb0fae9700c445b39338b4f891f7d5eda64742df1dc52f69bdfe96316b48a2",
+      "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 950,
+      "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 34135,
       "UNIQUE_RECORDS_COVERAGE_COMPLETE": false,
       "UNIQUE_RECORD_COUNT_MISSING_SHARDS": 36055,
       "VALID_RECORDS_COVERAGE_COMPLETE": false,
       "VALID_RECORD_COUNT_MISSING_SHARDS": 36055
     },
     "metrics_digest": null,
-    "watchdog_status": "BLOCKED"
+    "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "167aef33b921b72b387d375b142ee712df4fba4c",
+  "dataset_v2_head": "2be95fddabccf056975e5110a211d9c6fc8fb155",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": false,
@@ -102,21 +102,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-29T06:13:11.865060Z",
+  "generated_at_utc": "2026-09-29T10:56:23.594287Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": null,
     "collection_cutoff_at_utc": null,
-    "collection_started_at_utc": null,
-    "epoch": 1,
-    "phase": "IDLE",
-    "request_id": "bootstrap-idle",
-    "requested_at_utc": "2026-09-27T00:00:00Z",
-    "requested_by": "bootstrap",
+    "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
+    "epoch": 2,
+    "phase": "COLLECT",
+    "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "requested_at_utc": "2026-09-29T10:48:55.506207Z",
+    "requested_by": "codex-work-cloud",
     "schema_version": 1,
     "source_collection_epoch": null
   },
-  "receipt_digest": "1c73a6f09dc9a88e83a8510bf3b8221b186616429589678e03bb0a66002100e0",
+  "receipt_digest": "15d9ada161769897ffc181674b70953b72d0bab4b5fd3218047ec6d60cd8d9a4",
   "schema": "alina.global_implementation_closure.v1",
   "security": {
     "carry": "DISABLED_BY_SCOPE",
