@@ -166,3 +166,10 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
     assert "self-hosted" not in bridge + backfill
     assert "hl_observer.ops.v2_dataset_bridge" in bridge
     assert "backfill_exact_trade_counts.py" in backfill
+
+
+def test_campaign_watchdog_rebases_on_concurrent_receipt_writers():
+    text = _workflow("campaign-watchdog.yml")
+    assert "git fetch origin main" in text
+    assert "git rebase origin/main" in text
+    assert "for attempt in 1 2 3 4 5" in text
