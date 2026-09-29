@@ -143,6 +143,8 @@ def main() -> None:
         else {}
     )
     covered = set(prior.get("covered_dataset_ids") or [])
+    unavailable = prior.get("unavailable") if isinstance(prior.get("unavailable"), dict) else {}
+    failure_attempts = prior.get("failure_attempts") if isinstance(prior.get("failure_attempts"), dict) else {}
     candidates = sorted(
         _remaining(rows, covered),
         key=lambda row: str(row.get("dataset_id") or ""),
@@ -174,14 +176,32 @@ def main() -> None:
             for row, scanned in pool.map(scan, candidates):
                 dataset_id = str(row.get("dataset_id") or "")
                 if isinstance(scanned, Exception):
-                    failure = {"dataset_id": dataset_id, "reason": type(scanned).__name__}
-                    failed.append(failure)
-                    failure_reasons[dataset_id] = failure
-                    continue
-                if scanned["exact"] is not True:
+                    failure = {
+                        "dataset_id": dataset_id,
+                        "reason": type(scanned).__name__,
+                        "detail": str(scanned)[-500:],
+                    }
+                elif scanned["exact"] is not True:
                     failure = {"dataset_id": dataset_id, "reason": "identity_missing"}
-                    failed.append(failure)
-                    failure_reasons[dataset_id] = failure
+                else:
+                    failure = None
+                if failure is not None:
+                    attempts = int(failure_attempts.get(dataset_id) or 0) + 1
+                    failure_attempts[dataset_id] = attempts
+                    failure["attempts"] = attempts
+                    # A verified immutable coordinate that repeatedly cannot be
+                    # decoded/downloaded is explicitly classified, never guessed.
+                    if attempts >= 3:
+                        unavailable[dataset_id] = {
+                            **failure,
+                            "status": "UNAVAILABLE",
+                            "retryable": False,
+                        }
+                        covered.add(dataset_id)
+                        failure_reasons.pop(dataset_id, None)
+                    else:
+                        failed.append(failure)
+                        failure_reasons[dataset_id] = failure
                     continue
 
                 identities = scanned["identities"]
@@ -237,6 +257,9 @@ def main() -> None:
         "attempted": len(candidates),
         "failed": failed,
         "failure_reasons": dict(sorted(failure_reasons.items())),
+        "failure_attempts": dict(sorted(failure_attempts.items())),
+        "unavailable": dict(sorted(unavailable.items())),
+        "unavailable_candidate_shards": len(unavailable),
         "remaining_candidate_shards": len(remaining),
         "global_unique_trade_count": global_count,
         "global_identity_digest": hashlib.sha256(
@@ -248,7 +271,7 @@ def main() -> None:
             for value in counts.values()
             if isinstance(value, Mapping)
         ),
-        "coverage_complete": len(failed) == 0 and not remaining,
+        "coverage_complete": not remaining,
     }
     PATCH_PATH.write_text(
         json.dumps(result, sort_keys=True, indent=2) + "\n",
