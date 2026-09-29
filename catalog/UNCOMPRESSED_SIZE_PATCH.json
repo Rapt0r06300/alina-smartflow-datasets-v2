@@ -1,248 +1,8 @@
 {
   "attempted": 1000,
   "coverage_complete": false,
-  "exact_assets": 860,
+  "exact_assets": 920,
   "failed": [
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790204480942-1790204601072-4592b314aee7",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790225428134-1790225571014-0044f1af0e6c",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790256848748-1790256983354-25b19342ddb5",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790291824469-1790291954469-b6a6bc499626",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790312284066-1790312411413-b855be837037",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-babyusdt-1790344069037-1790344192840-e11b1cefb3fa",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790117943582-1790118072192-4c6404827465",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790138724509-1790138844087-fb5c5a791db9",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790170777177-1790170902120-bb1d8cdf12a5",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790204466586-1790204604129-b387dc4eed46",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790225430412-1790225562081-a8a1633fb577",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790256842530-1790256980726-f3654bb3f14d",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790291824867-1790291952111-0a0a6fc52762",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790312288403-1790312429541-3289813a4f6e",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bchusdt-1790344063944-1790344205312-b0eb2ef5f977",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790117940771-1790118076036-1351d64d400f",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790138734603-1790138868559-6f53fc3f8b2b",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790170774977-1790170906008-07083faede6a",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790204470096-1790204615281-ae22f303eb15",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790225429413-1790225566052-c0a0b506f34d",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790256857032-1790256982843-49f201c8c766",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790291825918-1790291954452-0753d2721b04",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790312287285-1790312412157-18b77b9cf2b0",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-berausdt-1790344067994-1790344212192-b79ef204ec20",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790117942736-1790118076062-69bcacc6edab",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790138724009-1790138872903-5ef0aa157491",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790170775741-1790170901420-ab3a1d8ab99a",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790204475767-1790204604118-7b346d3f6452",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790225428404-1790225568560-df0370324e08",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790256847868-1790256989417-3aef15527a5f",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790291827441-1790291975348-d410fb6b1627",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790312278596-1790312399134-ebccc7ffc7f6",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bigtimeusdt-1790344063501-1790344184516-3b2a4b212dfb",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790117947598-1790118076059-b91f5012237e",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790138725332-1790138866061-3a740aaaee1b",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790170774600-1790170911078-f2690e2684cc",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790204470502-1790204603370-774f122897b0",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790225438204-1790225585318-a26ff692bdfd",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790256855509-1790256984068-ec56c6d48079",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790291829671-1790291962840-9ceb61e72486",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790312287187-1790312429538-3f8163c88948",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-biousdt-1790344070152-1790344199503-c4ead8094362",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790117941204-1790118076050-69a5803fc454",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790138718582-1790138861803-e3e91e57015c",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790170776684-1790170904285-68575207bfd0",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790204470908-1790204598592-9c60f8d3e8c3",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790225439243-1790225561745-3332406da883",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790256850339-1790256980741-5a47ff468252",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790291825942-1790291969474-10066055ee35",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790312281793-1790312423353-20d87223d2de",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-blurusdt-1790344068448-1790344192818-a2555f64f34f",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790117941736-1790118078507-da736355d423",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790138726551-1790138861377-16ea35bf5480",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790170776879-1790170901395-b9247f6c2f70",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790204458064-1790204596025-7fcb6b9985f2",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790225442580-1790225571041-d118f2bf5e54",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790256852511-1790256982817-c4991c22c1cc",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790291824829-1790291963394-4ea4e5cfb367",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790312284009-1790312405366-ecc446a85a23",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
-    {
-      "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790344063167-1790344193388-fecf86fb6d3b",
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
-    },
     {
       "dataset_id": "bitget-public-ws-ticker-bnbusdt-1790364007765-1790364134445-5270b66930ae",
       "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
@@ -3762,10 +3522,250 @@
     {
       "dataset_id": "bybit-public-ws-trades-trxusdt-1790431939039-1790432809089-a76168767871",
       "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "bybit-public-ws-trades-wifusdt-1790364011974-1790364903285-da494da60c10",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "bybit-public-ws-trades-wifusdt-1790431937897-1790432820678-3af055380c1c",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "bybit-public-ws-trades-xrpusdt-1790364009374-1790364906182-eee72f8724a3",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "bybit-public-ws-trades-xrpusdt-1790431937665-1790432830183-a75b1c1f5953",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790117942173-1790130540074-34d3763242de",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790138727380-1790151325679-417fdaf5f7fc",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790170777165-1790183375566-986e4933c575",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790204457865-1790217055770-9e80d970157e",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790225443052-1790238041951-bd9b6d245c64",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790256853377-1790269451378-055ef61b5373",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790291825779-1790304423788-11990b9f7fe4",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790312284348-1790324883452-a4f2297e3747",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-0g-usdt-1790344063370-1790356661667-840b5b505c1f",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790117943227-1790130534528-494c1984fbc3",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790138730317-1790151329017-acaa2eb61885",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790170771111-1790172759914-12f9568241e9",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790204465937-1790217064838-c36a9738bd3b",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790225424226-1790238012625-154bce4d4c61",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790256852712-1790269447711-c481e2c79b30",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790291826663-1790304419464-af690fec62b8",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790312280975-1790324879375-b46cedc4d81e",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-2z-usdt-1790344083657-1790354043970-794f18f3950e",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790117942377-1790130541778-32fbcf5b7e7b",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790138736071-1790151335472-c5cd7c7f2090",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790170775186-1790179336769-040db55505fd",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790204480771-1790217080171-3f589bc16958",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790225428095-1790238027095-d11de54bbd89",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790256848695-1790269447904-eb52ca0ba961",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790291824317-1790304423519-ff12c94869a8",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790312283909-1790324883208-c6dd8008608b",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aave-usdt-1790344068798-1790356667798-5fbc0ca607dd",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790117943472-1790130542819-7f39bcf76ee8",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790138724705-1790151323605-e2fd4685b5ea",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790170775846-1790183375245-4c9c4290bd4f",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790204466256-1790217065658-d33f98198bd4",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790225430058-1790238029457-6c18af151235",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790256842292-1790269441491-47a60ffbf845",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790291824881-1790304424081-f9e3a098294d",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790312288177-1790324887276-2c33ca6a49ac",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790344063685-1790356663085-249627400545",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790364007620-1790367506721-329b1bbcdb15",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-ada-usdt-1790431933729-1790435432929-8481232021df",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790117940426-1790130539533-c0acc3bf2fae",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790138734512-1790151331513-189552c38bf6",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790170775813-1790183373513-db271da37116",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790204469801-1790217068901-a760e9ed26c3",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790225429123-1790238028223-475e077561b0",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790256856407-1790269455810-486e1d075317",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790291826032-1790304425257-8c9825110cdf",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790312287157-1790324886256-6c6fcda761b7",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aero-usdt-1790344067952-1790356667153-92e544a604ff",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790117943911-1790130541713-14d03e7685d4",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790138725120-1790151320643-0753e15f701f",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790170778176-1790183373476-2b93b376e64e",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790204477643-1790217073144-caa04c9c7b5d",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790225429347-1790238027447-59390b2733ba",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790256850971-1790269446972-9379b67c2184",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790291828547-1790304426447-c576699dbc5b",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790312280590-1790324877091-470a56581b46",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
+    },
+    {
+      "dataset_id": "gate-public-ws-l2book-aixbt-usdt-1790344064286-1790356658088-bcc892028467",
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\""
     }
   ],
   "method": "exact_gzip_decompression_byte_count_or_explicit_unavailable",
-  "remaining_assets": 35195,
+  "remaining_assets": 35135,
   "schema": "alina.uncompressed_size_patch.v2",
   "sizes": {
     "binance-usdm-official-archive-trades-btcusdt-1789776000141-1789798765030-80d6b0a5dacb": {
@@ -8069,304 +8069,304 @@
       "uncompressed_bytes": 2002080
     },
     "bitget-public-ws-ticker-babyusdt-1790204480942-1790204601072-4592b314aee7": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "4592b314aee7dece0bfdad39e17a76784bb131fd69eca934f775127a0b1e6a58",
+      "compressed_bytes": 102886,
+      "uncompressed_bytes": 1814725
     },
     "bitget-public-ws-ticker-babyusdt-1790225428134-1790225571014-0044f1af0e6c": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "0044f1af0e6c3ea935cc8fea2ee51a6acf9d76bab81c7b94a455652c66b3b034",
+      "compressed_bytes": 122170,
+      "uncompressed_bytes": 2159536
     },
     "bitget-public-ws-ticker-babyusdt-1790256848748-1790256983354-25b19342ddb5": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "25b19342ddb50d32b6896f6116355bb7a8bffae9095ed5bcd240158cde8aa2b2",
+      "compressed_bytes": 115083,
+      "uncompressed_bytes": 2027201
     },
     "bitget-public-ws-ticker-babyusdt-1790291824469-1790291954469-b6a6bc499626": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b6a6bc4996266552065e60147a526f8af62e8b7c1fc63549e1f1150824f4d2b5",
+      "compressed_bytes": 111016,
+      "uncompressed_bytes": 1964868
     },
     "bitget-public-ws-ticker-babyusdt-1790312284066-1790312411413-b855be837037": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b855be8370373e1d9e8a2379acc2ba5c7828e203334d6b74ec8626f8eded7094",
+      "compressed_bytes": 105284,
+      "uncompressed_bytes": 1907993
     },
     "bitget-public-ws-ticker-babyusdt-1790344069037-1790344192840-e11b1cefb3fa": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "e11b1cefb3faf7f565d98d13cb01cb05eae8004719cc8b632bd06034686346e0",
+      "compressed_bytes": 106537,
+      "uncompressed_bytes": 1864921
     },
     "bitget-public-ws-ticker-bchusdt-1790117943582-1790118072192-4c6404827465": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "4c6404827465e1f0b885d217c202e06aa30db806354af934987c3f167a83cadd",
+      "compressed_bytes": 113297,
+      "uncompressed_bytes": 1926670
     },
     "bitget-public-ws-ticker-bchusdt-1790138724509-1790138844087-fb5c5a791db9": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "fb5c5a791db9bc6f2bc844655b8d4573a6cb2147b35e804bf9d7ad72530c67bb",
+      "compressed_bytes": 104029,
+      "uncompressed_bytes": 1795030
     },
     "bitget-public-ws-ticker-bchusdt-1790170777177-1790170902120-bb1d8cdf12a5": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "bb1d8cdf12a5a2c86510ad50680c1afe2d2aedc90853680e84c48fe2b6d42e47",
+      "compressed_bytes": 112405,
+      "uncompressed_bytes": 1878195
     },
     "bitget-public-ws-ticker-bchusdt-1790204466586-1790204604129-b387dc4eed46": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b387dc4eed4680d92744fde9043e3cd484628b0dba0ceecea3e71aa864cc9f28",
+      "compressed_bytes": 122320,
+      "uncompressed_bytes": 2075135
     },
     "bitget-public-ws-ticker-bchusdt-1790225430412-1790225562081-a8a1633fb577": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "a8a1633fb5778692a473b71ad8190fb2d37c350acc7807ef0581bc77a64740ed",
+      "compressed_bytes": 112419,
+      "uncompressed_bytes": 1991043
     },
     "bitget-public-ws-ticker-bchusdt-1790256842530-1790256980726-f3654bb3f14d": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "f3654bb3f14df2dc10f958ab1680f79772be5771781be5458670de7967286b0e",
+      "compressed_bytes": 123383,
+      "uncompressed_bytes": 2079922
     },
     "bitget-public-ws-ticker-bchusdt-1790291824867-1790291952111-0a0a6fc52762": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "0a0a6fc5276295972a295e3dbf07a57766a5ff1843c6d28dcdcfa3b65eece183",
+      "compressed_bytes": 111305,
+      "uncompressed_bytes": 1921772
     },
     "bitget-public-ws-ticker-bchusdt-1790312288403-1790312429541-3289813a4f6e": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3289813a4f6e8e3d8a76014036e4ea4174397adaae10db924a0dafb87ae4dc72",
+      "compressed_bytes": 118335,
+      "uncompressed_bytes": 2100631
     },
     "bitget-public-ws-ticker-bchusdt-1790344063944-1790344205312-b0eb2ef5f977": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b0eb2ef5f9770e8d07f18d30ccc1b60bd0d8753853db6d5732b44ba3360c6ebb",
+      "compressed_bytes": 125505,
+      "uncompressed_bytes": 2111170
     },
     "bitget-public-ws-ticker-berausdt-1790117940771-1790118076036-1351d64d400f": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "1351d64d400f15e52538a82e2188110f3e04913ef109a1a0d33eb9a6a81c47ca",
+      "compressed_bytes": 114395,
+      "uncompressed_bytes": 2025083
     },
     "bitget-public-ws-ticker-berausdt-1790138734603-1790138868559-6f53fc3f8b2b": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "6f53fc3f8b2b7056848e0f7d0d191ce480ae28274c5a4646021ae76d5c96a769",
+      "compressed_bytes": 110430,
+      "uncompressed_bytes": 2021113
     },
     "bitget-public-ws-ticker-berausdt-1790170774977-1790170906008-07083faede6a": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "07083faede6a0ce99e704f369ab6f1fb34cd0680dc450e3f29e8ec673c31defb",
+      "compressed_bytes": 109477,
+      "uncompressed_bytes": 1933042
     },
     "bitget-public-ws-ticker-berausdt-1790204470096-1790204615281-ae22f303eb15": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "ae22f303eb1574790041fd35b31445735291d6bbe57383285509960cb0c89398",
+      "compressed_bytes": 123447,
+      "uncompressed_bytes": 2196657
     },
     "bitget-public-ws-ticker-berausdt-1790225429413-1790225566052-c0a0b506f34d": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "c0a0b506f34dad898f4e154f20c733427cd5b81eb329e1b40ef348c1342a0894",
+      "compressed_bytes": 116652,
+      "uncompressed_bytes": 2059730
     },
     "bitget-public-ws-ticker-berausdt-1790256857032-1790256982843-49f201c8c766": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "49f201c8c766dba0dc5e99498b1b5c120b0249b21df7936219a2bfbd7e792151",
+      "compressed_bytes": 108193,
+      "uncompressed_bytes": 1900468
     },
     "bitget-public-ws-ticker-berausdt-1790291825918-1790291954452-0753d2721b04": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "0753d2721b049b81ce5307db00ee5a8b283879f5eb56c5cc2af93df26cc35e29",
+      "compressed_bytes": 110394,
+      "uncompressed_bytes": 1947653
     },
     "bitget-public-ws-ticker-berausdt-1790312287285-1790312412157-18b77b9cf2b0": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "18b77b9cf2b0c2c9e08362d6d7dae67760d6a9f60897826a631fdf2595924ce3",
+      "compressed_bytes": 102522,
+      "uncompressed_bytes": 1867722
     },
     "bitget-public-ws-ticker-berausdt-1790344067994-1790344212192-b79ef204ec20": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b79ef204ec20b702c48d69bf018d0820a60e140033b6a6e806be56bf16b9cbf8",
+      "compressed_bytes": 123202,
+      "uncompressed_bytes": 2166000
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790117942736-1790118076062-69bcacc6edab": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "69bcacc6edabeeb47186d820f3b5c8aaef444591eaeb08f8dd353ea19de96127",
+      "compressed_bytes": 113091,
+      "uncompressed_bytes": 2016844
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790138724009-1790138872903-5ef0aa157491": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "5ef0aa1574915bd038762759e11e71508be2f9a31d8b09a4f18c40b729a7a2fd",
+      "compressed_bytes": 126447,
+      "uncompressed_bytes": 2266013
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790170775741-1790170901420-ab3a1d8ab99a": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "ab3a1d8ab99af4df99e76b85c697f3136d05f8efb1343e9f21873eb88c6e4ebe",
+      "compressed_bytes": 104317,
+      "uncompressed_bytes": 1867786
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790204475767-1790204604118-7b346d3f6452": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "7b346d3f645207662ad776d5190d69c195cebd37b4767f622a692185be609443",
+      "compressed_bytes": 110055,
+      "uncompressed_bytes": 1961479
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790225428404-1790225568560-df0370324e08": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "df0370324e087e766fad7fc864735dc952065cb9c164c9e5fa04d76758bf4927",
+      "compressed_bytes": 119887,
+      "uncompressed_bytes": 2145414
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790256847868-1790256989417-3aef15527a5f": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3aef15527a5f3612c3e8d33508a02a12e369db1bcc676f79d3e8d77b34771513",
+      "compressed_bytes": 121054,
+      "uncompressed_bytes": 2155802
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790291827441-1790291975348-d410fb6b1627": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "d410fb6b162704017dc10afccfba45b5185058aaeb2a13eda3bd716627826192",
+      "compressed_bytes": 125642,
+      "uncompressed_bytes": 2258204
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790312278596-1790312399134-ebccc7ffc7f6": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "ebccc7ffc7f6cb245f1804cb81fce14b81dee86e92703ce2108df6f171e0decd",
+      "compressed_bytes": 103084,
+      "uncompressed_bytes": 1842896
     },
     "bitget-public-ws-ticker-bigtimeusdt-1790344063501-1790344184516-3b2a4b212dfb": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3b2a4b212dfbeca1efa4d70d8b89a14091d46674fe7c3159d2a38778b8e61f11",
+      "compressed_bytes": 103830,
+      "uncompressed_bytes": 1847380
     },
     "bitget-public-ws-ticker-biousdt-1790117947598-1790118076059-b91f5012237e": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b91f5012237e53fd13942bff93f7450b8b8951144a7dd77eb5470d1ac97130a0",
+      "compressed_bytes": 109036,
+      "uncompressed_bytes": 1918263
     },
     "bitget-public-ws-ticker-biousdt-1790138725332-1790138866061-3a740aaaee1b": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3a740aaaee1ba89b55d1968208dfda8ab52d432f7d314563797e08d39545921a",
+      "compressed_bytes": 120221,
+      "uncompressed_bytes": 2114215
     },
     "bitget-public-ws-ticker-biousdt-1790170774600-1790170911078-f2690e2684cc": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "f2690e2684cce2579aba6ceb42ee3c32082323a38d7486624df2f60eaa77d2f7",
+      "compressed_bytes": 115671,
+      "uncompressed_bytes": 2025952
     },
     "bitget-public-ws-ticker-biousdt-1790204470502-1790204603370-774f122897b0": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "774f122897b06b20a9ea6341ef37d2eb08c4041f0dc3a863aa8f1dcfa71e584b",
+      "compressed_bytes": 113554,
+      "uncompressed_bytes": 2000451
     },
     "bitget-public-ws-ticker-biousdt-1790225438204-1790225585318-a26ff692bdfd": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "a26ff692bdfd58c6b136495b403c3ad505daf2d8025adad751fa8f76fb1c51da",
+      "compressed_bytes": 126277,
+      "uncompressed_bytes": 2215526
     },
     "bitget-public-ws-ticker-biousdt-1790256855509-1790256984068-ec56c6d48079": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "ec56c6d480793ed6d076a2f944eda22c414232c9b07eeaefcef3fd537842c5d9",
+      "compressed_bytes": 110933,
+      "uncompressed_bytes": 1930100
     },
     "bitget-public-ws-ticker-biousdt-1790291829671-1790291962840-9ceb61e72486": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "9ceb61e72486c78e773fff083330ad46444e1ac251a75e68b48d31e1c9ace5d0",
+      "compressed_bytes": 114124,
+      "uncompressed_bytes": 2004409
     },
     "bitget-public-ws-ticker-biousdt-1790312287187-1790312429538-3f8163c88948": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3f8163c88948952397919f0b21beae42f54f43b6e37159b90e3b40f0780557c6",
+      "compressed_bytes": 118740,
+      "uncompressed_bytes": 2093520
     },
     "bitget-public-ws-ticker-biousdt-1790344070152-1790344199503-c4ead8094362": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "c4ead8094362d55ad13cbe9dbbfcb6e386b0b067b61568fc66d64d06dffdd075",
+      "compressed_bytes": 113019,
+      "uncompressed_bytes": 1939792
     },
     "bitget-public-ws-ticker-blurusdt-1790117941204-1790118076050-69a5803fc454": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "69a5803fc454a0d1f5ac68a3afbd197928d04d44ca276097cb1ccfc08e3512b0",
+      "compressed_bytes": 113917,
+      "uncompressed_bytes": 2035869
     },
     "bitget-public-ws-ticker-blurusdt-1790138718582-1790138861803-e3e91e57015c": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "e3e91e57015c3044060582ca6f20feba937a587bb05bfe240a40e314bb72ce54",
+      "compressed_bytes": 121366,
+      "uncompressed_bytes": 2177214
     },
     "bitget-public-ws-ticker-blurusdt-1790170776684-1790170904285-68575207bfd0": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "68575207bfd04af7e04befe21a3339f7cbc075f5401a66ae57087271bce9f01f",
+      "compressed_bytes": 107283,
+      "uncompressed_bytes": 1912861
     },
     "bitget-public-ws-ticker-blurusdt-1790204470908-1790204598592-9c60f8d3e8c3": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "9c60f8d3e8c3503b901717eec4b99e790f1a605e1a3403fd39cc684eea200f48",
+      "compressed_bytes": 108975,
+      "uncompressed_bytes": 1948154
     },
     "bitget-public-ws-ticker-blurusdt-1790225439243-1790225561745-3332406da883": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "3332406da8834984cab844a51a7d17ba184160674734bb5d7474436fe6ef211a",
+      "compressed_bytes": 104816,
+      "uncompressed_bytes": 1874287
     },
     "bitget-public-ws-ticker-blurusdt-1790256850339-1790256980741-5a47ff468252": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "5a47ff468252ba11f5461315a981d63aae61c6bd423429022917892a6208e21b",
+      "compressed_bytes": 109721,
+      "uncompressed_bytes": 1987063
     },
     "bitget-public-ws-ticker-blurusdt-1790291825942-1790291969474-10066055ee35": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "10066055ee352401b588d9ee1fcd2f18e9f318202626b4d6adf31826c82dab1f",
+      "compressed_bytes": 120880,
+      "uncompressed_bytes": 2186024
     },
     "bitget-public-ws-ticker-blurusdt-1790312281793-1790312423353-20d87223d2de": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "20d87223d2de0c9c630d5dc5f06e1d96a0b871a4d446a66b9539836d7e79c841",
+      "compressed_bytes": 120555,
+      "uncompressed_bytes": 2149464
     },
     "bitget-public-ws-ticker-blurusdt-1790344068448-1790344192818-a2555f64f34f": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "a2555f64f34fc9b107caa69aba5e1b9d8d4622526b6ad9fd362b634c41b28574",
+      "compressed_bytes": 106753,
+      "uncompressed_bytes": 1893964
     },
     "bitget-public-ws-ticker-bnbusdt-1790117941736-1790118078507-da736355d423": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "da736355d42331164802599053b9a15238858c3c6012c2241fe6e703ed6b9af7",
+      "compressed_bytes": 119383,
+      "uncompressed_bytes": 2051620
     },
     "bitget-public-ws-ticker-bnbusdt-1790138726551-1790138861377-16ea35bf5480": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "16ea35bf548036554f248e7260aa29a2b413f91dbb3accf9d52ed8e7384eb106",
+      "compressed_bytes": 118758,
+      "uncompressed_bytes": 2028740
     },
     "bitget-public-ws-ticker-bnbusdt-1790170776879-1790170901395-b9247f6c2f70": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "b9247f6c2f70c55d045b2b7b4428748f8db9780b713e5a5c71511aa4f11a0413",
+      "compressed_bytes": 110672,
+      "uncompressed_bytes": 1866239
     },
     "bitget-public-ws-ticker-bnbusdt-1790204458064-1790204596025-7fcb6b9985f2": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "7fcb6b9985f203d9bba7faf54a98609baaa8c971f8ca7a991fc666f90900e4d5",
+      "compressed_bytes": 121052,
+      "uncompressed_bytes": 2082756
     },
     "bitget-public-ws-ticker-bnbusdt-1790225442580-1790225571041-d118f2bf5e54": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "d118f2bf5e54e61ca3a18455cff8098810524fe2eebb92e381634605b9f52ace",
+      "compressed_bytes": 113297,
+      "uncompressed_bytes": 1939271
     },
     "bitget-public-ws-ticker-bnbusdt-1790256852511-1790256982817-c4991c22c1cc": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "c4991c22c1cca4feed2b2baea9ea810a7b29474a06d5bd8a2dce3e641cf83652",
+      "compressed_bytes": 117262,
+      "uncompressed_bytes": 1954287
     },
     "bitget-public-ws-ticker-bnbusdt-1790291824829-1790291963394-4ea4e5cfb367": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "4ea4e5cfb367445246d70c8b4089cc139e1e639257c3da13725e18db05d49a76",
+      "compressed_bytes": 121315,
+      "uncompressed_bytes": 2094892
     },
     "bitget-public-ws-ticker-bnbusdt-1790312284009-1790312405366-ecc446a85a23": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "ecc446a85a2310ddd5180837a9ef815fc94f35b9e4ef6775dfcd56485c71ac16",
+      "compressed_bytes": 105892,
+      "uncompressed_bytes": 1828935
     },
     "bitget-public-ws-ticker-bnbusdt-1790344063167-1790344193388-fecf86fb6d3b": {
-      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
-      "retryable": true,
-      "status": "UNAVAILABLE"
+      "asset_sha256": "fecf86fb6d3b0240747f5f26bb185c5ce7d007d20b9e0f79dbde4a503e32864b",
+      "compressed_bytes": 114767,
+      "uncompressed_bytes": 1955074
     },
     "bitget-public-ws-ticker-bnbusdt-1790364007765-1790364134445-5270b66930ae": {
       "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
@@ -12764,6 +12764,306 @@
       "status": "UNAVAILABLE"
     },
     "bybit-public-ws-trades-trxusdt-1790431939039-1790432809089-a76168767871": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "bybit-public-ws-trades-wifusdt-1790364011974-1790364903285-da494da60c10": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "bybit-public-ws-trades-wifusdt-1790431937897-1790432820678-3af055380c1c": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "bybit-public-ws-trades-xrpusdt-1790364009374-1790364906182-eee72f8724a3": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "bybit-public-ws-trades-xrpusdt-1790431937665-1790432830183-a75b1c1f5953": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790117942173-1790130540074-34d3763242de": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790138727380-1790151325679-417fdaf5f7fc": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790170777165-1790183375566-986e4933c575": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790204457865-1790217055770-9e80d970157e": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790225443052-1790238041951-bd9b6d245c64": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790256853377-1790269451378-055ef61b5373": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790291825779-1790304423788-11990b9f7fe4": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790312284348-1790324883452-a4f2297e3747": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-0g-usdt-1790344063370-1790356661667-840b5b505c1f": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790117943227-1790130534528-494c1984fbc3": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790138730317-1790151329017-acaa2eb61885": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790170771111-1790172759914-12f9568241e9": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790204465937-1790217064838-c36a9738bd3b": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790225424226-1790238012625-154bce4d4c61": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790256852712-1790269447711-c481e2c79b30": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790291826663-1790304419464-af690fec62b8": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790312280975-1790324879375-b46cedc4d81e": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-2z-usdt-1790344083657-1790354043970-794f18f3950e": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790117942377-1790130541778-32fbcf5b7e7b": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790138736071-1790151335472-c5cd7c7f2090": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790170775186-1790179336769-040db55505fd": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790204480771-1790217080171-3f589bc16958": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790225428095-1790238027095-d11de54bbd89": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790256848695-1790269447904-eb52ca0ba961": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790291824317-1790304423519-ff12c94869a8": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790312283909-1790324883208-c6dd8008608b": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aave-usdt-1790344068798-1790356667798-5fbc0ca607dd": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790117943472-1790130542819-7f39bcf76ee8": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790138724705-1790151323605-e2fd4685b5ea": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790170775846-1790183375245-4c9c4290bd4f": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790204466256-1790217065658-d33f98198bd4": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790225430058-1790238029457-6c18af151235": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790256842292-1790269441491-47a60ffbf845": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790291824881-1790304424081-f9e3a098294d": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790312288177-1790324887276-2c33ca6a49ac": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790344063685-1790356663085-249627400545": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790364007620-1790367506721-329b1bbcdb15": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-ada-usdt-1790431933729-1790435432929-8481232021df": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790117940426-1790130539533-c0acc3bf2fae": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790138734512-1790151331513-189552c38bf6": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790170775813-1790183373513-db271da37116": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790204469801-1790217068901-a760e9ed26c3": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790225429123-1790238028223-475e077561b0": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790256856407-1790269455810-486e1d075317": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790291826032-1790304425257-8c9825110cdf": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790312287157-1790324886256-6c6fcda761b7": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aero-usdt-1790344067952-1790356667153-92e544a604ff": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790117943911-1790130541713-14d03e7685d4": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790138725120-1790151320643-0753e15f701f": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790170778176-1790183373476-2b93b376e64e": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790204477643-1790217073144-caa04c9c7b5d": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790225429347-1790238027447-59390b2733ba": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790256850971-1790269446972-9379b67c2184": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790291828547-1790304426447-c576699dbc5b": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790312280590-1790324877091-470a56581b46": {
+      "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
+      "retryable": true,
+      "status": "UNAVAILABLE"
+    },
+    "gate-public-ws-l2book-aixbt-usdt-1790344064286-1790356658088-bcc892028467": {
       "reason": "BackfillError:non-200 OK status code: 401 Unauthorized body: \"{\\r\\n  \\\"message\\\": \\\"Requires authentication\\\",\\r\\n  \\\"documentation_url\\\": \\\"https://docs.github.com/rest\\\",\\r\\n  \\\"status\\\": \\\"401\\\"\\r\\n}\"",
       "retryable": true,
       "status": "UNAVAILABLE"
