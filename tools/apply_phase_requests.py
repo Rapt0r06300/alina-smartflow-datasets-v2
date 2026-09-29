@@ -68,6 +68,11 @@ def main() -> int:
             args.receipt_dir,
         ]
         subprocess.run(command, check=True)
+        if row["phase"] == "ANALYZE":
+            subprocess.run(
+                [sys.executable, "tools/seal_collection_cutoff.py", "--phase-path", args.phase_path],
+                check=True,
+            )
         applied.append(request_id)
 
     print(json.dumps({"applied": applied, "skipped": skipped}, sort_keys=True))
