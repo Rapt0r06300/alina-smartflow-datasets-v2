@@ -150,11 +150,28 @@ jobs:
 
           make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
 
-          make_campaign             replay             "replay-$BUCKET-v5"             "replay-hourly-newest-safe-v5"             '{"max_shards":64}'
-
-          if [ "$((10#$HOUR % 6))" -eq 0 ]; then
-            make_campaign               backtest               "backtest-$DAY-s$SLOT6-v5"               "backtest-six-hourly-safe-v5"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
-            make_campaign               module_pnl_proof               "pnl-$DAY-s$SLOT6-v5"               "pnl-six-hourly-safe-v5"               "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+          if [ "$PHASE" = "ANALYZE" ]; then
+            ANALYSIS_ID="analysis-e$PHASE_EPOCH"
+            case "$ANALYSIS_STAGE" in
+              REPLAY)
+                make_campaign replay "$ANALYSIS_ID-replay-v2" "analysis-replay-v2" '{"max_shards":128}'
+                ;;
+              BACKTEST)
+                make_campaign backtest "$ANALYSIS_ID-backtest-v2" "analysis-backtest-v2" "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
+                ;;
+              OOS)
+                make_campaign oos "$ANALYSIS_ID-oos-v2" "analysis-oos-v2" "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128,\"freeze_before_evaluation\":true}"
+                ;;
+              FORWARD_PAPER)
+                make_campaign forward_paper "$ANALYSIS_ID-forward-paper-v2" "analysis-forward-paper-v2" '{"max_shards":128,"paper_only":true,"read_only":true}'
+                ;;
+              PNL_PROOF)
+                make_campaign module_pnl_proof "$ANALYSIS_ID-pnl-proof-v2" "analysis-pnl-proof-v2" '{"max_shards":128,"independent_families":true}'
+                ;;
+              SCOREBOARD)
+                make_campaign scoreboard "$ANALYSIS_ID-scoreboard-v2" "analysis-scoreboard-v2" '{"max_shards":128,"independent_families":true}'
+                ;;
+            esac
           fi
 
           if [ "$HOUR" = "06" ]; then
