@@ -51,6 +51,11 @@ def main() -> int:
         request_id = str(row["request_id"])
         receipt = receipt_dir / f"{request_id}.json"
         if receipt.is_file():
+            if row["phase"] == "ANALYZE":
+                subprocess.run(
+                    [sys.executable, "tools/seal_collection_cutoff.py", "--phase-path", args.phase_path],
+                    check=True,
+                )
             skipped.append(request_id)
             continue
         command = [
