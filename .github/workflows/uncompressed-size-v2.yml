@@ -5,12 +5,13 @@ on:
     paths:
       - ".github/workflows/uncompressed-size-v2.yml"
       - "tools/measure_uncompressed_sizes.py"
+      - "tools/build_catalog_metrics.py"
   workflow_dispatch:
     inputs:
       limit:
         description: "Maximum new assets to measure in this run"
         required: false
-        default: "12000"
+        default: "36055"
   schedule:
     - cron: "41 */3 * * *"
 permissions:
@@ -39,7 +40,7 @@ jobs:
           python-version: "3.12"
       - name: Measure exact or unavailable sizes
         env:
-          MEASURE_LIMIT: ${{ inputs.limit || '12000' }}
+          MEASURE_LIMIT: ${{ inputs.limit || '36055' }}
         run: python tools/measure_uncompressed_sizes.py --limit "${MEASURE_LIMIT}" --workers 24
       - name: Rebuild catalog metrics
         run: python tools/build_catalog_metrics.py
@@ -48,7 +49,7 @@ jobs:
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/UNCOMPRESSED_SIZE_PATCH.json catalog/DATA_METRICS.json
+          git add catalog/UNCOMPRESSED_SIZE_PATCH.json catalog/RECORD_COUNT_PATCH.json catalog/DATA_METRICS.json
           git diff --cached --quiet && exit 0
           git commit -m "data: advance uncompressed size coverage"
           for attempt in 1 2 3 4 5; do
