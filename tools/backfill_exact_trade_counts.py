@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import tempfile
 from typing import Any, Mapping
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
@@ -266,27 +267,27 @@ def _download(row: Mapping[str, Any], destination: Path) -> Path:
     if not repository or not tag or not asset:
         raise BackfillError("release coordinates missing")
     destination.mkdir(parents=True, exist_ok=True)
+    path = destination / asset
+    # Release assets have stable immutable download URLs. Fetching them directly
+    # avoids spending one GitHub API request per shard and therefore keeps large
+    # closure backfills within GitHub-hosted rate limits.
+    direct_url = (
+        f"https://github.com/{repository}/releases/download/"
+        f"{quote(tag, safe='')}/{quote(asset, safe='')}"
+    )
+    headers: list[str] = []
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers = ["-H", f"Authorization: Bearer {token}"]
     result = subprocess.run(
-        [
-            "gh",
-            "release",
-            "download",
-            tag,
-            "--repo",
-            repository,
-            "--pattern",
-            asset,
-            "--dir",
-            os.fspath(destination),
-            "--clobber",
-        ],
+        ["curl", "--fail", "--location", "--silent", "--show-error", "--retry", "3",
+         *headers, "--output", os.fspath(path), direct_url],
         text=True,
         capture_output=True,
         check=False,
     )
     if result.returncode != 0:
-        raise BackfillError((result.stderr or result.stdout or "download failed").strip())
-    path = destination / asset
+        raise BackfillError((result.stderr or result.stdout or "direct release download failed").strip())
     if not path.is_file():
         raise BackfillError("downloaded asset missing")
     return path
