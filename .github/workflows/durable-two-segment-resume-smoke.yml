@@ -45,13 +45,12 @@ jobs:
         run: |
           set -euo pipefail
           M="catalog/campaigns/${{ inputs.campaign_id }}.json"
+          SNAPSHOT="$RUNNER_TEMP/campaign.json"
           terminal=""
           for i in $(seq 1 90); do
             git fetch origin main
-            git checkout -q main
-            git reset --hard -q origin/main
-            test -f "$M"
-            terminal="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+            git show "origin/main:$M" > "$SNAPSHOT"
+            terminal="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$SNAPSHOT")"
             case "$terminal" in
               COMPLETE|FAILED|UNAVAILABLE|PARTIAL|REJECT)
                 break
@@ -67,7 +66,7 @@ jobs:
               ;;
             *) echo "resume smoke did not reach terminal state: $terminal" >&2; exit 1 ;;
           esac
-          python - <<'PY' "$M" >> "$GITHUB_ENV"
+          python - <<'PY' "$SNAPSHOT" >> "$GITHUB_ENV"
           import json,sys
           row=json.load(open(sys.argv[1],encoding="utf-8"))
           print("RESUME_TERMINAL_STATUS="+str(row.get("status") or ""))
