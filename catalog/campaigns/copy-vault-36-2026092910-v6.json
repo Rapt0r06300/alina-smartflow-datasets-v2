@@ -29,6 +29,12 @@
     {
       "event": "operator_request",
       "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    {
+      "at_utc": "2026-09-29T10:54:45.902033Z",
+      "event": "SUPERSEDED_BY_BOUNDED_COPY_VAULT_LANES",
+      "previous_lease": null,
+      "previous_status": "PENDING"
     }
   ],
   "kind": "copy_vault_collection",
@@ -50,9 +56,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": null,
-  "status": "PENDING",
-  "status_reason": "created",
-  "terminal_evidence_digest": null,
-  "updated_at": "2026-09-29T10:50:02.186387Z",
+  "status": "FAILED",
+  "status_reason": "SUPERSEDED_BY_BOUNDED_V7_LANES",
+  "terminal_evidence_digest": "2aece8f5c9195447006e894f7739ac068a68cd6103c33c34105264431faae49b",
+  "updated_at": "2026-09-29T10:54:45.902033Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
