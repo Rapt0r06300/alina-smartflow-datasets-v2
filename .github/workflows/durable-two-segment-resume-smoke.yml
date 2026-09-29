@@ -112,6 +112,19 @@ jobs:
           }
           path.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
           PY
+      - name: Publish durable resume receipt
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add catalog/RESUME_SMOKE_RECEIPT.json
+          git commit -m "proof: publish two-segment resume receipt"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
       - name: Upload resume receipt
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
