@@ -72,6 +72,29 @@ jobs:
               raise SystemExit("phase_epoch must be an integer")
           if epoch < 1:
               raise SystemExit("phase_epoch must be positive")
+          authority_path=pathlib.Path("control/alina-phase.json")
+          if not authority_path.is_file():
+              raise SystemExit("canonical phase authority is missing")
+          authority=json.loads(authority_path.read_text(encoding="utf-8"))
+          required={"schema_version","phase","epoch","requested_at_utc","collection_started_at_utc","collection_cutoff_at_utc","source_collection_epoch","analysis_stage","requested_by","request_id"}
+          if required-set(authority):
+              raise SystemExit("canonical phase authority is incomplete")
+          if authority.get("phase") != phase or authority.get("epoch") != epoch:
+              raise SystemExit("operator dispatch conflicts with canonical phase authority")
+          payload_source_epoch=os.environ["SOURCE_EPOCH"] or None
+          payload_cutoff=os.environ["CUTOFF"] or None
+          payload_stage=os.environ["ANALYSIS_STAGE"] or None
+          if payload_source_epoch is not None:
+              try:
+                  payload_source_epoch=int(payload_source_epoch)
+              except ValueError:
+                  raise SystemExit("source_collection_epoch must be an integer")
+          if (
+              authority.get("source_collection_epoch") != payload_source_epoch
+              or authority.get("collection_cutoff_at_utc") != payload_cutoff
+              or authority.get("analysis_stage") != payload_stage
+          ):
+              raise SystemExit("operator dispatch metadata conflicts with canonical phase authority")
           intent=os.environ["INTENT"]
           allowed={"start_collection"} if phase=="COLLECT" else {"analyze","replay","backtest","oos","forward_paper","module_pnl_proof","scoreboard","full_cycle","drain"}
           if intent not in allowed:
@@ -87,9 +110,9 @@ jobs:
               "main_code_sha":os.environ["MAIN_CODE_SHA"],
               "phase":phase,
               "phase_epoch":epoch,
-              "source_collection_epoch":os.environ["SOURCE_EPOCH"] or None,
-              "collection_cutoff_at_utc":os.environ["CUTOFF"] or None,
-              "analysis_stage":os.environ["ANALYSIS_STAGE"] or None,
+              "source_collection_epoch":payload_source_epoch,
+              "collection_cutoff_at_utc":payload_cutoff,
+              "analysis_stage":payload_stage,
               "intent":intent,
               "strategy_family":family,
               "paper_only":True,
@@ -117,7 +140,14 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add catalog/operator-dispatches
           git diff --cached --quiet || git commit -m "orchestration: record operator dispatch"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              break
+            fi
+            if [ "$attempt" = 5 ]; then
+              echo "Unable to publish dispatch receipt after five attempts" >&2
+              exit 1
+            fi
+          done
           gh workflow run create-resumable-campaigns.yml --repo "$GITHUB_REPOSITORY" --ref main
           gh workflow run resumable-campaign-controller.yml --repo "$GITHUB_REPOSITORY" --ref main
