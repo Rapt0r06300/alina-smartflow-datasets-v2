@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - "catalog/DATA_INDEX.json"
+      - "catalog/DATA_METRICS.json"
+      - "control/alina-phase.json"
+      - "catalog/CAMPAIGN_RESILIENCE_RECEIPT.json"
+      - "catalog/campaigns/**"
       - "catalog/DATASET_HEALTH_RECEIPT.json"
       - "catalog/CAMPAIGN_WATCHDOG_RECEIPT.json"
       - "tools/build_global_implementation_closure.py"
@@ -42,5 +46,10 @@ jobs:
           git add catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
           git diff --cached --quiet && exit 0
           git commit -m "closure: publish cross-repo implementation receipt"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep "$((attempt * 2))"
+          done
+          exit 1
