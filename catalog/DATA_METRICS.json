@@ -48551,7 +48551,7 @@
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": "deduplicated within each verified shard only; this is not a claim of global cross-shard uniqueness"
   },
   "schema_version": "alina.data_metrics.v4",
-  "source_index_sha256": "4b0eeed2744d32a64ca0aa6896878fa50043e94a191e1093b805f041194ee44d",
+  "source_index_sha256": "7962c38263a56d19d9c2746cbc227e7165044ed25af09d3cebe51a3217b58148",
   "totals": {
     "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
     "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
