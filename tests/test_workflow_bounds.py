@@ -53,9 +53,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "catalog/copy_vault_selections" in text
     assert "official_archive_collection" in text
     assert "event_intelligence_collection" in text
-    assert "make_campaign             replay" in text
-    assert "make_campaign               backtest" in text
-    assert "make_campaign               module_pnl_proof" in text
+    for kind in ("replay", "backtest", "oos", "forward_paper", "module_pnl_proof", "scoreboard"):
+        assert f"make_campaign {kind}" in text
+    assert 'ANALYSIS_ID="analysis-e$PHASE_EPOCH"' in text
     assert "ref: main" in text
     assert "--cursor-json" in text
     assert "archives-binance-btc-" in text
