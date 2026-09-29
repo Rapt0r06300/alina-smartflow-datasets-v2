@@ -1,12 +1,12 @@
 {
-  "schema_version": 1,
-  "phase": "IDLE",
-  "epoch": 1,
-  "requested_at_utc": "2026-09-27T00:00:00Z",
-  "collection_started_at_utc": null,
-  "collection_cutoff_at_utc": null,
-  "source_collection_epoch": null,
   "analysis_stage": null,
-  "requested_by": "bootstrap",
-  "request_id": "bootstrap-idle"
+  "collection_cutoff_at_utc": null,
+  "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
+  "epoch": 2,
+  "phase": "COLLECT",
+  "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "requested_at_utc": "2026-09-29T10:48:55.506207Z",
+  "requested_by": "codex-work-cloud",
+  "schema_version": 1,
+  "source_collection_epoch": null
 }
