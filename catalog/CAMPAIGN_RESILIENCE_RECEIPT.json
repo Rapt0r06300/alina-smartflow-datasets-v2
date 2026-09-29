@@ -20,12 +20,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "2b130f4b25ca4e36e80f7ac4115ed630dd8d5188e1f49b23845f3cf8bcf60fab"
     },
     {
       "analysis_stage": null,
@@ -46,12 +46,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "00229224657bb7a06caf85d2e8b9fba35922715ffb8921db642d328d667fc764"
     },
     {
       "analysis_stage": null,
@@ -72,12 +72,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "7e809a68bca334ec4fb482334726458b9e27d662d76d19588fa1b5c1612a66f6"
     },
     {
       "analysis_stage": null,
@@ -228,12 +228,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "26180c75d4b769b2cb46f1e3ca5ee68cc1fbb4f8faf30efc6fe0ec69a75555f8"
     },
     {
       "analysis_stage": null,
@@ -384,12 +384,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "e444bfedb9d1448b25cc29ec4c695002ac8b35801e5362e99379e21fb0a2271e"
     },
     {
       "analysis_stage": null,
@@ -540,12 +540,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "a8d10b09459db6a8bd722e62c2383059f76fa4670e96be59e99e5ef17f67ef51"
     },
     {
       "analysis_stage": null,
@@ -696,12 +696,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "3701ac9b0f61ef7ed626d4212d89c2b200dd2999414b25ded13ff15e70be7056"
     },
     {
       "analysis_stage": null,
@@ -852,12 +852,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "aadc4cddff49c3a3cf90949dd81c9e6cbb54fd7b270a8e63a7df34c470f8a400"
     },
     {
       "analysis_stage": null,
@@ -1008,12 +1008,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "80c6ab85f84d23afd0ba576fa8a2586a1383fbc23b3f6b6659411732d6ea049e"
     },
     {
       "analysis_stage": null,
@@ -1164,12 +1164,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "1cf261b43faedc622209c997bc808d423528024a52186d24d8587d831e843cb2"
     },
     {
       "analysis_stage": null,
@@ -1320,12 +1320,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "3eabd4db686792618f652d35cc862f09d8eac8301947fd84a0e00b439dfab39e"
     },
     {
       "analysis_stage": null,
@@ -1476,12 +1476,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "e16907b15bb7b583f9b1ee786e9008c8d7cd1f0a404848cfde9d8fbb2d20e221"
     },
     {
       "analysis_stage": null,
@@ -1632,12 +1632,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "f3494bcaa245cde4d54d91282958f637d4d0dc72f377b9658f4c4b28d9fb1f31"
     },
     {
       "analysis_stage": null,
@@ -1658,12 +1658,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "f3a9a9d0d44413cbbb3d1ddcaa640f2bc557f0c3b271a1c21add90d45c5d234f"
     },
     {
       "analysis_stage": null,
@@ -1814,12 +1814,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "3cb607ea0b90eb315122ec8b169f13288b43e4da9013ab60bc4c08fda3af045b"
     },
     {
       "analysis_stage": null,
@@ -1970,12 +1970,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "7a27b2b3fe20a55e7e6fef5fe7b73576e8108eda2a989773a4368d8bdb93e16b"
     },
     {
       "analysis_stage": null,
@@ -2126,12 +2126,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "783f2e9c25c784994d35efc6e364b86d6b54465c1db88854e96dfcf16536f494"
     },
     {
       "analysis_stage": null,
@@ -2282,12 +2282,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "c4757ad40cfe81c54ffd4ca04725a8eae6bf239567dc8e6821619e66483ebb9d"
     },
     {
       "analysis_stage": null,
@@ -2438,12 +2438,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "1e1d0d512f9230eba7ee54d94504c47deb3a31dd33d78522e28edb120676f378"
     },
     {
       "analysis_stage": null,
@@ -2594,12 +2594,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "eee665c347231c8302ede3cb06872d6de3d593f5dbf0967d4966d5b760cfec8c"
     },
     {
       "analysis_stage": null,
@@ -2750,12 +2750,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "7494ef925c561421730d854ad23ce9a5da68df6cd699ba78c444a6c605813bf3"
     },
     {
       "analysis_stage": null,
@@ -2906,12 +2906,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "273533cb3a26e9671e69c3821a67f88ec6a2e8f26ddbffc19fa0cdca9d72bc93"
     },
     {
       "analysis_stage": null,
@@ -3062,12 +3062,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "d7525f3d665fb6882af26db90a57cfca60c320c1991e17b7a95fa0047123f4c6"
     },
     {
       "analysis_stage": null,
@@ -3218,12 +3218,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "46f53e6cf993640a9d6bdf48dfde7968a764bdb4fa1f7cce6aab55d6e22f3a35"
     },
     {
       "analysis_stage": null,
@@ -3244,12 +3244,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "5c1143ce856c96a995e81b9d08c35ed8adb5e2a42f669fbdefc5b02ff6958774"
     },
     {
       "analysis_stage": null,
@@ -3517,12 +3517,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "14279dd6a67caf8cf906b5d7ac7e50df7f9fb839d910ec129e3d48120c5cb211"
     },
     {
       "analysis_stage": null,
@@ -3673,12 +3673,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "e66e688f50b7ffec314bb93776928d684281961377f1b3fa1899e531e9b25c47"
     },
     {
       "analysis_stage": null,
@@ -3829,12 +3829,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "0cffb78bad298789b41f2b126e6d22d4fbc0e5ace69ab228632d5abd54c9a47b"
     },
     {
       "analysis_stage": null,
@@ -3985,12 +3985,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "f5c023b948fdc3db1511a2c5877f52184db4a6c7fb0714900758fc0446744de0"
     },
     {
       "analysis_stage": null,
@@ -4141,12 +4141,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "ae569453e26faf64ebd6bb0046115f04737f648e71908afe6ca96e39e878782c"
     },
     {
       "analysis_stage": null,
@@ -4297,12 +4297,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "39a8d366a332fcc85ef821cd943f6d95878800ee21cf696226904d3c08a7176e"
     },
     {
       "analysis_stage": null,
@@ -4466,12 +4466,12 @@
       "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 2,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "UNAVAILABLE",
+      "terminal_evidence_digest": "86bfcfbe76589a961664e0f1199e3fed5ce6b0cba3839888a4629163c0df410d"
     }
   ],
   "failure_matrix": {
@@ -4507,7 +4507,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-29T10:56:27.321092Z",
+  "generated_at_utc": "2026-09-29T12:56:59.585621Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7506,7 +7506,7 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "8de11ccb1495158ced369d3d1fac3f0fcbfc84f3b4c80507a607bf4cf0c82cc5",
+  "receipt_digest": "7b6b7e4d6e18f90778285e0860c9e0d6e8164f22fbfb00f10765c57d960aed56",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
   "v2_campaign_count": 344,
