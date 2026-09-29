@@ -1,11 +1,29 @@
 {
-  "campaign_count": 314,
+  "campaign_count": 655,
   "campaigns": [
     {
       "campaign_id": "copy-vault-0-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-0-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-0-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -20,10 +38,46 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-1-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-1-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-10-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-10-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-10-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -38,10 +92,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-100-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-101-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-101-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -56,10 +128,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-102-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-103-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-103-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -74,8 +164,26 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-104-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-105-2026092518-v6",
       "completed_units": 3,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-105-2026092910-v6",
+      "completed_units": 0,
       "publication_receipts": 0,
       "status": "FAILED",
       "vault_shard_count": null,
@@ -92,10 +200,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-106-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-107-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-107-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -110,10 +236,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-108-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-109-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-109-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -128,10 +272,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-11-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-11-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-110-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-110-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -146,10 +317,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-111-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-112-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-112-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -164,10 +353,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-113-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-114-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-114-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -182,10 +389,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-115-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-116-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-116-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -200,10 +425,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-117-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-118-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-118-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -218,10 +461,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-119-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-12-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-12-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-12-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -236,10 +506,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-120-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-121-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-121-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -254,10 +542,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-122-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-123-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-123-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -272,10 +578,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-124-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-125-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-125-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -290,10 +614,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-126-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-127-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-127-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -308,10 +650,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-128-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-129-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-129-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -326,10 +686,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-13-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-13-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-130-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-130-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -344,10 +731,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-131-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-132-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-132-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -362,10 +767,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-133-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-134-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-134-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -380,10 +803,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-135-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-136-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-136-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -398,10 +839,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-137-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-138-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-138-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -416,10 +875,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-139-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-14-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-14-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-14-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -434,10 +920,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-140-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-141-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-141-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -452,10 +956,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-142-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-143-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-143-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -470,10 +992,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-144-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-145-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-145-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -488,6 +1028,15 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-146-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-147-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
@@ -497,8 +1046,26 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-147-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-148-2026092518-v6",
       "completed_units": 2,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-148-2026092910-v6",
+      "completed_units": 0,
       "publication_receipts": 0,
       "status": "FAILED",
       "vault_shard_count": null,
@@ -515,10 +1082,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-149-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-15-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-15-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-15-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -533,10 +1127,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-150-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-151-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-151-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -551,10 +1163,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-152-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-153-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-153-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -569,10 +1199,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-154-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-155-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-155-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -587,10 +1235,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-156-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-157-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-157-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -605,10 +1271,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-158-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-159-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-159-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -623,10 +1307,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-16-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-16-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-160-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-160-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -641,10 +1352,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-161-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-162-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-162-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -659,10 +1388,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-163-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-164-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-164-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -677,10 +1424,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-165-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-166-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-166-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -695,10 +1460,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-167-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-168-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-168-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -713,10 +1496,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-169-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-17-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-17-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-17-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -731,10 +1541,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-170-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-171-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-171-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -749,10 +1577,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-172-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-173-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-173-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -767,10 +1613,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-174-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-175-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-175-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -785,10 +1649,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-176-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-177-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-177-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -803,10 +1685,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-178-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-179-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-179-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -821,10 +1721,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-18-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-18-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-180-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-180-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -839,10 +1766,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-181-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-182-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-182-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -857,10 +1802,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-183-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-184-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-184-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -875,10 +1838,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-185-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-186-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-186-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -893,10 +1874,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-187-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-188-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-188-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -911,10 +1910,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-189-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-19-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-19-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-19-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -929,10 +1955,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-190-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-191-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-191-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -947,10 +1991,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-192-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-193-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-193-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -965,10 +2027,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-194-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-195-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-195-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -983,10 +2063,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-196-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-197-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-197-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1001,10 +2099,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-198-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-199-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-199-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1019,6 +2135,24 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-2-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-2-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-20-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
@@ -1028,8 +2162,35 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-20-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-20-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-200-2026092518-v6",
       "completed_units": 1,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-200-2026092910-v6",
+      "completed_units": 0,
       "publication_receipts": 0,
       "status": "FAILED",
       "vault_shard_count": null,
@@ -1046,10 +2207,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-201-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-202-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-202-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1082,10 +2261,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-203-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-204-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-204-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1100,10 +2297,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-205-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-206-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-206-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1118,10 +2333,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-207-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-208-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-208-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1136,10 +2369,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-209-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-21-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-21-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-21-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1154,10 +2414,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-210-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-211-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-211-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1172,10 +2450,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-212-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-213-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-213-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1190,10 +2486,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-214-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-215-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-215-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1208,10 +2522,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-216-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-217-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-217-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1226,10 +2558,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-218-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-219-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-219-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1244,10 +2594,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-22-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-22-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-220-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-220-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1262,10 +2639,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-221-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-222-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-222-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1280,10 +2675,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-223-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-224-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-224-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1298,10 +2711,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-225-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-226-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-226-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1316,10 +2747,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-227-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-228-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-228-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1334,10 +2783,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-229-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-23-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-23-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-23-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1352,10 +2828,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-230-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-231-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-231-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1370,8 +2864,26 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-232-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-233-2026092518-v6",
       "completed_units": 1,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-233-2026092910-v6",
+      "completed_units": 0,
       "publication_receipts": 0,
       "status": "FAILED",
       "vault_shard_count": null,
@@ -1388,10 +2900,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-234-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-235-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-235-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1406,10 +2936,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-236-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-237-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-237-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1424,10 +2972,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-238-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-239-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-239-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1442,10 +3008,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-24-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-24-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-240-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-240-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1460,10 +3053,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-241-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-242-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-242-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1478,10 +3089,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-243-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-244-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-244-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1496,10 +3125,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-245-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-246-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-246-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1514,10 +3161,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-247-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-248-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-248-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1532,10 +3197,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-249-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-25-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-25-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-25-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1550,10 +3242,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-250-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-251-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-251-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1568,10 +3278,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-252-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-253-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-253-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1586,10 +3314,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-254-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-255-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-255-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1604,10 +3350,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-256-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-257-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-257-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1622,10 +3386,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-258-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-259-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-259-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1640,10 +3422,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-26-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-26-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-260-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-260-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1658,10 +3467,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-261-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-262-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-262-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1676,10 +3503,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-263-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-264-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-264-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1694,10 +3539,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-265-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-266-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-266-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1712,10 +3575,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-267-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-268-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-268-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1730,10 +3611,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-269-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-27-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-27-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-27-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1748,10 +3656,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-270-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-271-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-271-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1766,10 +3692,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-272-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-273-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-273-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1784,10 +3728,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-274-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-275-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-275-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1802,10 +3764,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-276-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-277-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-277-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1820,10 +3800,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-278-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-279-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-279-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1838,10 +3836,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-28-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-28-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-280-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-280-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1856,10 +3881,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-281-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-282-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-282-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1874,10 +3917,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-283-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-284-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-284-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1892,10 +3953,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-285-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-286-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-286-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1910,10 +3989,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-287-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-288-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-288-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1928,10 +4025,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-289-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-29-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-29-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-29-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1946,10 +4070,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-290-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-291-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-291-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1964,10 +4106,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-292-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-293-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-293-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -1982,10 +4142,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-294-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-295-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-295-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2000,10 +4178,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-296-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-297-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-297-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2018,10 +4214,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-298-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-299-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-299-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2036,10 +4250,46 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-3-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-3-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-30-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-30-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-30-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2054,10 +4304,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-300-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-301-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-301-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2072,10 +4340,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-302-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-303-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-303-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2090,10 +4376,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-304-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-305-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-305-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2108,10 +4412,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-306-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-307-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-307-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2126,10 +4448,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-308-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-309-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-309-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2144,10 +4484,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-31-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-32-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-32-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2162,10 +4520,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-33-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-34-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-34-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2180,10 +4556,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-35-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-36-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-36-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2198,10 +4592,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-37-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-38-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-38-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2216,10 +4628,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-39-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-4-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-4-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-4-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2234,10 +4673,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-40-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-41-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-41-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2252,10 +4709,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-42-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-43-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-43-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2270,10 +4745,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-44-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-45-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-45-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2288,10 +4781,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-46-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-47-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-47-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2306,10 +4817,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-48-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-49-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-49-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2324,10 +4853,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-5-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-5-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-50-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-50-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2342,10 +4898,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-51-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-52-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-52-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2360,10 +4934,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-53-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-54-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-54-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2378,10 +4970,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-55-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-56-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-56-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2396,10 +5006,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-57-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-58-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-58-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2414,10 +5042,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-59-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-6-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-6-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-6-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2432,10 +5087,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-60-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-61-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-61-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2450,10 +5123,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-62-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-63-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-63-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2468,10 +5159,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-64-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-65-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-65-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2486,10 +5195,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-66-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-67-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-67-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2504,10 +5231,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-68-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-69-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-69-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2522,10 +5267,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-7-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-7-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-70-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-70-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2540,10 +5312,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-71-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-72-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-72-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2558,10 +5348,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-73-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-74-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-74-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2576,10 +5384,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-75-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-76-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-76-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2594,10 +5420,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-77-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-78-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-78-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2612,10 +5456,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-79-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-8-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-8-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-8-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2630,10 +5501,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-80-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-81-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-81-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2648,10 +5537,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-82-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-83-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-83-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2666,10 +5573,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-84-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-85-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-85-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2684,10 +5609,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-86-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-87-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-87-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2702,10 +5645,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-88-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-89-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-89-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2720,10 +5681,37 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-9-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-9-2026092910-v7",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "PENDING",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-90-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-90-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2738,10 +5726,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-91-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-92-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-92-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2756,10 +5762,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-93-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-94-2026092518-v6",
       "completed_units": 2,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-94-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2774,10 +5798,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-95-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-96-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-96-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2792,6 +5834,15 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-97-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-98-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
@@ -2801,10 +5852,28 @@
       "vault_universe_count": null
     },
     {
+      "campaign_id": "copy-vault-98-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
       "campaign_id": "copy-vault-99-2026092518-v6",
       "completed_units": 1,
       "publication_receipts": 0,
       "status": "COMPLETE",
+      "vault_shard_count": null,
+      "vault_shard_index": null,
+      "vault_universe_count": null
+    },
+    {
+      "campaign_id": "copy-vault-99-2026092910-v6",
+      "completed_units": 0,
+      "publication_receipts": 0,
+      "status": "FAILED",
       "vault_shard_count": null,
       "vault_shard_index": null,
       "vault_universe_count": null
@@ -2887,7 +5956,7 @@
   "qualified_shard_count": 0,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "ba32202e98d453515cc9adbcaad816c6cc5b5cd640503afcb1e9da922117db87",
+  "receipt_digest": "bfd407f5a50ba4e6736bc0b9b49fad7833dd255fbceb6414d901fb5f02eb2356",
   "reconciliation": {
     "no_duplicate_shard_indices": true,
     "publication_receipts_present": false,
