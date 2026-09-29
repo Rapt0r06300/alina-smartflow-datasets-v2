@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/uncompressed-size-v2.yml"
       - "tools/measure_uncompressed_sizes.py"
+      - "tools/backfill_exact_trade_counts.py"
       - "tools/build_catalog_metrics.py"
   workflow_dispatch:
     inputs:
@@ -40,6 +41,7 @@ jobs:
           python-version: "3.12"
       - name: Measure exact or unavailable sizes
         env:
+          GH_TOKEN: "${{ github.token }}"
           MEASURE_LIMIT: ${{ inputs.limit || '36055' }}
         run: python tools/measure_uncompressed_sizes.py --limit "${MEASURE_LIMIT}" --workers 24
       - name: Rebuild catalog metrics
