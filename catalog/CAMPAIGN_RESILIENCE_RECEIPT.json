@@ -1,5 +1,5 @@
 {
-  "campaign_count": 371,
+  "campaign_count": 374,
   "campaigns": [],
   "failure_matrix": {
     "after_checkpoint_before_lease_release": {
@@ -34,7 +34,7 @@
     }
   },
   "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-29T05:48:27.813084Z",
+  "generated_at_utc": "2026-09-29T10:28:13.041995Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -2797,6 +2797,22 @@
       "status": "FAILED"
     },
     {
+      "campaign_id": "market-2026092614-v4",
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 4,
+      "schema_version": "alina.resumable_campaign.v1",
+      "status": "STUCK"
+    },
+    {
+      "campaign_id": "market-2026092618-v4",
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 4,
+      "schema_version": "alina.resumable_campaign.v1",
+      "status": "STUCK"
+    },
+    {
       "campaign_id": "market-2026092621-v4",
       "completed_unit_count": 2,
       "has_lease": false,
@@ -2827,6 +2843,14 @@
       "history_count": 2,
       "schema_version": "alina.resumable_campaign.v1",
       "status": "CONTINUATION_REQUIRED"
+    },
+    {
+      "campaign_id": "market-2026092717-v4",
+      "completed_unit_count": 0,
+      "has_lease": false,
+      "history_count": 2,
+      "schema_version": "alina.resumable_campaign.v1",
+      "status": "STUCK"
     },
     {
       "campaign_id": "pnl-20260925-s3-v4",
@@ -3005,24 +3029,24 @@
       "status": "COMPLETE"
     }
   ],
-  "historical_v1_count": 371,
+  "historical_v1_count": 374,
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "daf48e209c72defc6697575a9e3ef25209bb603d000cf576ded66854c36a9f77",
+  "receipt_digest": "cda054da53dc3973eac0831b57a19fd80adf4417ccb94ed57f3e94f6ba1988e7",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "BLOCKED",
   "v2_campaign_count": 0,
   "violations": [
     {
-      "code": "INVALID_MANIFEST",
-      "detail": "Extra data: line 82 column 2 (char 2603)",
-      "path": "catalog/campaigns/market-2026092614-v4.json"
+      "campaign_id": "market-2026092614-v4",
+      "code": "LEGACY_V1_MUTABLE_STATE",
+      "status": "STUCK"
     },
     {
-      "code": "INVALID_MANIFEST",
-      "detail": "Extra data: line 82 column 2 (char 2603)",
-      "path": "catalog/campaigns/market-2026092618-v4.json"
+      "campaign_id": "market-2026092618-v4",
+      "code": "LEGACY_V1_MUTABLE_STATE",
+      "status": "STUCK"
     },
     {
       "campaign_id": "market-2026092621-v4",
@@ -3045,9 +3069,9 @@
       "status": "CONTINUATION_REQUIRED"
     },
     {
-      "code": "INVALID_MANIFEST",
-      "detail": "Extra data: line 66 column 2 (char 2120)",
-      "path": "catalog/campaigns/market-2026092717-v4.json"
+      "campaign_id": "market-2026092717-v4",
+      "code": "LEGACY_V1_MUTABLE_STATE",
+      "status": "STUCK"
     },
     {
       "code": "NO_V2_RESILIENCE_EVIDENCE"

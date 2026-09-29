@@ -1,6 +1,6 @@
 {
   "backlog_by_kind": {
-    "market_collection": 4
+    "market_collection": 7
   },
   "by_family": {
     "activeassetctx": {
@@ -182,7 +182,7 @@
       "trades": 0,
       "uncompressed_bytes": 2080662441,
       "uncompressed_exact_assets": 492,
-      "uncompressed_unavailable_assets": 86,
+      "uncompressed_unavailable_assets": 146,
       "unique_trades_within_shards": 0
     },
     "liquidations": {
@@ -250,9 +250,9 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 570953945,
-      "uncompressed_exact_assets": 263,
-      "uncompressed_unavailable_assets": 259,
+      "uncompressed_bytes": 671662565,
+      "uncompressed_exact_assets": 313,
+      "uncompressed_unavailable_assets": 209,
       "unique_trades_within_shards": 0
     },
     "trades": {
@@ -43472,7 +43472,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 0
     },
     "ALT": {
@@ -43542,7 +43542,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 0
     },
     "APE": {
@@ -43612,7 +43612,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 0
     },
     "APT": {
@@ -43668,7 +43668,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 11,
       "unique_trades_within_shards": 0
     },
     "AR": {
@@ -43752,7 +43752,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 11,
       "unique_trades_within_shards": 0
     },
     "ARK": {
@@ -43794,7 +43794,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 0
     },
     "ASTER": {
@@ -43850,7 +43850,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 0,
+      "uncompressed_unavailable_assets": 2,
       "unique_trades_within_shards": 0
     },
     "ATOM": {
@@ -44562,9 +44562,9 @@
       "trade_shards_exact": 15,
       "trade_shards_missing_exact": 0,
       "trades": 11345,
-      "uncompressed_bytes": 219967363,
-      "uncompressed_exact_assets": 32,
-      "uncompressed_unavailable_assets": 19,
+      "uncompressed_bytes": 223833632,
+      "uncompressed_exact_assets": 34,
+      "uncompressed_unavailable_assets": 17,
       "unique_trades_within_shards": 11345
     },
     "BNB_USDT": {
@@ -44618,9 +44618,9 @@
       "trade_shards_exact": 9,
       "trade_shards_missing_exact": 0,
       "trades": 571,
-      "uncompressed_bytes": 17584502,
-      "uncompressed_exact_assets": 9,
-      "uncompressed_unavailable_assets": 18,
+      "uncompressed_bytes": 36751084,
+      "uncompressed_exact_assets": 18,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 571
     },
     "BOME_USDT": {
@@ -44674,9 +44674,9 @@
       "trade_shards_exact": 9,
       "trade_shards_missing_exact": 0,
       "trades": 506,
-      "uncompressed_bytes": 16147583,
-      "uncompressed_exact_assets": 9,
-      "uncompressed_unavailable_assets": 18,
+      "uncompressed_bytes": 33878744,
+      "uncompressed_exact_assets": 18,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 506
     },
     "BRETT_USDT": {
@@ -44744,9 +44744,9 @@
       "trade_shards_exact": 74,
       "trade_shards_missing_exact": 0,
       "trades": 10355397,
-      "uncompressed_bytes": 4848295307,
-      "uncompressed_exact_assets": 42,
-      "uncompressed_unavailable_assets": 67,
+      "uncompressed_bytes": 4870390882,
+      "uncompressed_exact_assets": 53,
+      "uncompressed_unavailable_assets": 56,
       "unique_trades_within_shards": 63214
     },
     "BTC_USDT": {
@@ -44856,9 +44856,9 @@
       "trade_shards_exact": 9,
       "trade_shards_missing_exact": 0,
       "trades": 483,
-      "uncompressed_bytes": 4730586,
-      "uncompressed_exact_assets": 9,
-      "uncompressed_unavailable_assets": 18,
+      "uncompressed_bytes": 22338473,
+      "uncompressed_exact_assets": 18,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 483
     },
     "CC_USDT": {
@@ -44912,9 +44912,9 @@
       "trade_shards_exact": 9,
       "trade_shards_missing_exact": 0,
       "trades": 457,
-      "uncompressed_bytes": 11882374,
-      "uncompressed_exact_assets": 9,
-      "uncompressed_unavailable_assets": 18,
+      "uncompressed_bytes": 30134582,
+      "uncompressed_exact_assets": 18,
+      "uncompressed_unavailable_assets": 9,
       "unique_trades_within_shards": 457
     },
     "CELO_USDT": {
@@ -44968,9 +44968,9 @@
       "trade_shards_exact": 9,
       "trade_shards_missing_exact": 0,
       "trades": 488,
-      "uncompressed_bytes": 12409220,
-      "uncompressed_exact_assets": 9,
-      "uncompressed_unavailable_assets": 18,
+      "uncompressed_bytes": 14398158,
+      "uncompressed_exact_assets": 10,
+      "uncompressed_unavailable_assets": 17,
       "unique_trades_within_shards": 488
     },
     "CFX_USDT": {
@@ -48470,9 +48470,9 @@
       "trade_shards_exact": 462,
       "trade_shards_missing_exact": 0,
       "trades": 72742,
-      "uncompressed_bytes": 1210347176,
-      "uncompressed_exact_assets": 695,
-      "uncompressed_unavailable_assets": 691,
+      "uncompressed_bytes": 1311055796,
+      "uncompressed_exact_assets": 745,
+      "uncompressed_unavailable_assets": 641,
       "unique_trades_within_shards": 72742
     },
     "bybit": {
@@ -48500,7 +48500,7 @@
       "trades": 0,
       "uncompressed_bytes": 0,
       "uncompressed_exact_assets": 0,
-      "uncompressed_unavailable_assets": 56,
+      "uncompressed_unavailable_assets": 116,
       "unique_trades_within_shards": 0
     },
     "hyperliquid": {
@@ -48554,6 +48554,7 @@
     "market_collection:COMPLETE": 3,
     "market_collection:CONTINUATION_REQUIRED": 4,
     "market_collection:FAILED": 4,
+    "market_collection:STUCK": 3,
     "module_pnl_proof:FAILED": 7,
     "official_archive_collection:COMPLETE": 2,
     "replay:COMPLETE": 14,
@@ -56192,6 +56193,50 @@
     },
     {
       "analysis_stage": null,
+      "attempts": 1,
+      "campaign_id": "market-2026092614-v4",
+      "chunk_index": 1,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 1,
+      "creation_phase": null,
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 1,
+      "phase_epoch": null,
+      "source_collection_epoch": null,
+      "status": "STUCK",
+      "status_reason": "worker_started",
+      "updated_at": "2026-09-27T23:52:54.735663Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 1,
+      "campaign_id": "market-2026092618-v4",
+      "chunk_index": 1,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 1,
+      "creation_phase": null,
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 1,
+      "phase_epoch": null,
+      "source_collection_epoch": null,
+      "status": "STUCK",
+      "status_reason": "worker_started",
+      "updated_at": "2026-09-27T23:52:54.735663Z"
+    },
+    {
+      "analysis_stage": null,
       "attempts": 2,
       "campaign_id": "market-2026092621-v4",
       "chunk_index": 2,
@@ -56277,6 +56322,28 @@
       "status": "CONTINUATION_REQUIRED",
       "status_reason": "durable_publication_failed",
       "updated_at": "2026-09-27T19:11:35.502521Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-2026092717-v4",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": null,
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": null,
+      "source_collection_epoch": null,
+      "status": "STUCK",
+      "status_reason": "worker_started",
+      "updated_at": "2026-09-27T23:52:54.735663Z"
     },
     {
       "analysis_stage": "PNL_PROOF",
@@ -56771,15 +56838,15 @@
     "trade_count_failure_reason_count": 0,
     "uncompressed_bytes_coverage_complete": false,
     "uncompressed_bytes_exact": false,
-    "uncompressed_size_exact_assets": 920,
-    "uncompressed_size_unavailable_assets": 940,
-    "uncompressed_size_unclassified_assets": 34195,
+    "uncompressed_size_exact_assets": 970,
+    "uncompressed_size_unavailable_assets": 950,
+    "uncompressed_size_unclassified_assets": 34135,
     "unique_record_count_exact": false,
     "unique_trade_count_exact": false,
     "valid_record_count_exact": false
   },
-  "dataset_commit": "bc03602ba6fffcb0c3fcd79640867a09cb4371d6",
-  "metrics_digest": "a370367520e014b5aef4fb0fcb4034070be1084578e8ea590af41aa7a9d3c1f9",
+  "dataset_commit": "1f5f97d79e0d9218655b7eb969aee77b57b83021",
+  "metrics_digest": "1cc13498b0a59a4037af951ad417bb374b59f7254b1bf4972f42f669bc0bbbd8",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
   "oldest_next_due_at": null,
@@ -56800,6 +56867,14 @@
   "phase_consistency": {
     "mismatches": [
       {
+        "campaign_id": "market-2026092614-v4",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-2026092618-v4",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
         "campaign_id": "market-2026092621-v4",
         "reason": "PHASE_EPOCH_MISMATCH"
       },
@@ -56814,11 +56889,15 @@
       {
         "campaign_id": "market-2026092712-v4",
         "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-2026092717-v4",
+        "reason": "PHASE_EPOCH_MISMATCH"
       }
     ],
     "status": "BLOCKED"
   },
-  "receipt_digest": "009d4751b71f582b64c43b4124eae72964c485f7efdfe7c577e1cb20155cd0c5",
+  "receipt_digest": "ed357b41e0fe2641dabe6ac0c53962d638124cee4fac24b6f7ee14263f8fd991",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
@@ -56838,9 +56917,28 @@
     "safe_not_replayable_count": 0
   },
   "schema_version": "alina.dataset_health_receipt.v2",
-  "stuck_campaigns": [],
+  "stuck_campaigns": [
+    {
+      "campaign_id": "market-2026092614-v4",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "worker_started"
+    },
+    {
+      "campaign_id": "market-2026092618-v4",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "worker_started"
+    },
+    {
+      "campaign_id": "market-2026092717-v4",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "worker_started"
+    }
+  ],
   "totals": {
-    "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 1,
+    "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 2,
     "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
     "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "b95e928b112a84d7153a8434cb47aac93721eb74a3c3ea539ae1241e06d2c7f9",
     "PARTIAL_SHARDS": 16619,
@@ -56864,7 +56962,7 @@
     "TOTAL_TRADES_REJECTED": 25404113,
     "TOTAL_TRADES_REPLAYABLE": 482100,
     "TOTAL_TRADES_SAFE": 6687,
-    "TOTAL_UNCOMPRESSED_BYTES": 15085409650,
+    "TOTAL_UNCOMPRESSED_BYTES": 15186118270,
     "TOTAL_UNIQUE_RECORDS": 0,
     "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
     "TOTAL_UNIQUE_TRADES_GLOBAL": 1021328,
@@ -56876,10 +56974,10 @@
     "TRADE_SHARDS_WITH_EXACT_COUNT": 2251,
     "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768,
     "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": false,
-    "UNCOMPRESSED_SIZE_EXACT_ASSETS": 920,
-    "UNCOMPRESSED_SIZE_PATCH_DIGEST": "4de59466a97de6ef298731ef1a5b9cd935ae699c9a3cf6d1ddf5073a6ac1ee69",
-    "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 940,
-    "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 34195,
+    "UNCOMPRESSED_SIZE_EXACT_ASSETS": 970,
+    "UNCOMPRESSED_SIZE_PATCH_DIGEST": "1fdb0fae9700c445b39338b4f891f7d5eda64742df1dc52f69bdfe96316b48a2",
+    "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 950,
+    "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 34135,
     "UNIQUE_RECORDS_COVERAGE_COMPLETE": false,
     "UNIQUE_RECORD_COUNT_MISSING_SHARDS": 36055,
     "VALID_RECORDS_COVERAGE_COMPLETE": false,
