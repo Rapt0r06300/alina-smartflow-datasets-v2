@@ -12,6 +12,7 @@ METRICS = ROOT / "catalog" / "DATA_METRICS.json"
 UNIQUE_PATCH = ROOT / "catalog" / "TRADE_UNIQUE_COUNT_PATCH.json"
 TRADE_COUNT_PATCH = ROOT / "catalog" / "TRADE_COUNT_PATCH.json"
 UNCOMPRESSED_PATCH = ROOT / "catalog" / "UNCOMPRESSED_SIZE_PATCH.json"
+RECORD_PATCH = ROOT / "catalog" / "RECORD_COUNT_PATCH.json"
 TRADE_FAMILIES = {
     "trades",
     "agg_trades",
@@ -59,6 +60,14 @@ def build() -> dict[str, Any]:
     size_rows = size_doc.get("sizes") if isinstance(size_doc, dict) else {}
     if not isinstance(size_rows, dict):
         size_rows = {}
+    record_doc = {}
+    try:
+        record_doc = json.loads(RECORD_PATCH.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        record_doc = {}
+    record_rows = record_doc.get("records") if isinstance(record_doc, dict) else {}
+    if not isinstance(record_rows, dict):
+        record_rows = {}
     totals: dict[str, Any] = {
         "TOTAL_SHARDS": len(shards),
         "SAFE_SHARDS": 0,
@@ -105,20 +114,27 @@ def build() -> dict[str, Any]:
             continue
         status = str(row.get("quality_status") or "")
         replay = row.get("replay_compatible") is True
-        records = _int(row.get("record_count") or row.get("event_count"))
-        invalid = _int(row.get("invalid_record_count"))
-        duplicates = _int(row.get("duplicate_count"))
+        dataset_id = str(row.get("dataset_id") or "")
+        record_entry = record_rows.get(dataset_id)
+        if isinstance(record_entry, dict) and record_entry.get("exact") is True:
+            records = _int(record_entry.get("record_count"))
+            valid_records = _int(record_entry.get("valid_record_count"))
+            unique_records = _int(record_entry.get("unique_record_count"))
+            invalid = _int(record_entry.get("invalid_record_count"))
+            duplicates = _int(record_entry.get("duplicate_record_count"))
+        else:
+            records = _int(row.get("record_count") or row.get("event_count"))
+            invalid = _int(row.get("invalid_record_count"))
+            duplicates = _int(row.get("duplicate_count"))
+            if isinstance(record_entry, dict) and record_entry.get("status") == "UNAVAILABLE" and record_entry.get("retryable") is not True:
+                valid_records = 0
+                unique_records = 0
+            else:
+                valid_record_count_missing += 1
+                unique_record_count_missing += 1
+                valid_records = 0
+                unique_records = 0
         gaps = _int(row.get("gap_count"))
-        if row.get("valid_record_count") is None:
-            valid_record_count_missing += 1
-            valid_records = 0
-        else:
-            valid_records = _int(row.get("valid_record_count"))
-        if row.get("unique_record_count") is None:
-            unique_record_count_missing += 1
-            unique_records = 0
-        else:
-            unique_records = _int(row.get("unique_record_count"))
         compressed = _int(row.get("bytes"))
         size_entry = size_rows.get(str(row.get("dataset_id")))
         if isinstance(size_entry, dict) and isinstance(size_entry.get("uncompressed_bytes"), int):
@@ -260,8 +276,16 @@ def build() -> dict[str, Any]:
 
     totals["VALID_RECORD_COUNT_MISSING_SHARDS"] = valid_record_count_missing
     totals["UNIQUE_RECORD_COUNT_MISSING_SHARDS"] = unique_record_count_missing
-    totals["VALID_RECORDS_COVERAGE_COMPLETE"] = valid_record_count_missing == 0
-    totals["UNIQUE_RECORDS_COVERAGE_COMPLETE"] = unique_record_count_missing == 0
+    totals["VALID_RECORDS_COVERAGE_COMPLETE"] = (
+        valid_record_count_missing == 0 and record_doc.get("coverage_complete") is True
+    )
+    totals["UNIQUE_RECORDS_COVERAGE_COMPLETE"] = (
+        unique_record_count_missing == 0 and record_doc.get("coverage_complete") is True
+    )
+    totals["RECORD_COUNT_PATCH_DIGEST"] = (
+        hashlib.sha256(json.dumps(record_doc, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        if record_doc else None
+    )
     totals["UNCOMPRESSED_SIZE_COVERAGE_COMPLETE"] = (
         totals["UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS"] == 0
         and size_doc.get("coverage_complete") is True
