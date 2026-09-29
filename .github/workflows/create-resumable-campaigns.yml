@@ -134,7 +134,7 @@ jobs:
             COPY_LANES="$(((COPY_COUNT + 99) / 100))"
             if [ "$COPY_LANES" -gt 32 ]; then COPY_LANES=32; fi
             for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
-              COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":3500,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
+              COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":300,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
               make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "$COPY_CURSOR"
             done
           fi
