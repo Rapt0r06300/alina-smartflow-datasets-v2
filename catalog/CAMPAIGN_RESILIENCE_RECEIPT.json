@@ -4439,12 +4439,12 @@
       "campaign_id": "event-2026092910-v5",
       "checkpoint_count": 0,
       "completed_unit_count": 0,
-      "has_lease": true,
-      "history_count": 2,
+      "has_lease": false,
+      "history_count": 3,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "RUNNING",
+      "status": "STUCK",
       "terminal_evidence_digest": null
     },
     {
@@ -4452,12 +4452,12 @@
       "campaign_id": "market-2026092910-v5",
       "checkpoint_count": 0,
       "completed_unit_count": 0,
-      "has_lease": true,
-      "history_count": 2,
+      "has_lease": false,
+      "history_count": 3,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "RUNNING",
+      "status": "STUCK",
       "terminal_evidence_digest": null
     },
     {
@@ -4507,7 +4507,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-29T19:27:00.515190Z",
+  "generated_at_utc": "2026-09-29T22:18:14.268873Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7506,7 +7506,7 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "9822d27e20987cb28dee9c6208df94fdfa935a3574f8c97540b2f4948e7925ac",
+  "receipt_digest": "096f16b3622c557f6f37e1f899c475b28ef19282a2dce4064cd3347b58692233",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
   "v2_campaign_count": 344,
