@@ -11,7 +11,9 @@
       "required_coverage": {
         "trade_count_exact": true,
         "unique_trade_count_exact": true,
-        "uncompressed_bytes_exact": true
+        "uncompressed_bytes_exact": true,
+        "valid_record_count_exact": true,
+        "unique_record_count_exact": true
       }
     },
     "REPLAY": {
@@ -73,7 +75,9 @@
         "uncompressed_bytes_exact": true,
         "replayable_shards": {
           "min": 1
-        }
+        },
+        "valid_record_count_exact": true,
+        "unique_record_count_exact": true
       },
       "required_watchdog_status": "HEALTHY",
       "required_resilience_status": "READY",
