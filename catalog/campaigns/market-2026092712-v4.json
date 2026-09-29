@@ -39,6 +39,13 @@
       "from": "RUNNING",
       "reason": "durable_publication_failed",
       "to": "CONTINUATION_REQUIRED"
+    },
+    {
+      "at_utc": "2026-09-29T10:44:08.312784Z",
+      "event": "WATCHDOG_LEGACY_V1_TERMINALIZED",
+      "previous_lease": null,
+      "previous_status": "CONTINUATION_REQUIRED",
+      "reason": "LEGACY_SCHEMA_HAS_NO_PHASE_EPOCH_AND_CANNOT_RESUME"
     }
   ],
   "kind": "market_collection",
@@ -57,8 +64,9 @@
   "read_only": true,
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
-  "status": "CONTINUATION_REQUIRED",
-  "status_reason": "durable_publication_failed",
-  "updated_at": "2026-09-27T19:11:35.502521Z",
+  "status": "FAILED",
+  "status_reason": "LEGACY_V1_EXPIRED_EPOCH",
+  "terminal_evidence_digest": "95168c6d45dd329ff4bb756d4d485f793e67e9220d28b5726dbdf071aa15847c",
+  "updated_at": "2026-09-29T10:44:08.312784Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }

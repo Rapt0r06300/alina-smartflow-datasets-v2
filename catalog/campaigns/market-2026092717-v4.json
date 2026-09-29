@@ -37,6 +37,13 @@
         "owner_run_id": "36338360591"
       },
       "previous_status": "RUNNING"
+    },
+    {
+      "at_utc": "2026-09-29T10:44:08.312784Z",
+      "event": "WATCHDOG_LEGACY_V1_TERMINALIZED",
+      "previous_lease": null,
+      "previous_status": "STUCK",
+      "reason": "LEGACY_SCHEMA_HAS_NO_PHASE_EPOCH_AND_CANNOT_RESUME"
     }
   ],
   "kind": "market_collection",
@@ -57,10 +64,10 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v1",
   "source_collection_epoch": null,
-  "status": "STUCK",
-  "status_reason": "worker_started",
+  "status": "FAILED",
+  "status_reason": "LEGACY_V1_EXPIRED_EPOCH",
   "stuck_reason": "LEASE_EXPIRED_REQUIRES_RECONCILIATION",
-  "terminal_evidence_digest": null,
-  "updated_at": "2026-09-27T23:52:54.735663Z",
+  "terminal_evidence_digest": "5b8cd86b0249aa7c294f94870d64acc3f59795a4034118564890c9cf6113b71c",
+  "updated_at": "2026-09-29T10:44:08.312784Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
