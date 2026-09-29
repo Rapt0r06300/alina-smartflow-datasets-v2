@@ -18,7 +18,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dataset-v2-control-plane-index
+  group: dataset-v2-uncompressed-record-counts
   cancel-in-progress: false
 jobs:
   measure:
