@@ -108,6 +108,15 @@ def build() -> dict[str, Any]:
     by_family: dict[str, dict[str, int]] = {}
     valid_record_count_missing = 0
     unique_record_count_missing = 0
+    unique_unavailable_ids: set[str] = set()
+    try:
+        unique_doc_early = json.loads(UNIQUE_PATCH.read_text(encoding="utf-8"))
+        unavailable_early = unique_doc_early.get("unavailable") if isinstance(unique_doc_early, dict) else {}
+        if isinstance(unavailable_early, dict):
+            unique_unavailable_ids = set(unavailable_early)
+    except (OSError, ValueError, TypeError):
+        pass
+    totals["TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE"] = 0
 
     for row in shards:
         if not isinstance(row, dict):
@@ -194,6 +203,8 @@ def build() -> dict[str, Any]:
             if unique_exact:
                 totals["TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT"] += 1
                 totals["TOTAL_UNIQUE_TRADES_WITHIN_SHARDS"] += unique_trades
+            elif dataset_id in unique_unavailable_ids:
+                totals["TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE"] += 1
             else:
                 totals["TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT"] += 1
 
