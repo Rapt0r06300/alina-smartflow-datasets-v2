@@ -32,7 +32,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "runs-on: ubuntu-latest" in text
     assert "self-hosted" not in text
     assert '"duration_s":3500' in text
-    assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' in text
+    assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' not in text
+    assert '"universe_mode":"native_discovery_full"' in text
+    assert '"require_all_native_venues":true' in text
     assert "market_collection" in text
     assert "copy_vault_collection" in text
     assert "freeze_copy_vault_selection.py" in text
@@ -41,9 +43,11 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "ACTIVE_COPY_CAMPAIGNS" in text
     assert "active Copy-Vault sweep already exists" in text
     assert "CONTINUATION_REQUIRED" in text
-    assert "(COPY_COUNT + 9) / 10" in text
+    assert "(COPY_COUNT + 99) / 100" in text
+    assert 'COPY_LANES" -gt 32' in text
+    assert "supersede_copy_vault_fanout.py" in text
     assert "COPY_LANE<COPY_LANES" in text
-    assert "copy-vault-$COPY_LANE-$BUCKET-v6" in text
+    assert "copy-vault-$COPY_LANE-$BUCKET-v7" in text
     assert "selection_file" in text
     assert "selection_sha256" in text
     assert "catalog/copy_vault_selections" in text
@@ -72,6 +76,7 @@ def test_resumable_creator_encodes_copy_vault_cursor_as_valid_json():
     assert "json.dumps" in text
     assert '"$COPY_CURSOR"' in text
     assert '"{"duration_s":3500' not in text
+    assert '{"duration_s":300' in text
 
 
 def test_controller_worker_are_bounded_hosted_and_non_recursive():
