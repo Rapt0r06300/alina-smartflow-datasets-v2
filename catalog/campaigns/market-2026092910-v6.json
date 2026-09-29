@@ -27,6 +27,11 @@
     {
       "event": "operator_request",
       "request_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    {
+      "at_utc": "2026-09-29T10:56:59.390365Z",
+      "event": "COLLECTION_CUTOFF_SEALED_UNCLAIMED",
+      "previous_status": "PENDING"
     }
   ],
   "kind": "market_collection",
@@ -48,9 +53,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": null,
-  "status": "PENDING",
-  "status_reason": "created",
-  "terminal_evidence_digest": null,
-  "updated_at": "2026-09-29T10:54:45.876976Z",
+  "status": "UNAVAILABLE",
+  "status_reason": "COLLECTION_CUTOFF_BEFORE_CLAIM",
+  "terminal_evidence_digest": "86bfcfbe76589a961664e0f1199e3fed5ce6b0cba3839888a4629163c0df410d",
+  "updated_at": "2026-09-29T10:56:59.390365Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
