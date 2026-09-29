@@ -123,6 +123,16 @@ def main():
     old_epoch = state.get("epoch")
     if old_phase not in {"IDLE", "COLLECT", "ANALYZE"} or not isinstance(old_epoch, int) or old_epoch < 1:
         raise SystemExit("invalid current phase state")
+    if args.phase == old_phase:
+        write_receipt(
+            state,
+            previous_phase=old_phase,
+            previous_epoch=old_epoch,
+            request_id=args.request_id,
+            path=receipt_path,
+        )
+        print(json.dumps(state, sort_keys=True))
+        return 0
     if args.phase == "ANALYZE" and old_phase != "COLLECT":
         raise SystemExit("ANALYZE requires current COLLECT phase")
     stamp = validate_stamp(args.cutoff_at_utc or now())
