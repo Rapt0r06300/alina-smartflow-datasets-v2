@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import subprocess
@@ -140,6 +141,36 @@ def main():
             continue
         status = str(row.get("status") or "")
         kind = str(row.get("kind") or "UNKNOWN")
+        if row.get("schema_version") == "alina.resumable_campaign.v1" and status in active:
+            campaign_id = str(row.get("campaign_id") or path.stem)
+            previous_lease = row.get("lease")
+            history = row.setdefault("history", [])
+            history.append({
+                "at_utc": now.isoformat().replace("+00:00", "Z"),
+                "event": "WATCHDOG_LEGACY_V1_TERMINALIZED",
+                "previous_status": status,
+                "previous_lease": previous_lease,
+                "reason": "LEGACY_SCHEMA_HAS_NO_PHASE_EPOCH_AND_CANNOT_RESUME",
+            })
+            row["lease"] = None
+            row["status"] = "FAILED"
+            row["status_reason"] = "LEGACY_V1_EXPIRED_EPOCH"
+            row["updated_at"] = now.isoformat().replace("+00:00", "Z")
+            row["terminal_evidence_digest"] = hashlib.sha256(
+                json.dumps(
+                    {
+                        "campaign_id": campaign_id,
+                        "previous_status": status,
+                        "reason": row["status_reason"],
+                        "completed_units": row.get("completed_units") or {},
+                    },
+                    sort_keys=True,
+                    separators=(",", ":"),
+                ).encode("utf-8")
+            ).hexdigest()
+            lease_repairs.append(campaign_id)
+            _write_atomic(path, row)
+            status = "FAILED"
         counts[status] = counts.get(status, 0) + 1
         kind_counts[kind] = kind_counts.get(kind, 0) + 1
         if status in active:
