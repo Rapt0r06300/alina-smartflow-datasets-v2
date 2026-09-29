@@ -13,6 +13,7 @@ on:
       - 'tools/phase_gate.py'
       - 'tools/apply_operator_controls.py'
       - 'tools/set_phase.py'
+      - 'tools/supersede_copy_vault_fanout.py'
       - 'control/alina-phase.json'
   workflow_dispatch:
 
@@ -107,11 +108,13 @@ jobs:
 
           make_campaign             market_collection             "market-$BUCKET-v6"             "market-hourly-discovered-universe-v6"             '{"duration_s":3500,"max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full","require_all_native_venues":true}'
 
+          python tools/supersede_copy_vault_fanout.py
+
           ACTIVE_COPY_CAMPAIGNS="$(python - <<'PY'
           import glob,json
           active={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}
           count=0
-          for path in glob.glob("catalog/campaigns/copy-vault-*-v6.json"):
+          for path in glob.glob("catalog/campaigns/copy-vault-*-v7.json"):
               try:
                   status=str(json.load(open(path,encoding="utf-8")).get("status") or "")
               except (OSError,ValueError,TypeError):
@@ -135,7 +138,7 @@ jobs:
             if [ "$COPY_LANES" -gt 32 ]; then COPY_LANES=32; fi
             for ((COPY_LANE=0; COPY_LANE<COPY_LANES; COPY_LANE++)); do
               COPY_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":300,"max_vaults":int(sys.argv[1]),"vault_shard_count":int(sys.argv[2]),"vault_shard_index":int(sys.argv[3]),"rotate_mb":64,"selection_file":sys.argv[4],"selection_sha256":sys.argv[5]}, separators=(",",":")))' "$COPY_COUNT" "$COPY_LANES" "$COPY_LANE" "$COPY_SELECTION" "$COPY_SHA")"
-              make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v6"               "copy-vault-hourly-complete-universe-v6"               "$COPY_CURSOR"
+              make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v7"               "copy-vault-hourly-complete-universe-v7"               "$COPY_CURSOR"
             done
           fi
 
