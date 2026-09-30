@@ -46,6 +46,9 @@ def test_collect_campaigns_refresh_stale_code_pins_safely() -> None:
 
 def test_controller_does_not_serialize_fresh_market_behind_copy_fanout() -> None:
     controller = (ROOT / ".github" / "workflows" / "resumable-campaign-controller.yml").read_text(encoding="utf-8")
-    assert "group: resumable-campaign-controller-v3" in controller
+    assert "group: resumable-campaign-controller-v4" in controller
     assert "copy_ids=copy_ids[:1]" in controller
-    assert "max-parallel: 1" in controller
+    assert "other_ids=other_ids[:12]" in controller
+    assert "dispatch_collect:" in controller
+    assert "gh workflow run resumable-campaign-worker.yml" in controller
+    assert "needs.select.outputs.phase != 'COLLECT'" in controller

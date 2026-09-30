@@ -383,8 +383,8 @@ jobs:
           set -euo pipefail
           python tools/augment_campaign_result.py durability-failure             --result "$RUNNER_TEMP/result.json"
 
-      - id: checkpoint
-        name: Publish final campaign checkpoint
+      - name: Publish final campaign checkpoint
+        id: checkpoint
         if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
         env:
           LEASE_TOKEN: "${{ steps.claim.outputs.lease_token }}"

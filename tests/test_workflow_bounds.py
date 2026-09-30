@@ -80,7 +80,7 @@ def test_resumable_creator_encodes_copy_vault_cursor_as_valid_json():
     assert '{"duration_s":300' in text
 
 
-def test_controller_worker_are_bounded_hosted_and_non_recursive():
+def test_controller_worker_are_bounded_hosted_and_collect_relayed():
     controller = _workflow("resumable-campaign-controller.yml")
     worker = _workflow("resumable-campaign-worker.yml")
     assert "cron: '*/5 * * * *'" in controller
@@ -89,7 +89,7 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "timeout-minutes: 10" in controller
     assert "timeout-minutes: 345" in worker
     assert "cancel-in-progress: false" in controller
-    assert "group: resumable-campaign-controller-v3" in controller
+    assert "group: resumable-campaign-controller-v4" in controller
     assert "cancel-in-progress: false" in worker
     assert "self-hosted" not in controller + worker
     assert "uses: ./.github/workflows/resumable-campaign-worker.yml" in controller
@@ -104,7 +104,9 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "other_matrix" in controller
     assert "fromJSON(needs.select.outputs.copy_matrix)" in controller
     assert "fromJSON(needs.select.outputs.other_matrix)" in controller
-    assert "gh workflow run resumable-campaign-worker.yml" not in worker
+    assert "dispatch_collect:" in controller
+    assert "gh workflow run resumable-campaign-worker.yml" in controller
+    assert "gh workflow run resumable-campaign-controller.yml" in worker
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
     assert "Claim durable campaign lease" in worker
     assert "Persist collection data or analysis evidence" in worker
@@ -119,7 +121,9 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert 'os.path.abspath(str(part["selection_file"]))' in worker
     assert "COPY_VAULT_SWEEP_DURATION_CAP_S=300" in worker
     assert 'part["duration_s"] = min' in worker
-    assert "actions: write" not in worker
+    assert "actions: write" in worker
+    assert "needs.select.outputs.phase != 'COLLECT'" in controller
+    assert "steps.pin.outputs.phase == 'COLLECT'" in worker
 
 
 def test_metrics_refresh_is_scheduled_and_serialized():
