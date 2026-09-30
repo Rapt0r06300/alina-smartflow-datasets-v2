@@ -53,6 +53,13 @@
       "prior_code_sha": "40e3bbd87b646a6688a0742f33f97a22b268b1a4",
       "new_code_sha": "5a9746865e3058bcc84d299b596ed9261083bf61",
       "reason": "manifest_digest_compatibility_fix_before_retry_claim"
+    },
+    {
+      "event": "repin_before_first_execution",
+      "at": "2026-09-30T14:17:10.027Z",
+      "prior_code_sha": "5a9746865e3058bcc84d299b596ed9261083bf61",
+      "new_code_sha": "5a9746865e3058bcc84d299b596ed9261083bf61",
+      "reason": "manifest_digest_compatibility_fix"
     }
   ],
   "kind": "module_pnl_proof",
@@ -77,6 +84,6 @@
   "status": "PENDING",
   "status_reason": "retry_after_code_fix",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T14:16:45.960Z",
+  "updated_at": "2026-09-30T14:17:10.027Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
