@@ -43,6 +43,39 @@
         "status": "CONTINUATION_REQUIRED"
       },
       "sha256": "77edd1b8e6c8eaddd4e6511dfb34b69d50441795e6b70be226eb7fc97f14c19a"
+    },
+    "1": {
+      "result": {
+        "command": [
+          "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+          "-m",
+          "hl_observer.ops.v2_dataset_bridge",
+          "materialize"
+        ],
+        "failure_category": "QUALITY",
+        "phase": "unit",
+        "phases": [
+          {
+            "analysis_stage": "REPLAY",
+            "command": [
+              "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+              "-m",
+              "hl_observer.ops.v2_dataset_bridge",
+              "materialize"
+            ],
+            "name": "unit",
+            "returncode": 2,
+            "stderr": "",
+            "stdout": "DATASET_V2_NO_GO: release lookup failed for data-v2-campaign-copy-vault-0-2026092910-v6-u0: HTTPError\n"
+          }
+        ],
+        "reason": "adapter_failed",
+        "returncode": 2,
+        "status": "FAILED",
+        "stderr": "",
+        "stdout": "DATASET_V2_NO_GO: release lookup failed for data-v2-campaign-copy-vault-0-2026092910-v6-u0: HTTPError\n"
+      },
+      "sha256": "629ead16172ccd0937205de7314e94f0937a7802a985a6cfe1ab46fee51e54b2"
     }
   },
   "config_sha256": "1af8b8ca26422c14d8ecf9a6929724c43c18a742bfe423843ad71005ee690c3d",
@@ -50,7 +83,7 @@
   "created_at": "2026-09-30T17:12:16.832205+00:00",
   "creation_phase": "ANALYZE",
   "cursor": {
-    "checkpoint_id": "77edd1b8e6c8eaddd4e6511dfb34b69d50441795e6b70be226eb7fc97f14c19a",
+    "checkpoint_id": "629ead16172ccd0937205de7314e94f0937a7802a985a6cfe1ab46fee51e54b2",
     "generation": 1,
     "handoff_generation": null,
     "handoff_phase_epoch": 5,
@@ -86,15 +119,16 @@
       "from": "CONTINUATION_REQUIRED",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-30T17:16:50.176306Z",
+      "from": "RUNNING",
+      "reason": "adapter_failed",
+      "to": "FAILED"
     }
   ],
   "kind": "replay",
-  "lease": {
-    "acquired_at": "2026-09-30T17:15:11.602651Z",
-    "expires_at": "2026-09-30T23:00:11.602651Z",
-    "lease_token_sha256": "dc9957af4d5c0f32823728a763b04b02581a47dee5e1da606e65c377270a5831",
-    "owner_run_id": "36749739934"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -112,9 +146,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": 4,
-  "status": "RUNNING",
-  "status_reason": "worker_started",
-  "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T17:15:11.602701Z",
+  "status": "FAILED",
+  "status_reason": "adapter_failed",
+  "terminal_evidence_digest": "194cf1e5f8005dca2bd198bf3e088831bc1a2b037bd0bcdec431882467284715",
+  "updated_at": "2026-09-30T17:16:50.176306Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
