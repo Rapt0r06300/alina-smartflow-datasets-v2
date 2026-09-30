@@ -188,29 +188,34 @@ def test_pending_analysis_without_work_refreshes_to_new_code(tmp_path: Path) -> 
     assert ".pending." in result["archive_path"]
 
 
-def test_pending_analysis_with_completed_work_cannot_be_refreshed(tmp_path: Path) -> None:
+def test_pending_analysis_with_completed_work_is_preserved_without_refresh(tmp_path: Path) -> None:
     manifest_path = tmp_path / "analysis.json"
     row = _manifest()
     row["status"] = "PENDING"
     row["terminal_evidence_digest"] = None
-    manifest_path.write_text(json.dumps(row), encoding="utf-8")
+    raw = json.dumps(row, sort_keys=True, indent=2) + "\n"
+    manifest_path.write_text(raw, encoding="utf-8")
 
-    try:
-        MODULE.requeue(
-            manifest_path=manifest_path,
-            history_dir=tmp_path / "history",
-            code_sha="7" * 40,
-            config_sha256="8" * 64,
-            work_plan_sha256="9" * 64,
-            expected_phase_epoch=3,
-            expected_analysis_stage="PNL_PROOF",
-            expected_source_collection_epoch=2,
-            expected_dataset_selection_id="4" * 64,
-        )
-    except SystemExit as exc:
-        assert "durable work" in str(exc)
-    else:
-        raise AssertionError("pending campaign with completed work must be refused")
+    result = MODULE.requeue(
+        manifest_path=manifest_path,
+        history_dir=tmp_path / "history",
+        code_sha="7" * 40,
+        config_sha256="8" * 64,
+        work_plan_sha256="9" * 64,
+        expected_phase_epoch=3,
+        expected_analysis_stage="PNL_PROOF",
+        expected_source_collection_epoch=2,
+        expected_dataset_selection_id="4" * 64,
+    )
+
+    assert result == {
+        "requeued": False,
+        "reason": "pending_durable_work_preserved",
+        "status": "PENDING",
+        "campaign_id": "analysis-e3-pnl-proof-v2",
+    }
+    assert manifest_path.read_text(encoding="utf-8") == raw
+    assert not (tmp_path / "history").exists()
 
 def test_durable_publication_continuation_refreshes_after_code_fix(tmp_path: Path) -> None:
     manifest_path = tmp_path / "analysis.json"
