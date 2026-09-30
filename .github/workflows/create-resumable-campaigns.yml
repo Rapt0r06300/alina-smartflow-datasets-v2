@@ -127,20 +127,7 @@ jobs:
 
             python tools/supersede_copy_vault_fanout.py
 
-            ACTIVE_COPY_CAMPAIGNS="$(python - <<'PY'
-            import glob,json
-            active={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}
-            count=0
-            for path in glob.glob("catalog/campaigns/copy-vault-*-v7.json"):
-                try:
-                    status=str(json.load(open(path,encoding="utf-8")).get("status") or "")
-                except (OSError,ValueError,TypeError):
-                    continue
-                if status in active:
-                    count += 1
-            print(count)
-            PY
-            )"
+            ACTIVE_COPY_CAMPAIGNS="$(python -c 'import glob,json; active={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}; rows=[]; [rows.append(str(json.load(open(path,encoding="utf-8")).get("status") or "")) for path in glob.glob("catalog/campaigns/copy-vault-*-v7.json")]; print(sum(status in active for status in rows))')"
             if [ "$ACTIVE_COPY_CAMPAIGNS" -gt 0 ]; then
               echo "active Copy-Vault sweep already exists ($ACTIVE_COPY_CAMPAIGNS campaigns); skipping overlapping full-universe sweep"
             else
