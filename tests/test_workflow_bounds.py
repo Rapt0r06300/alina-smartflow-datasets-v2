@@ -180,3 +180,16 @@ def test_campaign_watchdog_recomputes_on_concurrent_receipt_writers():
     assert "git reset --hard origin/main" in text
     assert "python tools/campaign_watchdog.py --dispatch" in text
     assert "for attempt in 1 2 3 4 5" in text
+
+def test_resumable_creator_structure_and_exact_analysis_selection_are_not_corrupted():
+    text = _workflow("create-resumable-campaigns.yml")
+    assert text.count("\n  launch:\n") == 1
+    assert text.count("make_campaign() {") == 1
+    assert text.count("Commit campaign manifests") == 1
+    assert text.count("tools/import_operator_intents.py") == 1
+    assert "DATA_INDEX_SHA=" in text
+    assert "DATASET_SELECTION_ID=" in text
+    assert "grep -Eq '^[0-9a-f]{64}$'" in text
+    assert '--dataset-selection-id "$DATASET_SELECTION_ID"' in text
+    assert "{64}          " not in text
+
