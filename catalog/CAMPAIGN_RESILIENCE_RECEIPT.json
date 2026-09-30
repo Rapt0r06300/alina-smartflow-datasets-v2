@@ -1,5 +1,5 @@
 {
-  "campaign_count": 1042,
+  "campaign_count": 1043,
   "campaigns": [
     {
       "analysis_stage": "BACKTEST",
@@ -91,6 +91,19 @@
       "schema_version": "alina.resumable_campaign.v2",
       "status": "COMPLETE",
       "terminal_evidence_digest": "b3e23910e006198ace04e1acfae3e86bb4d47c743f83ae59918c40ceb2c61631"
+    },
+    {
+      "analysis_stage": "BACKTEST",
+      "campaign_id": "analysis-e5-backtest-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 4,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "CONTINUATION_REQUIRED",
+      "terminal_evidence_digest": null
     },
     {
       "analysis_stage": "REPLAY",
@@ -8719,7 +8732,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-30T18:24:05.921329Z",
+  "generated_at_utc": "2026-09-30T18:28:59.839507Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -11718,9 +11731,9 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "a6efccd30aa988c223317f29e3fc69e7c4b15baa5ab79e28a4955d9005a27f5d",
+  "receipt_digest": "2659d599505fa3ca74d271ac123caeac92b2c2546b3b238d7346556e688fd2a6",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
-  "v2_campaign_count": 668,
+  "v2_campaign_count": 669,
   "violations": []
 }
