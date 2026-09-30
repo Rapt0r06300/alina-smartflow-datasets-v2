@@ -193,3 +193,15 @@ def test_resumable_creator_structure_and_exact_analysis_selection_are_not_corrup
     assert '--dataset-selection-id "$DATASET_SELECTION_ID"' in text
     assert "{64}          " not in text
 
+def test_analyze_phase_never_prepares_collection_inputs():
+    text = _workflow("create-resumable-campaigns.yml")
+    collect_start = text.index('if [ "$PHASE" = "COLLECT" ]; then')
+    analyze_start = text.index('if [ "$PHASE" = "ANALYZE" ]; then', collect_start + 1)
+    collect_block = text[collect_start:analyze_start]
+    assert "market_collection" in collect_block
+    assert "freeze_copy_vault_selection.py" in collect_block
+    assert "copy_vault_collection" in collect_block
+    assert "event_intelligence_collection" in collect_block
+    assert "official_archive_collection" in collect_block
+    assert "freeze_copy_vault_selection.py" not in text[analyze_start:]
+
