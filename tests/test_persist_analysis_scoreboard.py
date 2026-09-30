@@ -86,24 +86,27 @@ def test_ledger_etablit_reference_puis_ne_garde_que_les_ameliorations():
     first = build_improvement_ledger(
         _full_scoreboard(-4.0, 1.0, None),
         None,
-        campaign_id="score-1",
+        campaign_id="backtest-1",
         phase_epoch=3,
         source_collection_epoch=2,
         dataset_selection_id="sel-1",
         code_sha="a" * 40,
+        analysis_stage="BACKTEST",
     )
     assert first["families"]["copy_vault"]["latest"]["status"] == "REFERENCE_ETABLIE"
     assert first["families"]["copy_vault"]["champion"]["net_pnl_usd"] == -4.0
+    assert first["families"]["copy_vault"]["reference_stage"] == "BACKTEST"
     assert first["families"]["cross_venue_dislocation_v2"]["latest"]["status"] == "NON_MESURABLE"
 
     second = build_improvement_ledger(
         _full_scoreboard(-2.0, 0.5, -1.0),
         first,
-        campaign_id="score-2",
+        campaign_id="backtest-2",
         phase_epoch=4,
         source_collection_epoch=3,
         dataset_selection_id="sel-2",
         code_sha="b" * 40,
+        analysis_stage="BACKTEST",
     )
     copy_row = second["families"]["copy_vault"]
     assert copy_row["latest"]["status"] == "AMELIORATION"
@@ -113,3 +116,48 @@ def test_ledger_etablit_reference_puis_ne_garde_que_les_ameliorations():
     lead_row = second["families"]["lead_lag"]
     assert lead_row["latest"]["status"] == "PAS_D_AMELIORATION"
     assert lead_row["champion"]["net_pnl_usd"] == 1.0
+
+
+def test_ledger_ne_compare_jamais_des_etapes_differentes():
+    backtest = build_improvement_ledger(
+        _full_scoreboard(-4.0, None, None),
+        None,
+        campaign_id="backtest-1",
+        phase_epoch=3,
+        source_collection_epoch=2,
+        dataset_selection_id="sel-1",
+        code_sha="a" * 40,
+        analysis_stage="BACKTEST",
+    )
+    oos = build_improvement_ledger(
+        _full_scoreboard(-10.0, None, None),
+        backtest,
+        campaign_id="oos-1",
+        phase_epoch=3,
+        source_collection_epoch=2,
+        dataset_selection_id="sel-1",
+        code_sha="a" * 40,
+        analysis_stage="OOS",
+    )
+    assert oos["families"]["copy_vault"]["latest"]["status"] == "REFERENCE_ETABLIE"
+    assert oos["families"]["copy_vault"]["stages"]["BACKTEST"]["champion"]["net_pnl_usd"] == -4.0
+    assert oos["families"]["copy_vault"]["stages"]["OOS"]["champion"]["net_pnl_usd"] == -10.0
+    assert oos["families"]["copy_vault"]["reference_stage"] == "OOS"
+
+
+def test_zero_sans_trade_n_est_pas_un_resultat_mesurable():
+    scoreboard = _full_scoreboard(0.0, None, None)
+    scoreboard["families"]["copy_vault"]["closed_positions"] = 0
+    result = build_improvement_ledger(
+        scoreboard,
+        None,
+        campaign_id="backtest-zero",
+        phase_epoch=3,
+        source_collection_epoch=2,
+        dataset_selection_id="sel-1",
+        code_sha="a" * 40,
+        analysis_stage="BACKTEST",
+    )
+    assert result["families"]["copy_vault"]["latest"]["status"] == "NON_MESURABLE"
+    assert result["families"]["copy_vault"]["champion"] is None
+
