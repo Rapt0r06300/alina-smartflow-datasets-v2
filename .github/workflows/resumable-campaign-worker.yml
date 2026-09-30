@@ -326,7 +326,13 @@ jobs:
               fi
               if [ "$KIND" = "scoreboard" ]; then
                 SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
-                ENV_RECEIPT="$WORKSPACE/runtime/reports/economic_campaigns/analysis_stages/scoreboard.json"
+                ENV_RECEIPT="$WORKSPACE/runtime/reports/analysis_stages/scoreboard.json"
+                if [ ! -f "$ENV_RECEIPT" ]; then
+                  LEGACY_ENV_RECEIPT="$WORKSPACE/runtime/reports/economic_campaigns/analysis_stages/scoreboard.json"
+                  if [ -f "$LEGACY_ENV_RECEIPT" ]; then
+                    ENV_RECEIPT="$LEGACY_ENV_RECEIPT"
+                  fi
+                fi
                 test -f "$SCOREBOARD"
                 test -f "$ENV_RECEIPT"
                 python tools/persist_analysis_scoreboard.py \
