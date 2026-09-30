@@ -64550,7 +64550,7 @@
     "unique_trade_count_exact": true,
     "valid_record_count_exact": true
   },
-  "dataset_commit": "b4c4a1a213e5c0cf16375d724f4d151a66ec6543",
+  "dataset_commit": "610e410397303e43e573e89622e4dae4d5720ee8",
   "metrics_digest": "28d0d8fd7d3dd63303f59e7ebade6b8bc60f4e322bd7f82de0cca62c38d6baff",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
@@ -64573,7 +64573,7 @@
     "mismatches": [],
     "status": "CONSISTENT"
   },
-  "receipt_digest": "7f6f972ff19b72cd8c46dba5bf390655e3a9a9ab8e33c685cf53a175dd001cf8",
+  "receipt_digest": "ef6c57dab5bef181d7485774c74915bfe8a58125174c69352f0d8f920fb2f378",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
