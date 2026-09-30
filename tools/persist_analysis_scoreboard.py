@@ -43,12 +43,15 @@ def build_improvement_ledger(
     source_collection_epoch: int,
     dataset_selection_id: str,
     code_sha: str,
+    analysis_stage: str = "SCOREBOARD",
+    evidence_tag: str | None = None,
+    evidence_repository: str | None = None,
+    unit_id: str | None = None,
 ) -> dict[str, Any]:
-    """Append one comparable paper result per family and preserve best-so-far.
+    """Conserve un historique comparable et un meilleur resultat par etape.
 
-    A challenger is an improvement only when its measured net PnL is strictly
-    greater than the previous champion for the same family. Missing/unmeasured
-    values never replace a champion.
+    BACKTEST n'est compare qu'a BACKTEST, OOS qu'a OOS, etc. Un resultat
+    non mesurable est historise mais ne remplace jamais la reference.
     """
     previous = dict(previous or {})
     prior_families = previous.get("families")
@@ -57,74 +60,154 @@ def build_improvement_ledger(
     scoreboard_families = scoreboard.get("families")
     if not isinstance(scoreboard_families, Mapping):
         scoreboard_families = {}
+    stage = str(analysis_stage or "SCOREBOARD").upper()
+    allowed_stages = {"BACKTEST", "OOS", "FORWARD_PAPER", "PNL_PROOF", "SCOREBOARD"}
+    if stage not in allowed_stages:
+        raise ValueError(f"unsupported improvement stage: {stage}")
+
+    def metric(source: Mapping[str, Any]) -> tuple[float | None, str | None]:
+        direct = _number(source.get("comparison_metric_usd"))
+        if direct is not None:
+            return direct, str(source.get("comparison_metric_source") or "comparison_metric_usd")
+        proof = _number(source.get("proof_net_pnl_usd"))
+        if proof is not None:
+            return proof, "proof_net_pnl_usd"
+        observed = _number(source.get("net_pnl_usd"))
+        closed = _number(source.get("closed_positions"))
+        if observed is not None and (closed or 0.0) > 0:
+            return observed, "net_pnl_usd"
+        return None, None
 
     families: dict[str, Any] = {}
+    scoreboard_sha256 = _digest(dict(scoreboard))
+    stage_priority = ("SCOREBOARD", "PNL_PROOF", "FORWARD_PAPER", "OOS", "BACKTEST")
+
     for family in ACTIVE_FAMILIES:
         source = scoreboard_families.get(family)
         source = source if isinstance(source, Mapping) else {}
-        candidate_net = _number(source.get("net_pnl_usd"))
+        candidate_net, metric_source = metric(source)
         prior = prior_families.get(family)
         prior = prior if isinstance(prior, Mapping) else {}
-        champion = prior.get("champion")
+
+        prior_stages = prior.get("stages")
+        if not isinstance(prior_stages, Mapping):
+            prior_stages = {}
+            # Compatibility with the short-lived v1 ledger.
+            if isinstance(prior.get("champion"), Mapping) or prior.get("history"):
+                prior_stages = {
+                    "SCOREBOARD": {
+                        "champion": prior.get("champion"),
+                        "latest": prior.get("latest"),
+                        "history": list(prior.get("history") or []),
+                    }
+                }
+        stages = json.loads(json.dumps(dict(prior_stages), sort_keys=True))
+        stage_row = stages.get(stage)
+        stage_row = stage_row if isinstance(stage_row, Mapping) else {}
+        champion = stage_row.get("champion")
         champion = champion if isinstance(champion, Mapping) else None
         champion_net = _number(champion.get("net_pnl_usd")) if champion else None
 
-        if candidate_net is None:
-            status = "NON_MESURABLE"
-            delta = None
-            new_champion = champion
-        elif champion_net is None:
-            status = "REFERENCE_ETABLIE"
-            delta = None
-            new_champion = {
-                "net_pnl_usd": candidate_net,
-                "campaign_id": campaign_id,
-                "phase_epoch": phase_epoch,
-                "source_collection_epoch": source_collection_epoch,
-                "dataset_selection_id": dataset_selection_id,
-                "code_sha": code_sha,
-            }
-        else:
-            delta = round(candidate_net - champion_net, 12)
-            if delta > 0:
-                status = "AMELIORATION"
-                new_champion = {
-                    "net_pnl_usd": candidate_net,
-                    "campaign_id": campaign_id,
-                    "phase_epoch": phase_epoch,
-                    "source_collection_epoch": source_collection_epoch,
-                    "dataset_selection_id": dataset_selection_id,
-                    "code_sha": code_sha,
-                }
-            else:
-                status = "PAS_D_AMELIORATION"
-                new_champion = champion
-
-        history = list(prior.get("history") or [])
-        history.append({
+        identity = {
             "campaign_id": campaign_id,
+            "analysis_stage": stage,
             "phase_epoch": phase_epoch,
             "source_collection_epoch": source_collection_epoch,
             "dataset_selection_id": dataset_selection_id,
             "code_sha": code_sha,
-            "net_pnl_usd": candidate_net,
-            "previous_champion_net_pnl_usd": champion_net,
-            "delta_vs_previous_champion_usd": delta,
-            "status": status,
-            "verdict": source.get("verdict"),
-            "paper_read_only": True,
-            "real_execution": False,
-        })
-        families[family] = {
+            "unit_id": str(unit_id) if unit_id is not None else None,
+        }
+        history = list(stage_row.get("history") or [])
+        existing = next(
+            (
+                row for row in history
+                if isinstance(row, Mapping)
+                and all(row.get(key) == value for key, value in identity.items())
+            ),
+            None,
+        )
+        if existing is not None:
+            latest = dict(existing)
+            new_champion = champion
+        else:
+            if candidate_net is None:
+                status = "NON_MESURABLE"
+                delta = None
+                new_champion = champion
+            elif champion_net is None:
+                status = "REFERENCE_ETABLIE"
+                delta = None
+                new_champion = {
+                    **identity,
+                    "net_pnl_usd": candidate_net,
+                    "metric_source": metric_source,
+                    "evidence_tag": evidence_tag,
+                    "evidence_repository": evidence_repository,
+                    "scoreboard_sha256": scoreboard_sha256,
+                }
+            else:
+                delta = round(candidate_net - champion_net, 12)
+                if delta > 0:
+                    status = "AMELIORATION"
+                    new_champion = {
+                        **identity,
+                        "net_pnl_usd": candidate_net,
+                        "metric_source": metric_source,
+                        "evidence_tag": evidence_tag,
+                        "evidence_repository": evidence_repository,
+                        "scoreboard_sha256": scoreboard_sha256,
+                    }
+                else:
+                    status = "PAS_D_AMELIORATION"
+                    new_champion = champion
+
+            latest = {
+                **identity,
+                "net_pnl_usd": candidate_net,
+                "metric_source": metric_source,
+                "previous_champion_net_pnl_usd": champion_net,
+                "delta_vs_previous_champion_usd": delta,
+                "status": status,
+                "verdict": source.get("verdict"),
+                "measurement_status": source.get("measurement_status"),
+                "evidence_tag": evidence_tag,
+                "evidence_repository": evidence_repository,
+                "scoreboard_sha256": scoreboard_sha256,
+                "paper_read_only": True,
+                "real_execution": False,
+            }
+            history.append(latest)
+
+        stages[stage] = {
             "champion": new_champion,
-            "latest": history[-1],
+            "latest": latest,
             "history": history,
         }
 
+        reference_stage = next(
+            (
+                name for name in stage_priority
+                if isinstance(stages.get(name), Mapping)
+                and isinstance(stages[name].get("champion"), Mapping)
+            ),
+            None,
+        )
+        reference = (
+            dict(stages[reference_stage]["champion"])
+            if reference_stage is not None
+            else None
+        )
+        families[family] = {
+            "champion": reference,
+            "reference_stage": reference_stage,
+            "latest": latest,
+            "stages": stages,
+        }
+
     body = {
-        "schema": "alina.economic_improvement_ledger.v1",
-        "policy": "MEILLEUR_RESULTAT_HISTORIQUE_PAR_MODULE",
-        "comparison_metric": "gain_net_usd",
+        "schema": "alina.economic_improvement_ledger.v2",
+        "policy": "MEILLEUR_RESULTAT_HISTORIQUE_COMPARABLE_PAR_MODULE_ET_ETAPE",
+        "comparison_metric": "gain_net_usd_apres_couts",
         "amelioration_stricte_requise": True,
         "families": families,
         "paper_only": True,
@@ -253,6 +336,10 @@ def main(argv: list[str] | None = None) -> int:
         source_collection_epoch=receipt["source_collection_epoch"],
         dataset_selection_id=receipt["dataset_selection_id"],
         code_sha=receipt["code_sha"],
+        analysis_stage="SCOREBOARD",
+        evidence_tag=receipt["evidence_tag"],
+        evidence_repository=receipt["evidence_repository"],
+        unit_id=receipt["unit_id"],
     )
     ledger_path.parent.mkdir(parents=True, exist_ok=True)
     ledger_path.write_text(
