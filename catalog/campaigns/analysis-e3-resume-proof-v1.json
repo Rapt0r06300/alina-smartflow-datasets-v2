@@ -30,15 +30,19 @@
       "from": "PENDING",
       "reason": "worker_started",
       "to": "RUNNING"
+    },
+    {
+      "at": "2026-09-30T13:31:13.809Z",
+      "from": "RUNNING",
+      "to": "CONTINUATION_REQUIRED",
+      "event": "FAIL_CLOSED_ORPHAN_LEASE_RECOVERY",
+      "reason": "worker_checkpoint_publish_failed_receipt_directory_absent",
+      "failed_owner_run_id": "36713054135",
+      "evidence": "workflow run 36713054135 attempt 2 concluded failure before durable checkpoint commit"
     }
   ],
   "kind": "replay",
-  "lease": {
-    "acquired_at": "2026-09-30T13:27:14.718521Z",
-    "expires_at": "2026-09-30T19:12:14.718521Z",
-    "lease_token_sha256": "d37c161682b6283241d411d4a6531610c6e5078683df60170390d572de95fdf6",
-    "owner_run_id": "36713054135"
-  },
+  "lease": null,
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -56,9 +60,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": 2,
-  "status": "RUNNING",
-  "status_reason": "worker_started",
+  "status": "CONTINUATION_REQUIRED",
+  "status_reason": "worker_checkpoint_publish_failed_receipt_directory_absent",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T13:27:14.718581Z",
+  "updated_at": "2026-09-30T13:31:13.809Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
