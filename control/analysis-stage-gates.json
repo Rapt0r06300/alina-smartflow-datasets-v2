@@ -17,28 +17,35 @@
       }
     },
     "REPLAY": {
+      "required_files": [
+        "catalog/DATASET_HEALTH_RECEIPT.json"
+      ],
+      "required_coverage": {
+        "trade_count_exact": true,
+        "unique_trade_count_exact": true,
+        "uncompressed_bytes_exact": true,
+        "valid_record_count_exact": true,
+        "unique_record_count_exact": true
+      }
+    },
+    "BACKTEST": {
       "required_campaign_kinds": [
         "replay"
       ]
     },
-    "BACKTEST": {
+    "OOS": {
       "required_campaign_kinds": [
         "backtest"
       ]
     },
-    "OOS": {
+    "FORWARD_PAPER": {
       "required_campaign_kinds": [
         "oos"
       ]
     },
-    "FORWARD_PAPER": {
-      "required_campaign_kinds": [
-        "forward_paper"
-      ]
-    },
     "PNL_PROOF": {
       "required_campaign_kinds": [
-        "module_pnl_proof"
+        "forward_paper"
       ]
     },
     "SCOREBOARD": {
@@ -46,7 +53,7 @@
         "catalog/DATASET_HEALTH_RECEIPT.json"
       ],
       "required_campaign_kinds": [
-        "scoreboard"
+        "module_pnl_proof"
       ],
       "required_coverage": {
         "replayable_shards": {
