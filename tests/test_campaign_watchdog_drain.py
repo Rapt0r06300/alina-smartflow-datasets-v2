@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from tools.campaign_watchdog import _reconcile_drain_stuck
+from tools.campaign_watchdog import _reconcile_drain_stuck, _reconcile_finished_owner
 
 
 def _phase():
@@ -73,3 +73,49 @@ def test_non_drain_phase_does_not_rewrite_stuck_campaign():
         row, phase, datetime(2026, 9, 30, tzinfo=timezone.utc)
     )
     assert row["status"] == "STUCK"
+
+def test_finished_owner_run_revokes_live_lease_immediately():
+    row = {
+        "schema_version": "alina.resumable_campaign.v2",
+        "campaign_id": "analysis-e3-resume-proof-v1",
+        "kind": "replay",
+        "status": "RUNNING",
+        "lease": {
+            "owner_run_id": "12345",
+            "acquired_at": "2026-09-30T13:00:00Z",
+            "expires_at": "2026-09-30T19:00:00Z",
+        },
+        "history": [],
+    }
+    now = datetime(2026, 9, 30, 13, 30, tzinfo=timezone.utc)
+    assert _reconcile_finished_owner(
+        row,
+        now,
+        run_state=lambda run_id: ("completed", "failure"),
+    )
+    assert row["lease"] is None
+    assert row["status"] == "STUCK"
+    assert row["status_reason"] == "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    assert row["stuck_reason"] == "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    assert row["history"][-1]["owner_run_id"] == "12345"
+    assert row["history"][-1]["owner_run_conclusion"] == "failure"
+
+
+def test_active_owner_run_keeps_live_lease():
+    row = {
+        "schema_version": "alina.resumable_campaign.v2",
+        "campaign_id": "analysis-e3-replay-v2",
+        "kind": "replay",
+        "status": "RUNNING",
+        "lease": {"owner_run_id": "999", "expires_at": "2026-09-30T19:00:00Z"},
+        "history": [],
+    }
+    now = datetime(2026, 9, 30, 13, 30, tzinfo=timezone.utc)
+    assert not _reconcile_finished_owner(
+        row,
+        now,
+        run_state=lambda run_id: ("in_progress", ""),
+    )
+    assert row["status"] == "RUNNING"
+    assert row["lease"]["owner_run_id"] == "999"
+
