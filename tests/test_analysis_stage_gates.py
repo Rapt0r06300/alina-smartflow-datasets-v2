@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from tools.advance_analysis_stage import _required_campaign_gate
+from tools.advance_analysis_stage import _required_campaign_gate, _without_superseded
 
 
 def test_analysis_stage_gates_do_not_require_target_work_before_target_entry():
@@ -91,3 +91,33 @@ def test_create_resumable_workflow_analysis_block_is_well_formed():
     assert 'PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")' in text
     assert "grep -Eq '^[0-9a-f]{64}          PLAN_SHA=" not in text
 
+
+
+def test_superseded_analysis_campaign_is_ignored_by_gate():
+    state = {"epoch": 3, "source_collection_epoch": 2}
+    rows = [
+        {
+            "campaign_id": "analysis-e3-pnl-proof-v2",
+            "kind": "module_pnl_proof",
+            "creation_phase": "ANALYZE",
+            "phase_epoch": 3,
+            "source_collection_epoch": 2,
+            "status": "FAILED",
+        },
+        {
+            "campaign_id": "analysis-e3-pnl-proof-v3",
+            "kind": "module_pnl_proof",
+            "creation_phase": "ANALYZE",
+            "phase_epoch": 3,
+            "source_collection_epoch": 2,
+            "status": "COMPLETE",
+            "supersedes": "analysis-e3-pnl-proof-v2",
+        },
+    ]
+    active = _without_superseded(rows)
+    assert [row["campaign_id"] for row in active] == ["analysis-e3-pnl-proof-v3"]
+    missing, incomplete = _required_campaign_gate(
+        rows, state, {"module_pnl_proof"}
+    )
+    assert missing == []
+    assert incomplete == []
