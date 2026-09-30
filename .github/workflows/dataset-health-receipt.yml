@@ -21,6 +21,7 @@ on:
 permissions:
   contents: write
   actions: write
+  actions: write
 concurrency:
   group: dataset-v2-receipt-publish
   cancel-in-progress: false
@@ -59,6 +60,14 @@ jobs:
             git rebase origin/main
           done
           exit 1
+      - name: Wake analysis stage controller
+        env:
+          GH_TOKEN: "${{ github.token }}"
+        run: |
+          set -euo pipefail
+          gh workflow run analysis-stage-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
 
       - name: Dispatch analysis stage controller
         env:
