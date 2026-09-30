@@ -25,7 +25,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: dataset-v2-global-unique-counts
+  group: dataset-v2-global-unique-counts-v2
   # New identity-parser fixes supersede scans from older SHAs. Continuing an
   # obsolete full-corpus scan only delays fail-closed closure evidence.
   cancel-in-progress: true
