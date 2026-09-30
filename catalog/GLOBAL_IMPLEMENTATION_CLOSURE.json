@@ -108,7 +108,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "83366239e7ad0ffb51ba866dd059d2acc5b08214",
+  "dataset_v2_head": "f71129660c499644d6b58b317375d8205607cef3",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -154,7 +154,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:30:21.182887Z",
+  "generated_at_utc": "2026-09-30T13:31:22.032580Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "REPLAY",
@@ -168,7 +168,7 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "9c2f9aa738ed6b7061df0ce4df3264e8b4280bb3fb2bfc6808713bcacafb752f",
+  "receipt_digest": "f342de7af6f7bafd805b1186a97096e2b809155bff4a084bd955895a8ea91feb",
   "resume_provenance": {
     "campaign_id": null,
     "duplicate_completed_unit_count": null,
