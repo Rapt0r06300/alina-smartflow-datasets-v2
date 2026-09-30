@@ -257,6 +257,7 @@ def main() -> int:
     analysis_complete, analysis_selection_coherent, analysis_campaigns = (
         current_analysis_campaign_status(dataset, phase_map)
     )
+    improvement_ledger = load(dataset / "catalog/ECONOMIC_IMPROVEMENT_LEDGER.json", {})
     event_status = load(alina / "docs/event-intelligence-120-status.json", {})
     event_summary = event_status.get("summary") if isinstance(event_status, dict) else {}
 
@@ -275,12 +276,11 @@ def main() -> int:
             state, reason = "UNMEASURABLE", scoreboard_reason
         elif source.get("verdict") == "KILL":
             state, reason = "KILL", "ECONOMIC_GATE_REJECTED"
-        elif source.get("verdict") == "PROMOTE" and source.get("objective_status") == "ATTEINT":
-            state, reason = "PROVEN", "NET_DAILY_OBJECTIVE_PROVEN"
+        elif source.get("verdict") == "PROMOTE":
+            state, reason = "PROVEN", "PREUVE_ECONOMIQUE_VALIDE"
         else:
             state, reason = "MORE_DATA", ",".join(
                 source.get("verdict_reasons")
-                or source.get("objective_reasons")
                 or ["MORE_DATA"]
             )
         families[family] = {
@@ -371,6 +371,7 @@ def main() -> int:
             "environment_provenance": scoreboard_receipt.get("environment_provenance") if isinstance(scoreboard_receipt, dict) else None,
         },
         "analysis_campaigns": analysis_campaigns,
+        "economic_improvement": improvement_ledger if isinstance(improvement_ledger, dict) else {},
         "resume_provenance": {
             "valid": resume_valid,
             "reason": resume_reason,
