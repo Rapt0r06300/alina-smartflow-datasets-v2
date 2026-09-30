@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "SCOREBOARD",
+  "analysis_stage": "DONE",
   "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
   "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
   "epoch": 5,
   "phase": "ANALYZE",
-  "request_id": "1c0d31724fb306f535e2764ed3e638ae2dc059ed9cb7b826408d2dd96661a205",
+  "request_id": "09d6dd2b21125fae0bfcbc33c650a63f478fd50d67df23732219da18521ddfc1",
   "requested_at_utc": "2026-09-30T17:06:32.940845Z",
   "requested_by": "chatgpt-github",
   "schema_version": 1,
