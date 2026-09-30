@@ -17,7 +17,7 @@ permissions:
 concurrency:
   # v3 intentionally moves off the legacy v2 serialization group so a long
   # pre-fix Copy-Vault fan-out cannot starve fresh market/L2 work.
-  group: resumable-campaign-controller-v3
+  group: resumable-campaign-controller-v4
   cancel-in-progress: false
 
 jobs:
@@ -29,6 +29,8 @@ jobs:
       copy_count: ${{ steps.due.outputs.copy_count }}
       other_matrix: ${{ steps.due.outputs.other_matrix }}
       other_count: ${{ steps.due.outputs.other_count }}
+      phase: ${{ steps.due.outputs.phase }}
+      phase_epoch: ${{ steps.due.outputs.phase_epoch }}
     steps:
       - name: Checkout Dataset V2
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -62,6 +64,8 @@ jobs:
           PHASE_EPOCH="$(python -c 'import json,sys; print(json.loads(sys.argv[1])["epoch"])' "$PHASE_META")"
           ANALYSIS_STAGE="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("analysis_stage") or "")' "$PHASE_META")"
           echo "phase=$PHASE epoch=$PHASE_EPOCH analysis_stage=$ANALYSIS_STAGE"
+          echo "phase=$PHASE" >> "$GITHUB_OUTPUT"
+          echo "phase_epoch=$PHASE_EPOCH" >> "$GITHUB_OUTPUT"
           PYTHONPATH=alina/src python alina/tools/resumable_campaign.py             list-due catalog/campaigns             --current-phase "$PHASE"             --current-epoch "$PHASE_EPOCH"             --current-analysis-stage "$ANALYSIS_STAGE"             > "$RUNNER_TEMP/all-due.txt"
           head -n 128 "$RUNNER_TEMP/all-due.txt" > "$RUNNER_TEMP/due.txt"
           python - <<'PY' "$RUNNER_TEMP/due.txt" >> "$GITHUB_OUTPUT"
@@ -89,15 +93,59 @@ jobs:
           # serialized fan-out from holding the controller for hours. Market,
           # event and archive work can therefore start on every fresh pass.
           copy_ids=copy_ids[:1]
+          other_ids=other_ids[:12]
           print("copy_count="+str(len(copy_ids)))
           print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))
           print("other_count="+str(len(other_ids)))
           print("other_matrix="+json.dumps({"campaign_id":other_ids},separators=(",",":")))
           PY
 
+
+  dispatch_collect:
+    needs: select
+    if: ${{ needs.select.outputs.phase == 'COLLECT' && (needs.select.outputs.copy_count != '0' || needs.select.outputs.other_count != '0') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      COPY_MATRIX: ${{ needs.select.outputs.copy_matrix }}
+      OTHER_MATRIX: ${{ needs.select.outputs.other_matrix }}
+      PHASE_EPOCH: ${{ needs.select.outputs.phase_epoch }}
+    steps:
+      - name: Dispatch due COLLECT workers without blocking controller
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' "$COPY_MATRIX" "$OTHER_MATRIX" > "$RUNNER_TEMP/due-workers.txt"
+          import json,sys
+          seen=set()
+          for raw in sys.argv[1:]:
+              payload=json.loads(raw)
+              for campaign_id in payload.get("campaign_id", []):
+                  campaign_id=str(campaign_id).strip()
+                  if campaign_id and campaign_id not in seen:
+                      seen.add(campaign_id)
+                      print(campaign_id)
+          PY
+          REQUESTED_AT="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          while IFS= read -r CAMPAIGN_ID; do
+            [ -n "$CAMPAIGN_ID" ] || continue
+            echo "dispatching $CAMPAIGN_ID for COLLECT epoch $PHASE_EPOCH"
+            gh workflow run resumable-campaign-worker.yml \
+              --repo "$GITHUB_REPOSITORY" \
+              --ref main \
+              -f campaign_id="$CAMPAIGN_ID" \
+              -f phase_epoch="$PHASE_EPOCH" \
+              -f predecessor_run_id="$GITHUB_RUN_ID" \
+              -f requested_handoff_at_utc="$REQUESTED_AT"
+          done < "$RUNNER_TEMP/due-workers.txt"
+
   copy_work:
     needs: select
-    if: needs.select.outputs.copy_count != '0'
+    if: ${{ needs.select.outputs.phase != 'COLLECT' && needs.select.outputs.copy_count != '0' }}
     strategy:
       fail-fast: false
       max-parallel: 1
@@ -110,7 +158,7 @@ jobs:
 
   other_work:
     needs: select
-    if: needs.select.outputs.other_count != '0'
+    if: ${{ needs.select.outputs.phase != 'COLLECT' && needs.select.outputs.other_count != '0' }}
     strategy:
       fail-fast: false
       max-parallel: 12
@@ -123,7 +171,7 @@ jobs:
 
   advance_analysis:
     needs: [select, copy_work, other_work]
-    if: ${{ always() && needs.select.result == 'success' && (needs.copy_work.result == 'success' || needs.copy_work.result == 'skipped') && (needs.other_work.result == 'success' || needs.other_work.result == 'skipped') }}
+    if: ${{ always() && needs.select.outputs.phase == 'ANALYZE' && needs.select.result == 'success' && (needs.copy_work.result == 'success' || needs.copy_work.result == 'skipped') && (needs.other_work.result == 'success' || needs.other_work.result == 'skipped') }}
     runs-on: ubuntu-latest
     permissions:
       actions: write

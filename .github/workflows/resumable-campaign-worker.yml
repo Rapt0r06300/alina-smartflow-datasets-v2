@@ -48,6 +48,7 @@ on:
         type: string
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -382,7 +383,8 @@ jobs:
           set -euo pipefail
           python tools/augment_campaign_result.py durability-failure             --result "$RUNNER_TEMP/result.json"
 
-      - name: Publish final campaign checkpoint
+      - id: checkpoint
+        name: Publish final campaign checkpoint
         if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
         env:
           LEASE_TOKEN: "${{ steps.claim.outputs.lease_token }}"
@@ -503,6 +505,25 @@ jobs:
           exit 1
 
 
+
+      - name: Relay next COLLECT controller pass
+        if: ${{ always() && steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && steps.pin.outputs.phase == 'COLLECT' && steps.checkpoint.outcome == 'success' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PINNED_PHASE_EPOCH: "${{ steps.pin.outputs.phase_epoch }}"
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          LATEST_PHASE="$(git show origin/main:control/alina-phase.json | python -c 'import json,sys; print(json.load(sys.stdin)["phase"])')"
+          LATEST_EPOCH="$(git show origin/main:control/alina-phase.json | python -c 'import json,sys; print(json.load(sys.stdin)["epoch"])')"
+          if [ "$LATEST_PHASE" != "COLLECT" ] || [ "$LATEST_EPOCH" != "$PINNED_PHASE_EPOCH" ]; then
+            echo "COLLECT relay stopped: latest phase=$LATEST_PHASE epoch=$LATEST_EPOCH pinned_epoch=$PINNED_PHASE_EPOCH"
+            exit 0
+          fi
+          gh workflow run resumable-campaign-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
 
       - name: Record publication receipt after final checkpoint
         # Publication receipt is now generated before the checkpoint commit so
