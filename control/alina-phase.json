@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "OOS",
+  "analysis_stage": "FORWARD_PAPER",
   "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
   "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
   "epoch": 5,
   "phase": "ANALYZE",
-  "request_id": "8327adea605eaabcd1cd2726521a0def92d7b81e7ec761f79e23640a06677470",
+  "request_id": "18f1c5ba94693fbdab797aa0c5790f6152c6ec80af8aefd6b7e6c8da0721b4f4",
   "requested_at_utc": "2026-09-30T17:06:32.940845Z",
   "requested_by": "chatgpt-github",
   "schema_version": 1,
