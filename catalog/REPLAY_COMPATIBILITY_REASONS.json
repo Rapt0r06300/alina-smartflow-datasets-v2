@@ -18305,6 +18305,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "gdacs-external-events-global-1790804228433-1790804228433-2768ad4904ed",
+      "family": "external_events",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "gdacs-external-events-global-1790805781324-1790805781324-0a37d6a1a7c9",
+      "family": "external_events",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-0g-1790122850638-1790122850638-b280413dca01",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -20225,6 +20241,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-aave-1790805543290-1790805840651-7ac0859ffde8",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ace-1790372316021-1790372609288-1ff8459babfc",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -21698,6 +21722,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ada-1790787757197-1790787757197-2be7749108dc",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ada-1790804930903-1790804930903-8ff23d85e104",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -24217,6 +24249,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ai16z-1790805543456-1790805840652-962c46078af2",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-aixbt-1790086339775-1790086339775-47f5a7da3f91",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -24961,6 +25001,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-algo-1790805543334-1790805840652-966d7b50c958",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-alt-1790086348205-1790093815708-ccecd0d973a0",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -25682,6 +25730,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-apex-1790780284414-1790780580577-c6785fd5a30e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-apex-1790805543290-1790805840652-4e49dfe4d448",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -27226,6 +27282,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ar-1790783498701-1790783498701-5f23b16616f4",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ar-1790806003531-1790806003531-d0dfec4ab15a",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -30649,6 +30713,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-atom-1790805543158-1790805840652-6a1c7ff287b6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-avax-1790086341050-1790096506912-c97c9702ca1e",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -32394,6 +32466,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-avax-1790787330534-1790787628156-24e014a66042",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-avax-1790804930915-1790804930915-e9dc87a62c52",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-avax-1790805543148-1790805840652-a0ebf6d03755",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -34449,6 +34537,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bera-1790805016110-1790805314626-8406925e057e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bigtime-1790370315986-1790370614112-962dc2e3f919",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -34546,6 +34642,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bigtime-1790785696883-1790785994860-23925175e2b5",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bigtime-1790805016110-1790805314626-53186ae0ff72",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -36450,6 +36554,30 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bnb-1790787757083-1790787757083-9df31efbb460",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bnb-1790804930891-1790804930891-cfb9c19342df",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bnb-1790805101556-1790805395415-6d7bf091d055",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-bnb-1790805543170-1790805840652-404fbad0c06d",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -45721,6 +45849,46 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-btc-1790804232243-1790804527308-8a7941a9318b",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-btc-1790804930903-1790804930903-40dabbd8119c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-btc-1790805015823-1790805314626-62fd1bcfa9f6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-btc-1790805101556-1790805395416-3b93b45093d5",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-btc-1790805543016-1790805840652-58565f39f48b",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-cake-1790086375509-1790097058973-46373c76f9eb",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -47737,6 +47905,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-chip-1790805543368-1790805840652-7a4ef6152b66",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-comp-1790086340849-1790096506912-22e5ffab2ded",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -49034,6 +49210,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-crv-1790787330289-1790787628157-78a178f045db",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-crv-1790805016110-1790805314626-d55c386af8ee",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-crv-1790805543158-1790805840652-60908a48c6c9",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -51305,6 +51497,30 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-doge-1790805015967-1790805314626-83e72317e1eb",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-doge-1790805101556-1790805395416-9b0147b9cbe7",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-doge-1790805543290-1790805840793-dc24477c880f",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dood-1790524882436-1790524882436-de6eb5d317ef",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -53097,6 +53313,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dot-1790804930758-1790804930758-74dcac3641ab",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dot-1790805016110-1790805314626-3478ce6d957c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dydx-1790087675280-1790087675280-d8c920f638e5",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -53354,6 +53586,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dydx-1790781250367-1790781544171-83b7e4b31b52",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-dydx-1790805015983-1790805314626-d276d11cbbd8",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -55730,6 +55970,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ena-1790786895957-1790787191804-7223aac9e2bf",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ena-1790805015967-1790805314626-5f4e3f065e8f",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ena-1790805543158-1790805840793-b74ec8cbea12",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -63289,6 +63545,46 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-eth-1790804232255-1790804527308-bb661562319e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-eth-1790804930904-1790804930904-be466167e7d0",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-eth-1790805015840-1790805314626-002e3b420340",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-eth-1790805101419-1790805395416-9473c4cda9ef",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-eth-1790805543148-1790805840793-18d23d103b02",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ethfi-1790086340881-1790096507058-80bf8a4fd228",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -67473,6 +67769,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-fil-1790805543378-1790805840793-75131a4135b2",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-fogo-1790365290669-1790365584744-2ec9963576cb",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -67770,6 +68074,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ftm-1790783065313-1790783362442-fe581c529466",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ftm-1790805015967-1790805309472-2253ab731bfb",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -68417,6 +68729,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-gmt-1790805543434-1790805840794-c2d2df11eb20",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-gmx-1790086348071-1790093815843-610a4516064e",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -68881,6 +69201,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-goat-1790805543431-1790805840794-f6c2206a9a72",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-gram-1790086343899-1790086343899-cb1d9be7d3b0",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -69066,6 +69394,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-gram-1790786895812-1790787191938-5425c97a9103",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-gram-1790805543290-1790805840794-c3dbe4437ba2",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -69602,6 +69938,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-grass-1790786141177-1790786436143-8c37cb927d5b",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-grass-1790805543149-1790805840794-dc47ebc320a7",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -70498,6 +70842,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hbar-1790781712645-1790782007370-d763251b659a",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hbar-1790805101566-1790805395416-9b5406157e3b",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -75897,6 +76249,46 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hype-1790804232369-1790804527308-e65b70807901",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hype-1790805016110-1790805309473-154e5e1d0bda",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hype-1790805101556-1790805395416-f00c1c7134d8",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hype-1790805543158-1790805840794-f7ea7b632355",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hype-1790806003627-1790806003627-9a850e3b4b66",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-hyper-1790381725543-1790381725543-6b14b254aea8",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -76074,6 +76466,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-icp-1790780284462-1790780580713-a4a522e2a0da",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-icp-1790805543290-1790805840794-297ae4c114a9",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -77353,6 +77753,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-inj-1790805015983-1790805309473-2eb788198a5e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-inj-1790805543389-1790805840795-0cfc1eee8c96",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-io-1790108967024-1790109745200-8cca3bfea8f8",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -78513,6 +78929,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-jto-1790805101577-1790805395416-f2e5e2e131a6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-jto-1790805543345-1790805840795-d493a3a56ca6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-jup-1790086348112-1790096448413-d37889e56985",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -79457,6 +79889,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-jup-1790805543324-1790805840795-0e7b729a0e7a",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-kaito-1790086339786-1790086339786-c2d17016a03d",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -79818,6 +80258,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-kas-1790783498703-1790783498703-1474ac6b545c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-kas-1790805543290-1790805840795-7d9053da4be8",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -81930,6 +82378,30 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-link-1790787330376-1790787628284-c297fde6e244",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-link-1790804930903-1790804930903-b371113dc7f0",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-link-1790805101430-1790805395416-b146fa4b2a8d",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-link-1790805543290-1790805840795-03006480ea14",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -84169,6 +84641,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ltc-1790804930769-1790804930769-363f3f05129e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-manta-1790364843693-1790364843693-99a55286e5fd",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -86041,6 +86521,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-mina-1790805015983-1790805309473-808229def631",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-mkr-1790371107262-1790371402034-23a2047b4b26",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -86849,6 +87337,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-mon-1790805543148-1790805840795-c241367a1fbc",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-moodeng-1790364843692-1790364843692-f1dd1628a84d",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -86986,6 +87482,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-moodeng-1790784802080-1790784802080-da3997cb950a",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-moodeng-1790805543478-1790805840795-f8a4c9a509c8",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -88897,6 +89401,30 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-near-1790804930874-1790804930874-5242e414967d",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-near-1790805015966-1790805309473-7a9e5b2a3666",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-near-1790805101566-1790805395416-b3c18f55b10e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-neiroeth-1790453333165-1790453627913-da6729f78103",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -89593,6 +90121,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-nxpc-1790804232382-1790804527308-283301072e53",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-om-1790381310763-1790381608587-f2c0f034800b",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -89658,6 +90194,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-om-1790781250656-1790781544172-2246265337c1",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-om-1790805016147-1790805309473-3b46f1f63cb5",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -90913,6 +91457,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ondo-1790805015988-1790805309473-8131768b2cee",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-op-1790108965768-1790109745352-cfbe476e6b38",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -91322,6 +91874,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-op-1790787330007-1790787628285-5c3fb7daf9cb",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-op-1790805016175-1790805309473-4c4dd28fc057",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-op-1790805101566-1790805395563-9978e87d2c09",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -92001,6 +92569,30 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-paxg-1790805016110-1790805309473-fa0b82c9130c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-paxg-1790805543169-1790805840795-69237b79f3a2",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-paxg-1790806003535-1790806003535-14f72b07ed52",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pendle-1790086375011-1790097059121-d802ac4b7ed5",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -92561,6 +93153,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pendle-1790805543356-1790805840936-bafb8bd686df",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pengu-1790112003355-1790119831589-6398c852eced",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -93042,6 +93642,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pengu-1790785221381-1790785221381-2d6e0c000747",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pengu-1790804232370-1790804527308-14d9df2cc2a0",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -95337,6 +95945,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-popcat-1790805101566-1790805395563-948f39390d9c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-prompt-1790386114805-1790386114805-f419106bce05",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -96441,6 +97057,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-pump-1790805543027-1790805840936-0fb95126496e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-purr-1790108967685-1790108967685-0d6b5d57fd2b",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -96866,6 +97490,30 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-purr-1790786895787-1790787191941-4f57068599c0",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-purr-1790804232381-1790804527308-5b5da586eb56",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-purr-1790805015989-1790805309473-05f470fdc989",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-purr-1790805543447-1790805840936-86c7cf7a42ce",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -97321,6 +97969,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-render-1790806003628-1790806003628-88739e8d0bbb",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-req-1790394050629-1790394346520-ff8e93ae2b17",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -97713,6 +98369,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rndr-1790805016202-1790805309473-40c5c2b22b57",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rsr-1790366132993-1790366428843-ef63efeab27d",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -98042,6 +98706,30 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rune-1790787330535-1790787628285-e924763167ce",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rune-1790805015983-1790805309473-25ad7672e69c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rune-1790805101566-1790805395563-03c8a6efef6e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-rune-1790806003628-1790806003628-2fc7583f32b2",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -102353,6 +103041,46 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sol-1790804232264-1790804527308-ab451aec80ae",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sol-1790804930915-1790804930915-d2c586dd1c6f",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sol-1790805015845-1790805309473-372921ff149d",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sol-1790805101555-1790805395563-20bcdf417601",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sol-1790805543148-1790805840936-0231656db660",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-soph-1790395690862-1790395690862-fc09a8c749fa",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -102674,6 +103402,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-spx-1790786895921-1790787191941-eae91a13c392",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-spx-1790805543321-1790805840936-3944abb44c14",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -103242,6 +103978,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-strk-1790786405639-1790786405639-1bc60fd1492c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-strk-1790805543169-1790805840937-85d36a0895a6",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -104977,6 +105721,38 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sui-1790804232382-1790804527308-1dee63a36191",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sui-1790805015967-1790805309473-fb98257e8a0b",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sui-1790805101408-1790805395563-c593223e363b",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-sui-1790806003628-1790806003628-5be69890043e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-super-1790145662248-1790150901451-5227f7c97f10",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -105450,6 +106226,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-syrup-1790780284467-1790780580848-d6ecc9ca5756",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-syrup-1790805543321-1790805840937-84bf9120ece4",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -107289,6 +108073,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ton-1790804232370-1790804527309-4d72e2864984",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ton-1790805016110-1790805309473-f7925b417de7",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trb-1790380911032-1790381207510-1dc0c965a3e1",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -108097,6 +108897,30 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trump-1790804232370-1790804527309-f522bca5a491",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trump-1790805016146-1790805309473-7afc9878c1c5",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trump-1790805543467-1790805840937-fd3b242184f6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trx-1790086348783-1790096448413-2c0cac8100b3",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -108642,6 +109466,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trx-1790784373173-1790784373173-17da9de8445c",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-trx-1790805543290-1790805840937-037012975869",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -110281,6 +111113,30 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-uni-1790805016191-1790805309473-91e2e9681603",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-uni-1790805101577-1790805395563-8fb1240cf1d4",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-uni-1790805543006-1790805840937-8b2717c6ccaa",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-unibot-1790374877023-1790375171424-52e2b7f78795",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -110802,6 +111658,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-usual-1790781250607-1790781544285-3f1271ee20a4",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-usual-1790804232370-1790804527438-6b496c1d8514",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-usual-1790805016110-1790805309473-415da9eb44be",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -113145,6 +114017,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-wct-1790805016110-1790805309474-8d7253420847",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-wif-1790060033420-1790060104042-91fb73c777f1",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -115329,6 +116209,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-wlfi-1790805016000-1790805309474-5bce63857edd",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xai-1790380120405-1790380418757-b40f399d1b89",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -115850,6 +116738,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xlm-1790783498879-1790783498879-f125678f672e",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xlm-1790805016175-1790805309474-91cbc7d763c9",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xlm-1790805543320-1790805840937-737baedb6b58",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -116721,6 +117625,22 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xmr-1790804232381-1790804527439-6a115c83d0e6",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xmr-1790805543158-1790805840938-598a2c2108eb",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xpl-1790086343510-1790086343510-cb99453f22eb",
       "family": "copy_vault_l2",
       "quality_status": "PARTIAL",
@@ -117314,6 +118234,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xpl-1790787330534-1790787628285-8eb2b2283245",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xpl-1790805015990-1790805309474-f1aa78384c6d",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -119137,6 +120065,38 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xrp-1790804232382-1790804527439-b56a41f7fba5",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xrp-1790804930903-1790804930903-c9eb8a134faf",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xrp-1790805016110-1790805309621-971b1ce1d707",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-xrp-1790805543401-1790805840938-335553bae1dc",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-ygg-1790442955579-1790443251849-006e002e7e04",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
@@ -120738,6 +121698,22 @@
     },
     {
       "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-zec-1790787757073-1790787757073-a726aa6f4431",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-zec-1790805015967-1790805309621-00b8d3e1ca13",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-zec-1790805543431-1790805840938-3622243ab904",
       "family": "copy_vault_l2",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -122513,6 +123489,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-copy-l2-copy-vault-l2-zro-1790806003515-1790806003515-2b523cace0a5",
+      "family": "copy_vault_l2",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x00161c88c702c33d5b02f0648da891b89f14789c-1790456152698-1790456453323-24e28cc6be09",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -122657,6 +123641,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x0117ceac07f19d46fdb36c2b52f352c12b6d3df4-1790804230656-1790804531369-8fb3ad4eb037",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x0119c529ca2d45c96123837f9fc94e94bc859665-1790477370835-1790477671228-693033044e44",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -122722,6 +123714,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790781710826-1790782011378-fafe643dedda",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790805100102-1790805400675-274d8c62f960",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -123658,6 +124658,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790781248941-1790781549432-932fb4732317",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790805014652-1790805315200-7e628a91a8fc",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -124658,6 +125666,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790781248762-1790781549316-e1d67e49a67a",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790804230656-1790804531379-c17cf742a1aa",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -126305,6 +127321,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1b4f9961e656ff64feb86abded74988374a8e51b-1790806002175-1790806302623-19fe955ec166",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1b5227cde3d9cdcc48d1cf78a5e79a733a9af254-1790502259819-1790502560422-7f8e1f2959bf",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -126753,6 +127777,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1e37a337ed460039d1b15bd3bc489de789768d5e-1790804929301-1790805229846-9868b8c08780",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1e384a7477262d29dda23de48120ac526b4cceb8-1790452929130-1790453229850-7393bcf9b077",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -126818,6 +127850,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1e90e95983f39387936be9dd9221c650f774f946-1790780282578-1790780583496-447d0f51bdb4",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x1e90e95983f39387936be9dd9221c650f774f946-1790805541521-1790805842274-1bf3c9792e7c",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -127521,6 +128561,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x24acac13a31c2694cf4772aabb91a7efbbab175d-1790805014513-1790805315241-e5b66eab06a4",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x24b00d3a8cd8b7d0a123a01d75453d058af41120-1790478188093-1790478488658-65bb819952bf",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -127842,6 +128890,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790781248934-1790781549352-f6ac34be6f55",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790805014515-1790805315237-45b3462a36b3",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -128369,6 +129425,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2c2e9057ac18ee9aee064dcbd667a97bb0a95490-1790805541692-1790805842317-259253b10b06",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2c3246c717e1e8d5764de887f1c467f3196e09a4-1790389310173-1790389610702-dbb48fe0cf3b",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -128706,6 +129770,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790780782887-1790781083536-4e1e889ef4c9",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790804929297-1790805229844-042cb9f1c9cb",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -129217,6 +130289,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x32f68ed9ef2a6ec19764f8f89df308155417e379-1790804230808-1790804531507-d62d8ab8d36e",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x32f739e8acf185ca4b117070babbf66c14c8238f-1790458353258-1790458653814-51b60b5d677c",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -129234,6 +130314,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790781710652-1790782011201-88b6320149b3",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790805099941-1790805400514-74b6b60ca1e1",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -129290,6 +130378,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790782149815-1790782450433-bae325364ee3",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790805541563-1790805842127-de01f741213b",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -129362,6 +130458,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790780282764-1790780583454-38dd448112a1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790804230872-1790804531506-b794d6a516e6",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -129577,6 +130681,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x35f9b19d8cd56f078617ebb3ab45d56493a62e83-1790804929340-1790805229843-b9427c7a8a9c",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x36050b5b3b2a9b6a4fa67956cbbc1d0bcc03044b-1790509095577-1790509396141-a3e3217badc5",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -129785,6 +130897,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x3700c448d3f4d6772912ee8f166464d6d79f29af-1790805014513-1790805315237-53f9f248bfd6",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790369105143-1790369405548-16c4f013d582",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -129794,6 +130914,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790782149819-1790782450435-a52862b7b04d",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790805541576-1790805842131-eedfd1a6c1ed",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -130817,6 +131945,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x40023dc019c57ae97a404f8812842d00438db473-1790805014511-1790805315212-ce2e3aba5555",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x40649fbb9d54eba0b401145446b76cc4d42d147e-1790442564708-1790442865182-1da7de2e7154",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -130890,6 +132026,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790780782884-1790781083491-c014b0a2c32e",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790805014502-1790805315207-1782233013e5",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -131353,6 +132497,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x4459d04c6f97ef4d6ac1b87933a4d17cfcdffe10-1790806002157-1790806302624-495daf54de41",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x449d2d3d266af1f1a55d1695a027bea6233c528f-1790378913723-1790379214405-3d84df9253da",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -131386,6 +132538,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790782635878-1790782936382-f5ec8b5c0533",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790805541519-1790805842119-0bbadaed7a9f",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -133817,6 +134977,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x53f8f390fd4f70941c5d160a964f6893c8dbceff-1790805099940-1790805400516-78faa7a3a6bf",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x540b6833c05442335aed721af5cadaa6c5b0236a-1790443778474-1790444078996-963cc27f40b2",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -133914,6 +135082,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790782149810-1790782450441-076cbd7cf5fc",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790806002159-1790806302629-83a945b1966c",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -135057,6 +136233,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x5d596441de0b366132eed3d01aee5941ce023391-1790805014662-1790805315361-495a8fcae8d8",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x5d7cfbe105ffa7fc431d37cfa30de0cfe3d1db71-1790452549805-1790452850326-f623b4aa9fb8",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -135338,6 +136522,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x6010460fd1787edb3bf0bd5721796a2a67dff401-1790781710681-1790782011207-eeab8baeb6f7",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x6010460fd1787edb3bf0bd5721796a2a67dff401-1790804929311-1790805229848-e8a3642734d6",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -135633,6 +136825,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x6386685efb81fb88046f877bd9c738997c4781c0-1790805099938-1790805400517-279728cc1c49",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x63934acb802bce0e777f7caca179b2138d165a81-1790503040710-1790503341510-35ddb213f448",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -135874,6 +137074,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790782635880-1790782936385-1446f0e197d1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790806002160-1790806302636-16d9e57388bc",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -136138,6 +137346,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790781248829-1790781549352-33165f416c83",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790804230995-1790804531368-b375138cd2b4",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -138137,6 +139353,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x785b1f05e4ad2a770763fb40eff30e52062bb2bb-1790804230753-1790804531378-4051aed2063a",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x7860e8665f4f301c25507c54a8ed933b3e9891da-1790373673179-1790373973733-12a8e0d31c90",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -138450,6 +139674,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790782635882-1790782936389-720bd4b7d3c1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790806002159-1790806302628-2ed8b379de80",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -139905,6 +141137,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x862191da41bb6135f2cc830321a5d2b78c0a8cc6-1790804929452-1790805230006-3f03b50e51d3",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x863f04350158b76166e3f635dc327afdaff57c2a-1790473422214-1790473722793-88867e6cac25",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -140122,6 +141362,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790780282600-1790780583463-1ff3e9575c8c",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790805099942-1790805400518-09f2c02542be",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -140553,6 +141801,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x8a105564af2f4ed6c839e5198f8e0a82a4acb357-1790806002170-1790806302629-36e0d82fa43d",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x8a4fb837ab87e36d6a18564fc295ab32a7df126b-1790470667976-1790470968407-91f5e9043852",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -140642,6 +141898,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790783063870-1790783364313-943ae7a416a1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790805541536-1790805842131-e58c74788366",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -142129,6 +143393,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x95baa50129dd86f5376a13643a78f065fa22927c-1790805099941-1790805400513-1c0d1dc1c7d1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x95e3b018f2797a0807ec8cf1252bce83f1f90a5d-1790518031729-1790518332297-57c70e4efe34",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -142641,6 +143913,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x9af3fb3abdc97eb2ab5ee3b31ac554be97824ac9-1790805100098-1790805400679-2bcb2fef3ece",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x9afa416a4758edd3dd3e8f6a8da6d35998ae48f0-1790382142912-1790382443487-cb83226a85f0",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -142794,6 +144074,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790780783034-1790781083667-7d223a6188f1",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790804929460-1790805230010-f261cd665295",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -143377,6 +144665,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xa157ca8ca8dbe873db78d49237ae6ab31b740954-1790805541688-1790805842334-2fd8f63a4265",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xa15cbb69507fcba293b194bf2b980ba6c29326d7-1790516042633-1790516343139-5406825ecf6b",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -143562,6 +144858,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790780782872-1790781083527-de2672d48a95",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790804929342-1790805229846-155dcdbf137d",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -145001,6 +146305,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xac713ebf0bef0e5b133558f5f484f475d19b0f6e-1790804230658-1790804531358-62a5672193e4",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xac86becb06a3d4dcd5396264af5b734f348665c2-1790398070165-1790398370750-596271cf9750",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -145026,6 +146338,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790780782893-1790781083515-3af6a210f672",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790804929286-1790805229849-75534889ca70",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -145065,6 +146385,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xacf24423424c202a6a99f0d9528c6c31c7cf5558-1790805014514-1790805315223-70361758aedc",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xad0711e37223920011af835b7fb6d6bf8f574139-1790366547631-1790366848376-7572267617b0",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -145074,6 +146402,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xad0711e37223920011af835b7fb6d6bf8f574139-1790781710662-1790782011202-d560773cb6b6",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xad0711e37223920011af835b7fb6d6bf8f574139-1790805099931-1790805400505-15e18e9da40a",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -145177,6 +146513,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xae36bdca444368fba44ca435077ca12a9a33bbe3-1790805541565-1790805842133-a4901578eebb",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xae6b807ec47e0b7900d1fe2a53885b4602748b03-1790431987338-1790432287764-ede53c4cf600",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -145218,6 +146562,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xaec0214d3a29ddd19ddeb5f415e4a17f2fb5be7c-1790782635885-1790782936384-6c8f87d16e8c",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xaec0214d3a29ddd19ddeb5f415e4a17f2fb5be7c-1790806002161-1790806302629-a27637ec4e69",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -146345,6 +147697,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xb6ceedddec5c4c19493fd0f7f0f824fcd614249d-1790805014513-1790805315215-d634297c45d6",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xb6e319939f793c36a0360e13b239d31f177f7a21-1790513618026-1790513918581-b6c94181efbc",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -146602,6 +147962,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790782635885-1790782936373-5b78a4b04990",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790806002162-1790806302630-1e9d20a844ee",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -148034,6 +149402,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790780282600-1790780583288-a41286ff32ae",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790804230956-1790804531373-73533006c37b",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -149737,6 +151113,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xcd7b437ed7f62e5760f724f677eeaf7e2ce672da-1790805099959-1790805400515-f51008266e25",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xcd85cacecf32c352b5e9443058e2712d223eb0ab-1790450573817-1790450874379-43d1095c1a52",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -150033,6 +151417,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd04f43e83f6d7c6ebea451acec1fc42d1de6ef3c-1790804230658-1790804531359-fe0052c91ba9",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd0914ecdb667fb3db5e55c9e0a229d823c7990e4-1790392840965-1790393141706-63a88fa05ccc",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -150098,6 +151490,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd0fea59999cd64d336185c11dca1742da0438d69-1790780282585-1790780583464-229bc66cd4d6",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd0fea59999cd64d336185c11dca1742da0438d69-1790804230778-1790804531371-3687deb9313f",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -150425,6 +151825,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd47b3ace8341ad4bd35b1180171fd435c3841e41-1790805099948-1790805400518-0057261da126",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd48704c52a64824101e13b1cbc8548ea31209b37-1790521249798-1790521550645-cc37f3fcc619",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -150490,6 +151898,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790783497218-1790783797698-b16537a5c548",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790805541555-1790805842128-b5d610093a06",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -150873,6 +152289,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790805541527-1790805842134-763891d0ec97",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd6ec42d6c8639c08f110a467fa4b733938779839-1790390495007-1790390795954-d5ef6e546e67",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -150914,6 +152338,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790782636025-1790782936683-175ee78c9476",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790806002341-1790806302761-6b75cb4867dd",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -151842,6 +153274,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790781248755-1790781549344-d8d5e667f5da",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790804929294-1790805229847-75eb3926d35e",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -152810,6 +154250,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790781710668-1790782011206-74f8e515bb0c",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790804929299-1790805229841-ae6ccc7e0287",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -153897,6 +155345,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xf49352bc59902e55819b4843aecb3b916bb8ab0b-1790805014678-1790805315371-4839f6d98f47",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xf49a62e5060da5e75a5e98b3dd298a36250bbd87-1790367842465-1790368143062-68650c265ca0",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
@@ -153930,6 +155386,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790782636026-1790782936640-dd95b5bbe7e7",
+      "family": "copy_vault_positions",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-info-copy-vault-positions-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790806002298-1790806302767-c829cc85871d",
       "family": "copy_vault_positions",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -164985,6 +166449,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790805055589-1790805090355-cdb731f61a0a",
+      "family": "copy_vault_fills",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-fills-0x0ff219ac20596b457558341bc410bc7a08a1394c-1790087187240-1790095906496-e475bd11d840",
       "family": "copy_vault_fills",
       "quality_status": "PARTIAL",
@@ -167657,6 +169129,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x0117ceac07f19d46fdb36c2b52f352c12b6d3df4-1790804232098-1790804232098-f53305deb6f6",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x0119c529ca2d45c96123837f9fc94e94bc859665-1790477371900-1790477371900-ba7f52244078",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -167722,6 +169202,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790781712273-1790781712273-c3988b20d0ae",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790805101247-1790805101247-3b3faa79fd68",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -168873,6 +170361,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790805015813-1790805015813-4113c55a4c9a",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x0800359aceed0d7bd14cdedc57c6a6e9eca04e48-1790514017139-1790514017139-121f9950edd9",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -170010,6 +171506,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790781250012-1790781250012-4a987b9bb747",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790804232094-1790804232094-0aeef51a69f4",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -171937,6 +173441,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1b4f9961e656ff64feb86abded74988374a8e51b-1790806003385-1790806003385-02f2998624cf",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1b5227cde3d9cdcc48d1cf78a5e79a733a9af254-1790502261130-1790502261130-01be7d06d099",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -172481,6 +173993,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1e37a337ed460039d1b15bd3bc489de789768d5e-1790804930596-1790804930596-cbb31137bdfc",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1e384a7477262d29dda23de48120ac526b4cceb8-1790452930245-1790452930245-65e16806fef5",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -172530,6 +174050,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1e90e95983f39387936be9dd9221c650f774f946-1790780283972-1790780283972-98557360994f",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x1e90e95983f39387936be9dd9221c650f774f946-1790805542846-1790805542846-082427ad525b",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -173353,6 +174881,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x24acac13a31c2694cf4772aabb91a7efbbab175d-1790805015663-1790805015663-c4ba8fed9ef0",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x24b00d3a8cd8b7d0a123a01d75453d058af41120-1790478189361-1790478189361-7e11a0f3f587",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -173738,6 +175274,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790781250020-1790781250020-7f4d8ed109bb",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790805015815-1790805015815-467fee67ceb8",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -174337,6 +175881,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2c2e9057ac18ee9aee064dcbd667a97bb0a95490-1790805542848-1790805542848-a537b568fba1",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2c3246c717e1e8d5764de887f1c467f3196e09a4-1790389311421-1790389311421-72484f3a0d7a",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -174650,6 +176202,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790780784008-1790780784008-2fe6c69cef81",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790804930598-1790804930598-598a3ef1100a",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -175257,6 +176817,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x32f68ed9ef2a6ec19764f8f89df308155417e379-1790804232095-1790804232095-014969679652",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x32f739e8acf185ca4b117070babbf66c14c8238f-1790458354491-1790458354491-295218b807e5",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -175274,6 +176842,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790781711966-1790781711966-032c461b2aae",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790805101252-1790805101252-94bd9025fcf5",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -175330,6 +176906,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790782151129-1790782151129-6603ea0480b1",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790805542861-1790805542861-e81494e76387",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -175402,6 +176986,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790780283974-1790780283974-0e723885a4e9",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790804232095-1790804232095-571dde9ca7e3",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -175705,6 +177297,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x35f9b19d8cd56f078617ebb3ab45d56493a62e83-1790804930598-1790804930598-51020e45eb51",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x36050b5b3b2a9b6a4fa67956cbbc1d0bcc03044b-1790509096934-1790509096934-43e0d00aa175",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -175993,6 +177593,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x3700c448d3f4d6772912ee8f166464d6d79f29af-1790805015664-1790805015664-0fe750cae54c",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790369106321-1790369106321-673465152273",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -176002,6 +177610,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790782151128-1790782151128-25a4d1300d9b",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790805542846-1790805542846-0ac783a45a1a",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -177033,6 +178649,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x40023dc019c57ae97a404f8812842d00438db473-1790805015814-1790805015814-202a12282bb3",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x40649fbb9d54eba0b401145446b76cc4d42d147e-1790442565985-1790442565985-037bd26a3e55",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -177082,6 +178706,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790780784007-1790780784007-cc70f45f4d25",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790805015814-1790805015814-61ca2d37eaa9",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -177513,6 +179145,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x4459d04c6f97ef4d6ac1b87933a4d17cfcdffe10-1790806003389-1790806003389-6f1825e01661",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x449d2d3d266af1f1a55d1695a027bea6233c528f-1790378915146-1790378915146-d0a65132e4b8",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -177546,6 +179186,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790782637173-1790782637173-f9b00451df6f",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790805542842-1790805542842-622dd41cd8f7",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -180737,6 +182385,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x53f8f390fd4f70941c5d160a964f6893c8dbceff-1790805101251-1790805101251-4248f10df774",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x540b6833c05442335aed721af5cadaa6c5b0236a-1790443779772-1790443779772-8c2a1399188d",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -180826,6 +182482,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790782151128-1790782151128-b0a56e2925ea",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790806003388-1790806003388-738cd4a571f5",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -182065,6 +183729,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x5d596441de0b366132eed3d01aee5941ce023391-1790805015664-1790805015664-574ca0e299b1",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x5d7cfbe105ffa7fc431d37cfa30de0cfe3d1db71-1790452551121-1790452551121-c482566666c1",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -182337,6 +184009,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x6010460fd1787edb3bf0bd5721796a2a67dff401-1790804930611-1790804930611-ef3deec2c9f3",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x6054b16477af48705fe9fe38ccc48e8be97b8ba2-1790466261627-1790466261627-e398f052324b",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -182602,6 +184282,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x6386685efb81fb88046f877bd9c738997c4781c0-1790781711966-1790781711966-d8bda9f446ab",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x6386685efb81fb88046f877bd9c738997c4781c0-1790805101253-1790805101253-f0a5370af9a6",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -182922,6 +184610,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790782637174-1790782637174-28d4bec33207",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790806003387-1790806003387-8176eaa04731",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -183370,6 +185066,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790781250013-1790781250013-5f11bee8726e",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790804232094-1790804232094-b40a6ebec45e",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -185769,6 +187473,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x785b1f05e4ad2a770763fb40eff30e52062bb2bb-1790804232097-1790804232097-308d050ec3d7",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x7860e8665f4f301c25507c54a8ed933b3e9891da-1790373674376-1790373674376-6eeac6b6ad79",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -186178,6 +187890,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790782637176-1790782637176-b3dc12deeda0",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790806003389-1790806003389-216a7c7b8932",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -187809,6 +189529,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x862191da41bb6135f2cc830321a5d2b78c0a8cc6-1790804930612-1790804930612-8d472af6abd0",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x863f04350158b76166e3f635dc327afdaff57c2a-1790473423419-1790473423419-9abac0d610e8",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -187994,6 +189722,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790780283969-1790780283969-e6e054bb2cf9",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790805101246-1790805101246-1058b0862c5c",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -188497,6 +190233,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x8a105564af2f4ed6c839e5198f8e0a82a4acb357-1790806003386-1790806003386-fd745e38b14e",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x8a4fb837ab87e36d6a18564fc295ab32a7df126b-1790470669212-1790470669212-3902e3c966d7",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -188586,6 +190330,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790783064953-1790783064953-b8f1c73b445d",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790805542841-1790805542841-5b726018ec38",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -190409,6 +192161,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x95baa50129dd86f5376a13643a78f065fa22927c-1790805101253-1790805101253-e3c0e8d90489",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x95e3b018f2797a0807ec8cf1252bce83f1f90a5d-1790518032907-1790518032907-52ce31e66494",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -190985,6 +192745,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x9af3fb3abdc97eb2ab5ee3b31ac554be97824ac9-1790805101246-1790805101246-211e225d9a74",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x9afa416a4758edd3dd3e8f6a8da6d35998ae48f0-1790382144032-1790382144032-18df1799437f",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -191122,6 +192890,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790780784165-1790780784165-2b60bb72b3d6",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790804930615-1790804930615-8db5c26157cc",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -191737,6 +193513,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xa157ca8ca8dbe873db78d49237ae6ab31b740954-1790805542843-1790805542843-1b21c3295d80",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xa15cbb69507fcba293b194bf2b980ba6c29326d7-1790516043966-1790516043966-0e34c5d34e2a",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -191994,6 +193778,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790780784009-1790780784009-9b4a6ff13dfa",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790804930599-1790804930599-6eed500d01e4",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -193721,6 +195513,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xac713ebf0bef0e5b133558f5f484f475d19b0f6e-1790804232093-1790804232093-fcc7e5a16eb2",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xac86becb06a3d4dcd5396264af5b734f348665c2-1790398071491-1790398071491-cc4c1fd666d4",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -193746,6 +195546,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790780784162-1790780784162-6804ddf59f13",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790804930610-1790804930610-b02cf9958872",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -193785,6 +195593,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xacf24423424c202a6a99f0d9528c6c31c7cf5558-1790805015662-1790805015662-0cb6d4fbf35a",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xad0711e37223920011af835b7fb6d6bf8f574139-1790366549034-1790366549034-9dc578eba354",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -193794,6 +195610,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xad0711e37223920011af835b7fb6d6bf8f574139-1790781711970-1790781711970-4053deb518d0",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xad0711e37223920011af835b7fb6d6bf8f574139-1790805101244-1790805101244-19aa54b158f4",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -193890,6 +195714,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xae36bdca444368fba44ca435077ca12a9a33bbe3-1790782151141-1790782151141-0a2b6ac37f3d",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xae36bdca444368fba44ca435077ca12a9a33bbe3-1790805542840-1790805542840-2493a917fd78",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -195554,6 +197386,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790782637174-1790782637174-c11e34659a04",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790806003388-1790806003388-f3167d56a7d3",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -197449,6 +199289,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790804232097-1790804232097-68bb253098a3",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xc1836aca49cc34b41d9da98955b9789fbc973bc3-1790511614331-1790511614331-67614174b4a7",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -199337,6 +201185,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xcd7b437ed7f62e5760f724f677eeaf7e2ce672da-1790805101245-1790805101245-239d3a9b815a",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xcd85cacecf32c352b5e9443058e2712d223eb0ab-1790450575136-1790450575136-4ef03292c5d8",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -199705,6 +201561,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd04f43e83f6d7c6ebea451acec1fc42d1de6ef3c-1790804232098-1790804232098-fd0dec346ef1",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd0914ecdb667fb3db5e55c9e0a229d823c7990e4-1790392842243-1790392842243-664bfc0309c9",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -199770,6 +201634,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd0fea59999cd64d336185c11dca1742da0438d69-1790780283975-1790780283975-ba25080d8605",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd0fea59999cd64d336185c11dca1742da0438d69-1790804232099-1790804232099-2803d2320235",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -200090,6 +201962,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790783498508-1790783498508-05258fe8db76",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790805542847-1790805542847-ceca94dbd6e5",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -200649,6 +202529,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790805542845-1790805542845-d7bc231c60d2",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd6ec42d6c8639c08f110a467fa4b733938779839-1790390496627-1790390496627-e55686410e35",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -200690,6 +202578,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790782637173-1790782637173-024f217cdf6a",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790806003386-1790806003386-3ae15c89d82d",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -201618,6 +203514,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790781250018-1790781250018-9052cdd7713a",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790804930597-1790804930597-cd1aa5e8b07e",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -202594,6 +204498,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790781711970-1790781711970-291096851327",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790804930611-1790804930611-c43ef25e58a0",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -203617,6 +205529,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xf49352bc59902e55819b4843aecb3b916bb8ab0b-1790805015665-1790805015665-c79ff1f3168d",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xf49a62e5060da5e75a5e98b3dd298a36250bbd87-1790367843777-1790367843777-b6576546758b",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
@@ -203650,6 +205570,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790782637178-1790782637178-35fe6ae6052d",
+      "family": "copy_vault_snapshot",
+      "quality_status": "SAFE",
+      "reason_code": "SAFE_REPLAY_COMPATIBLE",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-userfills-copy-vault-snapshot-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790806003386-1790806003386-d7ee6ba64970",
       "family": "copy_vault_snapshot",
       "quality_status": "SAFE",
       "reason_code": "SAFE_REPLAY_COMPATIBLE",
@@ -204673,6 +206601,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x0117ceac07f19d46fdb36c2b52f352c12b6d3df4-1790804088700-1790804088700-40bbeb9b11c9",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x0119c529ca2d45c96123837f9fc94e94bc859665-1790362290212-1790362290212-137274c74003",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -204738,6 +206674,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790780136837-1790780136837-0603fc3ea03d",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x01aae4f46984bb897315ae3fa480d2da94007af2-1790804088700-1790804088700-627583d8c22d",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -205674,6 +207618,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790780136837-1790780136837-9a020a205065",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x07fd993f0fa3a185f7207adccd29f7a87404689d-1790804088700-1790804088700-70398a52f768",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -206674,6 +208626,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790780136837-1790780136837-1b8c745d9b50",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x109f0a24cecf1b430839c9164ead66b70190c1a7-1790804088700-1790804088700-40b4845aec74",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -208321,6 +210281,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1b4f9961e656ff64feb86abded74988374a8e51b-1790804088700-1790804088700-fc46358bbb70",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1b5227cde3d9cdcc48d1cf78a5e79a733a9af254-1790362290212-1790362290212-35bad2862efa",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -208769,6 +210737,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1e37a337ed460039d1b15bd3bc489de789768d5e-1790804088700-1790804088700-dfa63e5e3d9c",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1e384a7477262d29dda23de48120ac526b4cceb8-1790362290212-1790362290212-8c11ef8c3e96",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -208834,6 +210810,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1e90e95983f39387936be9dd9221c650f774f946-1790780136837-1790780136837-946f9ed9d2f6",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x1e90e95983f39387936be9dd9221c650f774f946-1790804088700-1790804088700-dcff390f2b63",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -209537,6 +211521,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x24acac13a31c2694cf4772aabb91a7efbbab175d-1790804088700-1790804088700-3b8c0e012c4b",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x24b00d3a8cd8b7d0a123a01d75453d058af41120-1790362290212-1790362290212-36aafa32a86f",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -209858,6 +211850,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790780136837-1790780136837-a144f93b8f06",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2738f4c042f53c53d55e75257239a0cebb07005e-1790804088700-1790804088700-0c98c11036ae",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -210385,6 +212385,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2c2e9057ac18ee9aee064dcbd667a97bb0a95490-1790804088700-1790804088700-f69bdd03a1fb",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2c3246c717e1e8d5764de887f1c467f3196e09a4-1790362290212-1790362290212-6972e9f26e3a",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -210722,6 +212730,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790780136837-1790780136837-9955900f1ee6",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x2f9d7e2fd45c6408079520dded909f71b094a929-1790804088700-1790804088700-6ddc137116a5",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -211233,6 +213249,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x32f68ed9ef2a6ec19764f8f89df308155417e379-1790804088700-1790804088700-3f53acde8aa2",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x32f739e8acf185ca4b117070babbf66c14c8238f-1790362290212-1790362290212-bcd6044ae9c2",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -211250,6 +213274,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790780136837-1790780136837-ed99f02080a0",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x331847e09aa7cf317e78c2e14fea198506ecde16-1790804088700-1790804088700-8acfbf9afc6c",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -211306,6 +213338,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790780136837-1790780136837-7f2e96302731",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x33836cfdbba68a4f8034d5cc637f8186a445af5d-1790804088700-1790804088700-232a2af538f3",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -211378,6 +213418,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790780136837-1790780136837-cefe0627d958",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x3494c96670312fa7ce93e8f9cbec8e0cc4dfc32b-1790804088700-1790804088700-3b62dfb06a12",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -211593,6 +213641,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x35f9b19d8cd56f078617ebb3ab45d56493a62e83-1790804088700-1790804088700-46b7b79d569a",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x36050b5b3b2a9b6a4fa67956cbbc1d0bcc03044b-1790362290212-1790362290212-841e496ca4d0",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -211801,6 +213857,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x3700c448d3f4d6772912ee8f166464d6d79f29af-1790804088700-1790804088700-9699720ed0c7",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790362290212-1790362290212-840dd8bd477f",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -211810,6 +213874,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790780136837-1790780136837-5a45e2dd3ee0",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x374b8890dbc7aef957ec44e9b80766118789f1a4-1790804088700-1790804088700-4cd944aebf78",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -212833,6 +214905,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x40023dc019c57ae97a404f8812842d00438db473-1790804088700-1790804088700-273667b6a5de",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x40649fbb9d54eba0b401145446b76cc4d42d147e-1790362290212-1790362290212-0d1fa60dea95",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -212906,6 +214986,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790780136837-1790780136837-95d46166b4aa",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x40b94d5fa868aa9a6a269765068be13e23ac1d28-1790804088700-1790804088700-ca1aeab9234a",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -213369,6 +215457,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x4459d04c6f97ef4d6ac1b87933a4d17cfcdffe10-1790804088700-1790804088700-382f12415bf2",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x449d2d3d266af1f1a55d1695a027bea6233c528f-1790362290212-1790362290212-66c95992cf79",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -213402,6 +215498,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790780136837-1790780136837-40d4fbbd4ccc",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x44e54dcf74ad52f588adbfcae9056881a997e366-1790804088700-1790804088700-b69994209449",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -215833,6 +217937,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x53f8f390fd4f70941c5d160a964f6893c8dbceff-1790804088700-1790804088700-ac5a6927ef4e",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x540b6833c05442335aed721af5cadaa6c5b0236a-1790362290212-1790362290212-99f079096231",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -215930,6 +218042,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790780136837-1790780136837-2a46cd83316d",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x54fab66c7527ac0cef19ef9b4612f113b40a94e4-1790804088700-1790804088700-cea3a535615a",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -217073,6 +219193,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x5d596441de0b366132eed3d01aee5941ce023391-1790804088700-1790804088700-a1dd3bd134df",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x5d7cfbe105ffa7fc431d37cfa30de0cfe3d1db71-1790362290212-1790362290212-ffa46220e83c",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -217354,6 +219482,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x6010460fd1787edb3bf0bd5721796a2a67dff401-1790780136837-1790780136837-9f66d2d2b23a",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x6010460fd1787edb3bf0bd5721796a2a67dff401-1790804088700-1790804088700-9929a27e753e",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -217649,6 +219785,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x6386685efb81fb88046f877bd9c738997c4781c0-1790804088700-1790804088700-b2b50c3778f3",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x63934acb802bce0e777f7caca179b2138d165a81-1790362290212-1790362290212-b27d670598a6",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -217890,6 +220034,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790780136837-1790780136837-a7028d868921",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x654016a8c9fcf0c4cb7ed6078aba21f7f399f7b7-1790804088700-1790804088700-7ee48fbc0119",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -218154,6 +220306,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790780136837-1790780136837-55ca482ce0ba",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x66654cc71c002a3cba2cad5e4ada99b8e2f554d1-1790804088700-1790804088700-d8a6370b63f3",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -220153,6 +222313,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x785b1f05e4ad2a770763fb40eff30e52062bb2bb-1790804088700-1790804088700-c71bcf264c76",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x7860e8665f4f301c25507c54a8ed933b3e9891da-1790362290212-1790362290212-393516487893",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -220466,6 +222634,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790780136837-1790780136837-06184f4bdc38",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x79c1c80601d55ebaa3ec82b4603d3f695f82d5a7-1790804088700-1790804088700-9e1f86c59fef",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -221921,6 +224097,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x862191da41bb6135f2cc830321a5d2b78c0a8cc6-1790804088700-1790804088700-57852b8b6164",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x863f04350158b76166e3f635dc327afdaff57c2a-1790362290212-1790362290212-4c21d8c8ff73",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -222138,6 +224322,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790780136837-1790780136837-041f56a538d8",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x873f5ca0096d68ef884de5502e1d385667cc75b9-1790804088700-1790804088700-90654279a52d",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -222569,6 +224761,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x8a105564af2f4ed6c839e5198f8e0a82a4acb357-1790804088700-1790804088700-bbcf97582ec9",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x8a4fb837ab87e36d6a18564fc295ab32a7df126b-1790362290212-1790362290212-dbc89f621980",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -222658,6 +224858,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790780136837-1790780136837-41313937ebc7",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x8b0f84433ca5f287f0f09f84c5a378beb9d11b05-1790804088700-1790804088700-fd2d87e024f1",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -224145,6 +226353,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x95baa50129dd86f5376a13643a78f065fa22927c-1790804088700-1790804088700-b80432714aef",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x95e3b018f2797a0807ec8cf1252bce83f1f90a5d-1790362290212-1790362290212-5e5cb1c29930",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -224657,6 +226873,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x9af3fb3abdc97eb2ab5ee3b31ac554be97824ac9-1790804088700-1790804088700-a5a91292270b",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x9afa416a4758edd3dd3e8f6a8da6d35998ae48f0-1790362290212-1790362290212-758ba7808f59",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -224810,6 +227034,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790780136837-1790780136837-97be63799a42",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0x9c823dab050a2b6f0b549d89b8f0b909f6936a92-1790804088700-1790804088700-bb2458142f18",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -225393,6 +227625,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xa157ca8ca8dbe873db78d49237ae6ab31b740954-1790804088700-1790804088700-29f8daff5f92",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xa15cbb69507fcba293b194bf2b980ba6c29326d7-1790362290212-1790362290212-87b56216601b",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -225578,6 +227818,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790780136837-1790780136837-8c0438608f2b",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xa27799196935dc39a45cf3bb35d7c03d293e804d-1790804088700-1790804088700-e1566e9dc3aa",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -227017,6 +229265,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xac713ebf0bef0e5b133558f5f484f475d19b0f6e-1790804088700-1790804088700-f01078c06e63",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xac86becb06a3d4dcd5396264af5b734f348665c2-1790362290212-1790362290212-369a37a76db1",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -227042,6 +229298,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790780136837-1790780136837-bab17f769d14",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xacb61d2d193729222e2ed334c77222b0fa5fa980-1790804088700-1790804088700-bb922bb92b22",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -227081,6 +229345,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xacf24423424c202a6a99f0d9528c6c31c7cf5558-1790804088700-1790804088700-f285dd11ff14",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xad0711e37223920011af835b7fb6d6bf8f574139-1790362290212-1790362290212-ba62ed926e0a",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -227090,6 +229362,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xad0711e37223920011af835b7fb6d6bf8f574139-1790780136837-1790780136837-9db322c80d7c",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xad0711e37223920011af835b7fb6d6bf8f574139-1790804088700-1790804088700-a68a31706d2d",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -227193,6 +229473,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xae36bdca444368fba44ca435077ca12a9a33bbe3-1790804088700-1790804088700-8b0952939937",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xae6b807ec47e0b7900d1fe2a53885b4602748b03-1790362290212-1790362290212-3ed9625ac720",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -227234,6 +229522,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xaec0214d3a29ddd19ddeb5f415e4a17f2fb5be7c-1790780136837-1790780136837-2ecff2a9fbdc",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xaec0214d3a29ddd19ddeb5f415e4a17f2fb5be7c-1790804088700-1790804088700-be9e9de2ab81",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -228361,6 +230657,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xb6ceedddec5c4c19493fd0f7f0f824fcd614249d-1790804088700-1790804088700-a86d38004678",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xb6e319939f793c36a0360e13b239d31f177f7a21-1790362290212-1790362290212-8e6704267795",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -228618,6 +230922,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790780136837-1790780136837-e70d36654a42",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xb87daf50f5e20674d4992ded2c547f8b61040944-1790804088700-1790804088700-e4c0ae93fee8",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -230050,6 +232362,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790780136837-1790780136837-3075019bc602",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xc179e03922afe8fa9533d3f896338b9fb87ce0c8-1790804088700-1790804088700-02a0f4524809",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -231753,6 +234073,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xcd7b437ed7f62e5760f724f677eeaf7e2ce672da-1790804088700-1790804088700-54d793fb71f0",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xcd85cacecf32c352b5e9443058e2712d223eb0ab-1790362290212-1790362290212-bf34fad37459",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -232049,6 +234377,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd04f43e83f6d7c6ebea451acec1fc42d1de6ef3c-1790804088700-1790804088700-bef35dc30d48",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd0914ecdb667fb3db5e55c9e0a229d823c7990e4-1790362290212-1790362290212-60905ada5cb5",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -232114,6 +234450,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd0fea59999cd64d336185c11dca1742da0438d69-1790780136837-1790780136837-3efea3361b4c",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd0fea59999cd64d336185c11dca1742da0438d69-1790804088700-1790804088700-b9a1b248fdd3",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -232441,6 +234785,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd47b3ace8341ad4bd35b1180171fd435c3841e41-1790804088700-1790804088700-e9c74ea2a528",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd48704c52a64824101e13b1cbc8548ea31209b37-1790362290212-1790362290212-6c8d84f2e318",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -232506,6 +234858,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790780136837-1790780136837-ed671f9d8974",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd52483e189ba482670641c23cc0c5960c0f1663c-1790804088700-1790804088700-3a89eefb0358",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -232889,6 +235249,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd6e56265890b76413d1d527eb9b75e334c0c5b42-1790804088700-1790804088700-137a906d2f60",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd6ec42d6c8639c08f110a467fa4b733938779839-1790362290212-1790362290212-e29f710a3b53",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -232930,6 +235298,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790780136837-1790780136837-b3c691763681",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xd76dc20b8e72a05ee70e9a09e2b4d6f6384f654f-1790804088700-1790804088700-edf9825203d2",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -233858,6 +236234,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790780136837-1790780136837-809296da9314",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xdfc40c0892644a20c2b9020f04b0820c84264029-1790804088700-1790804088700-405f18527d0f",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -234826,6 +237210,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790780136837-1790780136837-912efc5bca8c",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xe9e14ef24579a782aae38425d06d446fd9d770b7-1790804088700-1790804088700-49d2d7386a16",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -235913,6 +238305,14 @@
       "replay_schema_version": "alina.replay.v1"
     },
     {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xf49352bc59902e55819b4843aecb3b916bb8ab0b-1790804088700-1790804088700-4ad871c1cbeb",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xf49a62e5060da5e75a5e98b3dd298a36250bbd87-1790362290212-1790362290212-73f51782f319",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
@@ -235946,6 +238346,14 @@
     },
     {
       "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790780136837-1790780136837-754a1a62c8bb",
+      "family": "copy_vault_selection",
+      "quality_status": "REJECT",
+      "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
+      "replay_compatible": false,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "hyperliquid-public-vaults-copy-vault-selection-0xf4a14663532e60371c4ffea510aa3a9fada9ce28-1790804088700-1790804088700-396ffb49bc06",
       "family": "copy_vault_selection",
       "quality_status": "REJECT",
       "reason_code": "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP",
@@ -257066,6 +259474,22 @@
     },
     {
       "dataset_id": "nasa-eonet-external-events-global-1790782239823-1790782239823-77c0642304b7",
+      "family": "external_events",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "nasa-eonet-external-events-global-1790804228433-1790804228433-0e407657b041",
+      "family": "external_events",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "nasa-eonet-external-events-global-1790805781324-1790805781324-a2669950d9e6",
       "family": "external_events",
       "quality_status": "PARTIAL",
       "reason_code": "REPLAYABLE_BUT_PARTIAL",
@@ -296535,6 +298959,14 @@
       "reason_code": "REPLAYABLE_BUT_PARTIAL",
       "replay_compatible": true,
       "replay_schema_version": "alina.replay.v1"
+    },
+    {
+      "dataset_id": "usgs-earthquakes-external-events-global-1790805781324-1790805781324-ddd98d9f3b74",
+      "family": "external_events",
+      "quality_status": "PARTIAL",
+      "reason_code": "REPLAYABLE_BUT_PARTIAL",
+      "replay_compatible": true,
+      "replay_schema_version": "alina.replay.v1"
     }
   ],
   "reason_counts": {
@@ -296544,16 +298976,16 @@
     "NOT_SAFE_OR_REPLAYABLE:PARTIAL:NO_REPLAY_COMPATIBILITY": 1852,
     "NOT_SAFE_OR_REPLAYABLE:PARTIAL:REPLAY_COMPATIBILITY_NOT_PROVEN": 5638,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:GAP": 30,
-    "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP": 6530,
+    "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_CAUSAL_TIMESTAMP": 6650,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:MISSING_MONOTONIC_TIMESTAMP": 5,
     "NOT_SAFE_OR_REPLAYABLE:REJECT:NO_REPLAY_COMPATIBILITY": 1717,
-    "REPLAYABLE_BUT_PARTIAL": 212,
-    "SAFE_REPLAY_COMPATIBLE": 12155
+    "REPLAYABLE_BUT_PARTIAL": 218,
+    "SAFE_REPLAY_COMPATIBLE": 12333
   },
-  "receipt_digest": "b1e93ea068ab11519a1d3836fa7292a8ee779b371db99a2757b050c71d436953",
-  "replayable_not_safe_count": 212,
-  "row_count": 37067,
+  "receipt_digest": "fa3ac8fc329115874a3f09217d997c7e0cbfa371b010542478f7fcd9a150ddd1",
+  "replayable_not_safe_count": 218,
+  "row_count": 37371,
   "safe_not_replayable_count": 0,
   "schema": "alina.replay_compatibility_reasons.v1",
-  "source_index_sha256": "d3587962ca449a52014916b753dcdd6d30f50f4558a036dd287095872925e8a1"
+  "source_index_sha256": "51b837c22750a12185b4dab69eb5282a76bf9543cefa411ca367bc376295145a"
 }
