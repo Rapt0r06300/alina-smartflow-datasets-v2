@@ -17,6 +17,7 @@ on:
     - cron: '47 */6 * * *'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: global-implementation-closure
   cancel-in-progress: true
@@ -53,3 +54,12 @@ jobs:
             sleep "$((attempt * 2))"
           done
           exit 1
+      - name: Dispatch analysis stage controller after closure
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run analysis-stage-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
+
