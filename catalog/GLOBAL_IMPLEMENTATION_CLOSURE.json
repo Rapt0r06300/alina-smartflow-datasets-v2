@@ -1,5 +1,5 @@
 {
-  "alina_head": "7a68ed7101c527ad4f289b77478de6fc35653f6d",
+  "alina_head": "0a6d0e1cc0a14b49cf7873bb08e1b62ded217c9d",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -24,9 +24,9 @@
         "campaign_ids": [
           "analysis-e3-pnl-proof-v2"
         ],
-        "complete": false,
+        "complete": true,
         "states": [
-          "PENDING"
+          "COMPLETE"
         ]
       },
       "oos": {
@@ -124,7 +124,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "97efff1a13ff30efa698d9d095000e3e24bfc43b",
+  "dataset_v2_head": "6cef3b8cf75dc5ea7abda8199572a7491e04665e",
   "economic_improvement": {},
   "event_intelligence": {
     "economic_proof_allowed": false,
@@ -171,21 +171,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T14:19:15.158926Z",
+  "generated_at_utc": "2026-09-30T14:23:40.306653Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "PNL_PROOF",
+    "analysis_stage": "SCOREBOARD",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
+    "request_id": "e2ea7e19f5e87ea5385494d897c24bb6e9060430ce920d9048f9578302830805",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "ed267be9b2bf2a21722a963925607e1833db458c2c5d1b55e2b4f9fc6c37bc0e",
+  "receipt_digest": "7fb8305384d841c97402e3202480a6b67a5d7e8dded01af6f2ebf8c39d56b648",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
