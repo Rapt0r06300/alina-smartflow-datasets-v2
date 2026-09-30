@@ -1,5 +1,5 @@
 {
-  "alina_head": "da1fd38937882c755035e61498334d9525f06382",
+  "alina_head": "4eebb98725492f1ba8d7ff09ef6f6ca3fddff394",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -23,9 +23,15 @@
         "states": []
       },
       "replay": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e3-replay-v2",
+          "analysis-e3-resume-proof-v1"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "RUNNING",
+          "RUNNING"
+        ]
       },
       "scoreboard": {
         "campaign_ids": [],
@@ -33,7 +39,7 @@
         "states": []
       }
     },
-    "campaign_count": 0,
+    "campaign_count": 2,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -43,16 +49,18 @@
       "module_pnl_proof",
       "scoreboard"
     ],
-    "selection_coherent": false,
-    "selection_ids": []
+    "selection_coherent": true,
+    "selection_ids": [
+      "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106"
+    ]
   },
   "cloud_only": true,
   "dataset": {
     "campaign_count": 718,
     "coverage": {
-      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 385,
-      "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-      "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": null,
+      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
+      "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
+      "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "6920f667243483ec2db5f3d9adc4ef1ebcdfbc03013f55487d0a0552fc681eb3",
       "PARTIAL_SHARDS": 16622,
       "RECORD_COUNT_PATCH_DIGEST": "f1e71c11c17e67f0df64ee87d7e9ef325a53907f8c5092b0da7fd122a6d128e5",
       "REJECTED_SHARDS": 7922,
@@ -77,16 +85,16 @@
       "TOTAL_TRADES_SAFE": 6687,
       "TOTAL_UNCOMPRESSED_BYTES": 107148022652,
       "TOTAL_UNIQUE_RECORDS": 74328129,
-      "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-      "TOTAL_UNIQUE_TRADES_GLOBAL": null,
-      "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 13915097,
+      "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
+      "TOTAL_UNIQUE_TRADES_GLOBAL": 21973554,
+      "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 22056840,
       "TOTAL_VALID_RECORDS": 74328129,
       "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
       "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
-      "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 385,
+      "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
       "TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE": 0,
       "TRADE_SHARDS_WITH_EXACT_COUNT": 2251,
-      "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1866,
+      "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 2251,
       "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": true,
       "UNCOMPRESSED_SIZE_EXACT_ASSETS": 36134,
       "UNCOMPRESSED_SIZE_PATCH_DIGEST": "eef5bb22b144f865ca29841d2ab3e2a2bb731ec626a8c6c10bd4af317cb9c46d",
@@ -100,7 +108,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "aa4c3fab66101f47f4437a1f130d2366431a14fb",
+  "dataset_v2_head": "5c68269f84b52d69bf49afcbf0852a0f4795cf48",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -146,21 +154,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:12:05.622842Z",
+  "generated_at_utc": "2026-09-30T13:29:08.668399Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "DRAIN",
+    "analysis_stage": "REPLAY",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "request_id": "bd40dff436b3e2c8cf8be629386e6765c6d4037cea5489f3b5d35353ba8b66d3",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "d64734052f20ad8c85ccb98633743ec02e399f48df6d5ff25f6573e3d550cf9e",
+  "receipt_digest": "dc8c7fc1ead0f1b22db0874602bee59753dc5a2ac916309c100b33a47386db84",
   "resume_provenance": {
     "campaign_id": null,
     "duplicate_completed_unit_count": null,
