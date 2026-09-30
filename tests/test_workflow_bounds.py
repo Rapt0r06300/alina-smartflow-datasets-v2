@@ -187,8 +187,9 @@ def test_resumable_creator_structure_and_exact_analysis_selection_are_not_corrup
     assert text.count("make_campaign() {") == 1
     assert text.count("Commit campaign manifests") == 1
     assert text.count("tools/import_operator_intents.py") == 1
-    assert "DATA_INDEX_SHA=" in text
+    assert "tools/resolve_analysis_selection.py" in text
     assert "DATASET_SELECTION_ID=" in text
+    assert "--source-collection-epoch \"$SOURCE_COLLECTION_EPOCH\"" in text
     assert "grep -Eq '^[0-9a-f]{64}$'" in text
     assert '--dataset-selection-id "$DATASET_SELECTION_ID"' in text
     assert "{64}          " not in text
