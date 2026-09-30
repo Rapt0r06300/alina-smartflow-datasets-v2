@@ -148,7 +148,10 @@ def build_receipt(root: Path) -> dict[str, Any]:
         "health_evidence_blob": health_blob,
         "health_receipt_digest": stored_health_digest,
         "health_dataset_commit": dataset_commit,
-        "coverage": {key: coverage.get(key) for key in EXACT_KEYS},
+        "coverage": {
+            **{key: coverage.get(key) for key in EXACT_KEYS},
+            "replayable_shards": coverage.get("replayable_shards"),
+        },
         "replayable_shards": coverage.get("replayable_shards"),
         "paper_only": True,
         "read_only": True,

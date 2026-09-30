@@ -105,6 +105,7 @@ def test_builder_uses_exact_pre_cutoff_index_not_later_global_shards(tmp_path):
 
     assert receipt["dataset_selection_id"] == selection
     assert receipt["coverage"]["unique_trade_count_exact"] is True
+    assert receipt["coverage"]["replayable_shards"] == 2
     assert receipt["health_evidence_commit"] != subprocess.run(
         ["git", "-C", str(tmp_path), "rev-parse", "HEAD"],
         check=True, capture_output=True, text=True,
