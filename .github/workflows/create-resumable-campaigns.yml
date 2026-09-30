@@ -155,6 +155,7 @@ jobs:
             case "$ANALYSIS_STAGE" in
               REPLAY)
                 make_campaign replay "$ANALYSIS_ID-replay-v2" "analysis-replay-v2" '{"max_shards":128}'
+                make_campaign replay "$ANALYSIS_ID-resume-proof-v1" "analysis-replay-resume-proof-v1" '{"max_shards":128,"resume_proof":true}'
                 ;;
               BACKTEST)
                 make_campaign backtest "$ANALYSIS_ID-backtest-v2" "analysis-backtest-v2" "{\"start_ts_ms\":$ECON_START_MS,\"end_ts_ms\":$NOW_MS,\"max_shards\":128}"
