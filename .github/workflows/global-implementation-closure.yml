@@ -10,8 +10,10 @@ on:
       - "catalog/CAMPAIGN_RESILIENCE_RECEIPT.json"
       - "catalog/campaigns/**"
       - "catalog/DATASET_HEALTH_RECEIPT.json"
+      - "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json"
       - "catalog/CAMPAIGN_WATCHDOG_RECEIPT.json"
       - "tools/build_global_implementation_closure.py"
+      - "tools/build_analysis_frozen_coverage_receipt.py"
       - ".github/workflows/global-implementation-closure.yml"
   schedule:
     - cron: '47 */6 * * *'
@@ -38,6 +40,7 @@ jobs:
       - name: Build fail-closed global closure receipt
         run: |
           set -euo pipefail
+          python tools/build_analysis_frozen_coverage_receipt.py
           python tools/build_global_implementation_closure.py --alina-root alina
       - name: Publish closure receipt from latest repository heads
         run: |
@@ -49,8 +52,9 @@ jobs:
             git reset --hard origin/main
             git -C alina fetch origin main
             git -C alina reset --hard origin/main
+            python tools/build_analysis_frozen_coverage_receipt.py
             python tools/build_global_implementation_closure.py --alina-root alina
-            git add catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
+            git add catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
             if git diff --cached --quiet; then
               exit 0
             fi

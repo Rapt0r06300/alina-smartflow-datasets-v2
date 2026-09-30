@@ -44,6 +44,50 @@ def git_sha(root: Path) -> str:
     return result.stdout.strip()
 
 
+def validate_frozen_coverage_receipt(
+    dataset: Path,
+    phase: Mapping[str, Any],
+    expected_selection_id: str | None = None,
+) -> tuple[bool, str, dict[str, Any]]:
+    receipt = load(dataset / "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json", {})
+    if not isinstance(receipt, dict) or receipt.get("schema") != "alina.analysis_frozen_coverage_receipt.v1":
+        return False, "FROZEN_COVERAGE_RECEIPT_MISSING", {}
+    stored_digest = str(receipt.get("receipt_digest") or "")
+    body = dict(receipt)
+    body.pop("receipt_digest", None)
+    if len(stored_digest) != 64 or digest(body) != stored_digest:
+        return False, "FROZEN_COVERAGE_RECEIPT_DIGEST_INVALID", receipt
+    bindings = (
+        ("phase_epoch", phase.get("epoch")),
+        ("source_collection_epoch", phase.get("source_collection_epoch")),
+        ("collection_cutoff_at_utc", phase.get("collection_cutoff_at_utc")),
+    )
+    for key, expected in bindings:
+        if receipt.get(key) != expected:
+            return False, f"FROZEN_COVERAGE_BINDING_MISMATCH:{key}", receipt
+    if expected_selection_id and receipt.get("dataset_selection_id") != expected_selection_id:
+        return False, "FROZEN_COVERAGE_SELECTION_MISMATCH", receipt
+    if (
+        receipt.get("paper_only") is not True
+        or receipt.get("read_only") is not True
+        or receipt.get("real_execution") is not False
+    ):
+        return False, "FROZEN_COVERAGE_NOT_PAPER_ONLY", receipt
+    coverage = receipt.get("coverage")
+    required = (
+        "valid_record_count_exact",
+        "unique_record_count_exact",
+        "trade_count_exact",
+        "unique_trade_count_exact",
+        "uncompressed_bytes_exact",
+    )
+    if not isinstance(coverage, dict) or not all(coverage.get(key) is True for key in required):
+        return False, "FROZEN_COVERAGE_NOT_EXACT", receipt
+    if not isinstance(receipt.get("replayable_shards"), int) or receipt["replayable_shards"] < 1:
+        return False, "FROZEN_COVERAGE_NOT_REPLAYABLE", receipt
+    return True, "FROZEN_COVERAGE_RECEIPT_VALID", receipt
+
+
 def validate_current_scoreboard_receipt(
     dataset: Path,
     phase: Mapping[str, Any],
@@ -335,9 +379,22 @@ def main() -> int:
             "real_execution": False,
         }
 
-    coverage = health.get("coverage") if isinstance(health, dict) else {}
-    if not isinstance(coverage, dict):
-        coverage = {}
+    current_coverage = health.get("coverage") if isinstance(health, dict) else {}
+    if not isinstance(current_coverage, dict):
+        current_coverage = {}
+    expected_selection_id = (
+        analysis_campaigns.get("selection_ids", [None])[0]
+        if len(analysis_campaigns.get("selection_ids", [])) == 1
+        else None
+    )
+    frozen_coverage_valid, frozen_coverage_reason, frozen_coverage_receipt = (
+        validate_frozen_coverage_receipt(dataset, phase_map, expected_selection_id)
+    )
+    coverage = (
+        frozen_coverage_receipt.get("coverage", {})
+        if frozen_coverage_valid
+        else {}
+    )
     event_wiring_complete = bool(
         event_summary
         and not any(
@@ -358,6 +415,7 @@ def main() -> int:
     implementation_complete = bool(
         event_wiring_complete
         and exact_coverage_complete
+        and frozen_coverage_valid
         and watchdog.get("watchdog_status") == "HEALTHY"
         and resilience.get("status") == "READY"
         and phase.get("phase") == "ANALYZE"
@@ -399,6 +457,18 @@ def main() -> int:
             "coverage": metrics.get("totals", {}),
             "watchdog_status": watchdog.get("watchdog_status"),
             "campaign_count": watchdog.get("campaign_count"),
+        },
+        "coverage_provenance": {
+            "valid": frozen_coverage_valid,
+            "reason": frozen_coverage_reason,
+            "phase_epoch": frozen_coverage_receipt.get("phase_epoch") if isinstance(frozen_coverage_receipt, dict) else None,
+            "source_collection_epoch": frozen_coverage_receipt.get("source_collection_epoch") if isinstance(frozen_coverage_receipt, dict) else None,
+            "dataset_selection_id": frozen_coverage_receipt.get("dataset_selection_id") if isinstance(frozen_coverage_receipt, dict) else None,
+            "index_sha256": frozen_coverage_receipt.get("index_sha256") if isinstance(frozen_coverage_receipt, dict) else None,
+            "health_evidence_commit": frozen_coverage_receipt.get("health_evidence_commit") if isinstance(frozen_coverage_receipt, dict) else None,
+            "health_receipt_digest": frozen_coverage_receipt.get("health_receipt_digest") if isinstance(frozen_coverage_receipt, dict) else None,
+            "coverage": coverage,
+            "current_global_coverage": current_coverage,
         },
         "scoreboard_provenance": {
             "valid": scoreboard_valid,

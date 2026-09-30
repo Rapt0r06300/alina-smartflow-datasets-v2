@@ -21,6 +21,7 @@ def test_analysis_stage_gates_do_not_require_target_work_before_target_entry():
 
 def test_done_still_requires_all_economic_stage_campaigns():
     gates = json.loads(Path("control/analysis-stage-gates.json").read_text(encoding="utf-8"))["stages"]
+    assert gates["DONE"]["coverage_receipt"] == "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json"
     assert set(gates["DONE"]["required_campaign_kinds"]) == {
         "replay",
         "backtest",

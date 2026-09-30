@@ -6,6 +6,7 @@ import json
 from tools.build_global_implementation_closure import (
     digest,
     validate_current_scoreboard_receipt,
+    validate_frozen_coverage_receipt,
 )
 
 
@@ -120,3 +121,52 @@ def test_tampered_scoreboard_is_rejected(tmp_path):
         "CURRENT_SCOREBOARD_RECEIPT_DIGEST_INVALID",
         "CURRENT_SCOREBOARD_HASH_MISMATCH",
     }
+
+
+def _write_frozen_coverage_receipt(root, *, exact=True):
+    body = {
+        "schema": "alina.analysis_frozen_coverage_receipt.v1",
+        "phase_epoch": 3,
+        "source_collection_epoch": 2,
+        "collection_cutoff_at_utc": "2026-09-29T10:56:59Z",
+        "dataset_selection_id": "phase-2-cutoff",
+        "replayable_shards": 1,
+        "coverage": {
+            "valid_record_count_exact": exact,
+            "unique_record_count_exact": exact,
+            "trade_count_exact": exact,
+            "unique_trade_count_exact": exact,
+            "uncompressed_bytes_exact": exact,
+        },
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+    body["receipt_digest"] = digest(body)
+    (root / "catalog").mkdir(parents=True, exist_ok=True)
+    (root / "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json").write_text(
+        json.dumps(body), encoding="utf-8"
+    )
+    return body
+
+
+def test_frozen_coverage_receipt_binds_exact_epoch_and_selection(tmp_path):
+    _write_frozen_coverage_receipt(tmp_path)
+    phase = _phase()
+    phase["collection_cutoff_at_utc"] = "2026-09-29T10:56:59Z"
+    valid, reason, _ = validate_frozen_coverage_receipt(
+        tmp_path, phase, "phase-2-cutoff"
+    )
+    assert valid is True
+    assert reason == "FROZEN_COVERAGE_RECEIPT_VALID"
+
+
+def test_frozen_coverage_receipt_rejects_non_exact_or_stale_evidence(tmp_path):
+    _write_frozen_coverage_receipt(tmp_path, exact=False)
+    phase = _phase()
+    phase["collection_cutoff_at_utc"] = "2026-09-29T10:56:59Z"
+    valid, reason, _ = validate_frozen_coverage_receipt(
+        tmp_path, phase, "phase-2-cutoff"
+    )
+    assert valid is False
+    assert reason == "FROZEN_COVERAGE_NOT_EXACT"

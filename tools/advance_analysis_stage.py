@@ -107,7 +107,10 @@ def main():
             raise SystemExit(f"stage gate missing required file: {required}")
     required_coverage = gate.get("required_coverage") or {}
     if required_coverage:
-        health = json.loads(Path("catalog/DATASET_HEALTH_RECEIPT.json").read_text(encoding="utf-8"))
+        coverage_path = Path(
+            gate.get("coverage_receipt", "catalog/DATASET_HEALTH_RECEIPT.json")
+        )
+        health = json.loads(coverage_path.read_text(encoding="utf-8"))
         coverage = health.get("coverage") if isinstance(health.get("coverage"), dict) else {}
         for key, requirement in required_coverage.items():
             value = coverage.get(key)

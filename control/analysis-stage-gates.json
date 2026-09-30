@@ -64,6 +64,7 @@
     "DONE": {
       "required_files": [
         "catalog/DATASET_HEALTH_RECEIPT.json",
+        "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json",
         "catalog/CAMPAIGN_WATCHDOG_RECEIPT.json",
         "catalog/CAMPAIGN_RESILIENCE_RECEIPT.json",
         "catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json"
@@ -92,7 +93,8 @@
         "implementation_complete": true,
         "final_validation_complete": true,
         "cloud_only": true
-      }
+      },
+      "coverage_receipt": "catalog/ANALYSIS_FROZEN_COVERAGE_RECEIPT.json"
     }
   },
   "paper_only": true,
