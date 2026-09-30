@@ -95,23 +95,33 @@ jobs:
           # so separate runners must not be assumed to multiply Hyperliquid's
           # per-IP unique-user subscription allowance.
           active_copy=False
-          for path in Path("catalog/campaigns").glob("copy-vault-*.json"):
+          active_other=0
+          collection_other_kinds={
+              "market_collection",
+              "event_intelligence_collection",
+              "official_archive_collection",
+          }
+          for path in Path("catalog/campaigns").glob("*.json"):
               try:
                   row=json.load(open(path,encoding="utf-8"))
               except (OSError,ValueError,TypeError):
                   continue
               if (
-                  row.get("kind")=="copy_vault_collection"
-                  and row.get("creation_phase")=="COLLECT"
-                  and int(row.get("phase_epoch") or 0)==phase_epoch
-                  and row.get("status")=="RUNNING"
+                  row.get("creation_phase")!="COLLECT"
+                  or int(row.get("phase_epoch") or 0)!=phase_epoch
+                  or row.get("status")!="RUNNING"
               ):
+                  continue
+              kind=str(row.get("kind") or "")
+              if kind=="copy_vault_collection":
                   active_copy=True
-                  break
+              elif kind in collection_other_kinds:
+                  active_other+=1
           copy_ids=copy_ids[:1]
           if active_copy:
               copy_ids=[]
-          other_ids=other_ids[:12]
+          other_capacity=max(0,12-active_other)
+          other_ids=other_ids[:other_capacity]
           print("copy_count="+str(len(copy_ids)))
           print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))
           print("other_count="+str(len(other_ids)))
