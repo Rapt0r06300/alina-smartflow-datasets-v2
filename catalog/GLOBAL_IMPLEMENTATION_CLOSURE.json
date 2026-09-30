@@ -31,7 +31,7 @@
         "complete": false,
         "states": [
           "COMPLETE",
-          "CONTINUATION_REQUIRED",
+          "COMPLETE",
           "FAILED"
         ]
       },
@@ -110,7 +110,7 @@
     "metrics_digest": null,
     "watchdog_status": "ATTENTION"
   },
-  "dataset_v2_head": "760e3c57d0bda80cab101f83b500b356d5de0a4d",
+  "dataset_v2_head": "ad4e39acb80efd4e5772b79e9d5640cf07e9f8fe",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -390,7 +390,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T17:58:43.318731Z",
+  "generated_at_utc": "2026-09-30T18:02:02.828092Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "REPLAY",
@@ -404,19 +404,19 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "745fb6e4d19add937229b2e501677a27ed9e9145927bd82bd343ce4dd7066f07",
+  "receipt_digest": "0575b4fbdf79fd41c3143e818be376c4630c4aca541e1eea78d4ba8f5130f3cc",
   "resume_provenance": {
-    "campaign_id": "analysis-e3-resume-proof-v1",
+    "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
     "duplicate_replay_work_count": 0,
-    "reason": "CURRENT_RESUME_PHASE_EPOCH_STALE",
-    "segment_a_job_id": "109910148452",
-    "segment_b_job_id": "109910681065",
-    "terminal_checkpoint_id": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
-    "terminal_evidence_digest": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
-    "terminal_selection_id": "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106",
-    "valid": false,
-    "workflow_run_id": "36722235122"
+    "reason": "CURRENT_RESUME_RECEIPT_VALID",
+    "segment_a_job_id": "110023261212",
+    "segment_b_job_id": "110023875349",
+    "terminal_checkpoint_id": "f1c6612b5392b094c76e0d32b68b576aca96f6b1c777bbf91c8bdb1717fb02a5",
+    "terminal_evidence_digest": "f1c6612b5392b094c76e0d32b68b576aca96f6b1c777bbf91c8bdb1717fb02a5",
+    "terminal_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+    "valid": true,
+    "workflow_run_id": "36755080572"
   },
   "schema": "alina.global_implementation_closure.v1",
   "scoreboard_provenance": {
