@@ -24,6 +24,7 @@ concurrency:
   group: resumable-campaign-creation-hourly
   cancel-in-progress: false
 
+# Keep exactly one top-level `launch` job: duplicate YAML job keys make workflow_dispatch unparsable.
 jobs:
   create:
     runs-on: ubuntu-latest
