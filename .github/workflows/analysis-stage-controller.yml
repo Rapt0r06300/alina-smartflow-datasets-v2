@@ -15,6 +15,7 @@ on:
       - "catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json"
       - "tools/advance_analysis_stage.py"
       - "tools/auto_advance_analysis.py"
+      - "tools/finalize_analysis_drain.py"
       - ".github/workflows/analysis-stage-controller.yml"
 permissions:
   contents: write
@@ -35,6 +36,14 @@ jobs:
           set -euo pipefail
           git fetch origin main
           git rebase origin/main
+      - id: drain
+        name: Finalize bounded source-epoch drain
+        run: |
+          set -euo pipefail
+          python tools/finalize_analysis_drain.py | tee "$RUNNER_TEMP/drain.json"
+          changed="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["changed"])' "$RUNNER_TEMP/drain.json")"
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
       - id: advance
         name: Advance one satisfied stage
         run: |
@@ -42,14 +51,15 @@ jobs:
           python tools/auto_advance_analysis.py | tee "$RUNNER_TEMP/advance.json"
           status="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$RUNNER_TEMP/advance.json")"
           echo "status=$status" >> "$GITHUB_OUTPUT"
-      - name: Publish stage authority and receipt
-        if: steps.advance.outputs.status == 'ADVANCED'
+      - name: Publish durable drain and stage authority
+        if: steps.advance.outputs.status == 'ADVANCED' || steps.drain.outputs.changed != '0'
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add control/alina-phase.json control/phase-receipts
-          git commit -m "analysis: advance one verified stage"
+          git add control/alina-phase.json control/phase-receipts catalog/campaigns
+          git diff --cached --quiet && exit 0
+          git commit -m "analysis: persist bounded drain and verified stage"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main
