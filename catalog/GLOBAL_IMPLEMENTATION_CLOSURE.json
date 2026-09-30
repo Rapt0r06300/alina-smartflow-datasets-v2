@@ -112,7 +112,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "7c18821a574d7314b3c29fe3a106b8de0979c84a",
+  "dataset_v2_head": "0b5e262d76a6deba15e429fdd05f34df60254fa4",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -158,21 +158,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:40:17.366269Z",
+  "generated_at_utc": "2026-09-30T13:40:54.323278Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "BACKTEST",
+    "analysis_stage": "OOS",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "80aa6c6b36376fd1598f39630f8bac0cc0276b67c33b96d68a4f17d3727dd7e5",
+    "request_id": "3a45bcccede08a4520a68e3682b36a02738c5f18c13d81365d4aa25e06983c8c",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "2b2bb713c2d2570760fd83b59ecdf96bb6387fe11c47bf39e5d0a2e5116e54ae",
+  "receipt_digest": "e1a1f317da4ba6b3691a9203381d8cede9829cef0dbe0e91112fad30cfdc1190",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
