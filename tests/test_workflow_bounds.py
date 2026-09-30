@@ -108,6 +108,7 @@ def test_controller_worker_are_bounded_hosted_and_non_recursive():
     assert "ref: ${{ steps.pin.outputs.sha }}" in worker
     assert "Claim durable campaign lease" in worker
     assert "Persist collection data or analysis evidence" in worker
+    assert 'ENV_RECEIPT="$WORKSPACE/runtime/reports/economic_campaigns/analysis_stages/scoreboard.json"' in worker
     assert "Publish final campaign checkpoint" in worker
     assert "publish_dataset_v2_release.py" in worker
     assert "verify_lease" in worker
