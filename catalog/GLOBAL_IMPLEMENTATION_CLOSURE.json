@@ -22,9 +22,13 @@
         "states": []
       },
       "oos": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e3-oos-v2"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "PENDING"
+        ]
       },
       "replay": {
         "campaign_ids": [
@@ -43,7 +47,7 @@
         "states": []
       }
     },
-    "campaign_count": 3,
+    "campaign_count": 4,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -112,7 +116,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "0b5e262d76a6deba15e429fdd05f34df60254fa4",
+  "dataset_v2_head": "570864160b4060534fbf87ab5f80581668bf93c7",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -158,7 +162,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:40:54.323278Z",
+  "generated_at_utc": "2026-09-30T13:41:57.252907Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "OOS",
@@ -172,7 +176,7 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "e1a1f317da4ba6b3691a9203381d8cede9829cef0dbe0e91112fad30cfdc1190",
+  "receipt_digest": "888cc8416cc942be4f765ee1ac1cce7ef004a049f764cf7c718493093f8e2f63",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
