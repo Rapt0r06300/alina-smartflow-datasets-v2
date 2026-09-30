@@ -81,6 +81,80 @@ def _dispatch_successor(row: dict, repository: str, now: datetime) -> tuple[bool
     return True, "dispatched"
 
 
+
+def _reconcile_drain_stuck(row: dict, phase: dict, now: datetime) -> bool:
+    """Close an interrupted pre-cutoff collection claim during ANALYZE/DRAIN."""
+    if (
+        phase.get("phase") != "ANALYZE"
+        or phase.get("analysis_stage") != "DRAIN"
+        or row.get("schema_version") != "alina.resumable_campaign.v2"
+        or row.get("creation_phase") != "COLLECT"
+        or int(row.get("phase_epoch") or 0) != int(phase.get("source_collection_epoch") or 0)
+        or row.get("status") != "STUCK"
+        or row.get("stuck_reason") != "LEASE_EXPIRED_REQUIRES_RECONCILIATION"
+        or row.get("lease") is not None
+    ):
+        return False
+    cutoff_raw = phase.get("collection_cutoff_at_utc")
+    if not cutoff_raw:
+        return False
+    try:
+        cutoff = parse(cutoff_raw)
+    except (TypeError, ValueError):
+        return False
+    previous_lease = None
+    for event in reversed(row.get("history") or []):
+        if isinstance(event, dict) and event.get("event") == "WATCHDOG_LEASE_EXPIRED":
+            candidate = event.get("previous_lease")
+            if isinstance(candidate, dict):
+                previous_lease = candidate
+                break
+    acquired = None
+    if previous_lease:
+        acquired_raw = previous_lease.get("acquired_at") or previous_lease.get("acquired_at_utc")
+        if acquired_raw:
+            try:
+                acquired = parse(acquired_raw)
+            except (TypeError, ValueError):
+                acquired = None
+    completed = row.get("completed_units") if isinstance(row.get("completed_units"), dict) else {}
+    if acquired is None:
+        terminal_status = "FAILED"
+        reason = "DRAIN_MISSING_PRE_CUTOFF_CLAIM_EVIDENCE"
+    elif acquired > cutoff:
+        terminal_status = "FAILED"
+        reason = "DRAIN_CLAIM_STARTED_AFTER_CUTOFF"
+    elif completed:
+        terminal_status = "PARTIAL"
+        reason = "DRAIN_CUTOFF_INTERRUPTED_AFTER_DURABLE_PROGRESS"
+    else:
+        terminal_status = "UNAVAILABLE"
+        reason = "DRAIN_CUTOFF_INTERRUPTED_WITHOUT_DURABLE_PROGRESS"
+    campaign_id = str(row.get("campaign_id") or "")
+    row["status"] = terminal_status
+    row["status_reason"] = reason
+    row["stuck_reason"] = None
+    row["lease"] = None
+    row["updated_at"] = now.isoformat().replace("+00:00", "Z")
+    row.setdefault("history", []).append({
+        "at_utc": row["updated_at"],
+        "event": "WATCHDOG_DRAIN_CUTOFF_TERMINALIZED",
+        "previous_status": "STUCK",
+        "terminal_status": terminal_status,
+        "reason": reason,
+        "collection_cutoff_at_utc": cutoff_raw,
+        "source_collection_epoch": phase.get("source_collection_epoch"),
+    })
+    row["terminal_evidence_digest"] = hashlib.sha256(json.dumps({
+        "campaign_id": campaign_id,
+        "terminal_status": terminal_status,
+        "reason": reason,
+        "completed_units": completed,
+        "collection_cutoff_at_utc": cutoff_raw,
+        "source_collection_epoch": phase.get("source_collection_epoch"),
+    }, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+    return True
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--campaign-root", default="catalog/campaigns")
@@ -105,6 +179,7 @@ def main():
     dispatched = []
     dispatch_failures = []
     lease_repairs = []
+    drain_reconciled = []
     phase = {}
     phase_error = None
     try:
@@ -171,6 +246,12 @@ def main():
             lease_repairs.append(campaign_id)
             _write_atomic(path, row)
             status = "FAILED"
+        if _reconcile_drain_stuck(row, phase, now):
+            status = str(row.get("status") or "")
+            campaign_id = str(row.get("campaign_id") or path.stem)
+            drain_reconciled.append(campaign_id)
+            lease_repairs.append(campaign_id)
+            _write_atomic(path, row)
         counts[status] = counts.get(status, 0) + 1
         kind_counts[kind] = kind_counts.get(kind, 0) + 1
         if status in active:
@@ -290,7 +371,8 @@ def main():
         "campaign_health": sorted(campaign_health, key=lambda item: item["campaign_id"]),
         "stuck_campaigns": sorted(stuck),
         "expired_leases": sorted(expired_leases),
-        "lease_repairs": sorted(lease_repairs),
+        "lease_repairs": sorted(set(lease_repairs)),
+        "drain_reconciled_campaigns": sorted(set(drain_reconciled)),
         "unsafe_campaigns": sorted(unsafe),
         "successors_dispatched": sorted(dispatched),
         "successor_dispatch_failures": sorted(
