@@ -23,7 +23,7 @@ permissions:
 
 concurrency:
   group: resumable-campaign-creation-hourly
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   create:
