@@ -174,8 +174,9 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
     assert "backfill_exact_trade_counts.py" in backfill
 
 
-def test_campaign_watchdog_rebases_on_concurrent_receipt_writers():
+def test_campaign_watchdog_recomputes_on_concurrent_receipt_writers():
     text = _workflow("campaign-watchdog.yml")
     assert "git fetch origin main" in text
-    assert "git pull --rebase origin main" in text
+    assert "git reset --hard origin/main" in text
+    assert "python tools/campaign_watchdog.py --dispatch" in text
     assert "for attempt in 1 2 3 4 5" in text
