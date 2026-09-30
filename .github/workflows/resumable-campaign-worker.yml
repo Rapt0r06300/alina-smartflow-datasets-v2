@@ -316,10 +316,13 @@ jobs:
               python tools/augment_campaign_result.py evidence                 --result "$RESULT"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
               if [ "$KIND" = "scoreboard" ]; then
                 SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
+                ENV_RECEIPT="$WORKSPACE/runtime/reports/analysis_stages/scoreboard.json"
                 test -f "$SCOREBOARD"
+                test -f "$ENV_RECEIPT"
                 python tools/persist_analysis_scoreboard.py \
                   --campaign-manifest "catalog/campaigns/$CAMPAIGN_ID.json" \
                   --scoreboard "$SCOREBOARD" \
+                  --environment-receipt "$ENV_RECEIPT" \
                   --evidence-tag "$TAG" \
                   --repository "$GITHUB_REPOSITORY" \
                   --unit-id "$UNIT"
