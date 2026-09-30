@@ -110,13 +110,19 @@ def requeue(
 
     status = str(row.get("status") or "")
     old_code_sha = str(row.get("code_sha") or "")
-    if status != "FAILED":
+    if status not in {"FAILED", "PENDING"}:
         return {
             "requeued": False,
-            "reason": "status_not_failed",
+            "reason": "status_not_refreshable",
             "status": status,
             "campaign_id": row.get("campaign_id"),
         }
+    if status == "PENDING" and (
+        row.get("completed_units")
+        or row.get("checkpoint_lineage")
+        or row.get("terminal_evidence_digest")
+    ):
+        raise SystemExit("pending campaign with durable work cannot be refreshed")
     if old_code_sha == code_sha:
         return {
             "requeued": False,
@@ -127,7 +133,7 @@ def requeue(
 
     source_digest = hashlib.sha256(raw_text.encode("utf-8")).hexdigest()
     archive_path = history_dir / (
-        f"{manifest_path.stem}.failed.{old_code_sha[:12]}.{source_digest}.json"
+        f"{manifest_path.stem}.{status.lower()}.{old_code_sha[:12]}.{source_digest}.json"
     )
     if archive_path.exists():
         if archive_path.read_text(encoding="utf-8") != raw_text:
@@ -136,9 +142,13 @@ def requeue(
         _atomic_write(archive_path, raw_text)
 
     history = list(row.get("history") or [])
+    refresh_event = (
+        "retry_after_code_fix" if status == "FAILED"
+        else "refresh_pending_after_code_fix"
+    )
     history.append(
         {
-            "event": "retry_after_code_fix",
+            "event": refresh_event,
             "at": _now(),
             "archived_manifest": archive_path.as_posix(),
             "archived_manifest_sha256": source_digest,
@@ -160,7 +170,7 @@ def requeue(
         "config_sha256": config_sha256,
         "work_plan_sha256": work_plan_sha256,
         "status": "PENDING",
-        "status_reason": "retry_after_code_fix",
+        "status_reason": refresh_event,
         "updated_at": _now(),
         "chunk_index": 0,
         "attempts": int(row.get("attempts") or 0) + 1,
