@@ -53,3 +53,49 @@ def test_unique_candidate_excludes_non_trade_zero_count_assets():
     assert global_counts._unique_candidate({**base, "family": "l2Book", "trade_count": 100}) is False
     assert global_counts._unique_candidate({**base, "family": "trades", "trade_count": 0}) is False
     assert global_counts._unique_candidate({**base, "family": "trades", "trade_count": 1}) is True
+
+
+def test_native_trade_keys_support_normalized_hyperliquid_fill_without_raw_envelope():
+    record = {
+        "raw_payload": {
+            "time": 123,
+            "px": "100.5",
+            "sz": "2",
+            "side": "B",
+            "coin": "BTC",
+            "hash": "0xabc",
+            "oid": 7,
+        }
+    }
+    keys = global_counts._native_trade_keys(
+        record, venue="hyperliquid", family="copy_vault_fills", symbol="BTC"
+    )
+    assert keys is not None
+    assert len(keys) == 1
+    assert keys[0].startswith("hyperliquid|copy_vault_fills|BTC|fallback|123|100.5|2|B|BTC|")
+
+
+def test_native_trade_keys_support_binance_archive_list_payload():
+    record = {
+        "raw_payload": [
+            {"id": 11, "time": 1000, "price": "10", "qty": "1", "side": "BUY"},
+            {"id": 12, "time": 1001, "price": "11", "qty": "2", "side": "SELL"},
+        ]
+    }
+    keys = global_counts._native_trade_keys(
+        record, venue="binance", family="trades", symbol="BTCUSDT"
+    )
+    assert keys == [
+        "binance|trades|BTCUSDT|t|11",
+        "binance|trades|BTCUSDT|t|12",
+    ]
+
+
+def test_native_trade_keys_fail_closed_when_composite_is_ambiguous():
+    keys = global_counts._native_trade_keys(
+        {"raw_payload": {"time": 1, "px": "10"}},
+        venue="hyperliquid",
+        family="fills",
+        symbol="BTC",
+    )
+    assert keys is None
