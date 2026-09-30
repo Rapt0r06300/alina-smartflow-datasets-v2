@@ -29,8 +29,8 @@
         ],
         "complete": false,
         "states": [
-          "PENDING",
-          "PENDING"
+          "COMPLETE",
+          "FAILED"
         ]
       },
       "scoreboard": {
@@ -108,7 +108,7 @@
     "metrics_digest": null,
     "watchdog_status": "ATTENTION"
   },
-  "dataset_v2_head": "14e93a496a20cffc3a20451305fc7f74a0dd47fb",
+  "dataset_v2_head": "17e954755a80661574b919ed8026df7496c79f4c",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -388,7 +388,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T17:12:57.483433Z",
+  "generated_at_utc": "2026-09-30T17:17:18.803004Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "REPLAY",
@@ -402,7 +402,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "61d0828cb37b2e39945a7829bf652ca919bbda8313cb69a9396642a1c656df63",
+  "receipt_digest": "3a55c407f8af7126ae6a4854380dafc0be52ab80aefe1a72a62cd0e88c66de5b",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
