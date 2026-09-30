@@ -79,6 +79,14 @@ def _native_trade_keys(
     family: str,
     symbol: str,
 ) -> list[str] | None:
+    """Return collision-resistant identities for every trade represented by one record.
+
+    Native exchange identifiers are preferred.  Historical normalizers are not
+    required to preserve the original websocket envelope, so direct mappings,
+    list payloads and normalized TickEnvelope fields are also supported.  A
+    deterministic composite is used only when time, price and size are present;
+    otherwise the count remains fail-closed.
+    """
     raw = _raw_payload(record)
     venue = venue.lower()
     family = family.lower()
@@ -88,121 +96,187 @@ def _native_trade_keys(
         if value is not None and str(value) != "":
             keys.append(f"{venue}|{family}|{symbol}|{prefix}|{value}")
 
-    if venue == "binance" and isinstance(raw, Mapping):
-        # Websocket envelopes carry compact native keys; official archive
-        # normalizers may expose the same keys at the TickEnvelope top level.
-        source = raw
-        if family == "agg_trades":
-            add("a", source.get("a") or source.get("agg_trade_id") or record.get("agg_trade_id"))
-        else:
-            add(
-                "t",
-                source.get("t")
-                or source.get("trade_id")
-                or source.get("id")
-                or record.get("trade_id")
-                or record.get("native_id"),
-            )
-        return keys or None
+    def rows_from(value: Any) -> list[Mapping[str, Any]]:
+        if isinstance(value, list):
+            return [row for row in value if isinstance(row, Mapping)]
+        if not isinstance(value, Mapping):
+            return []
+        data = value.get("data")
+        if isinstance(data, list):
+            return [row for row in data if isinstance(row, Mapping)]
+        if isinstance(data, Mapping):
+            return [data]
+        return [value]
 
-    if venue == "hyperliquid" and isinstance(raw, Mapping):
-        data = raw.get("data")
-        rows = data if isinstance(data, list) else []
-        if rows:
-            for row in rows:
-                if not isinstance(row, Mapping):
-                    continue
-                if row.get("tid") is not None:
-                    add("tid", row.get("tid"))
-                else:
-                    fallback = (
-                        row.get("time"),
-                        row.get("px"),
-                        row.get("sz"),
-                        row.get("side"),
-                        row.get("coin"),
-                        row.get("hash"),
-                    )
-                    add("fallback", "|".join("" if v is None else str(v) for v in fallback))
-            return keys or None
+    def composite(
+        row: Mapping[str, Any],
+        *,
+        time_keys: tuple[str, ...],
+        price_keys: tuple[str, ...],
+        size_keys: tuple[str, ...],
+        side_keys: tuple[str, ...],
+        extra_keys: tuple[str, ...] = (),
+    ) -> str | None:
+        def first(names: tuple[str, ...]) -> Any:
+            for name in names:
+                value = row.get(name)
+                if value is not None and str(value) != "":
+                    return value
+            return None
 
-    if venue == "bybit" and isinstance(raw, Mapping):
-        rows = raw.get("data")
-        if not isinstance(rows, list):
-            rows = [raw]
+        timestamp = first(time_keys)
+        price = first(price_keys)
+        size = first(size_keys)
+        if timestamp is None or price is None or size is None:
+            return None
+        values = [
+            timestamp,
+            price,
+            size,
+            first(side_keys),
+            first(("symbol", "s", "coin", "instId")) or symbol,
+        ]
+        values.extend(row.get(name) for name in extra_keys)
+        return "|".join("" if value is None else str(value) for value in values)
+
+    # If a historical normalizer omitted raw_payload, its normalized envelope is
+    # still immutable evidence and may contain the native id/composite fields.
+    source: Any = raw if raw is not None else record
+    rows = rows_from(source)
+
+    if venue == "binance":
         for row in rows:
-            if isinstance(row, Mapping):
-                native = row.get("i") or row.get("trade_id") or row.get("execId")
+            if family == "agg_trades":
+                native = (
+                    row.get("a")
+                    or row.get("agg_trade_id")
+                    or row.get("aggTradeId")
+                    or record.get("agg_trade_id")
+                )
                 if native is not None:
-                    add("i", native)
-                else:
-                    fallback = (
-                        row.get("T") or row.get("timestamp"),
-                        row.get("p") or row.get("price"),
-                        row.get("v") or row.get("size"),
-                        row.get("S") or row.get("side"),
-                        row.get("s") or row.get("symbol") or symbol,
-                    )
-                    if any(value is not None for value in fallback[:-1]):
-                        add("fallback", "|".join("" if v is None else str(v) for v in fallback))
+                    add("a", native)
+                    continue
+            else:
+                native = (
+                    row.get("t")
+                    or row.get("trade_id")
+                    or row.get("tradeId")
+                    or row.get("id")
+                    or record.get("trade_id")
+                    or record.get("native_id")
+                )
+                if native is not None:
+                    add("t", native)
+                    continue
+            fallback = composite(
+                row,
+                time_keys=("T", "time", "timestamp", "event_ts_ms", "ts"),
+                price_keys=("p", "price", "px"),
+                size_keys=("q", "qty", "quantity", "size", "sz"),
+                side_keys=("side", "S", "isBuyerMaker"),
+            )
+            if fallback is None:
+                return None
+            add("fallback", fallback)
         return keys or None
 
-    if venue == "okx" and isinstance(raw, Mapping):
-        rows = raw.get("data")
-        if isinstance(rows, list):
-            for row in rows:
-                if isinstance(row, Mapping):
-                    if row.get("tradeId") is not None:
-                        add("tradeId", row.get("tradeId"))
-                    else:
-                        fallback = (
-                            row.get("ts"),
-                            row.get("px"),
-                            row.get("sz"),
-                            row.get("side"),
-                            row.get("instId"),
-                        )
-                        add("fallback", "|".join("" if v is None else str(v) for v in fallback))
-            return keys or None
+    if venue == "hyperliquid":
+        for row in rows:
+            native = row.get("tid") or row.get("trade_id") or row.get("tradeId")
+            if native is not None:
+                add("tid", native)
+                continue
+            fallback = composite(
+                row,
+                time_keys=("time", "timestamp", "event_ts_ms", "ts"),
+                price_keys=("px", "price", "p"),
+                size_keys=("sz", "size", "qty", "q"),
+                side_keys=("side", "dir"),
+                extra_keys=("hash", "oid", "crossed", "startPosition", "fee"),
+            )
+            if fallback is None:
+                return None
+            add("fallback", fallback)
+        return keys or None
 
-    if venue == "bitget" and isinstance(raw, Mapping):
-        rows = raw.get("data")
-        if isinstance(rows, list):
-            for row in rows:
-                if isinstance(row, Mapping):
-                    native = row.get("tradeId") or row.get("trade_id")
-                    if native is not None:
-                        add("tradeId", native)
-                    else:
-                        fallback = (
-                            row.get("ts"),
-                            row.get("price"),
-                            row.get("size"),
-                            row.get("side"),
-                        )
-                        add("fallback", "|".join("" if v is None else str(v) for v in fallback))
-            return keys or None
+    if venue == "bybit":
+        for row in rows:
+            native = row.get("i") or row.get("trade_id") or row.get("execId")
+            if native is not None:
+                add("i", native)
+                continue
+            fallback = composite(
+                row,
+                time_keys=("T", "timestamp", "time", "event_ts_ms", "ts"),
+                price_keys=("p", "price", "px"),
+                size_keys=("v", "size", "qty", "q", "sz"),
+                side_keys=("S", "side"),
+            )
+            if fallback is None:
+                return None
+            add("fallback", fallback)
+        return keys or None
 
-    # Copy-Vault and any other trade-like family: use explicit native IDs when
-    # present. If a record cannot be decomposed reliably, unique_count remains
-    # unproven instead of being guessed.
-    if isinstance(raw, Mapping):
-        rows = raw.get("data")
-        if isinstance(rows, list):
-            for row in rows:
-                if isinstance(row, Mapping):
-                    native = (
-                        row.get("tid")
-                        or row.get("tradeId")
-                        or row.get("trade_id")
-                        or row.get("hash")
-                    )
-                    if native is None:
-                        return None
-                    add("native", native)
-            return keys or None
+    if venue == "okx":
+        for row in rows:
+            native = row.get("tradeId") or row.get("trade_id")
+            if native is not None:
+                add("tradeId", native)
+                continue
+            fallback = composite(
+                row,
+                time_keys=("ts", "timestamp", "time", "event_ts_ms"),
+                price_keys=("px", "price", "p"),
+                size_keys=("sz", "size", "qty", "q"),
+                side_keys=("side", "S"),
+            )
+            if fallback is None:
+                return None
+            add("fallback", fallback)
+        return keys or None
 
-    return None
+    if venue == "bitget":
+        for row in rows:
+            native = row.get("tradeId") or row.get("trade_id")
+            if native is not None:
+                add("tradeId", native)
+                continue
+            fallback = composite(
+                row,
+                time_keys=("ts", "timestamp", "time", "event_ts_ms"),
+                price_keys=("price", "px", "p"),
+                size_keys=("size", "sz", "qty", "q"),
+                side_keys=("side", "S"),
+            )
+            if fallback is None:
+                return None
+            add("fallback", fallback)
+        return keys or None
+
+    # Other trade-like families remain exact only when an explicit native id or
+    # a complete deterministic time/price/size composite is available.
+    for row in rows:
+        native = (
+            row.get("tid")
+            or row.get("tradeId")
+            or row.get("trade_id")
+            or row.get("execId")
+        )
+        if native is not None:
+            add("native", native)
+            continue
+        fallback = composite(
+            row,
+            time_keys=("time", "timestamp", "event_ts_ms", "ts", "T"),
+            price_keys=("px", "price", "p"),
+            size_keys=("sz", "size", "qty", "q", "v"),
+            side_keys=("side", "S", "dir"),
+            extra_keys=("hash", "oid"),
+        )
+        if fallback is None:
+            return None
+        add("fallback", fallback)
+    return keys or None
 
 
 def inspect_asset(path: Path, row: Mapping[str, Any]) -> dict[str, Any]:
