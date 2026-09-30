@@ -13,6 +13,29 @@ from pathlib import Path
 ORDER = ("DRAIN", "QUALITY", "REPLAY", "BACKTEST", "OOS", "FORWARD_PAPER", "PNL_PROOF", "SCOREBOARD", "DONE")
 
 
+def _required_campaign_gate(rows, state, required_kinds):
+    """Require every current-epoch campaign of a required kind to be COMPLETE."""
+    scoped = [
+        row for row in rows
+        if row.get("creation_phase") == "ANALYZE"
+        and int(row.get("phase_epoch") or 0) == int(state["epoch"])
+        and row.get("source_collection_epoch") == state.get("source_collection_epoch")
+        and str(row.get("kind")) in required_kinds
+    ]
+    observed = {
+        str(row.get("kind"))
+        for row in scoped
+        if row.get("status") == "COMPLETE"
+    }
+    missing = sorted(required_kinds - observed)
+    incomplete = sorted(
+        str(row.get("campaign_id") or "<unknown>")
+        for row in scoped
+        if row.get("status") != "COMPLETE"
+    )
+    return missing, incomplete
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--stage", choices=ORDER, required=True)
@@ -80,16 +103,13 @@ def main():
             json.loads(path.read_text(encoding="utf-8"))
             for path in sorted(Path(a.campaign_root).glob("*.json"))
         ]
-        observed = {
-            str(row.get("kind"))
-            for row in rows
-            if row.get("creation_phase") == "ANALYZE"
-            and int(row.get("phase_epoch") or 0) == int(state["epoch"])
-            and row.get("source_collection_epoch") == state.get("source_collection_epoch")
-            and row.get("status") == "COMPLETE"
-        }
-        if not required_kinds.issubset(observed):
-            raise SystemExit(f"stage gate missing terminal campaign kinds: {sorted(required_kinds - observed)}")
+        missing, incomplete = _required_campaign_gate(rows, state, required_kinds)
+        if missing:
+            raise SystemExit(f"stage gate missing terminal campaign kinds: {missing}")
+        if incomplete:
+            raise SystemExit(
+                "stage gate has non-complete current campaigns: " + ",".join(incomplete)
+            )
     if current == "DRAIN" and a.stage != "DRAIN":
         source_epoch = int(state.get("source_collection_epoch") or 0)
         active = {"PENDING", "RUNNING", "CONTINUATION_REQUIRED", "STUCK"}
