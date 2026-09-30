@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "SCOREBOARD",
+  "analysis_stage": "DONE",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
   "epoch": 3,
   "phase": "ANALYZE",
-  "request_id": "e2ea7e19f5e87ea5385494d897c24bb6e9060430ce920d9048f9578302830805",
+  "request_id": "a37105048dfccafad20103c6e6fa6d56843fe11be64c159bad2b16b7d7dad11a",
   "requested_at_utc": "2026-09-29T10:56:59.390365Z",
   "requested_by": "codex-work-cloud",
   "schema_version": 1,
