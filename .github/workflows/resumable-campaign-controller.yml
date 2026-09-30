@@ -69,9 +69,17 @@ jobs:
           for campaign_id in ids:
               path=Path("catalog/campaigns")/(campaign_id+".json")
               try:
-                  kind=str(json.load(open(path,encoding="utf-8")).get("kind") or "")
+                  row=json.load(open(path,encoding="utf-8"))
+                  kind=str(row.get("kind") or "")
+                  cursor=row.get("cursor") if isinstance(row.get("cursor"),dict) else {}
               except (OSError,ValueError,TypeError):
                   kind=""
+                  cursor={}
+              # Dedicated replay resume-proof campaigns are owned only by the
+              # two-segment fresh-runner workflow.  Excluding them here prevents
+              # the normal controller from racing the proof segments.
+              if cursor.get("resume_proof") is True:
+                  continue
               (copy_ids if kind=="copy_vault_collection" else other_ids).append(campaign_id)
           print("copy_count="+str(len(copy_ids)))
           print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))
