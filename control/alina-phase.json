@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "REPLAY",
+  "analysis_stage": "BACKTEST",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
   "epoch": 3,
   "phase": "ANALYZE",
-  "request_id": "bd40dff436b3e2c8cf8be629386e6765c6d4037cea5489f3b5d35353ba8b66d3",
+  "request_id": "80aa6c6b36376fd1598f39630f8bac0cc0276b67c33b96d68a4f17d3727dd7e5",
   "requested_at_utc": "2026-09-29T10:56:59.390365Z",
   "requested_by": "codex-work-cloud",
   "schema_version": 1,
