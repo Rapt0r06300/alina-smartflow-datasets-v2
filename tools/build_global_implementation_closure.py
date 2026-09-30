@@ -190,18 +190,6 @@ def validate_current_resume_receipt(
     return True, "CURRENT_RESUME_RECEIPT_VALID", receipt
 
 
-def _without_superseded(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    superseded_ids = {
-        str(row.get("supersedes"))
-        for row in rows
-        if isinstance(row, dict) and row.get("supersedes")
-    }
-    return [
-        row for row in rows
-        if str(row.get("campaign_id") or "") not in superseded_ids
-    ]
-
-
 def current_analysis_campaign_status(
     dataset: Path,
     phase: Mapping[str, Any],
@@ -219,7 +207,6 @@ def current_analysis_campaign_status(
         ):
             rows.append(row)
 
-    rows = _without_superseded(rows)
     by_kind: dict[str, Any] = {}
     for kind in ANALYSIS_KINDS:
         scoped = [row for row in rows if row.get("kind") == kind]
