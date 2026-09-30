@@ -26,7 +26,7 @@
         ],
         "complete": false,
         "states": [
-          "PENDING"
+          "FAILED"
         ]
       },
       "oos": {
@@ -124,7 +124,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "aa838a2c29072782c46d5d4684ccbbd85bb134c1",
+  "dataset_v2_head": "b50213fb1f3b612cd6c5768fd5855ea517ac65d5",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -170,7 +170,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:51:35.012699Z",
+  "generated_at_utc": "2026-09-30T13:54:38.917613Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "PNL_PROOF",
@@ -184,7 +184,7 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "c22d662a6d62b95967aa7fe2b853421362b3a9f3168ad8950420f02304bfc76f",
+  "receipt_digest": "944105c1b3b8b9e9fbfae6c7a8288c6510f333a7258f420a365abce69a176602",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
