@@ -123,16 +123,18 @@ jobs:
       actions: write
       contents: read
     steps:
-      - name: Dispatch analysis stage controller after bounded work
+      - name: Refresh global closure after bounded work
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
+          # GITHUB_TOKEN-authored checkpoint pushes do not recursively trigger
+          # push workflows. Rebuild the cross-repository closure explicitly.
+          # That workflow dispatches analysis-stage-controller only after the
+          # fresh closure receipt has been durably published, avoiding a race
+          # where SCOREBOARD -> DONE reads stale implementation flags.
           gh workflow run global-implementation-closure.yml \
-            --repo "$GITHUB_REPOSITORY" \
-            --ref main
-          gh workflow run analysis-stage-controller.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main
 
