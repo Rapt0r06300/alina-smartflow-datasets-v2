@@ -17,7 +17,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 concurrency:
   group: durable-two-segment-resume-proof
@@ -331,3 +331,12 @@ jobs:
           path: catalog/RESUME_SMOKE_RECEIPT.json
           if-no-files-found: error
           retention-days: 30
+      - name: Dispatch analysis stage controller after resume proof
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run analysis-stage-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
+
