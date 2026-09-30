@@ -48,6 +48,65 @@ def _run_state(run_id: str) -> tuple[str, str]:
         return "unknown", "gh_unavailable"
 
 
+def _reconcile_finished_owner(
+    row: dict,
+    now: datetime,
+    *,
+    run_state=_run_state,
+) -> bool:
+    """Revoke a lease whose GitHub owner run has already terminated.
+
+    A GitHub-hosted worker cannot make further progress after its owning run is
+    completed. Keeping that lease alive until its wall-clock TTL expires can
+    stall ANALYZE for hours. Preserve the failed ownership evidence, clear the
+    lease, and mark the campaign STUCK so the canonical controller/proof
+    workflow can reconcile or retry from durable state.
+    """
+    if row.get("schema_version") != "alina.resumable_campaign.v2":
+        return False
+    if str(row.get("status") or "") not in {
+        "PENDING",
+        "RUNNING",
+        "CONTINUATION_REQUIRED",
+        "STUCK",
+    }:
+        return False
+    lease = row.get("lease")
+    if not isinstance(lease, dict):
+        return False
+    owner = (
+        lease.get("owner_run_id")
+        or lease.get("owner")
+        or lease.get("owner_id")
+    )
+    if not owner:
+        return False
+    owner_status, owner_conclusion = run_state(str(owner))
+    if owner_status != "completed":
+        return False
+
+    previous_status = str(row.get("status") or "")
+    previous_lease = dict(lease)
+    timestamp = now.isoformat().replace("+00:00", "Z")
+    reason = "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    row["lease"] = None
+    row["status"] = "STUCK"
+    row["status_reason"] = reason
+    row["stuck_reason"] = reason
+    row["updated_at"] = timestamp
+    row.setdefault("history", []).append({
+        "at_utc": timestamp,
+        "event": "WATCHDOG_OWNER_RUN_TERMINATED",
+        "previous_status": previous_status,
+        "previous_lease": previous_lease,
+        "owner_run_id": str(owner),
+        "owner_run_status": owner_status,
+        "owner_run_conclusion": owner_conclusion,
+        "reason": reason,
+    })
+    return True
+
+
 def _dispatch_successor(row: dict, repository: str, now: datetime) -> tuple[bool, str]:
     campaign_id = str(row.get("campaign_id") or "")
     cursor = row.get("cursor") if isinstance(row.get("cursor"), dict) else {}
@@ -250,6 +309,11 @@ def main():
             status = str(row.get("status") or "")
             campaign_id = str(row.get("campaign_id") or path.stem)
             drain_reconciled.append(campaign_id)
+            lease_repairs.append(campaign_id)
+            _write_atomic(path, row)
+        if _reconcile_finished_owner(row, now):
+            status = str(row.get("status") or "")
+            campaign_id = str(row.get("campaign_id") or path.stem)
             lease_repairs.append(campaign_id)
             _write_atomic(path, row)
         counts[status] = counts.get(status, 0) + 1
