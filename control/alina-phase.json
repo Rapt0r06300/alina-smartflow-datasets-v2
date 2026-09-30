@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "FORWARD_PAPER",
+  "analysis_stage": "PNL_PROOF",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
   "epoch": 3,
   "phase": "ANALYZE",
-  "request_id": "5173379989942783a13c67099b7c752a5ef09c18890dfd1cdb69912aa96e3e08",
+  "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
   "requested_at_utc": "2026-09-29T10:56:59.390365Z",
   "requested_by": "codex-work-cloud",
   "schema_version": 1,
