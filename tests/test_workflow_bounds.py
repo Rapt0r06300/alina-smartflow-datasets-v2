@@ -203,9 +203,8 @@ def test_analyze_phase_never_prepares_collection_inputs():
     assert "freeze_copy_vault_selection.py" in collect_block
     assert "copy_vault_collection" in collect_block
     assert "event_intelligence_collection" in collect_block
-    assert 'if [ "$PHASE" = "COLLECT" ] && [ "$HOUR" = "06" ]; then' in text
-    archive_guard = text.index('if [ "$PHASE" = "COLLECT" ] && [ "$HOUR" = "06" ]; then')
-    archive_end = text.index("          fi", archive_guard)
-    assert "official_archive_collection" in text[archive_guard:archive_end]
-    assert "freeze_copy_vault_selection.py" not in text[analyze_start:]
+    assert "official_archive_collection" in collect_block
+    analyze_block = text[analyze_start:]
+    assert "freeze_copy_vault_selection.py" not in analyze_block
+    assert "official_archive_collection" not in analyze_block
 
