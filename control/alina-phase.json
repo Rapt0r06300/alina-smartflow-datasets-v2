@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "REPLAY",
+  "analysis_stage": "BACKTEST",
   "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
   "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
   "epoch": 5,
   "phase": "ANALYZE",
-  "request_id": "155ed8084db05ad9c638cb170c9ca79c8740c0cc82f14e4892ed87e5c0aa59ef",
+  "request_id": "f0bb9bccb521af1d03cdfb0cb5fb0c81a5e5d57b58918a2a6235728e0b513436",
   "requested_at_utc": "2026-09-30T17:06:32.940845Z",
   "requested_by": "chatgpt-github",
   "schema_version": 1,
