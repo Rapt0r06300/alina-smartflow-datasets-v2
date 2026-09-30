@@ -34,7 +34,7 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"duration_s":3500' in text
     assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' not in text
     assert '"universe_mode":"native_discovery_full"' in text
-    assert '"require_all_native_venues":true' in text
+    assert '"require_all_native_venues":True' in text
     assert "MARKET_SHARDS=8" in text
     assert "MARKET_SHARD<MARKET_SHARDS" in text
     assert "market-$MARKET_SHARD-$BUCKET-v7" in text
