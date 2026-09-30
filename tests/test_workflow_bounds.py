@@ -124,7 +124,7 @@ def test_metrics_refresh_is_scheduled_and_serialized():
     text = _workflow("dataset-metrics-v2.yml")
     assert "schedule:" in text
     assert "group: dataset-v2-control-plane-index" in text
-    assert "cancel-in-progress: false" in text
+    assert "cancel-in-progress: true" in text
     assert "tools/build_catalog_metrics.py" in text
 
 
