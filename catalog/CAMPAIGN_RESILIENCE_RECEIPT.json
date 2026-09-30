@@ -1,6 +1,32 @@
 {
-  "campaign_count": 720,
+  "campaign_count": 722,
   "campaigns": [
+    {
+      "analysis_stage": "BACKTEST",
+      "campaign_id": "analysis-e3-backtest-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "bb26c39557660fab50a3ec6aa05f2a00a3ea4d307892a29451ec417299e6a96c"
+    },
+    {
+      "analysis_stage": "OOS",
+      "campaign_id": "analysis-e3-oos-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 0,
+      "has_lease": false,
+      "history_count": 1,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "PENDING",
+      "terminal_evidence_digest": null
+    },
     {
       "analysis_stage": "REPLAY",
       "campaign_id": "analysis-e3-replay-v2",
@@ -17,15 +43,15 @@
     {
       "analysis_stage": "REPLAY",
       "campaign_id": "analysis-e3-resume-proof-v1",
-      "checkpoint_count": 0,
-      "completed_unit_count": 0,
+      "checkpoint_count": 1,
+      "completed_unit_count": 2,
       "has_lease": false,
-      "history_count": 3,
+      "history_count": 7,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "CONTINUATION_REQUIRED",
-      "terminal_evidence_digest": null
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf"
     },
     {
       "analysis_stage": null,
@@ -4523,7 +4549,7 @@
     },
     "during_publish": {
       "convergence_rule": "receipt_identity_conflict_refuses_publish",
-      "observed": true,
+      "observed": false,
       "required_evidence": "publication_receipt"
     },
     "lease_expiry": {
@@ -4532,8 +4558,8 @@
       "required_evidence": "lease_token_and_expiry"
     }
   },
-  "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-30T13:31:35.276009Z",
+  "failure_matrix_status": "BLOCKED",
+  "generated_at_utc": "2026-09-30T13:42:05.394749Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7532,9 +7558,15 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "865e7e489513063176f26be2f0790d429a08218cee218f48d675e74e2915c790",
+  "receipt_digest": "54cc244c402b52b5c78a83512d6293b3feb8898f9251351cb622b78d1684eecd",
   "schema": "alina.campaign_resilience_receipt.v2",
-  "status": "READY",
-  "v2_campaign_count": 346,
-  "violations": []
+  "status": "BLOCKED",
+  "v2_campaign_count": 348,
+  "violations": [
+    {
+      "campaign_id": "analysis-e3-resume-proof-v1",
+      "code": "PUBLICATION_RECEIPT_MISSING",
+      "unit_id": "0"
+    }
+  ]
 }
