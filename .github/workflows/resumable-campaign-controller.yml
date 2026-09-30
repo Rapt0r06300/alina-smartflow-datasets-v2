@@ -15,7 +15,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: resumable-campaign-controller-v2
+  # v3 intentionally moves off the legacy v2 serialization group so a long
+  # pre-fix Copy-Vault fan-out cannot starve fresh market/L2 work.
+  group: resumable-campaign-controller-v3
   cancel-in-progress: false
 
 jobs:
@@ -83,6 +85,10 @@ jobs:
               if cursor.get("resume_proof") is True:
                   continue
               (copy_ids if kind=="copy_vault_collection" else other_ids).append(campaign_id)
+          # One bounded Copy-Vault lane per controller pass prevents the
+          # serialized fan-out from holding the controller for hours. Market,
+          # event and archive work can therefore start on every fresh pass.
+          copy_ids=copy_ids[:1]
           print("copy_count="+str(len(copy_ids)))
           print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))
           print("other_count="+str(len(other_ids)))
