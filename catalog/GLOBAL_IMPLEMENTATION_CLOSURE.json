@@ -164,7 +164,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "bc1b57c5c7b04560d641e7216a6dd1e07782831c",
+  "dataset_v2_head": "0ba4598969214e61ababe93ce21c3cabd3aefc09",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -1083,7 +1083,7 @@
     }
   },
   "final_validation_complete": true,
-  "generated_at_utc": "2026-09-30T19:04:04.230480Z",
+  "generated_at_utc": "2026-09-30T19:04:36.992782Z",
   "implementation_complete": true,
   "phase": {
     "analysis_stage": "DONE",
@@ -1097,7 +1097,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "fae215516f8c0dfcc8accd72cd3bcf629b7ef995f4c2f0057fa1a4a25aa61541",
+  "receipt_digest": "cc1dac654d4001eb32bf69acd8d0a4050f24b9cf5bfe76b6c7bdd22afedfc4cb",
   "resume_provenance": {
     "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
