@@ -20,8 +20,9 @@ def test_campaign_creation_workflow_has_single_canonical_structure() -> None:
 
 def test_analysis_selection_identity_is_exact_sha256_binding() -> None:
     text = _text()
-    assert 'DATA_INDEX_SHA="$(sha256sum catalog/DATA_INDEX.json' in text
-    assert 'DATASET_SELECTION_ID="$(printf' in text
+    assert "tools/resolve_analysis_selection.py" in text
+    assert '--source-collection-epoch "$SOURCE_COLLECTION_EPOCH"' in text
+    assert '--collection-cutoff-at-utc "$COLLECTION_CUTOFF"' in text
     assert 'grep -Eq \'^[0-9a-f]{64}$\'' in text
     assert '--dataset-selection-id "$DATASET_SELECTION_ID"' in text
     assert '--dataset-selection-id "phase-' not in text
