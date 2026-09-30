@@ -83,3 +83,11 @@ def test_required_campaign_gate_ignores_prior_epoch_replay_campaigns():
     assert missing == []
     assert incomplete == []
 
+def test_create_resumable_workflow_analysis_block_is_well_formed():
+    text = Path(".github/workflows/create-resumable-campaigns.yml").read_text(encoding="utf-8")
+    assert "grep -Eq '^[0-9a-f]{64}$'" in text
+    assert '--dataset-selection-id "$DATASET_SELECTION_ID"' in text
+    assert '--analysis-stage "$ANALYSIS_STAGE"' in text
+    assert 'PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")' in text
+    assert "grep -Eq '^[0-9a-f]{64}          PLAN_SHA=" not in text
+
