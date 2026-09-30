@@ -42,9 +42,10 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "MARKET_SHARD_INDEX" in text
     assert "universe_digest" in text
     assert "plan_sha256" in text
-    assert "MARKET_SHARD<MARKET_SHARDS" in text
+    assert "MARKET_SHARD_INDEX" in text
+    assert "market-shards.tsv" in text
     assert "market-$MARKET_SHARD-$BUCKET-v7" in text
-    assert "market-hourly-sharded-discovered-universe-v7" in text
+    assert "market-hourly-sharded-frozen-universe-v7" in text
     assert "market_shard_count" in text
     assert "market_shard_index" in text
     assert "market_collection" in text
