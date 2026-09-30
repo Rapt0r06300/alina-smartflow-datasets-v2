@@ -39,18 +39,26 @@ jobs:
         run: |
           set -euo pipefail
           python tools/build_global_implementation_closure.py --alina-root alina
-      - name: Publish closure receipt
+      - name: Publish closure receipt from latest repository heads
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
-          git diff --cached --quiet && exit 0
-          git commit -m "closure: publish cross-repo implementation receipt"
           for attempt in 1 2 3 4 5; do
-            if git pull --rebase origin main && git push origin HEAD:main; then
+            git fetch origin main
+            git reset --hard origin/main
+            git -C alina fetch origin main
+            git -C alina reset --hard origin/main
+            python tools/build_global_implementation_closure.py --alina-root alina
+            git add catalog/GLOBAL_IMPLEMENTATION_CLOSURE.json
+            if git diff --cached --quiet; then
               exit 0
             fi
+            git commit -m "closure: publish cross-repo implementation receipt"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git reset --hard origin/main
             sleep "$((attempt * 2))"
           done
           exit 1
