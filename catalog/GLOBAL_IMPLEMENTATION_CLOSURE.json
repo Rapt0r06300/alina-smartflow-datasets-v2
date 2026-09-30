@@ -12,9 +12,13 @@
         ]
       },
       "forward_paper": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e3-forward-paper-v2"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "PENDING"
+        ]
       },
       "module_pnl_proof": {
         "campaign_ids": [],
@@ -47,7 +51,7 @@
         "states": []
       }
     },
-    "campaign_count": 4,
+    "campaign_count": 5,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -116,7 +120,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "eb89615216b1059288e7fc60cb548d113659ef9b",
+  "dataset_v2_head": "21a875f7aeab763073c23f05e3496e5d410751d6",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -162,7 +166,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:45:25.574541Z",
+  "generated_at_utc": "2026-09-30T13:46:32.385860Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "FORWARD_PAPER",
@@ -176,7 +180,7 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "732e4ac5904dd748a46c88b40058532f63e8f5c874dec26bd583c318767b10e6",
+  "receipt_digest": "24a6d7e984f19a0efef659ae8a428d5b3523bb3b8438571882c9e08933ecf022",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
