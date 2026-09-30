@@ -1,5 +1,7 @@
 {
-  "backlog_by_kind": {},
+  "backlog_by_kind": {
+    "backtest": 1
+  },
   "by_family": {
     "activeassetctx": {
       "bytes": 151458625,
@@ -48560,6 +48562,7 @@
   },
   "campaign_counts": {
     "backtest:COMPLETE": 1,
+    "backtest:CONTINUATION_REQUIRED": 1,
     "backtest:FAILED": 7,
     "copy_vault_collection:COMPLETE": 326,
     "copy_vault_collection:FAILED": 316,
@@ -48732,6 +48735,28 @@
       "status": "COMPLETE",
       "status_reason": "unit_complete",
       "updated_at": "2026-09-30T14:36:42.421045Z"
+    },
+    {
+      "analysis_stage": "BACKTEST",
+      "attempts": 1,
+      "campaign_id": "analysis-e5-backtest-v2",
+      "chunk_index": 1,
+      "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
+      "completed_unit_count": 1,
+      "consecutive_failures": 1,
+      "creation_phase": "ANALYZE",
+      "kind": "backtest",
+      "last_checkpoint_id": "aa461fb893fdf3b33c016ea8bd3b732827bbdd654c647b02e05b15e3b2a0e661",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": "2026-09-30T18:28:30Z",
+      "no_progress_count": 1,
+      "phase_epoch": 5,
+      "source_collection_epoch": 4,
+      "status": "CONTINUATION_REQUIRED",
+      "status_reason": "durable_publication_failed",
+      "updated_at": "2026-09-30T18:28:30Z"
     },
     {
       "analysis_stage": "REPLAY",
@@ -71559,7 +71584,7 @@
     "unique_trade_count_exact": false,
     "valid_record_count_exact": false
   },
-  "dataset_commit": "d7521ef4a58e2b131483bb361690c4b6fc5d6968",
+  "dataset_commit": "81f27e624c311c76a6350fafe7683a3393452a22",
   "metrics_digest": "9388137d8254e7937d8c1fcc3a2516d342490a3818831c21862dd0b5d50e3abf",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
@@ -71567,12 +71592,12 @@
   "oldest_pending_updated_at": null,
   "pending_campaign_count": 0,
   "phase": {
-    "analysis_stage": "REPLAY",
+    "analysis_stage": "BACKTEST",
     "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
     "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
     "epoch": 5,
     "phase": "ANALYZE",
-    "request_id": "155ed8084db05ad9c638cb170c9ca79c8740c0cc82f14e4892ed87e5c0aa59ef",
+    "request_id": "f0bb9bccb521af1d03cdfb0cb5fb0c81a5e5d57b58918a2a6235728e0b513436",
     "requested_at_utc": "2026-09-30T17:06:32.940845Z",
     "requested_by": "chatgpt-github",
     "schema_version": 1,
@@ -71582,7 +71607,7 @@
     "mismatches": [],
     "status": "CONSISTENT"
   },
-  "receipt_digest": "e24057b52f93f1cd6b65457517b7436f84ec9d9907274156fa155688af0328ae",
+  "receipt_digest": "9219f840932d623f2e9c168920149363f67946774da6ff0baf340a8fd03efe0b",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
