@@ -53,9 +53,11 @@ jobs:
           set -euo pipefail
           python tools/auto_advance_analysis.py | tee "$RUNNER_TEMP/advance.json"
           status="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$RUNNER_TEMP/advance.json")"
+          new_stage="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("new_stage", ""))' "$RUNNER_TEMP/advance.json")"
           echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "new_stage=$new_stage" >> "$GITHUB_OUTPUT"
       - name: Publish durable drain and stage authority
-        if: steps.advance.outputs.status == 'ADVANCED' || steps.drain.outputs.changed != '0'
+        if: steps.advance.outputs.status == 'ADVANCED' && steps.advance.outputs.new_stage != 'DONE' || steps.drain.outputs.changed != '0'
         run: |
           set -euo pipefail
           git config user.name github-actions[bot]

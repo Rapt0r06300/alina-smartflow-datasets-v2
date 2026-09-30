@@ -21,3 +21,13 @@ def test_global_closure_owns_followup_stage_dispatch() -> None:
         encoding="utf-8"
     )
     assert "gh workflow run analysis-stage-controller.yml" in text
+
+
+def test_done_does_not_dispatch_new_campaign_work() -> None:
+    text = Path(".github/workflows/analysis-stage-controller.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "steps.advance.outputs.new_stage != 'DONE'" in text
+    assert "control/phase-receipts/**" in Path(
+        ".github/workflows/global-implementation-closure.yml"
+    ).read_text(encoding="utf-8")

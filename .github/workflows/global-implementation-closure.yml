@@ -7,6 +7,7 @@ on:
       - "catalog/DATA_INDEX.json"
       - "catalog/DATA_METRICS.json"
       - "control/alina-phase.json"
+      - "control/phase-receipts/**"
       - "catalog/CAMPAIGN_RESILIENCE_RECEIPT.json"
       - "catalog/campaigns/**"
       - "catalog/DATASET_HEALTH_RECEIPT.json"
