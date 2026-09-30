@@ -83,8 +83,20 @@ def requeue(
         raise SystemExit("analysis campaign lost paper/read-only guards")
     if row.get("real_execution") is not False:
         raise SystemExit("real execution is forbidden")
+
+    # Periodic creation may observe a campaign after another worker has claimed
+    # it. RUNNING/terminal state is authoritative and must be a harmless no-op,
+    # not a failed attempt to rewrite a live lease.
+    current_status = str(row.get("status") or "")
+    if current_status not in {"FAILED", "PENDING"}:
+        return {
+            "requeued": False,
+            "reason": "status_not_refreshable",
+            "status": current_status,
+            "campaign_id": row.get("campaign_id"),
+        }
     if row.get("lease") is not None:
-        raise SystemExit("cannot requeue a leased campaign")
+        raise SystemExit("cannot refresh a leased FAILED/PENDING campaign")
 
     if int(row.get("phase_epoch") or 0) != int(expected_phase_epoch):
         raise SystemExit("phase epoch changed")
@@ -110,13 +122,6 @@ def requeue(
 
     status = str(row.get("status") or "")
     old_code_sha = str(row.get("code_sha") or "")
-    if status not in {"FAILED", "PENDING"}:
-        return {
-            "requeued": False,
-            "reason": "status_not_refreshable",
-            "status": status,
-            "campaign_id": row.get("campaign_id"),
-        }
     if status == "PENDING" and (
         row.get("completed_units")
         or row.get("checkpoint_lineage")
