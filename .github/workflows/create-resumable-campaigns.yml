@@ -122,6 +122,13 @@ jobs:
             fi
             CFG_SHA="$(printf '%s' "$CFG_TEXT|$CURSOR" | sha256sum | cut -d' ' -f1)"
             if [ -f "$P" ] && [ "$PHASE" = "ANALYZE" ]; then
+              # Campaign creation can race a worker claim. Re-read the canonical
+              # manifest immediately before any code refresh so an old local
+              # PENDING copy can never overwrite a newer RUNNING/COMPLETE lease.
+              git fetch origin main
+              if git cat-file -e "origin/main:$P" 2>/dev/null; then
+                git show "origin/main:$P" > "$P"
+              fi
               python tools/requeue_failed_analysis_campaign.py \
                 --manifest "$P" \
                 --history-dir catalog/campaign-history \
