@@ -89,6 +89,12 @@ def validate_current_scoreboard_receipt(
         return False, {}, "CURRENT_SCOREBOARD_SOURCE_EPOCH_STALE", receipt
     if not receipt.get("evidence_tag") or not receipt.get("evidence_repository"):
         return False, {}, "CURRENT_SCOREBOARD_DURABLE_EVIDENCE_MISSING", receipt
+    environment_provenance = receipt.get("environment_provenance")
+    environment_receipt_sha256 = str(receipt.get("environment_receipt_sha256") or "")
+    if not isinstance(environment_provenance, Mapping) or not environment_provenance:
+        return False, {}, "CURRENT_SCOREBOARD_ENVIRONMENT_PROVENANCE_MISSING", receipt
+    if len(environment_receipt_sha256) != 64:
+        return False, {}, "CURRENT_SCOREBOARD_ENVIRONMENT_HASH_MISSING", receipt
     if receipt.get("paper_only") is not True or receipt.get("read_only") is not True or receipt.get("real_execution") is not False:
         return False, {}, "CURRENT_SCOREBOARD_RECEIPT_SAFETY_INVALID", receipt
     return True, scoreboard, "CURRENT_SCOREBOARD_RECEIPT_VALID", receipt
@@ -217,6 +223,8 @@ def main() -> int:
             "dataset_selection_id": scoreboard_receipt.get("dataset_selection_id") if isinstance(scoreboard_receipt, dict) else None,
             "scoreboard_sha256": scoreboard_receipt.get("scoreboard_sha256") if isinstance(scoreboard_receipt, dict) else None,
             "evidence_tag": scoreboard_receipt.get("evidence_tag") if isinstance(scoreboard_receipt, dict) else None,
+            "environment_receipt_sha256": scoreboard_receipt.get("environment_receipt_sha256") if isinstance(scoreboard_receipt, dict) else None,
+            "environment_provenance": scoreboard_receipt.get("environment_provenance") if isinstance(scoreboard_receipt, dict) else None,
         },
         "families": families,
         "security": {
