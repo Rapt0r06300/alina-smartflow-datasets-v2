@@ -4507,7 +4507,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-30T13:16:19.373323Z",
+  "generated_at_utc": "2026-09-30T13:16:41.241407Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7506,7 +7506,7 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "0ac37cb80c0d1f24c543101c0f33278d0e4aec8d1095b2018756b563d9d43bcc",
+  "receipt_digest": "1ce9cb02ab123ce0a7ea6e5a2852136ca3667b78ae87d247891508d0680eee06",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
   "v2_campaign_count": 344,
