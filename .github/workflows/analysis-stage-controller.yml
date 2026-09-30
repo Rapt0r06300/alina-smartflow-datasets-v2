@@ -22,7 +22,10 @@ permissions:
   actions: write
 concurrency:
   group: advance-analysis-stage
-  cancel-in-progress: false
+  # Phase/campaign state is durable in main. A newer controller run reloads
+  # origin/main before advancing, so obsolete queued/running evaluations should
+  # be superseded instead of delaying the current canonical stage.
+  cancel-in-progress: true
 jobs:
   advance:
     runs-on: ubuntu-latest
