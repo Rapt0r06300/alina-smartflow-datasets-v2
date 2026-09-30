@@ -1,5 +1,5 @@
 {
-  "campaign_count": 1043,
+  "campaign_count": 1047,
   "campaigns": [
     {
       "analysis_stage": "BACKTEST",
@@ -96,14 +96,53 @@
       "analysis_stage": "BACKTEST",
       "campaign_id": "analysis-e5-backtest-v2",
       "checkpoint_count": 0,
-      "completed_unit_count": 1,
+      "completed_unit_count": 2,
       "has_lease": false,
-      "history_count": 4,
+      "history_count": 6,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "CONTINUATION_REQUIRED",
-      "terminal_evidence_digest": null
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "12b42c3b65184f4e34055c0076b3f7bd4ca979555329f8a906b4ca133580151e"
+    },
+    {
+      "analysis_stage": "FORWARD_PAPER",
+      "campaign_id": "analysis-e5-forward-paper-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "6ac203998b0e49dd69c957498d8b0dcb5f0359dfdacd6ee3a8c223f711f59ff0"
+    },
+    {
+      "analysis_stage": "OOS",
+      "campaign_id": "analysis-e5-oos-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "eaebbeb789aa0d887b20f97966911ffe46d6d3ebd873dfacb8a7e974311e03cf"
+    },
+    {
+      "analysis_stage": "PNL_PROOF",
+      "campaign_id": "analysis-e5-pnl-proof-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "5f054e5e7aeba572ec511b4ef4878097e7385e63d30cb216ba99c1191e8d7587"
     },
     {
       "analysis_stage": "REPLAY",
@@ -143,6 +182,19 @@
       "schema_version": "alina.resumable_campaign.v2",
       "status": "COMPLETE",
       "terminal_evidence_digest": "f1c6612b5392b094c76e0d32b68b576aca96f6b1c777bbf91c8bdb1717fb02a5"
+    },
+    {
+      "analysis_stage": "SCOREBOARD",
+      "campaign_id": "analysis-e5-scoreboard-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "9f8ffcd99f4fd691bb258a276d761c88a0294f607ae2a25e0df394caba291ae9"
     },
     {
       "analysis_stage": null,
@@ -8732,7 +8784,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-30T18:29:22.396322Z",
+  "generated_at_utc": "2026-09-30T19:25:59.845368Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -11731,9 +11783,9 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "03d8a38eb7e877dccde368a2c6fb7f15cfa04e1785fa4b9d3d4f64e8c022ca23",
+  "receipt_digest": "cc8c9a5eeedf44188aca4f909923756d3bfa4a04a264259e0eda11657dd692dd",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
-  "v2_campaign_count": 669,
+  "v2_campaign_count": 673,
   "violations": []
 }
