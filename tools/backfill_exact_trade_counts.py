@@ -203,11 +203,19 @@ def _native_trade_keys(
                 continue
             fallback = composite(
                 row,
-                time_keys=("time", "timestamp", "event_ts_ms", "ts"),
+                time_keys=("time", "ts_ms", "timestamp", "event_ts_ms", "ts"),
                 price_keys=("px", "price", "p"),
                 size_keys=("sz", "size", "qty", "q"),
-                side_keys=("side", "dir"),
-                extra_keys=("hash", "oid", "crossed", "startPosition", "fee"),
+                side_keys=("side", "dir", "signe"),
+                extra_keys=(
+                    "hash",
+                    "oid",
+                    "stable_event_id",
+                    "crossed",
+                    "startPosition",
+                    "start_position",
+                    "fee",
+                ),
             )
             if fallback is None:
                 return None

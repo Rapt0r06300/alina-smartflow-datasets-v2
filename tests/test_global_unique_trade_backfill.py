@@ -109,6 +109,31 @@ def test_native_trade_keys_support_binance_archive_list_payload():
     ]
 
 
+def test_native_trade_keys_support_normalized_copy_vault_fill_ts_ms():
+    record = {
+        "raw_payload": {
+            "vault": "0xabc",
+            "ts_ms": 1790000000123,
+            "coin": "BTC",
+            "px": 101.25,
+            "sz": 0.75,
+            "signe": 1,
+            "dir": "Open Long",
+            "hash": "0xfeed",
+            "oid": 42,
+            "start_position": 0.0,
+        }
+    }
+    keys = global_counts._native_trade_keys(
+        record, venue="hyperliquid", family="copy_vault_fills", symbol="BTC"
+    )
+    assert keys is not None
+    assert len(keys) == 1
+    assert keys[0].startswith(
+        "hyperliquid|copy_vault_fills|BTC|fallback|1790000000123|101.25|0.75|Open Long|BTC|"
+    )
+
+
 def test_native_trade_keys_fail_closed_when_composite_is_ambiguous():
     keys = global_counts._native_trade_keys(
         {"raw_payload": {"time": 1, "px": "10"}},
