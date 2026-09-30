@@ -112,3 +112,22 @@ jobs:
       campaign_id: ${{ matrix.campaign_id }}
     permissions:
       contents: write
+
+  advance_analysis:
+    needs: [select, copy_work, other_work]
+    if: ${{ always() && needs.select.result == 'success' && (needs.copy_work.result == 'success' || needs.copy_work.result == 'skipped') && (needs.other_work.result == 'success' || needs.other_work.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Dispatch analysis stage controller after bounded work
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run analysis-stage-controller.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
+
