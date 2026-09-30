@@ -1,5 +1,51 @@
 {
-  "alina_head": "ef12a9c6ca06d6d956b2c83733f8a1a7feb6d725",
+  "alina_head": "da1fd38937882c755035e61498334d9525f06382",
+  "analysis_campaigns": {
+    "by_kind": {
+      "backtest": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      },
+      "forward_paper": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      },
+      "module_pnl_proof": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      },
+      "oos": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      },
+      "replay": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      },
+      "scoreboard": {
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
+      }
+    },
+    "campaign_count": 0,
+    "complete": false,
+    "required_kinds": [
+      "replay",
+      "backtest",
+      "oos",
+      "forward_paper",
+      "module_pnl_proof",
+      "scoreboard"
+    ],
+    "selection_coherent": false,
+    "selection_ids": []
+  },
   "cloud_only": true,
   "dataset": {
     "campaign_count": 718,
@@ -54,7 +100,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "8df30d81edebda50803e3b25b9fda2905b10eb93",
+  "dataset_v2_head": "aa4c3fab66101f47f4437a1f130d2366431a14fb",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -100,7 +146,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:05:17.262323Z",
+  "generated_at_utc": "2026-09-30T13:12:05.622842Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "DRAIN",
@@ -114,7 +160,20 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "ac5f3879d0f3e714c5d63e07e12f483059d5c55044b7b48159e586b15e7a98a0",
+  "receipt_digest": "d64734052f20ad8c85ccb98633743ec02e399f48df6d5ff25f6573e3d550cf9e",
+  "resume_provenance": {
+    "campaign_id": null,
+    "duplicate_completed_unit_count": null,
+    "duplicate_replay_work_count": null,
+    "reason": "CURRENT_RESUME_RECEIPT_MISSING",
+    "segment_a_job_id": null,
+    "segment_b_job_id": null,
+    "terminal_checkpoint_id": null,
+    "terminal_evidence_digest": null,
+    "terminal_selection_id": null,
+    "valid": false,
+    "workflow_run_id": null
+  },
   "schema": "alina.global_implementation_closure.v1",
   "scoreboard_provenance": {
     "campaign_id": null,
