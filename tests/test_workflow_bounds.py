@@ -35,6 +35,12 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' not in text
     assert '"universe_mode":"native_discovery_full"' in text
     assert '"require_all_native_venues":true' in text
+    assert "MARKET_SHARDS=8" in text
+    assert "MARKET_SHARD<MARKET_SHARDS" in text
+    assert "market-$MARKET_SHARD-$BUCKET-v7" in text
+    assert "market-hourly-sharded-discovered-universe-v7" in text
+    assert "market_shard_count" in text
+    assert "market_shard_index" in text
     assert "market_collection" in text
     assert "copy_vault_collection" in text
     assert "freeze_copy_vault_selection.py" in text
@@ -121,6 +127,12 @@ def test_controller_worker_are_bounded_hosted_and_collect_relayed():
     assert 'os.path.abspath(str(part["selection_file"]))' in worker
     assert "COPY_VAULT_SWEEP_DURATION_CAP_S=300" in worker
     assert 'part["duration_s"] = min' in worker
+    assert 'part.setdefault("market_shard_count",1)' in worker
+    assert 'part.setdefault("market_shard_index",0)' in worker
+    assert "MARKET_SHARD_COUNT" in worker
+    assert "MARKET_SHARD_INDEX" in worker
+    assert "sha256_coin_mod" in worker
+    assert "full_selected_coin_count" in worker
     assert "actions: write" in worker
     assert "needs.select.outputs.phase != 'COLLECT'" in controller
     assert "steps.pin.outputs.phase == 'COLLECT'" in worker

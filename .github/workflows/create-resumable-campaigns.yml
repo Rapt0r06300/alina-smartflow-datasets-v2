@@ -167,7 +167,18 @@ jobs:
           }
 
           if [ "$PHASE" = "COLLECT" ]; then
-            make_campaign             market_collection             "market-$BUCKET-v6"             "market-hourly-discovered-universe-v6"             '{"duration_s":3500,"max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full","require_all_native_venues":true}'
+            # Shard the full discovered cross-venue universe across hosted runners.
+            # Every coin stays on exactly one shard, and all of that coin's venues
+            # remain on the same runner for receive-clock comparability.
+            MARKET_SHARDS=8
+            for ((MARKET_SHARD=0; MARKET_SHARD<MARKET_SHARDS; MARKET_SHARD++)); do
+              MARKET_CURSOR="$(python -c 'import json,sys; print(json.dumps({"duration_s":3500,"max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full","require_all_native_venues":True,"market_shard_count":int(sys.argv[1]),"market_shard_index":int(sys.argv[2])}, separators=(",",":")))' "$MARKET_SHARDS" "$MARKET_SHARD")"
+              make_campaign \
+                market_collection \
+                "market-$MARKET_SHARD-$BUCKET-v7" \
+                "market-hourly-sharded-discovered-universe-v7" \
+                "$MARKET_CURSOR"
+            done
 
             python tools/supersede_copy_vault_fanout.py
 

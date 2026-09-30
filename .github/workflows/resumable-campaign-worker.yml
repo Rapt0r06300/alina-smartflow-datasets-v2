@@ -196,6 +196,8 @@ jobs:
               part.setdefault("plan_file",os.path.join(os.environ["RUNNER_TEMP"],"collection-plan.json"))
               part.setdefault("max_coins",0)
               part.setdefault("rotate_mb",64)
+              part.setdefault("market_shard_count",1)
+              part.setdefault("market_shard_index",0)
           elif kind=="copy_vault_collection":
               COPY_VAULT_SWEEP_DURATION_CAP_S=300
               part.setdefault("duration_s",3500)
@@ -219,11 +221,49 @@ jobs:
               part.setdefault("max_shards",64 if kind=="replay" else 128)
           print("KIND="+shlex.quote(kind))
           print("UNIT="+shlex.quote(str(idx)))
+          print("MARKET_SHARD_COUNT="+shlex.quote(str(part.get("market_shard_count",1))))
+          print("MARKET_SHARD_INDEX="+shlex.quote(str(part.get("market_shard_index",0))))
           print("PART="+shlex.quote(json.dumps(part,separators=(",",":"))))
           PY
           source "$RUNNER_TEMP/unit.env"
           if [ "$KIND" = "market_collection" ]; then
             python alina/tools/discover_cloud_collection_plan.py               --output "$RUNNER_TEMP/collection-plan.json"               --min-venues 2               --max-coins "${MAX_COINS:-0}"               --batch-size 8
+            python - <<'PY' "$RUNNER_TEMP/collection-plan.json" "$MARKET_SHARD_COUNT" "$MARKET_SHARD_INDEX"
+          import hashlib,json,sys
+          path,raw_count,raw_index=sys.argv[1:]
+          count=int(raw_count)
+          index=int(raw_index)
+          if count < 1 or index < 0 or index >= count:
+              raise SystemExit("invalid market shard coordinates")
+          plan=json.load(open(path,encoding="utf-8"))
+          selected=[row for row in plan.get("selected",[]) if isinstance(row,dict) and str(row.get("coin") or "").strip()]
+          full_count=len(selected)
+          def owner(row):
+              coin=str(row["coin"]).strip().upper().encode()
+              return int.from_bytes(hashlib.sha256(coin).digest()[:8],"big") % count
+          assigned=[row for row in selected if owner(row)==index]
+          if not assigned:
+              raise SystemExit(f"market shard {index}/{count} has no discovered coins")
+          plan["full_selected_coin_count"]=full_count
+          plan["selected_coin_count"]=len(assigned)
+          plan["selected"]=assigned
+          plan["market_shard_count"]=count
+          plan["market_shard_index"]=index
+          plan["market_shard_assignment"]="sha256_coin_mod"
+          size=max(1,int(plan.get("batch_size") or 8))
+          plan["batches"]=[
+              {"batch_id":f"batch-{n // size:03d}","coins":assigned[n:n+size]}
+              for n in range(0,len(assigned),size)
+          ]
+          open(path,"w",encoding="utf-8").write(json.dumps(plan,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
+          print(json.dumps({
+              "market_shard_index":index,
+              "market_shard_count":count,
+              "full_selected_coin_count":full_count,
+              "selected_coin_count":len(assigned),
+              "coins":[row["coin"] for row in assigned],
+          },sort_keys=True))
+          PY
           elif [[ "$KIND" = "replay" || "$KIND" = "backtest" || "$KIND" = "oos" || "$KIND" = "forward_paper" || "$KIND" = "module_pnl_proof" || "$KIND" = "scoreboard" ]]; then
             WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
             mkdir -p "$WORKSPACE"
