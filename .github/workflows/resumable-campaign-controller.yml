@@ -154,6 +154,7 @@ jobs:
     with:
       campaign_id: ${{ matrix.campaign_id }}
     permissions:
+      actions: write
       contents: write
 
   other_work:
@@ -167,6 +168,7 @@ jobs:
     with:
       campaign_id: ${{ matrix.campaign_id }}
     permissions:
+      actions: write
       contents: write
 
   advance_analysis:
