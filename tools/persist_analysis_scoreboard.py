@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
+ACTIVE_FAMILIES = ("copy_vault", "lead_lag", "cross_venue_dislocation_v2")
+
 
 def _load(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text(encoding="utf-8"))
@@ -20,6 +22,117 @@ def _digest(value: Mapping[str, Any]) -> str:
     return hashlib.sha256(
         json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
     ).hexdigest()
+
+
+def _number(value: object) -> float | None:
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if parsed != parsed or parsed in (float("inf"), float("-inf")):
+        return None
+    return parsed
+
+
+def build_improvement_ledger(
+    scoreboard: Mapping[str, Any],
+    previous: Mapping[str, Any] | None,
+    *,
+    campaign_id: str,
+    phase_epoch: int,
+    source_collection_epoch: int,
+    dataset_selection_id: str,
+    code_sha: str,
+) -> dict[str, Any]:
+    """Append one comparable paper result per family and preserve best-so-far.
+
+    A challenger is an improvement only when its measured net PnL is strictly
+    greater than the previous champion for the same family. Missing/unmeasured
+    values never replace a champion.
+    """
+    previous = dict(previous or {})
+    prior_families = previous.get("families")
+    if not isinstance(prior_families, Mapping):
+        prior_families = {}
+    scoreboard_families = scoreboard.get("families")
+    if not isinstance(scoreboard_families, Mapping):
+        scoreboard_families = {}
+
+    families: dict[str, Any] = {}
+    for family in ACTIVE_FAMILIES:
+        source = scoreboard_families.get(family)
+        source = source if isinstance(source, Mapping) else {}
+        candidate_net = _number(source.get("net_pnl_usd"))
+        prior = prior_families.get(family)
+        prior = prior if isinstance(prior, Mapping) else {}
+        champion = prior.get("champion")
+        champion = champion if isinstance(champion, Mapping) else None
+        champion_net = _number(champion.get("net_pnl_usd")) if champion else None
+
+        if candidate_net is None:
+            status = "UNMEASURABLE"
+            delta = None
+            new_champion = champion
+        elif champion_net is None:
+            status = "BASELINE_ESTABLISHED"
+            delta = None
+            new_champion = {
+                "net_pnl_usd": candidate_net,
+                "campaign_id": campaign_id,
+                "phase_epoch": phase_epoch,
+                "source_collection_epoch": source_collection_epoch,
+                "dataset_selection_id": dataset_selection_id,
+                "code_sha": code_sha,
+            }
+        else:
+            delta = round(candidate_net - champion_net, 12)
+            if delta > 0:
+                status = "IMPROVED"
+                new_champion = {
+                    "net_pnl_usd": candidate_net,
+                    "campaign_id": campaign_id,
+                    "phase_epoch": phase_epoch,
+                    "source_collection_epoch": source_collection_epoch,
+                    "dataset_selection_id": dataset_selection_id,
+                    "code_sha": code_sha,
+                }
+            else:
+                status = "NO_IMPROVEMENT"
+                new_champion = champion
+
+        history = list(prior.get("history") or [])
+        history.append({
+            "campaign_id": campaign_id,
+            "phase_epoch": phase_epoch,
+            "source_collection_epoch": source_collection_epoch,
+            "dataset_selection_id": dataset_selection_id,
+            "code_sha": code_sha,
+            "net_pnl_usd": candidate_net,
+            "previous_champion_net_pnl_usd": champion_net,
+            "delta_vs_previous_champion_usd": delta,
+            "status": status,
+            "verdict": source.get("verdict"),
+            "paper_read_only": True,
+            "real_execution": False,
+        })
+        families[family] = {
+            "champion": new_champion,
+            "latest": history[-1],
+            "history": history,
+        }
+
+    body = {
+        "schema": "alina.economic_improvement_ledger.v1",
+        "policy": "STRICT_BEST_SO_FAR_PER_FAMILY",
+        "comparison_metric": "net_pnl_usd",
+        "strict_improvement_required": True,
+        "families": families,
+        "paper_only": True,
+        "read_only": True,
+        "real_execution": False,
+    }
+    body["ledger_digest"] = _digest(body)
+    return body
 
 
 def build_receipt(
@@ -111,6 +224,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--unit-id", required=True)
     parser.add_argument("--environment-receipt")
     parser.add_argument("--output", default="catalog/ANALYSIS_SCOREBOARD_RECEIPT.json")
+    parser.add_argument("--improvement-ledger", default="catalog/ECONOMIC_IMPROVEMENT_LEDGER.json")
     args = parser.parse_args(argv)
 
     receipt = build_receipt(
@@ -128,12 +242,32 @@ def main(argv: list[str] | None = None) -> int:
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(receipt, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+
+    ledger_path = Path(args.improvement_ledger)
+    previous_ledger = _load(ledger_path) if ledger_path.is_file() else None
+    improvement_ledger = build_improvement_ledger(
+        receipt["scoreboard"],
+        previous_ledger,
+        campaign_id=receipt["campaign_id"],
+        phase_epoch=receipt["phase_epoch"],
+        source_collection_epoch=receipt["source_collection_epoch"],
+        dataset_selection_id=receipt["dataset_selection_id"],
+        code_sha=receipt["code_sha"],
+    )
+    ledger_path.parent.mkdir(parents=True, exist_ok=True)
+    ledger_path.write_text(
+        json.dumps(improvement_ledger, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     print(json.dumps({
         "output": str(output),
         "campaign_id": receipt["campaign_id"],
         "phase_epoch": receipt["phase_epoch"],
         "scoreboard_sha256": receipt["scoreboard_sha256"],
         "receipt_digest": receipt["receipt_digest"],
+        "improvement_ledger": str(ledger_path),
+        "improvement_ledger_digest": improvement_ledger["ledger_digest"],
     }, sort_keys=True))
     return 0
 
