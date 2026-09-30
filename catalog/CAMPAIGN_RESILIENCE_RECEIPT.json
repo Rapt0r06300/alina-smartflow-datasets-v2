@@ -1,5 +1,5 @@
 {
-  "campaign_count": 724,
+  "campaign_count": 725,
   "campaigns": [
     {
       "analysis_stage": "BACKTEST",
@@ -44,14 +44,14 @@
       "analysis_stage": "PNL_PROOF",
       "campaign_id": "analysis-e3-pnl-proof-v2",
       "checkpoint_count": 0,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "has_lease": false,
-      "history_count": 6,
+      "history_count": 9,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "PENDING",
-      "terminal_evidence_digest": null
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "3ffbe5833748f20bfb9a05f4ffcf4aaa65d3424638c5710fcdece058b5251d48"
     },
     {
       "analysis_stage": "REPLAY",
@@ -78,6 +78,19 @@
       "schema_version": "alina.resumable_campaign.v2",
       "status": "COMPLETE",
       "terminal_evidence_digest": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf"
+    },
+    {
+      "analysis_stage": "SCOREBOARD",
+      "campaign_id": "analysis-e3-scoreboard-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 0,
+      "has_lease": false,
+      "history_count": 2,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "PENDING",
+      "terminal_evidence_digest": null
     },
     {
       "analysis_stage": null,
@@ -4575,7 +4588,7 @@
     },
     "during_publish": {
       "convergence_rule": "receipt_identity_conflict_refuses_publish",
-      "observed": false,
+      "observed": true,
       "required_evidence": "publication_receipt"
     },
     "lease_expiry": {
@@ -4584,8 +4597,8 @@
       "required_evidence": "lease_token_and_expiry"
     }
   },
-  "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-30T14:18:25.774491Z",
+  "failure_matrix_status": "READY",
+  "generated_at_utc": "2026-09-30T14:26:13.350932Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7584,15 +7597,9 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "9773dfb493fb0d41486fc4df0219e06a37d1080904370e9e3adf014e753aa608",
+  "receipt_digest": "b8f437bfd5729c1567ae7f921d23bf4a1e65db3c2ea7563405e1205f5d567dc0",
   "schema": "alina.campaign_resilience_receipt.v2",
-  "status": "BLOCKED",
-  "v2_campaign_count": 350,
-  "violations": [
-    {
-      "campaign_id": "analysis-e3-resume-proof-v1",
-      "code": "PUBLICATION_RECEIPT_MISSING",
-      "unit_id": "0"
-    }
-  ]
+  "status": "READY",
+  "v2_campaign_count": 351,
+  "violations": []
 }

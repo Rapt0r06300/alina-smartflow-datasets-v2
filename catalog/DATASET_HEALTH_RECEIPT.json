@@ -1,6 +1,6 @@
 {
   "backlog_by_kind": {
-    "module_pnl_proof": 1
+    "scoreboard": 1
   },
   "by_family": {
     "activeassetctx": {
@@ -48558,12 +48558,13 @@
     "market_collection:COMPLETE": 3,
     "market_collection:FAILED": 11,
     "market_collection:UNAVAILABLE": 2,
+    "module_pnl_proof:COMPLETE": 1,
     "module_pnl_proof:FAILED": 7,
-    "module_pnl_proof:PENDING": 1,
     "official_archive_collection:COMPLETE": 2,
     "oos:COMPLETE": 1,
     "replay:COMPLETE": 16,
-    "replay:FAILED": 1
+    "replay:FAILED": 1,
+    "scoreboard:PENDING": 1
   },
   "campaigns": [
     {
@@ -48634,15 +48635,15 @@
     },
     {
       "analysis_stage": "PNL_PROOF",
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "analysis-e3-pnl-proof-v2",
       "chunk_index": 0,
       "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "ANALYZE",
       "kind": "module_pnl_proof",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "3ffbe5833748f20bfb9a05f4ffcf4aaa65d3424638c5710fcdece058b5251d48",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -48650,9 +48651,9 @@
       "no_progress_count": 0,
       "phase_epoch": 3,
       "source_collection_epoch": 2,
-      "status": "PENDING",
-      "status_reason": "retry_after_code_fix",
-      "updated_at": "2026-09-30T14:17:10.027Z"
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-09-30T14:21:42.136675Z"
     },
     {
       "analysis_stage": "REPLAY",
@@ -48697,6 +48698,28 @@
       "status": "COMPLETE",
       "status_reason": "unit_complete",
       "updated_at": "2026-09-30T13:34:52.383835Z"
+    },
+    {
+      "analysis_stage": "SCOREBOARD",
+      "attempts": 1,
+      "campaign_id": "analysis-e3-scoreboard-v2",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": "ANALYZE",
+      "kind": "scoreboard",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 3,
+      "source_collection_epoch": 2,
+      "status": "PENDING",
+      "status_reason": "refresh_pending_after_code_fix",
+      "updated_at": "2026-09-30T14:25:48.953925Z"
     },
     {
       "analysis_stage": null,
@@ -64550,20 +64573,20 @@
     "unique_trade_count_exact": true,
     "valid_record_count_exact": true
   },
-  "dataset_commit": "610e410397303e43e573e89622e4dae4d5720ee8",
+  "dataset_commit": "5e7ce60b203935e3b3ba742c3d9bb15e05c2b6f1",
   "metrics_digest": "28d0d8fd7d3dd63303f59e7ebade6b8bc60f4e322bd7f82de0cca62c38d6baff",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
   "oldest_next_due_at": null,
-  "oldest_pending_updated_at": "2026-09-30T14:17:10.027Z",
+  "oldest_pending_updated_at": "2026-09-30T14:25:48.953925Z",
   "pending_campaign_count": 1,
   "phase": {
-    "analysis_stage": "PNL_PROOF",
+    "analysis_stage": "SCOREBOARD",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
+    "request_id": "e2ea7e19f5e87ea5385494d897c24bb6e9060430ce920d9048f9578302830805",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
@@ -64573,7 +64596,7 @@
     "mismatches": [],
     "status": "CONSISTENT"
   },
-  "receipt_digest": "ef6c57dab5bef181d7485774c74915bfe8a58125174c69352f0d8f920fb2f378",
+  "receipt_digest": "d8e5c22f01d6bafe0b0c80b60d5c95013a339ab06caf4e65b46ccb8a3bd5e253",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
