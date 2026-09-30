@@ -1,0 +1,53 @@
+{
+  "analysis_stage": "PNL_PROOF",
+  "attempts": 0,
+  "campaign_id": "analysis-e3-pnl-proof-v2",
+  "checkpoint_lineage": [],
+  "chunk_index": 0,
+  "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
+  "code_sha": "1846cdc3202c3b25109f86bec0ee81c0b5b0bc3c",
+  "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
+  "completed_units": {},
+  "config_sha256": "79ad8d46f635ed576dc8639f5098a23edbbdcb4f7cf1036ace9b93461e378d5b",
+  "consecutive_failures": 0,
+  "created_at": "2026-09-30T13:51:10.635003+00:00",
+  "creation_phase": "ANALYZE",
+  "cursor": {
+    "independent_families": true,
+    "max_shards": 128
+  },
+  "dataset_generation": "V2_FRESH",
+  "dataset_repo": "Rapt0r06300/alina-smartflow-datasets-v2",
+  "dataset_selection_id": "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106",
+  "expires_at": "2026-10-07T13:51:10.635003+00:00",
+  "history": [
+    {
+      "event": "operator_request",
+      "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b"
+    }
+  ],
+  "kind": "module_pnl_proof",
+  "lease": null,
+  "limits": {
+    "max_attempts": 12,
+    "max_chunks": 24,
+    "max_consecutive_failures": 4,
+    "max_no_progress": 3,
+    "max_wall_clock_s": 86400
+  },
+  "next_due_at": null,
+  "no_progress_count": 0,
+  "operator_request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
+  "outputs": [],
+  "paper_only": true,
+  "phase_epoch": 3,
+  "read_only": true,
+  "real_execution": false,
+  "schema_version": "alina.resumable_campaign.v2",
+  "source_collection_epoch": 2,
+  "status": "PENDING",
+  "status_reason": "created",
+  "terminal_evidence_digest": null,
+  "updated_at": "2026-09-30T13:51:10.635029Z",
+  "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
+}
