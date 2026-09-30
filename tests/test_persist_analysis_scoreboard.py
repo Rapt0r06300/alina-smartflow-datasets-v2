@@ -70,12 +70,19 @@ def test_receipt_rejects_non_paper_scoreboard():
 
 
 def _full_scoreboard(copy_net, lead_net, cross_net):
+    def family(net):
+        return {
+            "net_pnl_usd": net,
+            "closed_positions": 1 if net is not None else 0,
+            "verdict": "MORE_DATA",
+        }
+
     return {
         "schema_version": "hypersmart.economic_family_scoreboards.v2",
         "families": {
-            "copy_vault": {"net_pnl_usd": copy_net, "verdict": "MORE_DATA"},
-            "lead_lag": {"net_pnl_usd": lead_net, "verdict": "MORE_DATA"},
-            "cross_venue_dislocation_v2": {"net_pnl_usd": cross_net, "verdict": "MORE_DATA"},
+            "copy_vault": family(copy_net),
+            "lead_lag": family(lead_net),
+            "cross_venue_dislocation_v2": family(cross_net),
         },
         "paper_read_only": True,
         "real_execution": False,
