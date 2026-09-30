@@ -24,7 +24,9 @@ permissions:
 
 concurrency:
   group: resumable-campaign-creation-hourly
-  cancel-in-progress: false
+  # Campaign creation is deterministic/idempotent and reloads origin/main.
+  # A newer phase/stage request supersedes obsolete queued creation runs.
+  cancel-in-progress: true
 
 jobs:
   create:
