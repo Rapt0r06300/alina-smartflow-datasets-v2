@@ -1,5 +1,5 @@
 {
-  "alina_head": "2dd5453651ea310e64e53cac0e3ffec347fbe456",
+  "alina_head": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -25,12 +25,14 @@
       "replay": {
         "campaign_ids": [
           "analysis-e5-replay-v2",
-          "analysis-e5-resume-proof-v1"
+          "analysis-e5-resume-proof-v1",
+          "analysis-e5-retry1-resume-proof-v1"
         ],
         "complete": false,
         "states": [
           "COMPLETE",
-          "FAILED"
+          "FAILED",
+          "PENDING"
         ]
       },
       "scoreboard": {
@@ -39,7 +41,7 @@
         "states": []
       }
     },
-    "campaign_count": 2,
+    "campaign_count": 3,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -108,7 +110,7 @@
     "metrics_digest": null,
     "watchdog_status": "ATTENTION"
   },
-  "dataset_v2_head": "17e954755a80661574b919ed8026df7496c79f4c",
+  "dataset_v2_head": "b2c2511c1c49ae27432560a2996cf7f998e7c68a",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -388,7 +390,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T17:17:18.803004Z",
+  "generated_at_utc": "2026-09-30T17:57:39.670560Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "REPLAY",
@@ -402,7 +404,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "3a55c407f8af7126ae6a4854380dafc0be52ab80aefe1a72a62cd0e88c66de5b",
+  "receipt_digest": "9fc36edd4701c539edf8b8ea95d3924871c85ac664240d03a9e36a065f89f701",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
