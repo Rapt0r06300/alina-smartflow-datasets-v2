@@ -1,5 +1,5 @@
 {
-  "alina_head": "0a6d0e1cc0a14b49cf7873bb08e1b62ded217c9d",
+  "alina_head": "7fce5559ecee52635c179230fe39713ea8150a7e",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -50,12 +50,16 @@
         ]
       },
       "scoreboard": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e3-scoreboard-v2"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "PENDING"
+        ]
       }
     },
-    "campaign_count": 6,
+    "campaign_count": 7,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -124,7 +128,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "6cef3b8cf75dc5ea7abda8199572a7491e04665e",
+  "dataset_v2_head": "e8a7daeab9b755ee6d5fb37b47ee40b91202ced0",
   "economic_improvement": {},
   "event_intelligence": {
     "economic_proof_allowed": false,
@@ -171,7 +175,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T14:23:40.306653Z",
+  "generated_at_utc": "2026-09-30T14:25:19.105812Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "SCOREBOARD",
@@ -185,7 +189,7 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "7fb8305384d841c97402e3202480a6b67a5d7e8dded01af6f2ebf8c39d56b648",
+  "receipt_digest": "b67c1fbe3c6b97b5d639b2ddfee4678fae91751cf13bbb66c8ce168ec4cd3c33",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
