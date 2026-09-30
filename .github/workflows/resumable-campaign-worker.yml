@@ -467,7 +467,10 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           gh auth setup-git
-          git add "$M" catalog/receipts
+          git add "$M"
+          if [ -d catalog/receipts ]; then
+            git add catalog/receipts
+          fi
           if [ -f catalog/ANALYSIS_SCOREBOARD_RECEIPT.json ]; then
             git add catalog/ANALYSIS_SCOREBOARD_RECEIPT.json
           fi
