@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "PNL_PROOF",
+  "analysis_stage": "SCOREBOARD",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
   "epoch": 3,
   "phase": "ANALYZE",
-  "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
+  "request_id": "e2ea7e19f5e87ea5385494d897c24bb6e9060430ce920d9048f9578302830805",
   "requested_at_utc": "2026-09-29T10:56:59.390365Z",
   "requested_by": "codex-work-cloud",
   "schema_version": 1,
