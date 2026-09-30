@@ -152,3 +152,63 @@ def test_requeue_refuses_collection_campaigns(tmp_path: Path) -> None:
         assert "collection/idle campaigns" in str(exc)
     else:
         raise AssertionError("collection campaign should have been refused")
+
+def test_pending_analysis_without_work_refreshes_to_new_code(tmp_path: Path) -> None:
+    manifest_path = tmp_path / "analysis.json"
+    row = _manifest()
+    row["status"] = "PENDING"
+    row["status_reason"] = "retry_after_code_fix"
+    row["completed_units"] = {}
+    row["checkpoint_lineage"] = []
+    row["terminal_evidence_digest"] = None
+    row["cursor"] = {"max_shards": 128}
+    raw = json.dumps(row, sort_keys=True, indent=2) + "\n"
+    manifest_path.write_text(raw, encoding="utf-8")
+
+    result = MODULE.requeue(
+        manifest_path=manifest_path,
+        history_dir=tmp_path / "history",
+        code_sha="7" * 40,
+        config_sha256="8" * 64,
+        work_plan_sha256="9" * 64,
+        expected_phase_epoch=3,
+        expected_analysis_stage="PNL_PROOF",
+        expected_source_collection_epoch=2,
+        expected_dataset_selection_id="4" * 64,
+    )
+
+    assert result["requeued"] is True
+    updated = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert updated["status"] == "PENDING"
+    assert updated["status_reason"] == "refresh_pending_after_code_fix"
+    assert updated["code_sha"] == "7" * 40
+    assert updated["completed_units"] == {}
+    assert updated["lease"] is None
+    assert updated["history"][-1]["event"] == "refresh_pending_after_code_fix"
+    assert ".pending." in result["archive_path"]
+
+
+def test_pending_analysis_with_completed_work_cannot_be_refreshed(tmp_path: Path) -> None:
+    manifest_path = tmp_path / "analysis.json"
+    row = _manifest()
+    row["status"] = "PENDING"
+    row["terminal_evidence_digest"] = None
+    manifest_path.write_text(json.dumps(row), encoding="utf-8")
+
+    try:
+        MODULE.requeue(
+            manifest_path=manifest_path,
+            history_dir=tmp_path / "history",
+            code_sha="7" * 40,
+            config_sha256="8" * 64,
+            work_plan_sha256="9" * 64,
+            expected_phase_epoch=3,
+            expected_analysis_stage="PNL_PROOF",
+            expected_source_collection_epoch=2,
+            expected_dataset_selection_id="4" * 64,
+        )
+    except SystemExit as exc:
+        assert "durable work" in str(exc)
+    else:
+        raise AssertionError("pending campaign with completed work must be refused")
+
