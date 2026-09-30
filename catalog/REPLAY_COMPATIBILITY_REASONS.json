@@ -289086,10 +289086,10 @@
     "REPLAYABLE_BUT_PARTIAL": 204,
     "SAFE_REPLAY_COMPATIBLE": 11590
   },
-  "receipt_digest": "6847f6e8a77e0d3b1c37f0172084e3eafe69cc2b619831828821a0a5fb9353c5",
+  "receipt_digest": "a2f772f26e93862a507e4844dbc6f9c7782cf5dc5d3df366cdae154f5118f4b9",
   "replayable_not_safe_count": 204,
   "row_count": 36134,
   "safe_not_replayable_count": 0,
   "schema": "alina.replay_compatibility_reasons.v1",
-  "source_index_sha256": "c29a7b2af25b80b8aef3b89695f6a5a5dfe0eb550b5b4f2570c794c3791afe5c"
+  "source_index_sha256": "19424e48be31d34546553f89e07ed80cd9c54e8999947a36b9d2a862eee80444"
 }
