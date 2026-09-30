@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-"""Compute reproducible cross-shard unique trade counts from immutable assets."""
+"""Compute exact global unique trade counts without storing the identity universe in Git.
+
+The previous implementation persisted every canonical trade identity in
+TRADE_UNIQUE_COUNT_PATCH.json.  On real Dataset V2 volumes that file grows past
+GitHub's 100 MiB blob limit, so otherwise-valid scans could never be published.
+This implementation rescans the bounded trade-bearing immutable corpus, merges
+full identities in a temporary SQLite store, and persists only compact per-shard
+counts plus a deterministic digest.  Missing/unavailable shards remain explicit
+and coverage stays fail-closed.
+"""
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import gzip
 import hashlib
 import json
@@ -15,9 +24,13 @@ from pathlib import Path
 from typing import Any, Mapping
 
 try:
-    from tools.backfill_exact_trade_counts import _download, _native_trade_keys
+    from tools.backfill_exact_trade_counts import (
+        TRADE_FAMILIES,
+        _download,
+        _native_trade_keys,
+    )
 except ModuleNotFoundError:
-    from backfill_exact_trade_counts import _download, _native_trade_keys
+    from backfill_exact_trade_counts import TRADE_FAMILIES, _download, _native_trade_keys
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "catalog" / "DATA_INDEX.json"
@@ -49,11 +62,25 @@ def _persist_manifest_unique_counts(
     os.replace(temporary, manifest_path)
 
 
-def _unique_candidate(row: Mapping[str, Any], covered: set[str]) -> bool:
+def _positive_int(value: Any) -> int | None:
+    if isinstance(value, bool):
+        return None
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    return parsed if parsed > 0 else None
+
+
+def _unique_candidate(row: Mapping[str, Any]) -> bool:
+    """Return True only for immutable shards that actually carry trades."""
     dataset_id = str(row.get("dataset_id") or "")
-    if not dataset_id or dataset_id in covered:
+    family = str(row.get("family") or "").lower()
+    if not dataset_id or family not in TRADE_FAMILIES:
         return False
     if row.get("trade_count_exact") is not True:
+        return False
+    if _positive_int(row.get("trade_count")) is None:
         return False
     return bool(
         row.get("release_repository")
@@ -64,61 +91,74 @@ def _unique_candidate(row: Mapping[str, Any], covered: set[str]) -> bool:
     )
 
 
-def _remaining(rows: list[object], covered: set[str]) -> list[Mapping[str, Any]]:
-    return [
-        row
-        for row in rows
-        if isinstance(row, Mapping) and _unique_candidate(row, covered)
-    ]
-
-
 def canonical_identity(value: str) -> str:
-    """Store the full canonical identity: dedup counts must not rely on hashes."""
+    """Use the complete canonical identity; hashes are evidence digests only."""
     if not isinstance(value, str) or not value:
         raise ValueError("empty trade identity")
     return value
 
 
 def _scan_candidate(row: Mapping[str, Any], temporary_root: Path) -> dict[str, Any]:
-    """Download and decode one immutable shard without touching global state."""
+    """Download one immutable trade shard and persist only its local identity set."""
     dataset_id = str(row.get("dataset_id") or "")
     shard_root = temporary_root / dataset_id
+    shard_root.mkdir(parents=True, exist_ok=True)
+    asset = _download(row, shard_root)
+    total = 0
+    exact = True
+    shard_ids: set[str] = set()
+    with gzip.open(asset, "rt", encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            raw = json.loads(line)
+            if not isinstance(raw, Mapping):
+                continue
+            keys = _native_trade_keys(
+                raw,
+                venue=str(row.get("venue") or "unknown"),
+                family=str(row.get("family") or ""),
+                symbol=str(row.get("symbol") or ""),
+            )
+            if keys is None:
+                exact = False
+                continue
+            total += len(keys)
+            shard_ids.update(canonical_identity(key) for key in keys)
+
+    identity_path = shard_root / "identities.txt"
+    if exact:
+        with identity_path.open("w", encoding="utf-8", newline="\n") as handle:
+            for identity in sorted(shard_ids):
+                handle.write(identity)
+                handle.write("\n")
+
+    # The downloaded release asset is no longer needed after deterministic parsing.
     try:
-        asset = _download(row, shard_root)
-        total = 0
-        exact = True
-        shard_ids: set[str] = set()
-        with gzip.open(asset, "rt", encoding="utf-8") as handle:
-            for line in handle:
-                if not line.strip():
-                    continue
-                raw = json.loads(line)
-                if not isinstance(raw, Mapping):
-                    continue
-                keys = _native_trade_keys(
-                    raw,
-                    venue=str(row.get("venue") or "unknown"),
-                    family=str(row.get("family") or ""),
-                    symbol=str(row.get("symbol") or ""),
-                )
-                if keys is None:
-                    exact = False
-                    continue
-                total += len(keys)
-                shard_ids.update(canonical_identity(key) for key in keys)
-        return {
-            "dataset_id": dataset_id,
-            "trade_count_scanned": total,
-            "identities": sorted(shard_ids),
-            "exact": exact,
-        }
-    finally:
-        shutil.rmtree(shard_root, ignore_errors=True)
+        asset.unlink()
+    except OSError:
+        pass
+
+    return {
+        "dataset_id": dataset_id,
+        "trade_count_scanned": total,
+        "unique_trade_count": len(shard_ids),
+        "identity_path": str(identity_path),
+        "exact": exact,
+    }
+
+
+def _digest_sqlite_identities(database: sqlite3.Connection) -> str:
+    digest = hashlib.sha256()
+    for (identity,) in database.execute("SELECT identity FROM ids ORDER BY identity"):
+        digest.update(str(identity).encode("utf-8"))
+        digest.update(b"\n")
+    return digest.hexdigest()
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=200)
+    parser.add_argument("--limit", type=int, default=5000)
     parser.add_argument("--workers", type=int, default=16)
     args = parser.parse_args()
     if args.limit < 1:
@@ -130,111 +170,120 @@ def main() -> None:
     rows = index.get("shards")
     if not isinstance(rows, list):
         raise SystemExit("invalid DATA_INDEX shards")
+
     prior: dict[str, Any] = {}
     if PATCH_PATH.exists():
-        prior = json.loads(PATCH_PATH.read_text(encoding="utf-8"))
-    if not isinstance(prior, dict) or prior.get("schema") != "alina.global_unique_trade_patch.v2":
-        prior = {}
-
-    counts = prior.get("counts") if isinstance(prior.get("counts"), dict) else {}
-    failure_reasons = (
-        prior.get("failure_reasons")
-        if isinstance(prior.get("failure_reasons"), dict)
+        try:
+            prior = json.loads(PATCH_PATH.read_text(encoding="utf-8"))
+        except (OSError, ValueError, TypeError):
+            prior = {}
+    failure_attempts = (
+        prior.get("failure_attempts")
+        if isinstance(prior, dict) and isinstance(prior.get("failure_attempts"), dict)
         else {}
     )
-    covered = set(prior.get("covered_dataset_ids") or [])
-    unavailable = prior.get("unavailable") if isinstance(prior.get("unavailable"), dict) else {}
-    failure_attempts = prior.get("failure_attempts") if isinstance(prior.get("failure_attempts"), dict) else {}
-    candidates = sorted(
-        _remaining(rows, covered),
+
+    all_candidates = sorted(
+        (
+            row
+            for row in rows
+            if isinstance(row, Mapping) and _unique_candidate(row)
+        ),
         key=lambda row: str(row.get("dataset_id") or ""),
-    )[: args.limit]
-    failed: list[dict[str, str]] = []
+    )
+    candidates = all_candidates[: args.limit]
+    failed: list[dict[str, Any]] = []
+    failure_reasons: dict[str, dict[str, Any]] = {}
+    counts: dict[str, dict[str, Any]] = {}
 
     with tempfile.TemporaryDirectory(prefix="alina-global-unique-") as temporary:
         root = Path(temporary)
-        database = sqlite3.connect(root / "identities.sqlite")
-        database.execute("CREATE TABLE ids (identity TEXT PRIMARY KEY)")
-        database.executemany(
-            "INSERT OR IGNORE INTO ids(identity) VALUES (?)",
-            (
-                (canonical_identity(str(identity)),)
-                for identity in prior.get("identities") or []
-            ),
-        )
-        database.commit()
+        scanned_by_id: dict[str, dict[str, Any] | Exception] = {}
 
-        def scan(row: Mapping[str, Any]) -> tuple[Mapping[str, Any], dict[str, Any] | Exception]:
-            try:
-                return row, _scan_candidate(row, root)
-            except Exception as exc:
-                return row, exc
+        def scan(row: Mapping[str, Any]) -> tuple[str, dict[str, Any]]:
+            result = _scan_candidate(row, root)
+            return str(row.get("dataset_id") or ""), result
 
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            # executor.map preserves candidate order, so attribution of a duplicate
-            # identity to its first shard remains deterministic across worker counts.
-            for row, scanned in pool.map(scan, candidates):
+            futures = {pool.submit(scan, row): row for row in candidates}
+            for future in as_completed(futures):
+                row = futures[future]
                 dataset_id = str(row.get("dataset_id") or "")
-                if isinstance(scanned, Exception):
-                    failure = {
-                        "dataset_id": dataset_id,
-                        "reason": type(scanned).__name__,
-                        "detail": str(scanned)[-500:],
-                    }
-                elif scanned["exact"] is not True:
-                    failure = {"dataset_id": dataset_id, "reason": "identity_missing"}
-                else:
-                    failure = None
-                if failure is not None:
-                    attempts = int(failure_attempts.get(dataset_id) or 0) + 1
-                    failure_attempts[dataset_id] = attempts
-                    failure["attempts"] = attempts
-                    # A verified immutable coordinate that repeatedly cannot be
-                    # decoded/downloaded is explicitly classified, never guessed.
-                    if attempts >= 3:
-                        unavailable[dataset_id] = {
-                            **failure,
-                            "status": "UNAVAILABLE",
-                            "retryable": False,
-                        }
-                        covered.add(dataset_id)
-                        failure_reasons.pop(dataset_id, None)
-                    else:
-                        failed.append(failure)
-                        failure_reasons[dataset_id] = failure
-                    continue
+                try:
+                    _, result = future.result()
+                    scanned_by_id[dataset_id] = result
+                except Exception as exc:  # isolated shard failure; coverage stays false
+                    scanned_by_id[dataset_id] = exc
 
-                identities = scanned["identities"]
-                global_new = 0
-                for identity in identities:
+        database = sqlite3.connect(root / "identities.sqlite")
+        database.execute("CREATE TABLE ids (identity TEXT PRIMARY KEY)")
+        database.execute("PRAGMA journal_mode=OFF")
+        database.execute("PRAGMA synchronous=OFF")
+
+        successful_ids: set[str] = set()
+        for row in candidates:
+            dataset_id = str(row.get("dataset_id") or "")
+            scanned = scanned_by_id.get(dataset_id)
+            if isinstance(scanned, Exception) or scanned is None:
+                exc = scanned if isinstance(scanned, Exception) else RuntimeError("missing_scan_result")
+                attempts = int(failure_attempts.get(dataset_id) or 0) + 1
+                failure_attempts[dataset_id] = attempts
+                failure = {
+                    "dataset_id": dataset_id,
+                    "reason": type(exc).__name__,
+                    "detail": str(exc)[-500:],
+                    "attempts": attempts,
+                }
+                failed.append(failure)
+                failure_reasons[dataset_id] = failure
+                continue
+            if scanned.get("exact") is not True:
+                attempts = int(failure_attempts.get(dataset_id) or 0) + 1
+                failure_attempts[dataset_id] = attempts
+                failure = {
+                    "dataset_id": dataset_id,
+                    "reason": "identity_missing",
+                    "attempts": attempts,
+                }
+                failed.append(failure)
+                failure_reasons[dataset_id] = failure
+                continue
+
+            global_new = 0
+            identity_path = Path(str(scanned["identity_path"]))
+            with identity_path.open("r", encoding="utf-8") as handle:
+                for line in handle:
+                    identity = canonical_identity(line.rstrip("\n"))
                     before = database.total_changes
                     database.execute(
                         "INSERT OR IGNORE INTO ids(identity) VALUES (?)",
                         (identity,),
                     )
                     global_new += int(database.total_changes > before)
-                counts[dataset_id] = {
-                    "trade_count_scanned": int(scanned["trade_count_scanned"]),
-                    "unique_trade_count": len(identities),
-                    "unique_trade_count_exact": True,
-                    "global_new_identity_count": global_new,
-                    "cross_shard_overlap_count": max(0, len(identities) - global_new),
-                    "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v1",
-                }
-                _persist_manifest_unique_counts(
-                    row,
-                    unique_count=len(identities),
-                    exact=True,
-                )
-                covered.add(dataset_id)
-                failure_reasons.pop(dataset_id, None)
-                database.commit()
+            database.commit()
 
-        global_count = database.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
-        identity_rows = [
-            row[0]
-            for row in database.execute("SELECT identity FROM ids ORDER BY identity")
-        ]
+            unique_count = int(scanned["unique_trade_count"])
+            counts[dataset_id] = {
+                "trade_count_scanned": int(scanned["trade_count_scanned"]),
+                "unique_trade_count": unique_count,
+                "unique_trade_count_exact": True,
+                "global_new_identity_count": global_new,
+                "cross_shard_overlap_count": max(0, unique_count - global_new),
+                "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v2-full-string",
+            }
+            _persist_manifest_unique_counts(
+                row,
+                unique_count=unique_count,
+                exact=True,
+            )
+            successful_ids.add(dataset_id)
+            failure_attempts.pop(dataset_id, None)
+
+        observed_global_count = int(
+            database.execute("SELECT COUNT(*) FROM ids").fetchone()[0]
+        )
+        observed_identity_digest = _digest_sqlite_identities(database)
+        database.close()
 
     for row in rows:
         if isinstance(row, dict):
@@ -246,32 +295,50 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    remaining = _remaining(rows, covered)
+    all_candidate_ids = {
+        str(row.get("dataset_id") or "") for row in all_candidates
+    }
+    remaining_ids = sorted(all_candidate_ids - successful_ids)
+    unscanned_count = max(0, len(all_candidates) - len(candidates))
+    coverage_complete = not remaining_ids and not failed and unscanned_count == 0
+    cross_shard_overlap_count = sum(
+        int(value.get("cross_shard_overlap_count") or 0)
+        for value in counts.values()
+        if isinstance(value, Mapping)
+    )
+
     result = {
-        "schema": "alina.global_unique_trade_patch.v2",
-        "method": "parallel_scan_then_deterministic_sqlite_full_identity_merge",
+        "schema": "alina.global_unique_trade_patch.v3",
+        "method": "full_trade_corpus_parallel_scan_then_deterministic_sqlite_merge",
         "identity_version": "native-id-or-venue-family-symbol-time-side-price-size-v2-full-string",
-        "collision_policy": "full canonical identity strings; native identifiers preferred; ambiguous missing identities fail closed",
-        "counts": dict(sorted(counts.items())),
-        "covered_dataset_ids": sorted(covered),
+        "collision_policy": (
+            "full canonical identity strings; native identifiers preferred; "
+            "ambiguous missing identities fail closed"
+        ),
+        "candidate_trade_shards": len(all_candidates),
         "attempted": len(candidates),
+        "successful": len(successful_ids),
         "failed": failed,
         "failure_reasons": dict(sorted(failure_reasons.items())),
         "failure_attempts": dict(sorted(failure_attempts.items())),
-        "unavailable": dict(sorted(unavailable.items())),
-        "unavailable_candidate_shards": len(unavailable),
-        "remaining_candidate_shards": len(remaining),
-        "global_unique_trade_count": global_count,
-        "global_identity_digest": hashlib.sha256(
-            json.dumps(identity_rows, separators=(",", ":")).encode()
-        ).hexdigest(),
-        "identities": identity_rows,
-        "cross_shard_overlap_count": sum(
-            int(value.get("cross_shard_overlap_count") or 0)
-            for value in counts.values()
-            if isinstance(value, Mapping)
+        "counts": dict(sorted(counts.items())),
+        "remaining_candidate_shards": len(remaining_ids),
+        "unscanned_candidate_shards": unscanned_count,
+        "observed_unique_trade_count": observed_global_count,
+        "global_unique_trade_count": (
+            observed_global_count if coverage_complete else None
         ),
-        "coverage_complete": not remaining,
+        "observed_identity_digest": observed_identity_digest,
+        "global_identity_digest": (
+            observed_identity_digest if coverage_complete else None
+        ),
+        "cross_shard_overlap_count": cross_shard_overlap_count,
+        "coverage_complete": coverage_complete,
+        "identity_store_persisted": False,
+        "identity_store_policy": (
+            "identity universe is recomputed from immutable release assets; "
+            "only compact counts and digest are persisted in Git"
+        ),
     }
     PATCH_PATH.write_text(
         json.dumps(result, sort_keys=True, indent=2) + "\n",
@@ -282,9 +349,11 @@ def main() -> None:
             {
                 key: result[key]
                 for key in (
+                    "candidate_trade_shards",
                     "attempted",
-                    "global_unique_trade_count",
+                    "successful",
                     "remaining_candidate_shards",
+                    "global_unique_trade_count",
                     "coverage_complete",
                 )
             },
