@@ -78,6 +78,38 @@
     ]
   },
   "cloud_only": true,
+  "coverage_provenance": {
+    "coverage": {
+      "trade_count_exact": true,
+      "uncompressed_bytes_exact": true,
+      "unique_record_count_exact": true,
+      "unique_trade_count_exact": true,
+      "valid_record_count_exact": true
+    },
+    "current_global_coverage": {
+      "cross_shard_overlap_trades": 83286,
+      "replayable_shards": 12367,
+      "safe_shards": 12155,
+      "trade_count_exact": true,
+      "trade_count_failure_reason_count": 0,
+      "uncompressed_bytes_coverage_complete": false,
+      "uncompressed_bytes_exact": false,
+      "uncompressed_size_exact_assets": 36134,
+      "uncompressed_size_unavailable_assets": 0,
+      "uncompressed_size_unclassified_assets": 933,
+      "unique_record_count_exact": false,
+      "unique_trade_count_exact": false,
+      "valid_record_count_exact": false
+    },
+    "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+    "health_evidence_commit": "4613a9492440020202c845a68fc61f2c7f858a33",
+    "health_receipt_digest": "a95833bc1793d428d1710166e8c55570d5bdeb13a113314eafe5267287ae234c",
+    "index_sha256": "19424e48be31d34546553f89e07ed80cd9c54e8999947a36b9d2a862eee80444",
+    "phase_epoch": 5,
+    "reason": "FROZEN_COVERAGE_RECEIPT_VALID",
+    "source_collection_epoch": 4,
+    "valid": true
+  },
   "dataset": {
     "campaign_count": 1043,
     "coverage": {
@@ -131,7 +163,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "b79188f833c153697b9fe770a7805dd5830fbbaa",
+  "dataset_v2_head": "9851cfea055ad8b482f01be58e11dbc79e43a77c",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -1049,9 +1081,9 @@
       "state": "MORE_DATA"
     }
   },
-  "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T18:50:32.801403Z",
-  "implementation_complete": false,
+  "final_validation_complete": true,
+  "generated_at_utc": "2026-09-30T19:00:12.527722Z",
+  "implementation_complete": true,
   "phase": {
     "analysis_stage": "SCOREBOARD",
     "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
@@ -1064,7 +1096,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "c89b53a6cadcb82f3177e24d9e61c697521bef956febc56d19f9ae74c53e1518",
+  "receipt_digest": "85872e675c74ad6bcaeebd8de3fb6c3efecba92f841894a3708badd33ca603d4",
   "resume_provenance": {
     "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
