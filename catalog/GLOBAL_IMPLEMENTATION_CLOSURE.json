@@ -50,12 +50,16 @@
         ]
       },
       "scoreboard": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e5-scoreboard-v2"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "PENDING"
+        ]
       }
     },
-    "campaign_count": 6,
+    "campaign_count": 7,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -127,7 +131,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "f006131daebc8de8013621cfbefd2dff33a1559c",
+  "dataset_v2_head": "2a1ae78be8db979f2b616ff1454ffeb00ae616cf",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -971,21 +975,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T18:45:34.020185Z",
+  "generated_at_utc": "2026-09-30T18:47:10.522780Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "PNL_PROOF",
+    "analysis_stage": "SCOREBOARD",
     "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
     "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
     "epoch": 5,
     "phase": "ANALYZE",
-    "request_id": "c11bc967727c0382ceac8024a5e20a53d236f4317b2aadc529682f9a5bb03400",
+    "request_id": "1c0d31724fb306f535e2764ed3e638ae2dc059ed9cb7b826408d2dd96661a205",
     "requested_at_utc": "2026-09-30T17:06:32.940845Z",
     "requested_by": "chatgpt-github",
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "ea5e0858d74a518ebf97dc2f84500e5f0980a8c15b2c622b5a85ceb9daabc79a",
+  "receipt_digest": "6402bc89c81fdbf1294b41fbf6045fb7eb70b637df014ba6fa1fe354d5bb4f88",
   "resume_provenance": {
     "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
