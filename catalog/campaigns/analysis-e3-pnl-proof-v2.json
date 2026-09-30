@@ -5,7 +5,7 @@
   "checkpoint_lineage": [],
   "chunk_index": 0,
   "code_repo": "Rapt0r06300/hyperliquid-smart-wallet-observer",
-  "code_sha": "40e3bbd87b646a6688a0742f33f97a22b268b1a4",
+  "code_sha": "5a9746865e3058bcc84d299b596ed9261083bf61",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "completed_units": {},
   "config_sha256": "79ad8d46f635ed576dc8639f5098a23edbbdcb4f7cf1036ace9b93461e378d5b",
@@ -46,6 +46,13 @@
       "prior_status": "FAILED",
       "prior_status_reason": "adapter_failed",
       "prior_terminal_evidence_digest": "f5dec5ef0a37203a9103a3aad2694bbebcbc4e2639841acd17aa21c72d1cee0a"
+    },
+    {
+      "event": "code_refresh_before_execution",
+      "at": "2026-09-30T14:16:45.960Z",
+      "prior_code_sha": "40e3bbd87b646a6688a0742f33f97a22b268b1a4",
+      "new_code_sha": "5a9746865e3058bcc84d299b596ed9261083bf61",
+      "reason": "manifest_digest_compatibility_fix_before_retry_claim"
     }
   ],
   "kind": "module_pnl_proof",
@@ -70,6 +77,6 @@
   "status": "PENDING",
   "status_reason": "retry_after_code_fix",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T14:12:31.559272Z",
+  "updated_at": "2026-09-30T14:16:45.960Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
