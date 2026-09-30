@@ -11,6 +11,7 @@ on:
     branches: [main]
     paths:
       - "catalog/campaigns/*-resume-proof-v1.json"
+      - "control/alina-phase.json"
       - ".github/workflows/durable-two-segment-resume-smoke.yml"
   schedule:
     - cron: "23,53 * * * *"
