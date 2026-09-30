@@ -13,6 +13,7 @@ on:
       - 'tools/phase_gate.py'
       - 'tools/apply_operator_controls.py'
       - 'tools/set_phase.py'
+      - 'tools/resolve_analysis_selection.py'
       - 'tools/supersede_copy_vault_fanout.py'
       - 'control/alina-phase.json'
   workflow_dispatch:
@@ -126,16 +127,16 @@ jobs:
 
           if [ "$PHASE" = "COLLECT" ]; then
             make_campaign             market_collection             "market-$BUCKET-v6"             "market-hourly-discovered-universe-v6"             '{"duration_s":3500,"max_coins":0,"rotate_mb":64,"universe_mode":"native_discovery_full","require_all_native_venues":true}'
-
+  
             python tools/supersede_copy_vault_fanout.py
-
+  
             ACTIVE_COPY_CAMPAIGNS="$(python -c 'import glob,json; active={"PENDING","RUNNING","CONTINUATION_REQUIRED","STUCK"}; rows=[]; [rows.append(str(json.load(open(path,encoding="utf-8")).get("status") or "")) for path in glob.glob("catalog/campaigns/copy-vault-*-v7.json")]; print(sum(status in active for status in rows))')"
             if [ "$ACTIVE_COPY_CAMPAIGNS" -gt 0 ]; then
               echo "active Copy-Vault sweep already exists ($ACTIVE_COPY_CAMPAIGNS campaigns); skipping overlapping full-universe sweep"
             else
               COPY_SELECTION="catalog/copy_vault_selections/$BUCKET.json"
               if [ ! -f "$COPY_SELECTION" ]; then
-                PYTHONPATH=alina/src python alina/tools/freeze_copy_vault_selection.py --output "$COPY_SELECTION"
+                PYTHONPATH=alina/src python alina/tools/freeze_copy_vault_selection.py               --output "$COPY_SELECTION"
               fi
               COPY_COUNT="$(python -c 'import json,sys; print(len(json.load(open(sys.argv[1]))["vaults"]))' "$COPY_SELECTION")"
               test "$COPY_COUNT" -gt 0
@@ -149,13 +150,8 @@ jobs:
                 make_campaign               copy_vault_collection               "copy-vault-$COPY_LANE-$BUCKET-v7"               "copy-vault-hourly-complete-universe-v7"               "$COPY_CURSOR"
               done
             fi
-
+  
             make_campaign             event_intelligence_collection             "event-$BUCKET-v5"             "event-hourly-v5"             '{}'
-
-            if [ "$HOUR" = "06" ]; then
-              make_campaign               official_archive_collection               "archives-binance-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"binance\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
-              make_campaign               official_archive_collection               "archives-bybit-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"bybit\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
-            fi
           fi
 
           if [ "$PHASE" = "ANALYZE" ]; then
@@ -181,6 +177,11 @@ jobs:
                 make_campaign scoreboard "$ANALYSIS_ID-scoreboard-v2" "analysis-scoreboard-v2" '{"max_shards":128,"independent_families":true}'
                 ;;
             esac
+          fi
+
+          if [ "$HOUR" = "06" ]; then
+            make_campaign               official_archive_collection               "archives-binance-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"binance\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
+            make_campaign               official_archive_collection               "archives-bybit-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"bybit\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
           fi
 
       - name: Commit campaign manifests
