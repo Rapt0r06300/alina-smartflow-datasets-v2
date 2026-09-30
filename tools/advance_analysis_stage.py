@@ -13,21 +13,8 @@ from pathlib import Path
 ORDER = ("DRAIN", "QUALITY", "REPLAY", "BACKTEST", "OOS", "FORWARD_PAPER", "PNL_PROOF", "SCOREBOARD", "DONE")
 
 
-def _without_superseded(rows):
-    superseded_ids = {
-        str(row.get("supersedes"))
-        for row in rows
-        if isinstance(row, dict) and row.get("supersedes")
-    }
-    return [
-        row for row in rows
-        if str(row.get("campaign_id") or "") not in superseded_ids
-    ]
-
-
 def _required_campaign_gate(rows, state, required_kinds):
     """Require every current-epoch campaign of a required kind to be COMPLETE."""
-    rows = _without_superseded(rows)
     scoped = [
         row for row in rows
         if row.get("creation_phase") == "ANALYZE"
@@ -134,11 +121,11 @@ def main():
                 and row.get("status") in active
             ):
                 raise SystemExit(f"DRAIN barrier not closed: {manifest_path.name}")
-    terminal_rows = _without_superseded([
+    terminal_rows = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in sorted(Path(a.campaign_root).glob("*.json"))
         if path.is_file()
-    ])
+    ]
     frozen_rows = [
         row for row in terminal_rows
         if row.get("creation_phase") == "ANALYZE"
