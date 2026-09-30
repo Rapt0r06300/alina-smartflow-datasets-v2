@@ -314,6 +314,16 @@ jobs:
                 gh release create "$TAG" "$EVIDENCE"                   --repo "$GITHUB_REPOSITORY"                   --target main                   --title "Alina campaign evidence $CAMPAIGN_ID unit $UNIT"                   --notes "Paper/read-only evidence. No real execution."
               fi
               python tools/augment_campaign_result.py evidence                 --result "$RESULT"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
+              SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
+              if [[ "$KIND" = "backtest" || "$KIND" = "oos" || "$KIND" = "forward_paper" || "$KIND" = "module_pnl_proof" ]]; then
+                test -f "$SCOREBOARD"
+                python tools/persist_analysis_improvement.py \
+                  --campaign-manifest "catalog/campaigns/$CAMPAIGN_ID.json" \
+                  --scoreboard "$SCOREBOARD" \
+                  --evidence-tag "$TAG" \
+                  --repository "$GITHUB_REPOSITORY" \
+                  --unit-id "$UNIT"
+              fi
               if [ "$KIND" = "scoreboard" ]; then
                 SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
                 ENV_RECEIPT="$WORKSPACE/runtime/reports/analysis_stages/scoreboard.json"
