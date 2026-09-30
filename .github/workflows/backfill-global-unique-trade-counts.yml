@@ -1,8 +1,10 @@
 name: backfill-global-unique-trade-counts
 on:
-  workflow_run:
-    workflows: [backfill-exact-trade-counts, backfill-replay-compatibility, uncompressed-size-v2]
-    types: [completed]
+  # Do not fan-in from high-frequency workflow_run completions here. GitHub
+  # concurrency keeps at most one pending run and replaces older pending runs,
+  # which can starve this long scan indefinitely while upstream workflows churn.
+  # Parser/catalog changes still trigger immediately; schedule/manual cover the
+  # steady-state reconciliation.
   push:
     branches: [main]
     paths:
