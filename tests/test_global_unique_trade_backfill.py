@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import gzip
 import json
-from pathlib import Path
 
 from tools import backfill_global_unique_trade_counts as global_counts
 
@@ -31,6 +30,26 @@ def test_scan_candidate_extracts_exact_identities_without_global_state(tmp_path,
 
     assert result["dataset_id"] == "sample"
     assert result["trade_count_scanned"] == 3
-    assert result["identities"] == sorted(set(result["identities"]))
-    assert len(result["identities"]) == 2
+    assert result["unique_trade_count"] == 2
     assert result["exact"] is True
+    identities = result["identity_path"]
+    with open(identities, encoding="utf-8") as handle:
+        rows = [line.strip() for line in handle if line.strip()]
+    assert rows == sorted(set(rows))
+    assert len(rows) == 2
+
+
+def test_unique_candidate_excludes_non_trade_zero_count_assets():
+    base = {
+        "dataset_id": "x",
+        "trade_count_exact": True,
+        "release_repository": "owner/repo",
+        "release_tag": "tag",
+        "release_asset": "asset.jsonl.gz",
+        "sha256": "a" * 64,
+        "bytes": 1,
+    }
+    assert global_counts._unique_candidate({**base, "family": "bbo", "trade_count": 0}) is False
+    assert global_counts._unique_candidate({**base, "family": "l2Book", "trade_count": 100}) is False
+    assert global_counts._unique_candidate({**base, "family": "trades", "trade_count": 0}) is False
+    assert global_counts._unique_candidate({**base, "family": "trades", "trade_count": 1}) is True
