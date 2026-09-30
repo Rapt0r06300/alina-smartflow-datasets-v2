@@ -89,11 +89,17 @@ jobs:
           if [ "$PHASE" = "ANALYZE" ]; then
             test -n "$SOURCE_COLLECTION_EPOCH"
             test -n "$COLLECTION_CUTOFF"
+            test -n "$ANALYSIS_STAGE"
             test -f catalog/DATA_INDEX.json
             DATA_INDEX_SHA="$(sha256sum catalog/DATA_INDEX.json | cut -d' ' -f1)"
             DATASET_SELECTION_ID="$(printf '%s' "$SOURCE_COLLECTION_EPOCH|$COLLECTION_CUTOFF|$DATA_INDEX_SHA" | sha256sum | cut -d' ' -f1)"
             printf '%s' "$DATASET_SELECTION_ID" | grep -Eq '^[0-9a-f]{64}$'
-            PHASE_ARGS+=(--source-collection-epoch "$SOURCE_COLLECTION_EPOCH" --collection-cutoff-at-utc "$COLLECTION_CUTOFF" --dataset-selection-id "$DATASET_SELECTION_ID" --analysis-stage "$ANALYSIS_STAGE")
+            PHASE_ARGS+=(
+              --source-collection-epoch "$SOURCE_COLLECTION_EPOCH"
+              --collection-cutoff-at-utc "$COLLECTION_CUTOFF"
+              --dataset-selection-id "$DATASET_SELECTION_ID"
+              --analysis-stage "$ANALYSIS_STAGE"
+            )
           fi
           PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")
           PLAN_SHA="$(printf '%s' 'resumable-github-campaigns-v5' | sha256sum | cut -d' ' -f1)"
