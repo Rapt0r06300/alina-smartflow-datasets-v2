@@ -118,8 +118,8 @@
   "trade_count": 4,
   "trade_count_exact": true,
   "unique_identity_method": "full_native_or_deterministic_composite_string_v2",
-  "unique_trade_count": null,
-  "unique_trade_count_exact": false,
+  "unique_trade_count": 4,
+  "unique_trade_count_exact": true,
   "validation_allowed": false,
   "venue": "hyperliquid"
 }

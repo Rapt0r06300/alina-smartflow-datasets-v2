@@ -107,6 +107,8 @@
   },
   "trade_count": 6,
   "trade_count_exact": true,
+  "unique_trade_count": 6,
+  "unique_trade_count_exact": true,
   "validation_allowed": true,
   "venue": "hyperliquid"
 }
