@@ -337,6 +337,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          gh workflow run global-implementation-closure.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main
           gh workflow run analysis-stage-controller.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref main
