@@ -1,5 +1,5 @@
 {
-  "alina_head": "4eebb98725492f1ba8d7ff09ef6f6ca3fddff394",
+  "alina_head": "1846cdc3202c3b25109f86bec0ee81c0b5b0bc3c",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -27,10 +27,10 @@
           "analysis-e3-replay-v2",
           "analysis-e3-resume-proof-v1"
         ],
-        "complete": false,
+        "complete": true,
         "states": [
           "COMPLETE",
-          "CONTINUATION_REQUIRED"
+          "COMPLETE"
         ]
       },
       "scoreboard": {
@@ -108,7 +108,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "efb9ced4b62141c0d84306381ae6de6054da0e91",
+  "dataset_v2_head": "3ae8ce567a919a90744858caeae72b223437552f",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -154,33 +154,33 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:32:58.690702Z",
+  "generated_at_utc": "2026-09-30T13:36:50.368864Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "REPLAY",
+    "analysis_stage": "BACKTEST",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "bd40dff436b3e2c8cf8be629386e6765c6d4037cea5489f3b5d35353ba8b66d3",
+    "request_id": "80aa6c6b36376fd1598f39630f8bac0cc0276b67c33b96d68a4f17d3727dd7e5",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "d24f683f5d623201bd1ecc38ea0c6fee0dc29d7e367f8827c1de27c27a475137",
+  "receipt_digest": "244459e6baafffefc1495af6965def8e0445189839e6682a48aa0e91eccc63b3",
   "resume_provenance": {
-    "campaign_id": null,
-    "duplicate_completed_unit_count": null,
-    "duplicate_replay_work_count": null,
-    "reason": "CURRENT_RESUME_RECEIPT_MISSING",
-    "segment_a_job_id": null,
-    "segment_b_job_id": null,
-    "terminal_checkpoint_id": null,
-    "terminal_evidence_digest": null,
-    "terminal_selection_id": null,
-    "valid": false,
-    "workflow_run_id": null
+    "campaign_id": "analysis-e3-resume-proof-v1",
+    "duplicate_completed_unit_count": 0,
+    "duplicate_replay_work_count": 0,
+    "reason": "CURRENT_RESUME_RECEIPT_VALID",
+    "segment_a_job_id": "109910148452",
+    "segment_b_job_id": "109910681065",
+    "terminal_checkpoint_id": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
+    "terminal_evidence_digest": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
+    "terminal_selection_id": "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106",
+    "valid": true,
+    "workflow_run_id": "36722235122"
   },
   "schema": "alina.global_implementation_closure.v1",
   "scoreboard_provenance": {
