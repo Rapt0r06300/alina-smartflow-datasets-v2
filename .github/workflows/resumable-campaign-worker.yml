@@ -314,6 +314,16 @@ jobs:
                 gh release create "$TAG" "$EVIDENCE"                   --repo "$GITHUB_REPOSITORY"                   --target main                   --title "Alina campaign evidence $CAMPAIGN_ID unit $UNIT"                   --notes "Paper/read-only evidence. No real execution."
               fi
               python tools/augment_campaign_result.py evidence                 --result "$RESULT"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
+              if [ "$KIND" = "scoreboard" ]; then
+                SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
+                test -f "$SCOREBOARD"
+                python tools/persist_analysis_scoreboard.py \
+                  --campaign-manifest "catalog/campaigns/$CAMPAIGN_ID.json" \
+                  --scoreboard "$SCOREBOARD" \
+                  --evidence-tag "$TAG" \
+                  --repository "$GITHUB_REPOSITORY" \
+                  --unit-id "$UNIT"
+              fi
               echo "evidence_tag=$TAG" >> "$GITHUB_OUTPUT"
               ;;
             *)
@@ -426,6 +436,9 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           gh auth setup-git
           git add "$M" catalog/receipts
+          if [ -f catalog/ANALYSIS_SCOREBOARD_RECEIPT.json ]; then
+            git add catalog/ANALYSIS_SCOREBOARD_RECEIPT.json
+          fi
           git commit -m "campaign: checkpoint $CAMPAIGN_ID"
           for i in 1 2 3 4 5; do
             if git pull --rebase origin main && git push origin HEAD:main; then
