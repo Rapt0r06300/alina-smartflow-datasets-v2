@@ -27,14 +27,13 @@ permissions:
   contents: write
 concurrency:
   group: dataset-v2-global-unique-counts-v2
-  # New identity-parser fixes supersede scans from older SHAs. Continuing an
-  # obsolete full-corpus scan only delays fail-closed closure evidence.
-  cancel-in-progress: true
+  # A newer parser/catalog push may supersede stale code. A delayed schedule
+  # must never cancel useful work already running on the current code.
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 jobs:
   deduplicate:
     runs-on: ubuntu-latest
     timeout-minutes: 330
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
