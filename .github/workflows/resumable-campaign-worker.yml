@@ -227,6 +227,13 @@ jobs:
           PY
           source "$RUNNER_TEMP/unit.env"
           if [ "$KIND" = "market_collection" ]; then
+            MARKET_PLAN_FILE="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("plan_file") or "")' "$PART")"
+            MARKET_PLAN_SHA="$(python -c 'import json,sys; print(json.loads(sys.argv[1]).get("plan_sha256") or "")' "$PART")"
+            if [ -n "$MARKET_PLAN_FILE" ] && [ -f "$MARKET_PLAN_FILE" ] && [ -n "$MARKET_PLAN_SHA" ]; then
+              ACTUAL_MARKET_PLAN_SHA="$(sha256sum "$MARKET_PLAN_FILE" | cut -d' ' -f1)"
+              test "$ACTUAL_MARKET_PLAN_SHA" = "$MARKET_PLAN_SHA"
+              echo "using frozen market shard plan: $MARKET_PLAN_FILE sha256=$MARKET_PLAN_SHA"
+            else
             python alina/tools/discover_cloud_collection_plan.py               --output "$RUNNER_TEMP/collection-plan.json"               --min-venues 2               --max-coins "${MAX_COINS:-0}"               --batch-size 8
             python - <<'PY' "$RUNNER_TEMP/collection-plan.json" "$MARKET_SHARD_COUNT" "$MARKET_SHARD_INDEX"
           import hashlib,json,sys
@@ -264,6 +271,7 @@ jobs:
               "coins":[row["coin"] for row in assigned],
           },sort_keys=True))
           PY
+            fi
           elif [[ "$KIND" = "replay" || "$KIND" = "backtest" || "$KIND" = "oos" || "$KIND" = "forward_paper" || "$KIND" = "module_pnl_proof" || "$KIND" = "scoreboard" ]]; then
             WORKSPACE="$RUNNER_TEMP/alina-replay-workspace"
             mkdir -p "$WORKSPACE"

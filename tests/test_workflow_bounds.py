@@ -36,6 +36,12 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"universe_mode":"native_discovery_full"' in text
     assert '"require_all_native_venues":True' in text
     assert "MARKET_SHARDS=8" in text
+    assert "freeze_market_shards.py" in text
+    assert "catalog/market_collection_plans" in text
+    assert "MARKET_FULL_PLAN" in text
+    assert "MARKET_SHARD_INDEX" in text
+    assert "universe_digest" in text
+    assert "plan_sha256" in text
     assert "MARKET_SHARD<MARKET_SHARDS" in text
     assert "market-$MARKET_SHARD-$BUCKET-v7" in text
     assert "market-hourly-sharded-discovered-universe-v7" in text
@@ -135,6 +141,9 @@ def test_controller_worker_are_bounded_hosted_and_collect_relayed():
     assert "MARKET_SHARD_COUNT" in worker
     assert "MARKET_SHARD_INDEX" in worker
     assert "sha256_coin_mod" in worker
+    assert "MARKET_PLAN_FILE" in worker
+    assert "MARKET_PLAN_SHA" in worker
+    assert "using frozen market shard plan" in worker
     assert "full_selected_coin_count" in worker
     assert "actions: write" in worker
     assert "needs.select.outputs.phase != 'COLLECT'" in controller
