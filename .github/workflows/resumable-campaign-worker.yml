@@ -317,7 +317,7 @@ jobs:
               SCOREBOARD="$WORKSPACE/runtime/reports/economic_family_scoreboards.json"
               if [[ "$KIND" = "backtest" || "$KIND" = "oos" || "$KIND" = "forward_paper" || "$KIND" = "module_pnl_proof" ]]; then
                 test -f "$SCOREBOARD"
-                python tools/persist_analysis_improvement.py \
+                PYTHONPATH=. python tools/persist_analysis_improvement.py \
                   --campaign-manifest "catalog/campaigns/$CAMPAIGN_ID.json" \
                   --scoreboard "$SCOREBOARD" \
                   --evidence-tag "$TAG" \
@@ -335,7 +335,7 @@ jobs:
                 fi
                 test -f "$SCOREBOARD"
                 test -f "$ENV_RECEIPT"
-                python tools/persist_analysis_scoreboard.py \
+                PYTHONPATH=. python tools/persist_analysis_scoreboard.py \
                   --campaign-manifest "catalog/campaigns/$CAMPAIGN_ID.json" \
                   --scoreboard "$SCOREBOARD" \
                   --environment-receipt "$ENV_RECEIPT" \
