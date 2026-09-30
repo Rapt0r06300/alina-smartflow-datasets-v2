@@ -83,13 +83,13 @@
       "analysis_stage": "SCOREBOARD",
       "campaign_id": "analysis-e3-scoreboard-v2",
       "checkpoint_count": 0,
-      "completed_unit_count": 0,
-      "has_lease": true,
-      "history_count": 3,
+      "completed_unit_count": 2,
+      "has_lease": false,
+      "history_count": 7,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
-      "status": "RUNNING",
+      "status": "PENDING",
       "terminal_evidence_digest": null
     },
     {
@@ -4598,7 +4598,7 @@
     }
   },
   "failure_matrix_status": "READY",
-  "generated_at_utc": "2026-09-30T14:26:44.676383Z",
+  "generated_at_utc": "2026-09-30T14:33:44.515689Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7597,7 +7597,7 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "f75fd33c013e7231a3b2cb16667face3115eb682414469b373839ff0f864b292",
+  "receipt_digest": "a6e8bdf917ccbb28c635e88e064cefcc63f82cc5548ba7099febc83911da8a24",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "READY",
   "v2_campaign_count": 351,

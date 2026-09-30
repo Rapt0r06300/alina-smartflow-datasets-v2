@@ -48701,25 +48701,25 @@
     },
     {
       "analysis_stage": "SCOREBOARD",
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "analysis-e3-scoreboard-v2",
-      "chunk_index": 0,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
-      "completed_unit_count": 0,
-      "consecutive_failures": 0,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "ANALYZE",
       "kind": "scoreboard",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "51ff9df3c4f15d8b6503255bda49e8b4e16946bc58f71b765a41904ca0738272",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
       "next_due_at": null,
-      "no_progress_count": 0,
+      "no_progress_count": 2,
       "phase_epoch": 3,
       "source_collection_epoch": 2,
       "status": "PENDING",
-      "status_reason": "refresh_pending_after_code_fix",
-      "updated_at": "2026-09-30T14:25:48.953925Z"
+      "status_reason": "retry_after_scoreboard_receipt_path_fix",
+      "updated_at": "2026-09-30T14:31:30.189753Z"
     },
     {
       "analysis_stage": null,
@@ -64573,12 +64573,12 @@
     "unique_trade_count_exact": true,
     "valid_record_count_exact": true
   },
-  "dataset_commit": "5e7ce60b203935e3b3ba742c3d9bb15e05c2b6f1",
+  "dataset_commit": "ec7898c3fa564c63b7808d449af47c27d3063f37",
   "metrics_digest": "28d0d8fd7d3dd63303f59e7ebade6b8bc60f4e322bd7f82de0cca62c38d6baff",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
   "oldest_next_due_at": null,
-  "oldest_pending_updated_at": "2026-09-30T14:25:48.953925Z",
+  "oldest_pending_updated_at": "2026-09-30T14:31:30.189753Z",
   "pending_campaign_count": 1,
   "phase": {
     "analysis_stage": "SCOREBOARD",
@@ -64596,7 +64596,7 @@
     "mismatches": [],
     "status": "CONSISTENT"
   },
-  "receipt_digest": "d8e5c22f01d6bafe0b0c80b60d5c95013a339ab06caf4e65b46ccb8a3bd5e253",
+  "receipt_digest": "a95833bc1793d428d1710166e8c55570d5bdeb13a113314eafe5267287ae234c",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
