@@ -1,5 +1,5 @@
 {
-  "alina_head": "3c498cc793778681a481f8823451ea3033444d9d",
+  "alina_head": "2dd5453651ea310e64e53cac0e3ffec347fbe456",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
@@ -48,7 +48,7 @@
   },
   "cloud_only": true,
   "dataset": {
-    "campaign_count": 725,
+    "campaign_count": 1039,
     "coverage": {
       "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
       "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
@@ -98,9 +98,9 @@
       "VALID_RECORD_COUNT_MISSING_SHARDS": 0
     },
     "metrics_digest": null,
-    "watchdog_status": "HEALTHY"
+    "watchdog_status": "ATTENTION"
   },
-  "dataset_v2_head": "feea7c10282f7be10253d355c3fcfc1f0f946f06",
+  "dataset_v2_head": "4e37c7850c89e4b066be739dcf5c5ffed8196a0f",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -380,7 +380,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T14:55:44.410800Z",
+  "generated_at_utc": "2026-09-30T16:38:53.033099Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": null,
@@ -394,7 +394,7 @@
     "schema_version": 1,
     "source_collection_epoch": null
   },
-  "receipt_digest": "47e09ad83d680062f6acb1421e035ab4dbbf1318b4bdd0d6742bd1935ebf2eff",
+  "receipt_digest": "e364292a806a8150a91cb5936329d8fb9a56c008ab73d90574dd6c01425c938c",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
