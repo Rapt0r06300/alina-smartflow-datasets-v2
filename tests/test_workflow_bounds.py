@@ -43,8 +43,9 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert "ACTIVE_COPY_CAMPAIGNS" in text
     assert "active Copy-Vault sweep already exists" in text
     assert "CONTINUATION_REQUIRED" in text
-    assert "(COPY_COUNT + 99) / 100" in text
-    assert 'COPY_LANES" -gt 32' in text
+    assert "(COPY_COUNT + 9) / 10" in text
+    assert "COPY_MAX_USERS_PER_LANE" in text
+    assert 'COPY_MAX_USERS_PER_LANE" -le 10' in text
     assert "supersede_copy_vault_fanout.py" in text
     assert "COPY_LANE<COPY_LANES" in text
     assert "copy-vault-$COPY_LANE-$BUCKET-v7" in text
@@ -176,5 +177,5 @@ def test_bridge_and_exact_count_backfill_are_scheduled_hosted():
 def test_campaign_watchdog_rebases_on_concurrent_receipt_writers():
     text = _workflow("campaign-watchdog.yml")
     assert "git fetch origin main" in text
-    assert "git rebase origin/main" in text
+    assert "git pull --rebase origin main" in text
     assert "for attempt in 1 2 3 4 5" in text
