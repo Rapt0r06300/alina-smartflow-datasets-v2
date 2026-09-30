@@ -55,6 +55,12 @@
       "from": "RUNNING",
       "reason": "durable_publication_failed",
       "to": "CONTINUATION_REQUIRED"
+    },
+    {
+      "at": "2026-09-30T18:28:30Z",
+      "event": "retry_requested",
+      "reason": "analysis_persistence_import_path_fixed",
+      "workflow_code_sha": "a291cd1b392640d40980d45cfcaca7e7bef01b3a"
     }
   ],
   "kind": "backtest",
@@ -66,7 +72,7 @@
     "max_no_progress": 3,
     "max_wall_clock_s": 86400
   },
-  "next_due_at": null,
+  "next_due_at": "2026-09-30T18:28:30Z",
   "no_progress_count": 1,
   "operator_request_id": "f0bb9bccb521af1d03cdfb0cb5fb0c81a5e5d57b58918a2a6235728e0b513436",
   "outputs": [],
@@ -79,6 +85,6 @@
   "status": "CONTINUATION_REQUIRED",
   "status_reason": "durable_publication_failed",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T18:27:12.312013Z",
+  "updated_at": "2026-09-30T18:28:30Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
