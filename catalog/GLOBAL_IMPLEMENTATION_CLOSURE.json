@@ -119,7 +119,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "50406fda1f1b932bbfab0661d2837fef1289237c",
+  "dataset_v2_head": "602a19fbddbd3aaf3f84eb5b835fc92a8a3eca28",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -681,21 +681,21 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T18:36:28.251873Z",
+  "generated_at_utc": "2026-09-30T18:38:32.110144Z",
   "implementation_complete": false,
   "phase": {
-    "analysis_stage": "OOS",
+    "analysis_stage": "FORWARD_PAPER",
     "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
     "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
     "epoch": 5,
     "phase": "ANALYZE",
-    "request_id": "8327adea605eaabcd1cd2726521a0def92d7b81e7ec761f79e23640a06677470",
+    "request_id": "18f1c5ba94693fbdab797aa0c5790f6152c6ec80af8aefd6b7e6c8da0721b4f4",
     "requested_at_utc": "2026-09-30T17:06:32.940845Z",
     "requested_by": "chatgpt-github",
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "7a2a9121c20308be8cf37f5ec9fe1fa35baf3e86d9ae6b83d3f5dd2e5c3bacc7",
+  "receipt_digest": "1cb3c63533c7c793da3ce860cb8c2a9256558de0f9c44c66b3fbac5221a42980",
   "resume_provenance": {
     "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
