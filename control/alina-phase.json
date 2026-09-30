@@ -1,12 +1,12 @@
 {
-  "analysis_stage": null,
-  "collection_cutoff_at_utc": null,
+  "analysis_stage": "DRAIN",
+  "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
   "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
-  "epoch": 4,
-  "phase": "COLLECT",
-  "request_id": "abb19c320b9d0e4627b0018b505353a33fb16f8314af92d9c59e8d9b6d80a38c",
-  "requested_at_utc": "2026-09-30T14:54:27.395719Z",
+  "epoch": 5,
+  "phase": "ANALYZE",
+  "request_id": "f9b2f8a75e4042541d6abac191f913370c6a57e6eda2f875267f0b0c3d559f9f",
+  "requested_at_utc": "2026-09-30T17:06:32.940845Z",
   "requested_by": "chatgpt-github",
   "schema_version": 1,
-  "source_collection_epoch": null
+  "source_collection_epoch": 4
 }
