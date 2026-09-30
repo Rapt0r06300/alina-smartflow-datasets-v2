@@ -70,11 +70,11 @@ def build_improvement_ledger(
         champion_net = _number(champion.get("net_pnl_usd")) if champion else None
 
         if candidate_net is None:
-            status = "UNMEASURABLE"
+            status = "NON_MESURABLE"
             delta = None
             new_champion = champion
         elif champion_net is None:
-            status = "BASELINE_ESTABLISHED"
+            status = "REFERENCE_ETABLIE"
             delta = None
             new_champion = {
                 "net_pnl_usd": candidate_net,
@@ -87,7 +87,7 @@ def build_improvement_ledger(
         else:
             delta = round(candidate_net - champion_net, 12)
             if delta > 0:
-                status = "IMPROVED"
+                status = "AMELIORATION"
                 new_champion = {
                     "net_pnl_usd": candidate_net,
                     "campaign_id": campaign_id,
@@ -97,7 +97,7 @@ def build_improvement_ledger(
                     "code_sha": code_sha,
                 }
             else:
-                status = "NO_IMPROVEMENT"
+                status = "PAS_D_AMELIORATION"
                 new_champion = champion
 
         history = list(prior.get("history") or [])
@@ -123,9 +123,9 @@ def build_improvement_ledger(
 
     body = {
         "schema": "alina.economic_improvement_ledger.v1",
-        "policy": "STRICT_BEST_SO_FAR_PER_FAMILY",
-        "comparison_metric": "net_pnl_usd",
-        "strict_improvement_required": True,
+        "policy": "MEILLEUR_RESULTAT_HISTORIQUE_PAR_MODULE",
+        "comparison_metric": "gain_net_usd",
+        "amelioration_stricte_requise": True,
         "families": families,
         "paper_only": True,
         "read_only": True,
