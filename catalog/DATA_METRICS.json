@@ -264,7 +264,7 @@
       "uncompressed_bytes": 37431114461,
       "uncompressed_exact_assets": 1884,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 2134597
+      "unique_trades_within_shards": 13642646
     }
   },
   "by_symbol": {
@@ -44744,7 +44744,7 @@
       "uncompressed_bytes": 14635727809,
       "uncompressed_exact_assets": 109,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 63214
+      "unique_trades_within_shards": 5108978
     },
     "BTC_USDT": {
       "bytes": 172204362,
@@ -45752,7 +45752,7 @@
       "uncompressed_bytes": 15440439040,
       "uncompressed_exact_assets": 112,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 53504
+      "unique_trades_within_shards": 4642348
     },
     "ETH_USDT": {
       "bytes": 169983466,
@@ -47572,7 +47572,7 @@
       "uncompressed_bytes": 6117103607,
       "uncompressed_exact_assets": 77,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 43664
+      "unique_trades_within_shards": 1917105
     },
     "SOL_USDT": {
       "bytes": 139078605,
@@ -48484,7 +48484,7 @@
       "uncompressed_bytes": 24940449367,
       "uncompressed_exact_assets": 193,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 104762
+      "unique_trades_within_shards": 11612811
     },
     "gate": {
       "bytes": 2949997823,
@@ -48551,18 +48551,18 @@
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": "deduplicated within each verified shard only; this is not a claim of global cross-shard uniqueness"
   },
   "schema_version": "alina.data_metrics.v4",
-  "source_index_sha256": "eed9a64d0fd199c39d842b2499058ea5c903ef78eff92423eedbebc227b514b4",
+  "source_index_sha256": "c29a7b2af25b80b8aef3b89695f6a5a5dfe0eb550b5b4f2570c794c3791afe5c",
   "totals": {
-    "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 11250,
+    "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 385,
     "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "b95e928b112a84d7153a8434cb47aac93721eb74a3c3ea539ae1241e06d2c7f9",
+    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": null,
     "PARTIAL_SHARDS": 16622,
     "RECORD_COUNT_PATCH_DIGEST": "f1e71c11c17e67f0df64ee87d7e9ef325a53907f8c5092b0da7fd122a6d128e5",
     "REJECTED_SHARDS": 7922,
     "REPLAYABLE_SHARDS": 11794,
     "SAFE_SHARDS": 11590,
     "TOTAL_COMPRESSED_BYTES": 8391438395,
-    "TOTAL_CROSS_SHARD_OVERLAP_TRADES": 2790,
+    "TOTAL_CROSS_SHARD_OVERLAP_TRADES": 83286,
     "TOTAL_DUPLICATE_RECORDS": 0,
     "TOTAL_GAP_RECORDS": 0,
     "TOTAL_INVALID_RECORDS": 0,
@@ -48581,15 +48581,15 @@
     "TOTAL_UNCOMPRESSED_BYTES": 107148022652,
     "TOTAL_UNIQUE_RECORDS": 74328129,
     "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-    "TOTAL_UNIQUE_TRADES_GLOBAL": 1021328,
-    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 2407048,
+    "TOTAL_UNIQUE_TRADES_GLOBAL": null,
+    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 13915097,
     "TOTAL_VALID_RECORDS": 74328129,
     "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
     "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
-    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 483,
+    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 385,
     "TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE": 0,
     "TRADE_SHARDS_WITH_EXACT_COUNT": 2251,
-    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768,
+    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1866,
     "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": true,
     "UNCOMPRESSED_SIZE_EXACT_ASSETS": 36134,
     "UNCOMPRESSED_SIZE_PATCH_DIGEST": "eef5bb22b144f865ca29841d2ab3e2a2bb731ec626a8c6c10bd4af317cb9c46d",

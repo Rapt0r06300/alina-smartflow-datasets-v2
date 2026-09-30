@@ -103,8 +103,8 @@
   },
   "trade_count": 92454,
   "trade_count_exact": true,
-  "unique_trade_count": null,
-  "unique_trade_count_exact": false,
+  "unique_trade_count": 68886,
+  "unique_trade_count_exact": true,
   "validation_allowed": false,
   "venue": "bybit"
 }

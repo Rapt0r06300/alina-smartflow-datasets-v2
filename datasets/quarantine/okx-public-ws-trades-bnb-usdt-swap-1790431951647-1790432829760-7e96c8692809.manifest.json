@@ -107,6 +107,8 @@
   },
   "trade_count": 186,
   "trade_count_exact": true,
+  "unique_trade_count": 186,
+  "unique_trade_count_exact": true,
   "validation_allowed": false,
   "venue": "okx"
 }

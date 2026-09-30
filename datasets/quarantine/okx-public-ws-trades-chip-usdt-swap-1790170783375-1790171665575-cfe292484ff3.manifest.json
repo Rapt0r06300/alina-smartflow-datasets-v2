@@ -101,6 +101,8 @@
       "p95": 154.776353
     }
   },
+  "unique_trade_count": 332,
+  "unique_trade_count_exact": true,
   "validation_allowed": false,
   "venue": "okx"
 }

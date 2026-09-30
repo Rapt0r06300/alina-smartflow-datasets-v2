@@ -101,6 +101,8 @@
       "p95": null
     }
   },
+  "unique_trade_count": 135,
+  "unique_trade_count_exact": true,
   "validation_allowed": false,
   "venue": "hyperliquid"
 }
