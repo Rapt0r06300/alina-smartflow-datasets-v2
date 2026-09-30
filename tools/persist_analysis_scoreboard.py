@@ -29,6 +29,7 @@ def build_receipt(
     evidence_tag: str,
     repository: str,
     unit_id: str,
+    environment_receipt: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     if manifest.get("schema_version") != "alina.resumable_campaign.v2":
         raise ValueError("scoreboard campaign must use resumable campaign v2")
@@ -56,6 +57,22 @@ def build_receipt(
         raise ValueError("durable evidence coordinates are required")
 
     scoreboard_copy = json.loads(json.dumps(dict(scoreboard), sort_keys=True))
+    environment_copy = (
+        json.loads(json.dumps(dict(environment_receipt), sort_keys=True))
+        if isinstance(environment_receipt, Mapping)
+        else None
+    )
+    if environment_copy is not None:
+        if environment_copy.get("schema") != "alina.analysis_stage_artifact.v1":
+            raise ValueError("unexpected analysis stage receipt schema")
+        if environment_copy.get("analysis_stage") != "SCOREBOARD":
+            raise ValueError("environment receipt is not from SCOREBOARD stage")
+        if environment_copy.get("paper_only") is not True or environment_copy.get("real_execution") is not False:
+            raise ValueError("environment receipt is not paper/read-only")
+        provenance = environment_copy.get("environment_provenance")
+        if not isinstance(provenance, Mapping) or not provenance:
+            raise ValueError("environment provenance missing from SCOREBOARD stage receipt")
+
     body = {
         "schema": "alina.analysis_scoreboard_receipt.v1",
         "campaign_id": campaign_id,
@@ -69,6 +86,14 @@ def build_receipt(
         "evidence_tag": str(evidence_tag),
         "scoreboard_sha256": _digest(scoreboard_copy),
         "scoreboard": scoreboard_copy,
+        "environment_receipt_sha256": (
+            _digest(environment_copy) if environment_copy is not None else None
+        ),
+        "environment_provenance": (
+            environment_copy.get("environment_provenance")
+            if environment_copy is not None
+            else None
+        ),
         "paper_only": True,
         "read_only": True,
         "real_execution": False,
@@ -84,6 +109,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--evidence-tag", required=True)
     parser.add_argument("--repository", required=True)
     parser.add_argument("--unit-id", required=True)
+    parser.add_argument("--environment-receipt")
     parser.add_argument("--output", default="catalog/ANALYSIS_SCOREBOARD_RECEIPT.json")
     args = parser.parse_args(argv)
 
@@ -93,6 +119,11 @@ def main(argv: list[str] | None = None) -> int:
         evidence_tag=args.evidence_tag,
         repository=args.repository,
         unit_id=args.unit_id,
+        environment_receipt=(
+            _load(Path(args.environment_receipt))
+            if args.environment_receipt
+            else None
+        ),
     )
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
