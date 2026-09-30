@@ -1,5 +1,5 @@
 {
-  "alina_head": "afcd8b6d775c36f89c69b7a202f4fe7fd809d296",
+  "alina_head": "ef12a9c6ca06d6d956b2c83733f8a1a7feb6d725",
   "cloud_only": true,
   "dataset": {
     "campaign_count": 718,
@@ -54,7 +54,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "74cc350395797f581f8e23714d4f227651bffbc3",
+  "dataset_v2_head": "8df30d81edebda50803e3b25b9fda2905b10eb93",
   "event_intelligence": {
     "economic_proof_allowed": false,
     "economic_proof_complete": true,
@@ -100,7 +100,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T13:01:53.910175Z",
+  "generated_at_utc": "2026-09-30T13:05:17.262323Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "DRAIN",
@@ -114,11 +114,13 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "21e1ae2984952526034131685b448779626c1c9e223ff00aad6d2de13bfb37ca",
+  "receipt_digest": "ac5f3879d0f3e714c5d63e07e12f483059d5c55044b7b48159e586b15e7a98a0",
   "schema": "alina.global_implementation_closure.v1",
   "scoreboard_provenance": {
     "campaign_id": null,
     "dataset_selection_id": null,
+    "environment_provenance": null,
+    "environment_receipt_sha256": null,
     "evidence_tag": null,
     "phase_epoch": null,
     "reason": "CURRENT_SCOREBOARD_RECEIPT_MISSING",
