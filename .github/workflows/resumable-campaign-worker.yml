@@ -168,7 +168,7 @@ jobs:
 
       - id: unit
         name: Run one bounded real unit
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true'
+        if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -241,7 +241,7 @@ jobs:
           cat "$RUNNER_TEMP/result.json"
 
       - name: Normalize missing unit result
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
+        if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
         shell: bash
         run: |
           set -euo pipefail
@@ -268,7 +268,7 @@ jobs:
 
       - id: durable
         name: Persist collection data or analysis evidence
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true'
+        if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true'
         continue-on-error: true
         shell: bash
         run: |
@@ -370,14 +370,14 @@ jobs:
           python tools/record_publication_receipt.py             --campaign-id "$CAMPAIGN_ID"             --unit-id "$UNIT"             --kind "$KIND"             --status "$STATUS"             --phase "$PHASE"             --phase-epoch "$PHASE_EPOCH"             --code-sha "$CODE_SHA"             --dataset-generation "$GENERATION"             --source-collection-epoch "$SOURCE_EPOCH"             --collection-cutoff-at-utc "$CUTOFF"             --dataset-selection-id "$SELECTION"             --checkpoint-id "$CHECKPOINT"             --alina-head "$CODE_SHA"             --dataset-head "$DATASET_HEAD"             --manifest-sha256 "$MANIFEST_SHA"             --release-tag "$RELEASE_TAG"             --evidence-tag "$EVIDENCE_TAG"             --result "$RUNNER_TEMP/result.json"
 
       - name: Downgrade result when durability failed
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true' && steps.durable.outcome == 'failure' && always()
+        if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && steps.durable.outcome == 'failure' && always()
         shell: bash
         run: |
           set -euo pipefail
           python tools/augment_campaign_result.py durability-failure             --result "$RUNNER_TEMP/result.json"
 
       - name: Publish final campaign checkpoint
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
+        if: steps.pin.outcome == 'success' && steps.claim.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
         env:
           LEASE_TOKEN: "${{ steps.claim.outputs.lease_token }}"
           PHASE: "${{ steps.pin.outputs.phase }}"
