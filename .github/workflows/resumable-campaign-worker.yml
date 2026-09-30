@@ -474,6 +474,9 @@ jobs:
           if [ -f catalog/ANALYSIS_SCOREBOARD_RECEIPT.json ]; then
             git add catalog/ANALYSIS_SCOREBOARD_RECEIPT.json
           fi
+          if [ -f catalog/ECONOMIC_IMPROVEMENT_LEDGER.json ]; then
+            git add catalog/ECONOMIC_IMPROVEMENT_LEDGER.json
+          fi
           git commit -m "campaign: checkpoint $CAMPAIGN_ID"
           for i in 1 2 3 4 5; do
             if git pull --rebase origin main && git push origin HEAD:main; then
