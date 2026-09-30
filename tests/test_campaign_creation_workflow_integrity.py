@@ -34,3 +34,11 @@ def test_workflow_has_no_post_launch_duplicated_campaign_body() -> None:
     tail = text[launch:]
     assert "make_campaign() {" not in tail
     assert "PHASE_ARGS+=(--source-collection-epoch" not in tail
+
+
+def test_collect_campaigns_refresh_stale_code_pins_safely() -> None:
+    text = _text()
+    assert "tools/refresh_pending_collect_campaign.py" in text
+    assert 'if [ -f "$P" ] && [ "$PHASE" = "COLLECT" ]; then' in text
+    assert '--expected-phase-epoch "$PHASE_EPOCH"' in text
+    assert text.count("refresh_pending_collect_campaign.py") >= 2
