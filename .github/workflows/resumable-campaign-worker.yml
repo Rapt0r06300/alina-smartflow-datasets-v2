@@ -370,6 +370,13 @@ jobs:
         if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true' && always()
         env:
           LEASE_TOKEN: "${{ steps.claim.outputs.lease_token }}"
+          PHASE: "${{ steps.pin.outputs.phase }}"
+          PHASE_EPOCH: "${{ steps.pin.outputs.phase_epoch }}"
+          RELEASE_TAG: "${{ steps.durable.outputs.release_tag }}"
+          EVIDENCE_TAG: "${{ steps.durable.outputs.evidence_tag }}"
+          UNIT_KIND: "${{ steps.unit.outputs.kind }}"
+          UNIT_ID: "${{ steps.unit.outputs.unit }}"
+          DURABLE_OUTCOME: "${{ steps.durable.outcome }}"
         shell: bash
         run: |
           set -euo pipefail
@@ -435,6 +442,28 @@ jobs:
           )
           open(p,"w").write(json.dumps(m.to_dict(),sort_keys=True,indent=2)+"\n")
           PY
+
+          RESULT_STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$RUNNER_TEMP/result.json")"
+          if [ "$RESULT_STATUS" = "COMPLETE" ] && [ "$DURABLE_OUTCOME" = "success" ]; then
+            CODE_SHA="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["code_sha"])' "$M")"
+            GENERATION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["dataset_generation"])' "$M")"
+            SOURCE_EPOCH="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("source_collection_epoch") or "")' "$M")"
+            CUTOFF="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("collection_cutoff_at_utc") or "")' "$M")"
+            SELECTION="$(python -c 'import json,sys; print(json.load(open(sys.argv[1])).get("dataset_selection_id") or "")' "$M")"
+            CHECKPOINT="$(python -c 'import json,sys; print((json.load(open(sys.argv[1])).get("cursor") or {}).get("checkpoint_id") or "")' "$M")"
+            STATUS="$(python -c 'import json,sys; print(json.load(open(sys.argv[1]))["status"])' "$M")"
+            DATASET_HEAD="$(git rev-parse HEAD)"
+            MANIFEST_SHA="$(sha256sum "$M" | cut -d' ' -f1)"
+            python tools/record_publication_receipt.py \
+              --campaign-id "$CAMPAIGN_ID" --unit-id "$UNIT_ID" --kind "$UNIT_KIND" --status "$STATUS" \
+              --phase "$PHASE" --phase-epoch "$PHASE_EPOCH" --code-sha "$CODE_SHA" \
+              --dataset-generation "$GENERATION" --source-collection-epoch "$SOURCE_EPOCH" \
+              --collection-cutoff-at-utc "$CUTOFF" --dataset-selection-id "$SELECTION" \
+              --checkpoint-id "$CHECKPOINT" --alina-head "$CODE_SHA" --dataset-head "$DATASET_HEAD" \
+              --manifest-sha256 "$MANIFEST_SHA" --release-tag "$RELEASE_TAG" \
+              --evidence-tag "$EVIDENCE_TAG" --result "$RUNNER_TEMP/result.json"
+          fi
+
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           gh auth setup-git
@@ -454,7 +483,10 @@ jobs:
 
 
       - name: Record publication receipt after final checkpoint
-        if: steps.pin.outcome == 'success' && steps.claim.outputs.skip != 'true' && steps.unit.outcome == 'success' && steps.durable.outcome == 'success'
+        # Publication receipt is now generated before the checkpoint commit so
+        # campaign state + receipt are pushed atomically.  Keep this legacy step
+        # disabled to make accidental two-commit publication impossible.
+        if: ${{ false }}
         shell: bash
         env:
           PHASE: "${{ steps.pin.outputs.phase }}"
