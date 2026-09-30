@@ -35,7 +35,7 @@ def test_resumable_creator_is_continuous_hosted_and_frozen():
     assert '"coins":"BTC,ETH,SOL,XRP,DOGE,BNB,AVAX,LINK,SUI,ADA,TRX,TON,WIF,ARB,OP,APT"' not in text
     assert '"universe_mode":"native_discovery_full"' in text
     assert '"require_all_native_venues":True' in text
-    assert "MARKET_SHARDS=8" in text
+    assert "TARGET_MARKET_SHARDS=16" in text
     assert "freeze_market_shards.py" in text
     assert "catalog/market_collection_plans" in text
     assert "MARKET_FULL_PLAN" in text
@@ -117,7 +117,7 @@ def test_controller_worker_are_bounded_hosted_and_collect_relayed():
     assert "other_matrix" in controller
     assert "active_copy=False" in controller
     assert "active_other=0" in controller
-    assert "other_capacity=max(0,12-active_other)" in controller
+    assert "other_capacity=max(0,16-active_other)" in controller
     assert "fromJSON(needs.select.outputs.copy_matrix)" in controller
     assert "fromJSON(needs.select.outputs.other_matrix)" in controller
     assert "dispatch_collect:" in controller
