@@ -212,3 +212,72 @@ def test_pending_analysis_with_completed_work_cannot_be_refreshed(tmp_path: Path
     else:
         raise AssertionError("pending campaign with completed work must be refused")
 
+def test_durable_publication_continuation_refreshes_after_code_fix(tmp_path: Path) -> None:
+    manifest_path = tmp_path / "analysis.json"
+    row = _manifest()
+    row["kind"] = "scoreboard"
+    row["analysis_stage"] = "SCOREBOARD"
+    row["status"] = "CONTINUATION_REQUIRED"
+    row["status_reason"] = "durable_publication_failed"
+    row["terminal_evidence_digest"] = None
+    row["completed_units"] = {
+        "0": {
+            "sha256": "a" * 64,
+            "result": {
+                "status": "FAILED",
+                "reason": "durable_publication_failed",
+                "previous_status": "COMPLETE",
+            },
+        }
+    }
+    raw = json.dumps(row, sort_keys=True, indent=2) + "\n"
+    manifest_path.write_text(raw, encoding="utf-8")
+
+    result = MODULE.requeue(
+        manifest_path=manifest_path,
+        history_dir=tmp_path / "history",
+        code_sha="7" * 40,
+        config_sha256="8" * 64,
+        work_plan_sha256="9" * 64,
+        expected_phase_epoch=3,
+        expected_analysis_stage="SCOREBOARD",
+        expected_source_collection_epoch=2,
+        expected_dataset_selection_id="4" * 64,
+    )
+
+    assert result["requeued"] is True
+    assert ".continuation_required." in result["archive_path"]
+    assert Path(result["archive_path"]).read_text(encoding="utf-8") == raw
+    updated = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert updated["status"] == "PENDING"
+    assert updated["status_reason"] == "retry_after_code_fix"
+    assert updated["code_sha"] == "7" * 40
+    assert updated["completed_units"] == {}
+    assert updated["lease"] is None
+    assert updated["cursor"] == {"max_shards": 128}
+    assert updated["history"][-1]["event"] == "retry_after_code_fix"
+
+
+def test_non_publication_continuation_is_not_refreshable(tmp_path: Path) -> None:
+    manifest_path = tmp_path / "analysis.json"
+    row = _manifest()
+    row["status"] = "CONTINUATION_REQUIRED"
+    row["status_reason"] = "adapter_timeout"
+    manifest_path.write_text(json.dumps(row), encoding="utf-8")
+
+    result = MODULE.requeue(
+        manifest_path=manifest_path,
+        history_dir=tmp_path / "history",
+        code_sha="7" * 40,
+        config_sha256="8" * 64,
+        work_plan_sha256="9" * 64,
+        expected_phase_epoch=3,
+        expected_analysis_stage="PNL_PROOF",
+        expected_source_collection_epoch=2,
+        expected_dataset_selection_id="4" * 64,
+    )
+
+    assert result["requeued"] is False
+    assert result["reason"] == "status_not_refreshable"
+    assert result["status"] == "CONTINUATION_REQUIRED"
+
