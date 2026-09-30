@@ -1,19 +1,19 @@
 {
-  "alina_head": "710d022e5c1fee23639df14873bb170a21cb820f",
+  "alina_head": "afcd8b6d775c36f89c69b7a202f4fe7fd809d296",
   "cloud_only": true,
   "dataset": {
     "campaign_count": 718,
     "coverage": {
-      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 11250,
+      "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 385,
       "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-      "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "b95e928b112a84d7153a8434cb47aac93721eb74a3c3ea539ae1241e06d2c7f9",
+      "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": null,
       "PARTIAL_SHARDS": 16622,
       "RECORD_COUNT_PATCH_DIGEST": "f1e71c11c17e67f0df64ee87d7e9ef325a53907f8c5092b0da7fd122a6d128e5",
       "REJECTED_SHARDS": 7922,
       "REPLAYABLE_SHARDS": 11794,
       "SAFE_SHARDS": 11590,
       "TOTAL_COMPRESSED_BYTES": 8391438395,
-      "TOTAL_CROSS_SHARD_OVERLAP_TRADES": 2790,
+      "TOTAL_CROSS_SHARD_OVERLAP_TRADES": 83286,
       "TOTAL_DUPLICATE_RECORDS": 0,
       "TOTAL_GAP_RECORDS": 0,
       "TOTAL_INVALID_RECORDS": 0,
@@ -32,15 +32,15 @@
       "TOTAL_UNCOMPRESSED_BYTES": 107148022652,
       "TOTAL_UNIQUE_RECORDS": 74328129,
       "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-      "TOTAL_UNIQUE_TRADES_GLOBAL": 1021328,
-      "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 2407048,
+      "TOTAL_UNIQUE_TRADES_GLOBAL": null,
+      "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 13915097,
       "TOTAL_VALID_RECORDS": 74328129,
       "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
       "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
-      "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 483,
+      "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 385,
       "TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE": 0,
       "TRADE_SHARDS_WITH_EXACT_COUNT": 2251,
-      "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1768,
+      "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 1866,
       "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": true,
       "UNCOMPRESSED_SIZE_EXACT_ASSETS": 36134,
       "UNCOMPRESSED_SIZE_PATCH_DIGEST": "eef5bb22b144f865ca29841d2ab3e2a2bb731ec626a8c6c10bd4af317cb9c46d",
@@ -52,19 +52,19 @@
       "VALID_RECORD_COUNT_MISSING_SHARDS": 0
     },
     "metrics_digest": null,
-    "watchdog_status": "ATTENTION"
+    "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "df6aabd0245270658749b2bc83bc178e348ccad0",
+  "dataset_v2_head": "74cc350395797f581f8e23714d4f227651bffbc3",
   "event_intelligence": {
     "economic_proof_allowed": false,
-    "economic_proof_complete": false,
+    "economic_proof_complete": true,
     "idea_count": 120,
-    "partial_proof_count": 117,
+    "partial_proof_count": 0,
     "summary": {
       "BROKEN": 0,
-      "IMPLEMENTED_AND_WIRED": 0,
+      "IMPLEMENTED_AND_WIRED": 117,
       "IMPLEMENTED_BUT_NOT_WIRED": 0,
-      "IMPLEMENTED_BUT_PARTIAL": 117,
+      "IMPLEMENTED_BUT_PARTIAL": 0,
       "MISSING": 0,
       "NOT_APPLICABLE": 3
     },
@@ -77,34 +77,30 @@
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "ECONOMIC_BINDING_INVALID:ECONOMIC_CONTRACT_MISSING",
-      "state": "MORE_DATA"
+      "reason": "CURRENT_SCOREBOARD_RECEIPT_MISSING",
+      "state": "UNMEASURABLE"
     },
     "cross_venue_dislocation": {
-      "evidence_paths": [
-        "docs/audit/CROSS_VENUE_DISLOCATION_FINAL_verdict.json"
-      ],
-      "net_pnl_usd": -0.1366,
-      "paper_only": true,
-      "read_only": true,
-      "real_execution": false,
-      "reason": "ECONOMIC_GATE_REJECTED",
-      "state": "KILL"
-    },
-    "lead_lag": {
-      "evidence_paths": [
-        "runtime/audit/v2_lead_lag/lead_lag_shadow_frozen.json"
-      ],
+      "evidence_paths": [],
       "net_pnl_usd": null,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "ECONOMIC_BINDING_INVALID:ECONOMIC_CONTRACT_MISSING",
-      "state": "MORE_DATA"
+      "reason": "CURRENT_SCOREBOARD_RECEIPT_MISSING",
+      "state": "UNMEASURABLE"
+    },
+    "lead_lag": {
+      "evidence_paths": [],
+      "net_pnl_usd": null,
+      "paper_only": true,
+      "read_only": true,
+      "real_execution": false,
+      "reason": "CURRENT_SCOREBOARD_RECEIPT_MISSING",
+      "state": "UNMEASURABLE"
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T05:59:01.071927Z",
+  "generated_at_utc": "2026-09-30T13:01:53.910175Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "DRAIN",
@@ -118,8 +114,18 @@
     "schema_version": 1,
     "source_collection_epoch": 2
   },
-  "receipt_digest": "bb8da9bc6187dab759413870ec30b52ce60489f4ba3bd02675023d08fa880b1a",
+  "receipt_digest": "21e1ae2984952526034131685b448779626c1c9e223ff00aad6d2de13bfb37ca",
   "schema": "alina.global_implementation_closure.v1",
+  "scoreboard_provenance": {
+    "campaign_id": null,
+    "dataset_selection_id": null,
+    "evidence_tag": null,
+    "phase_epoch": null,
+    "reason": "CURRENT_SCOREBOARD_RECEIPT_MISSING",
+    "scoreboard_sha256": null,
+    "source_collection_epoch": null,
+    "valid": false
+  },
   "security": {
     "carry": "DISABLED_BY_SCOPE",
     "execution_keys_present": false,
