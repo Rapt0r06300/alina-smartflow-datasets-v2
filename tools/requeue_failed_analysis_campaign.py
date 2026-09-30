@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Requeue one failed ANALYZE campaign after a verified code change.
 
-The failed manifest is archived byte-for-byte before mutation. Collection
-campaigns are never eligible. The frozen phase/source epoch/dataset selection
+The prior manifest is archived byte-for-byte before mutation. Collection
+campaigns are never eligible. A CONTINUATION_REQUIRED campaign is refreshable
+only for the narrow durable-publication failure case, where no useful durable
+checkpoint was published. The frozen phase/source epoch/dataset selection
 identity must remain unchanged.
 """
 from __future__ import annotations
@@ -86,9 +88,16 @@ def requeue(
 
     # Periodic creation may observe a campaign after another worker has claimed
     # it. RUNNING/terminal state is authoritative and must be a harmless no-op,
-    # not a failed attempt to rewrite a live lease.
+    # not a failed attempt to rewrite a live lease.  The sole continuation case
+    # that can be refreshed is a failed durable publication: the economic unit
+    # completed, but the canonical receipt was not committed, so rerunning after
+    # a code fix is required and does not discard a valid durable checkpoint.
     current_status = str(row.get("status") or "")
-    if current_status not in {"FAILED", "PENDING"}:
+    continuation_publication_failure = (
+        current_status == "CONTINUATION_REQUIRED"
+        and str(row.get("status_reason") or "") == "durable_publication_failed"
+    )
+    if current_status not in {"FAILED", "PENDING"} and not continuation_publication_failure:
         return {
             "requeued": False,
             "reason": "status_not_refreshable",
@@ -96,7 +105,21 @@ def requeue(
             "campaign_id": row.get("campaign_id"),
         }
     if row.get("lease") is not None:
-        raise SystemExit("cannot refresh a leased FAILED/PENDING campaign")
+        raise SystemExit("cannot refresh a leased analysis campaign")
+    if continuation_publication_failure:
+        completed = row.get("completed_units") or {}
+        if not isinstance(completed, dict) or not completed:
+            raise SystemExit("durable publication continuation lacks failure checkpoint")
+        for unit in completed.values():
+            result = unit.get("result") if isinstance(unit, dict) else None
+            if (
+                not isinstance(result, dict)
+                or result.get("status") != "FAILED"
+                or result.get("reason") != "durable_publication_failed"
+            ):
+                raise SystemExit(
+                    "durable publication continuation contains non-publication work"
+                )
 
     if int(row.get("phase_epoch") or 0) != int(expected_phase_epoch):
         raise SystemExit("phase epoch changed")
@@ -148,7 +171,8 @@ def requeue(
 
     history = list(row.get("history") or [])
     refresh_event = (
-        "retry_after_code_fix" if status == "FAILED"
+        "retry_after_code_fix"
+        if status in {"FAILED", "CONTINUATION_REQUIRED"}
         else "refresh_pending_after_code_fix"
     )
     history.append(
