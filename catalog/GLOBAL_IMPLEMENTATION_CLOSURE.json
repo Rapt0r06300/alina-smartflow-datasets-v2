@@ -12,9 +12,13 @@
         ]
       },
       "forward_paper": {
-        "campaign_ids": [],
-        "complete": false,
-        "states": []
+        "campaign_ids": [
+          "analysis-e5-forward-paper-v2"
+        ],
+        "complete": true,
+        "states": [
+          "COMPLETE"
+        ]
       },
       "module_pnl_proof": {
         "campaign_ids": [],
@@ -47,7 +51,7 @@
         "states": []
       }
     },
-    "campaign_count": 4,
+    "campaign_count": 5,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -119,7 +123,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "602a19fbddbd3aaf3f84eb5b835fc92a8a3eca28",
+  "dataset_v2_head": "e93a32c4e1e8df6b08e690bd5b9d31cb166b6c06",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -127,13 +131,13 @@
       "copy_vault": {
         "champion": null,
         "latest": {
-          "analysis_stage": "OOS",
-          "campaign_id": "analysis-e5-oos-v2",
+          "analysis_stage": "FORWARD_PAPER",
+          "campaign_id": "analysis-e5-forward-paper-v2",
           "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
           "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
           "delta_vs_previous_champion_usd": null,
           "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
-          "evidence_tag": "campaign-evidence-analysis-e5-oos-v2-u0",
+          "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
           "measurement_status": "NON_MESURABLE",
           "metric_source": null,
           "net_pnl_usd": null,
@@ -141,7 +145,7 @@
           "phase_epoch": 5,
           "previous_champion_net_pnl_usd": null,
           "real_execution": false,
-          "scoreboard_sha256": "e8d77ff319f78e62a363373e90bc667fe7889e453feaa328c5538372327bda03",
+          "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
           "source_collection_epoch": 4,
           "status": "NON_MESURABLE",
           "unit_id": "0",
@@ -193,6 +197,53 @@
               "source_collection_epoch": 4,
               "status": "NON_MESURABLE",
               "unit_id": "1",
+              "verdict": "MORE_DATA"
+            }
+          },
+          "FORWARD_PAPER": {
+            "champion": null,
+            "history": [
+              {
+                "analysis_stage": "FORWARD_PAPER",
+                "campaign_id": "analysis-e5-forward-paper-v2",
+                "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+                "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+                "delta_vs_previous_champion_usd": null,
+                "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+                "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+                "measurement_status": "NON_MESURABLE",
+                "metric_source": null,
+                "net_pnl_usd": null,
+                "paper_read_only": true,
+                "phase_epoch": 5,
+                "previous_champion_net_pnl_usd": null,
+                "real_execution": false,
+                "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+                "source_collection_epoch": 4,
+                "status": "NON_MESURABLE",
+                "unit_id": "0",
+                "verdict": "MORE_DATA"
+              }
+            ],
+            "latest": {
+              "analysis_stage": "FORWARD_PAPER",
+              "campaign_id": "analysis-e5-forward-paper-v2",
+              "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+              "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+              "delta_vs_previous_champion_usd": null,
+              "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+              "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+              "measurement_status": "NON_MESURABLE",
+              "metric_source": null,
+              "net_pnl_usd": null,
+              "paper_read_only": true,
+              "phase_epoch": 5,
+              "previous_champion_net_pnl_usd": null,
+              "real_execution": false,
+              "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+              "source_collection_epoch": 4,
+              "status": "NON_MESURABLE",
+              "unit_id": "0",
               "verdict": "MORE_DATA"
             }
           },
@@ -295,13 +346,13 @@
       "cross_venue_dislocation_v2": {
         "champion": null,
         "latest": {
-          "analysis_stage": "OOS",
-          "campaign_id": "analysis-e5-oos-v2",
+          "analysis_stage": "FORWARD_PAPER",
+          "campaign_id": "analysis-e5-forward-paper-v2",
           "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
           "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
           "delta_vs_previous_champion_usd": null,
           "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
-          "evidence_tag": "campaign-evidence-analysis-e5-oos-v2-u0",
+          "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
           "measurement_status": "NON_MESURABLE",
           "metric_source": null,
           "net_pnl_usd": null,
@@ -309,7 +360,7 @@
           "phase_epoch": 5,
           "previous_champion_net_pnl_usd": null,
           "real_execution": false,
-          "scoreboard_sha256": "e8d77ff319f78e62a363373e90bc667fe7889e453feaa328c5538372327bda03",
+          "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
           "source_collection_epoch": 4,
           "status": "NON_MESURABLE",
           "unit_id": "0",
@@ -361,6 +412,53 @@
               "source_collection_epoch": 4,
               "status": "NON_MESURABLE",
               "unit_id": "1",
+              "verdict": "MORE_DATA"
+            }
+          },
+          "FORWARD_PAPER": {
+            "champion": null,
+            "history": [
+              {
+                "analysis_stage": "FORWARD_PAPER",
+                "campaign_id": "analysis-e5-forward-paper-v2",
+                "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+                "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+                "delta_vs_previous_champion_usd": null,
+                "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+                "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+                "measurement_status": "NON_MESURABLE",
+                "metric_source": null,
+                "net_pnl_usd": null,
+                "paper_read_only": true,
+                "phase_epoch": 5,
+                "previous_champion_net_pnl_usd": null,
+                "real_execution": false,
+                "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+                "source_collection_epoch": 4,
+                "status": "NON_MESURABLE",
+                "unit_id": "0",
+                "verdict": "MORE_DATA"
+              }
+            ],
+            "latest": {
+              "analysis_stage": "FORWARD_PAPER",
+              "campaign_id": "analysis-e5-forward-paper-v2",
+              "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+              "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+              "delta_vs_previous_champion_usd": null,
+              "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+              "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+              "measurement_status": "NON_MESURABLE",
+              "metric_source": null,
+              "net_pnl_usd": null,
+              "paper_read_only": true,
+              "phase_epoch": 5,
+              "previous_champion_net_pnl_usd": null,
+              "real_execution": false,
+              "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+              "source_collection_epoch": 4,
+              "status": "NON_MESURABLE",
+              "unit_id": "0",
               "verdict": "MORE_DATA"
             }
           },
@@ -463,13 +561,13 @@
       "lead_lag": {
         "champion": null,
         "latest": {
-          "analysis_stage": "OOS",
-          "campaign_id": "analysis-e5-oos-v2",
+          "analysis_stage": "FORWARD_PAPER",
+          "campaign_id": "analysis-e5-forward-paper-v2",
           "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
           "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
           "delta_vs_previous_champion_usd": null,
           "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
-          "evidence_tag": "campaign-evidence-analysis-e5-oos-v2-u0",
+          "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
           "measurement_status": "NON_MESURABLE",
           "metric_source": null,
           "net_pnl_usd": null,
@@ -477,7 +575,7 @@
           "phase_epoch": 5,
           "previous_champion_net_pnl_usd": null,
           "real_execution": false,
-          "scoreboard_sha256": "e8d77ff319f78e62a363373e90bc667fe7889e453feaa328c5538372327bda03",
+          "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
           "source_collection_epoch": 4,
           "status": "NON_MESURABLE",
           "unit_id": "0",
@@ -529,6 +627,53 @@
               "source_collection_epoch": 4,
               "status": "NON_MESURABLE",
               "unit_id": "1",
+              "verdict": "MORE_DATA"
+            }
+          },
+          "FORWARD_PAPER": {
+            "champion": null,
+            "history": [
+              {
+                "analysis_stage": "FORWARD_PAPER",
+                "campaign_id": "analysis-e5-forward-paper-v2",
+                "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+                "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+                "delta_vs_previous_champion_usd": null,
+                "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+                "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+                "measurement_status": "NON_MESURABLE",
+                "metric_source": null,
+                "net_pnl_usd": null,
+                "paper_read_only": true,
+                "phase_epoch": 5,
+                "previous_champion_net_pnl_usd": null,
+                "real_execution": false,
+                "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+                "source_collection_epoch": 4,
+                "status": "NON_MESURABLE",
+                "unit_id": "0",
+                "verdict": "MORE_DATA"
+              }
+            ],
+            "latest": {
+              "analysis_stage": "FORWARD_PAPER",
+              "campaign_id": "analysis-e5-forward-paper-v2",
+              "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+              "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
+              "delta_vs_previous_champion_usd": null,
+              "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
+              "evidence_tag": "campaign-evidence-analysis-e5-forward-paper-v2-u0",
+              "measurement_status": "NON_MESURABLE",
+              "metric_source": null,
+              "net_pnl_usd": null,
+              "paper_read_only": true,
+              "phase_epoch": 5,
+              "previous_champion_net_pnl_usd": null,
+              "real_execution": false,
+              "scoreboard_sha256": "0119dfea6b63abc3b53ce8af93ab7eb6e36483491065594a35936b9df07e207b",
+              "source_collection_epoch": 4,
+              "status": "NON_MESURABLE",
+              "unit_id": "0",
               "verdict": "MORE_DATA"
             }
           },
@@ -629,7 +774,7 @@
         }
       }
     },
-    "ledger_digest": "533855408a4f3e0301ac1f6432cf586fec704e261bd1c0a4f8788a7cf7d0329b",
+    "ledger_digest": "bcb091224de1d2fa21a7ef1535d26e046da92bf6a435547cd3d69458bcf5f8ec",
     "paper_only": true,
     "policy": "MEILLEUR_RESULTAT_HISTORIQUE_COMPARABLE_PAR_MODULE_ET_ETAPE",
     "read_only": true,
@@ -681,7 +826,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T18:38:32.110144Z",
+  "generated_at_utc": "2026-09-30T18:41:32.737022Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "FORWARD_PAPER",
@@ -695,7 +840,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "1cb3c63533c7c793da3ce860cb8c2a9256558de0f9c44c66b3fbac5221a42980",
+  "receipt_digest": "b99bdff80056c1d6e52190ffabd3c6fa3b1ef21e5bcbbc0f35661ce212e5e665",
   "resume_provenance": {
     "campaign_id": "analysis-e5-retry1-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
