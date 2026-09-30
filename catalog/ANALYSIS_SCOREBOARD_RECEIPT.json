@@ -1,8 +1,8 @@
 {
-  "campaign_id": "analysis-e3-scoreboard-v2",
-  "code_sha": "0f680d62fddc6a9e64f8a83643c9967ae28deb6e",
-  "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
-  "dataset_selection_id": "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106",
+  "campaign_id": "analysis-e5-scoreboard-v2",
+  "code_sha": "8c0b7cc60299c033cfbf8ccb7931a346ee2eb500",
+  "collection_cutoff_at_utc": "2026-09-30T17:06:32.940845Z",
+  "dataset_selection_id": "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0",
   "environment_provenance": {
     "dependency_digest": "d31ca3a2352360ba8306ae79ec7b1a785adfc8aaa296ea19fd0c18c01d6d7d00",
     "dependency_files": [
@@ -16,14 +16,14 @@
     "runner_architecture": "x86_64",
     "timezone": "UTC"
   },
-  "environment_receipt_sha256": "ebd678512427617aab68239bca8073f0c66566770f7114c6607e5c55da089a26",
+  "environment_receipt_sha256": "711bc9a6ebbaf9c740dccf867e4933bcbc06af375825d6067cabb6a396c85e20",
   "evidence_repository": "Rapt0r06300/alina-smartflow-datasets-v2",
-  "evidence_tag": "campaign-evidence-analysis-e3-scoreboard-v2-u2",
+  "evidence_tag": "campaign-evidence-analysis-e5-scoreboard-v2-u0",
   "paper_only": true,
-  "phase_epoch": 3,
+  "phase_epoch": 5,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "d8742f1ec5dc86b1f35fc3662c70d2bce6e80b6455fb5948ff60ce055dcef53f",
+  "receipt_digest": "898f05952ea3958ef342e47385ab1a25810a357d9e3f7073f0fe7b9d336057f3",
   "schema": "alina.analysis_scoreboard_receipt.v1",
   "scoreboard": {
     "active_families": [
@@ -37,7 +37,7 @@
     ],
     "families": {
       "copy_vault": {
-        "assumption_snapshot_hash": "1b09325a63590af0295949c44dc178dc9abc2ea14a663801350b8822cdddea69",
+        "assumption_snapshot_hash": "be49fdbc833528d767bb0e5041c4d8c0e81425e9621e8340d139fbe97c76b1e4",
         "campaign_id": null,
         "closed_positions": 0,
         "comparison_metric_source": null,
@@ -62,7 +62,7 @@
           "complete_utc_days_only": false,
           "completed_cutoff_exclusive_ms": 1790726400000,
           "days": [],
-          "evaluated_at_ms": 1790778998390,
+          "evaluated_at_ms": 1790794179188,
           "excluded_incomplete_days_utc": [],
           "excluded_incomplete_trade_count": 0,
           "mean_daily_net_pnl_usd": null,
@@ -108,12 +108,12 @@
         },
         "duplicate_trade_ids": 0,
         "economic_binding": {
-          "assumption_snapshot_hash": "1b09325a63590af0295949c44dc178dc9abc2ea14a663801350b8822cdddea69",
-          "bundle_hash": "ed73259aebf3a33224de52df116cf76b505ee873e2ad1ac84332091704e9f98b",
+          "assumption_snapshot_hash": "be49fdbc833528d767bb0e5041c4d8c0e81425e9621e8340d139fbe97c76b1e4",
+          "bundle_hash": "582c3b40201bd7ef357cd174eff8736988f11925275f80ae19e2705b494c3ae9",
           "family": "COPY_VAULT",
           "formula_snapshot_hash": "c998a87d8d1a5599440e5f432df6485ca11d3c44d1929522a17f07aac3554ed6",
           "issues": [],
-          "numeric_provenance_hash": "eb97a1cf63aac9b854f266a1f644c25c4b527f5220bb2aaddc2a85c5b34f0246",
+          "numeric_provenance_hash": "6f0a9bc2ba73f1c970427813c8064a952cb74e80144320a84e1c27661a9bf1f4",
           "policy_version": "hypersmart.economic_policy.v21",
           "ready": true,
           "reality_model_hash": "8a1e110aab28dc18b91c38f016238011b2eed6ceb0ab42e6d0aab4601479622f",
@@ -196,11 +196,11 @@
                 "observed_at": null,
                 "owner": "HyperSmart/copy_vault",
                 "revalidate_after": null,
-                "source_hash": "76969016b449a2c2594f411350de63d5ea93fb4d55fcc30402fb021e1ebb9edb",
+                "source_hash": "804cd0a083a08bc538fa1f11abaaf820a4c2b3527d1635e59970ff56f7754dfa",
                 "source_ref": "project:backtesting/copy_vault_protocol.py#NOTIONAL_USD",
                 "unit": "USD",
                 "valid_until": null,
-                "value": 150.0
+                "value": 100.0
               },
               {
                 "assumption_id": "copy_vault.round_trip_fee_bps",
@@ -260,9 +260,9 @@
             ],
             "schema": "hypersmart.economic_assumption_snapshot.v1"
           },
-          "assumption_snapshot_hash": "1b09325a63590af0295949c44dc178dc9abc2ea14a663801350b8822cdddea69",
+          "assumption_snapshot_hash": "be49fdbc833528d767bb0e5041c4d8c0e81425e9621e8340d139fbe97c76b1e4",
           "certification": {
-            "assumption_snapshot_hash": "1b09325a63590af0295949c44dc178dc9abc2ea14a663801350b8822cdddea69",
+            "assumption_snapshot_hash": "be49fdbc833528d767bb0e5041c4d8c0e81425e9621e8340d139fbe97c76b1e4",
             "failures": [],
             "ready": true,
             "required_ids": [
@@ -290,12 +290,12 @@
             "exact_l2_vwap_observed"
           ],
           "economic_evidence_bundle": {
-            "assumption_snapshot_hash": "1b09325a63590af0295949c44dc178dc9abc2ea14a663801350b8822cdddea69",
-            "bundle_hash": "ed73259aebf3a33224de52df116cf76b505ee873e2ad1ac84332091704e9f98b",
+            "assumption_snapshot_hash": "be49fdbc833528d767bb0e5041c4d8c0e81425e9621e8340d139fbe97c76b1e4",
+            "bundle_hash": "582c3b40201bd7ef357cd174eff8736988f11925275f80ae19e2705b494c3ae9",
             "family": "COPY_VAULT",
             "formula_snapshot_hash": "c998a87d8d1a5599440e5f432df6485ca11d3c44d1929522a17f07aac3554ed6",
             "maturity_stage": "BUILT",
-            "numeric_provenance_hash": "eb97a1cf63aac9b854f266a1f644c25c4b527f5220bb2aaddc2a85c5b34f0246",
+            "numeric_provenance_hash": "6f0a9bc2ba73f1c970427813c8064a952cb74e80144320a84e1c27661a9bf1f4",
             "policy_version": "hypersmart.economic_policy.v21",
             "reality_model_components": {
               "fee_treatment": "copy_vault.round_trip_fee.v1:2xHL",
@@ -354,7 +354,7 @@
               "fee.taker.hyperliquid.bps"
             ]
           },
-          "numeric_provenance_hash": "eb97a1cf63aac9b854f266a1f644c25c4b527f5220bb2aaddc2a85c5b34f0246",
+          "numeric_provenance_hash": "6f0a9bc2ba73f1c970427813c8064a952cb74e80144320a84e1c27661a9bf1f4",
           "numeric_provenance_pointers": {
             "copy_vault.copy_delay_ms": {
               "chain": [
@@ -416,13 +416,13 @@
                   "assumption_id": "copy_vault.paper_notional_usd",
                   "classification": "ASSUMPTION",
                   "formula_id": null,
-                  "source_hash": "76969016b449a2c2594f411350de63d5ea93fb4d55fcc30402fb021e1ebb9edb",
+                  "source_hash": "804cd0a083a08bc538fa1f11abaaf820a4c2b3527d1635e59970ff56f7754dfa",
                   "source_ref": "project:backtesting/copy_vault_protocol.py#NOTIONAL_USD",
                   "unit": "USD",
-                  "value": 150.0
+                  "value": 100.0
                 }
               ],
-              "terminal_value": 150.0
+              "terminal_value": 100.0
             },
             "copy_vault.round_trip_fee_bps": {
               "chain": [
@@ -494,12 +494,12 @@
             "copy_vault.copy_delay_ms": 60000.0,
             "copy_vault.max_reference_lag_ms": 30000.0,
             "copy_vault.max_target_lag_ms": 30000.0,
-            "copy_vault.paper_notional_usd": 150.0,
+            "copy_vault.paper_notional_usd": 100.0,
             "copy_vault.round_trip_fee_bps": 9.0,
             "fee.taker.hyperliquid.bps": 4.5
           }
         },
-        "economic_evidence_bundle_hash": "ed73259aebf3a33224de52df116cf76b505ee873e2ad1ac84332091704e9f98b",
+        "economic_evidence_bundle_hash": "582c3b40201bd7ef357cd174eff8736988f11925275f80ae19e2705b494c3ae9",
         "economic_policy_version": "hypersmart.economic_policy.v21",
         "eligible_net_pnl_usd": null,
         "evidence_paths": [
@@ -527,7 +527,7 @@
           "trade_ids_count": 0,
           "trade_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
-        "generated_at_ms": 1790778998390,
+        "generated_at_ms": 1790794179188,
         "gross_pnl_usd": null,
         "hit_rate": null,
         "in_sample": null,
@@ -537,7 +537,7 @@
         "measurement_status": "NON_MESURABLE",
         "net_pnl_usd": null,
         "no_trade_count": null,
-        "numeric_provenance_hash": "eb97a1cf63aac9b854f266a1f644c25c4b527f5220bb2aaddc2a85c5b34f0246",
+        "numeric_provenance_hash": "6f0a9bc2ba73f1c970427813c8064a952cb74e80144320a84e1c27661a9bf1f4",
         "objective_reasons": [
           "PARAMETERS_NOT_FROZEN_BEFORE_EVALUATION",
           "POSITIONS_NOT_FULLY_OPENED_AND_CLOSED",
@@ -725,7 +725,7 @@
           "complete_utc_days_only": false,
           "completed_cutoff_exclusive_ms": 1790726400000,
           "days": [],
-          "evaluated_at_ms": 1790778998943,
+          "evaluated_at_ms": 1790794179742,
           "excluded_incomplete_days_utc": [],
           "excluded_incomplete_trade_count": 0,
           "mean_daily_net_pnl_usd": null,
@@ -1332,7 +1332,7 @@
           "trade_ids_count": null,
           "trade_ids_sha256": null
         },
-        "generated_at_ms": 1790778998943,
+        "generated_at_ms": 1790794179741,
         "gross_pnl_usd": null,
         "hit_rate": 0.0,
         "hypothesis_audit": {
@@ -1508,7 +1508,7 @@
           "complete_utc_days_only": false,
           "completed_cutoff_exclusive_ms": 1790726400000,
           "days": [],
-          "evaluated_at_ms": 1790778998939,
+          "evaluated_at_ms": 1790794179738,
           "excluded_incomplete_days_utc": [],
           "excluded_incomplete_trade_count": 0,
           "mean_daily_net_pnl_usd": null,
@@ -1897,7 +1897,7 @@
         "fees_usd": null,
         "formula_snapshot_hash": "469c9c1d3517341c2f776c56901e7d43122ce2b541dc3fcbe153d1f918523466",
         "forward": null,
-        "generated_at_ms": 1790778998939,
+        "generated_at_ms": 1790794179738,
         "gross_pnl_usd": null,
         "hit_rate": null,
         "in_sample": null,
@@ -1974,7 +1974,7 @@
     "schema_version": "hypersmart.economic_family_scoreboards.v2",
     "starting_capital_usd": 100.0
   },
-  "scoreboard_sha256": "29f597f2054914880acc4376d2f43a92404c09a71ba4153d264d70e9dbf1f8c0",
-  "source_collection_epoch": 2,
-  "unit_id": "2"
+  "scoreboard_sha256": "b8c060d573c78885d9dd653d2c94622dd96410a0d67869b6ca930aec0b84295b",
+  "source_collection_epoch": 4,
+  "unit_id": "0"
 }
