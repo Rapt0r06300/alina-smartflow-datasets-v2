@@ -95,6 +95,7 @@ jobs:
       campaign_id: ${{ needs.select.outputs.campaign_id }}
       max_units: 1
     permissions:
+      actions: write
       contents: write
 
   verify_checkpoint:
@@ -150,6 +151,7 @@ jobs:
       campaign_id: ${{ needs.select.outputs.campaign_id }}
       max_units: 0
     permissions:
+      actions: write
       contents: write
 
   receipt:
