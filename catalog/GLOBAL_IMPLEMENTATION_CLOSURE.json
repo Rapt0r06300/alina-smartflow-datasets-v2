@@ -23,9 +23,15 @@
         "states": []
       },
       "replay": {
-        "campaign_ids": [],
+        "campaign_ids": [
+          "analysis-e5-replay-v2",
+          "analysis-e5-resume-proof-v1"
+        ],
         "complete": false,
-        "states": []
+        "states": [
+          "PENDING",
+          "PENDING"
+        ]
       },
       "scoreboard": {
         "campaign_ids": [],
@@ -33,7 +39,7 @@
         "states": []
       }
     },
-    "campaign_count": 0,
+    "campaign_count": 2,
     "complete": false,
     "required_kinds": [
       "replay",
@@ -43,8 +49,10 @@
       "module_pnl_proof",
       "scoreboard"
     ],
-    "selection_coherent": false,
-    "selection_ids": []
+    "selection_coherent": true,
+    "selection_ids": [
+      "7a3eac7dd7921edc138f854c3883789f4639b1b77061d7c57a61592abc2530e0"
+    ]
   },
   "cloud_only": true,
   "dataset": {
@@ -100,7 +108,7 @@
     "metrics_digest": null,
     "watchdog_status": "ATTENTION"
   },
-  "dataset_v2_head": "de965481c95fa03407b1b0fc86a2875c7c310675",
+  "dataset_v2_head": "14e93a496a20cffc3a20451305fc7f74a0dd47fb",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -380,7 +388,7 @@
     }
   },
   "final_validation_complete": false,
-  "generated_at_utc": "2026-09-30T17:12:06.955166Z",
+  "generated_at_utc": "2026-09-30T17:12:57.483433Z",
   "implementation_complete": false,
   "phase": {
     "analysis_stage": "REPLAY",
@@ -394,7 +402,7 @@
     "schema_version": 1,
     "source_collection_epoch": 4
   },
-  "receipt_digest": "6e03fbee2e2796217fbad95c4091423f66098e6615f013185760f8fbaeec130b",
+  "receipt_digest": "61d0828cb37b2e39945a7829bf652ca919bbda8313cb69a9396642a1c656df63",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
