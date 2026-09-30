@@ -64,10 +64,21 @@
       "from": "RUNNING",
       "reason": "durable_publication_failed",
       "to": "CONTINUATION_REQUIRED"
+    },
+    {
+      "at": "2026-09-30T14:29:53.054629Z",
+      "from": "CONTINUATION_REQUIRED",
+      "reason": "worker_started",
+      "to": "RUNNING"
     }
   ],
   "kind": "scoreboard",
-  "lease": null,
+  "lease": {
+    "acquired_at": "2026-09-30T14:29:53.054579Z",
+    "expires_at": "2026-09-30T20:14:53.054579Z",
+    "lease_token_sha256": "bca6b24acde6e7f2eadfc0a7940f9b32cf577e30a9f14663af5d8156f5c1d148",
+    "owner_run_id": "36729218299"
+  },
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -85,9 +96,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": 2,
-  "status": "CONTINUATION_REQUIRED",
-  "status_reason": "durable_publication_failed",
+  "status": "RUNNING",
+  "status_reason": "worker_started",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T14:28:04.486773Z",
+  "updated_at": "2026-09-30T14:29:53.054629Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
