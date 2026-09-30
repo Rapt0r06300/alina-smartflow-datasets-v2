@@ -120,7 +120,7 @@ jobs:
           copy_ids=copy_ids[:1]
           if active_copy:
               copy_ids=[]
-          other_capacity=max(0,12-active_other)
+          # Keep four hosted-runner slots free for Copy-Vault, watchdog, quality, and control jobs.\n          other_capacity=max(0,16-active_other)
           other_ids=other_ids[:other_capacity]
           print("copy_count="+str(len(copy_ids)))
           print("copy_matrix="+json.dumps({"campaign_id":copy_ids},separators=(",",":")))

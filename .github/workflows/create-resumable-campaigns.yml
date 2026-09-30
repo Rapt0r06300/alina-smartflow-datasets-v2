@@ -172,23 +172,30 @@ jobs:
             # derive disjoint market shards from that exact snapshot. Every
             # coin keeps all of its venue symbols on one runner so receive-clock
             # comparisons remain meaningful across venues.
-            MARKET_SHARDS=8
+            TARGET_MARKET_SHARDS=16
+            MARKET_SHARDS="$TARGET_MARKET_SHARDS"
             MARKET_PLAN_DIR="catalog/market_collection_plans/$BUCKET"
             MARKET_FULL_PLAN="$MARKET_PLAN_DIR/full.json"
             MARKET_SHARD_INDEX="$MARKET_PLAN_DIR/index.json"
             mkdir -p "$MARKET_PLAN_DIR"
-            if [ ! -f "$MARKET_FULL_PLAN" ]; then
-              PYTHONPATH=alina/src python alina/tools/discover_cloud_collection_plan.py \
-                --output "$MARKET_FULL_PLAN" \
-                --min-venues 2 \
-                --max-coins 0 \
-                --batch-size 8
+            if [ -f "$MARKET_SHARD_INDEX" ]; then
+              MARKET_SHARDS="$(python -c 'import json,sys; print(int(json.load(open(sys.argv[1],encoding="utf-8"))["market_shard_count"]))' "$MARKET_SHARD_INDEX")"
+              test "$MARKET_SHARDS" -gt 0
+              echo "preserving frozen current-bucket market_shard_count=$MARKET_SHARDS"
+            else
+              if [ ! -f "$MARKET_FULL_PLAN" ]; then
+                PYTHONPATH=alina/src python alina/tools/discover_cloud_collection_plan.py \
+                  --output "$MARKET_FULL_PLAN" \
+                  --min-venues 2 \
+                  --max-coins 0 \
+                  --batch-size 8
+              fi
+              python tools/freeze_market_shards.py \
+                --plan "$MARKET_FULL_PLAN" \
+                --output-dir "$MARKET_PLAN_DIR" \
+                --shard-count "$MARKET_SHARDS" \
+                --index-output "$MARKET_SHARD_INDEX"
             fi
-            python tools/freeze_market_shards.py \
-              --plan "$MARKET_FULL_PLAN" \
-              --output-dir "$MARKET_PLAN_DIR" \
-              --shard-count "$MARKET_SHARDS" \
-              --index-output "$MARKET_SHARD_INDEX"
 
             python - <<'PY' "$MARKET_SHARD_INDEX" > "$RUNNER_TEMP/market-shards.tsv"
           import json,sys

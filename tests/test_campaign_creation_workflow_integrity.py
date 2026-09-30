@@ -49,8 +49,16 @@ def test_controller_does_not_serialize_fresh_market_behind_copy_fanout() -> None
     assert "group: resumable-campaign-controller-v4" in controller
     assert "copy_ids=copy_ids[:1]" in controller
     assert "active_other=0" in controller
-    assert "other_capacity=max(0,12-active_other)" in controller
+    assert "other_capacity=max(0,16-active_other)" in controller
     assert "other_ids=other_ids[:other_capacity]" in controller
     assert "dispatch_collect:" in controller
     assert "gh workflow run resumable-campaign-worker.yml" in controller
     assert "needs.select.outputs.phase != 'COLLECT'" in controller
+
+
+def test_collect_market_shards_scale_without_repartitioning_live_bucket() -> None:
+    text = _text()
+    assert "TARGET_MARKET_SHARDS=16" in text
+    assert 'if [ -f "$MARKET_SHARD_INDEX" ]; then' in text
+    assert 'preserving frozen current-bucket market_shard_count=$MARKET_SHARDS' in text
+    assert '--shard-count "$MARKET_SHARDS"' in text
