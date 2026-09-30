@@ -117,3 +117,26 @@ def test_native_trade_keys_fail_closed_when_composite_is_ambiguous():
         symbol="BTC",
     )
     assert keys is None
+
+def test_native_trade_keys_support_hyperliquid_userfills_nested_envelope():
+    record = {
+        "raw_payload": {
+            "channel": "userFills",
+            "data": {
+                "user": "0xabc",
+                "isSnapshot": False,
+                "fills": [
+                    {"tid": 101, "time": 10, "px": "100", "sz": "1", "side": "B", "coin": "BTC"},
+                    {"tid": 102, "time": 11, "px": "101", "sz": "2", "side": "A", "coin": "BTC"},
+                ],
+            },
+        }
+    }
+    keys = global_counts._native_trade_keys(
+        record, venue="hyperliquid", family="copy_vault_fills", symbol="0xabc"
+    )
+    assert keys == [
+        "hyperliquid|copy_vault_fills|0xabc|tid|101",
+        "hyperliquid|copy_vault_fills|0xabc|tid|102",
+    ]
+
