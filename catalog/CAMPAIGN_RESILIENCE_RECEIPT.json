@@ -1,5 +1,5 @@
 {
-  "campaign_count": 722,
+  "campaign_count": 724,
   "campaigns": [
     {
       "analysis_stage": "BACKTEST",
@@ -15,12 +15,38 @@
       "terminal_evidence_digest": "bb26c39557660fab50a3ec6aa05f2a00a3ea4d307892a29451ec417299e6a96c"
     },
     {
+      "analysis_stage": "FORWARD_PAPER",
+      "campaign_id": "analysis-e3-forward-paper-v2",
+      "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "7067526638587709da9ab3cc0446e783ad44b24a1f60629047ca9929b6ea4367"
+    },
+    {
       "analysis_stage": "OOS",
       "campaign_id": "analysis-e3-oos-v2",
       "checkpoint_count": 0,
+      "completed_unit_count": 1,
+      "has_lease": false,
+      "history_count": 3,
+      "migrated_from_v1_history_path": null,
+      "migrated_from_v1_sha256": null,
+      "schema_version": "alina.resumable_campaign.v2",
+      "status": "COMPLETE",
+      "terminal_evidence_digest": "2adfc299c9932cc8e0120f50ebb5b997d05f1fb953feba7fcb4d12c74dee26e7"
+    },
+    {
+      "analysis_stage": "PNL_PROOF",
+      "campaign_id": "analysis-e3-pnl-proof-v2",
+      "checkpoint_count": 0,
       "completed_unit_count": 0,
       "has_lease": false,
-      "history_count": 1,
+      "history_count": 6,
       "migrated_from_v1_history_path": null,
       "migrated_from_v1_sha256": null,
       "schema_version": "alina.resumable_campaign.v2",
@@ -4559,7 +4585,7 @@
     }
   },
   "failure_matrix_status": "BLOCKED",
-  "generated_at_utc": "2026-09-30T13:42:05.394749Z",
+  "generated_at_utc": "2026-09-30T14:17:54.131055Z",
   "historical_v1_campaigns": [
     {
       "campaign_id": "archives-binance-btc-20260927-v4",
@@ -7558,10 +7584,10 @@
   "paper_only": true,
   "read_only": true,
   "real_execution": false,
-  "receipt_digest": "54cc244c402b52b5c78a83512d6293b3feb8898f9251351cb622b78d1684eecd",
+  "receipt_digest": "1dc41614673016d258382a59cd77705b750fc8c6b58c708c200f51d7b3ab8427",
   "schema": "alina.campaign_resilience_receipt.v2",
   "status": "BLOCKED",
-  "v2_campaign_count": 348,
+  "v2_campaign_count": 350,
   "violations": [
     {
       "campaign_id": "analysis-e3-resume-proof-v1",

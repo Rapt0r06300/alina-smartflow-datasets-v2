@@ -1,6 +1,6 @@
 {
   "backlog_by_kind": {
-    "oos": 1
+    "module_pnl_proof": 1
   },
   "by_family": {
     "activeassetctx": {
@@ -48554,12 +48554,14 @@
     "copy_vault_collection:UNAVAILABLE": 31,
     "event_intelligence_collection:COMPLETE": 15,
     "event_intelligence_collection:UNAVAILABLE": 1,
+    "forward_paper:COMPLETE": 1,
     "market_collection:COMPLETE": 3,
     "market_collection:FAILED": 11,
     "market_collection:UNAVAILABLE": 2,
     "module_pnl_proof:FAILED": 7,
+    "module_pnl_proof:PENDING": 1,
     "official_archive_collection:COMPLETE": 2,
-    "oos:PENDING": 1,
+    "oos:COMPLETE": 1,
     "replay:COMPLETE": 16,
     "replay:FAILED": 1
   },
@@ -48587,15 +48589,59 @@
       "updated_at": "2026-09-30T13:39:36.509455Z"
     },
     {
+      "analysis_stage": "FORWARD_PAPER",
+      "attempts": 0,
+      "campaign_id": "analysis-e3-forward-paper-v2",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "ANALYZE",
+      "kind": "forward_paper",
+      "last_checkpoint_id": "7067526638587709da9ab3cc0446e783ad44b24a1f60629047ca9929b6ea4367",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 3,
+      "source_collection_epoch": 2,
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-09-30T13:49:44.440993Z"
+    },
+    {
       "analysis_stage": "OOS",
       "attempts": 0,
       "campaign_id": "analysis-e3-oos-v2",
       "chunk_index": 0,
       "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "ANALYZE",
       "kind": "oos",
+      "last_checkpoint_id": "2adfc299c9932cc8e0120f50ebb5b997d05f1fb953feba7fcb4d12c74dee26e7",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 3,
+      "source_collection_epoch": 2,
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-09-30T13:44:42.825325Z"
+    },
+    {
+      "analysis_stage": "PNL_PROOF",
+      "attempts": 1,
+      "campaign_id": "analysis-e3-pnl-proof-v2",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": "ANALYZE",
+      "kind": "module_pnl_proof",
       "last_checkpoint_id": null,
       "lease": null,
       "lease_expires_at": null,
@@ -48605,8 +48651,8 @@
       "phase_epoch": 3,
       "source_collection_epoch": 2,
       "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T13:41:08.244955Z"
+      "status_reason": "retry_after_code_fix",
+      "updated_at": "2026-09-30T14:17:10.027Z"
     },
     {
       "analysis_stage": "REPLAY",
@@ -64504,20 +64550,20 @@
     "unique_trade_count_exact": true,
     "valid_record_count_exact": true
   },
-  "dataset_commit": "6bad2fa89946bf1ec0b77dbf24d69f1fe6e905b3",
+  "dataset_commit": "b4c4a1a213e5c0cf16375d724f4d151a66ec6543",
   "metrics_digest": "28d0d8fd7d3dd63303f59e7ebade6b8bc60f4e322bd7f82de0cca62c38d6baff",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
   "oldest_next_due_at": null,
-  "oldest_pending_updated_at": "2026-09-30T13:41:08.244955Z",
+  "oldest_pending_updated_at": "2026-09-30T14:17:10.027Z",
   "pending_campaign_count": 1,
   "phase": {
-    "analysis_stage": "OOS",
+    "analysis_stage": "PNL_PROOF",
     "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
     "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
     "epoch": 3,
     "phase": "ANALYZE",
-    "request_id": "3a45bcccede08a4520a68e3682b36a02738c5f18c13d81365d4aa25e06983c8c",
+    "request_id": "f1e37526c43974d69c62eb8014175adc66e44557b9f9e55f73473704afe0f87b",
     "requested_at_utc": "2026-09-29T10:56:59.390365Z",
     "requested_by": "codex-work-cloud",
     "schema_version": 1,
@@ -64527,7 +64573,7 @@
     "mismatches": [],
     "status": "CONSISTENT"
   },
-  "receipt_digest": "a3714ce414bdce549917758cebb1ee11e6851e25382a2a65b0b1dc963c479e18",
+  "receipt_digest": "7f6f972ff19b72cd8c46dba5bf390655e3a9a9ab8e33c685cf53a175dd001cf8",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
