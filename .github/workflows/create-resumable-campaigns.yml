@@ -16,6 +16,7 @@ on:
       - 'tools/resolve_analysis_selection.py'
       - 'tools/supersede_copy_vault_fanout.py'
       - 'tools/requeue_failed_analysis_campaign.py'
+      - 'tools/refresh_pending_collect_campaign.py'
       - 'control/alina-phase.json'
   workflow_dispatch:
 
@@ -141,6 +142,23 @@ jobs:
                 --expected-analysis-stage "$ANALYSIS_STAGE" \
                 --expected-source-collection-epoch "$SOURCE_COLLECTION_EPOCH" \
                 --expected-dataset-selection-id "$DATASET_SELECTION_ID"
+              return 0
+            fi
+            if [ -f "$P" ] && [ "$PHASE" = "COLLECT" ]; then
+              # Refresh only stale, unleased, non-productive current-epoch
+              # collection manifests. The helper archives the prior manifest
+              # byte-for-byte and refuses to rewrite live/durable work.
+              git fetch origin main
+              if git cat-file -e "origin/main:$P" 2>/dev/null; then
+                git show "origin/main:$P" > "$P"
+              fi
+              python tools/refresh_pending_collect_campaign.py \
+                --manifest "$P" \
+                --history-dir catalog/campaign-history \
+                --code-sha "$CODE_SHA" \
+                --config-sha256 "$CFG_SHA" \
+                --work-plan-sha256 "$PLAN_SHA" \
+                --expected-phase-epoch "$PHASE_EPOCH"
               return 0
             fi
             if [ ! -f "$P" ]; then
