@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from tools.advance_analysis_stage import _required_campaign_gate
+from tools.advance_analysis_stage import _required_campaign_gate, _superseded_campaign_ids
 
 
 def test_analysis_stage_gates_do_not_require_target_work_before_target_entry():
@@ -90,3 +90,60 @@ def test_create_resumable_workflow_analysis_block_is_well_formed():
     assert '--analysis-stage "$ANALYSIS_STAGE"' in text
     assert 'PHASE_ARGS+=(--operator-request-id "$REQUEST_ID")' in text
     assert "grep -Eq '^[0-9a-f]{64}          PLAN_SHA=" not in text
+
+
+def test_required_campaign_gate_accepts_exact_complete_supersession():
+    identity = {
+        "kind": "replay",
+        "creation_phase": "ANALYZE",
+        "phase_epoch": 5,
+        "source_collection_epoch": 4,
+        "dataset_selection_id": "selection-a",
+        "collection_cutoff_at_utc": "2026-09-30T17:06:32Z",
+        "work_plan_sha256": "a" * 64,
+        "config_sha256": "b" * 64,
+    }
+    rows = [
+        {**identity, "campaign_id": "attempt-1", "status": "FAILED"},
+        {
+            **identity,
+            "campaign_id": "attempt-2",
+            "status": "COMPLETE",
+            "supersedes_campaign_ids": ["attempt-1"],
+        },
+    ]
+
+    assert _superseded_campaign_ids(rows) == {"attempt-1"}
+    assert _required_campaign_gate(
+        rows, {"epoch": 5, "source_collection_epoch": 4}, {"replay"}
+    ) == ([], [])
+
+
+def test_required_campaign_gate_rejects_mismatched_supersession():
+    identity = {
+        "kind": "replay",
+        "creation_phase": "ANALYZE",
+        "phase_epoch": 5,
+        "source_collection_epoch": 4,
+        "dataset_selection_id": "selection-a",
+        "collection_cutoff_at_utc": "2026-09-30T17:06:32Z",
+        "work_plan_sha256": "a" * 64,
+        "config_sha256": "b" * 64,
+    }
+    rows = [
+        {**identity, "campaign_id": "attempt-1", "status": "FAILED"},
+        {
+            **identity,
+            "campaign_id": "attempt-2",
+            "status": "COMPLETE",
+            "dataset_selection_id": "different-selection",
+            "supersedes_campaign_ids": ["attempt-1"],
+        },
+    ]
+
+    assert _superseded_campaign_ids(rows) == set()
+    missing, incomplete = _required_campaign_gate(
+        rows, {"epoch": 5, "source_collection_epoch": 4}, {"replay"}
+    )
+    assert missing == []
+    assert incomplete == ["attempt-1"]

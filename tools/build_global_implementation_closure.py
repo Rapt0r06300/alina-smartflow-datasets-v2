@@ -190,6 +190,39 @@ def validate_current_resume_receipt(
     return True, "CURRENT_RESUME_RECEIPT_VALID", receipt
 
 
+def _superseded_campaign_ids(rows):
+    """Return explicitly superseded attempts only when replacement identity is exact."""
+    by_id = {
+        str(row.get("campaign_id")): row
+        for row in rows
+        if row.get("campaign_id")
+    }
+    identity_fields = (
+        "creation_phase",
+        "phase_epoch",
+        "source_collection_epoch",
+        "kind",
+        "dataset_selection_id",
+        "collection_cutoff_at_utc",
+        "work_plan_sha256",
+        "config_sha256",
+    )
+    superseded = set()
+    for replacement in rows:
+        if replacement.get("status") != "COMPLETE":
+            continue
+        declared = replacement.get("supersedes_campaign_ids")
+        if not isinstance(declared, list):
+            continue
+        for campaign_id in declared:
+            original = by_id.get(str(campaign_id))
+            if not isinstance(original, dict):
+                continue
+            if all(original.get(key) == replacement.get(key) for key in identity_fields):
+                superseded.add(str(campaign_id))
+    return superseded
+
+
 def current_analysis_campaign_status(
     dataset: Path,
     phase: Mapping[str, Any],
@@ -207,9 +240,15 @@ def current_analysis_campaign_status(
         ):
             rows.append(row)
 
+    superseded = _superseded_campaign_ids(rows)
+    effective_rows = [
+        row for row in rows
+        if str(row.get("campaign_id") or "") not in superseded
+    ]
+
     by_kind: dict[str, Any] = {}
     for kind in ANALYSIS_KINDS:
-        scoped = [row for row in rows if row.get("kind") == kind]
+        scoped = [row for row in effective_rows if row.get("kind") == kind]
         by_kind[kind] = {
             "campaign_ids": sorted(str(row.get("campaign_id") or "") for row in scoped),
             "states": sorted(str(row.get("status") or "") for row in scoped),
@@ -218,15 +257,18 @@ def current_analysis_campaign_status(
 
     selection_ids = sorted({
         str(row.get("dataset_selection_id"))
-        for row in rows
+        for row in effective_rows
         if row.get("dataset_selection_id")
     })
-    all_have_selection = bool(rows) and all(bool(row.get("dataset_selection_id")) for row in rows)
+    all_have_selection = bool(effective_rows) and all(
+        bool(row.get("dataset_selection_id")) for row in effective_rows
+    )
     selection_coherent = all_have_selection and len(selection_ids) == 1
     all_complete = all(by_kind[kind]["complete"] for kind in ANALYSIS_KINDS)
     return all_complete, selection_coherent, {
         "required_kinds": list(ANALYSIS_KINDS),
-        "campaign_count": len(rows),
+        "campaign_count": len(effective_rows),
+        "superseded_campaign_ids": sorted(superseded),
         "selection_ids": selection_ids,
         "selection_coherent": selection_coherent,
         "complete": all_complete,

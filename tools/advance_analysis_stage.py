@@ -13,14 +13,49 @@ from pathlib import Path
 ORDER = ("DRAIN", "QUALITY", "REPLAY", "BACKTEST", "OOS", "FORWARD_PAPER", "PNL_PROOF", "SCOREBOARD", "DONE")
 
 
+def _superseded_campaign_ids(rows):
+    """Return explicitly superseded attempts only when replacement identity is exact."""
+    by_id = {
+        str(row.get("campaign_id")): row
+        for row in rows
+        if row.get("campaign_id")
+    }
+    identity_fields = (
+        "creation_phase",
+        "phase_epoch",
+        "source_collection_epoch",
+        "kind",
+        "dataset_selection_id",
+        "collection_cutoff_at_utc",
+        "work_plan_sha256",
+        "config_sha256",
+    )
+    superseded = set()
+    for replacement in rows:
+        if replacement.get("status") != "COMPLETE":
+            continue
+        declared = replacement.get("supersedes_campaign_ids")
+        if not isinstance(declared, list):
+            continue
+        for campaign_id in declared:
+            original = by_id.get(str(campaign_id))
+            if not isinstance(original, dict):
+                continue
+            if all(original.get(key) == replacement.get(key) for key in identity_fields):
+                superseded.add(str(campaign_id))
+    return superseded
+
+
 def _required_campaign_gate(rows, state, required_kinds):
     """Require every current-epoch campaign of a required kind to be COMPLETE."""
+    superseded = _superseded_campaign_ids(rows)
     scoped = [
         row for row in rows
         if row.get("creation_phase") == "ANALYZE"
         and int(row.get("phase_epoch") or 0) == int(state["epoch"])
         and row.get("source_collection_epoch") == state.get("source_collection_epoch")
         and str(row.get("kind")) in required_kinds
+        and str(row.get("campaign_id") or "") not in superseded
     ]
     observed = {
         str(row.get("kind"))

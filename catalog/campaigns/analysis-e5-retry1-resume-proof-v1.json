@@ -150,5 +150,8 @@
   "status_reason": "unit_complete",
   "terminal_evidence_digest": "f1c6612b5392b094c76e0d32b68b576aca96f6b1c777bbf91c8bdb1717fb02a5",
   "updated_at": "2026-09-30T18:01:04.352089Z",
-  "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
+  "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b",
+  "supersedes_campaign_ids": [
+    "analysis-e5-resume-proof-v1"
+  ]
 }
