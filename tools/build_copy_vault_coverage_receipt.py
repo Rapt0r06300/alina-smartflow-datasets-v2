@@ -268,7 +268,12 @@ def build_receipt(*, campaign_dir: Path, phase_path: Path, output: Path) -> dict
         })
 
     plan_summaries.sort(key=lambda x: (x["created_at_max"], x["scheduled_lane_count"]))
-    authoritative = plan_summaries[-1] if plan_summaries else None
+    # A malformed/superseded fan-out must remain visible evidence, but it must
+    # not replace a newer-or-older structurally valid frozen-selection plan as
+    # the authoritative coverage basis.  Prefer the latest valid plan and fail
+    # closed only when no valid plan exists at all.
+    valid_plans = [row for row in plan_summaries if row.get("plan_valid") is True]
+    authoritative = valid_plans[-1] if valid_plans else (plan_summaries[-1] if plan_summaries else None)
     overall = str(authoritative["status"]) if authoritative else "UNAVAILABLE"
 
     body: dict[str, Any] = {
