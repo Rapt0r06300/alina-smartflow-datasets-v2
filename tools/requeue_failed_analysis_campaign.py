@@ -150,7 +150,16 @@ def requeue(
         or row.get("checkpoint_lineage")
         or row.get("terminal_evidence_digest")
     ):
-        raise SystemExit("pending campaign with durable work cannot be refreshed")
+        # Durable work is authoritative. The periodic creator must neither
+        # rewrite it nor fail the whole orchestration pass merely because a
+        # newer code SHA exists. A worker/controller or an explicit recovery
+        # transition owns what happens next.
+        return {
+            "requeued": False,
+            "reason": "pending_durable_work_preserved",
+            "status": status,
+            "campaign_id": row.get("campaign_id"),
+        }
     if old_code_sha == code_sha:
         return {
             "requeued": False,
