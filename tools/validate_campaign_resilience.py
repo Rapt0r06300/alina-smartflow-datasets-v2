@@ -19,6 +19,19 @@ SCHEMA_V2 = "alina.resumable_campaign.v2"
 LEGACY_TERMINAL_STATUSES = {"COMPLETE", "FAILED", "UNAVAILABLE", "PARTIAL", "REJECT"}
 
 
+def _unit_requires_publication_receipt(unit) -> bool:
+    """Only a successfully completed publishable unit requires a publication receipt.
+
+    A CONTINUATION_REQUIRED checkpoint is durable resume state, not a published
+    terminal artefact. Requiring a publication receipt for it contradicts the
+    worker contract, which publishes receipts only for COMPLETE durable units.
+    """
+    if not isinstance(unit, dict):
+        return False
+    result = unit.get("result")
+    return isinstance(result, dict) and result.get("status") == "COMPLETE"
+
+
 def canonical(value):
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
 
@@ -151,7 +164,7 @@ def main() -> int:
                     }
                 )
             receipt_path = Path("catalog/receipts") / f"{campaign_id}-u{unit_id}.json"
-            if not receipt_path.is_file():
+            if _unit_requires_publication_receipt(unit) and not receipt_path.is_file():
                 violations.append(
                     {
                         "campaign_id": campaign_id,
