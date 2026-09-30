@@ -101,10 +101,23 @@ def _native_trade_keys(
             return [row for row in value if isinstance(row, Mapping)]
         if not isinstance(value, Mapping):
             return []
+
+        # User-specific feeds may wrap identity-bearing events one level deeper.
+        # Hyperliquid userFills is the important case: data is an envelope and
+        # the actual fills live under data.fills.
+        for nested_key in ("fills", "trades"):
+            nested = value.get(nested_key)
+            if isinstance(nested, list):
+                return [row for row in nested if isinstance(row, Mapping)]
+
         data = value.get("data")
         if isinstance(data, list):
             return [row for row in data if isinstance(row, Mapping)]
         if isinstance(data, Mapping):
+            for nested_key in ("fills", "trades"):
+                nested = data.get(nested_key)
+                if isinstance(nested, list):
+                    return [row for row in nested if isinstance(row, Mapping)]
             return [data]
         return [value]
 
