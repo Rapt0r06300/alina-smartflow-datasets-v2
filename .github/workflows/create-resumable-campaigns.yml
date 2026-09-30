@@ -179,7 +179,7 @@ jobs:
             esac
           fi
 
-          if [ "$HOUR" = "06" ]; then
+          if [ "$PHASE" = "COLLECT" ] && [ "$HOUR" = "06" ]; then
             make_campaign               official_archive_collection               "archives-binance-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"binance\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
             make_campaign               official_archive_collection               "archives-bybit-btc-$DAY-v4"               "archives-daily-v4"               "{\"venue\":\"bybit\",\"coin\":\"BTC\",\"symbol\":\"BTCUSDT\",\"start_date\":\"$PREV_DAY\",\"end_date\":\"$PREV_DAY\",\"max_days\":1}"
           fi
