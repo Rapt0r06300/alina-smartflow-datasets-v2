@@ -1,10 +1,10 @@
 {
-  "analysis_stage": "DRAIN",
+  "analysis_stage": "QUALITY",
   "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
   "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
   "epoch": 3,
   "phase": "ANALYZE",
-  "request_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "request_id": "5d91928e6a61c70b3d62a8f92fd60d521c409b6ef47518fd866754d2a61be95a",
   "requested_at_utc": "2026-09-29T10:56:59.390365Z",
   "requested_by": "codex-work-cloud",
   "schema_version": 1,
