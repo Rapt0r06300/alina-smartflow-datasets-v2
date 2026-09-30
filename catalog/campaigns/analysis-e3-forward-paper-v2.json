@@ -25,10 +25,21 @@
     {
       "event": "operator_request",
       "request_id": "5173379989942783a13c67099b7c752a5ef09c18890dfd1cdb69912aa96e3e08"
+    },
+    {
+      "at": "2026-09-30T13:47:55.419729Z",
+      "from": "PENDING",
+      "reason": "worker_started",
+      "to": "RUNNING"
     }
   ],
   "kind": "forward_paper",
-  "lease": null,
+  "lease": {
+    "acquired_at": "2026-09-30T13:47:55.419669Z",
+    "expires_at": "2026-09-30T19:32:55.419669Z",
+    "lease_token_sha256": "4faa56f6d9eea43fae6bc9a15706494cf7e7fec164cf725993b8052272a3810d",
+    "owner_run_id": "36724107560"
+  },
   "limits": {
     "max_attempts": 12,
     "max_chunks": 24,
@@ -46,9 +57,9 @@
   "real_execution": false,
   "schema_version": "alina.resumable_campaign.v2",
   "source_collection_epoch": 2,
-  "status": "PENDING",
-  "status_reason": "created",
+  "status": "RUNNING",
+  "status_reason": "worker_started",
   "terminal_evidence_digest": null,
-  "updated_at": "2026-09-30T13:46:17.531694Z",
+  "updated_at": "2026-09-30T13:47:55.419729Z",
   "work_plan_sha256": "431e51039c9f4a8d041f96df51cbb0ad997a96a13ebacf8fec45ddeabced854b"
 }
