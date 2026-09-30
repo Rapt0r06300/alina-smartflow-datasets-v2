@@ -146,28 +146,30 @@ def _native_trade_keys(
 
     if venue == "binance":
         for row in rows:
-            if family == "agg_trades":
-                native = (
-                    row.get("a")
-                    or row.get("agg_trade_id")
-                    or row.get("aggTradeId")
-                    or record.get("agg_trade_id")
-                )
-                if native is not None:
-                    add("a", native)
-                    continue
-            else:
-                native = (
-                    row.get("t")
-                    or row.get("trade_id")
-                    or row.get("tradeId")
-                    or row.get("id")
-                    or record.get("trade_id")
-                    or record.get("native_id")
-                )
-                if native is not None:
-                    add("t", native)
-                    continue
+            # Binance official USD-M archives are sourced from aggTrades even
+            # when the normalized Dataset V2 channel/family is named "trades".
+            # Preserve the native aggregate-trade identity whenever the payload
+            # exposes it; family naming must not erase authoritative identity.
+            aggregate_native = (
+                row.get("a")
+                or row.get("agg_trade_id")
+                or row.get("aggTradeId")
+                or record.get("agg_trade_id")
+            )
+            if aggregate_native is not None:
+                add("a", aggregate_native)
+                continue
+            native = (
+                row.get("t")
+                or row.get("trade_id")
+                or row.get("tradeId")
+                or row.get("id")
+                or record.get("trade_id")
+                or record.get("native_id")
+            )
+            if native is not None:
+                add("t", native)
+                continue
             fallback = composite(
                 row,
                 time_keys=("T", "time", "timestamp", "event_ts_ms", "ts"),

@@ -75,6 +75,24 @@ def test_native_trade_keys_support_normalized_hyperliquid_fill_without_raw_envel
     assert keys[0].startswith("hyperliquid|copy_vault_fills|BTC|fallback|123|100.5|2|B|BTC|")
 
 
+def test_native_trade_keys_support_normalized_binance_official_aggtrade_as_trades():
+    record = {
+        "raw_payload": {
+            "agg_trade_id": "123456",
+            "price": "101.25",
+            "quantity": "0.75",
+            "first_trade_id": "100",
+            "last_trade_id": "102",
+            "transact_time": 1790000000123,
+            "is_buyer_maker": False,
+        }
+    }
+    keys = global_counts._native_trade_keys(
+        record, venue="binance", family="trades", symbol="BTCUSDT"
+    )
+    assert keys == ["binance|trades|BTCUSDT|a|123456"]
+
+
 def test_native_trade_keys_support_binance_archive_list_payload():
     record = {
         "raw_payload": [
