@@ -11,6 +11,16 @@ from pathlib import Path
 from typing import Any, Mapping
 
 
+ANALYSIS_KINDS = (
+    "replay",
+    "backtest",
+    "oos",
+    "forward_paper",
+    "module_pnl_proof",
+    "scoreboard",
+)
+
+
 def load(path: Path, default=None):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -100,6 +110,130 @@ def validate_current_scoreboard_receipt(
     return True, scoreboard, "CURRENT_SCOREBOARD_RECEIPT_VALID", receipt
 
 
+def validate_current_resume_receipt(
+    dataset: Path,
+    phase: Mapping[str, Any],
+) -> tuple[bool, str, dict[str, Any]]:
+    receipt = load(dataset / "catalog/RESUME_SMOKE_RECEIPT.json", {})
+    if not isinstance(receipt, dict) or receipt.get("schema") != "alina.two_segment_resume_receipt.v2":
+        return False, "CURRENT_RESUME_RECEIPT_MISSING", {}
+
+    stored_digest = str(receipt.get("receipt_digest") or "")
+    receipt_body = dict(receipt)
+    receipt_body.pop("receipt_digest", None)
+    if len(stored_digest) != 64 or digest(receipt_body) != stored_digest:
+        return False, "CURRENT_RESUME_RECEIPT_DIGEST_INVALID", receipt
+
+    required_true = (
+        "distinct_github_job_ids",
+        "fresh_runner_for_segment_b",
+        "durable_dataset_state_required",
+        "segment_a_checkpoint_verified",
+        "resumed_from_durable_checkpoint",
+        "paper_only",
+        "read_only",
+    )
+    if any(receipt.get(key) is not True for key in required_true):
+        return False, "CURRENT_RESUME_INVARIANT_MISSING", receipt
+    if receipt.get("runner_filesystem_reused") is not False or receipt.get("real_execution") is not False:
+        return False, "CURRENT_RESUME_SAFETY_INVALID", receipt
+    if (
+        receipt.get("segment_a_workflow_result") != "success"
+        or receipt.get("segment_b_workflow_result") != "success"
+        or receipt.get("terminal_campaign_status") != "COMPLETE"
+    ):
+        return False, "CURRENT_RESUME_SEGMENT_NOT_COMPLETE", receipt
+    if int(receipt.get("terminal_completed_units") or 0) < 2:
+        return False, "CURRENT_RESUME_TOO_FEW_UNITS", receipt
+    if int(receipt.get("duplicate_completed_unit_count") or 0) != 0:
+        return False, "CURRENT_RESUME_DUPLICATE_COMPLETED_UNIT", receipt
+    if int(receipt.get("duplicate_replay_work_count") or 0) != 0:
+        return False, "CURRENT_RESUME_DUPLICATE_REPLAY_WORK", receipt
+
+    segment_a_job = str(receipt.get("segment_a_job_id") or "")
+    segment_b_job = str(receipt.get("segment_b_job_id") or "")
+    workflow_run_id = str(receipt.get("workflow_run_id") or "")
+    if not workflow_run_id or not segment_a_job or not segment_b_job or segment_a_job == segment_b_job:
+        return False, "CURRENT_RESUME_JOB_IDENTITY_INVALID", receipt
+
+    campaign_id = str(receipt.get("campaign_id") or "")
+    if not campaign_id:
+        return False, "CURRENT_RESUME_CAMPAIGN_MISSING", receipt
+    campaign = load(dataset / "catalog/campaigns" / f"{campaign_id}.json", {})
+    if not isinstance(campaign, dict):
+        return False, "CURRENT_RESUME_CAMPAIGN_NOT_FOUND", receipt
+    cursor = campaign.get("cursor") if isinstance(campaign.get("cursor"), dict) else {}
+    if (
+        campaign.get("schema_version") != "alina.resumable_campaign.v2"
+        or campaign.get("kind") != "replay"
+        or campaign.get("creation_phase") != "ANALYZE"
+        or campaign.get("status") != "COMPLETE"
+        or cursor.get("resume_proof") is not True
+    ):
+        return False, "CURRENT_RESUME_CAMPAIGN_NOT_COMPLETE", receipt
+
+    if campaign.get("phase_epoch") != phase.get("epoch"):
+        return False, "CURRENT_RESUME_PHASE_EPOCH_STALE", receipt
+    if campaign.get("source_collection_epoch") != phase.get("source_collection_epoch"):
+        return False, "CURRENT_RESUME_SOURCE_EPOCH_STALE", receipt
+    if receipt.get("terminal_phase_epoch") != phase.get("epoch"):
+        return False, "CURRENT_RESUME_RECEIPT_PHASE_EPOCH_STALE", receipt
+    if receipt.get("terminal_source_collection_epoch") != phase.get("source_collection_epoch"):
+        return False, "CURRENT_RESUME_RECEIPT_SOURCE_EPOCH_STALE", receipt
+    if receipt.get("terminal_selection_id") != campaign.get("dataset_selection_id"):
+        return False, "CURRENT_RESUME_SELECTION_MISMATCH", receipt
+    if receipt.get("terminal_checkpoint_id") != cursor.get("checkpoint_id"):
+        return False, "CURRENT_RESUME_CHECKPOINT_MISMATCH", receipt
+    if receipt.get("terminal_evidence_digest") != campaign.get("terminal_evidence_digest"):
+        return False, "CURRENT_RESUME_EVIDENCE_DIGEST_MISMATCH", receipt
+
+    return True, "CURRENT_RESUME_RECEIPT_VALID", receipt
+
+
+def current_analysis_campaign_status(
+    dataset: Path,
+    phase: Mapping[str, Any],
+) -> tuple[bool, bool, dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for path in sorted((dataset / "catalog/campaigns").glob("*.json")):
+        row = load(path, None)
+        if (
+            isinstance(row, dict)
+            and row.get("schema_version") == "alina.resumable_campaign.v2"
+            and row.get("creation_phase") == "ANALYZE"
+            and row.get("phase_epoch") == phase.get("epoch")
+            and row.get("source_collection_epoch") == phase.get("source_collection_epoch")
+            and row.get("kind") in ANALYSIS_KINDS
+        ):
+            rows.append(row)
+
+    by_kind: dict[str, Any] = {}
+    for kind in ANALYSIS_KINDS:
+        scoped = [row for row in rows if row.get("kind") == kind]
+        by_kind[kind] = {
+            "campaign_ids": sorted(str(row.get("campaign_id") or "") for row in scoped),
+            "states": sorted(str(row.get("status") or "") for row in scoped),
+            "complete": bool(scoped) and all(row.get("status") == "COMPLETE" for row in scoped),
+        }
+
+    selection_ids = sorted({
+        str(row.get("dataset_selection_id"))
+        for row in rows
+        if row.get("dataset_selection_id")
+    })
+    all_have_selection = bool(rows) and all(bool(row.get("dataset_selection_id")) for row in rows)
+    selection_coherent = all_have_selection and len(selection_ids) == 1
+    all_complete = all(by_kind[kind]["complete"] for kind in ANALYSIS_KINDS)
+    return all_complete, selection_coherent, {
+        "required_kinds": list(ANALYSIS_KINDS),
+        "campaign_count": len(rows),
+        "selection_ids": selection_ids,
+        "selection_coherent": selection_coherent,
+        "complete": all_complete,
+        "by_kind": by_kind,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--alina-root", required=True)
@@ -113,8 +247,15 @@ def main() -> int:
     watchdog = load(dataset / "catalog/CAMPAIGN_WATCHDOG_RECEIPT.json", {})
     resilience = load(dataset / "catalog/CAMPAIGN_RESILIENCE_RECEIPT.json", {})
     health = load(dataset / "catalog/DATASET_HEALTH_RECEIPT.json", {})
+    phase_map = phase if isinstance(phase, dict) else {}
     scoreboard_valid, scoreboard, scoreboard_reason, scoreboard_receipt = (
-        validate_current_scoreboard_receipt(dataset, phase if isinstance(phase, dict) else {})
+        validate_current_scoreboard_receipt(dataset, phase_map)
+    )
+    resume_valid, resume_reason, resume_receipt = validate_current_resume_receipt(
+        dataset, phase_map
+    )
+    analysis_complete, analysis_selection_coherent, analysis_campaigns = (
+        current_analysis_campaign_status(dataset, phase_map)
     )
     event_status = load(alina / "docs/event-intelligence-120-status.json", {})
     event_summary = event_status.get("summary") if isinstance(event_status, dict) else {}
@@ -179,6 +320,9 @@ def main() -> int:
         and resilience.get("status") == "READY"
         and phase.get("phase") == "ANALYZE"
         and phase.get("analysis_stage") in {"SCOREBOARD", "DONE"}
+        and analysis_complete
+        and analysis_selection_coherent
+        and resume_valid
         and scoreboard_valid
     )
     final_validation_complete = bool(
@@ -225,6 +369,20 @@ def main() -> int:
             "evidence_tag": scoreboard_receipt.get("evidence_tag") if isinstance(scoreboard_receipt, dict) else None,
             "environment_receipt_sha256": scoreboard_receipt.get("environment_receipt_sha256") if isinstance(scoreboard_receipt, dict) else None,
             "environment_provenance": scoreboard_receipt.get("environment_provenance") if isinstance(scoreboard_receipt, dict) else None,
+        },
+        "analysis_campaigns": analysis_campaigns,
+        "resume_provenance": {
+            "valid": resume_valid,
+            "reason": resume_reason,
+            "campaign_id": resume_receipt.get("campaign_id") if isinstance(resume_receipt, dict) else None,
+            "workflow_run_id": resume_receipt.get("workflow_run_id") if isinstance(resume_receipt, dict) else None,
+            "segment_a_job_id": resume_receipt.get("segment_a_job_id") if isinstance(resume_receipt, dict) else None,
+            "segment_b_job_id": resume_receipt.get("segment_b_job_id") if isinstance(resume_receipt, dict) else None,
+            "terminal_selection_id": resume_receipt.get("terminal_selection_id") if isinstance(resume_receipt, dict) else None,
+            "terminal_checkpoint_id": resume_receipt.get("terminal_checkpoint_id") if isinstance(resume_receipt, dict) else None,
+            "terminal_evidence_digest": resume_receipt.get("terminal_evidence_digest") if isinstance(resume_receipt, dict) else None,
+            "duplicate_completed_unit_count": resume_receipt.get("duplicate_completed_unit_count") if isinstance(resume_receipt, dict) else None,
+            "duplicate_replay_work_count": resume_receipt.get("duplicate_replay_work_count") if isinstance(resume_receipt, dict) else None,
         },
         "families": families,
         "security": {
