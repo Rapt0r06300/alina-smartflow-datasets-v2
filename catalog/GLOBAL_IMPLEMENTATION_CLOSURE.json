@@ -1,66 +1,40 @@
 {
-  "alina_head": "535acda9b9efb6611c04e8f1c210751ac09de430",
+  "alina_head": "3c498cc793778681a481f8823451ea3033444d9d",
   "analysis_campaigns": {
     "by_kind": {
       "backtest": {
-        "campaign_ids": [
-          "analysis-e3-backtest-v2"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       },
       "forward_paper": {
-        "campaign_ids": [
-          "analysis-e3-forward-paper-v2"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       },
       "module_pnl_proof": {
-        "campaign_ids": [
-          "analysis-e3-pnl-proof-v2"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       },
       "oos": {
-        "campaign_ids": [
-          "analysis-e3-oos-v2"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       },
       "replay": {
-        "campaign_ids": [
-          "analysis-e3-replay-v2",
-          "analysis-e3-resume-proof-v1"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE",
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       },
       "scoreboard": {
-        "campaign_ids": [
-          "analysis-e3-scoreboard-v2"
-        ],
-        "complete": true,
-        "states": [
-          "COMPLETE"
-        ]
+        "campaign_ids": [],
+        "complete": false,
+        "states": []
       }
     },
-    "campaign_count": 7,
-    "complete": true,
+    "campaign_count": 0,
+    "complete": false,
     "required_kinds": [
       "replay",
       "backtest",
@@ -69,10 +43,8 @@
       "module_pnl_proof",
       "scoreboard"
     ],
-    "selection_coherent": true,
-    "selection_ids": [
-      "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106"
-    ]
+    "selection_coherent": false,
+    "selection_ids": []
   },
   "cloud_only": true,
   "dataset": {
@@ -128,7 +100,7 @@
     "metrics_digest": null,
     "watchdog_status": "HEALTHY"
   },
-  "dataset_v2_head": "ad1e5a28f7774aa88d1f3ef6429ada8046fac8c2",
+  "dataset_v2_head": "feea7c10282f7be10253d355c3fcfc1f0f946f06",
   "economic_improvement": {
     "amelioration_stricte_requise": true,
     "comparison_metric": "gain_net_usd_apres_couts",
@@ -380,72 +352,60 @@
   },
   "families": {
     "copy_vault": {
-      "evidence_paths": [
-        "runtime/data/copy_edge_rapport_reel.json",
-        "runtime/reports/economic_campaigns/raw/copy_vault.json",
-        "runtime/reports/economic_campaigns/copy_vault.json"
-      ],
+      "evidence_paths": [],
       "net_pnl_usd": null,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "UNMEASURED:net_pnl_usd,UNMEASURED:roi_pct,UNMEASURED:max_drawdown_usd,UNMEASURED:hit_rate,UNMEASURED:profit_factor,UNMEASURED:liquidatable_net",
-      "state": "MORE_DATA"
+      "reason": "CURRENT_SCOREBOARD_BINDING_MISMATCH:phase_epoch",
+      "state": "UNMEASURABLE"
     },
     "cross_venue_dislocation": {
-      "evidence_paths": [
-        "runtime/research/dislocation_final_verdict.json",
-        "runtime/reports/economic_campaigns/raw/cross_venue_dislocation_v2.json",
-        "runtime/reports/economic_campaigns/cross_venue_dislocation_v2.json"
-      ],
+      "evidence_paths": [],
       "net_pnl_usd": null,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "UNMEASURED:net_pnl_usd,UNMEASURED:liquidatable_net",
-      "state": "MORE_DATA"
+      "reason": "CURRENT_SCOREBOARD_BINDING_MISMATCH:phase_epoch",
+      "state": "UNMEASURABLE"
     },
     "lead_lag": {
-      "evidence_paths": [
-        "runtime/data/bbo_tape.jsonl",
-        "runtime/reports/economic_campaigns/raw/lead_lag.json",
-        "runtime/reports/economic_campaigns/lead_lag.json"
-      ],
+      "evidence_paths": [],
       "net_pnl_usd": null,
       "paper_only": true,
       "read_only": true,
       "real_execution": false,
-      "reason": "UNMEASURED:closed_positions,UNMEASURED:net_pnl_usd,UNMEASURED:roi_pct,UNMEASURED:max_drawdown_usd,UNMEASURED:hit_rate,UNMEASURED:profit_factor,UNMEASURED:oos,UNMEASURED:forward,UNMEASURED:placebos,UNMEASURED:liquidatable_net",
-      "state": "MORE_DATA"
+      "reason": "CURRENT_SCOREBOARD_BINDING_MISMATCH:phase_epoch",
+      "state": "UNMEASURABLE"
     }
   },
-  "final_validation_complete": true,
-  "generated_at_utc": "2026-09-30T14:40:57.116604Z",
-  "implementation_complete": true,
+  "final_validation_complete": false,
+  "generated_at_utc": "2026-09-30T14:55:44.410800Z",
+  "implementation_complete": false,
   "phase": {
-    "analysis_stage": "DONE",
-    "collection_cutoff_at_utc": "2026-09-29T10:56:59.390365Z",
-    "collection_started_at_utc": "2026-09-29T10:48:55.506207Z",
-    "epoch": 3,
-    "phase": "ANALYZE",
-    "request_id": "a37105048dfccafad20103c6e6fa6d56843fe11be64c159bad2b16b7d7dad11a",
-    "requested_at_utc": "2026-09-29T10:56:59.390365Z",
-    "requested_by": "codex-work-cloud",
+    "analysis_stage": null,
+    "collection_cutoff_at_utc": null,
+    "collection_started_at_utc": "2026-09-30T14:54:27.395719Z",
+    "epoch": 4,
+    "phase": "COLLECT",
+    "request_id": "abb19c320b9d0e4627b0018b505353a33fb16f8314af92d9c59e8d9b6d80a38c",
+    "requested_at_utc": "2026-09-30T14:54:27.395719Z",
+    "requested_by": "chatgpt-github",
     "schema_version": 1,
-    "source_collection_epoch": 2
+    "source_collection_epoch": null
   },
-  "receipt_digest": "63302cc4a262f110ff38ae54e915d3cede63d5469e84f9ad9d562983c73a7eac",
+  "receipt_digest": "47e09ad83d680062f6acb1421e035ab4dbbf1318b4bdd0d6742bd1935ebf2eff",
   "resume_provenance": {
     "campaign_id": "analysis-e3-resume-proof-v1",
     "duplicate_completed_unit_count": 0,
     "duplicate_replay_work_count": 0,
-    "reason": "CURRENT_RESUME_RECEIPT_VALID",
+    "reason": "CURRENT_RESUME_PHASE_EPOCH_STALE",
     "segment_a_job_id": "109910148452",
     "segment_b_job_id": "109910681065",
     "terminal_checkpoint_id": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
     "terminal_evidence_digest": "455da3bda2d4145e776184ad4c5465a3d42fe26a4e67d634df3b8ccc02b8a5bf",
     "terminal_selection_id": "3b843b1c871e5e1ff63996d9ebd5b86669bd92e582cb9a9d2c5dafc328eb2106",
-    "valid": true,
+    "valid": false,
     "workflow_run_id": "36722235122"
   },
   "schema": "alina.global_implementation_closure.v1",
@@ -468,10 +428,10 @@
     "environment_receipt_sha256": "ebd678512427617aab68239bca8073f0c66566770f7114c6607e5c55da089a26",
     "evidence_tag": "campaign-evidence-analysis-e3-scoreboard-v2-u2",
     "phase_epoch": 3,
-    "reason": "CURRENT_SCOREBOARD_RECEIPT_VALID",
+    "reason": "CURRENT_SCOREBOARD_BINDING_MISMATCH:phase_epoch",
     "scoreboard_sha256": "29f597f2054914880acc4376d2f43a92404c09a71ba4153d264d70e9dbf1f8c0",
     "source_collection_epoch": 2,
-    "valid": true
+    "valid": false
   },
   "security": {
     "carry": "DISABLED_BY_SCOPE",
