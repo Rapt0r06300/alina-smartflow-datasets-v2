@@ -603,8 +603,11 @@ jobs:
           git add catalog/receipts
           git diff --cached --quiet && exit 0
           git commit -m "campaign: publish receipt $CAMPAIGN_ID"
-          for i in 1 2 3 4 5; do
+          STAGGER_HEX="$(printf '%s' "$CAMPAIGN_ID" | sha256sum | cut -c1-2)"
+          STAGGER="$((16#$STAGGER_HEX % 7))"
+          sleep "$STAGGER"
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
-            sleep $((i*2))
+            sleep "$((2 + STAGGER + i * 2))"
           done
           exit 1
