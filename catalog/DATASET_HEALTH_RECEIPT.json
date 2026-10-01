@@ -1,7 +1,7 @@
 {
   "backlog_by_kind": {
-    "copy_vault_collection": 296,
-    "market_collection": 16
+    "copy_vault_collection": 291,
+    "market_collection": 21
   },
   "by_family": {
     "activeassetctx": {
@@ -55,10 +55,10 @@
       "trade_shards_exact": 342,
       "trade_shards_missing_exact": 0,
       "trades": 47008,
-      "uncompressed_bytes": 39828429,
-      "uncompressed_exact_assets": 341,
+      "uncompressed_bytes": 39834580,
+      "uncompressed_exact_assets": 342,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 47003
+      "unique_trades_within_shards": 47008
     },
     "copy_vault_l2": {
       "bytes": 959748227,
@@ -69,8 +69,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 10260933574,
-      "uncompressed_exact_assets": 13026,
+      "uncompressed_bytes": 10276826859,
+      "uncompressed_exact_assets": 13147,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -83,8 +83,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 29405311,
-      "uncompressed_exact_assets": 4051,
+      "uncompressed_bytes": 29787681,
+      "uncompressed_exact_assets": 4111,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -97,8 +97,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 5110732,
-      "uncompressed_exact_assets": 4051,
+      "uncompressed_bytes": 5186310,
+      "uncompressed_exact_assets": 4111,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -111,8 +111,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 54420202,
-      "uncompressed_exact_assets": 4626,
+      "uncompressed_bytes": 55061820,
+      "uncompressed_exact_assets": 4683,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -125,8 +125,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 8560984,
-      "uncompressed_exact_assets": 46,
+      "uncompressed_bytes": 9315204,
+      "uncompressed_exact_assets": 51,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -561,8 +561,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 11934,
-      "uncompressed_exact_assets": 3,
+      "uncompressed_bytes": 23868,
+      "uncompressed_exact_assets": 6,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -673,8 +673,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34114,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51176,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -1793,10 +1793,10 @@
       "trade_shards_exact": 23,
       "trade_shards_missing_exact": 0,
       "trades": 13082,
-      "uncompressed_bytes": 12925206,
-      "uncompressed_exact_assets": 78,
+      "uncompressed_bytes": 13001290,
+      "uncompressed_exact_assets": 82,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 13077
+      "unique_trades_within_shards": 13082
     },
     "0X0800359ACEED0D7BD14CDEDC57C6A6E9ECA04E48": {
       "bytes": 4477,
@@ -3137,8 +3137,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32134,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48201,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -5139,8 +5139,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 22824,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 34232,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -5685,8 +5685,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 2539,
-      "uncompressed_bytes": 1927328,
-      "uncompressed_exact_assets": 74,
+      "uncompressed_bytes": 1960101,
+      "uncompressed_exact_assets": 77,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2539
     },
@@ -5797,8 +5797,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 172779,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 259207,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -6735,8 +6735,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32174,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48266,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -7141,8 +7141,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 15932,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 23905,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -7827,8 +7827,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 30168,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 45253,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -8415,8 +8415,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34603,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51910,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9017,8 +9017,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33660,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 50488,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9045,8 +9045,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 43060,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 65490,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9129,8 +9129,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 12212,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 18318,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9227,8 +9227,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 35256,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 52885,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9437,8 +9437,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 36544,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 54816,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9619,8 +9619,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 24768,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 37158,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -9633,8 +9633,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 38306,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 58154,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -11201,8 +11201,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34960,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 52442,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -11327,8 +11327,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34067,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51108,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -12069,8 +12069,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 13672,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 20506,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -12125,8 +12125,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33212,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49810,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -14785,8 +14785,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 499014,
-      "uncompressed_exact_assets": 63,
+      "uncompressed_bytes": 518786,
+      "uncompressed_exact_assets": 66,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -14939,8 +14939,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 15170,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 22755,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -16577,8 +16577,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 35124,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 52690,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -17053,8 +17053,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 27420,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 41136,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -17529,8 +17529,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 48315,
-      "uncompressed_exact_assets": 9,
+      "uncompressed_bytes": 64426,
+      "uncompressed_exact_assets": 12,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -17767,8 +17767,8 @@
       "trade_shards_exact": 16,
       "trade_shards_missing_exact": 0,
       "trades": 2063,
-      "uncompressed_bytes": 1600832,
-      "uncompressed_exact_assets": 73,
+      "uncompressed_bytes": 1631580,
+      "uncompressed_exact_assets": 76,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2063
     },
@@ -17935,8 +17935,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34752,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 52126,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -20343,8 +20343,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 39158,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 58742,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -20735,8 +20735,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32222,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48328,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -22807,8 +22807,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34558,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51840,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -23171,8 +23171,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 35790,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 53697,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -23731,8 +23731,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34484,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51725,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -23885,8 +23885,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32948,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49421,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -25691,8 +25691,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 35834,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 53757,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -26433,8 +26433,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33102,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49661,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -26685,8 +26685,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33058,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49587,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -27483,8 +27483,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 11702,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 17553,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -27679,8 +27679,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 36787,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 55181,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29401,8 +29401,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32811,
-      "uncompressed_exact_assets": 9,
+      "uncompressed_bytes": 43746,
+      "uncompressed_exact_assets": 12,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29443,8 +29443,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32338,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48510,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29485,8 +29485,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33254,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49884,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29499,8 +29499,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32998,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 49505,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29653,8 +29653,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 35726,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 53586,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -29723,8 +29723,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 7738,
-      "uncompressed_exact_assets": 4,
+      "uncompressed_bytes": 11605,
+      "uncompressed_exact_assets": 6,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -30941,8 +30941,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 7760,
-      "uncompressed_exact_assets": 4,
+      "uncompressed_bytes": 11644,
+      "uncompressed_exact_assets": 6,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -31249,8 +31249,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32230,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48339,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -32873,8 +32873,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 15492,
-      "uncompressed_bytes": 14908709,
-      "uncompressed_exact_assets": 78,
+      "uncompressed_bytes": 14932680,
+      "uncompressed_exact_assets": 81,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 15492
     },
@@ -35239,8 +35239,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 32520,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 48780,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -35561,8 +35561,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34482,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51720,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -35659,8 +35659,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 48767,
-      "uncompressed_exact_assets": 9,
+      "uncompressed_bytes": 65020,
+      "uncompressed_exact_assets": 12,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -36205,8 +36205,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 7750,
-      "uncompressed_exact_assets": 4,
+      "uncompressed_bytes": 11629,
+      "uncompressed_exact_assets": 6,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -36317,8 +36317,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34202,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51299,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -36611,8 +36611,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 502,
-      "uncompressed_bytes": 1592965,
-      "uncompressed_exact_assets": 80,
+      "uncompressed_bytes": 1642719,
+      "uncompressed_exact_assets": 83,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 502
     },
@@ -36681,8 +36681,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 20432,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 30644,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -38067,8 +38067,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 45703,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 68563,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -39551,8 +39551,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 34572,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 51861,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -41357,8 +41357,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 33990,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 50991,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -41399,8 +41399,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 19100,
-      "uncompressed_exact_assets": 6,
+      "uncompressed_bytes": 28647,
+      "uncompressed_exact_assets": 9,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -43177,8 +43177,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 10921,
-      "uncompressed_bytes": 386893175,
-      "uncompressed_exact_assets": 300,
+      "uncompressed_bytes": 387049639,
+      "uncompressed_exact_assets": 301,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 10921
     },
@@ -43247,8 +43247,8 @@
       "trade_shards_exact": 16,
       "trade_shards_missing_exact": 0,
       "trades": 13414,
-      "uncompressed_bytes": 485774274,
-      "uncompressed_exact_assets": 273,
+      "uncompressed_bytes": 485777127,
+      "uncompressed_exact_assets": 274,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 13414
     },
@@ -43373,8 +43373,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 19224624,
-      "uncompressed_exact_assets": 77,
+      "uncompressed_bytes": 19279452,
+      "uncompressed_exact_assets": 78,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -43443,8 +43443,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 2602,
-      "uncompressed_bytes": 165251116,
-      "uncompressed_exact_assets": 109,
+      "uncompressed_bytes": 165412053,
+      "uncompressed_exact_assets": 110,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2602
     },
@@ -43611,8 +43611,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 25666180,
-      "uncompressed_exact_assets": 24,
+      "uncompressed_bytes": 25827049,
+      "uncompressed_exact_assets": 25,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -43695,8 +43695,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 3714,
-      "uncompressed_bytes": 171773071,
-      "uncompressed_exact_assets": 159,
+      "uncompressed_bytes": 171775830,
+      "uncompressed_exact_assets": 160,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 3714
     },
@@ -43877,8 +43877,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 8144,
-      "uncompressed_bytes": 251652813,
-      "uncompressed_exact_assets": 148,
+      "uncompressed_bytes": 251811394,
+      "uncompressed_exact_assets": 149,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 8144
     },
@@ -43933,8 +43933,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 10890,
-      "uncompressed_bytes": 358188464,
-      "uncompressed_exact_assets": 303,
+      "uncompressed_bytes": 358351084,
+      "uncompressed_exact_assets": 305,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 10890
     },
@@ -44297,8 +44297,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 5718,
-      "uncompressed_bytes": 151072471,
-      "uncompressed_exact_assets": 125,
+      "uncompressed_bytes": 151233925,
+      "uncompressed_exact_assets": 126,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 5718
     },
@@ -44353,8 +44353,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 1645,
-      "uncompressed_bytes": 147617287,
-      "uncompressed_exact_assets": 85,
+      "uncompressed_bytes": 147784779,
+      "uncompressed_exact_assets": 86,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 1645
     },
@@ -44549,8 +44549,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 6232,
-      "uncompressed_bytes": 346351845,
-      "uncompressed_exact_assets": 276,
+      "uncompressed_bytes": 346666133,
+      "uncompressed_exact_assets": 279,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 6232
     },
@@ -44731,8 +44731,8 @@
       "trade_shards_exact": 16,
       "trade_shards_missing_exact": 0,
       "trades": 168778,
-      "uncompressed_bytes": 900804700,
-      "uncompressed_exact_assets": 1212,
+      "uncompressed_bytes": 901460741,
+      "uncompressed_exact_assets": 1217,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 168778
     },
@@ -45025,8 +45025,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 10300,
-      "uncompressed_bytes": 193345258,
-      "uncompressed_exact_assets": 96,
+      "uncompressed_bytes": 193510283,
+      "uncompressed_exact_assets": 97,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 10300
     },
@@ -45137,8 +45137,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 10100,
-      "uncompressed_bytes": 196461349,
-      "uncompressed_exact_assets": 191,
+      "uncompressed_bytes": 196782748,
+      "uncompressed_exact_assets": 193,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 10100
     },
@@ -45263,8 +45263,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 19172,
-      "uncompressed_bytes": 501270824,
-      "uncompressed_exact_assets": 338,
+      "uncompressed_bytes": 501765934,
+      "uncompressed_exact_assets": 341,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 19172
     },
@@ -45333,8 +45333,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 2652,
-      "uncompressed_bytes": 364783878,
-      "uncompressed_exact_assets": 295,
+      "uncompressed_bytes": 364945316,
+      "uncompressed_exact_assets": 297,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2652
     },
@@ -45389,8 +45389,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 2487,
-      "uncompressed_bytes": 170281979,
-      "uncompressed_exact_assets": 105,
+      "uncompressed_bytes": 170443444,
+      "uncompressed_exact_assets": 106,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2487
     },
@@ -45515,8 +45515,8 @@
       "trade_shards_exact": 12,
       "trade_shards_missing_exact": 0,
       "trades": 35913,
-      "uncompressed_bytes": 395858527,
-      "uncompressed_exact_assets": 304,
+      "uncompressed_bytes": 396183780,
+      "uncompressed_exact_assets": 306,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 35913
     },
@@ -45683,8 +45683,8 @@
       "trade_shards_exact": 16,
       "trade_shards_missing_exact": 0,
       "trades": 93936,
-      "uncompressed_bytes": 873424526,
-      "uncompressed_exact_assets": 997,
+      "uncompressed_bytes": 874083053,
+      "uncompressed_exact_assets": 1002,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 93934
     },
@@ -45907,8 +45907,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 13688929,
-      "uncompressed_exact_assets": 92,
+      "uncompressed_bytes": 13847489,
+      "uncompressed_exact_assets": 93,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -45949,8 +45949,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 665723,
-      "uncompressed_exact_assets": 28,
+      "uncompressed_bytes": 719371,
+      "uncompressed_exact_assets": 29,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46019,8 +46019,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 8560984,
-      "uncompressed_exact_assets": 46,
+      "uncompressed_bytes": 9315204,
+      "uncompressed_exact_assets": 51,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46033,8 +46033,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 11326049,
-      "uncompressed_exact_assets": 13,
+      "uncompressed_bytes": 11493387,
+      "uncompressed_exact_assets": 14,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46061,8 +46061,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 8207805,
-      "uncompressed_exact_assets": 36,
+      "uncompressed_bytes": 8373537,
+      "uncompressed_exact_assets": 37,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46075,8 +46075,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 30551596,
-      "uncompressed_exact_assets": 24,
+      "uncompressed_bytes": 30709810,
+      "uncompressed_exact_assets": 25,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46089,8 +46089,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 22570615,
-      "uncompressed_exact_assets": 67,
+      "uncompressed_bytes": 22730520,
+      "uncompressed_exact_assets": 68,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46117,8 +46117,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 70351304,
-      "uncompressed_exact_assets": 55,
+      "uncompressed_bytes": 70511733,
+      "uncompressed_exact_assets": 56,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46173,8 +46173,8 @@
       "trade_shards_exact": 14,
       "trade_shards_missing_exact": 0,
       "trades": 117573,
-      "uncompressed_bytes": 643754056,
-      "uncompressed_exact_assets": 711,
+      "uncompressed_bytes": 644377963,
+      "uncompressed_exact_assets": 716,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 117571
     },
@@ -46243,8 +46243,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 6781439,
-      "uncompressed_exact_assets": 14,
+      "uncompressed_bytes": 6938382,
+      "uncompressed_exact_assets": 15,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46299,8 +46299,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 55682542,
-      "uncompressed_exact_assets": 116,
+      "uncompressed_bytes": 55988979,
+      "uncompressed_exact_assets": 118,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46369,8 +46369,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 23353627,
-      "uncompressed_exact_assets": 46,
+      "uncompressed_bytes": 23671677,
+      "uncompressed_exact_assets": 48,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46383,8 +46383,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 131312266,
-      "uncompressed_exact_assets": 118,
+      "uncompressed_bytes": 131472838,
+      "uncompressed_exact_assets": 119,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46411,8 +46411,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 840151,
-      "uncompressed_exact_assets": 13,
+      "uncompressed_bytes": 1005617,
+      "uncompressed_exact_assets": 14,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46481,8 +46481,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 2863,
-      "uncompressed_bytes": 205649164,
-      "uncompressed_exact_assets": 177,
+      "uncompressed_bytes": 205963777,
+      "uncompressed_exact_assets": 180,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 2863
     },
@@ -46565,8 +46565,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 180003883,
-      "uncompressed_exact_assets": 124,
+      "uncompressed_bytes": 180006627,
+      "uncompressed_exact_assets": 125,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46733,8 +46733,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 21128452,
-      "uncompressed_exact_assets": 19,
+      "uncompressed_bytes": 21286907,
+      "uncompressed_exact_assets": 20,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46775,8 +46775,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 132742511,
-      "uncompressed_exact_assets": 76,
+      "uncompressed_bytes": 132907222,
+      "uncompressed_exact_assets": 77,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46789,8 +46789,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 1502781,
-      "uncompressed_exact_assets": 18,
+      "uncompressed_bytes": 1667991,
+      "uncompressed_exact_assets": 19,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46845,8 +46845,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 196808112,
-      "uncompressed_exact_assets": 164,
+      "uncompressed_bytes": 197119002,
+      "uncompressed_exact_assets": 167,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46943,8 +46943,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 77029891,
-      "uncompressed_exact_assets": 33,
+      "uncompressed_bytes": 77191383,
+      "uncompressed_exact_assets": 34,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46957,8 +46957,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 328008,
-      "uncompressed_exact_assets": 9,
+      "uncompressed_bytes": 381544,
+      "uncompressed_exact_assets": 10,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46985,8 +46985,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 202914786,
-      "uncompressed_exact_assets": 153,
+      "uncompressed_bytes": 203072431,
+      "uncompressed_exact_assets": 154,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -46999,8 +46999,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 872,
-      "uncompressed_bytes": 42603651,
-      "uncompressed_exact_assets": 64,
+      "uncompressed_bytes": 42923670,
+      "uncompressed_exact_assets": 66,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 872
     },
@@ -47097,8 +47097,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 4283350,
-      "uncompressed_exact_assets": 50,
+      "uncompressed_bytes": 4597639,
+      "uncompressed_exact_assets": 53,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47111,8 +47111,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 75089813,
-      "uncompressed_exact_assets": 70,
+      "uncompressed_bytes": 75246520,
+      "uncompressed_exact_assets": 71,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47125,8 +47125,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 43352821,
-      "uncompressed_exact_assets": 61,
+      "uncompressed_bytes": 43521221,
+      "uncompressed_exact_assets": 62,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47223,8 +47223,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 88481010,
-      "uncompressed_exact_assets": 69,
+      "uncompressed_bytes": 88642838,
+      "uncompressed_exact_assets": 70,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47265,8 +47265,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 157954048,
-      "uncompressed_exact_assets": 133,
+      "uncompressed_bytes": 158123976,
+      "uncompressed_exact_assets": 134,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47279,8 +47279,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 23957420,
-      "uncompressed_exact_assets": 54,
+      "uncompressed_bytes": 24433484,
+      "uncompressed_exact_assets": 57,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47321,8 +47321,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 24303241,
-      "uncompressed_exact_assets": 25,
+      "uncompressed_bytes": 24306003,
+      "uncompressed_exact_assets": 26,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47391,8 +47391,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 441574,
-      "uncompressed_exact_assets": 15,
+      "uncompressed_bytes": 495334,
+      "uncompressed_exact_assets": 16,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47419,8 +47419,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 5852979,
-      "uncompressed_exact_assets": 31,
+      "uncompressed_bytes": 6171557,
+      "uncompressed_exact_assets": 34,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47559,8 +47559,8 @@
       "trade_shards_exact": 16,
       "trade_shards_missing_exact": 0,
       "trades": 47143,
-      "uncompressed_bytes": 627823900,
-      "uncompressed_exact_assets": 422,
+      "uncompressed_bytes": 628470633,
+      "uncompressed_exact_assets": 427,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 47141
     },
@@ -47629,8 +47629,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 12652191,
-      "uncompressed_exact_assets": 37,
+      "uncompressed_bytes": 12811980,
+      "uncompressed_exact_assets": 38,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47685,8 +47685,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 36620133,
-      "uncompressed_exact_assets": 45,
+      "uncompressed_bytes": 36784141,
+      "uncompressed_exact_assets": 46,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47713,8 +47713,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 3144,
-      "uncompressed_bytes": 253306218,
-      "uncompressed_exact_assets": 208,
+      "uncompressed_bytes": 253784133,
+      "uncompressed_exact_assets": 212,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 3144
     },
@@ -47797,8 +47797,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 48325700,
-      "uncompressed_exact_assets": 30,
+      "uncompressed_bytes": 48486950,
+      "uncompressed_exact_assets": 31,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47853,8 +47853,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 60,
-      "uncompressed_bytes": 12350441,
-      "uncompressed_exact_assets": 45,
+      "uncompressed_bytes": 12458687,
+      "uncompressed_exact_assets": 47,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 60
     },
@@ -47895,8 +47895,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 56300876,
-      "uncompressed_exact_assets": 93,
+      "uncompressed_bytes": 56772262,
+      "uncompressed_exact_assets": 96,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -47909,8 +47909,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 759,
-      "uncompressed_bytes": 69326993,
-      "uncompressed_exact_assets": 81,
+      "uncompressed_bytes": 69488987,
+      "uncompressed_exact_assets": 82,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 759
     },
@@ -48007,8 +48007,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 238375843,
-      "uncompressed_exact_assets": 179,
+      "uncompressed_bytes": 238836647,
+      "uncompressed_exact_assets": 182,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48063,8 +48063,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 1316481,
-      "uncompressed_exact_assets": 12,
+      "uncompressed_bytes": 1643425,
+      "uncompressed_exact_assets": 14,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48133,8 +48133,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 68621348,
-      "uncompressed_exact_assets": 29,
+      "uncompressed_bytes": 68783359,
+      "uncompressed_exact_assets": 30,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48217,8 +48217,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 70880381,
-      "uncompressed_exact_assets": 65,
+      "uncompressed_bytes": 71042325,
+      "uncompressed_exact_assets": 66,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48245,8 +48245,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 60717731,
-      "uncompressed_exact_assets": 57,
+      "uncompressed_bytes": 61038964,
+      "uncompressed_exact_assets": 59,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48259,8 +48259,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 173187182,
-      "uncompressed_exact_assets": 108,
+      "uncompressed_bytes": 173500903,
+      "uncompressed_exact_assets": 110,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48273,8 +48273,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 63024531,
-      "uncompressed_exact_assets": 75,
+      "uncompressed_bytes": 63185623,
+      "uncompressed_exact_assets": 76,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48287,8 +48287,8 @@
       "trade_shards_exact": 2,
       "trade_shards_missing_exact": 0,
       "trades": 3021,
-      "uncompressed_bytes": 242965104,
-      "uncompressed_exact_assets": 239,
+      "uncompressed_bytes": 243451768,
+      "uncompressed_exact_assets": 243,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 3021
     },
@@ -48371,8 +48371,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 204131049,
-      "uncompressed_exact_assets": 196,
+      "uncompressed_bytes": 204441605,
+      "uncompressed_exact_assets": 198,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     },
@@ -48455,8 +48455,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 208657249,
-      "uncompressed_exact_assets": 118,
+      "uncompressed_bytes": 208660009,
+      "uncompressed_exact_assets": 119,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     }
@@ -48527,10 +48527,10 @@
       "trade_shards_exact": 966,
       "trade_shards_missing_exact": 0,
       "trades": 822202,
-      "uncompressed_bytes": 20073038897,
-      "uncompressed_exact_assets": 29823,
+      "uncompressed_bytes": 20090037899,
+      "uncompressed_exact_assets": 30122,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 822191
+      "unique_trades_within_shards": 822196
     },
     "okx": {
       "bytes": 1144077737,
@@ -48555,8 +48555,8 @@
       "trade_shards_exact": 0,
       "trade_shards_missing_exact": 0,
       "trades": 0,
-      "uncompressed_bytes": 8560984,
-      "uncompressed_exact_assets": 46,
+      "uncompressed_bytes": 9315204,
+      "uncompressed_exact_assets": 51,
       "uncompressed_unavailable_assets": 0,
       "unique_trades_within_shards": 0
     }
@@ -48564,17 +48564,19 @@
   "campaign_counts": {
     "backtest:COMPLETE": 2,
     "backtest:FAILED": 7,
-    "copy_vault_collection:COMPLETE": 340,
+    "copy_vault_collection:COMPLETE": 344,
     "copy_vault_collection:FAILED": 316,
-    "copy_vault_collection:PENDING": 296,
+    "copy_vault_collection:PENDING": 291,
+    "copy_vault_collection:RUNNING": 1,
     "copy_vault_collection:UNAVAILABLE": 323,
-    "event_intelligence_collection:COMPLETE": 20,
+    "event_intelligence_collection:COMPLETE": 21,
     "event_intelligence_collection:UNAVAILABLE": 1,
     "forward_paper:COMPLETE": 2,
     "market_collection:COMPLETE": 3,
-    "market_collection:FAILED": 13,
+    "market_collection:FAILED": 28,
     "market_collection:PENDING": 16,
-    "market_collection:RUNNING": 16,
+    "market_collection:RUNNING": 12,
+    "market_collection:STUCK": 5,
     "market_collection:UNAVAILABLE": 3,
     "module_pnl_proof:COMPLETE": 2,
     "module_pnl_proof:FAILED": 7,
@@ -53392,11 +53394,11 @@
       "campaign_id": "copy-vault-14-2026093021-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
       "kind": "copy_vault_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "c88b664f446640573857737e7e3083e38b3fdd328c14af3a9d340aacebd2b3e9",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -53404,9 +53406,9 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T21:34:51.122257Z"
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-10-01T00:01:01.942855Z"
     },
     {
       "analysis_stage": null,
@@ -54383,25 +54385,25 @@
     },
     {
       "analysis_stage": null,
-      "attempts": 0,
+      "attempts": 2,
       "campaign_id": "copy-vault-15-2026093021-v7",
-      "chunk_index": 0,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
-      "consecutive_failures": 0,
+      "completed_unit_count": 3,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "copy_vault_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "a2fb593b2f168605684af6f5b1200f7d8b73853cf481ee3579f90266a5187115",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
       "next_due_at": null,
-      "no_progress_count": 0,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T21:34:51.271129Z"
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-10-01T03:20:22.875930Z"
     },
     {
       "analysis_stage": null,
@@ -55377,11 +55379,11 @@
       "campaign_id": "copy-vault-16-2026093021-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
       "kind": "copy_vault_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "6baa535baf8c19d517c1d0174c01ea64be0b7068632018de33942bf1b1ac4ff4",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -55389,9 +55391,9 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T21:34:51.418330Z"
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-10-01T03:27:56.924192Z"
     },
     {
       "analysis_stage": null,
@@ -56367,11 +56369,11 @@
       "campaign_id": "copy-vault-17-2026093021-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
       "kind": "copy_vault_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "b8ad23e8c3f84ce0f08faf220cffb8e9fb543fc8688fa3f706bb7a756c2be4ee",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -56379,9 +56381,9 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T21:34:51.566325Z"
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-10-01T03:35:37.587348Z"
     },
     {
       "analysis_stage": null,
@@ -57362,16 +57364,21 @@
       "creation_phase": "COLLECT",
       "kind": "copy_vault_collection",
       "last_checkpoint_id": null,
-      "lease": null,
-      "lease_expires_at": null,
-      "lease_owner": null,
+      "lease": {
+        "acquired_at": "2026-10-01T03:40:26.783060Z",
+        "expires_at": "2026-10-01T09:25:26.783060Z",
+        "lease_token_sha256": "51e6431fb4f6ea0b23b6ba42c2ec7f543e880237d82388f241718bc1f04bb35f",
+        "owner_run_id": "36810630792"
+      },
+      "lease_expires_at": "2026-10-01T09:25:26.783060Z",
+      "lease_owner": "36810630792",
       "next_due_at": null,
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T21:34:51.714473Z"
+      "status": "RUNNING",
+      "status_reason": "worker_started",
+      "updated_at": "2026-10-01T03:40:26.783127Z"
     },
     {
       "analysis_stage": null,
@@ -77647,6 +77654,28 @@
     },
     {
       "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "event-2026100103-v5",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "event_intelligence_collection",
+      "last_checkpoint_id": "9f5f79e02bee4d6a990d9f24cc7409e1c74a044ccabc88c8aa1a2346e96e5531",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "COMPLETE",
+      "status_reason": "unit_complete",
+      "updated_at": "2026-10-01T03:19:25.137191Z"
+    },
+    {
+      "analysis_stage": null,
       "attempts": 1,
       "campaign_id": "market-0-2026093021-v7",
       "chunk_index": 1,
@@ -77656,48 +77685,43 @@
       "creation_phase": "COLLECT",
       "kind": "market_collection",
       "last_checkpoint_id": "fc48ffa1b8f2efa3466c853edbe1d57c057ca540ee39835070566b4a01202e26",
-      "lease": {
-        "acquired_at": "2026-09-30T23:01:05.085039Z",
-        "expires_at": "2026-10-01T04:46:05.085039Z",
-        "lease_token_sha256": "f0b7cae9cc64a1198d653b8f34d6ff79f3c1c52a136ba99d5b9d451f665e03fa",
-        "owner_run_id": "36782750693"
-      },
-      "lease_expires_at": "2026-10-01T04:46:05.085039Z",
-      "lease_owner": "36782750693",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
       "next_due_at": null,
       "no_progress_count": 1,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:01:05.085091Z"
+      "status": "STUCK",
+      "status_reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE",
+      "updated_at": "2026-10-01T03:45:14.733799Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "market-0-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "01f4f8e13b544f6aed6fa5af932954483f577873ec92f28a794285e63439e6cf",
+      "last_checkpoint_id": "4f878ceaea7ec7e788686fd8157840de97383567fe1bcae0b5535ea8ba27f04a",
       "lease": {
-        "acquired_at": "2026-09-30T23:40:19.300929Z",
-        "expires_at": "2026-10-01T05:25:19.300929Z",
-        "lease_token_sha256": "d827ea0b86408dacea079892d9b32cc1d9e2d1997f65240526902fc89d44663e",
-        "owner_run_id": "36792212949"
+        "acquired_at": "2026-10-01T03:14:22.572072Z",
+        "expires_at": "2026-10-01T08:59:22.572072Z",
+        "lease_token_sha256": "8b70b88bd867ef0865d6f366defe88c0e649f3ceb9fff0fe31ab4b42845031d2",
+        "owner_run_id": "36809529769"
       },
-      "lease_expires_at": "2026-10-01T05:25:19.300929Z",
-      "lease_owner": "36792212949",
+      "lease_expires_at": "2026-10-01T08:59:22.572072Z",
+      "lease_owner": "36809529769",
       "next_due_at": null,
-      "no_progress_count": 1,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:19.300985Z"
+      "updated_at": "2026-10-01T03:14:22.572115Z"
     },
     {
       "analysis_stage": null,
@@ -77717,63 +77741,85 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
+      "status": "STUCK",
+      "status_reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE",
+      "updated_at": "2026-10-01T03:45:14.733799Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-0-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:43.971113Z"
+      "updated_at": "2026-10-01T03:16:58.742749Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "market-1-2026093021-v7",
-      "chunk_index": 1,
+      "chunk_index": 3,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "01e6a7c1c1ba0396ee85e09c50e7cc8f16f915afcd219132278b989f2cc592f6",
+      "last_checkpoint_id": "d73a8bcfe47678f96d4a4b1ee3b8faf84a116c0edbe5d9231cb054bf07ef4f81",
       "lease": {
-        "acquired_at": "2026-09-30T23:03:32.577222Z",
-        "expires_at": "2026-10-01T04:48:32.577222Z",
-        "lease_token_sha256": "edcab725cc66439c0551f70d81899a336861bc8f22924ad111df8fa4ed9f12f9",
-        "owner_run_id": "36782753715"
+        "acquired_at": "2026-10-01T03:20:00.911800Z",
+        "expires_at": "2026-10-01T09:05:00.911800Z",
+        "lease_token_sha256": "33e6c581f12ae020e6f15084e09a0c06a79a96c8f266e77570dfce2c40e8b975",
+        "owner_run_id": "36809943771"
       },
-      "lease_expires_at": "2026-10-01T04:48:32.577222Z",
-      "lease_owner": "36782753715",
-      "next_due_at": null,
-      "no_progress_count": 1,
+      "lease_expires_at": "2026-10-01T09:05:00.911800Z",
+      "lease_owner": "36809943771",
+      "next_due_at": "2026-10-01T01:54:14.555512Z",
+      "no_progress_count": 3,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:03:32.577280Z"
+      "updated_at": "2026-10-01T03:20:00.911869Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "market-1-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "4b4a8519e1d1385a8be2a90c96363d8c1358f5f81a442279f420972742ed9d44",
+      "last_checkpoint_id": "611dcc0341433aec21669ea9426d6483772d595bb6737bd1be3132f4b264d9c9",
       "lease": {
-        "acquired_at": "2026-09-30T23:40:30.364651Z",
-        "expires_at": "2026-10-01T05:25:30.364651Z",
-        "lease_token_sha256": "1b266d70a4ed19cc43e5b8d8f91ed5ae9163bf13a0e0607199c4923122f96065",
-        "owner_run_id": "36792217253"
+        "acquired_at": "2026-10-01T03:14:35.799996Z",
+        "expires_at": "2026-10-01T08:59:35.799996Z",
+        "lease_token_sha256": "dca1e4c8aaf46c5369d90c2346b112aa629294062e9e2d884a0921a134995178",
+        "owner_run_id": "36809531440"
       },
-      "lease_expires_at": "2026-10-01T05:25:30.364651Z",
-      "lease_owner": "36792217253",
+      "lease_expires_at": "2026-10-01T08:59:35.799996Z",
+      "lease_owner": "36809531440",
       "next_due_at": null,
-      "no_progress_count": 1,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:30.364700Z"
+      "updated_at": "2026-10-01T03:14:35.800053Z"
     },
     {
       "analysis_stage": null,
@@ -77781,6 +77827,28 @@
       "campaign_id": "market-1-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "edf6763312f1bcb4975ded0ef9a838e657aa79d91ca157bd7f34a2522ee77ac0",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:15:14.308764Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-1-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77795,7 +77863,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.109388Z"
+      "updated_at": "2026-10-01T03:16:58.893916Z"
     },
     {
       "analysis_stage": null,
@@ -77803,6 +77871,28 @@
       "campaign_id": "market-10-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "4fdbb69e0b41991c14aa65f376234d0aebcb4ce5ac1354b9e12fabd30f421ef6",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:16:34.248642Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-10-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77817,7 +77907,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.348922Z"
+      "updated_at": "2026-10-01T03:17:00.219871Z"
     },
     {
       "analysis_stage": null,
@@ -77825,6 +77915,28 @@
       "campaign_id": "market-11-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "ac514e261439beb248a296e115c4f3735ba2ef2ce670f04460cd349325f2f415",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:17:22.179809Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-11-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77839,7 +77951,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.486727Z"
+      "updated_at": "2026-10-01T03:17:00.367525Z"
     },
     {
       "analysis_stage": null,
@@ -77847,6 +77959,28 @@
       "campaign_id": "market-12-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "eadfd5bf8b3af129bf78ab5ba86c21c09591bf47151f5cf789d12259f74c7c2b",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:17:32.894295Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-12-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77861,7 +77995,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.624239Z"
+      "updated_at": "2026-10-01T03:17:00.514757Z"
     },
     {
       "analysis_stage": null,
@@ -77869,6 +78003,28 @@
       "campaign_id": "market-13-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "14e9d4d04c4a868e73d533c27ea8578d8312a46a6ee6128beaaf8d4454da2a9b",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:18:20.274030Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-13-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77883,7 +78039,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.762818Z"
+      "updated_at": "2026-10-01T03:17:00.657752Z"
     },
     {
       "analysis_stage": null,
@@ -77891,6 +78047,28 @@
       "campaign_id": "market-14-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "7ce11b11aa661be7453a1ec139bb704bb6196976047ba0bde476bd3a1afca4a3",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:18:23.532449Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-14-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -77905,7 +78083,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.899897Z"
+      "updated_at": "2026-10-01T03:17:00.801246Z"
     },
     {
       "analysis_stage": null,
@@ -77913,11 +78091,11 @@
       "campaign_id": "market-15-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "d86f4692421428d8a9eee3db7c977a0f25f8e406c56ddd21d55d709d0f3354ce",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -77925,68 +78103,14 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:46.037490Z"
-    },
-    {
-      "analysis_stage": null,
-      "attempts": 1,
-      "campaign_id": "market-2-2026093021-v7",
-      "chunk_index": 1,
-      "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
-      "creation_phase": "COLLECT",
-      "kind": "market_collection",
-      "last_checkpoint_id": "2ae23f1b0d29588c62a21cbcdaa3e512d5344455c0a2f61fb20a9f64955be6ca",
-      "lease": {
-        "acquired_at": "2026-09-30T23:03:53.813882Z",
-        "expires_at": "2026-10-01T04:48:53.813882Z",
-        "lease_token_sha256": "a0d879a47e307681feae626d0ab54ad7c67879111708ffe6c0b0908706634007",
-        "owner_run_id": "36782756524"
-      },
-      "lease_expires_at": "2026-10-01T04:48:53.813882Z",
-      "lease_owner": "36782756524",
-      "next_due_at": null,
-      "no_progress_count": 1,
-      "phase_epoch": 7,
-      "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:03:53.813932Z"
-    },
-    {
-      "analysis_stage": null,
-      "attempts": 1,
-      "campaign_id": "market-2-2026093022-v7",
-      "chunk_index": 1,
-      "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
-      "creation_phase": "COLLECT",
-      "kind": "market_collection",
-      "last_checkpoint_id": "b6fa444e23dff34bb9787d4f2eb75e25215164485fc2ab079a95268e2154cdcf",
-      "lease": {
-        "acquired_at": "2026-09-30T23:40:34.138703Z",
-        "expires_at": "2026-10-01T05:25:34.138703Z",
-        "lease_token_sha256": "c2c76e21a2de9a8d471796fd6475280867451388fbc8b6c7ed7a78e9174e3978",
-        "owner_run_id": "36792219573"
-      },
-      "lease_expires_at": "2026-10-01T05:25:34.138703Z",
-      "lease_owner": "36792219573",
-      "next_due_at": null,
-      "no_progress_count": 1,
-      "phase_epoch": 7,
-      "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:34.138755Z"
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:18:31.341565Z"
     },
     {
       "analysis_stage": null,
       "attempts": 0,
-      "campaign_id": "market-2-2026093023-v7",
+      "campaign_id": "market-15-2026100103-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
@@ -78003,7 +78127,105 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.247947Z"
+      "updated_at": "2026-10-01T03:17:00.944427Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 3,
+      "campaign_id": "market-2-2026093021-v7",
+      "chunk_index": 3,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "10aaf875be39d8e80d00d5200ba0f6a725d088044c009e93f666a2f603af0735",
+      "lease": {
+        "acquired_at": "2026-10-01T03:20:07.380458Z",
+        "expires_at": "2026-10-01T09:05:07.380458Z",
+        "lease_token_sha256": "3206b4f1d427ba2d295b56a864570a51af0a1d493044e8057303791a46d9892d",
+        "owner_run_id": "36809940708"
+      },
+      "lease_expires_at": "2026-10-01T09:05:07.380458Z",
+      "lease_owner": "36809940708",
+      "next_due_at": "2026-10-01T01:54:10.673614Z",
+      "no_progress_count": 3,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "RUNNING",
+      "status_reason": "worker_started",
+      "updated_at": "2026-10-01T03:20:07.380521Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 2,
+      "campaign_id": "market-2-2026093022-v7",
+      "chunk_index": 2,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "da2bbbc0881675bb3a41d96c111d70baa10d19daddb1a85b54d21954b8678b9a",
+      "lease": {
+        "acquired_at": "2026-10-01T03:14:44.005002Z",
+        "expires_at": "2026-10-01T08:59:44.005002Z",
+        "lease_token_sha256": "64e764385e3e356f1a5f546547f88c7f83354c891466e433de4d7fe6f98f0b01",
+        "owner_run_id": "36809533325"
+      },
+      "lease_expires_at": "2026-10-01T08:59:44.005002Z",
+      "lease_owner": "36809533325",
+      "next_due_at": null,
+      "no_progress_count": 2,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "RUNNING",
+      "status_reason": "worker_started",
+      "updated_at": "2026-10-01T03:14:44.005059Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-2-2026093023-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "495a0eaa36381f733ba78cf0f22b59cb54947b0b8162d19e1057ae451528f1f2",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:15:05.116508Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-2-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "PENDING",
+      "status_reason": "created",
+      "updated_at": "2026-10-01T03:16:59.040189Z"
     },
     {
       "analysis_stage": null,
@@ -78445,62 +78667,84 @@
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "market-3-2026093021-v7",
-      "chunk_index": 1,
+      "chunk_index": 3,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "8fa2ff7fbf8a1bf9d0ce4515de9a647b7ece00b4ace018eb5a2b1b4394f0302a",
+      "last_checkpoint_id": "f1e5fead9ada73ede1abe02dbc8ef9c7608f363370b1a1b2bb1167d23782e37e",
       "lease": {
-        "acquired_at": "2026-09-30T23:04:05.830945Z",
-        "expires_at": "2026-10-01T04:49:05.830945Z",
-        "lease_token_sha256": "e51b6548d749f89cec0ce2f817fb9b6d15ba26adf2a1abc2982fc0154c84651a",
-        "owner_run_id": "36782759221"
+        "acquired_at": "2026-10-01T03:19:09.614727Z",
+        "expires_at": "2026-10-01T09:04:09.614727Z",
+        "lease_token_sha256": "dddd7b60228fed4ab880e1c61ea0b2ffd933b4f62060b4c54ccb08481bc78ed4",
+        "owner_run_id": "36809885511"
       },
-      "lease_expires_at": "2026-10-01T04:49:05.830945Z",
-      "lease_owner": "36782759221",
-      "next_due_at": null,
-      "no_progress_count": 1,
+      "lease_expires_at": "2026-10-01T09:04:09.614727Z",
+      "lease_owner": "36809885511",
+      "next_due_at": "2026-10-01T01:54:10.302189Z",
+      "no_progress_count": 3,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:04:05.830995Z"
+      "updated_at": "2026-10-01T03:19:09.614787Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "market-3-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "2477fff6027acd3309cca14378dd61bfe29ac3ac3fa29debf1d6524f14c0c504",
+      "last_checkpoint_id": "90238c483f8f65f1619510acabcf3523638a199bfc6d86895bcff4771a364f51",
       "lease": {
-        "acquired_at": "2026-09-30T23:40:31.782821Z",
-        "expires_at": "2026-10-01T05:25:31.782821Z",
-        "lease_token_sha256": "904e361ff6d970ea64c8ec7bf49867c6e9d5d968ba3dd8695652f40c7faac99f",
-        "owner_run_id": "36792221918"
+        "acquired_at": "2026-10-01T03:16:37.169681Z",
+        "expires_at": "2026-10-01T09:01:37.169681Z",
+        "lease_token_sha256": "fa0f03a022cca4c5bf19357d4fb7fe05dd6c774982f00922d0bda1c299d939c1",
+        "owner_run_id": "36809689444"
       },
-      "lease_expires_at": "2026-10-01T05:25:31.782821Z",
-      "lease_owner": "36792221918",
+      "lease_expires_at": "2026-10-01T09:01:37.169681Z",
+      "lease_owner": "36809689444",
       "next_due_at": null,
-      "no_progress_count": 1,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:31.782876Z"
+      "updated_at": "2026-10-01T03:16:37.169758Z"
     },
     {
       "analysis_stage": null,
       "attempts": 0,
       "campaign_id": "market-3-2026093023-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "ae8ccb1cdea0415c7cb083a56b7409b2cdfafa69b13333c2ed4dba245474dfd2",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:14:56.193559Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-3-2026100103-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
@@ -78517,7 +78761,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.386018Z"
+      "updated_at": "2026-10-01T03:16:59.185713Z"
     },
     {
       "analysis_stage": null,
@@ -78530,48 +78774,43 @@
       "creation_phase": "COLLECT",
       "kind": "market_collection",
       "last_checkpoint_id": "2ab692f19d8f2ee58ebbdebbe768afdf5965e1064f2a37d83d31e07e786735f2",
-      "lease": {
-        "acquired_at": "2026-09-30T23:03:38.990023Z",
-        "expires_at": "2026-10-01T04:48:38.990023Z",
-        "lease_token_sha256": "f09a87e1627ccb3c03564efe6c58030fc810629897b10a87ae8b933e5b653436",
-        "owner_run_id": "36782761713"
-      },
-      "lease_expires_at": "2026-10-01T04:48:38.990023Z",
-      "lease_owner": "36782761713",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
       "next_due_at": null,
       "no_progress_count": 1,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:03:38.990074Z"
+      "status": "STUCK",
+      "status_reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE",
+      "updated_at": "2026-10-01T03:45:14.733799Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "market-4-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "1e22e44597a9034449668092a13c1ef36e57aacd1733996a96032f283dfed2b3",
+      "last_checkpoint_id": "f68c6d26f580ff96baa3b297ba737bb53eceb91865c78c7a91a82a333381fed7",
       "lease": {
-        "acquired_at": "2026-09-30T23:40:28.934083Z",
-        "expires_at": "2026-10-01T05:25:28.934083Z",
-        "lease_token_sha256": "de17b50e8785c58eb2ee09c1636476d29b4d1156b3b6b5e87bd11e315205fc8d",
-        "owner_run_id": "36792224257"
+        "acquired_at": "2026-10-01T03:14:49.624955Z",
+        "expires_at": "2026-10-01T08:59:49.624955Z",
+        "lease_token_sha256": "9b6d67b5ba2092a9fa8832119a97c041ece123a76d0da8b783c7c71f54e61121",
+        "owner_run_id": "36809537732"
       },
-      "lease_expires_at": "2026-10-01T05:25:28.934083Z",
-      "lease_owner": "36792224257",
+      "lease_expires_at": "2026-10-01T08:59:49.624955Z",
+      "lease_owner": "36809537732",
       "next_due_at": null,
-      "no_progress_count": 1,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:28.934136Z"
+      "updated_at": "2026-10-01T03:14:49.625008Z"
     },
     {
       "analysis_stage": null,
@@ -78579,6 +78818,28 @@
       "campaign_id": "market-4-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "44879f7949b66421c4792abc676b1c7afc8a69846873015e3f8070e2ea0848fc",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:14:49.779203Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-4-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -78593,61 +78854,56 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.525217Z"
+      "updated_at": "2026-10-01T03:16:59.332567Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "market-5-2026093021-v7",
-      "chunk_index": 1,
+      "chunk_index": 3,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "2458cf2d3bb365afa4913e8c573b27806e2dcd8a10311ab10ff5b242ef79bd48",
-      "lease": {
-        "acquired_at": "2026-09-30T23:03:40.646025Z",
-        "expires_at": "2026-10-01T04:48:40.646025Z",
-        "lease_token_sha256": "c8f789910bfa9e4fc9c8a23b2a3763cf1ff44339abd7164c5d92a44e8a2c8d3c",
-        "owner_run_id": "36782764379"
-      },
-      "lease_expires_at": "2026-10-01T04:48:40.646025Z",
-      "lease_owner": "36782764379",
-      "next_due_at": null,
-      "no_progress_count": 1,
+      "last_checkpoint_id": "bd53c280ffab995722ddb206f42429a6ee87b3cfd67144f6207114118d522ba0",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": "2026-10-01T01:54:14.995224Z",
+      "no_progress_count": 3,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:03:40.646085Z"
+      "status": "STUCK",
+      "status_reason": "durable_publication_failed",
+      "updated_at": "2026-10-01T01:49:14.995224Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 2,
       "campaign_id": "market-5-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 2,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 2,
+      "consecutive_failures": 2,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "33d80ca71adab32a2a58eaa42406cc2fdd1fa78204d4c543f0665f4bfa4d589f",
+      "last_checkpoint_id": "298367acc50c7a5d838a64913ea37177efee161797786f97c2ded5aeaa8acf13",
       "lease": {
-        "acquired_at": "2026-09-30T23:40:33.883309Z",
-        "expires_at": "2026-10-01T05:25:33.883309Z",
-        "lease_token_sha256": "e6ec46dc3706bd40330f4b28e774cde8f90232b52cc2e418d32d9f8c6c091ea3",
-        "owner_run_id": "36792226244"
+        "acquired_at": "2026-10-01T03:14:37.337641Z",
+        "expires_at": "2026-10-01T08:59:37.337641Z",
+        "lease_token_sha256": "e175050f0b4ab5af565e05e8933cb5cabb53ce4ef2383f28f7abc54d2ec4e29a",
+        "owner_run_id": "36809539479"
       },
-      "lease_expires_at": "2026-10-01T05:25:33.883309Z",
-      "lease_owner": "36792226244",
+      "lease_expires_at": "2026-10-01T08:59:37.337641Z",
+      "lease_owner": "36809539479",
       "next_due_at": null,
-      "no_progress_count": 1,
+      "no_progress_count": 2,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:40:33.883370Z"
+      "updated_at": "2026-10-01T03:14:37.337697Z"
     },
     {
       "analysis_stage": null,
@@ -78655,6 +78911,28 @@
       "campaign_id": "market-5-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "f5518a05e034d7a24a90ef7b108182419429b882f1f310f0ab254f6b7ca0dc0c",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:15:22.549099Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-5-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -78669,61 +78947,61 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.662878Z"
+      "updated_at": "2026-10-01T03:16:59.477630Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "market-6-2026093021-v7",
-      "chunk_index": 1,
+      "chunk_index": 3,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "7a9ed756d20a28f681c698f649ccb633f2d28e4b95ffee066961e304a26f73a2",
+      "last_checkpoint_id": "7361f29b33b9afaa2173b3eff58eec27d27f6cad11b405268e580f1b49f4ed1e",
       "lease": {
-        "acquired_at": "2026-09-30T23:03:52.188663Z",
-        "expires_at": "2026-10-01T04:48:52.188663Z",
-        "lease_token_sha256": "c6fa52c97031eddb1097b0a30cfe5739de4250ba9508c29b8c831c4a065b3dfe",
-        "owner_run_id": "36782766822"
+        "acquired_at": "2026-10-01T03:21:09.656225Z",
+        "expires_at": "2026-10-01T09:06:09.656225Z",
+        "lease_token_sha256": "932ee516a3ba9ed8c3afdd86a44153ba28423df4712049f7554ff3b44a3c1a9d",
+        "owner_run_id": "36809994072"
       },
-      "lease_expires_at": "2026-10-01T04:48:52.188663Z",
-      "lease_owner": "36782766822",
-      "next_due_at": null,
-      "no_progress_count": 1,
+      "lease_expires_at": "2026-10-01T09:06:09.656225Z",
+      "lease_owner": "36809994072",
+      "next_due_at": "2026-10-01T01:54:14.747261Z",
+      "no_progress_count": 3,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:03:52.188724Z"
+      "updated_at": "2026-10-01T03:21:09.656298Z"
     },
     {
       "analysis_stage": null,
-      "attempts": 1,
+      "attempts": 3,
       "campaign_id": "market-6-2026093022-v7",
-      "chunk_index": 1,
+      "chunk_index": 3,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 1,
-      "consecutive_failures": 1,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "62345ca03ab408ebdf0a7c7fc79870d7f845ce71b2dbfdf49001e662ab84be47",
+      "last_checkpoint_id": "d2adce10fe8a471609f048e8a53b74c26761275a74175a347cfa184c7858c9ef",
       "lease": {
-        "acquired_at": "2026-09-30T23:42:40.602030Z",
-        "expires_at": "2026-10-01T05:27:40.602030Z",
-        "lease_token_sha256": "d1776841eebead7ac4bf6b86a80870387f4c5a6501d91c5070ff5115ea85e3bb",
-        "owner_run_id": "36792411608"
+        "acquired_at": "2026-10-01T03:18:56.305497Z",
+        "expires_at": "2026-10-01T09:03:56.305497Z",
+        "lease_token_sha256": "8c204aa857e4deb781c76e4fb2f0f0c8c436b8553fcff31b780a1a6089c497f0",
+        "owner_run_id": "36809888486"
       },
-      "lease_expires_at": "2026-10-01T05:27:40.602030Z",
-      "lease_owner": "36792411608",
-      "next_due_at": null,
-      "no_progress_count": 1,
+      "lease_expires_at": "2026-10-01T09:03:56.305497Z",
+      "lease_owner": "36809888486",
+      "next_due_at": "2026-10-01T01:54:10.436362Z",
+      "no_progress_count": 3,
       "phase_epoch": 7,
       "source_collection_epoch": null,
       "status": "RUNNING",
       "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:42:40.602076Z"
+      "updated_at": "2026-10-01T03:18:56.305549Z"
     },
     {
       "analysis_stage": null,
@@ -78731,6 +79009,28 @@
       "campaign_id": "market-6-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "967a3b7d20cc924f3266f0c72093af8de9f343f892b33d08755299e2b6926342",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:15:03.207605Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-6-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -78745,61 +79045,56 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.799862Z"
+      "updated_at": "2026-10-01T03:16:59.624850Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 3,
+      "campaign_id": "market-7-2026093021-v7",
+      "chunk_index": 3,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 3,
+      "consecutive_failures": 3,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "84c943ffc220ebe5583a2f6a6b2ecb938918d08a20dc1ba4d56a3d59d613c00d",
+      "lease": {
+        "acquired_at": "2026-10-01T03:21:23.282373Z",
+        "expires_at": "2026-10-01T09:06:23.282373Z",
+        "lease_token_sha256": "c6c96ec0f77f14606ad292f6443460b2d0b215641e98e9a770fbb233ce18e735",
+        "owner_run_id": "36810061719"
+      },
+      "lease_expires_at": "2026-10-01T09:06:23.282373Z",
+      "lease_owner": "36810061719",
+      "next_due_at": "2026-10-01T01:54:14.877388Z",
+      "no_progress_count": 3,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "RUNNING",
+      "status_reason": "worker_started",
+      "updated_at": "2026-10-01T03:21:23.282433Z"
     },
     {
       "analysis_stage": null,
       "attempts": 1,
-      "campaign_id": "market-7-2026093021-v7",
+      "campaign_id": "market-7-2026093022-v7",
       "chunk_index": 1,
       "collection_cutoff_at_utc": null,
       "completed_unit_count": 1,
       "consecutive_failures": 1,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": "1f339988522dbe63459aedb348708d6272f51259d9d8ca2f086aac1221fafee4",
-      "lease": {
-        "acquired_at": "2026-09-30T23:04:00.804915Z",
-        "expires_at": "2026-10-01T04:49:00.804915Z",
-        "lease_token_sha256": "437abcf71e9a0098b548a96ae219ab7625cdd17ff7f6c34252224cd9913df5b8",
-        "owner_run_id": "36782770098"
-      },
-      "lease_expires_at": "2026-10-01T04:49:00.804915Z",
-      "lease_owner": "36782770098",
+      "last_checkpoint_id": "8295d2975af6876bffce4bbdf5e4461945b18757b43dc3c5b8eceba0c0b4869c",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
       "next_due_at": null,
       "no_progress_count": 1,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T23:04:00.804967Z"
-    },
-    {
-      "analysis_stage": null,
-      "attempts": 0,
-      "campaign_id": "market-7-2026093022-v7",
-      "chunk_index": 0,
-      "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
-      "consecutive_failures": 0,
-      "creation_phase": "COLLECT",
-      "kind": "market_collection",
-      "last_checkpoint_id": null,
-      "lease": {
-        "acquired_at": "2026-09-30T22:43:56.387819Z",
-        "expires_at": "2026-10-01T04:28:56.387819Z",
-        "lease_token_sha256": "5fc29396d6a38e605a1dab6507f10a44b07ee4660b76af71efeede1a89f156f8",
-        "owner_run_id": "36787160911"
-      },
-      "lease_expires_at": "2026-10-01T04:28:56.387819Z",
-      "lease_owner": "36787160911",
-      "next_due_at": null,
-      "no_progress_count": 0,
-      "phase_epoch": 7,
-      "source_collection_epoch": null,
-      "status": "RUNNING",
-      "status_reason": "worker_started",
-      "updated_at": "2026-09-30T22:43:56.387871Z"
+      "status": "STUCK",
+      "status_reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE",
+      "updated_at": "2026-10-01T03:45:14.733799Z"
     },
     {
       "analysis_stage": null,
@@ -78807,6 +79102,28 @@
       "campaign_id": "market-7-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "b5fad7d172f446c3adc163cba26347ef15f38a72f9d0d081cd2582dbbe7c1fc4",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:16:40.565534Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-7-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
@@ -78821,7 +79138,7 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:44.938058Z"
+      "updated_at": "2026-10-01T03:16:59.778757Z"
     },
     {
       "analysis_stage": null,
@@ -78829,11 +79146,11 @@
       "campaign_id": "market-8-2026093023-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
-      "completed_unit_count": 0,
+      "completed_unit_count": 1,
       "consecutive_failures": 0,
       "creation_phase": "COLLECT",
       "kind": "market_collection",
-      "last_checkpoint_id": null,
+      "last_checkpoint_id": "4497f4d359bd0965f9327b3e34893096246bab3c8f17dc3b4e9dda3e1d9edf37",
       "lease": null,
       "lease_expires_at": null,
       "lease_owner": null,
@@ -78841,14 +79158,14 @@
       "no_progress_count": 0,
       "phase_epoch": 7,
       "source_collection_epoch": null,
-      "status": "PENDING",
-      "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.074612Z"
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:16:42.571141Z"
     },
     {
       "analysis_stage": null,
       "attempts": 0,
-      "campaign_id": "market-9-2026093023-v7",
+      "campaign_id": "market-8-2026100103-v7",
       "chunk_index": 0,
       "collection_cutoff_at_utc": null,
       "completed_unit_count": 0,
@@ -78865,7 +79182,51 @@
       "source_collection_epoch": null,
       "status": "PENDING",
       "status_reason": "created",
-      "updated_at": "2026-09-30T23:38:45.212621Z"
+      "updated_at": "2026-10-01T03:16:59.923965Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-9-2026093023-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 1,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": "54ae89734f61ccd8adf8ce2474e7a8a050ebc8846662377d63a3a4d44f28d566",
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "FAILED",
+      "status_reason": "adapter_failed",
+      "updated_at": "2026-10-01T03:16:56.729768Z"
+    },
+    {
+      "analysis_stage": null,
+      "attempts": 0,
+      "campaign_id": "market-9-2026100103-v7",
+      "chunk_index": 0,
+      "collection_cutoff_at_utc": null,
+      "completed_unit_count": 0,
+      "consecutive_failures": 0,
+      "creation_phase": "COLLECT",
+      "kind": "market_collection",
+      "last_checkpoint_id": null,
+      "lease": null,
+      "lease_expires_at": null,
+      "lease_owner": null,
+      "next_due_at": null,
+      "no_progress_count": 0,
+      "phase_epoch": 7,
+      "source_collection_epoch": null,
+      "status": "PENDING",
+      "status_reason": "created",
+      "updated_at": "2026-10-01T03:17:00.072216Z"
     },
     {
       "analysis_stage": "PNL_PROOF",
@@ -79358,39 +79719,1340 @@
     "safe_shards": 12333,
     "trade_count_exact": true,
     "trade_count_failure_reason_count": 0,
-    "uncompressed_bytes_coverage_complete": false,
-    "uncompressed_bytes_exact": false,
-    "uncompressed_size_exact_assets": 37067,
+    "uncompressed_bytes_coverage_complete": true,
+    "uncompressed_bytes_exact": true,
+    "uncompressed_size_exact_assets": 37371,
     "uncompressed_size_unavailable_assets": 0,
-    "uncompressed_size_unclassified_assets": 304,
-    "unique_record_count_exact": false,
-    "unique_trade_count_exact": false,
-    "valid_record_count_exact": false
+    "uncompressed_size_unclassified_assets": 0,
+    "unique_record_count_exact": true,
+    "unique_trade_count_exact": true,
+    "valid_record_count_exact": true
   },
-  "dataset_commit": "fcf6f2a8abda4f1b8a719447bf2474477fda54d6",
-  "metrics_digest": "8383685720e47bb1e49566d964051a410e977bdcc703cfa625d895ead0301a4a",
+  "dataset_commit": "3a09205b998f69b61830ff19da18f4c04814fec2",
+  "metrics_digest": "a1995ee2c3d23c500b1494e24d7dcc545ede6ccc01df6a583ac5d5f5ef58277c",
   "metrics_method": "verified_manifest_or_asset_scan_counts_no_byte_estimation",
   "metrics_schema_version": "alina.data_metrics.v4",
   "oldest_next_due_at": "2026-09-30T16:44:53.633927Z",
-  "oldest_pending_updated_at": "2026-09-30T21:34:51.122257Z",
-  "pending_campaign_count": 312,
+  "oldest_pending_updated_at": "2026-09-30T21:34:51.860703Z",
+  "pending_campaign_count": 307,
   "phase": {
     "analysis_stage": null,
     "collection_cutoff_at_utc": null,
-    "collection_started_at_utc": "2026-09-30T21:33:48.250399Z",
-    "epoch": 7,
-    "phase": "COLLECT",
-    "request_id": "fa48c61276aad55943196d88c998c320cb48855bf2c910ada4776fdd865c7a84",
-    "requested_at_utc": "2026-09-30T21:33:48.250399Z",
-    "requested_by": "chatgpt-github",
+    "collection_started_at_utc": null,
+    "epoch": 8,
+    "phase": "IDLE",
+    "request_id": "0f2f81a6c4e3701f8c1e9ca9755690e111a804bf27492bd75e5f677b5b9cfcdf",
+    "requested_at_utc": "2026-10-01T03:43:34Z",
+    "requested_by": "single-repo-cutover",
     "schema_version": 1,
     "source_collection_epoch": null
   },
   "phase_consistency": {
-    "mismatches": [],
-    "status": "CONSISTENT"
+    "mismatches": [
+      {
+        "campaign_id": "copy-vault-100-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-101-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-102-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-103-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-104-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-105-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-106-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-107-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-108-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-109-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-110-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-111-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-112-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-113-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-114-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-115-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-116-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-117-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-118-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-119-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-120-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-121-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-122-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-123-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-124-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-125-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-126-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-127-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-128-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-129-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-130-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-131-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-132-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-133-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-134-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-135-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-136-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-137-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-138-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-139-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-140-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-141-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-142-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-143-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-144-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-145-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-146-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-147-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-148-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-149-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-150-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-151-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-152-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-153-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-154-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-155-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-156-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-157-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-158-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-159-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-160-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-161-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-162-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-163-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-164-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-165-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-166-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-167-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-168-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-169-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-170-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-171-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-172-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-173-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-174-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-175-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-176-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-177-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-178-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-179-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-18-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-180-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-181-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-182-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-183-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-184-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-185-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-186-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-187-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-188-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-189-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-19-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-190-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-191-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-192-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-193-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-194-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-195-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-196-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-197-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-198-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-199-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-20-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-200-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-201-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-202-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-203-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-204-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-205-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-206-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-207-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-208-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-209-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-21-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-210-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-211-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-212-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-213-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-214-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-215-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-216-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-217-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-218-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-219-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-22-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-220-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-221-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-222-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-223-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-224-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-225-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-226-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-227-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-228-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-229-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-23-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-230-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-231-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-232-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-233-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-234-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-235-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-236-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-237-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-238-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-239-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-24-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-240-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-241-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-242-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-243-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-244-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-245-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-246-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-247-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-248-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-249-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-25-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-250-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-251-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-252-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-253-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-254-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-255-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-256-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-257-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-258-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-259-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-26-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-260-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-261-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-262-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-263-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-264-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-265-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-266-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-267-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-268-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-269-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-27-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-270-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-271-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-272-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-273-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-274-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-275-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-276-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-277-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-278-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-279-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-28-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-280-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-281-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-282-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-283-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-284-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-285-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-286-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-287-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-288-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-289-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-29-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-290-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-291-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-292-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-293-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-294-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-295-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-296-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-297-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-298-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-299-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-30-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-300-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-301-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-302-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-303-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-304-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-305-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-306-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-307-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-308-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-309-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-31-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-32-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-33-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-34-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-35-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-36-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-37-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-38-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-39-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-40-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-41-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-42-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-43-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-44-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-45-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-46-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-47-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-48-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-49-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-50-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-51-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-52-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-53-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-54-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-55-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-56-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-57-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-58-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-59-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-60-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-61-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-62-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-63-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-64-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-65-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-66-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-67-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-68-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-69-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-70-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-71-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-72-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-73-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-74-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-75-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-76-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-77-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-78-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-79-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-80-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-81-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-82-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-83-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-84-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-85-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-86-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-87-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-88-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-89-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-90-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-91-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-92-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-93-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-94-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-95-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-96-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-97-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-98-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "copy-vault-99-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-0-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-0-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-0-2026093023-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-0-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-1-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-1-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-1-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-10-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-11-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-12-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-13-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-14-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-15-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-2-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-2-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-2-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-3-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-3-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-3-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-4-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-4-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-4-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-5-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-5-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-5-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-6-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-6-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-6-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-7-2026093021-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-7-2026093022-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-7-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-8-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      },
+      {
+        "campaign_id": "market-9-2026100103-v7",
+        "reason": "PHASE_EPOCH_MISMATCH"
+      }
+    ],
+    "status": "BLOCKED"
   },
-  "receipt_digest": "88f95cf41debea208766d1f4396915e01e9edd2573b5856e430ba7535df36006",
+  "receipt_digest": "cea6329c071b3cea88d3a80ca0629b03134637e69f4dfc12df34fd1f203ed425",
   "replay_compatibility_reasons": {
     "reason_counts": {
       "NOT_SAFE_OR_REPLAYABLE:PARTIAL:DUPLICATES_PRESENT": 55,
@@ -79405,18 +81067,49 @@
       "REPLAYABLE_BUT_PARTIAL": 218,
       "SAFE_REPLAY_COMPATIBLE": 12333
     },
-    "receipt_digest": "fa3ac8fc329115874a3f09217d997c7e0cbfa371b010542478f7fcd9a150ddd1",
+    "receipt_digest": "1abb1e1d9ccfc5a16c22ff27cff2f265ee762d581b33cefa91cade85422410e2",
     "replayable_not_safe_count": 218,
     "safe_not_replayable_count": 0
   },
   "schema_version": "alina.dataset_health_receipt.v2",
-  "stuck_campaigns": [],
+  "stuck_campaigns": [
+    {
+      "campaign_id": "market-0-2026093021-v7",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    },
+    {
+      "campaign_id": "market-0-2026093023-v7",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    },
+    {
+      "campaign_id": "market-4-2026093021-v7",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    },
+    {
+      "campaign_id": "market-5-2026093021-v7",
+      "kind": "market_collection",
+      "next_due_at": "2026-10-01T01:54:14.995224Z",
+      "reason": "durable_publication_failed"
+    },
+    {
+      "campaign_id": "market-7-2026093022-v7",
+      "kind": "market_collection",
+      "next_due_at": null,
+      "reason": "OWNER_RUN_COMPLETED_WITH_ACTIVE_LEASE"
+    }
+  ],
   "totals": {
     "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
     "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
-    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "1f11d59e4f76af41eba2162064e684a1a285339941237dd0caee6d17085fb227",
+    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "fb55d67e35568b445b56b2a1e229f8ac1eb875237d9c4965f99fc60c08ae0c3d",
     "PARTIAL_SHARDS": 16636,
-    "RECORD_COUNT_PATCH_DIGEST": "0cc52284d45f77a1a9df432945cff2140fcd6d8217ac31b8908edaa0c1b97cbe",
+    "RECORD_COUNT_PATCH_DIGEST": "adf38cb86be873cbcabb745e9e3b7c96f732fb7723faacb4a22612b39ee293bc",
     "REJECTED_SHARDS": 8402,
     "REPLAYABLE_SHARDS": 12551,
     "SAFE_SHARDS": 12333,
@@ -79437,26 +81130,26 @@
     "TOTAL_TRADES_REJECTED": 25404113,
     "TOTAL_TRADES_REPLAYABLE": 482207,
     "TOTAL_TRADES_SAFE": 6687,
-    "TOTAL_UNCOMPRESSED_BYTES": 107191987930,
-    "TOTAL_UNIQUE_RECORDS": 74343998,
-    "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-    "TOTAL_UNIQUE_TRADES_GLOBAL": 21973656,
-    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 22056942,
-    "TOTAL_VALID_RECORDS": 74343998,
+    "TOTAL_UNCOMPRESSED_BYTES": 107209741152,
+    "TOTAL_UNIQUE_RECORDS": 74350456,
+    "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
+    "TOTAL_UNIQUE_TRADES_GLOBAL": 21973661,
+    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 22056947,
+    "TOTAL_VALID_RECORDS": 74350456,
     "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
     "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
-    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 1,
+    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
     "TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE": 0,
     "TRADE_SHARDS_WITH_EXACT_COUNT": 2256,
-    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 2255,
-    "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": false,
-    "UNCOMPRESSED_SIZE_EXACT_ASSETS": 37067,
-    "UNCOMPRESSED_SIZE_PATCH_DIGEST": "bab1c9316530f0b540e173aaa1133c45d982a5d1d51b6f6b1319b99747ce5449",
+    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 2256,
+    "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": true,
+    "UNCOMPRESSED_SIZE_EXACT_ASSETS": 37371,
+    "UNCOMPRESSED_SIZE_PATCH_DIGEST": "955c116f9653ae9a659c5095195cb9b09447bb384f39f61a50bfc68f4ac44094",
     "UNCOMPRESSED_SIZE_UNAVAILABLE_ASSETS": 0,
-    "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 304,
-    "UNIQUE_RECORDS_COVERAGE_COMPLETE": false,
-    "UNIQUE_RECORD_COUNT_MISSING_SHARDS": 304,
-    "VALID_RECORDS_COVERAGE_COMPLETE": false,
-    "VALID_RECORD_COUNT_MISSING_SHARDS": 304
+    "UNCOMPRESSED_SIZE_UNCLASSIFIED_ASSETS": 0,
+    "UNIQUE_RECORDS_COVERAGE_COMPLETE": true,
+    "UNIQUE_RECORD_COUNT_MISSING_SHARDS": 0,
+    "VALID_RECORDS_COVERAGE_COMPLETE": true,
+    "VALID_RECORD_COUNT_MISSING_SHARDS": 0
   }
 }
