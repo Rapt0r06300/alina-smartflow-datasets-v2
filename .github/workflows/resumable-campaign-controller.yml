@@ -130,78 +130,9 @@ jobs:
           PY
 
 
-  dispatch_collect:
-    needs: select
-    if: ${{ needs.select.outputs.phase == 'COLLECT' && (needs.select.outputs.copy_count != '0' || needs.select.outputs.other_count != '0') }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      actions: write
-      contents: read
-    env:
-      GH_TOKEN: ${{ github.token }}
-      COPY_MATRIX: ${{ needs.select.outputs.copy_matrix }}
-      OTHER_MATRIX: ${{ needs.select.outputs.other_matrix }}
-      PHASE_EPOCH: ${{ needs.select.outputs.phase_epoch }}
-    steps:
-      - name: Dispatch due COLLECT workers without blocking controller
-        shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY' "$COPY_MATRIX" "$OTHER_MATRIX" > "$RUNNER_TEMP/due-workers.txt"
-          import json,sys
-          seen=set()
-          for raw in sys.argv[1:]:
-              payload=json.loads(raw)
-              for campaign_id in payload.get("campaign_id", []):
-                  campaign_id=str(campaign_id).strip()
-                  if campaign_id and campaign_id not in seen:
-                      seen.add(campaign_id)
-                      print(campaign_id)
-          PY
-          REQUESTED_AT="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          while IFS= read -r CAMPAIGN_ID; do
-            [ -n "$CAMPAIGN_ID" ] || continue
-            echo "dispatching $CAMPAIGN_ID for COLLECT epoch $PHASE_EPOCH"
-            dispatched=0
-            for attempt in 1 2 3 4 5; do
-              set +e
-              output="$(gh workflow run resumable-campaign-worker.yml \
-                --repo "$GITHUB_REPOSITORY" \
-                --ref main \
-                -f campaign_id="$CAMPAIGN_ID" \
-                -f phase_epoch="$PHASE_EPOCH" \
-                -f predecessor_run_id="$GITHUB_RUN_ID" \
-                -f requested_handoff_at_utc="$REQUESTED_AT" 2>&1)"
-              rc=$?
-              set -e
-              if [ "$rc" -eq 0 ]; then
-                dispatched=1
-                break
-              fi
-              printf '%s\n' "$output" >&2
-              if printf '%s' "$output" | grep -Eqi 'rate limit|HTTP 403|secondary rate'; then
-                if [ "$attempt" -lt 5 ]; then
-                  sleep "$((5 * (2 ** (attempt - 1))))"
-                  continue
-                fi
-                echo "::warning::GitHub API rate limit still active; deferring remaining COLLECT dispatches to the scheduled controller/watchdog."
-                exit 0
-              fi
-              exit "$rc"
-            done
-            if [ "$dispatched" -ne 1 ]; then
-              echo "::warning::COLLECT dispatch deferred for $CAMPAIGN_ID; watchdog will retry."
-              exit 0
-            fi
-            # Avoid a burst of workflow_dispatch calls and simultaneous lease pushes.
-            # This preserves collection parallelism while reducing GitHub API/ref contention.
-            sleep 1
-          done < "$RUNNER_TEMP/due-workers.txt"
-
   copy_work:
     needs: select
-    if: ${{ needs.select.outputs.phase != 'COLLECT' && needs.select.outputs.copy_count != '0' }}
+    if: ${{ needs.select.outputs.copy_count != '0' }}
     strategy:
       fail-fast: false
       max-parallel: 1
@@ -215,10 +146,10 @@ jobs:
 
   other_work:
     needs: select
-    if: ${{ needs.select.outputs.phase != 'COLLECT' && needs.select.outputs.other_count != '0' }}
+    if: ${{ needs.select.outputs.other_count != '0' }}
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 16
       matrix: ${{ fromJSON(needs.select.outputs.other_matrix) }}
     uses: ./.github/workflows/resumable-campaign-worker.yml
     with:
@@ -226,6 +157,47 @@ jobs:
     permissions:
       actions: write
       contents: write
+
+  relay_collect:
+    needs: [select, copy_work, other_work]
+    if: ${{ always() && needs.select.outputs.phase == 'COLLECT' && needs.select.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Relay one next COLLECT wave
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5 6; do
+            set +e
+            output="$(gh workflow run resumable-campaign-controller.yml \
+              --repo "$GITHUB_REPOSITORY" \
+              --ref main 2>&1)"
+            rc=$?
+            set -e
+            if [ "$rc" -eq 0 ]; then
+              exit 0
+            fi
+            printf '%s\n' "$output" >&2
+            if printf '%s' "$output" | grep -Eqi 'rate limit|HTTP 403|secondary rate|temporar|timeout|502|503|504'; then
+              if [ "$attempt" -lt 6 ]; then
+                delay="$((5 * attempt * attempt))"
+                [ "$delay" -le 60 ] || delay=60
+                sleep "$delay"
+                continue
+              fi
+              echo "::warning::Immediate COLLECT relay deferred; the scheduled controller/watchdog is the durable fallback."
+              exit 0
+            fi
+            echo "::warning::COLLECT relay failed non-transiently; scheduled controller/watchdog will retry."
+            exit 0
+          done
+
 
   advance_analysis:
     needs: [select, copy_work, other_work]
