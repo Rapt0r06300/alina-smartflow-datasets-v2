@@ -194,6 +194,9 @@ jobs:
               echo "::warning::COLLECT dispatch deferred for $CAMPAIGN_ID; watchdog will retry."
               exit 0
             fi
+            # Avoid a burst of workflow_dispatch calls and simultaneous lease pushes.
+            # This preserves collection parallelism while reducing GitHub API/ref contention.
+            sleep 1
           done < "$RUNNER_TEMP/due-workers.txt"
 
   copy_work:
