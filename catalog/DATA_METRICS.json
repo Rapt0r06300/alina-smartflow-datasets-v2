@@ -54,7 +54,7 @@
       "uncompressed_bytes": 39828429,
       "uncompressed_exact_assets": 341,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 47003
+      "unique_trades_within_shards": 47008
     },
     "copy_vault_l2": {
       "bytes": 959748227,
@@ -1792,7 +1792,7 @@
       "uncompressed_bytes": 12925206,
       "uncompressed_exact_assets": 78,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 13077
+      "unique_trades_within_shards": 13082
     },
     "0X0800359ACEED0D7BD14CDEDC57C6A6E9ECA04E48": {
       "bytes": 4477,
@@ -48526,7 +48526,7 @@
       "uncompressed_bytes": 20073038897,
       "uncompressed_exact_assets": 29823,
       "uncompressed_unavailable_assets": 0,
-      "unique_trades_within_shards": 822191
+      "unique_trades_within_shards": 822196
     },
     "okx": {
       "bytes": 1144077737,
@@ -48565,11 +48565,11 @@
     "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": "deduplicated within each verified shard only; this is not a claim of global cross-shard uniqueness"
   },
   "schema_version": "alina.data_metrics.v4",
-  "source_index_sha256": "51b837c22750a12185b4dab69eb5282a76bf9543cefa411ca367bc376295145a",
+  "source_index_sha256": "eee5915c4e5cbfd706b7ec096cbe0d4a6e303baef83dda7dac75217cad90dece",
   "totals": {
     "GLOBAL_UNIQUE_FAILURE_REASON_COUNT": 0,
     "GLOBAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
-    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "1f11d59e4f76af41eba2162064e684a1a285339941237dd0caee6d17085fb227",
+    "GLOBAL_UNIQUE_TRADE_IDENTITY_DIGEST": "fb55d67e35568b445b56b2a1e229f8ac1eb875237d9c4965f99fc60c08ae0c3d",
     "PARTIAL_SHARDS": 16636,
     "RECORD_COUNT_PATCH_DIGEST": "0cc52284d45f77a1a9df432945cff2140fcd6d8217ac31b8908edaa0c1b97cbe",
     "REJECTED_SHARDS": 8402,
@@ -48594,16 +48594,16 @@
     "TOTAL_TRADES_SAFE": 6687,
     "TOTAL_UNCOMPRESSED_BYTES": 107191987930,
     "TOTAL_UNIQUE_RECORDS": 74343998,
-    "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": false,
-    "TOTAL_UNIQUE_TRADES_GLOBAL": 21973656,
-    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 22056942,
+    "TOTAL_UNIQUE_TRADES_COVERAGE_COMPLETE": true,
+    "TOTAL_UNIQUE_TRADES_GLOBAL": 21973661,
+    "TOTAL_UNIQUE_TRADES_WITHIN_SHARDS": 22056947,
     "TOTAL_VALID_RECORDS": 74343998,
     "TRADE_COUNT_FAILURE_REASON_COUNT": 0,
     "TRADE_SHARDS_MISSING_EXACT_COUNT": 0,
-    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 1,
+    "TRADE_SHARDS_MISSING_EXACT_UNIQUE_COUNT": 0,
     "TRADE_SHARDS_UNIQUE_COUNT_UNAVAILABLE": 0,
     "TRADE_SHARDS_WITH_EXACT_COUNT": 2256,
-    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 2255,
+    "TRADE_SHARDS_WITH_EXACT_UNIQUE_COUNT": 2256,
     "UNCOMPRESSED_SIZE_COVERAGE_COMPLETE": false,
     "UNCOMPRESSED_SIZE_EXACT_ASSETS": 37067,
     "UNCOMPRESSED_SIZE_PATCH_DIGEST": "bab1c9316530f0b540e173aaa1133c45d982a5d1d51b6f6b1319b99747ce5449",
