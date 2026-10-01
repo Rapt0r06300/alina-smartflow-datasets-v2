@@ -3,6 +3,10 @@ name: dataset-quality-ci
 on:
   push:
     branches: [main]
+    paths:
+      - '.github/workflows/dataset-quality-ci.yml'
+      - 'tools/**'
+      - 'tests/**'
   pull_request:
   workflow_dispatch:
 
