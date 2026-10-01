@@ -342,7 +342,36 @@ jobs:
               test -n "$BUNDLE"
               test -f "$BUNDLE/BUNDLE_INDEX.json"
               TAG="data-v2-campaign-$CAMPAIGN_ID-u$UNIT"
-              python alina/tools/publish_dataset_v2_release.py                 "$BUNDLE"                 --repository "$GITHUB_REPOSITORY"                 --tag "$TAG"                 --target main                 --title "Alina Dataset V2 $CAMPAIGN_ID unit $UNIT"
+              PUBLISH_HEX="$(printf '%s' "$CAMPAIGN_ID" | sha256sum | cut -c1-2)"
+              PUBLISH_JITTER="$((16#$PUBLISH_HEX % 11))"
+              PUBLISH_OK=0
+              for attempt in 1 2 3 4 5 6 7 8 9 10 11 12; do
+                set +e
+                PUBLISH_OUTPUT="$(python alina/tools/publish_dataset_v2_release.py \
+                  "$BUNDLE" \
+                  --repository "$GITHUB_REPOSITORY" \
+                  --tag "$TAG" \
+                  --target main \
+                  --title "Alina Dataset V2 $CAMPAIGN_ID unit $UNIT" 2>&1)"
+                rc=$?
+                set -e
+                printf '%s\n' "$PUBLISH_OUTPUT"
+                if [ "$rc" -eq 0 ]; then
+                  PUBLISH_OK=1
+                  break
+                fi
+                if printf '%s' "$PUBLISH_OUTPUT" | grep -Eqi 'rate limit|HTTP 403|HTTP 429|502 bad gateway|503 service unavailable|timeout|timed out|connection reset|release not found|status 404'; then
+                  if [ "$attempt" -lt 12 ]; then
+                    sleep "$((5 + PUBLISH_JITTER + attempt * 5))"
+                    continue
+                  fi
+                fi
+                exit "$rc"
+              done
+              if [ "$PUBLISH_OK" -ne 1 ]; then
+                echo "Durable release publication exhausted bounded transient retries." >&2
+                exit 2
+              fi
               test -f "$BUNDLE/RUN_MANIFEST.json"
               python tools/augment_campaign_result.py collection                 --result "$RESULT"                 --run-manifest "$BUNDLE/RUN_MANIFEST.json"                 --tag "$TAG"                 --repository "$GITHUB_REPOSITORY"
               echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
