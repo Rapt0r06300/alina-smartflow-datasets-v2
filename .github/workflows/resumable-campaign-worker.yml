@@ -569,9 +569,27 @@ jobs:
             echo "COLLECT relay stopped: latest phase=$LATEST_PHASE epoch=$LATEST_EPOCH pinned_epoch=$PINNED_PHASE_EPOCH"
             exit 0
           fi
-          gh workflow run resumable-campaign-controller.yml \
-            --repo "$GITHUB_REPOSITORY" \
-            --ref main
+          for attempt in 1 2 3 4 5; do
+            set +e
+            output="$(gh workflow run resumable-campaign-controller.yml \
+              --repo "$GITHUB_REPOSITORY" \
+              --ref main 2>&1)"
+            rc=$?
+            set -e
+            if [ "$rc" -eq 0 ]; then
+              exit 0
+            fi
+            printf '%s\n' "$output" >&2
+            if printf '%s' "$output" | grep -Eqi 'rate limit|HTTP 403|secondary rate'; then
+              if [ "$attempt" -lt 5 ]; then
+                sleep "$((5 * (2 ** (attempt - 1))))"
+                continue
+              fi
+              echo "::warning::GitHub API rate limit prevented immediate COLLECT relay; checkpoint is durable and the scheduled controller/watchdog will recover it."
+              exit 0
+            fi
+            exit "$rc"
+          done
 
       - name: Record publication receipt after final checkpoint
         # Publication receipt is now generated before the checkpoint commit so
