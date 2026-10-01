@@ -1,4 +1,11 @@
-# Alina SmartFlow Datasets V2
+# Alina SmartFlow Datasets V2 — historical repository
+
+> **MIGRATED / INACTIVE.** Active Alina Smart Flow development, GitHub Actions,
+> phase control, collection, replay/backtest tooling and future heavy-data releases
+> now live exclusively in `Rapt0r06300/hyperliquid-smart-wallet-observer`.
+>
+> This repository is retained only for historical provenance. Its phase authority is
+> `IDLE`; it must not launch new collection or analysis work.
 
 Event Intelligence is collected by `collect-event-intelligence-v2` from bounded
 public, read-only sources on GitHub Hosted. Every `external_events` manifest must
@@ -7,7 +14,6 @@ Cross-Venue Dislocation and arbitrage. Because no exact independent reference
 exists for heterogeneous external events, these shards remain `PARTIAL` and are
 never accepted as PnL proof.
 
-Fresh public dataset repository for NEW Alina SmartFlow collection data only.
 
 ## Lifecycle
 
@@ -35,3 +41,4 @@ Initial state: `NO_DATA`.
 - Archive records are tagged as historical exchange-time-only evidence. They do **not** fabricate collector receive timestamps or monotonic clocks.
 - Archive shards remain `PARTIAL` unless a separate qualification path proves the missing timing/reconciliation requirements; they are never automatically promoted to live-quality `SAFE`.
 - Heavy archive data is stored only in immutable GitHub Releases and indexed through the same V2 control plane.
+
