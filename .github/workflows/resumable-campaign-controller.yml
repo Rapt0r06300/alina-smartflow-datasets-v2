@@ -163,13 +163,37 @@ jobs:
           while IFS= read -r CAMPAIGN_ID; do
             [ -n "$CAMPAIGN_ID" ] || continue
             echo "dispatching $CAMPAIGN_ID for COLLECT epoch $PHASE_EPOCH"
-            gh workflow run resumable-campaign-worker.yml \
-              --repo "$GITHUB_REPOSITORY" \
-              --ref main \
-              -f campaign_id="$CAMPAIGN_ID" \
-              -f phase_epoch="$PHASE_EPOCH" \
-              -f predecessor_run_id="$GITHUB_RUN_ID" \
-              -f requested_handoff_at_utc="$REQUESTED_AT"
+            dispatched=0
+            for attempt in 1 2 3 4 5; do
+              set +e
+              output="$(gh workflow run resumable-campaign-worker.yml \
+                --repo "$GITHUB_REPOSITORY" \
+                --ref main \
+                -f campaign_id="$CAMPAIGN_ID" \
+                -f phase_epoch="$PHASE_EPOCH" \
+                -f predecessor_run_id="$GITHUB_RUN_ID" \
+                -f requested_handoff_at_utc="$REQUESTED_AT" 2>&1)"
+              rc=$?
+              set -e
+              if [ "$rc" -eq 0 ]; then
+                dispatched=1
+                break
+              fi
+              printf '%s\n' "$output" >&2
+              if printf '%s' "$output" | grep -Eqi 'rate limit|HTTP 403|secondary rate'; then
+                if [ "$attempt" -lt 5 ]; then
+                  sleep "$((5 * (2 ** (attempt - 1))))"
+                  continue
+                fi
+                echo "::warning::GitHub API rate limit still active; deferring remaining COLLECT dispatches to the scheduled controller/watchdog."
+                exit 0
+              fi
+              exit "$rc"
+            done
+            if [ "$dispatched" -ne 1 ]; then
+              echo "::warning::COLLECT dispatch deferred for $CAMPAIGN_ID; watchdog will retry."
+              exit 0
+            fi
           done < "$RUNNER_TEMP/due-workers.txt"
 
   copy_work:
